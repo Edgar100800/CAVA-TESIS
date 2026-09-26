@@ -33,7 +33,7 @@ CAVA/
 | Doc | Qué describe |
 |---|---|
 | [`docs/journey.md`](docs/journey.md) | La jornada de implementación: de v1 al gestor sin fusión, con evidencia |
-| [`docs/integration-a2sumx.md`](docs/integration-a2sumx.md) | Contrato y fases de integración SegLoop+VJudge ▸ analizador |
+| [`docs/integration-cava.md`](docs/integration-cava.md) | Contrato y fases de integración SegLoop+VJudge ▸ analizador |
 | [`docs/granularity-plan.md`](docs/granularity-plan.md) | Plan activo: afinado de granularidad (quant + qual) |
 | [`topicagg/video-signal-analysis.md`](topicagg/video-signal-analysis.md) | Diagnóstico v1: por qué la señal visual muere en una fusión |
 

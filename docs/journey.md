@@ -59,7 +59,7 @@ Contrato `frame_awareness` entre repos (change_points + scores + certificados +
 spans, con fingerprint). Fase A verificada con round-trip sobre video real.
 La selección del analizador incorpora integridad certificada: dentro de un span
 certificado, un clip se toma completo o no se toma. Detalle:
-`docs/integration-a2sumx.md`.
+`docs/integration-cava.md`.
 
 ## 7. Dónde estamos
 
