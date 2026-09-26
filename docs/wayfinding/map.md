@@ -27,6 +27,9 @@ alimentar la producción de versiones por consumidor.
 
 - [ADR-0001 Sin fusión de representaciones](../adr/0001-sin-fusion-de-representaciones.md):
   las señales votan; el tópico nunca emerge de un embedding combinado.
+- [Definir qué es un tópico correcto](tickets/001-definir-topico-correcto.md):
+  paso fino (no temas macro) · singletons sin soporte = SIN TÓPICO · grupos
+  >10 segs marcados needs_review · granularidad única del sistema.
 
 ## Not yet specified
 
