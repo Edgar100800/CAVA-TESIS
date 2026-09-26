@@ -15,7 +15,7 @@
 - **Limitación validada en el cierre:** la señal de video es **aplastada estructuralmente** por
   el texto (alineación reescribe la query + gating softmax cero-suma + head sobre blend).
   Evidencia: gating texto 0.75–0.89; GraphVSum-BLiSS colapso visual; OOD ρ(importancia)≈0.
-  Detalle: `topicagg/ANALYSIS_VIDEO_SIGNAL.md`.
+  Detalle: `topicagg/video-signal-analysis.md`.
 
 ## v2 — `topicagg/` (ACTIVA — análisis de video por tópicos multimodal)
 

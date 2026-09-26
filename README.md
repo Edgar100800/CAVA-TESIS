@@ -15,7 +15,7 @@ CAVA/
 │   ├── topic_aggregator.py     # enlaza segmentos no adyacentes del mismo tema
 │   └── signals/                # contratos: transcript ✓ · OCR · audio · video
 ├── demos/               # demo_bliss (transcripts) · demo_multimodal (video real)
-├── docs/                # solo implementación: integración + plan de granularidad
+├── docs/                # jornada + integración + plan de granularidad
 ├── scripts/
 ├── data/                # outputs (gitignored)
 └── VERSIONS.md          # registro v1 → v2 → v2.1
@@ -27,6 +27,17 @@ CAVA/
   (faster-whisper), TransNetV2, SigLIP+BaSSL, ensemble frozen, VJudge.
   Se consume vía `PYTHONPATH`; CAVA nunca duplica ese código.
 - Python: numpy (núcleo CPU). h5py para GT eccv16. GPU solo para VJudge.
+
+## Documentos pilar
+
+| Doc | Qué describe |
+|---|---|
+| [`docs/journey.md`](docs/journey.md) | La jornada de implementación: de v1 al gestor sin fusión, con evidencia |
+| [`docs/integration-a2sumx.md`](docs/integration-a2sumx.md) | Contrato y fases de integración SegLoop+VJudge ▸ analizador |
+| [`docs/granularity-plan.md`](docs/granularity-plan.md) | Plan activo: afinado de granularidad (quant + qual) |
+| [`topicagg/video-signal-analysis.md`](topicagg/video-signal-analysis.md) | Diagnóstico v1: por qué la señal visual muere en una fusión |
+
+(No hay índice de documentos menores: los históricos viven en los repos de origen.)
 
 ## Origen y trazabilidad
 
