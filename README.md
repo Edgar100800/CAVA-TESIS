@@ -28,6 +28,14 @@ CAVA/
   Se consume vía `PYTHONPATH`; CAVA nunca duplica ese código.
 - Python: numpy (núcleo CPU). h5py para GT eccv16. GPU solo para VJudge.
 
+## Decision records y wayfinding
+
+- **ADRs:** `docs/adr/NNNN-slug.md` (formato heredado de SegLoop; convención obligatoria).
+- **Wayfinding:** `docs/wayfinding/map.md` — mapa de decisiones del esfuerzo activo
+  (afinado de granularidad) con tickets en `docs/wayfinding/tickets/`.
+  Reglas: planear antes que ejecutar · referir tickets por nombre · una decisión
+  resuelta por sesión · quorum de señales para enlazar tópicos.
+
 ## Documentos pilar
 
 | Doc | Qué describe |
