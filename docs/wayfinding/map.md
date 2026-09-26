@@ -30,6 +30,9 @@ alimentar la producción de versiones por consumidor.
 - [Definir qué es un tópico correcto](tickets/001-definir-topico-correcto.md):
   paso fino (no temas macro) · singletons sin soporte = SIN TÓPICO · grupos
   >10 segs marcados needs_review · granularidad única del sistema.
+- [Barrido de configuraciones](tickets/002-barrido-quant.md):
+  link_quorum domina (q1 colapsa en mega-grupo); p70_q2 = 15 grupos intra 0.91,
+  p80_q2 = 11.3 con 0.83, p90_q2 = 8.3 con 0.76. Candidatos a revisión: p70 y p80.
 
 ## Not yet specified
 
