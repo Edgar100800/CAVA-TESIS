@@ -15,7 +15,7 @@ CAVA/
 │   ├── topic_aggregator.py     # enlaza segmentos no adyacentes del mismo tema
 │   └── signals/                # contratos: transcript ✓ · OCR · audio · video
 ├── demos/               # demo_bliss (transcripts) · demo_multimodal (video real)
-├── docs/                # diseño de integración, ADRs heredados (0008/0009)
+├── docs/                # solo implementación: integración + plan de granularidad
 ├── scripts/
 ├── data/                # outputs (gitignored)
 └── VERSIONS.md          # registro v1 → v2 → v2.1
