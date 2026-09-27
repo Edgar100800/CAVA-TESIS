@@ -13,7 +13,17 @@ grid percentile × link_quorum × tolerance_bins, registrando cuantitativa.
 
 ## Resolution
 
-Resuelto 2026-09-26 (CPU, ~9 min). 3 videos × 12 configuraciones.
+**v2 — ESCALA MOVIENET (34 películas, GT escenas narrativas):**
+mejor F1 **0.391 (p90_q2)** y 0.381 (p80_q2); P 0.60 (p90_q1) con R 0.07;
+baseline aleatorio **P≈0.225**. tolerancia_bins no afecta el agrupamiento.
+Conclusión: el consenso sube P por encima del azar (+46% en p90_q1) pero la
+señal por-shot (TF-IDF + SigLIP de un keyframe) lleva poca estructura narrativa
+a esta escala — el over-segmentation (R≈1 con señales solas) es el defecto
+dominante. F1 máx 0.39 vs need.
+
+v1 (3 videos TVSum, 2026-09-26): 12 configuraciones; hallazgos: link_quorum
+domina (q1 colapsa en mega-grupo); percentile ajusta granularidad (p70_q2 = 15
+grupos intra 0.91); tolerance_bins no cambia agrupamiento. `results/granularidad/sweep.json`.
 `results/granularidad/sweep.json` + `sweep.md`. Hallazgos:
 
 1. **link_quorum domina**: q1 colapsa el video en ~1 mega-grupo (una señal

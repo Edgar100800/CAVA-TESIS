@@ -43,7 +43,7 @@ def predict_cuts(labels):
 
 
 def run_movie(npz_path, meta, signals, percentile, link_quorum, tolerance_bins,
-              tol_shots):
+              tol_shots, cut_quorum=None):
     d = np.load(npz_path)
     n = min(meta["n_shots"], len(d["visual"]))
     sigs = {}
@@ -54,13 +54,19 @@ def run_movie(npz_path, meta, signals, percentile, link_quorum, tolerance_bins,
     if not sigs:
         raise ValueError("sin señales pedidas")
     plan = manage(sigs, n_segments=n, percentile=percentile,
-                  link_quorum=link_quorum, tolerance_bins=tolerance_bins)
+                  link_quorum=link_quorum, tolerance_bins=tolerance_bins,
+                  cut_quorum=cut_quorum)
     pred = predict_cuts(plan.labels)
     gt = meta["gt_scene_cuts"]
     precision, recall, f1 = boundary_f1(pred, gt, tol_shots)
+    # baseline aleatorio: precisión esperada de cortes uniformes al azar
+    positions = list(range(1, n))
+    rand_hits = sum(1 for i in positions
+                    if any(abs(i - g) <= tol_shots for g in gt))
+    rand_p = rand_hits / len(positions) if positions else 0.0
     return {"n_shots": n, "n_pred": len(pred), "n_gt": len(gt),
             "precision": round(precision, 4), "recall": round(recall, 4),
-            "f1": round(f1, 4)}
+            "f1": round(f1, 4), "random_precision": round(rand_p, 4)}
 
 
 def main():
@@ -71,6 +77,8 @@ def main():
     ap.add_argument("--percentile", type=int, default=80)
     ap.add_argument("--link-quorum", type=int, default=2)
     ap.add_argument("--tolerance-bins", type=int, default=1)
+    ap.add_argument("--cut-quorum", type=int, default=None,
+                    help="señales que deben votar un corte (None = mayoría)")
     ap.add_argument("--tol-shots", type=float, default=1.0)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--tag", default=None)
@@ -108,19 +116,22 @@ def main():
         for npz, meta in movies:
             try:
                 runs.append(run_movie(npz, meta, sig_sets, p, q, tb,
-                                      args.tol_shots))
+                                      args.tol_shots, cut_quorum=args.cut_quorum))
             except Exception as e:  # película con insumos rotos: se reporta
                 runs.append({"error": str(e)[:80]})
         ok = [r for r in runs if "error" not in r]
         agg = {
             "n_movies": len(ok),
             "n_failed": len(runs) - len(ok),
+            "random_precision_mean": (round(float(np.mean(
+                [r["random_precision"] for r in ok])), 4)
+                if ok and all("random_precision" in r for r in ok) else None),
             "precision_mean": round(float(np.mean([r["precision"] for r in ok])), 4),
             "recall_mean": round(float(np.mean([r["recall"] for r in ok])), 4),
             "f1_mean": round(float(np.mean([r["f1"] for r in ok])), 4),
             "f1_std": round(float(np.std([r["f1"] for r in ok])), 4),
         }
-        all_runs[f"p{p}_q{q}_t{tb}"] = agg
+        all_runs[f"p{p}_q{q}_cq{args.cut_quorum}_t{tb}"] = agg
         print(f"[eval] p{p} q{q} t{tb}: P={agg['precision_mean']} "
               f"R={agg['recall_mean']} F1={agg['f1_mean']} ± {agg['f1_std']} "
               f"({agg['n_movies']} pelis)", flush=True)

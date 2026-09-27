@@ -1,0 +1,9 @@
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights:  60%|██████    | 246/408 [00:00<00:00, 2444.07it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 2476.21it/s]
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/extract_movienet_signals.py", line 178, in <module>
+    main()
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/extract_movienet_signals.py", line 155, in main
+    visual[k] += v
+ValueError: operands could not be broadcast together with shapes (512,) (768,) (512,) 
