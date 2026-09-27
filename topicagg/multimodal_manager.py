@@ -70,6 +70,7 @@ class TopicPlan:
     groups: list
     quorum: int
     weights: dict
+    cut_quorum: int | None = None
     per_signal_boundary: dict = field(default_factory=dict)
     per_signal_labels: dict = field(default_factory=dict)
 
@@ -81,6 +82,9 @@ def manage(signals: dict[str, np.ndarray], *,
            percentile: float = 80.0,
            min_gap: int = 2,
            link_quorum: int = 2,   # señales que deben coincidir para enlazar
+           max_group_segments: int = 10,  # ticket 001: >N segs = needs_review
+           cut_quorum: int | None = None,  # señales que deben votar un corte
+                                          # (None = mayoría ponderada; int = intersección)
            tolerance_bins: int = 1) -> TopicPlan:
     """signals: {nombre: [n, D]} embeddings POR SEÑAL (nunca fusionados).
     link_quorum: nº de señales que deben agrupar un par para enlazarlo."""
@@ -107,15 +111,24 @@ def manage(signals: dict[str, np.ndarray], *,
 
     # consenso de fronteras: votos ponderados en ±tolerance_bins
     votes = np.zeros(max(0, n - 1), dtype=np.float32)
+    presence = {name: np.zeros(max(0, n - 1), dtype=bool)
+                for name in per_cuts}
     for name, cuts in per_cuts.items():
+        wsig = w.get(name, 1.0)
         for c in cuts:
             lo = max(0, c - tolerance_bins)
             hi = min(len(votes), c + tolerance_bins + 1)
-            votes[lo:hi] += w.get(name, 1.0)
+            votes[lo:hi] += wsig
+            presence[name][lo:hi] = True
     total_w = sum(w.get(k, 1.0) for k in per_cuts) or 1.0
-    majority = max(1.0, int(np.ceil(total_w / 2)))   # mayoría de señales activas
-    consensus = [int(i) for i in range(len(votes))
-                 if votes[i] >= majority]
+    if cut_quorum is not None:
+        cnt = np.zeros(max(0, n - 1), dtype=np.float32)
+        for name in per_cuts:
+            cnt += presence[name]
+        consensus = [int(i) for i in range(len(votes)) if cnt[i] >= cut_quorum]
+    else:
+        majority = max(1.0, int(np.ceil(total_w / 2)))  # mayoría de señales activas
+        consensus = [int(i) for i in range(len(votes)) if votes[i] >= majority]
 
     # consenso de enlace: quorum de señales agrupando el par (union-find)
     parent = list(range(n))
@@ -161,11 +174,20 @@ def manage(signals: dict[str, np.ndarray], *,
         g = TopicGroup(topic_id=gid, segment_indices=sorted(members),
                        centroid=np.zeros(1), coherence=0.0)
         g.signal_support = support
+        # Ticket 001 (resuelto): criterios de tópico correcto
+        # - singleton sin NINGÚN soporte multi-señal -> SIN TÓPICO (no es contenido)
+        # - grupo largo (> max_group_segments) -> válido pero needs_review
+        max_support = max(support.values()) if support else 0.0
+        if len(members) == 1 and max_support == 0.0:
+            g.no_topic = True
+        if len(members) > max_group_segments:
+            g.needs_review = True
         groups.append(g)
 
     labels = np.array([find(i) for i in range(n)])
     return TopicPlan(n_segments=n, consensus_cuts=consensus,
                      per_signal_cuts=per_cuts, labels=labels, groups=groups,
                      quorum=max(1, int(np.ceil(0.5 * len(per_cuts)))),
+                     cut_quorum=cut_quorum,
                      weights=w, per_signal_boundary=per_boundary,
                      per_signal_labels=per_labels)
