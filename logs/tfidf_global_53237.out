@@ -1,0 +1,7 @@
+películas: 314
+vocab: 67082 términos (df>=3)
+[tfidf] 200/314 tt0311113
+[tfidf] 250/314 tt0945513
+[tfidf] 300/314 tt1478338
+[tfidf] 314/314 tt2582846
+TFIDF_GLOBAL_DONE 314 películas

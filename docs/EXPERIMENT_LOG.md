@@ -150,3 +150,27 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 |---|---|---|
 | EXP-006 (F1 0.84 colapsado) | "El sistema detecta estructura narrativa con F1 0.84" | Colapso circular: snappeó predicciones al GT antes de evaluar (data leakage) |
 | ADR-0008 implícito (F1 0.40 como quality bar) | "El agregador temático alcanza F1 0.40 vs GT" | El 0.40 es F1 a granularidad GT que no corresponde al diseño paso fino |
+
+---
+
+## EXP-009 · VJudge reasoning como señal de proximidad temática
+**2026-09-25 · 3 videos TVSum · 103 shots · TF-IDF sobre reasoning text**
+
+**Métrica:** AUC local-vs-remoto — P(sim(i,j) > sim(i,k)) donde (i,j) son shots
+a ≤3 posiciones y (i,k) a >10 posiciones.
+
+| Señal | AUC local-vs-remoto |
+|---|---|
+| visual (SigLIP por shot) | **0.658** |
+| reasoning (VJudge TF-IDF) | 0.510 |
+
+- **Resultado:** el razonamiento del VJudge NO separa tópicos locales de
+  remotos mejor que el visual. AUC ≈ 0.51 ≈ azar. El visual sí (0.66).
+- **Invalidación:** la hipótesis "el razonamiento del VJudge captura
+  estructura temática que el visual no captura" **se invalida** en este
+  setting: AUC 0.51 ≈ 0.50 (azar).
+- **Nota:** el reasoning se mide con TF-IDF sobre texto generado — la señal
+  depende de la calidad del texto generado. Un embedder semántico (sentence
+  transformer) podría capturar estructura que TF-IDF no ve. Pendiente.
+
+`data/cava_pilot/exp009_simple.json`
