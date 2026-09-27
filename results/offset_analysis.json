@@ -1,0 +1,19 @@
+{
+ "protocol": "offset_analysis_v1",
+ "n_movies": 97,
+ "n_predictions": 36267,
+ "offset_distribution": {
+  "\u00b11_shot": 0.307,
+  "\u00b12_shots": 0.379,
+  "\u00b15_shots": 0.542,
+  "\u00b110_shots": 0.696,
+  "\u00b120_shots": 0.841,
+  "\u00b150_shots": 0.956
+ },
+ "offset_median_shots": 5,
+ "offset_mean_shots": 11.7,
+ "granularity_ratio_mean": 4.05,
+ "granularity_ratio_median": 3.32,
+ "interpretation": "paso fino (ticket 001) = 4x m\u00e1s fino que GT escenas",
+ "hit_rate_at_gt_granularity": "30.7% de nuestras fronteras coinciden con transiciones reales de escena"
+}
