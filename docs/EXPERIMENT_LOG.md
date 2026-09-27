@@ -102,3 +102,26 @@ clipping, no ruido. El F1 0.37 sin colapsar reflejaba granularidad distinta,
 no falta de señal.
 
 `results/dual_granularity.json`
+
+---
+
+## INVALIDACIÓN — F1 0.84 anterior (colapso circular)
+
+**2026-09-25 · EXP-001/006 invalidados parcialmente**
+
+El análisis dual de granularidad (EXP-006) reportó F1 0.84 usando
+`collapse_predictions(pred, gt, window)` — esta función selecciona, para cada
+GT cut, la predicción más cercana dentro de una ventana. Esto es **circular**:
+se "snappean" las predicciones a las posiciones GT antes de medir F1, así que
+el resultado mide la distancia que el colapso eliminó, no la calidad del
+sistema.
+
+**La evaluación honesta es la multi-tolerancia** (EXP-001): F1 0.37-0.46
+según tolerancia, sin colapso circular. El sistema detecta vecindarios
+correctos pero no posiciones exactas a granularidad GT.
+
+**El F1 0.84 se invalida y se reemplaza por los números de EXP-001.**
+
+Lección: un colapso que usa el GT para seleccionar predicciones es un fuga de
+información (data leakage). Validar siempre que el F1 post-colapso no exceda
+el F1 pre-colapso sin una transformación justificada.
