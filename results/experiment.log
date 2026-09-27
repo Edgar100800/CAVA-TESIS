@@ -1,0 +1,24 @@
+películas: 35
+
+--- E1: offset sweep (p80_q2_t1) ---
+  offset -10: F1 = 0.2806
+  offset  -8: F1 = 0.2775
+  offset  -6: F1 = 0.2796
+  offset  -4: F1 = 0.2885
+  offset  -2: F1 = 0.2924
+  offset  +0: F1 = 0.3813
+  offset  +2: F1 = 0.3319
+  offset  +4: F1 = 0.2884
+  offset  +6: F1 = 0.2820
+  offset  +8: F1 = 0.2798
+  offset +10: F1 = 0.2740
+
+--- E2: corpus TF-IDF + LSA ---
+[E2] error: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 2255 and the array at index 1 has size 2475
+
+--- E3: ablation (offset mejor de E1) ---
+  transcript: F1 = 0.1749
+  visual: F1 = 0.1749
+  both: F1 = 0.3813
+
+[out] /home/edgar.chambilla/Tesis/CAVA/data/results/experiment_results.json
