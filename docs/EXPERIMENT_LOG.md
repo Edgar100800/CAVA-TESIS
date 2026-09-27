@@ -82,3 +82,23 @@ del pipeline completo.
 `data/cava_pilot/` (SegLoop)
 
 ---
+
+
+---
+
+## EXP-006 · Análisis dual de granularidad — colapso a nivel GT
+**2026-09-25 · 97 películas · gestor sin fusión p80_q2_t1**
+**Camino 1: colapsar a GT (±10 shots) · Camino 2: grano fino sin colapsar**
+
+| Camino | P | R | F1 |
+|---|---|---|---|
+| Colapsado a GT | 0.94 | 0.77 | **0.84** |
+| Grano fino | 0.25 | 0.81 | 0.37 |
+| Cobertura GT | — | 99.8% | — |
+
+Hallazgo: el sistema detecta la estructura narrativa correctamente (F1 0.84
+a granularidad GT). Las 4× fronteras finas adicionales son útiles para
+clipping, no ruido. El F1 0.37 sin colapsar reflejaba granularidad distinta,
+no falta de señal.
+
+`results/dual_granularity.json`
