@@ -154,6 +154,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-010 | "El VJudge integrando frames + transcript lee fronteras mejor que cada modalidad sola" | AP mm 0.512 < frames 0.540 (2/3 películas); como votante no mejora Δ-vs-azar (+0.060 vs +0.069) |
 | EXP-002 (columna confirm_rate) | "tolerance_bins=1 confirma ~0.24–0.54 de los cortes candidatos" | `consensus_cuts` cuenta cada índice de la ventana ±tolerance_bins (hasta 3× por corte); el salto t0→t1 está inflado. Grupos y coherencia no se ven afectados (hallado en EXP-011) |
 | EXP-011 paso 1 | "Fusionar por continuidad multimodal supera al mejor componente" | A igual nº de cortes SegLoop solo gana en escena F1 (+0.276 vs +0.197), beat F1 (+0.043 vs +0.016) y scene_prec |
+| EXP-011 paso 1b | "Los votantes de similitud deciden dónde parar mejor que el orden de SegLoop" | ρ=0.9 pre-registrado para en ~5 tópicos, igual al control; ρ=1.0 +0.017 beat F1 (~1 SE, no pre-registrado) |
 
 ---
 
@@ -387,4 +388,37 @@ cifras quedan marcadas como calculadas con el gestor anterior.
 
 `results/exp011_adaptive_partial20.json` · `topicagg/adaptive_aggregator.py` ·
 `scripts/eval_adaptive.py` · `scripts/build_val_voters.py`
+
+---
+
+## EXP-011 · Paso 1b — divisivo: SegLoop ordena, los votantes deciden parar
+- **Fecha:** 2026-09-28
+- **Corpus:** las mismas 23 películas val
+- **Configuración:** `divisive()`. Cada unidad se parte en su corte SegLoop
+  interno más fuerte solo si una mayoría estricta de votantes activos ve
+  discontinuidad en ventanas locales (≤32 shots por lado); si no, es hoja.
+  ρ=0.9 y ventana 32 pre-registrados. Control: SegLoop top-K con el mismo nº
+  de cortes por película.
+
+| sistema | tópicos | Δ escena F1 | Δ beat F1 | Δ beat Pk | scene_prec |
+|---|---|---|---|---|---|
+| divisive ρ0.9 (pre-registrado) | 5 | +0.035 | +0.015 | −0.016 | 0.506 |
+| SegLoop top-K igualado | 5 | +0.039 | +0.020 | −0.017 | 0.535 |
+| divisive ρ1.0 | 109 | +0.238 | +0.037 | −0.070 | 0.518 |
+| SegLoop top-K igualado | 109 | +0.270 | +0.020 | −0.054 | 0.640 |
+
+- **Resultado:**
+  - Con ρ=0.9 los votantes rechazan casi todos los cortes de raíz: la recursión
+    se detiene en ~5 tópicos, al nivel del control.
+  - Con ρ=1.0 gana al control en beat F1 (+0.017) y beat Pk (−0.016), ~1 SE
+    en ambos, y pierde en escena y scene_prec. ρ=1.0 no estaba pre-registrado
+    y no se adopta.
+- **⚠️ INVALIDADO:** "los votantes de similitud, decidiendo solo dónde parar,
+  añaden señal de trama sobre el orden de SegLoop".
+- **Lectura de pasos 0–1b:** visual, diálogo, TF-IDF y habla no llevan
+  información de trama más allá de SegLoop, se agreguen como se agreguen.
+  Tiene que venir de un votante que entienda la historia → paso 2 (VJudge
+  relacional en los cortes candidatos de SegLoop).
+
+`results/exp011_step1b_partial.json`
 

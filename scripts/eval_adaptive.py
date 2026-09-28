@@ -14,6 +14,8 @@ Sistemas (todos con azar de mismo nº de cortes, métricas de eval_hierarchy):
   proposal               la propuesta inicial sin agregar
   adaptive_rho{ρ}        agregador con todos los votantes, ρ ∈ {0.8, 0.9, 1.0}
   adaptive_-{votante}    ablación leave-one-out a ρ=0.9
+  divisive_rho{ρ}        paso 1b: SegLoop ordena, votantes deciden dónde parar
+                         (ventana local 32 shots, pre-registrado)
   fixed_p{p}_q{q}        manage() visual+transcript (baseline del paso 0)
 Pre-registro: ρ=0.9 es el valor por defecto elegido antes de ver resultados.
 """
@@ -27,7 +29,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from eval_hierarchy import MN, load_film, load_split, metrics, random_metrics  # noqa: E402
-from topicagg.adaptive_aggregator import aggregate  # noqa: E402
+from topicagg.adaptive_aggregator import aggregate, divisive  # noqa: E402
 from topicagg.multimodal_manager import manage  # noqa: E402
 
 RHOS = (0.8, 0.9, 1.0)
@@ -81,8 +83,18 @@ def main():
             systems[f"adaptive_rho{rho:g}"] = plan.cuts
             if rho == 0.9:
                 levels_diag[tt] = [metrics(lv, g) | {"n_cuts": len(lv)} for lv in plan.levels]
-        # control: SegLoop solo, con tantos cortes como el agregador (top-K por película)
+        # paso 1b: roles invertidos (SegLoop ordena, votantes deciden parar)
         for rho in RHOS:
+            systems[f"divisive_rho{rho:g}"] = divisive(emb, bnd, seg, n, rho=rho).cuts
+        for drop in EMB + BND:
+            e = {kk: x for kk, x in emb.items() if kk != drop}
+            b = {kk: x for kk, x in bnd.items() if kk != drop}
+            systems[f"divisive_-{drop}"] = divisive(e, b, seg, n, rho=0.9).cuts
+        # control: SegLoop solo, con tantos cortes como cada agregador (top-K por película)
+        for rho in RHOS:
+            kd = len(systems[f"divisive_rho{rho:g}"])
+            systems[f"segloop_topk_matched_div{rho:g}"] = sorted(
+                int(i) + 1 for i in np.argsort(-seg)[:kd]) if kd else []
             kk = len(systems[f"adaptive_rho{rho:g}"])
             systems[f"segloop_topk_matched_rho{rho:g}"] = sorted(
                 int(i) + 1 for i in np.argsort(-seg)[:kk]) if kk else []

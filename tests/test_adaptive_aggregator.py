@@ -37,3 +37,18 @@ def test_boundary_voter_can_hold_a_cut():
     plan = aggregate({"visual": x}, {"segloop": (score, 0.5), "speech": (score, 0.5)},
                      [10], 20)
     assert plan.cuts == [10]  # 2 of 3 voters say stop
+
+
+def test_divisive_splits_heterogeneous_stops_homogeneous():
+    from topicagg.adaptive_aggregator import divisive
+    rng = np.random.default_rng(3)
+    cs = [rng.normal(size=16) for _ in range(4)]
+    # 0-40 one homogeneous topic; 40-60 three short distinct topics
+    x = np.asarray(_topic(rng, cs[0], 40, 0.2) + _topic(rng, cs[1], 7, 0.2)
+                   + _topic(rng, cs[2], 7, 0.2) + _topic(rng, cs[3], 6, 0.2), np.float32)
+    order = np.full(59, 0.1, np.float32)
+    for c, s in ((40, 0.9), (47, 0.8), (54, 0.7), (20, 0.85)):  # 20 = strong but fake
+        order[c - 1] = s
+    plan = divisive({"visual": x, "dialogue": x + 0.05 * rng.normal(size=x.shape)},
+                    {}, order, 60)
+    assert plan.cuts == [40, 47, 54]

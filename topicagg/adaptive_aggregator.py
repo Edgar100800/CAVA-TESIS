@@ -107,3 +107,59 @@ def aggregate(embedding_voters: dict[str, np.ndarray],
         cuts = keep
         levels.append(list(cuts))
     return AdaptivePlan(n_segments=n, cuts=cuts, levels=levels, merges=merges)
+
+
+def _votes(emb, prior, boundary_voters, a, c, b, window, rho):
+    """Votos en el corte c entre [a,c) y [c,b), sobre ventanas locales."""
+    w = min(window, c - a, b - c)
+    cont, stop, abst = [], [], []
+    for k, x in emb.items():
+        A = _unit_stats(x, c - w, c, prior[k])
+        B = _unit_stats(x, c, c + w, prior[k])
+        if A is None or B is None:
+            abst.append(k)
+            continue
+        cross = 0.5 * (float((B[1] @ A[0]).mean()) + float((A[1] @ B[0]).mean()))
+        (cont if cross >= rho * min(A[2], B[2]) else stop).append(k)
+    for k, (score, thr) in boundary_voters.items():
+        (cont if score[c - 1] < thr else stop).append(k)
+    return cont, stop, abst
+
+
+def divisive(embedding_voters: dict[str, np.ndarray],
+             boundary_voters: dict[str, tuple[np.ndarray, float]],
+             order_score: np.ndarray, n_segments: int, *,
+             rho: float = 0.9, window: int = 32, min_size: int = 2) -> AdaptivePlan:
+    """Roles invertidos: `order_score` (SegLoop) ORDENA; los votantes DECIDEN parar.
+
+    Cada unidad se parte en su corte interno más fuerte según `order_score` solo
+    si una mayoría estricta de votantes activos ve discontinuidad ahí (ventanas
+    locales de hasta `window` shots por lado). Si no, la unidad es hoja: no se
+    prueban cortes más débiles. Contenido heterogéneo sigue dividiéndose;
+    homogéneo se detiene antes. levels[d] = cortes aceptados hasta profundidad d.
+    """
+    n = n_segments
+    emb = {k: _l2(np.asarray(v, np.float32)[:n]) for k, v in embedding_voters.items()}
+    prior = {k: _adjacent_prior(x) for k, x in emb.items()}
+    order = np.asarray(order_score, np.float32)
+    accepted, merges = [], []
+    frontier = [(0, n, 0)]
+    while frontier:
+        a, b, depth = frontier.pop()
+        lo, hi = a + min_size, b - min_size
+        if hi < lo:
+            continue
+        c = lo + int(np.argmax(order[lo - 1:hi]))   # corte c usa order[c-1]
+        cont, stop, abst = _votes(emb, prior, boundary_voters, a, c, b, window, rho)
+        active = len(cont) + len(stop)
+        rec = {"cut": c, "depth": depth, "continue": cont, "stop": stop, "abstain": abst}
+        if active and len(stop) > active / 2:
+            accepted.append((c, depth))
+            merges.append(rec | {"split": True})
+            frontier += [(a, c, depth + 1), (c, b, depth + 1)]
+        else:
+            merges.append(rec | {"split": False})
+    max_d = max((d for _, d in accepted), default=-1)
+    levels = [sorted(c for c, d in accepted if d <= lv) for lv in range(max_d + 1)]
+    return AdaptivePlan(n_segments=n, cuts=sorted(c for c, _ in accepted),
+                        levels=levels, merges=merges)
