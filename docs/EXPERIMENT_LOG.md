@@ -526,3 +526,37 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
 
 `results/exp011_step2R_replication.json` · `results/exp011_step2R_veto_null.json`
 
+---
+
+## EXP-012 · Story ledger: el VJudge juzga cada corte contra la historia previa (pre-registro)
+- **Fecha:** 2026-09-28 (registrado antes de ejecutar)
+- **Motivo:** EXP-011 paso 2-R. Con contexto local (±2 shots) el VJudge no
+  añade señal de trama sobre SegLoop. Un beat dura ~10 min; el juez necesita
+  ver minutos de historia, no segundos.
+- **Corpus:**
+  - desarrollo = las 23 películas val del paso 2 (`scripts/exp011_step2_films.txt`)
+  - replicación = las 35 del paso 2-R (`scripts/exp011_replication_films.txt`)
+  - Se ejecutan juntas; los criterios quedan fijados aquí antes de ver nada.
+- **Configuración:**
+  - Unidades = tramos entre los top-100 cortes SegLoop, los mismos candidatos
+    del paso 2 (mediana de 8 shots por unidad).
+  - Etapa 1: Qwen2.5-VL-7B frozen resume cada unidad en una frase desde 3
+    keyframes + diálogo.
+  - Etapa 2, solo texto: por corte, "historia hasta aquí" = resúmenes de las
+    ctx unidades previas y "siguiente" = unidad posterior → A/B → p_new.
+    ctx ∈ {1, 3}.
+- **Criterios**, en desarrollo Y en replicación, cada uno por separado; AP beat
+  (±60 s) sobre los mismos 100 candidatos, pareado por película:
+  1. **Primario:** ΔAP(ledger ctx3 − SegLoop) > 2 SE.
+  2. **Contexto largo:** ΔAP(ctx3 − ctx1) > 2 SE. Si no, la mejora no viene de
+     ver más historia.
+  3. ΔAP(ctx3 − relacional mm del paso 2) > 0.
+  4. Veto relativo ctx3 (orden SegLoop saltando la mitad inferior del ledger)
+     contra SegLoop solo en beat F1 a K=24 > 2 SE pareado. Es la prueba que
+     falló en 2-R.
+- **Invalidación:** si falla 1 en replicación, "el VJudge con historia larga
+  añade señal de trama sobre SegLoop" queda invalidado; si falla 2, se
+  invalida "el contexto largo es lo que falta".
+
+`scripts/vjudge_ledger.py` · `scripts/vjudge_ledger.sbatch`
+
