@@ -76,6 +76,7 @@ class BgeEmbedder:
 
 def topic_line(desc):
     for line in desc.splitlines():
+        line = line.replace("*", "").strip()
         if line.upper().startswith("TOPIC:"):
             return line.split(":", 1)[1].strip()
     return desc

@@ -151,6 +151,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-006 (F1 0.84 colapsado) | "El sistema detecta estructura narrativa con F1 0.84" | Colapso circular: snappeó predicciones al GT antes de evaluar (data leakage) |
 | ADR-0008 implícito (F1 0.40 como quality bar) | "El agregador temático alcanza F1 0.40 vs GT" | El 0.40 es F1 a granularidad GT que no corresponde al diseño paso fino |
 | Barrido granularidad v2 (`results/granularity_sweep_v2.INVALID_visual_only.json`) | Resultados del grid sobre 3 pilotos con una sola señal | Solo visual: link_quorum=2 inalcanzable (todo no_topic), tolerance_bins sin efecto. Descartado; el barrido válido de 2 señales es EXP-002 (`results/granularidad/sweep.md`) |
+| EXP-010 | "El VJudge integrando frames + transcript lee fronteras mejor que cada modalidad sola" | AP mm 0.512 < frames 0.540 (2/3 películas); como votante no mejora Δ-vs-azar (+0.060 vs +0.069) |
 
 ---
 
@@ -205,7 +206,7 @@ a ≤3 posiciones y (i,k) a >10 posiciones.
 ---
 
 ## EXP-010 · Narrative interpreter: VJudge lee segmentos (frames + transcript)
-- **Fecha:** 2026-09-28 (pre-registro; job 53426 en cola)
+- **Fecha:** 2026-09-28 (pre-registro; job 53426, 47 min en ds001)
 - **Corpus:** MovieNet tt0047396, tt0049730, tt0061418 · 3064 shots · 370 cortes GT
 - **Configuración:** segmentos fijos de 5 shots (614); Qwen2.5-VL-7B frozen,
   greedy, prompt TOPIC/FUNCTION/SUMMARY. Condiciones: `mm` (3 keyframes +
@@ -228,4 +229,42 @@ a ≤3 posiciones y (i,k) a >10 posiciones.
 
 `scripts/narrative_interpreter.py` (GPU) · `scripts/narrative_eval.py` (CPU) ·
 salida `results/exp010_narrative.json`
+
+### Resultado EXP-010
+AP de la novedad en bordes de segmento (TOPIC con bge; azar = tasa positiva):
+
+| película | azar | mm | frames | text |
+|---|---|---|---|---|
+| tt0047396 | 0.373 | 0.470 | **0.533** | 0.460 |
+| tt0049730 | 0.623 | **0.728** | 0.694 | 0.636 |
+| tt0061418 | 0.269 | 0.340 | **0.393** | 0.335 |
+| media | 0.422 | 0.512 | **0.540** | 0.477 |
+
+Votante en `manage()` (p80, q2, t1; F1@±15 s, media de 3 películas):
+
+| señales | cortes | F1 | azar | Δ |
+|---|---|---|---|---|
+| visual+transcript | 282 | 0.450 | 0.381 | +0.069 |
+| visual+transcript+narrative | 76 | 0.333 | 0.273 | +0.060 |
+
+- **Resultado:** las tres lecturas superan al azar (AP +0.05 a +0.12), pero
+  `mm` no supera a `frames` (2 de 3 películas lo pierden). Añadir el
+  transcript al VJudge no ayuda, y el transcript solo es la peor lectura.
+  Como votante, la lectura reduce los cortes 282→76 sin mejorar Δ-vs-azar.
+- **Gate:** F1@±15 s > 0.30 solo lo pasan configuraciones con muchos cortes,
+  y su F1 queda a +0.06–0.07 del azar. El F1 lo explica sobre todo el nº de
+  cortes, no su posición.
+- **⚠️ INVALIDADO (pre-registrado):** "el VJudge integrando frames + transcript
+  lee fronteras narrativas mejor que cada modalidad sola". Tampoco se sostiene
+  "la lectura narrativa mejora el consenso".
+- **Diagnóstico:**
+  1. Lecturas independientes: cada segmento se describe sin ver al vecino. La
+     novedad entre textos generados por separado mezcla cambio de tópico con
+     varianza de redacción (mm/frames responden en markdown, text en plano).
+  2. Techo estructural: con ventanas fijas de 5 shots, solo 45–80 % de los
+     cortes GT caen a ±15 s de algún borde posible.
+  3. Las 3 películas son del split *train* de MovieNet-318. No hay fuga aquí
+     (nada supervisado), pero bloquea usar el ensemble SegLoop en ellas.
+
+`results/exp010_narrative.json`
 
