@@ -486,3 +486,19 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
   señal de trama sobre SegLoop"; si no, se invalida. Las 23 del paso 2 no se
   suman para decidir.
 
+### Pre-registro adicional para 2-R: veto relativo (antes de ver la replicación)
+- **Corrección del defecto del veto:** el juez responde "nueva" en ~80 % de
+  los casos, así que el umbral fijo 0.5 no veta nada. Nuevo voto relativo: el
+  juez vota "nueva trama" si su p_new supera SU mediana en esa película.
+  Selección = orden SegLoop saltando la mitad inferior del juez (sin fusión:
+  dos votantes, cada uno con su propio ranking).
+- **Observado post hoc en las 23 del paso 2** (diseñado después de verlas, así
+  que no cuenta como prueba): beat F1 del veto relativo menos veto aleatorio
+  de igual tasa = +0.029 / +0.021 / +0.025 a K = 12 / 24 / 36. Nulo con 200
+  jueces aleatorios (`scripts/veto_null.py`): p empírico 0.045 / 0.075 / 0.020.
+- **Criterio en las 35 de la replicación:** p empírico < 0.05 a K=24 contra
+  200 jueces aleatorios. K=24 fijado de antemano como en el pre-registro del
+  paso 2.
+
+`results/exp011_step2_veto_null.json`
+

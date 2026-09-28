@@ -10,6 +10,8 @@ Sobre los mismos candidatos (top-100 SegLoop por película):
        vjudge    top-K por p_new
        veto      orden SegLoop saltando candidatos con p_new < 0.5 (voto del VJudge)
        veto_random  control: veto aleatorio con la misma tasa de veto por película
+       veto_rel     veto con umbral = mediana del juez en la película (voto relativo);
+                    control veto_rel_random con tasa 50 %
      con métricas de eval_hierarchy y azar del mismo K.
 Pre-registro (EXPERIMENT_LOG, antes de ver resultados):
   primario    ΔAP_beat(mm − SegLoop) > 0 por más de 2 SE
@@ -87,35 +89,42 @@ def main():
                 "vjudge_mm": sorted(cuts, key=lambda c: -scorers["vjudge_mm"][c])[:K],
                 "veto_mm": [c for c in sorted(cuts, key=lambda c: -seg[c])
                             if scorers["vjudge_mm"][c] >= 0.5][:K],
+                # veto relativo: el juez vota "nueva trama" si supera SU mediana en la
+                # película (corrige el sesgo ~80 % "B" sin GT ni ajuste)
+                "veto_rel_mm": [c for c in sorted(cuts, key=lambda c: -seg[c])
+                                if scorers["vjudge_mm"][c] >= np.median(
+                                    [scorers["vjudge_mm"][x] for x in cuts])][:K],
             }
             for name, pred in picks.items():
                 pred = sorted(pred)
                 m = metrics(pred, g)
                 rm = random_metrics(len(pred), g, rng)
                 sel_rows[tt][f"K{K}_{name}"] = m | {f"rand_{k}": v for k, v in rm.items()}
-            # control: veto ALEATORIO con la misma tasa de veto que el VJudge en esta
-            # película (saltar candidatos ya espacia los cortes por sí solo)
-            n_veto = sum(1 for c in cuts if scorers["vjudge_mm"][c] < 0.5)
-            draws = []
-            for _ in range(20):
-                vetoed = set(rng.choice(cuts, n_veto, replace=False).tolist()) if n_veto else set()
-                pred = sorted([c for c in sorted(cuts, key=lambda c: -seg[c])
-                               if c not in vetoed][:K])
-                draws.append(metrics(pred, g) | {f"rand_{k}": v for k, v in
-                                                 random_metrics(len(pred), g, rng, draws=10).items()})
-            sel_rows[tt][f"K{K}_veto_random"] = {
-                k: (float(np.mean([d[k] for d in draws if d[k] is not None]))
-                    if any(d[k] is not None for d in draws) else None) for k in draws[0]}
+            # control: veto ALEATORIO con la misma tasa que cada veto real (saltar
+            # candidatos ya espacia los cortes por sí solo)
+            med = float(np.median([scorers["vjudge_mm"][c] for c in cuts]))
+            for tag, n_veto in (("", sum(1 for c in cuts if scorers["vjudge_mm"][c] < 0.5)),
+                                ("_rel", sum(1 for c in cuts if scorers["vjudge_mm"][c] < med))):
+                draws = []
+                for _ in range(20):
+                    vetoed = set(rng.choice(cuts, n_veto, replace=False).tolist()) if n_veto else set()
+                    pred = sorted([c for c in sorted(cuts, key=lambda c: -seg[c])
+                                   if c not in vetoed][:K])
+                    draws.append(metrics(pred, g) | {f"rand_{k}": v for k, v in
+                                                     random_metrics(len(pred), g, rng, draws=10).items()})
+                sel_rows[tt][f"K{K}_veto{tag}_random"] = {
+                    k: (float(np.mean([d[k] for d in draws if d[k] is not None]))
+                        if any(d[k] is not None for d in draws) else None) for k in draws[0]}
 
     def paired(a, b):
         d = [ap_rows[t][a] - ap_rows[t][b] for t in ap_rows
-             if ap_rows[t][a] is not None and ap_rows[t][b] is not None]
+             if ap_rows[t].get(a) is not None and ap_rows[t].get(b) is not None]
         return (round(float(np.mean(d)), 4), round(float(np.std(d, ddof=1) / np.sqrt(len(d))), 4),
                 len(d)) if len(d) > 1 else (None, None, len(d))
 
-    keys = [k for k in next(iter(ap_rows.values())) if k.startswith("ap_")]
-    ap_mean = {k: round(float(np.mean([r[k] for r in ap_rows.values() if r[k] is not None])), 4)
-               for k in keys}
+    keys = sorted({k for r in ap_rows.values() for k in r if k.startswith("ap_")})
+    ap_mean = {k: round(float(np.mean(v)), 4) for k in keys
+               if (v := [r[k] for r in ap_rows.values() if r.get(k) is not None])}
     for lvl in ("beat", "scene"):
         ap_mean[f"rand_{lvl}"] = round(float(np.mean([r[f"{lvl}_pos_rate"] for r in ap_rows.values()
                                                       if r[f"{lvl}_pos_rate"] is not None])), 4)
@@ -136,11 +145,12 @@ def main():
     veto_paired = {}
     for K in KS:
         for m in ("beat_f1", "beat_pk", "scene_f1"):
-            d = [sel_rows[t][f"K{K}_veto_mm"][m] - sel_rows[t][f"K{K}_veto_random"][m]
-                 for t in sel_rows if sel_rows[t][f"K{K}_veto_mm"][m] is not None
-                 and sel_rows[t][f"K{K}_veto_random"][m] is not None]
-            veto_paired[f"K{K}:{m}"] = (round(float(np.mean(d)), 4),
-                                        round(float(np.std(d, ddof=1) / np.sqrt(len(d))), 4))
+            for real, ctrl in (("veto_mm", "veto_random"), ("veto_rel_mm", "veto_rel_random")):
+                d = [sel_rows[t][f"K{K}_{real}"][m] - sel_rows[t][f"K{K}_{ctrl}"][m]
+                     for t in sel_rows if sel_rows[t][f"K{K}_{real}"][m] is not None
+                     and sel_rows[t][f"K{K}_{ctrl}"][m] is not None]
+                veto_paired[f"K{K}:{real}:{m}"] = (round(float(np.mean(d)), 4),
+                                                   round(float(np.std(d, ddof=1) / np.sqrt(len(d))), 4))
     report = {"protocol": "exp011_step2_relational_v1", "veto_vs_random_paired": veto_paired, "n_films": len(ap_rows),
               "ap_mean": ap_mean, "ap_paired_diff": diffs, "selection": sel_agg,
               "per_film_ap": ap_rows, "per_film_selection": sel_rows}
