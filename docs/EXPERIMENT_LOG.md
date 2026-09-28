@@ -153,6 +153,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | Barrido granularidad v2 (`results/granularity_sweep_v2.INVALID_visual_only.json`) | Resultados del grid sobre 3 pilotos con una sola señal | Solo visual: link_quorum=2 inalcanzable (todo no_topic), tolerance_bins sin efecto. Descartado; el barrido válido de 2 señales es EXP-002 (`results/granularidad/sweep.md`) |
 | EXP-010 | "El VJudge integrando frames + transcript lee fronteras mejor que cada modalidad sola" | AP mm 0.512 < frames 0.540 (2/3 películas); como votante no mejora Δ-vs-azar (+0.060 vs +0.069) |
 | EXP-002 (columna confirm_rate) | "tolerance_bins=1 confirma ~0.24–0.54 de los cortes candidatos" | `consensus_cuts` cuenta cada índice de la ventana ±tolerance_bins (hasta 3× por corte); el salto t0→t1 está inflado. Grupos y coherencia no se ven afectados (hallado en EXP-011) |
+| EXP-011 paso 1 | "Fusionar por continuidad multimodal supera al mejor componente" | A igual nº de cortes SegLoop solo gana en escena F1 (+0.276 vs +0.197), beat F1 (+0.043 vs +0.016) y scene_prec |
 
 ---
 
@@ -339,4 +340,51 @@ referencia pasa a escena Δ F1 +0.139. EXP-001–008 no se re-ejecutan; sus
 cifras quedan marcadas como calculadas con el gestor anterior.
 
 `results/exp011_hierarchy_baseline_fixed19.json`
+
+---
+
+## EXP-011 · Paso 1 — agregador adaptativo por continuidad multimodal
+- **Fecha:** 2026-09-28
+- **Corpus:** 23 películas val (las que tienen señales; extracción del resto
+  en curso, job 53481)
+- **Votantes** (sin fusión): visual SigLIP, transcript TF-IDF, diálogo bge-base
+  (embeddings, test LOO `cross ≥ ρ·min(coh)`, se abstienen sin evidencia);
+  SegLoop frozen (umbral frozen) y habla (|Δ fracción|, p80) como fronteras.
+  Propuesta inicial: top 30 % de scores SegLoop. Fusión por mayoría estricta
+  de activos, rondas hasta estabilizar. ρ=0.9 pre-registrado.
+- **Scores SegLoop:** exportados sobre val por el ensemble frozen; val se usó
+  para elegir pesos/umbral, no para entrenar. Índice reconstruido y verificado
+  (102035 scores, labels idénticos).
+- **Corrección durante el paso:** la coherencia in-sample se inflaba (cada shot
+  pesa 1/|A| en su centroide) y los votantes decían "corte" en ~90 % de pares;
+  se pasó a coherencia leave-one-out antes de medir. ρ no se tocó.
+
+Δ = sistema − azar con el mismo nº de cortes (± error estándar, 23 películas):
+
+| sistema | tópicos | Δ escena F1 | Δ escena Pk | Δ beat F1 | Δ beat Pk | scene_prec |
+|---|---|---|---|---|---|---|
+| mejor fijo (p95_q2 / p95_q1) | 152 / 6 | +0.135 | −0.124 | +0.041 | −0.028 | 0.39 / 0.58 |
+| segloop_frozen | 118 | **+0.276** | −0.247 | +0.027 | −0.064 | 0.643 |
+| adaptive ρ0.9 | 81 | +0.197 | −0.171 | +0.016 | **−0.088** | 0.606 |
+| SegLoop top-K, K = cortes de adaptive ρ0.9 | 81 | **+0.276** | −0.217 | **+0.043** | −0.068 | **0.691** |
+| SegLoop top-K, K = cortes de adaptive ρ0.8 | 36 | +0.214 | −0.140 | **+0.070** | −0.065 | 0.848 |
+| adaptive sin SegLoop | 193 | +0.157 | −0.213 | −0.002 | −0.031 | 0.476 |
+
+- **Resultado:**
+  - Frente al gate pre-registrado (mejor percentil fijo de `manage()`), el
+    adaptativo gana en escena (+0.197 vs +0.135) y en beat Pk (−0.088 vs
+    −0.028), y pierde en beat F1.
+  - Frente al control a igual nº de cortes, SegLoop solo gana en escena F1,
+    beat F1 y scene_prec; el adaptativo solo gana en beat Pk (~1 SE).
+  - Las ganancias sobre `manage()` vienen de incluir a SegLoop como votante.
+- **⚠️ INVALIDADO:** "fusionar unidades por continuidad multimodal supera al
+  mejor componente". A igual granularidad, los votantes de similitud toman
+  peores decisiones de fusión que el ranking de confianza de SegLoop.
+- **Hallazgo:** el ranking de confianza de SegLoop lleva señal de trama: sus
+  36 cortes más fuertes dan beat F1 +0.070, el mejor sistema a nivel beat.
+- **Siguiente (paso 1b):** invertir roles. SegLoop ordena la jerarquía; los
+  votantes solo deciden dónde dejar de dividir (divisivo top-down).
+
+`results/exp011_adaptive_partial20.json` · `topicagg/adaptive_aggregator.py` ·
+`scripts/eval_adaptive.py` · `scripts/build_val_voters.py`
 
