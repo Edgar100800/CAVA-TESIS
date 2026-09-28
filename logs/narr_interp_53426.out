@@ -1,0 +1,101 @@
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   1%|          | 6/729 [00:00<00:14, 49.63it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:06, 107.40it/s]Loading weights:   5%|▍         | 34/729 [00:00<00:06, 110.57it/s]Loading weights:   6%|▋         | 46/729 [00:00<00:06, 113.63it/s]Loading weights:   8%|▊         | 58/729 [00:00<00:05, 113.46it/s]Loading weights:  10%|▉         | 70/729 [00:00<00:05, 114.10it/s]Loading weights:  11%|█         | 82/729 [00:00<00:05, 112.07it/s]Loading weights:  13%|█▎        | 94/729 [00:00<00:05, 110.25it/s]Loading weights:  15%|█▍        | 106/729 [00:00<00:05, 109.38it/s]Loading weights:  16%|█▌        | 118/729 [00:01<00:05, 109.34it/s]Loading weights:  18%|█▊        | 130/729 [00:01<00:05, 112.03it/s]Loading weights:  19%|█▉        | 142/729 [00:01<00:05, 113.29it/s]Loading weights:  21%|██        | 154/729 [00:01<00:05, 113.26it/s]Loading weights:  23%|██▎       | 166/729 [00:01<00:04, 112.88it/s]Loading weights:  24%|██▍       | 178/729 [00:01<00:04, 110.31it/s]Loading weights:  26%|██▌       | 190/729 [00:01<00:04, 109.25it/s]Loading weights:  28%|██▊       | 201/729 [00:01<00:04, 108.40it/s]Loading weights:  29%|██▉       | 212/729 [00:01<00:04, 105.20it/s]Loading weights:  31%|███       | 223/729 [00:02<00:04, 105.39it/s]Loading weights:  32%|███▏      | 234/729 [00:02<00:04, 103.75it/s]Loading weights:  34%|███▎      | 245/729 [00:02<00:04, 103.63it/s]Loading weights:  35%|███▌      | 257/729 [00:02<00:04, 107.88it/s]Loading weights:  37%|███▋      | 270/729 [00:02<00:04, 110.58it/s]Loading weights:  39%|███▊      | 282/729 [00:02<00:04, 109.35it/s]Loading weights:  40%|████      | 294/729 [00:02<00:03, 109.13it/s]Loading weights:  43%|████▎     | 311/729 [00:02<00:03, 125.47it/s]Loading weights:  45%|████▍     | 328/729 [00:02<00:03, 129.49it/s]Loading weights:  53%|█████▎    | 385/729 [00:03<00:01, 250.78it/s]Loading weights:  67%|██████▋   | 485/729 [00:03<00:00, 461.71it/s]Loading weights:  81%|████████  | 589/729 [00:03<00:00, 624.41it/s]Loading weights:  93%|█████████▎| 679/729 [00:03<00:00, 700.35it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 214.00it/s]
+[narrative] tt0047396: 792 shots -> 159 segmentos, 121 cortes GT
+[narrative] tt0049730: 653 shots -> 131 segmentos, 133 cortes GT
+[narrative] tt0061418: 1619 shots -> 324 segmentos, 116 cortes GT
+[narrative] tt0047396/mm: 20/159
+[narrative] tt0047396/mm: 40/159
+[narrative] tt0047396/mm: 60/159
+[narrative] tt0047396/mm: 80/159
+[narrative] tt0047396/mm: 100/159
+[narrative] tt0047396/mm: 120/159
+[narrative] tt0047396/mm: 140/159
+[narrative] tt0047396/mm: 159/159
+[narrative] tt0049730/mm: 20/131
+[narrative] tt0049730/mm: 40/131
+[narrative] tt0049730/mm: 60/131
+[narrative] tt0049730/mm: 80/131
+[narrative] tt0049730/mm: 100/131
+[narrative] tt0049730/mm: 120/131
+[narrative] tt0049730/mm: 131/131
+[narrative] tt0061418/mm: 20/324
+[narrative] tt0061418/mm: 40/324
+[narrative] tt0061418/mm: 60/324
+[narrative] tt0061418/mm: 80/324
+[narrative] tt0061418/mm: 100/324
+[narrative] tt0061418/mm: 120/324
+[narrative] tt0061418/mm: 140/324
+[narrative] tt0061418/mm: 160/324
+[narrative] tt0061418/mm: 180/324
+[narrative] tt0061418/mm: 200/324
+[narrative] tt0061418/mm: 220/324
+[narrative] tt0061418/mm: 240/324
+[narrative] tt0061418/mm: 260/324
+[narrative] tt0061418/mm: 280/324
+[narrative] tt0061418/mm: 300/324
+[narrative] tt0061418/mm: 320/324
+[narrative] tt0061418/mm: 324/324
+[narrative] tt0047396/frames: 20/159
+[narrative] tt0047396/frames: 40/159
+[narrative] tt0047396/frames: 60/159
+[narrative] tt0047396/frames: 80/159
+[narrative] tt0047396/frames: 100/159
+[narrative] tt0047396/frames: 120/159
+[narrative] tt0047396/frames: 140/159
+[narrative] tt0047396/frames: 159/159
+[narrative] tt0049730/frames: 20/131
+[narrative] tt0049730/frames: 40/131
+[narrative] tt0049730/frames: 60/131
+[narrative] tt0049730/frames: 80/131
+[narrative] tt0049730/frames: 100/131
+[narrative] tt0049730/frames: 120/131
+[narrative] tt0049730/frames: 131/131
+[narrative] tt0061418/frames: 20/324
+[narrative] tt0061418/frames: 40/324
+[narrative] tt0061418/frames: 60/324
+[narrative] tt0061418/frames: 80/324
+[narrative] tt0061418/frames: 100/324
+[narrative] tt0061418/frames: 120/324
+[narrative] tt0061418/frames: 140/324
+[narrative] tt0061418/frames: 160/324
+[narrative] tt0061418/frames: 180/324
+[narrative] tt0061418/frames: 200/324
+[narrative] tt0061418/frames: 220/324
+[narrative] tt0061418/frames: 240/324
+[narrative] tt0061418/frames: 260/324
+[narrative] tt0061418/frames: 280/324
+[narrative] tt0061418/frames: 300/324
+[narrative] tt0061418/frames: 320/324
+[narrative] tt0061418/frames: 324/324
+[narrative] tt0047396/text: 20/159
+[narrative] tt0047396/text: 40/159
+[narrative] tt0047396/text: 60/159
+[narrative] tt0047396/text: 80/159
+[narrative] tt0047396/text: 100/159
+[narrative] tt0047396/text: 120/159
+[narrative] tt0047396/text: 140/159
+[narrative] tt0047396/text: 159/159
+[narrative] tt0049730/text: 20/131
+[narrative] tt0049730/text: 40/131
+[narrative] tt0049730/text: 60/131
+[narrative] tt0049730/text: 80/131
+[narrative] tt0049730/text: 100/131
+[narrative] tt0049730/text: 120/131
+[narrative] tt0049730/text: 131/131
+[narrative] tt0061418/text: 20/324
+[narrative] tt0061418/text: 40/324
+[narrative] tt0061418/text: 60/324
+[narrative] tt0061418/text: 80/324
+[narrative] tt0061418/text: 100/324
+[narrative] tt0061418/text: 120/324
+[narrative] tt0061418/text: 140/324
+[narrative] tt0061418/text: 160/324
+[narrative] tt0061418/text: 180/324
+[narrative] tt0061418/text: 200/324
+[narrative] tt0061418/text: 220/324
+[narrative] tt0061418/text: 240/324
+[narrative] tt0061418/text: 260/324
+[narrative] tt0061418/text: 280/324
+[narrative] tt0061418/text: 300/324
+[narrative] tt0061418/text: 320/324
+[narrative] tt0061418/text: 324/324
+[narrative] listo

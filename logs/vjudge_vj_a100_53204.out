@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/vjudge_movie_shots.py", line 162, in <module>
+    main()
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/vjudge_movie_shots.py", line 51, in main
+    from transformers import AutoProcessor, AutoModelForVision2Seq
+ImportError: cannot import name 'AutoModelForVision2Seq' from 'transformers' (/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/__init__.py)
