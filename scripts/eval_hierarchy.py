@@ -128,12 +128,14 @@ def main():
                     default=[50, 60, 70, 80, 90, 95, 98])
     ap.add_argument("--out", default="results/exp011_hierarchy_baseline.json")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--films", nargs="+", default=None, help="restringe a estos tt")
     args = ap.parse_args()
 
     rng = np.random.default_rng(args.seed)
     corpus = Path(args.corpus)
-    films = [load_film(tt, corpus) for tt in sorted(load_split(args.split))
-             if (corpus / f"{tt}.npz").exists() and (MN / "annotation" / f"{tt}.json").exists()]
+    pool = sorted(set(args.films) if args.films else load_split(args.split))
+    films = [load_film(tt, corpus) for tt in pool
+             if (corpus / f"{tt}.json").exists() and (MN / "annotation" / f"{tt}.json").exists()]
     films = [f for f in films if f and len(f["beat"]) >= 2]
     print(f"[hier] {args.split}: {len(films)} películas con escenas + beats", flush=True)
 

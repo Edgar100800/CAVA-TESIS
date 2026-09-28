@@ -54,11 +54,29 @@ def _signal_cuts(score: np.ndarray, percentile: float, min_gap: int) -> list[int
     thr = np.percentile(score, percentile)
     cuts: list[int] = []
     for i in np.argsort(-score):
-        if score[i] < thr:
+        if score[i] < thr or score[i] <= 0:  # score 0 = la señal no ve nada
             break
-        if all(abs(int(i) - c) >= min_gap for c in cuts):
+        if all(abs(int(i) + 1 - c) >= min_gap for c in cuts):  # cut = i+1
             cuts.append(int(i) + 1)
     return sorted(cuts)
+
+
+def _collapse_runs(passing: np.ndarray, votes: np.ndarray) -> list[int]:
+    """Una racha contigua de índices que pasan el quorum = un solo corte, en el
+    pico de votos (empate: centro de la meseta)."""
+    cuts, i, m = [], 0, len(passing)
+    while i < m:
+        if not passing[i]:
+            i += 1
+            continue
+        j = i
+        while j + 1 < m and passing[j + 1]:
+            j += 1
+        run = np.arange(i, j + 1)
+        peak = run[votes[run] == votes[run].max()]
+        cuts.append(int(peak[len(peak) // 2]))
+        i = j + 1
+    return cuts
 
 
 @dataclass
@@ -109,26 +127,28 @@ def manage(signals: dict[str, np.ndarray], *,
             if per_cuts["audio"] else np.zeros(n, dtype=np.int64)
         w.setdefault("audio", 0.5)
 
-    # consenso de fronteras: votos ponderados en ±tolerance_bins
-    votes = np.zeros(max(0, n - 1), dtype=np.float32)
+    # consenso de fronteras: votos ponderados en ±tolerance_bins.
+    # Cada señal vota como mucho una vez por índice (presence), y cada racha de
+    # índices contiguos que alcanza el quorum colapsa en UN corte (pico de votos).
     presence = {name: np.zeros(max(0, n - 1), dtype=bool)
                 for name in per_cuts}
     for name, cuts in per_cuts.items():
-        wsig = w.get(name, 1.0)
         for c in cuts:
             lo = max(0, c - tolerance_bins)
-            hi = min(len(votes), c + tolerance_bins + 1)
-            votes[lo:hi] += wsig
+            hi = min(len(presence[name]), c + tolerance_bins + 1)
             presence[name][lo:hi] = True
+    votes = np.zeros(max(0, n - 1), dtype=np.float32)
+    cnt = np.zeros(max(0, n - 1), dtype=np.float32)
+    for name, pres in presence.items():
+        votes += w.get(name, 1.0) * pres
+        cnt += pres
     total_w = sum(w.get(k, 1.0) for k in per_cuts) or 1.0
     if cut_quorum is not None:
-        cnt = np.zeros(max(0, n - 1), dtype=np.float32)
-        for name in per_cuts:
-            cnt += presence[name]
-        consensus = [int(i) for i in range(len(votes)) if cnt[i] >= cut_quorum]
+        passing = cnt >= cut_quorum
     else:
         majority = max(1.0, int(np.ceil(total_w / 2)))  # mayoría de señales activas
-        consensus = [int(i) for i in range(len(votes)) if votes[i] >= majority]
+        passing = votes >= majority
+    consensus = _collapse_runs(passing, votes)
 
     # consenso de enlace: quorum de señales agrupando el par (union-find)
     parent = list(range(n))

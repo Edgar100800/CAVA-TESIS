@@ -313,3 +313,30 @@ Votante en `manage()` (p80, q2, t1; F1@±15 s, media de 3 películas):
 
 `results/exp011_hierarchy_baseline.json` · `scripts/eval_hierarchy.py`
 
+### Corrección del gestor (2026-09-28, tras EXP-011 paso 0)
+Tres defectos en `topicagg/multimodal_manager.py`, con tests de regresión en
+`tests/test_multimodal_manager.py`:
+1. `consensus_cuts` repetía cada corte en toda la ventana ±tolerance_bins, y
+   una señal con dos cortes cercanos votaba dos veces. Ahora cada señal vota
+   una vez por índice y cada racha colapsa en un corte.
+2. Una señal sin información (score 0, p. ej. TF-IDF en silencio) emitía
+   cortes. Ahora score 0 no corta.
+3. `min_gap` comparaba contra `i` en vez de `i+1`, lo que permitía cortes
+   adyacentes.
+
+Los defectos 2 y 3 cambian los cortes por señal, así que **todos los números
+de `manage()` de EXP-001 a EXP-011 paso 0 se calcularon con el gestor
+defectuoso**. Re-ejecución del paso 0 sobre las mismas 19 películas:
+
+| sistema | tópicos antes→después | Δ escena F1 vs azar | Δ beat F1 vs azar |
+|---|---|---|---|
+| p80_q1 | 36→30 | +0.116→+0.107 | +0.020→+0.018 |
+| p90_q2 | 233→204 | +0.123→**+0.139** | +0.003→+0.005 |
+| p95_q2 | 170→143 | +0.117→+0.138 | +0.004→+0.006 |
+
+La conclusión del paso 0 no cambia (escenas sí, beats en el azar); la
+referencia pasa a escena Δ F1 +0.139. EXP-001–008 no se re-ejecutan; sus
+cifras quedan marcadas como calculadas con el gestor anterior.
+
+`results/exp011_hierarchy_baseline_fixed19.json`
+
