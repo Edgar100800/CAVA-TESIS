@@ -38,11 +38,16 @@ def main():
     ap.add_argument("--corpus", default="data/movienet_topics")
     ap.add_argument("--out", default="results/exp011_step2_relational.json")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--films-file", default=None,
+                    help="evalúa solo estas películas (p. ej. la replicación pre-registrada)")
     args = ap.parse_args()
 
     rng = np.random.default_rng(args.seed)
     inp, corpus = Path(args.inp), Path(args.corpus)
     films = sorted({f.name.split(".")[0] for f in inp.glob("*.mm.json")})
+    if args.films_file:
+        keep = set(Path(args.films_file).read_text().split())
+        films = [t for t in films if t in keep]
     ap_rows, sel_rows = {}, {}
     for tt in films:
         conds = {}
