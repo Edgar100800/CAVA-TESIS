@@ -449,3 +449,40 @@ cifras quedan marcadas como calculadas con el gestor anterior.
 
 `scripts/vjudge_relational.py` · `scripts/eval_relational.py`
 
+### Resultado EXP-011 paso 2 (job 53482, 23 películas)
+AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
+
+| scorer | AP beat | AP escena |
+|---|---|---|
+| azar (tasa positiva) | 0.271 | 0.567 |
+| SegLoop | 0.323 | **0.774** |
+| VJudge mm | **0.349** | 0.657 |
+| VJudge frames | 0.342 | 0.632 |
+
+- **Primario:** ΔAP beat(mm − SegLoop) = **+0.027 ± 0.017** (1.55 SE); mm
+  gana en 11 de 23 películas. **No alcanza el umbral de 2 SE.**
+- **Secundarios:**
+  - mm − frames = +0.007 ± 0.018: sin diferencia.
+  - veto_mm − veto_random ≈ 0 en todos los K.
+- **Defecto del diseño:** el juez responde "nueva trama" casi siempre (p
+  mediana 0.82; p < 0.5 en solo 1 % de candidatos), así que el veto con umbral
+  fijo 0.5 casi no actúa y la prueba del veto no informa. El umbral no se
+  reajusta a posteriori.
+- **Escena:** SegLoop es muy superior (−0.118 ± 0.023 para el VJudge), como se
+  esperaba de un detector supervisado de escenas.
+- **Patrón:** con top-K propio del VJudge, beat Pk mejora (−0.084 vs −0.056 a
+  K=24) y beat F1 empeora; es el mismo desacuerdo Pk/F1 del paso 1.
+- **Estado:** dirección positiva y no significativa. No se declara ni validado
+  ni invalidado; se resuelve con replicación, no re-analizando estas 23.
+
+`results/exp011_step2_relational.json`
+
+### Pre-registro EXP-011 paso 2-R (replicación)
+- **Películas:** las 35 películas val con beats que no están en el paso 2
+  (`scripts/exp011_replication_films.txt`), nunca vistas por esta prueba.
+- **Configuración:** idéntica al paso 2, solo condición `mm`.
+- **Criterio:** ΔAP beat(mm − SegLoop) > 0 por más de 2 SE en las
+  35 películas nuevas. Si pasa, se valida "el VJudge relacional añade
+  señal de trama sobre SegLoop"; si no, se invalida. Las 23 del paso 2 no se
+  suman para decidir.
+

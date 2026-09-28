@@ -1,0 +1,48 @@
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   1%|          | 5/729 [00:00<00:18, 38.36it/s]Loading weights:   2%|▏         | 17/729 [00:00<00:10, 68.25it/s]Loading weights:   4%|▍         | 29/729 [00:00<00:08, 85.14it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:07, 96.13it/s]Loading weights:   7%|▋         | 53/729 [00:00<00:06, 103.30it/s]Loading weights:   9%|▉         | 66/729 [00:00<00:06, 106.53it/s]Loading weights:  11%|█         | 78/729 [00:00<00:06, 106.10it/s]Loading weights:  12%|█▏        | 90/729 [00:00<00:06, 105.25it/s]Loading weights:  14%|█▍        | 101/729 [00:01<00:06, 104.17it/s]Loading weights:  16%|█▌        | 114/729 [00:01<00:05, 106.82it/s]Loading weights:  17%|█▋        | 125/729 [00:01<00:05, 104.14it/s]Loading weights:  19%|█▉        | 138/729 [00:01<00:05, 107.15it/s]Loading weights:  21%|██        | 150/729 [00:01<00:05, 106.94it/s]Loading weights:  22%|██▏       | 162/729 [00:01<00:05, 108.09it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:05, 108.64it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:05, 107.90it/s]Loading weights:  27%|██▋       | 198/729 [00:01<00:04, 107.72it/s]Loading weights:  29%|██▉       | 210/729 [00:02<00:04, 107.89it/s]Loading weights:  30%|███       | 221/729 [00:02<00:04, 105.00it/s]Loading weights:  32%|███▏      | 234/729 [00:02<00:04, 107.63it/s]Loading weights:  34%|███▎      | 246/729 [00:02<00:04, 106.70it/s]Loading weights:  35%|███▌      | 257/729 [00:02<00:04, 104.16it/s]Loading weights:  37%|███▋      | 269/729 [00:02<00:04, 104.90it/s]Loading weights:  39%|███▊      | 282/729 [00:02<00:04, 107.69it/s]Loading weights:  40%|████      | 294/729 [00:02<00:03, 109.23it/s]Loading weights:  42%|████▏     | 305/729 [00:02<00:03, 106.02it/s]Loading weights:  44%|████▎     | 318/729 [00:03<00:03, 108.40it/s]Loading weights:  45%|████▌     | 330/729 [00:03<00:03, 106.66it/s]Loading weights:  57%|█████▋    | 412/729 [00:03<00:01, 301.15it/s]Loading weights:  68%|██████▊   | 494/729 [00:03<00:00, 444.39it/s]Loading weights:  78%|███████▊  | 570/729 [00:03<00:00, 525.95it/s]Loading weights:  89%|████████▉ | 651/729 [00:03<00:00, 605.94it/s]Loading weights:  99%|█████████▉| 725/729 [00:03<00:00, 604.17it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 196.78it/s]
+[relational] tt0048545/mm: 100 candidatos
+[relational] tt0061722/mm: 100 candidatos
+[relational] tt0066026/mm: 100 candidatos
+[relational] tt0071562/mm: 100 candidatos
+[relational] tt0072890/mm: 100 candidatos
+[relational] tt0073486/mm: 100 candidatos
+[relational] tt0076759/mm: 100 candidatos
+[relational] tt0080684/mm: 100 candidatos
+[relational] tt0083929/mm: 100 candidatos
+[relational] tt0087332/mm: 100 candidatos
+[relational] tt0090756/mm: 100 candidatos
+[relational] tt0094737/mm: 100 candidatos
+[relational] tt0096446/mm: 100 candidatos
+[relational] tt0097576/mm: 100 candidatos
+[relational] tt0099685/mm: 100 candidatos
+[relational] tt0102138/mm: 100 candidatos
+[relational] tt0103074/mm: 100 candidatos
+[relational] tt0105236/mm: 100 candidatos
+[relational] tt0108160/mm: 100 candidatos
+[relational] tt0110475/mm: 100 candidatos
+[relational] tt0112641/mm: 100 candidatos
+[relational] tt0114558/mm: 100 candidatos
+[relational] tt0116367/mm: 100 candidatos
+[relational] tt0048545/frames: 100 candidatos
+[relational] tt0061722/frames: 100 candidatos
+[relational] tt0066026/frames: 100 candidatos
+[relational] tt0071562/frames: 100 candidatos
+[relational] tt0072890/frames: 100 candidatos
+[relational] tt0073486/frames: 100 candidatos
+[relational] tt0076759/frames: 100 candidatos
+[relational] tt0080684/frames: 100 candidatos
+[relational] tt0083929/frames: 100 candidatos
+[relational] tt0087332/frames: 100 candidatos
+[relational] tt0090756/frames: 100 candidatos
+[relational] tt0094737/frames: 100 candidatos
+[relational] tt0096446/frames: 100 candidatos
+[relational] tt0097576/frames: 100 candidatos
+[relational] tt0099685/frames: 100 candidatos
+[relational] tt0102138/frames: 100 candidatos
+[relational] tt0103074/frames: 100 candidatos
+[relational] tt0105236/frames: 100 candidatos
+[relational] tt0108160/frames: 100 candidatos
+[relational] tt0110475/frames: 100 candidatos
+[relational] tt0112641/frames: 100 candidatos
+[relational] tt0114558/frames: 100 candidatos
+[relational] tt0116367/frames: 100 candidatos
+[relational] listo
