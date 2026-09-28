@@ -422,3 +422,30 @@ cifras quedan marcadas como calculadas con el gestor anterior.
 
 `results/exp011_step1b_partial.json`
 
+---
+
+## EXP-011 · Paso 2 — VJudge relacional en cortes candidatos (pre-registro)
+- **Fecha:** 2026-09-28 (registrado antes de ver resultados; job 53482)
+- **Corpus:** 23 películas val · top-100 cortes SegLoop por película (2300)
+- **Configuración:** Qwen2.5-VL-7B frozen compara ANTES (keyframes de los shots
+  c-6, c-1) y DESPUÉS (c, c+5) de cada corte: "¿sigue el mismo evento de trama
+  (A) o la historia pasa a otro (B)?". p_new = softmax de los logits de A/B.
+  Condiciones: `mm` (+ diálogo 45 s a cada lado) y `frames`.
+- **Criterio primario:** AP pareada por película, candidato positivo = inicio de
+  beat a ±60 s. Pasa si ΔAP(mm − SegLoop) > 0 por más de 2 SE.
+  Calibración con jueces falsos: aleatorio −0.021 ± 0.013; oráculo +0.677.
+- **Secundarios:**
+  - AP(mm) > AP(frames).
+  - veto_mm − veto_random en beat F1 a K=24 > 2 SE. Solo como apoyo: con un
+    juez aleatorio da +0.025 ± 0.013 (1.9 SE), así que es demasiado ruidoso
+    para decidir por sí solo.
+- **Controles:**
+  - Veto aleatorio con la misma tasa de veto. Un veto aleatorio ya mejora
+    beat F1 sobre SegLoop top-K (+0.062 vs +0.071 en ese sorteo), porque saltar
+    candidatos espacia los cortes.
+  - Azar con el mismo K.
+- **Invalidación:** si ΔAP(mm − SegLoop) ≤ 2 SE, el VJudge relacional no añade
+  señal de trama sobre el ranking de SegLoop.
+
+`scripts/vjudge_relational.py` · `scripts/eval_relational.py`
+
