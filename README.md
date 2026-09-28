@@ -51,7 +51,7 @@ CAVA/
 
 - v1 (`~/Tesis/A2Summ/a2summ_x`): congelada tras el paper; su limitación
   estructural (texto aplasta la señal visual) documentada en
-  `topicagg/ANALYSIS_VIDEO_SIGNAL.md`.
+  `topicagg/video-signal-analysis.md`.
 - v2.1 nace aquí: gestor SIN FUSIÓN (consenso de votos por señal,
   provenance por grupo). Registros en `VERSIONS.md`.
 - Documentos heredados en `docs/` (copias de lectura); los originales viven en

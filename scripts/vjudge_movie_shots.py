@@ -48,14 +48,14 @@ def main():
 
     import torch
     from PIL import Image
-    from transformers import AutoProcessor, AutoModelForVision2Seq
+    from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration as AutoModelVL
 
     os.environ.setdefault("HF_HOME",
                           "/home/edgar.chambilla/Tesis/SegLoop/data/hf_cache")
     model_id = "Qwen/Qwen2.5-VL-7B-Instruct"
     revision = "cc594898137f460bfe9f0759e9844b3ce807cfb5"
     processor = AutoProcessor.from_pretrained(model_id, revision=revision)
-    model = AutoModelForVision2Seq.from_pretrained(
+    model = AutoModelVL.from_pretrained(
         model_id, revision=revision, torch_dtype=torch.bfloat16,
         device_map="cuda" if torch.cuda.is_available() else "cpu")
     model.eval()

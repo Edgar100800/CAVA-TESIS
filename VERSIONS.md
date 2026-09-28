@@ -2,7 +2,7 @@
 
 > **Repo propio desde 2026-09-25:** `~/Tesis/CAVA` (antes vivía en `~/Tesis/A2Summ/topicagg`;
 > esa copia queda congelada como origen). Documentación del proyecto: `docs/` +
-> `docs/PLAN_GRANULARIDAD.md` (afinado quant+qual, abierto).
+> `docs/granularity-plan.md` (afinado quant+qual, abierto).
 
 > Registro de versiones de implementación. Una sección por versión: qué cambió,
 > por qué, y qué evidencia la respalda. Dir de trabajo v2: `topicagg/`.

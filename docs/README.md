@@ -4,8 +4,8 @@ Esta carpeta contiene **únicamente lo necesario para implementar y operar CAVA*
 
 | Archivo | Rol |
 |---|---|
-| `INTEGRACION_A2SUMX.md` | Diseño de integración SegLoop+VJudge ▸ analizador (contrato, fases A–E) |
-| `PLAN_GRANULARIDAD.md` | Plan activo: afinado de granularidad temática (quant+qual) |
+| `integration-cava.md` | Diseño de integración SegLoop+VJudge ▸ analizador (contrato, fases A–E) |
+| `granularity-plan.md` | Plan activo: afinado de granularidad temática (quant+qual) |
 
 **No va aquí:**
 
