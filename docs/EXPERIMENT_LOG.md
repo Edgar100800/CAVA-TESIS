@@ -155,6 +155,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-002 (columna confirm_rate) | "tolerance_bins=1 confirma ~0.24–0.54 de los cortes candidatos" | `consensus_cuts` cuenta cada índice de la ventana ±tolerance_bins (hasta 3× por corte); el salto t0→t1 está inflado. Grupos y coherencia no se ven afectados (hallado en EXP-011) |
 | EXP-011 paso 1 | "Fusionar por continuidad multimodal supera al mejor componente" | A igual nº de cortes SegLoop solo gana en escena F1 (+0.276 vs +0.197), beat F1 (+0.043 vs +0.016) y scene_prec |
 | EXP-011 paso 1b | "Los votantes de similitud deciden dónde parar mejor que el orden de SegLoop" | ρ=0.9 pre-registrado para en ~5 tópicos, igual al control; ρ=1.0 +0.017 beat F1 (~1 SE, no pre-registrado) |
+| EXP-011 paso 2 / 2-R | "El VJudge relacional (contexto ±2 shots) ordena transiciones de trama mejor que SegLoop" | +0.027 ± 0.017 en 23 películas no replica: −0.002 ± 0.012 en 35 nuevas |
 
 ---
 
@@ -501,4 +502,27 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
   paso 2.
 
 `results/exp011_step2_veto_null.json`
+
+### Resultado EXP-011 paso 2-R (replicación, 35 películas val nuevas, job 53504)
+| scorer | AP beat | AP escena |
+|---|---|---|
+| azar | 0.212 | 0.670 |
+| SegLoop | **0.259** | **0.856** |
+| VJudge mm | 0.257 | 0.751 |
+
+- **Primario:** ΔAP beat(mm − SegLoop) = **−0.002 ± 0.012**; mm gana en 14 de
+  35. **⚠️ INVALIDADO:** "el VJudge relacional con contexto local (±2 shots)
+  ordena transiciones de trama mejor que SegLoop". El +0.027 del paso 2 no
+  replica.
+- **Veto relativo (pre-registrado):** +0.022 sobre veto aleatorio de igual
+  tasa, p empírico 0.015 < 0.05 → **pasa**. Replica el +0.021 post hoc de las 23.
+- **Contra SegLoop solo** (descriptivo, pareado): el veto relativo no mejora
+  beats en ninguna K de ninguna de las dos muestras (p. ej. K24 +0.007 ±
+  0.013 en las 35) y baja escena F1 entre −0.007 y −0.024 en todas.
+- **Lectura:** los votos del juez no son aleatorios (dañan menos que un veto al
+  azar), pero no añaden señal de trama sobre SegLoop. Con contexto local el
+  VJudge no aporta al nivel beat. El siguiente paso tiene que ampliar el
+  contexto que ve el juez, no cambiar cómo se lee su voto.
+
+`results/exp011_step2R_replication.json` · `results/exp011_step2R_veto_null.json`
 

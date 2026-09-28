@@ -1,0 +1,37 @@
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<00:42, 17.14it/s]Loading weights:   2%|▏         | 17/729 [00:00<00:10, 68.52it/s]Loading weights:   5%|▍         | 34/729 [00:00<00:06, 106.12it/s]Loading weights:   7%|▋         | 52/729 [00:00<00:05, 121.33it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:05, 111.00it/s]Loading weights:  11%|█         | 78/729 [00:00<00:05, 116.35it/s]Loading weights:  13%|█▎        | 95/729 [00:00<00:04, 131.75it/s]Loading weights:  15%|█▍        | 109/729 [00:00<00:04, 132.09it/s]Loading weights:  17%|█▋        | 123/729 [00:01<00:04, 133.03it/s]Loading weights:  19%|█▉        | 137/729 [00:01<00:05, 115.08it/s]Loading weights:  21%|██        | 150/729 [00:01<00:05, 112.13it/s]Loading weights:  22%|██▏       | 162/729 [00:01<00:05, 112.98it/s]Loading weights:  25%|██▍       | 180/729 [00:01<00:04, 128.76it/s]Loading weights:  27%|██▋       | 196/729 [00:01<00:04, 130.83it/s]Loading weights:  29%|██▉       | 210/729 [00:01<00:04, 119.61it/s]Loading weights:  31%|███       | 223/729 [00:01<00:04, 121.84it/s]Loading weights:  32%|███▏      | 236/729 [00:02<00:04, 122.32it/s]Loading weights:  34%|███▍      | 251/729 [00:02<00:03, 129.86it/s]Loading weights:  36%|███▋      | 265/729 [00:02<00:03, 130.00it/s]Loading weights:  38%|███▊      | 279/729 [00:02<00:03, 131.62it/s]Loading weights:  40%|████      | 293/729 [00:02<00:04, 105.81it/s]Loading weights:  42%|████▏     | 306/729 [00:02<00:03, 109.24it/s]Loading weights:  44%|████▎     | 318/729 [00:02<00:03, 109.86it/s]Loading weights:  45%|████▌     | 330/729 [00:02<00:03, 110.70it/s]Loading weights:  57%|█████▋    | 415/729 [00:02<00:01, 308.47it/s]Loading weights:  69%|██████▉   | 503/729 [00:03<00:00, 466.00it/s]Loading weights:  80%|███████▉  | 582/729 [00:03<00:00, 557.26it/s]Loading weights:  91%|█████████ | 665/729 [00:03<00:00, 628.36it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 219.24it/s]
+[relational] tt0118571/mm: 100 candidatos
+[relational] tt0119094/mm: 100 candidatos
+[relational] tt0119822/mm: 100 candidatos
+[relational] tt0120780/mm: 100 candidatos
+[relational] tt0121765/mm: 100 candidatos
+[relational] tt0129387/mm: 100 candidatos
+[relational] tt0138097/mm: 100 candidatos
+[relational] tt0145487/mm: 100 candidatos
+[relational] tt0166924/mm: 100 candidatos
+[relational] tt0167261/mm: 100 candidatos
+[relational] tt0167404/mm: 100 candidatos
+[relational] tt0186151/mm: 100 candidatos
+[relational] tt0209958/mm: 100 candidatos
+[relational] tt0258463/mm: 100 candidatos
+[relational] tt0268126/mm: 100 candidatos
+[relational] tt0311113/mm: 100 candidatos
+[relational] tt0343818/mm: 100 candidatos
+[relational] tt0370263/mm: 100 candidatos
+[relational] tt0371724/mm: 100 candidatos
+[relational] tt0408236/mm: 100 candidatos
+[relational] tt0434409/mm: 100 candidatos
+[relational] tt0467200/mm: 100 candidatos
+[relational] tt0758758/mm: 100 candidatos
+[relational] tt0808151/mm: 100 candidatos
+[relational] tt0898367/mm: 100 candidatos
+[relational] tt0964517/mm: 100 candidatos
+[relational] tt1032755/mm: 100 candidatos
+[relational] tt1100089/mm: 100 candidatos
+[relational] tt1182345/mm: 100 candidatos
+[relational] tt1284575/mm: 100 candidatos
+[relational] tt1409024/mm: 100 candidatos
+[relational] tt1504320/mm: 100 candidatos
+[relational] tt1591095/mm: 100 candidatos
+[relational] tt1659337/mm: 100 candidatos
+[relational] tt2132285/mm: 100 candidatos
+[relational] listo
