@@ -101,7 +101,7 @@ def main():
             cues.append((s, e, " ".join(txt)))
 
         print(f"[vjudge-mn] {tt}: {n} shots, {len(cues)} cues, "
-              f"dur={n/fps:.0f}s", flush=True)
+              f"dur={shots[n - 1][1] / fps:.0f}s", flush=True)
 
         results = []
         for si in range(0, n, args.batch_shots):
@@ -130,7 +130,7 @@ def main():
                                [{"type": "text", "text": prompt}]
                 }]
                 text_input = processor.apply_chat_template(
-                    messages, tokenize=True, add_generation_prompt=True)
+                    messages, tokenize=False, add_generation_prompt=True)
                 inputs = processor(
                     text=[text_input], images=imgs, return_tensors="pt"
                 ).to(model.device)
