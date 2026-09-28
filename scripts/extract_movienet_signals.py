@@ -49,6 +49,10 @@ def main():
     ap.add_argument("--out", default="/home/edgar.chambilla/Tesis/CAVA/data/movienet_topics")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--batch", type=int, default=128)
+    ap.add_argument("--split", choices=["train", "val", "test"], default=None,
+                    help="solo películas de este split de MovieNet-318")
+    ap.add_argument("--require-story", action="store_true",
+                    help="solo películas con anotación story (beats de trama)")
     args = ap.parse_args()
 
     import torch
@@ -70,12 +74,17 @@ def main():
 
     anno = {}
     anno_dir = seg_root / "anno"
-    for f in ("anno.train.ndjson", "anno.val.ndjson", "anno.test.ndjson"):
+    splits = (args.split,) if args.split else ("train", "val", "test")
+    for f in (f"anno.{sp}.ndjson" for sp in splits):
         for line in open(anno_dir / f):
             r = json.loads(line)
             anno.setdefault(r["video_id"], []).append(r)
 
     movies = sorted(anno)
+    if args.require_story:
+        ann = seg_root / "annotation"
+        movies = [t for t in movies if (ann / f"{t}.json").exists()
+                  and json.loads((ann / f"{t}.json").read_text()).get("story")]
     if args.limit:
         movies = movies[: args.limit]
 

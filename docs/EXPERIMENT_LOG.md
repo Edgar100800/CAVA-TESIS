@@ -268,3 +268,47 @@ Votante en `manage()` (p80, q2, t1; F1@±15 s, media de 3 películas):
 
 `results/exp010_narrative.json`
 
+---
+
+## EXP-011 · Paso 0 — baseline jerárquico (escenas y beats de trama)
+- **Fecha:** 2026-09-28
+- **Corpus:** 19 películas MovieNet-318 *val* con señales + `annotation/*.json`
+  `story` (párrafos de sinopsis alineados a shots). GT medio: 129 escenas,
+  17 beats, 1353 shots. Los beats varían de 4 a 68 por película según el
+  detalle de la sinopsis.
+- **Gestor:** sin fusión, visual SigLIP + transcript TF-IDF, t1,
+  percentil {50…98} × link_quorum {1, 2}; fronteras = cambios de etiqueta.
+- **Métricas:** F1 escena ±15 s, F1 beat ±60 s (solo dentro del tramo
+  anotado), Pk por nivel, scene_prec (corte a ±1 shot de un corte de escena).
+  Todo contra azar con el mismo nº de cortes.
+
+| sistema | tópicos | escena F1 (azar) | escena Pk (azar) | beat F1 (azar) | beat Pk (azar) | scene_prec (azar) |
+|---|---|---|---|---|---|---|
+| p70_q1 | 60 | 0.325 (0.195) | 0.319 (0.420) | 0.236 (0.218) | 0.527 (0.566) | 0.487 (0.204) |
+| p80_q1 | 36 | 0.260 (0.144) | **0.306** (0.389) | 0.236 (0.216) | 0.515 (0.547) | 0.549 (0.207) |
+| p90_q1 | 14 | 0.146 (0.065) | 0.311 (0.355) | 0.175 (0.151) | 0.467 (0.494) | **0.617** (0.208) |
+| p80_q2 | 384 | 0.384 (0.302) | 0.529 (0.608) | 0.091 (0.090) | 0.590 (0.593) | 0.336 (0.207) |
+| p90_q2 | 233 | **0.427** (0.305) | 0.429 (0.550) | 0.139 (0.135) | 0.580 (0.590) | 0.377 (0.208) |
+
+- **Resultado:**
+  - A nivel escena hay señal: F1 +0.12 sobre el azar (p90_q2) y Pk −0.08
+    (p80_q1).
+  - A nivel beat de trama las señales actuales están **en el azar** en todas
+    las configuraciones: F1 como mucho +0.02, Pk como mucho −0.04.
+  - Cuando ambas señales coinciden (q1), el corte cae en un corte de escena
+    real 3× más que el azar (scene_prec 0.55–0.62 vs 0.21).
+- **Lectura:** visual + transcript por novedad ven cambios de escena, no de
+  trama. El nivel beat es lo que tienen que aportar las capas nuevas (VJudge,
+  enlace multimodal, agregador adaptativo).
+- **Referencia pre-registrada para los pasos 1–2:** un agregador adaptativo con
+  UNA salida debe superar, contra el azar, al mejor percentil fijo elegido con
+  GT por nivel (escena Δ F1 +0.12 · beat Δ F1 +0.02 / Δ Pk −0.04), sin bajar
+  scene_prec del mejor fijo de ese nivel de granularidad.
+- **Defecto hallado:** `manage().consensus_cuts` marca cada índice de la ventana
+  ±tolerance_bins donde se alcanza la mayoría, así que un corte se reporta hasta
+  3 veces seguidas. Las filas `consensus` del JSON no son válidas.
+- **Nota:** Pk a nivel beat tiende a ~0.43 con muy pocos cortes, para el
+  sistema y para el azar por igual; se lee solo como diferencia contra el azar.
+
+`results/exp011_hierarchy_baseline.json` · `scripts/eval_hierarchy.py`
+
