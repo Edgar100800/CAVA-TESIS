@@ -1,0 +1,60 @@
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   1%|          | 4/729 [00:00<00:18, 38.66it/s]Loading weights:   2%|▏         | 17/729 [00:00<00:10, 67.78it/s]Loading weights:   4%|▍         | 30/729 [00:00<00:07, 90.41it/s]Loading weights:   6%|▌         | 42/729 [00:00<00:06, 99.56it/s]Loading weights:   7%|▋         | 54/729 [00:00<00:06, 103.56it/s]Loading weights:   9%|▉         | 66/729 [00:00<00:06, 105.19it/s]Loading weights:  11%|█         | 78/729 [00:00<00:06, 106.17it/s]Loading weights:  12%|█▏        | 90/729 [00:00<00:06, 105.48it/s]Loading weights:  14%|█▍        | 101/729 [00:01<00:05, 104.72it/s]Loading weights:  16%|█▌        | 114/729 [00:01<00:05, 108.54it/s]Loading weights:  17%|█▋        | 125/729 [00:01<00:05, 105.98it/s]Loading weights:  19%|█▉        | 138/729 [00:01<00:05, 110.41it/s]Loading weights:  21%|██        | 150/729 [00:01<00:05, 110.41it/s]Loading weights:  22%|██▏       | 162/729 [00:01<00:05, 109.36it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:05, 108.76it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:05, 107.89it/s]Loading weights:  27%|██▋       | 198/729 [00:01<00:04, 108.70it/s]Loading weights:  29%|██▊       | 209/729 [00:02<00:04, 106.74it/s]Loading weights:  30%|███       | 222/729 [00:02<00:04, 111.22it/s]Loading weights:  32%|███▏      | 234/729 [00:02<00:04, 108.76it/s]Loading weights:  34%|███▎      | 246/729 [00:02<00:04, 109.42it/s]Loading weights:  35%|███▌      | 258/729 [00:02<00:04, 110.86it/s]Loading weights:  37%|███▋      | 270/729 [00:02<00:04, 110.01it/s]Loading weights:  39%|███▊      | 282/729 [00:02<00:04, 108.62it/s]Loading weights:  40%|████      | 293/729 [00:02<00:04, 106.00it/s]Loading weights:  42%|████▏     | 306/729 [00:02<00:03, 109.39it/s]Loading weights:  44%|████▎     | 318/729 [00:03<00:03, 107.72it/s]Loading weights:  45%|████▌     | 329/729 [00:03<00:03, 105.45it/s]Loading weights:  56%|█████▌    | 409/729 [00:03<00:01, 294.82it/s]Loading weights:  68%|██████▊   | 495/729 [00:03<00:00, 453.31it/s]Loading weights:  81%|████████  | 590/729 [00:03<00:00, 594.53it/s]Loading weights:  94%|█████████▍| 686/729 [00:03<00:00, 696.82it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 202.66it/s]
+[ledger] tt0048545: 101 unidades, 100 cortes
+[ledger] tt0061722: 101 unidades, 100 cortes
+[ledger] tt0066026: 101 unidades, 100 cortes
+[ledger] tt0071562: 101 unidades, 100 cortes
+[ledger] tt0072890: 101 unidades, 100 cortes
+[ledger] tt0073486: 101 unidades, 100 cortes
+[ledger] tt0076759: 101 unidades, 100 cortes
+[ledger] tt0080684: 101 unidades, 100 cortes
+[ledger] tt0083929: 101 unidades, 100 cortes
+[ledger] tt0087332: 101 unidades, 100 cortes
+[ledger] tt0090756: 101 unidades, 100 cortes
+[ledger] tt0094737: 101 unidades, 100 cortes
+[ledger] tt0096446: 101 unidades, 100 cortes
+[ledger] tt0097576: 101 unidades, 100 cortes
+[ledger] tt0099685: 101 unidades, 100 cortes
+[ledger] tt0102138: 101 unidades, 100 cortes
+[ledger] tt0103074: 101 unidades, 100 cortes
+[ledger] tt0105236: 101 unidades, 100 cortes
+[ledger] tt0108160: 101 unidades, 100 cortes
+[ledger] tt0110475: 101 unidades, 100 cortes
+[ledger] tt0112641: 101 unidades, 100 cortes
+[ledger] tt0114558: 101 unidades, 100 cortes
+[ledger] tt0116367: 101 unidades, 100 cortes
+[ledger] tt0118571: 101 unidades, 100 cortes
+[ledger] tt0119094: 101 unidades, 100 cortes
+[ledger] tt0119822: 101 unidades, 100 cortes
+[ledger] tt0120780: 101 unidades, 100 cortes
+[ledger] tt0121765: 101 unidades, 100 cortes
+[ledger] tt0129387: 101 unidades, 100 cortes
+[ledger] tt0138097: 101 unidades, 100 cortes
+[ledger] tt0145487: 101 unidades, 100 cortes
+[ledger] tt0166924: 101 unidades, 100 cortes
+[ledger] tt0167261: 101 unidades, 100 cortes
+[ledger] tt0167404: 101 unidades, 100 cortes
+[ledger] tt0186151: 101 unidades, 100 cortes
+[ledger] tt0209958: 101 unidades, 100 cortes
+[ledger] tt0258463: 101 unidades, 100 cortes
+[ledger] tt0268126: 101 unidades, 100 cortes
+[ledger] tt0311113: 101 unidades, 100 cortes
+[ledger] tt0343818: 101 unidades, 100 cortes
+[ledger] tt0370263: 101 unidades, 100 cortes
+[ledger] tt0371724: 101 unidades, 100 cortes
+[ledger] tt0408236: 101 unidades, 100 cortes
+[ledger] tt0434409: 101 unidades, 100 cortes
+[ledger] tt0467200: 101 unidades, 100 cortes
+[ledger] tt0758758: 101 unidades, 100 cortes
+[ledger] tt0808151: 101 unidades, 100 cortes
+[ledger] tt0898367: 101 unidades, 100 cortes
+[ledger] tt0964517: 101 unidades, 100 cortes
+[ledger] tt1032755: 101 unidades, 100 cortes
+[ledger] tt1100089: 101 unidades, 100 cortes
+[ledger] tt1182345: 101 unidades, 100 cortes
+[ledger] tt1284575: 101 unidades, 100 cortes
+[ledger] tt1409024: 101 unidades, 100 cortes
+[ledger] tt1504320: 101 unidades, 100 cortes
+[ledger] tt1591095: 101 unidades, 100 cortes
+[ledger] tt1659337: 101 unidades, 100 cortes
+[ledger] tt2132285: 101 unidades, 100 cortes
+[ledger] listo

@@ -156,6 +156,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-011 paso 1 | "Fusionar por continuidad multimodal supera al mejor componente" | A igual nº de cortes SegLoop solo gana en escena F1 (+0.276 vs +0.197), beat F1 (+0.043 vs +0.016) y scene_prec |
 | EXP-011 paso 1b | "Los votantes de similitud deciden dónde parar mejor que el orden de SegLoop" | ρ=0.9 pre-registrado para en ~5 tópicos, igual al control; ρ=1.0 +0.017 beat F1 (~1 SE, no pre-registrado) |
 | EXP-011 paso 2 / 2-R | "El VJudge relacional (contexto ±2 shots) ordena transiciones de trama mejor que SegLoop" | +0.027 ± 0.017 en 23 películas no replica: −0.002 ± 0.012 en 35 nuevas |
+| EXP-012 | "El VJudge juzgando cada corte contra la historia previa (ctx3) añade señal de trama; el contexto largo es lo que falta" | ΔAP vs SegLoop +0.002 / +0.006 (dev / rep), ctx3 ≈ ctx1; juez saturado (p_new mediana 0.97) |
 
 ---
 
@@ -559,4 +560,32 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
   invalida "el contexto largo es lo que falta".
 
 `scripts/vjudge_ledger.py` · `scripts/vjudge_ledger.sbatch`
+
+### Resultado EXP-012 (job 53506, 1 h 31 min, 58 películas)
+| criterio (AP beat pareado) | desarrollo (23) | replicación (35) |
+|---|---|---|
+| 1. ledger ctx3 − SegLoop | +0.002 ± 0.010 | +0.006 ± 0.014 |
+| 2. ctx3 − ctx1 | −0.002 ± 0.010 | +0.001 ± 0.012 |
+| 3. ctx3 − relacional mm | −0.025 ± 0.017 | +0.008 ± 0.012 |
+| 4. veto rel ctx3 − SegLoop (beat F1, K24) | +0.023 ± 0.014 | +0.010 ± 0.015 |
+| escena: ctx3 − SegLoop | −0.117 | −0.127 |
+
+- **⚠️ INVALIDADO:** los cuatro criterios fallan en ambos conjuntos. "El VJudge
+  juzgando cada corte contra la historia previa añade señal de trama" y "el
+  contexto largo es lo que falta" no se sostienen **en esta formulación**.
+- **Diagnóstico:**
+  1. Juez saturado: p_new mediana 0.97 (p10 0.89) y en la película mediana no
+     juzga "misma trama" ningún corte. Su orden apenas se relaciona con SegLoop
+     (Spearman +0.12) ni con el relacional (+0.19).
+  2. Los resúmenes son de superficie ("un hombre de traje explica…"). En
+     tt0118571 el primer beat dura 25 min y los resúmenes lo describen minuto
+     a minuto como eventos distintos; dos resúmenes consecutivos siempre
+     parecen "nuevo evento". Es el fallo de EXP-010, ahora en texto.
+  3. La pregunta absoluta "¿mismo o nuevo?" entre tramos de ~1 min no
+     corresponde a la granularidad de un beat de sinopsis.
+- **Siguiente (EXP-013):** en vez de un juicio absoluto por corte, que el
+  VJudge lea 30 resúmenes seguidos (~30 min) y marque dónde empezaría un
+  párrafo de sinopsis: decisión relativa entre cortes, no saturable.
+
+`results/exp012_ledger_step2.json` · `results/exp012_ledger_replication.json`
 
