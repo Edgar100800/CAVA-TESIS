@@ -153,3 +153,24 @@ def test_average_link_mode_does_not_chain():
         mm._return_labels = orig
     assert len(set(comp.labels.tolist())) == 1            # percolation
     assert len(set(avg.labels.tolist())) >= 2             # average does not chain
+
+
+def test_topic_map_structure_and_returns():
+    from topicagg.topic_map import build_topic_map
+    x, size = _abab()
+    y = x + 0.05 * np.random.default_rng(9).normal(size=x.shape)
+    times = [[i * 2.0, i * 2.0 + 2.0] for i in range(len(x))]
+    units = [{"lo": i, "hi": i + size, "summary": f"block {i // size}"}
+             for i in range(0, len(x), size)]
+    doc = build_topic_map("synthetic", {"visual": x, "vjudge": y}, times,
+                          unit_summaries=units, percentile=95, return_percentile=50)
+    assert set(doc["levels"]) == {"default", "fine"}
+    topics = doc["levels"]["default"]["topics"]
+    covered = sorted(s for t in topics for s in t["shots"])
+    assert covered == list(range(len(x)))                       # partition of the video
+    a = next(t for t in topics if 0 in t["shots"])
+    assert a["returns"] >= 1 and len(a["spans"]) == a["returns"] + 1  # A comes back
+    assert a["label"] == "block 0"
+    assert set(a["provenance"]) == {"visual", "vjudge"}
+    import json
+    json.dumps(doc)                                             # serializable

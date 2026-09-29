@@ -62,6 +62,7 @@ def main():
     ap.add_argument("--segloop-dir", default=None, help="npz con `segloop` [n-1] (solo val)")
     ap.add_argument("--min-gap", type=int, default=80)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--average", action="store_true", help="EXP-017b: añade link_mode=average")
     args = ap.parse_args()
     bge = BgeEmbedder()
     rows = {}
@@ -104,6 +105,11 @@ def main():
             "fused": manage({"fused": fused}, return_percentile=90,
                             **(KW | {"link_quorum": 1})),
         }
+        if args.average:
+            AV = KW | {"link_mode": "average"}
+            plans["cava_avg"] = manage(sig, return_percentile=90, **AV)
+            plans["cava_avg_r80"] = manage(sig, return_percentile=80, **AV)
+            plans["cava_avg_r95"] = manage(sig, return_percentile=95, **AV)
         for k in ("visual", "dialogue", "vjudge"):
             plans[k] = manage({k: sig[k]}, return_percentile=90, **(KW | {"link_quorum": 1}))
         if args.segloop_dir and (Path(args.segloop_dir) / f"{tt}.npz").exists():
@@ -111,6 +117,9 @@ def main():
                              np.float32)
             plans["cava+segloop"] = manage(sig, boundary_signals={"segloop": seg},
                                            return_percentile=90, **KW)
+            if args.average:
+                plans["cava_avg+segloop"] = manage(sig, boundary_signals={"segloop": seg},
+                                                   return_percentile=90, **AV)
         r = {"n_shots": n, "n_pairs": int(len(y)), "pos_rate": float(y.mean())}
         for name, plan in plans.items():
             lab = plan.labels
@@ -118,13 +127,14 @@ def main():
             r[f"mcc_{name}"] = mcc(pred, y)
             r[f"n_topics_{name}"] = int(len(set(lab.tolist())))
             r[f"link_rate_{name}"] = float(pred.mean())
-        for name in ("cava", "fused", "contiguous"):
+        for name in [x for x in ("cava", "cava_avg", "fused", "contiguous") if x in plans]:
             for k in ("visual", "dialogue", "vjudge"):
                 r[f"coh_{name}_{k}"] = coherence_margin(plans[name].labels, sig[k])
         rows[tt] = r
         print(f"[topicmap] {tt}: pares {len(y)} | MCC cava {r['mcc_cava']:+.3f} fused "
-              f"{r['mcc_fused']:+.3f} contig {r['mcc_contiguous']:+.3f} | tópicos cava "
-              f"{r['n_topics_cava']}", flush=True)
+              f"{r['mcc_fused']:+.3f} contig {r['mcc_contiguous']:+.3f}"
+              + (f" avg {r['mcc_cava_avg']:+.3f} ({r['n_topics_cava_avg']} tópicos)"
+                 if "mcc_cava_avg" in r else ""), flush=True)
 
     def paired(a, b):
         d = np.array([r[a] - r[b] for r in rows.values() if a in r and b in r])
@@ -137,7 +147,7 @@ def main():
                    for m in ("mcc", "n_topics", "link_rate")} for s in systems}
     coh = {f"{name}_{k}": {"mean": round(float(np.mean(v)), 4), "min_film": round(float(np.min(v)), 4),
                            "frac_positive": round(float(np.mean(np.array(v) > 0)), 3)}
-           for name in ("cava", "fused", "contiguous") for k in ("visual", "dialogue", "vjudge")
+           for name in ("cava", "cava_avg", "fused", "contiguous") for k in ("visual", "dialogue", "vjudge")
            if (v := [r[f"coh_{name}_{k}"] for r in rows.values()
                      if r.get(f"coh_{name}_{k}") is not None])}
     crit = {"cava_vs_fused": paired("mcc_cava", "mcc_fused"),
@@ -145,6 +155,11 @@ def main():
             "cava_vs_visual": paired("mcc_cava", "mcc_visual"),
             "cava_vs_dialogue": paired("mcc_cava", "mcc_dialogue"),
             "cava_vs_vjudge": paired("mcc_cava", "mcc_vjudge")}
+    if any("mcc_cava_avg" in r for r in rows.values()):
+        for b in ("fused", "contiguous", "visual", "dialogue", "vjudge", "cava"):
+            crit[f"cava_avg_vs_{b}"] = paired("mcc_cava_avg", f"mcc_{b}")
+    if any("mcc_cava_avg+segloop" in r for r in rows.values()):
+        crit["cava_avg+segloop_vs_cava_avg"] = paired("mcc_cava_avg+segloop", "mcc_cava_avg")
     if any("mcc_cava+segloop" in r for r in rows.values()):
         crit["cava+segloop_vs_cava"] = paired("mcc_cava+segloop", "mcc_cava")
     rep = {"protocol": "exp017_topic_map_v1", "films_file": args.films_file,
