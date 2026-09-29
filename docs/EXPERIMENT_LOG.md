@@ -884,3 +884,49 @@ summary_old 0.727, dialogue 0.704.
 
 `results/exp016_quorum_train.json`
 
+---
+
+## EXP-017 · Mapa de tópicos con retornos: la arquitectura CAVA completa (pre-registro)
+- **Fecha:** 2026-09-29 (registrado antes de ejecutar)
+- **Motivo:**
+  - `manage()` v2.1 solo generaba etiquetas contiguas por señal, así que el
+    quorum de enlace no podía agrupar "el tema se retoma después" (el caso
+    TPU de VERSIONS.md).
+  - Implementado `return_percentile` (commit 8ea0e85): cada señal devuelve
+    segmentos propios a tópicos propios anteriores con su propio percentil, y
+    el quorum de ADR-0001 decide. Sin fusión.
+- **Unidades:** shots (unidad nativa del gestor).
+- **Señales:**
+  - `visual` (SigLIP por shot) y `dialogue` (bge del subtítulo por shot).
+  - `vjudge`: bge del resumen VJudge de la unidad que contiene el shot.
+- **GT (solo evaluación):** conjunto cast por shot. Pares de shots anotados
+  con |i−j| ≥ 80 (largo alcance ≈ ≥10 unidades): positivo Jaccard ≥ 0.5,
+  negativo 0.
+- **Métrica: MCC** de "mismo tópico predicho" frente a "mismos personajes".
+  No se usa F1 porque la tasa positiva es 0.5–0.7 y un solo tópico global ya
+  sacaría F1 ≈ 0.75; MCC le da 0.
+- **Sistemas:**
+  - `cava`: manage(visual, dialogue, vjudge; percentile 80,
+    return_percentile 90, link_quorum 2).
+  - `contiguous`: igual con return_percentile=None (v2.1).
+  - `fused`: una sola señal = concatenación de las tres L2-normalizadas; es el
+    modo de fallo de A2Summ-X. link_quorum 1 (con una señal, 2 no enlazaría).
+  - `visual` / `dialogue` / `vjudge` solas (link_quorum 1, mismos
+    percentiles). `dialogue` solo = sistema dominado por texto.
+  - En desarrollo, además: `cava+segloop` (SegLoop como votante de fronteras).
+- **Corpus:**
+  - Desarrollo = películas val con cast (unidades SegLoop).
+  - Confirmación = 47 películas train (EXP-016, unidades fijas de 8 shots).
+  - Ambas se usaron para elegir votantes en EXP-015/016, así que ninguna es
+    del todo nueva. Una confirmación limpia requiere el split test (pendiente
+    de autorización).
+- **Criterios**, en desarrollo Y confirmación:
+  1. **Primario:** MCC(cava) − MCC(fused) > 2 SE y MCC(cava) −
+     MCC(contiguous) > 2 SE, pareado por película.
+  2. G-coherencia (VERSIONS.md): en `cava`, margen intra − inter tópico > 0
+     en CADA señal. Ninguna señal queda aplastada.
+- **Secundario (se reporta, no decide):** cava frente a la mejor señal sola.
+  Sensibilidad return_percentile ∈ {80, 95}, sin elegir el mejor.
+
+`scripts/eval_topic_map.py`
+
