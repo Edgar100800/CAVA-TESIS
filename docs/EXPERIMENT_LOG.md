@@ -639,3 +639,28 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
 
 `results/exp013_chapter_step2.json` · `results/exp013_chapter_replication.json`
 
+---
+
+## EXP-013b · Capitulación por ítem con logits (pre-registro)
+- **Fecha:** 2026-09-29 (registrado antes de ejecutar)
+- **Motivo:** EXP-013 falló por el instrumento (enumeración degenerada +
+  truncado). Se corrige el instrumento sin cambiar la pregunta ni el modelo.
+- **Configuración:**
+  - Por cada corte candidato, la misma ventana larga de resúmenes EXP-012
+    (hasta 15 antes y 14 después; mediana de 30 líneas).
+  - Una sola pregunta: "¿el tramo k empieza un párrafo nuevo o continúa el del
+    tramo k−1?" → p_start = softmax de los logits A/B.
+  - Sin generación: no hay lista que enumerar ni truncar. La evaluación es por
+    ranking dentro de la película.
+- **Criterios**, en desarrollo (23) Y en replicación (35) por separado:
+  1. **Primario:** ΔAP beat(p_start − SegLoop) > 2 SE pareado.
+  2. veto (orden SegLoop restringido a p_start ≥ mediana del juez en la
+     película) − SegLoop solo: beat F1 a K=24 > 2 SE pareado.
+- **Calibración con juez aleatorio, desarrollo:** ΔAP −0.016 ± 0.011; veto
+  +0.009 ± 0.016.
+- **Invalidación:** si 1 falla en replicación, "el VJudge frozen, con la
+  historia larga como contexto, reconoce inicios de beat mejor que SegLoop"
+  queda invalidado para Qwen2.5-VL-7B.
+
+`scripts/vjudge_chapter_logit.py` · `scripts/eval_chapter.py --logit`
+

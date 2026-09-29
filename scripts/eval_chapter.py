@@ -35,16 +35,26 @@ def main():
     ap.add_argument("--ledger", default="data/vjudge_ledger")
     ap.add_argument("--corpus", default="data/movienet_topics")
     ap.add_argument("--K", type=int, default=24)
+    ap.add_argument("--logit", default=None,
+                    help="EXP-013b: dir con <tt>.chapterlogit.json; score = p_start y el veto "
+                         "usa la mediana del juez en la película")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
     rng = np.random.default_rng(0)
 
     rows, sel = {}, {}
     for tt in Path(args.films_file).read_text().split():
-        f = Path(args.chapter) / f"{tt}.chapter.json"
+        f = (Path(args.logit) / f"{tt}.chapterlogit.json") if args.logit \
+            else Path(args.chapter) / f"{tt}.chapter.json"
         if not f.exists() or not (MN / "annotation" / f"{tt}.json").exists():
             continue
-        ch = json.loads(f.read_text())["cuts"]
+        ch = json.loads(f.read_text())
+        if args.logit:
+            if any(r["p_start"] is None for r in ch):
+                continue
+            ch = [r | {"score": r["p_start"]} for r in ch]
+        else:
+            ch = ch["cuts"]
         led = {r["cut"]: r["p_new_ctx3"] for r in
                json.loads((Path(args.ledger) / f"{tt}.ledger.json").read_text())}
         g = load_film(tt, Path(args.corpus))
@@ -67,8 +77,10 @@ def main():
             r[f"ap_scene_{name}"] = ap_ties([s[c] for c in cuts], ys, rng)
         rows[tt] = r
         order = sorted(cuts, key=lambda c: -sc["segloop"][c])
+        thr = float(np.median([sc["chapter"][c] for c in cuts])) if args.logit else 0.0
+        keep = (lambda c: sc["chapter"][c] >= thr) if args.logit else (lambda c: sc["chapter"][c] > 0)
         picks = {"segloop": order[:args.K],
-                 "veto_chapter": [c for c in order if sc["chapter"][c] > 0][:args.K]}
+                 "veto_chapter": [c for c in order if keep(c)][:args.K]}
         sel[tt] = {k: metrics(sorted(v), g) for k, v in picks.items()}
 
     keys = sorted({k for r in rows.values() for k in r if k.startswith("ap_")})
