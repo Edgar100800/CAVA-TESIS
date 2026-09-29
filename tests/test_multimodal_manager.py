@@ -174,3 +174,21 @@ def test_topic_map_structure_and_returns():
     assert set(a["provenance"]) == {"visual", "vjudge"}
     import json
     json.dumps(doc)                                             # serializable
+
+
+def test_versions_gate_on_synthetic_map():
+    from topicagg.topic_map import build_topic_map
+    from topicagg.versions import build_versions, check_versions
+    x, size = _abab(size=40)
+    y = x + 0.05 * np.random.default_rng(9).normal(size=x.shape)
+    times = [[i * 2.0, i * 2.0 + 2.0] for i in range(len(x))]
+    units = [{"lo": i, "hi": i + size, "summary": f"block {i // size}"}
+             for i in range(0, len(x), size)]
+    doc = build_topic_map("synthetic", {"visual": x, "vjudge": y}, times,
+                          unit_summaries=units, percentile=95, return_percentile=50)
+    v = build_versions(doc, recap_s=60, highlight_frac=0.2, thread_cap_frac=0.9)
+    rep = check_versions(v)
+    assert rep["G_version"], rep
+    assert rep["recap60"]["total_s"][0] <= 60
+    thread = v["threads"]["playlists"][0]
+    assert len({c["topic_id"] for c in thread}) == 1 and len(thread) >= 2  # follows a returning topic

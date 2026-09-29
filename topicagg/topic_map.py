@@ -109,6 +109,7 @@ def build_topic_map(video_id: str, signals: dict[str, np.ndarray],
     doc = {"video_id": video_id, "n_units": n,
            "duration_s": round(shot_times[n - 1][1] - shot_times[0][0], 2),
            "signals": sorted(signals) + sorted(boundary_signals or {}),
+           "unit_times": [[round(a, 2), round(b, 2)] for a, b in shot_times[:n]],
            "params": {"percentile": percentile, "return_percentile": return_percentile,
                       "link_mode": "average", "quorum_by_level": levels},
            "levels": {}}
