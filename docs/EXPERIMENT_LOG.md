@@ -157,6 +157,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-011 paso 1b | "Los votantes de similitud deciden dónde parar mejor que el orden de SegLoop" | ρ=0.9 pre-registrado para en ~5 tópicos, igual al control; ρ=1.0 +0.017 beat F1 (~1 SE, no pre-registrado) |
 | EXP-011 paso 2 / 2-R | "El VJudge relacional (contexto ±2 shots) ordena transiciones de trama mejor que SegLoop" | +0.027 ± 0.017 en 23 películas no replica: −0.002 ± 0.012 en 35 nuevas |
 | EXP-012 | "El VJudge juzgando cada corte contra la historia previa (ctx3) añade señal de trama; el contexto largo es lo que falta" | ΔAP vs SegLoop +0.002 / +0.006 (dev / rep), ctx3 ≈ ctx1; juez saturado (p_new mediana 0.97) |
+| EXP-013 | "Qwen2.5-VL-7B frozen capitula el ledger en párrafos de sinopsis" | Salida degenerada (92 % de candidatos marcados, 334/522 truncadas); ΔAP −0.022 / −0.013. Fallo del instrumento: la hipótesis de capitular queda sin probar |
 
 ---
 
@@ -615,4 +616,26 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
   historia larga añade señal de trama sobre SegLoop" queda invalidado.
 
 `scripts/vjudge_chapter.py` · `scripts/eval_chapter.py`
+
+### Resultado EXP-013 (job 53556, 58 películas)
+| criterio | desarrollo (23) | replicación (35) |
+|---|---|---|
+| 1. ΔAP beat(chapter − SegLoop) | −0.022 ± 0.010 | −0.013 ± 0.012 |
+| 2. veto_chapter − SegLoop (beat F1, K24) | +0.006 ± 0.008 | −0.012 ± 0.006 |
+
+- **Resultado pre-registrado:** falla en ambos conjuntos.
+- **⚠️ Fallo del instrumento, no prueba de la idea:**
+  - Salida degenerada: el modelo enumera casi todos los números en orden
+    ("2, 3, 4, …"). Mediana de 22 de 29 tramos marcados por ventana; 92 % de
+    los candidatos marcados.
+  - 334 de 522 salidas quedaron truncadas por max_new_tokens=80: las
+    posiciones 26–30 se marcan 11–24 % contra 83–94 % antes.
+  - Es la misma saturación de EXP-012 en forma de lista. Queda invalidado
+    "Qwen2.5-VL-7B frozen, con este prompt, capitula el ledger"; la hipótesis
+    de capitular la historia larga NO queda probada ni refutada.
+- **Patrón EXP-010 → EXP-013:** el VJudge frozen describe bien (resúmenes con
+  personajes y eventos) pero, preguntado por continuidad de trama, responde
+  "distinto" casi siempre, sea el formato A/B, relativo o de lista.
+
+`results/exp013_chapter_step2.json` · `results/exp013_chapter_replication.json`
 
