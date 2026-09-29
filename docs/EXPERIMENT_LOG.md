@@ -959,3 +959,28 @@ summary_old 0.727, dialogue 0.704.
   - `fused` sigue siendo una sola señal (una señal no tiene quorum que enlazar;
     su partición es su propio etiquetado).
 
+### Resultado EXP-017 (registrado: link_mode components)
+MCC en pares de largo alcance (|i−j| ≥ 80 shots), media por película:
+
+| sistema | desarrollo (46) MCC / tópicos | confirmación (47) MCC / tópicos |
+|---|---|---|
+| cava (components) | −0.004 / 9 | +0.002 / 5 |
+| contiguous (v2.1) | +0.007 / 95 | +0.004 / 65 |
+| fused (A2Summ-X) | +0.009 / 36 | +0.011 / 38 |
+| visual sola | +0.019 / 54 | **+0.025** / 48 |
+| vjudge sola | **+0.022** / 32 | +0.010 / 31 |
+| dialogue sola | +0.001 / 78 | +0.003 / 71 |
+
+- **⚠️ INVALIDADO:** con enlace por componentes, cava − fused = −0.013 ± 0.005
+  (desarrollo) y −0.009 ± 0.006 (confirmación). El tópico gigante (tasa de
+  enlace 0.98, 5–9 tópicos) confirma el diagnóstico de percolación.
+- **Magnitud:** todos los MCC son pequeños (≤ 0.025). La pertenencia a una
+  partición dura es exigente: un sistema que enlaza el 15–26 % de los pares
+  lejanos no puede tener MCC alto aunque sus enlaces sean precisos. Se
+  comparan sistemas entre sí, no contra 1.
+- **G-coherencia:** con components, cava pierde margen positivo en algunas
+  películas (vjudge 84 %, diálogo 90 % de películas > 0); fused y contiguous
+  lo mantienen en todas.
+
+`results/exp017_topicmap_dev.json` · `results/exp017_topicmap_conf.json`
+
