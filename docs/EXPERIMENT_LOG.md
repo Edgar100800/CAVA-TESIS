@@ -589,3 +589,30 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
 
 `results/exp012_ledger_step2.json` · `results/exp012_ledger_replication.json`
 
+---
+
+## EXP-013 · Capitulación del ledger (pre-registro)
+- **Fecha:** 2026-09-29 (registrado antes de ejecutar)
+- **Motivo:** EXP-012. El juicio absoluto por corte satura; la sinopsis GT se
+  escribió leyendo la historia entera y agrupándola en párrafos. Aquí el
+  VJudge hace eso: una decisión relativa sobre una ventana larga.
+- **Corpus:** mismas 58 películas; desarrollo = 23 (paso 2), replicación = 35
+  (paso 2-R). Se ejecutan juntas.
+- **Configuración:**
+  - Reutiliza los resúmenes de EXP-012.
+  - Qwen2.5-VL-7B frozen, solo texto, greedy. Lee 30 resúmenes consecutivos
+    (~30 min) y lista qué tramos empiezan un párrafo de sinopsis.
+  - Ventanas de 30 con paso 10: 522 en total, cada corte cubierto por 1–3.
+  - score(corte) = fracción de ventanas que lo cubren y lo marcan.
+  - AP con empates rotos al azar (20 permutaciones), sin desempatar con SegLoop.
+- **Criterios**, en desarrollo Y en replicación por separado:
+  1. **Primario:** ΔAP beat(chapter − SegLoop) > 2 SE pareado.
+  2. veto_chapter (orden SegLoop restringido a cortes marcados en ≥ 1 ventana)
+     − SegLoop solo: beat F1 a K=24 > 2 SE pareado.
+- **Calibración con marcas aleatorias (tasa 20 %), desarrollo:** ΔAP −0.019 ±
+  0.016; veto −0.008 ± 0.019.
+- **Invalidación:** si 1 falla en replicación, "el VJudge capitulando la
+  historia larga añade señal de trama sobre SegLoop" queda invalidado.
+
+`scripts/vjudge_chapter.py` · `scripts/eval_chapter.py`
+
