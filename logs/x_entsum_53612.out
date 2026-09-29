@@ -1,0 +1,60 @@
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   1%|          | 4/729 [00:00<00:18, 39.36it/s]Loading weights:   2%|▏         | 16/729 [00:00<00:08, 82.04it/s]Loading weights:   4%|▍         | 28/729 [00:00<00:08, 82.62it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:08, 81.28it/s]Loading weights:   7%|▋         | 54/729 [00:00<00:07, 95.41it/s]Loading weights:   9%|▉         | 66/729 [00:00<00:06, 101.68it/s]Loading weights:  11%|█         | 78/729 [00:00<00:06, 106.40it/s]Loading weights:  12%|█▏        | 90/729 [00:00<00:05, 108.16it/s]Loading weights:  14%|█▍        | 102/729 [00:01<00:05, 111.23it/s]Loading weights:  16%|█▋        | 120/729 [00:01<00:04, 130.98it/s]Loading weights:  18%|█▊        | 134/729 [00:01<00:04, 128.29it/s]Loading weights:  20%|██        | 147/729 [00:01<00:04, 125.61it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:04, 115.57it/s]Loading weights:  24%|██▎       | 172/729 [00:01<00:04, 113.70it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:05, 99.97it/s] Loading weights:  28%|██▊       | 202/729 [00:01<00:04, 119.59it/s]Loading weights:  30%|██▉       | 216/729 [00:01<00:04, 123.97it/s]Loading weights:  31%|███▏      | 229/729 [00:02<00:04, 124.59it/s]Loading weights:  33%|███▎      | 242/729 [00:02<00:03, 122.91it/s]Loading weights:  35%|███▍      | 255/729 [00:02<00:03, 123.44it/s]Loading weights:  37%|███▋      | 268/729 [00:02<00:04, 112.87it/s]Loading weights:  39%|███▊      | 281/729 [00:02<00:04, 100.60it/s]Loading weights:  40%|████      | 293/729 [00:02<00:04, 100.93it/s]Loading weights:  42%|████▏     | 305/729 [00:02<00:04, 103.07it/s]Loading weights:  44%|████▎     | 318/729 [00:02<00:03, 105.34it/s]Loading weights:  45%|████▌     | 330/729 [00:03<00:03, 106.59it/s]Loading weights:  56%|█████▌    | 407/729 [00:03<00:01, 283.60it/s]Loading weights:  67%|██████▋   | 488/729 [00:03<00:00, 428.07it/s]Loading weights:  79%|███████▊  | 573/729 [00:03<00:00, 546.67it/s]Loading weights:  91%|█████████ | 661/729 [00:03<00:00, 640.30it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 206.19it/s]
+[ledger] tt0048545: 101 resúmenes (entity)
+[ledger] tt0061722: 101 resúmenes (entity)
+[ledger] tt0066026: 101 resúmenes (entity)
+[ledger] tt0071562: 101 resúmenes (entity)
+[ledger] tt0072890: 101 resúmenes (entity)
+[ledger] tt0073486: 101 resúmenes (entity)
+[ledger] tt0076759: 101 resúmenes (entity)
+[ledger] tt0080684: 101 resúmenes (entity)
+[ledger] tt0083929: 101 resúmenes (entity)
+[ledger] tt0087332: 101 resúmenes (entity)
+[ledger] tt0090756: 101 resúmenes (entity)
+[ledger] tt0094737: 101 resúmenes (entity)
+[ledger] tt0096446: 101 resúmenes (entity)
+[ledger] tt0097576: 101 resúmenes (entity)
+[ledger] tt0099685: 101 resúmenes (entity)
+[ledger] tt0102138: 101 resúmenes (entity)
+[ledger] tt0103074: 101 resúmenes (entity)
+[ledger] tt0105236: 101 resúmenes (entity)
+[ledger] tt0108160: 101 resúmenes (entity)
+[ledger] tt0110475: 101 resúmenes (entity)
+[ledger] tt0112641: 101 resúmenes (entity)
+[ledger] tt0114558: 101 resúmenes (entity)
+[ledger] tt0116367: 101 resúmenes (entity)
+[ledger] tt0118571: 101 resúmenes (entity)
+[ledger] tt0119094: 101 resúmenes (entity)
+[ledger] tt0119822: 101 resúmenes (entity)
+[ledger] tt0120780: 101 resúmenes (entity)
+[ledger] tt0121765: 101 resúmenes (entity)
+[ledger] tt0129387: 101 resúmenes (entity)
+[ledger] tt0138097: 101 resúmenes (entity)
+[ledger] tt0145487: 101 resúmenes (entity)
+[ledger] tt0166924: 101 resúmenes (entity)
+[ledger] tt0167261: 101 resúmenes (entity)
+[ledger] tt0167404: 101 resúmenes (entity)
+[ledger] tt0186151: 101 resúmenes (entity)
+[ledger] tt0209958: 101 resúmenes (entity)
+[ledger] tt0258463: 101 resúmenes (entity)
+[ledger] tt0268126: 101 resúmenes (entity)
+[ledger] tt0311113: 101 resúmenes (entity)
+[ledger] tt0343818: 101 resúmenes (entity)
+[ledger] tt0370263: 101 resúmenes (entity)
+[ledger] tt0371724: 101 resúmenes (entity)
+[ledger] tt0408236: 101 resúmenes (entity)
+[ledger] tt0434409: 101 resúmenes (entity)
+[ledger] tt0467200: 101 resúmenes (entity)
+[ledger] tt0758758: 101 resúmenes (entity)
+[ledger] tt0808151: 101 resúmenes (entity)
+[ledger] tt0898367: 101 resúmenes (entity)
+[ledger] tt0964517: 101 resúmenes (entity)
+[ledger] tt1032755: 101 resúmenes (entity)
+[ledger] tt1100089: 101 resúmenes (entity)
+[ledger] tt1182345: 101 resúmenes (entity)
+[ledger] tt1284575: 101 resúmenes (entity)
+[ledger] tt1409024: 101 resúmenes (entity)
+[ledger] tt1504320: 101 resúmenes (entity)
+[ledger] tt1591095: 101 resúmenes (entity)
+[ledger] tt1659337: 101 resúmenes (entity)
+[ledger] tt2132285: 101 resúmenes (entity)
+[ledger] listo

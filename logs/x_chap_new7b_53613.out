@@ -1,0 +1,60 @@
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   1%|          | 4/729 [00:00<00:18, 38.93it/s]Loading weights:   2%|▏         | 16/729 [00:00<00:08, 83.42it/s]Loading weights:   4%|▍         | 28/729 [00:00<00:07, 95.77it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:06, 102.74it/s]Loading weights:   7%|▋         | 52/729 [00:00<00:06, 107.86it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:06, 104.65it/s]Loading weights:  11%|█         | 78/729 [00:00<00:06, 103.04it/s]Loading weights:  12%|█▏        | 91/729 [00:00<00:05, 110.55it/s]Loading weights:  14%|█▍        | 105/729 [00:00<00:05, 118.82it/s]Loading weights:  16%|█▌        | 118/729 [00:01<00:05, 120.63it/s]Loading weights:  18%|█▊        | 131/729 [00:01<00:04, 122.88it/s]Loading weights:  20%|█▉        | 144/729 [00:01<00:04, 121.70it/s]Loading weights:  22%|██▏       | 157/729 [00:01<00:04, 120.74it/s]Loading weights:  23%|██▎       | 170/729 [00:01<00:04, 120.80it/s]Loading weights:  25%|██▌       | 183/729 [00:01<00:04, 120.50it/s]Loading weights:  27%|██▋       | 196/729 [00:01<00:04, 112.89it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:04, 112.20it/s]Loading weights:  30%|███       | 220/729 [00:02<00:05, 101.35it/s]Loading weights:  32%|███▏      | 233/729 [00:02<00:05, 97.48it/s] Loading weights:  34%|███▍      | 250/729 [00:02<00:04, 114.39it/s]Loading weights:  36%|███▌      | 262/729 [00:02<00:04, 113.14it/s]Loading weights:  38%|███▊      | 274/729 [00:02<00:04, 111.43it/s]Loading weights:  39%|███▉      | 286/729 [00:02<00:03, 110.99it/s]Loading weights:  41%|████      | 298/729 [00:02<00:03, 109.59it/s]Loading weights:  43%|████▎     | 310/729 [00:02<00:03, 108.14it/s]Loading weights:  44%|████▍     | 324/729 [00:02<00:03, 115.55it/s]Loading weights:  48%|████▊     | 350/729 [00:03<00:02, 155.24it/s]Loading weights:  60%|██████    | 441/729 [00:03<00:00, 368.91it/s]Loading weights:  73%|███████▎  | 532/729 [00:03<00:00, 524.81it/s]Loading weights:  84%|████████▍ | 612/729 [00:03<00:00, 604.31it/s]Loading weights:  97%|█████████▋| 704/729 [00:03<00:00, 695.88it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 209.76it/s]
+[chapterlogit] tt0048545: 100 cortes
+[chapterlogit] tt0061722: 100 cortes
+[chapterlogit] tt0066026: 100 cortes
+[chapterlogit] tt0071562: 100 cortes
+[chapterlogit] tt0072890: 100 cortes
+[chapterlogit] tt0073486: 100 cortes
+[chapterlogit] tt0076759: 100 cortes
+[chapterlogit] tt0080684: 100 cortes
+[chapterlogit] tt0083929: 100 cortes
+[chapterlogit] tt0087332: 100 cortes
+[chapterlogit] tt0090756: 100 cortes
+[chapterlogit] tt0094737: 100 cortes
+[chapterlogit] tt0096446: 100 cortes
+[chapterlogit] tt0097576: 100 cortes
+[chapterlogit] tt0099685: 100 cortes
+[chapterlogit] tt0102138: 100 cortes
+[chapterlogit] tt0103074: 100 cortes
+[chapterlogit] tt0105236: 100 cortes
+[chapterlogit] tt0108160: 100 cortes
+[chapterlogit] tt0110475: 100 cortes
+[chapterlogit] tt0112641: 100 cortes
+[chapterlogit] tt0114558: 100 cortes
+[chapterlogit] tt0116367: 100 cortes
+[chapterlogit] tt0118571: 100 cortes
+[chapterlogit] tt0119094: 100 cortes
+[chapterlogit] tt0119822: 100 cortes
+[chapterlogit] tt0120780: 100 cortes
+[chapterlogit] tt0121765: 100 cortes
+[chapterlogit] tt0129387: 100 cortes
+[chapterlogit] tt0138097: 100 cortes
+[chapterlogit] tt0145487: 100 cortes
+[chapterlogit] tt0166924: 100 cortes
+[chapterlogit] tt0167261: 100 cortes
+[chapterlogit] tt0167404: 100 cortes
+[chapterlogit] tt0186151: 100 cortes
+[chapterlogit] tt0209958: 100 cortes
+[chapterlogit] tt0258463: 100 cortes
+[chapterlogit] tt0268126: 100 cortes
+[chapterlogit] tt0311113: 100 cortes
+[chapterlogit] tt0343818: 100 cortes
+[chapterlogit] tt0370263: 100 cortes
+[chapterlogit] tt0371724: 100 cortes
+[chapterlogit] tt0408236: 100 cortes
+[chapterlogit] tt0434409: 100 cortes
+[chapterlogit] tt0467200: 100 cortes
+[chapterlogit] tt0758758: 100 cortes
+[chapterlogit] tt0808151: 100 cortes
+[chapterlogit] tt0898367: 100 cortes
+[chapterlogit] tt0964517: 100 cortes
+[chapterlogit] tt1032755: 100 cortes
+[chapterlogit] tt1100089: 100 cortes
+[chapterlogit] tt1182345: 100 cortes
+[chapterlogit] tt1284575: 100 cortes
+[chapterlogit] tt1409024: 100 cortes
+[chapterlogit] tt1504320: 100 cortes
+[chapterlogit] tt1591095: 100 cortes
+[chapterlogit] tt1659337: 100 cortes
+[chapterlogit] tt2132285: 100 cortes
+[chapterlogit] listo

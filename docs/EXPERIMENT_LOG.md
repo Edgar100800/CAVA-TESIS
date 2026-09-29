@@ -159,6 +159,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-012 | "El VJudge juzgando cada corte contra la historia previa (ctx3) añade señal de trama; el contexto largo es lo que falta" | ΔAP vs SegLoop +0.002 / +0.006 (dev / rep), ctx3 ≈ ctx1; juez saturado (p_new mediana 0.97) |
 | EXP-013 | "Qwen2.5-VL-7B frozen capitula el ledger en párrafos de sinopsis" | Salida degenerada (92 % de candidatos marcados, 334/522 truncadas); ΔAP −0.022 / −0.013. Fallo del instrumento: la hipótesis de capitular queda sin probar |
 | EXP-013b | "Qwen2.5-VL-7B frozen con ~30 min de historia reconoce inicios de beat mejor que SegLoop" | ΔAP −0.016 ± 0.012 (dev) / +0.025 ± 0.020 (rep), signos opuestos; instrumento sin saturar |
+| EXP-014 | "El razonador (14B) o los resúmenes entity-tracking desbloquean el nivel beat" | Ninguna celda supera a SegLoop; efectos 14b−7b −0.014 ± 0.011 y new−old −0.013 ± 0.013 en replicación |
 
 ---
 
@@ -720,4 +721,37 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
     SegLoop.
 
 `scripts/vjudge_ledger.py --summary-mode entity` · `scripts/vjudge_chapter_logit.py --model`
+
+### Resultado EXP-014 (jobs 53612–53615, 58 películas)
+ΔAP beat(celda − SegLoop), pareado:
+
+| celda | desarrollo (23) | replicación (35) |
+|---|---|---|
+| old × 7b (EXP-013b) | −0.016 ± 0.012 | +0.025 ± 0.020 |
+| new × 7b | −0.013 ± 0.016 | +0.016 ± 0.018 |
+| old × 14b | −0.010 ± 0.014 | +0.014 ± 0.019 |
+| new × 14b | −0.004 ± 0.020 | −0.003 ± 0.015 |
+| efecto razonador (14b − 7b) | +0.007 ± 0.010 | −0.014 ± 0.011 |
+| efecto resúmenes (new − old) | +0.004 ± 0.012 | −0.013 ± 0.013 |
+
+- **Resultado pre-registrado: "ninguna".** Ninguna celda supera a SegLoop en
+  ningún conjunto; ni el razonador ni los resúmenes tienen efecto. Con estos
+  componentes frozen, el nivel beat no se alcanza sobre SegLoop.
+- **⚠️ INVALIDADO:**
+  - "Faltaba capacidad de razonamiento" (Qwen2.5-14B no mejora a 7B).
+  - "Faltaba información de entidades" (los resúmenes entity-tracking no
+    mejoran).
+- **Instrumento:** 7b sin saturar (p50 0.59–0.68). 14b sobreconfiado: p50 0.98
+  con resúmenes old y bimodal 0/1 con new. El AP, al ser por ranking, sigue
+  siendo válido.
+- **Diagnóstico del objetivo:**
+  - Los candidatos no son el cuello de botella: el 90 % de los inicios de beat
+    cae a ±60 s de un top-100 SegLoop.
+  - Solo el 60 % de los inicios de beat cae a ±1 shot de un corte de escena:
+    la alineación sinopsis→shot es aproximada.
+  - Beats de 1.1 a 19.3 min (p10–p90), mediana 5.1.
+  - Incluso SegLoop queda cerca del azar a nivel beat (AP 0.26 vs 0.21 en
+    replicación).
+
+`results/exp014_2x2.json` · `results/exp014_<celda>_<conjunto>.json`
 
