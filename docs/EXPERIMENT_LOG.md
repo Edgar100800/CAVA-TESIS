@@ -791,3 +791,35 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
 
 `scripts/eval_threads.py`
 
+### Resultado EXP-015 (46 películas con cast: desarrollo 18, replicación 28)
+AP en pares de largo alcance (|i−j| ≥ 10 unidades), ΔAP(votante − prior
+temporal) pareado. AP medio de replicación: azar 0.526, prior temporal 0.552.
+
+| votante | desarrollo | replicación | criterio |
+|---|---|---|---|
+| visual (SigLIP) | +0.111 ± 0.018 (z 6.0) | **+0.139 ± 0.020 (z 7.0)** | ✅ |
+| dialogue (bge) | +0.085 ± 0.019 (z 4.6) | **+0.088 ± 0.016 (z 5.4)** | ✅ |
+| summary_old (VJudge, bge) | +0.056 ± 0.017 (z 3.3) | **+0.045 ± 0.013 (z 3.3)** | ✅ |
+| summary_new (entity) | +0.042 ± 0.016 | +0.011 ± 0.013 | ❌ |
+| names (CHARACTERS) | +0.042 ± 0.019 | +0.001 ± 0.010 | ❌ |
+| consenso ≥2 − mejor votante (precisión) | +0.003 ± 0.005 | −0.011 ± 0.005 | ❌ |
+
+- **✅ VALIDADO (pre-registrado, replicado):** "las señales frozen enlazan
+  unidades no contiguas del mismo hilo mejor que la proximidad". Pasan
+  visual, diálogo y resúmenes VJudge (old). Es el primer resultado positivo
+  replicado de la línea CAVA.
+- **⚠️ INVALIDADO:**
+  - Resúmenes entity-tracking y nombres como votantes de enlace (no replican).
+  - Consenso ≥ 2 de 5 votantes: peor que el mejor votante solo en replicación.
+    Los votantes débiles diluyen.
+- **Lectura:**
+  - A nivel de fronteras (EXP-011 → 014) ninguna señal superaba a SegLoop; a
+    nivel de ENLACE sí hay señal multimodal real. La multimodalidad aporta en
+    agrupar, no en cortar, lo que es coherente con el diseño de CAVA.
+  - El VJudge aporta como votante de enlace (summary_old), no de corte.
+- **Límite del GT:** "mismo hilo" = mismos personajes (cast Jaccard ≥ 0.5).
+  Parte de la señal visual puede ser "mismos actores / mismo set", que es
+  percepción legítima (el votante no ve IDs) pero no equivale a trama.
+
+`results/exp015_threads_step2.json` · `results/exp015_threads_replication.json`
+
