@@ -755,3 +755,39 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
 
 `results/exp014_2x2.json` · `results/exp014_<celda>_<conjunto>.json`
 
+---
+
+## EXP-015 · Enlace de hilos no contiguos (pre-registro)
+- **Fecha:** 2026-09-29 (registrado antes de calcular nada)
+- **Motivo:** el nivel beat de fronteras queda como negativo documentado
+  (EXP-010 → 014). Se pasa al núcleo sin probar de CAVA: agrupar segmentos NO
+  contiguos del mismo hilo.
+- **Unidades:** las mismas 101 por película (tramos entre los top-100 cortes
+  SegLoop).
+- **GT (solo evaluación, nunca señal):** `cast` de MovieNet.
+  - Conjunto de personajes por unidad; par (i, j) con |i−j| ≥ 2 y ambos
+    anotados.
+  - Positivo = Jaccard ≥ 0.5; negativo = Jaccard 0; el resto se excluye.
+  - 46 de 58 películas tienen cast. Desarrollo = las del paso 2 con cast;
+    replicación = las del 2-R con cast.
+- **Votantes** (cada uno por separado; similitud entre unidades):
+  - `visual`: coseno de centroides SigLIP.
+  - `dialogue`: coseno de centroides bge del diálogo.
+  - `summary_old` / `summary_new`: coseno bge de los resúmenes de EXP-012 y
+    entity-tracking de EXP-014.
+  - `names`: Jaccard de los nombres que el VJudge escribió en `CHARACTERS`
+    (tokens en mayúscula, sin artículos ni descripciones genéricas).
+- **Baselines:** prior temporal (−|i−j|) y azar (tasa positiva).
+- **Criterio primario:** en pares de largo alcance (|i−j| ≥ 10),
+  ΔAP(votante − prior temporal) > 2 SE pareado por película, en desarrollo Y
+  en replicación. Largo alcance = el caso "vuelve el hilo", donde la
+  proximidad no explica el acierto.
+- **Secundario:** enlace por consenso (≥ 2 votantes sobre su propia mediana en
+  la película; sin fusión de scores). Precisión de enlace frente al mejor
+  votante solo con el mismo nº de enlaces, en replicación.
+- **Invalidación:** si ningún votante pasa en replicación, "las señales frozen
+  actuales enlazan hilos no contiguos mejor que la proximidad" queda
+  invalidado.
+
+`scripts/eval_threads.py`
+
