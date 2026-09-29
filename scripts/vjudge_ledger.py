@@ -64,6 +64,8 @@ def main():
     ap.add_argument("--summary-mode", choices=["surface", "entity"], default="surface",
                     help="entity (EXP-014): formato CHARACTERS|PLACE|GOAL con el resumen "
                          "previo como contexto para mantener nombres")
+    ap.add_argument("--fixed-units", type=int, default=0,
+                    help="EXP-016: unidades fijas de N shots (sin SegLoop ni GT)")
     ap.add_argument("--summaries-only", action="store_true",
                     help="solo etapa 1 (la capitulación va aparte)")
     args = ap.parse_args()
@@ -71,6 +73,8 @@ def main():
     corpus, vdir, out = Path(args.corpus), Path(args.voters), Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     films = args.films or sorted(f.stem for f in vdir.glob("*.npz"))
+    if args.fixed_units and not args.summaries_only:
+        raise SystemExit("--fixed-units solo con --summaries-only")
 
     if not args.dry_run:
         import torch
@@ -101,8 +105,12 @@ def main():
     for tt in films:
         c = json.loads((corpus / f"{tt}.json").read_text())
         n, st = c["n_shots"], c["shot_times"]
-        seg = np.asarray(np.load(vdir / f"{tt}.npz")["segloop"][:n - 1], np.float32)
-        cands = candidates(seg, args.top)
+        if args.fixed_units:
+            seg = np.zeros(n - 1, np.float32)
+            cands = list(range(args.fixed_units, n, args.fixed_units))
+        else:
+            seg = np.asarray(np.load(vdir / f"{tt}.npz")["segloop"][:n - 1], np.float32)
+            cands = candidates(seg, args.top)
         bounds = [0] + cands + [n]
         cues = parse_srt(MN / "subtitle" / f"{tt}.srt")
 

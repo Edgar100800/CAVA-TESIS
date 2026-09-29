@@ -823,3 +823,35 @@ temporal) pareado. AP medio de replicación: azar 0.526, prior temporal 0.552.
 
 `results/exp015_threads_step2.json` · `results/exp015_threads_replication.json`
 
+---
+
+## EXP-016 · Enlace por quorum de votantes validados, muestra nueva (pre-registro)
+- **Fecha:** 2026-09-29 (registrado antes de generar datos)
+- **Motivo:**
+  - EXP-015 valida visual, diálogo y summary_old como votantes de enlace.
+  - El consenso ≥ 2 de 5 fue peor que el mejor votante solo.
+  - El `link_quorum` de CAVA sobre los tres validados se eligió después de
+    ver EXP-015, así que necesita una muestra nueva.
+- **Corpus nuevo:** las 47 películas *train* de MovieNet-318 con señales y cast
+  (`scripts/exp016_train_films.txt`), nunca usadas en EXP-011–015. SegLoop no
+  interviene, así que sus scores in-sample en train no importan.
+- **Unidades:** bloques fijos de 8 shots (la mediana de EXP-015), sin SegLoop
+  ni GT; ~7400 unidades.
+- **Votantes:**
+  - visual (SigLIP), dialogue (bge del subtítulo por shot).
+  - summary_old: Qwen2.5-VL-7B frozen, prompt de EXP-012, un resumen por
+    unidad, bge.
+- **GT y pares:** como EXP-015 (cast Jaccard ≥ 0.5 positivo, 0 negativo;
+  |i−j| ≥ 10 unidades).
+- **Criterios:**
+  1. Replicación de EXP-015: cada votante − prior temporal > 2 SE pareado.
+  2. **Primario:** quorum = enlazar si ≥ 2 de {visual, dialogue, summary_old}
+     superan su mediana en la película. Precisión del quorum − precisión de
+     visual solo (fijado de antemano como mejor votante) con el mismo nº de
+     enlaces > 2 SE pareado.
+- **Invalidación:** si 2 falla, "el quorum multimodal enlaza mejor que la
+  mejor señal sola" queda invalidado; CAVA usaría un único votante de enlace.
+
+`scripts/vjudge_ledger.py --fixed-units 8` · `scripts/build_dialogue.py` ·
+`scripts/eval_threads.py --quorum-voters visual dialogue summary_old --best-single visual`
+
