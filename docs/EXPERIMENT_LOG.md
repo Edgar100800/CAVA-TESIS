@@ -161,6 +161,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-013b | "Qwen2.5-VL-7B frozen con ~30 min de historia reconoce inicios de beat mejor que SegLoop" | ΔAP −0.016 ± 0.012 (dev) / +0.025 ± 0.020 (rep), signos opuestos; instrumento sin saturar |
 | EXP-014 | "El razonador (14B) o los resúmenes entity-tracking desbloquean el nivel beat" | Ninguna celda supera a SegLoop; efectos 14b−7b −0.014 ± 0.011 y new−old −0.013 ± 0.013 en replicación |
 | EXP-016 | "El quorum ≥2 de {visual, diálogo, resúmenes} enlaza hilos mejor que visual sola" | −0.017 ± 0.005 de precisión en 47 películas train nuevas; diálogo no replica como votante |
+| EXP-017 / 017b | "El mapa de tópicos por consenso sin fusión agrupa hilos mejor (MCC, proxy cast) que la fusión y que v2.1" | components percola; average no supera a fused (+0.002 / −0.001); visual sola es mejor en MCC. G-coherencia sí se cumple y supera a fused en cada señal |
 
 ---
 
@@ -983,4 +984,48 @@ MCC en pares de largo alcance (|i−j| ≥ 80 shots), media por película:
   lo mantienen en todas.
 
 `results/exp017_topicmap_dev.json` · `results/exp017_topicmap_conf.json`
+
+### Resultado EXP-017b (link_mode average)
+MCC en pares de largo alcance; tasa de enlace = fracción de pares lejanos que
+el sistema pone en el mismo tópico.
+
+| sistema | desarrollo (46) MCC / tópicos / enlace | confirmación (47) MCC / tópicos / enlace |
+|---|---|---|
+| cava_avg | +0.011 / 78 / 0.046 | +0.010 / 82 / 0.048 |
+| cava_avg + SegLoop | +0.014 / 81 / 0.035 | — |
+| fused | +0.009 / 36 / 0.208 | +0.011 / 38 / 0.188 |
+| contiguous | +0.007 / 95 / 0.002 | +0.004 / 65 / 0.003 |
+| visual sola | +0.019 / 54 / 0.260 | **+0.025** / 48 / 0.263 |
+| vjudge sola | **+0.022** / 32 / 0.147 | +0.010 / 31 / 0.138 |
+
+| criterio | desarrollo | confirmación |
+|---|---|---|
+| cava_avg − fused | +0.002 ± 0.004 (z 0.6) | −0.001 ± 0.003 (z −0.5) |
+| cava_avg − contiguous | +0.005 ± 0.004 (z 1.2) | +0.006 ± 0.003 (z 2.2) |
+| cava_avg − cava (components) | +0.015 ± 0.005 (z 3.2) | +0.008 ± 0.004 (z 1.8) |
+| cava_avg − visual | −0.007 ± 0.005 | −0.015 ± 0.005 (z −3.1) |
+
+- **Primario: NO se cumple.** cava_avg no supera a fused en ningún conjunto;
+  sobre contiguous solo alcanza 2 SE en confirmación. El enlace promedio
+  arregla la percolación (78–82 tópicos frente a 5–9), pero en MCC contra el
+  proxy cast la mejor partición es la de visual sola.
+- **G-coherencia: SE CUMPLE en ambos conjuntos.** Margen > 0 en las tres
+  señales en el 100 % de películas. Además, en ambos conjuntos el margen de
+  cada señal es mayor en cava_avg que en fused (descriptivo, no
+  pre-registrado):
+
+  | señal | cava_avg (dev / conf) | fused (dev / conf) |
+  |---|---|---|
+  | visual | 0.049 / 0.045 | 0.033 / 0.032 |
+  | diálogo | 0.028 / 0.028 | 0.009 / 0.009 |
+  | vjudge | 0.163 / 0.110 | 0.106 / 0.086 |
+
+  La fusión aplana la estructura de cada señal (el diálogo queda en 0.009);
+  el consenso sin fusión la conserva. Es la lección de A2Summ-X medida.
+- **Límite del GT:** "mismos personajes" favorece a la señal visual por
+  construcción (mismas caras en pantalla); un hilo sostenido por diálogo no
+  cuenta como positivo. El juez neutral es la revisión humana G-enlace
+  (preparada: `data/review_g_enlace/`, 30 casos).
+
+`results/exp017b_topicmap_dev.json` · `results/exp017b_topicmap_conf.json`
 
