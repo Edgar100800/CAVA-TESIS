@@ -158,6 +158,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-011 paso 2 / 2-R | "El VJudge relacional (contexto ±2 shots) ordena transiciones de trama mejor que SegLoop" | +0.027 ± 0.017 en 23 películas no replica: −0.002 ± 0.012 en 35 nuevas |
 | EXP-012 | "El VJudge juzgando cada corte contra la historia previa (ctx3) añade señal de trama; el contexto largo es lo que falta" | ΔAP vs SegLoop +0.002 / +0.006 (dev / rep), ctx3 ≈ ctx1; juez saturado (p_new mediana 0.97) |
 | EXP-013 | "Qwen2.5-VL-7B frozen capitula el ledger en párrafos de sinopsis" | Salida degenerada (92 % de candidatos marcados, 334/522 truncadas); ΔAP −0.022 / −0.013. Fallo del instrumento: la hipótesis de capitular queda sin probar |
+| EXP-013b | "Qwen2.5-VL-7B frozen con ~30 min de historia reconoce inicios de beat mejor que SegLoop" | ΔAP −0.016 ± 0.012 (dev) / +0.025 ± 0.020 (rep), signos opuestos; instrumento sin saturar |
 
 ---
 
@@ -663,4 +664,29 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
   queda invalidado para Qwen2.5-VL-7B.
 
 `scripts/vjudge_chapter_logit.py` · `scripts/eval_chapter.py --logit`
+
+### Resultado EXP-013b (job 53564, 58 películas)
+- **El instrumento funciona:** p_start p10/p50/p90 = 0.59 / 0.68 / 0.73, sin
+  saturar; ranking dentro de cada película.
+
+| criterio | desarrollo (23) | replicación (35) |
+|---|---|---|
+| 1. ΔAP beat(p_start − SegLoop) | −0.016 ± 0.012 | +0.025 ± 0.020 |
+| 2. veto mediana − SegLoop (beat F1, K24) | −0.014 ± 0.016 | +0.002 ± 0.015 |
+| escena: p_start − SegLoop | −0.157 | −0.170 |
+
+- **⚠️ INVALIDADO:** "Qwen2.5-VL-7B frozen, con ~30 min de historia como
+  contexto, reconoce inicios de beat mejor que SegLoop". Signos opuestos entre
+  conjuntos, ninguno a 2 SE.
+- **Balance EXP-010 → EXP-013b** (seis formulaciones: descripción, relacional
+  local, ledger A/B, lista, logits por ítem, y la variante con veto): ninguna
+  añade señal de trama sobre el ranking de confianza de SegLoop en datos no
+  vistos.
+  - El VJudge sirve para describir (resúmenes con personajes y eventos) y
+    sigue siendo peor que SegLoop en escenas (−0.10 a −0.17 AP).
+  - Con el modelo y los resúmenes actuales, el nivel beat no se alcanza.
+- **Abierto:** quedan dos causas posibles sin separar: el razonador (7B
+  multimodal) o los resúmenes de superficie.
+
+`results/exp013b_chapterlogit_step2.json` · `results/exp013b_chapterlogit_replication.json`
 
