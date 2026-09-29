@@ -690,3 +690,34 @@ AP sobre los 100 candidatos por película (positivo = inicio de beat a ±60 s):
 
 `results/exp013b_chapterlogit_step2.json` · `results/exp013b_chapterlogit_replication.json`
 
+---
+
+## EXP-014 · 2×2 resúmenes × razonador (pre-registro)
+- **Fecha:** 2026-09-29 (registrado antes de ejecutar)
+- **Motivo:** EXP-013b deja abiertas dos causas: el razonador (7B multimodal)
+  o los resúmenes de superficie. El 2×2 las separa.
+- **Factores** (mismo instrumento que EXP-013b: capitulación por ítem con
+  logits, ventana 15+14, mismos 100 candidatos):
+  - **Resúmenes:** `old` = EXP-012 (una frase libre) · `new` = entity-tracking.
+    Qwen2.5-VL-7B escribe `CHARACTERS | PLACE | GOAL` recibiendo el resumen
+    previo como contexto, para mantener nombres entre tramos.
+  - **Razonador:** `7b` = Qwen2.5-VL-7B (rev cc59489) · `14b` =
+    Qwen2.5-14B-Instruct (texto, rev cf98f3b, frozen, misma familia y
+    tokenizer, el doble de parámetros).
+  - Celda old×7b = EXP-013b (ya medida, sin cambios).
+- **Corpus:** desarrollo 23 / replicación 35, como EXP-011–013b.
+- **Criterios:**
+  1. Por celda: ΔAP beat(celda − SegLoop) > 2 SE pareado, en desarrollo Y en
+     replicación. Solo así una celda "añade señal de trama".
+  2. Efectos principales en replicación, pareado por película con la media de
+     los dos niveles del otro factor: razonador (14b − 7b) y resúmenes
+     (new − old), cada uno > 2 SE.
+- **Lectura prevista:**
+  - Solo el razonador pasa: faltaba capacidad de razonamiento.
+  - Solo los resúmenes: faltaba información de entidades.
+  - Solo new×14b: hacen falta ambas.
+  - Ninguna: con estos componentes frozen, el nivel beat no se alcanza sobre
+    SegLoop.
+
+`scripts/vjudge_ledger.py --summary-mode entity` · `scripts/vjudge_chapter_logit.py --model`
+

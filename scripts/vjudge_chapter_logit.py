@@ -36,23 +36,44 @@ def main():
     ap.add_argument("--after", type=int, default=14)
     ap.add_argument("--out", default="data/vjudge_chapter_logit")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--model", choices=["vl7b", "text14b"], default="vl7b",
+                    help="EXP-014: razonador; mismo prompt e instrumento en ambos")
     args = ap.parse_args()
 
     led_dir, out = Path(args.ledger), Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     films = args.films or sorted(f.name.split(".")[0] for f in led_dir.glob("*.summaries.json"))
 
+    MODELS = {"vl7b": ("Qwen/Qwen2.5-VL-7B-Instruct", "cc594898137f460bfe9f0759e9844b3ce807cfb5"),
+              "text14b": ("Qwen/Qwen2.5-14B-Instruct", "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8")}
     if not args.dry_run:
         import torch
-        from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
         os.environ.setdefault("HF_HOME", "/home/edgar.chambilla/Tesis/SegLoop/data/hf_cache")
-        mid, rev = "Qwen/Qwen2.5-VL-7B-Instruct", "cc594898137f460bfe9f0759e9844b3ce807cfb5"
-        processor = AutoProcessor.from_pretrained(mid, revision=rev)
-        model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-            mid, revision=rev, torch_dtype=torch.bfloat16, device_map="cuda").eval()
-        ids = [processor.tokenizer.encode(x, add_special_tokens=False) for x in ("A", "B")]
+        mid, rev = MODELS[args.model]
+        if args.model == "vl7b":
+            from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
+            processor = AutoProcessor.from_pretrained(mid, revision=rev)
+            tok = processor.tokenizer
+            model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+                mid, revision=rev, torch_dtype=torch.bfloat16, device_map="cuda").eval()
+        else:
+            from transformers import AutoModelForCausalLM, AutoTokenizer
+            tok = AutoTokenizer.from_pretrained(mid, revision=rev)
+            model = AutoModelForCausalLM.from_pretrained(
+                mid, revision=rev, torch_dtype=torch.bfloat16, device_map="cuda").eval()
+        ids = [tok.encode(x, add_special_tokens=False) for x in ("A", "B")]
         assert all(len(i) == 1 for i in ids), ids
         ids = [i[0] for i in ids]
+
+        def encode(text):
+            if args.model == "vl7b":
+                chat = processor.apply_chat_template(
+                    [{"role": "user", "content": [{"type": "text", "text": text}]}],
+                    tokenize=False, add_generation_prompt=True)
+                return processor(text=[chat], return_tensors="pt").to(model.device)
+            chat = tok.apply_chat_template([{"role": "user", "content": text}],
+                                           tokenize=False, add_generation_prompt=True)
+            return tok([chat], return_tensors="pt").to(model.device)
 
     for tt in films:
         f_out = out / f"{tt}.chapterlogit.json"
@@ -70,10 +91,7 @@ def main():
             if args.dry_run:
                 p = None
             else:
-                chat = processor.apply_chat_template(
-                    [{"role": "user", "content": [{"type": "text", "text": text}]}],
-                    tokenize=False, add_generation_prompt=True)
-                inputs = processor(text=[chat], return_tensors="pt").to(model.device)
+                inputs = encode(text)
                 with torch.inference_mode():
                     logits = model(**inputs).logits[0, -1, ids].float()
                 p = float(torch.softmax(logits, dim=0)[1])

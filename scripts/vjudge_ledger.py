@@ -30,6 +30,17 @@ SUMMARY_PROMPT = (
     "In ONE sentence, say what happens here: who is involved, where, and what "
     "event takes place. Plain text, no preamble."
 )
+ENTITY_PROMPT = (
+    "These {n} frames come from one continuous stretch of a film.\n"
+    "Dialogue: \"{dialogue}\"\n"
+    "Summary of the previous stretch (for continuity): \"{prev}\"\n\n"
+    "Write ONE line in exactly this format:\n"
+    "CHARACTERS: <who is involved> | PLACE: <where> | GOAL: <what they are trying to "
+    "do, or the conflict>\n"
+    "Use names heard in the dialogue or already used in the previous summary; "
+    "otherwise a short stable description (e.g. 'the bald man'). Keep the same name "
+    "when it is the same person."
+)
 LEDGER_PROMPT = (
     "Here is a film's story, one line per consecutive stretch.\n"
     "Story so far:\n{story}\n\nNext stretch: {nxt}\n\n"
@@ -50,6 +61,11 @@ def main():
     ap.add_argument("--ctx", type=int, nargs="+", default=[1, 3])
     ap.add_argument("--out", default="data/vjudge_ledger")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--summary-mode", choices=["surface", "entity"], default="surface",
+                    help="entity (EXP-014): formato CHARACTERS|PLACE|GOAL con el resumen "
+                         "previo como contexto para mantener nombres")
+    ap.add_argument("--summaries-only", action="store_true",
+                    help="solo etapa 1 (la capitulación va aparte)")
     args = ap.parse_args()
 
     corpus, vdir, out = Path(args.corpus), Path(args.voters), Path(args.out)
@@ -99,18 +115,27 @@ def main():
             kfs = [p for p in (keyframe(tt, s) for s in shots) if p]
             t0, t1 = st[lo][0], st[hi - 1][1]
             dia = " ".join(x for a, b, x in cues if a < t1 and b > t0)[:500]
-            text = SUMMARY_PROMPT.format(n=len(kfs), dialogue=dia or "(none)")
+            if args.summary_mode == "entity":
+                prev = sums[u - 1]["summary"] if u else "(start of the film)"
+                text = ENTITY_PROMPT.format(n=len(kfs), dialogue=dia or "(none)", prev=prev)
+            else:
+                text = SUMMARY_PROMPT.format(n=len(kfs), dialogue=dia or "(none)")
             if args.dry_run:
                 summary = f"[dry {len(kfs)} frames, {len(dia)} chars]"
             else:
                 imgs = [Image.open(p).convert("RGB").resize((448, 252)) for p in kfs]
                 content = [{"type": "image", "image": im} for im in imgs]
                 content.append({"type": "text", "text": text})
-                summary = run(content, imgs, gen_tokens=60)
+                summary = run(content, imgs, gen_tokens=90 if args.summary_mode == "entity" else 60)
             sums.append({"unit": u, "lo": lo, "hi": hi, "summary": summary})
             if len(sums) % 20 == 0:
                 f_sum.write_text(json.dumps(sums, ensure_ascii=False))
         f_sum.write_text(json.dumps(sums, ensure_ascii=False))
+        if args.summaries_only:
+            (out / f"{tt}.ledger.json").write_text(json.dumps(
+                [{"cut": c, "seg_score": float(seg[c - 1])} for c in cands]))
+            print(f"[ledger] {tt}: {len(sums)} resúmenes ({args.summary_mode})", flush=True)
+            continue
 
         # etapa 2: juicio de cada corte contra la historia previa (solo texto)
         f_led = out / f"{tt}.ledger.json"
