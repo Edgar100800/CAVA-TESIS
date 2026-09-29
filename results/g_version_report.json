@@ -1,0 +1,2152 @@
+{
+ "n_films": 58,
+ "passed": 58,
+ "per_film": {
+  "tt0048545": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3959.67
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.87
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     660.0
+    ],
+    "budget_s": 661.2930000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     495.67,
+     656.71,
+     446.32
+    ],
+    "budget_s": 661.2930000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0061722": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3945.54
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.51
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     631.39
+    ],
+    "budget_s": 631.8310000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     618.77,
+     631.31,
+     631.46
+    ],
+    "budget_s": 631.8310000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0066026": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4324.6
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.43
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     693.81
+    ],
+    "budget_s": 694.2370000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     382.79,
+     291.62,
+     251.0
+    ],
+    "budget_s": 694.2370000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0071562": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     6124.88
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.61
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     1172.74
+    ],
+    "budget_s": 1173.236,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     1171.36,
+     1170.35,
+     405.04
+    ],
+    "budget_s": 1173.236,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0072890": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3678.59
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.43
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     747.41
+    ],
+    "budget_s": 747.5810000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     743.58,
+     741.28,
+     745.53
+    ],
+    "budget_s": 747.5810000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0073486": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4092.23
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.66
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     784.83
+    ],
+    "budget_s": 785.354,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     783.99,
+     784.59,
+     697.98
+    ],
+    "budget_s": 785.354,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0076759": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4048.87
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.46
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     720.85
+    ],
+    "budget_s": 720.884,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     433.75,
+     546.43,
+     164.46
+    ],
+    "budget_s": 720.884,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0080684": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3211.9
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.64
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     734.33
+    ],
+    "budget_s": 734.837,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     729.69,
+     730.57,
+     395.69
+    ],
+    "budget_s": 734.837,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0083929": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3010.81
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.43
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     518.77
+    ],
+    "budget_s": 518.778,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     398.87,
+     394.68,
+     509.63
+    ],
+    "budget_s": 518.778,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0087332": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4276.66
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.92
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     602.72
+    ],
+    "budget_s": 602.807,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     214.32,
+     308.05,
+     279.75
+    ],
+    "budget_s": 602.807,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0090756": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     5012.49
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.26
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     720.72
+    ],
+    "budget_s": 720.988,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     692.65,
+     718.64,
+     297.46
+    ],
+    "budget_s": 720.988,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0094737": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4853.83
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.97
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     755.51
+    ],
+    "budget_s": 755.9590000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     306.81,
+     712.92,
+     517.81
+    ],
+    "budget_s": 755.9590000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0096446": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4493.92
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.9
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     723.32
+    ],
+    "budget_s": 723.657,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     189.44,
+     177.24,
+     116.76
+    ],
+    "budget_s": 723.657,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0097576": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4692.9
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.21
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     760.08
+    ],
+    "budget_s": 760.8760000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     391.61,
+     699.45,
+     487.04
+    ],
+    "budget_s": 760.8760000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0099685": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4572.29
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.76
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     838.79
+    ],
+    "budget_s": 838.9490000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     835.57,
+     838.91,
+     500.73
+    ],
+    "budget_s": 838.9490000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0102138": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     6310.14
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.97
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     1192.0
+    ],
+    "budget_s": 1192.102,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     978.02,
+     1191.46,
+     548.27
+    ],
+    "budget_s": 1192.102,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0103074": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3592.72
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.81
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     753.56
+    ],
+    "budget_s": 754.166,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     748.68,
+     692.04,
+     631.94
+    ],
+    "budget_s": 754.166,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0105236": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3899.48
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.43
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     571.03
+    ],
+    "budget_s": 571.101,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     479.28,
+     459.37,
+     412.86
+    ],
+    "budget_s": 571.101,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0108160": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4045.25
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.22
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     598.14
+    ],
+    "budget_s": 598.186,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     580.48,
+     165.92,
+     259.89
+    ],
+    "budget_s": 598.186,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0110475": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     2938.35
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.84
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     566.06
+    ],
+    "budget_s": 566.489,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     565.99,
+     225.73,
+     138.11
+    ],
+    "budget_s": 566.489,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0112641": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     5756.2
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.75
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     1029.48
+    ],
+    "budget_s": 1029.804,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     978.29,
+     970.43,
+     629.57
+    ],
+    "budget_s": 1029.804,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0114558": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     5644.98
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.8
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     844.2
+    ],
+    "budget_s": 844.7330000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     237.32,
+     251.74,
+     313.02
+    ],
+    "budget_s": 844.7330000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0116367": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3724.49
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.33
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     646.59
+    ],
+    "budget_s": 646.9920000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     645.44,
+     215.71,
+     263.13
+    ],
+    "budget_s": 646.9920000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0118571": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3579.04
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.55
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     708.71
+    ],
+    "budget_s": 709.2330000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     376.14,
+     707.59,
+     465.59
+    ],
+    "budget_s": 709.2330000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0119094": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4448.51
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.59
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     804.88
+    ],
+    "budget_s": 805.042,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     804.88,
+     227.9,
+     80.07
+    ],
+    "budget_s": 805.042,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0119822": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4815.71
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.56
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     798.42
+    ],
+    "budget_s": 798.553,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     797.6,
+     244.81,
+     472.52
+    ],
+    "budget_s": 798.553,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0120780": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4364.82
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.18
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     698.25
+    ],
+    "budget_s": 698.816,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     414.26,
+     411.29,
+     478.18
+    ],
+    "budget_s": 698.816,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0121765": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4145.28
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.96
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     813.67
+    ],
+    "budget_s": 814.195,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     813.32,
+     363.96,
+     372.18
+    ],
+    "budget_s": 814.195,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0129387": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     5355.36
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.92
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     765.13
+    ],
+    "budget_s": 765.5250000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     462.58,
+     318.23,
+     294.83
+    ],
+    "budget_s": 765.5250000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0138097": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3911.62
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.47
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     717.45
+    ],
+    "budget_s": 717.556,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     486.79,
+     620.38,
+     448.26
+    ],
+    "budget_s": 717.556,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0145487": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     6447.4
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.83
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     694.87
+    ],
+    "budget_s": 694.8710000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     51.21,
+     42.11,
+     28.85
+    ],
+    "budget_s": 694.8710000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0166924": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3763.38
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.72
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     852.51
+    ],
+    "budget_s": 852.6270000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     850.79,
+     846.91,
+     852.49
+    ],
+    "budget_s": 852.6270000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0167261": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     7628.98
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     60.0
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     1287.86
+    ],
+    "budget_s": 1288.0110000000002,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     194.99,
+     447.98,
+     392.62
+    ],
+    "budget_s": 1288.0110000000002,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0167404": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3956.9
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.43
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     610.31
+    ],
+    "budget_s": 611.1260000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     467.65,
+     457.33,
+     467.6
+    ],
+    "budget_s": 611.1260000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0186151": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3092.09
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.92
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     681.44
+    ],
+    "budget_s": 682.1100000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     680.02,
+     215.29,
+     661.52
+    ],
+    "budget_s": 682.1100000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0209958": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3602.66
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.97
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     613.43
+    ],
+    "budget_s": 613.4399999999999,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     374.14,
+     421.4,
+     354.72
+    ],
+    "budget_s": 613.4399999999999,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0258463": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3424.79
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.88
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     669.19
+    ],
+    "budget_s": 669.291,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     433.74,
+     433.07,
+     511.53
+    ],
+    "budget_s": 669.291,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0268126": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3901.79
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.35
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     662.02
+    ],
+    "budget_s": 662.0640000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     660.77,
+     482.49,
+     373.44
+    ],
+    "budget_s": 662.0640000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0311113": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3531.84
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.84
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     767.68
+    ],
+    "budget_s": 768.015,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     766.79,
+     452.36,
+     634.91
+    ],
+    "budget_s": 768.015,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0343818": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3885.0
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.3
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     637.71
+    ],
+    "budget_s": 637.9520000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     547.68,
+     374.01,
+     175.3
+    ],
+    "budget_s": 637.9520000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0370263": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3647.1
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.51
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     589.06
+    ],
+    "budget_s": 589.354,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     361.53,
+     451.8,
+     585.19
+    ],
+    "budget_s": 589.354,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0371724": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4594.67
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.93
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     650.64
+    ],
+    "budget_s": 651.0050000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     164.84,
+     207.22,
+     316.03
+    ],
+    "budget_s": 651.0050000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0408236": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4780.61
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.34
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     667.56
+    ],
+    "budget_s": 668.173,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     232.01,
+     504.85,
+     204.88
+    ],
+    "budget_s": 668.173,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0434409": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4389.49
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.84
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     794.87
+    ],
+    "budget_s": 794.9540000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     470.1,
+     420.1,
+     728.44
+    ],
+    "budget_s": 794.9540000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0467200": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     2968.77
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.8
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     670.19
+    ],
+    "budget_s": 670.801,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     667.99,
+     668.28,
+     362.87
+    ],
+    "budget_s": 670.801,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0758758": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4486.48
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.68
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     856.88
+    ],
+    "budget_s": 857.2139999999999,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     661.41,
+     786.25,
+     754.27
+    ],
+    "budget_s": 857.2139999999999,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0808151": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4851.85
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.76
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     827.02
+    ],
+    "budget_s": 827.273,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     740.37,
+     592.97,
+     230.31
+    ],
+    "budget_s": 827.273,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0898367": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3754.63
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.47
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     621.32
+    ],
+    "budget_s": 621.71,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     618.21,
+     401.96,
+     315.47
+    ],
+    "budget_s": 621.71,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0964517": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4607.1
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.5
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     693.47
+    ],
+    "budget_s": 693.611,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     435.33,
+     269.44,
+     244.49
+    ],
+    "budget_s": 693.611,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1032755": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3440.65
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.59
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     684.73
+    ],
+    "budget_s": 685.046,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     684.76,
+     684.95,
+     684.98
+    ],
+    "budget_s": 685.046,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1100089": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4800.71
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.5
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     805.1
+    ],
+    "budget_s": 805.9590000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     718.04,
+     598.48,
+     741.14
+    ],
+    "budget_s": 805.9590000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1182345": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3258.76
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.64
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     555.55
+    ],
+    "budget_s": 555.6840000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     416.69,
+     461.9,
+     215.68
+    ],
+    "budget_s": 555.6840000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1284575": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     2709.0
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.64
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     562.06
+    ],
+    "budget_s": 562.3810000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     461.65,
+     298.76,
+     547.21
+    ],
+    "budget_s": 562.3810000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1409024": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3317.72
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.38
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     587.95
+    ],
+    "budget_s": 588.057,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     207.93,
+     563.21,
+     273.78
+    ],
+    "budget_s": 588.057,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1504320": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4979.43
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.51
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     668.56
+    ],
+    "budget_s": 669.091,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     566.64,
+     254.83,
+     137.59
+    ],
+    "budget_s": 669.091,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1591095": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3828.34
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.96
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     594.2
+    ],
+    "budget_s": 594.241,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     366.18,
+     366.0,
+     593.45
+    ],
+    "budget_s": 594.241,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1659337": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3322.46
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.39
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     615.06
+    ],
+    "budget_s": 615.538,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     571.03,
+     614.98,
+     435.37
+    ],
+    "budget_s": 615.538,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt2132285": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     2855.25
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.42
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     493.03
+    ],
+    "budget_s": 493.394,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     387.66,
+     492.03,
+     422.34
+    ],
+    "budget_s": 493.394,
+    "ok": true
+   },
+   "G_version": true
+  }
+ }
+}
