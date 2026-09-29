@@ -49,3 +49,73 @@ def test_min_gap_respected():
     for gap in (2, 3):
         cuts = manage({"visual": a}, percentile=50, min_gap=gap).per_signal_cuts["visual"]
         assert all(b - a_ >= gap for a_, b in zip(cuts, cuts[1:])), (gap, cuts)
+
+
+def _partition(labels):
+    seen, out = {}, []
+    for lab in labels:
+        seen.setdefault(int(lab), len(seen))
+        out.append(seen[int(lab)])
+    return out
+
+
+def test_default_behaviour_matches_v21_golden():
+    import json
+    from pathlib import Path
+    cases = json.loads((Path(__file__).parent / "fixtures" / "manage_golden_v21.json").read_text())
+    for c in cases:
+        sig = {k: np.asarray(v, np.float32) for k, v in c["signals"].items()}
+        plan = manage(sig, speech_times=c["speech_times"], **c["kw"])
+        assert _partition(plan.labels) == _partition(c["labels"])
+        assert plan.consensus_cuts == c["consensus_cuts"]
+        assert plan.per_signal_cuts == c["per_signal_cuts"]
+        assert [g.segment_indices for g in plan.groups] == c["groups"]
+        assert [[bool(getattr(g, "no_topic", False)), bool(getattr(g, "needs_review", False))]
+                for g in plan.groups] == c["flags"]
+        assert [g.signal_support for g in plan.groups] == c["support"]
+
+
+def _abab(seed=5, size=12, dims=16):
+    """Topic A, then B, then A again, then C: the TPU case (a topic returns)."""
+    rng = np.random.default_rng(seed)
+    cA, cB, cC = (rng.normal(size=dims) for _ in range(3))
+    blocks = [cA, cB, cA, cC]
+    return np.asarray([c + 0.15 * rng.normal(size=dims) for c in blocks for _ in range(size)],
+                      np.float32), size
+
+
+def test_returning_topic_is_linked_across_signals():
+    x, size = _abab()
+    y = x + 0.05 * np.random.default_rng(9).normal(size=x.shape)
+    plan = manage({"visual": x, "vjudge": y}, percentile=95, link_quorum=2,
+                  return_percentile=50)
+    lab = plan.labels
+    assert lab[0] == lab[2 * size]            # A returns: same topic
+    assert lab[0] != lab[size]                # B stays separate
+    assert lab[0] != lab[3 * size]            # C stays separate
+
+
+def test_contiguous_default_cannot_link_return():
+    x, size = _abab()
+    plan = manage({"visual": x, "vjudge": x.copy()}, percentile=95, link_quorum=2)
+    assert plan.labels[0] != plan.labels[2 * size]
+
+
+def test_return_needs_quorum():
+    x, size = _abab()
+    rng = np.random.default_rng(3)
+    other = np.asarray([rng.normal(size=16) for _ in range(len(x))], np.float32)
+    # only one signal sees the return -> with quorum 2 it must not link
+    plan = manage({"visual": x, "noise": other}, percentile=95, link_quorum=2,
+                  return_percentile=50)
+    assert plan.labels[0] != plan.labels[2 * size]
+
+
+def test_boundary_signal_votes_and_labels():
+    x, size = _abab()
+    seg = np.zeros(len(x) - 1, np.float32)
+    seg[size - 1] = 1.0
+    plan = manage({"visual": x}, boundary_signals={"segloop": seg}, percentile=95,
+                  link_quorum=2, return_percentile=50)
+    assert size in plan.per_signal_cuts["segloop"]
+    assert "segloop" in plan.per_signal_labels
