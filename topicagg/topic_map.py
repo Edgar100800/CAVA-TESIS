@@ -12,8 +12,10 @@ produce un documento JSON-serializable:
     duration_s   suma de los tramos
     returns      nº de veces que el tópico reaparece tras una ausencia
     label        resumen VJudge de la unidad que más shots aporta al tópico
-    provenance   por señal: soporte (fracción de shots que la señal agrupa con
-                 otro shot del tópico) y coherencia (coseno intra − inter)
+    provenance   por señal: agreement (fracción de pares de shots del tópico que
+                 la señal pone en su mismo tópico propio), support (v2.1:
+                 fracción de shots que comparten etiqueta con otro) y coherencia
+                 leave-one-out de sus embeddings
     flags        no_topic / needs_review (ticket 001)
 Ninguna señal se fusiona: la provenance muestra cuáles sostienen cada tópico.
 """
@@ -47,6 +49,15 @@ def _coherence(x: np.ndarray, members: list[int]) -> float | None:
     return float((rows * rest).sum(1).mean())  # leave-one-out, sin inflar
 
 
+def _agreement(labels: np.ndarray, members: list[int]) -> float | None:
+    if len(members) < 2:
+        return None
+    lab = labels[members]
+    _, counts = np.unique(lab, return_counts=True)
+    same = float((counts * (counts - 1)).sum()) / 2
+    return round(same / (len(members) * (len(members) - 1) / 2), 3)
+
+
 def topics_from_plan(plan: TopicPlan, shot_times: list[list[float]],
                      signals: dict[str, np.ndarray],
                      unit_summaries: list[dict] | None = None) -> list[dict]:
@@ -70,7 +81,8 @@ def topics_from_plan(plan: TopicPlan, shot_times: list[list[float]],
             "duration_s": round(sum(shot_times[b][1] - shot_times[a][0] for a, b in spans), 2),
             "returns": len(spans) - 1,
             "label": label,
-            "provenance": {k: {"support": g.signal_support.get(k),
+            "provenance": {k: {"agreement": _agreement(plan.per_signal_labels[k], members),
+                               "support": g.signal_support.get(k),
                                "coherence": _coherence(signals[k], members)
                                if k in signals else None}
                            for k in g.signal_support},
