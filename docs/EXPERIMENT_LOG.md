@@ -930,3 +930,32 @@ summary_old 0.727, dialogue 0.704.
 
 `scripts/eval_topic_map.py`
 
+### Hallazgo durante EXP-017 (antes de ver sus resultados) y pre-registro EXP-017b
+- **Diagnóstico en tt0061722** (sin mirar MCC):
+  - Con retornos, cada señal forma tópicos razonables: visual 30, diálogo 37,
+    vjudge 20.
+  - La regla de enlace v2.1 (componentes conexas de pares con ≥ quorum votos)
+    es enlace simple: cadenas i~j (señales 1+2) y j~k (señales 2+3) unen i con
+    k aunque ninguna mayoría los agrupe. Resultado: un tópico gigante con el
+    94 % de los shots.
+  - Con etiquetas contiguas el defecto no se veía porque las cadenas quedaban
+    dentro de tramos.
+- **Corrección** (`link_mode="average"`, commit siguiente): consenso por enlace
+  promedio sobre la matriz de votos. Dos grupos se unen solo si, en promedio
+  sobre todos sus pares, ≥ link_quorum señales los agrupan. Sigue siendo
+  conteo de votos por señal (ADR-0001). Test que reproduce la percolación
+  (`test_average_link_mode_does_not_chain`). En tt0061722 / tt0102138 da 46 /
+  121 tópicos, el mayor con 15–16 % de los shots, y 20 / 63 tópicos con
+  retornos.
+- **EXP-017 se ejecuta igualmente tal como se registró** (modo components) y se
+  reporta.
+- **Pre-registro EXP-017b** (antes de ver MCC con average): mismos corpus,
+  pares, métrica y criterios que EXP-017.
+  - `cava_avg`: link_mode="average", percentile 80, return_percentile 90,
+    link_quorum 2.
+  - Primario: MCC(cava_avg) − MCC(fused) > 2 SE y MCC(cava_avg) −
+    MCC(contiguous v2.1) > 2 SE, en desarrollo Y confirmación.
+  - G-coherencia: margen > 0 en cada señal para cava_avg.
+  - `fused` sigue siendo una sola señal (una señal no tiene quorum que enlazar;
+    su partición es su propio etiquetado).
+

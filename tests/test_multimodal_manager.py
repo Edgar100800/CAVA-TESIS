@@ -119,3 +119,37 @@ def test_boundary_signal_votes_and_labels():
                   link_quorum=2, return_percentile=50)
     assert size in plan.per_signal_cuts["segloop"]
     assert "segloop" in plan.per_signal_labels
+
+
+def test_average_link_mode_links_return():
+    x, size = _abab()
+    y = x + 0.05 * np.random.default_rng(9).normal(size=x.shape)
+    plan = manage({"visual": x, "vjudge": y}, percentile=95, link_quorum=2,
+                  return_percentile=50, link_mode="average")
+    lab = plan.labels
+    assert lab[0] == lab[2 * size] and lab[0] != lab[size] and lab[0] != lab[3 * size]
+
+
+def test_average_link_mode_does_not_chain():
+    # 3 signals, quorum 2. Pairs (A,B) share labels in s1+s2, (B,C) in s2+s3,
+    # but A and C are grouped together by only ONE signal (s2).
+    # components chains A-B-C into one topic; average must not merge all three.
+    n = 30
+    A, B, C = range(0, 10), range(10, 20), range(20, 30)
+    s1 = np.zeros(n, int); s1[list(C)] = 1               # {A,B} | {C}
+    s2 = np.zeros(n, int)                                  # {A,B,C}
+    s3 = np.zeros(n, int); s3[list(A)] = 1                # {A} | {B,C}
+    from topicagg import multimodal_manager as mm
+    orig = mm._return_labels
+    fixed = {"s1": s1, "s2": s2, "s3": s3}
+    try:
+        mm._return_labels = lambda embs, cuts, pct: fixed[int(embs[0, 0])]
+        sig = {k: np.full((n, 2), float(i), np.float32) for i, k in enumerate(["s1", "s2", "s3"])}
+        fixed = {0: s1, 1: s2, 2: s3}
+        comp = mm.manage(sig, percentile=99, link_quorum=2, return_percentile=50)
+        avg = mm.manage(sig, percentile=99, link_quorum=2, return_percentile=50,
+                        link_mode="average")
+    finally:
+        mm._return_labels = orig
+    assert len(set(comp.labels.tolist())) == 1            # percolation
+    assert len(set(avg.labels.tolist())) >= 2             # average does not chain

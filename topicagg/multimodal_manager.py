@@ -160,13 +160,20 @@ def manage(signals: dict[str, np.ndarray], *,
                                           # (None = mayoría ponderada; int = intersección)
            tolerance_bins: int = 1,
            boundary_signals: dict[str, np.ndarray] | None = None,
-           return_percentile: float | None = None) -> TopicPlan:
+           return_percentile: float | None = None,
+           link_mode: str = "components") -> TopicPlan:
     """signals: {nombre: [n, D]} embeddings POR SEÑAL (nunca fusionados).
     link_quorum: nº de señales que deben agrupar un par para enlazarlo.
     boundary_signals: {nombre: score[n-1]} votantes que solo aportan fronteras
       (p. ej. SegLoop): cortes por su propio percentil, etiquetas contiguas.
     return_percentile: None = etiquetas por señal contiguas (v2.1). Con valor,
-      cada señal de embeddings permite retornos de tópico (ver _return_labels)."""
+      cada señal de embeddings permite retornos de tópico (ver _return_labels).
+    link_mode: "components" = componentes conexas de los pares con ≥ link_quorum
+      votos (v2.1; enlace simple: con retornos, las cadenas i~j, j~k percolan en
+      un tópico gigante). "average" = consenso por enlace promedio sobre la matriz
+      de votos: dos grupos se unen solo si, en promedio sobre TODOS sus pares,
+      ≥ link_quorum señales los agrupan. Sigue siendo conteo de votos; no fusiona
+      representaciones (ADR-0001)."""
     n = n_segments or min(len(v) for v in signals.values())
     signals = {k: np.asarray(v, dtype=np.float32)[:n] for k, v in signals.items()}
     w = {"transcript": 1.0, "visual": 1.0, "ocr": 1.0, "audio": 0.5, **(weights or {})}
@@ -229,7 +236,22 @@ def manage(signals: dict[str, np.ndarray], *,
     for name, labs in per_labels.items():
         V += w.get(name, 1.0) * (labs[:, None] == labs[None, :])
     np.fill_diagonal(V, 0.0)
-    _, comp_id = connected_components(csr_matrix(V >= link_quorum), directed=False)
+    if link_mode == "components":
+        _, comp_id = connected_components(csr_matrix(V >= link_quorum), directed=False)
+    elif link_mode == "average":
+        from scipy.cluster.hierarchy import fcluster, linkage
+        from scipy.spatial.distance import squareform
+        total_link_w = sum(w.get(k, 1.0) for k in per_labels) or 1.0
+        D = 1.0 - V / total_link_w
+        np.fill_diagonal(D, 0.0)
+        if n > 1:
+            Z = linkage(squareform(D, checks=False), method="average")
+            comp_id = fcluster(Z, t=1.0 - link_quorum / total_link_w + 1e-9,
+                               criterion="distance") - 1
+        else:
+            comp_id = np.zeros(n, dtype=int)
+    else:
+        raise ValueError(f"link_mode desconocido: {link_mode}")
     comp: dict[int, list[int]] = {}
     for i in range(n):
         comp.setdefault(int(comp_id[i]), []).append(i)
