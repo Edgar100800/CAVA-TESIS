@@ -160,6 +160,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-013 | "Qwen2.5-VL-7B frozen capitula el ledger en párrafos de sinopsis" | Salida degenerada (92 % de candidatos marcados, 334/522 truncadas); ΔAP −0.022 / −0.013. Fallo del instrumento: la hipótesis de capitular queda sin probar |
 | EXP-013b | "Qwen2.5-VL-7B frozen con ~30 min de historia reconoce inicios de beat mejor que SegLoop" | ΔAP −0.016 ± 0.012 (dev) / +0.025 ± 0.020 (rep), signos opuestos; instrumento sin saturar |
 | EXP-014 | "El razonador (14B) o los resúmenes entity-tracking desbloquean el nivel beat" | Ninguna celda supera a SegLoop; efectos 14b−7b −0.014 ± 0.011 y new−old −0.013 ± 0.013 en replicación |
+| EXP-016 | "El quorum ≥2 de {visual, diálogo, resúmenes} enlaza hilos mejor que visual sola" | −0.017 ± 0.005 de precisión en 47 películas train nuevas; diálogo no replica como votante |
 
 ---
 
@@ -854,4 +855,32 @@ temporal) pareado. AP medio de replicación: azar 0.526, prior temporal 0.552.
 
 `scripts/vjudge_ledger.py --fixed-units 8` · `scripts/build_dialogue.py` ·
 `scripts/eval_threads.py --quorum-voters visual dialogue summary_old --best-single visual`
+
+### Resultado EXP-016 (47 películas train, 7437 unidades fijas de 8 shots, job 53617)
+AP en pares |i−j| ≥ 10: azar 0.675, prior temporal 0.706, visual 0.782,
+summary_old 0.727, dialogue 0.704.
+
+| criterio | resultado | |
+|---|---|---|
+| 1. visual − prior temporal | **+0.076 ± 0.010 (z 7.9)** | ✅ replica |
+| 1. summary_old − prior temporal | **+0.021 ± 0.007 (z 2.8)** | ✅ replica |
+| 1. dialogue − prior temporal | −0.003 ± 0.007 | ❌ no replica |
+| 2. **quorum ≥2 de 3 − visual solo** (precisión, mismo nº de enlaces) | **−0.017 ± 0.005 (z −3.7)** | ❌ |
+
+- **⚠️ INVALIDADO (primario):** "el quorum multimodal enlaza mejor que la
+  mejor señal sola". El quorum es peor que visual sola en muestra nueva, igual
+  que el consenso ≥2 de 5 en EXP-015.
+- **⚠️ INVALIDADO:** diálogo como votante de enlace robusto. Pasa en EXP-015
+  (unidades SegLoop, val) y no en EXP-016 (unidades fijas, train).
+- **Robusto en 3 muestras** (EXP-015 desarrollo y replicación, EXP-016):
+  - visual: z 6.0 / 7.0 / 7.9.
+  - resúmenes VJudge (old): z 3.3 / 3.3 / 2.8. El VJudge sí aporta señal de
+    enlace sobre la proximidad, menor que la visual.
+- **Consecuencia para CAVA:** con votación por mediana, añadir votantes más
+  débiles a visual empeora el enlace. Queda abierto si los resúmenes VJudge
+  aportan información *complementaria* a visual (no se probó; la votación por
+  mediana es una regla tosca). Probarlo requiere otra muestra nueva: val y
+  train ya se usaron.
+
+`results/exp016_quorum_train.json`
 

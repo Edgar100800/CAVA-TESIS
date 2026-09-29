@@ -1,0 +1,49 @@
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   1%|          | 5/729 [00:00<00:22, 32.53it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:07, 96.30it/s]Loading weights:   5%|▍         | 33/729 [00:00<00:06, 101.27it/s]Loading weights:   6%|▋         | 46/729 [00:00<00:06, 109.01it/s]Loading weights:   8%|▊         | 60/729 [00:00<00:05, 116.87it/s]Loading weights:  10%|█         | 76/729 [00:00<00:05, 113.19it/s]Loading weights:  12%|█▏        | 89/729 [00:00<00:05, 112.09it/s]Loading weights:  14%|█▍        | 102/729 [00:00<00:05, 116.29it/s]Loading weights:  16%|█▌        | 117/729 [00:01<00:04, 125.77it/s]Loading weights:  18%|█▊        | 132/729 [00:01<00:04, 132.01it/s]Loading weights:  20%|██        | 146/729 [00:01<00:04, 134.00it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:04, 126.21it/s]Loading weights:  24%|██▎       | 173/729 [00:01<00:04, 114.81it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:04, 116.05it/s]Loading weights:  28%|██▊       | 202/729 [00:01<00:04, 126.55it/s]Loading weights:  30%|██▉       | 216/729 [00:01<00:03, 129.77it/s]Loading weights:  32%|███▏      | 230/729 [00:01<00:03, 130.71it/s]Loading weights:  33%|███▎      | 244/729 [00:02<00:04, 114.80it/s]Loading weights:  35%|███▌      | 257/729 [00:02<00:04, 107.89it/s]Loading weights:  37%|███▋      | 270/729 [00:02<00:04, 111.36it/s]Loading weights:  39%|███▊      | 282/729 [00:02<00:04, 111.51it/s]Loading weights:  40%|████      | 294/729 [00:02<00:04, 108.58it/s]Loading weights:  43%|████▎     | 312/729 [00:02<00:03, 125.77it/s]Loading weights:  45%|████▍     | 328/729 [00:02<00:03, 127.68it/s]Loading weights:  49%|████▉     | 359/729 [00:02<00:02, 175.95it/s]Loading weights:  63%|██████▎   | 457/729 [00:02<00:00, 395.96it/s]Loading weights:  75%|███████▌  | 550/729 [00:03<00:00, 545.67it/s]Loading weights:  88%|████████▊ | 643/729 [00:03<00:00, 651.13it/s]Loading weights: 100%|█████████▉| 727/729 [00:03<00:00, 683.74it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 220.57it/s]
+[ledger] tt0049730: 82 resúmenes (surface)
+[ledger] tt0056923: 155 resúmenes (surface)
+[ledger] tt0061418: 203 resúmenes (surface)
+[ledger] tt0062622: 81 resúmenes (surface)
+[ledger] tt0065214: 309 resúmenes (surface)
+[ledger] tt0065724: 105 resúmenes (surface)
+[ledger] tt0067116: 146 resúmenes (surface)
+[ledger] tt0070735: 135 resúmenes (surface)
+[ledger] tt0071315: 66 resúmenes (surface)
+[ledger] tt0072684: 96 resúmenes (surface)
+[ledger] tt0074285: 122 resúmenes (surface)
+[ledger] tt0075148: 112 resúmenes (surface)
+[ledger] tt0077405: 113 resúmenes (surface)
+[ledger] tt0077651: 78 resúmenes (surface)
+[ledger] tt0078841: 88 resúmenes (surface)
+[ledger] tt0079417: 116 resúmenes (surface)
+[ledger] tt0081505: 86 resúmenes (surface)
+[ledger] tt0082971: 186 resúmenes (surface)
+[ledger] tt0083658: 173 resúmenes (surface)
+[ledger] tt0084726: 128 resúmenes (surface)
+[ledger] tt0086250: 195 resúmenes (surface)
+[ledger] tt0086879: 284 resúmenes (surface)
+[ledger] tt0088847: 171 resúmenes (surface)
+[ledger] tt0090022: 164 resúmenes (surface)
+[ledger] tt0090605: 367 resúmenes (surface)
+[ledger] tt0091042: 171 resúmenes (surface)
+[ledger] tt0093565: 122 resúmenes (surface)
+[ledger] tt0093779: 181 resúmenes (surface)
+[ledger] tt0095016: 227 resúmenes (surface)
+[ledger] tt0096754: 235 resúmenes (surface)
+[ledger] tt0096895: 216 resúmenes (surface)
+[ledger] tt0097428: 158 resúmenes (surface)
+[ledger] tt0098724: 74 resúmenes (surface)
+[ledger] tt0099487: 108 resúmenes (surface)
+[ledger] tt0099674: 174 resúmenes (surface)
+[ledger] tt0100157: 156 resúmenes (surface)
+[ledger] tt0100802: 237 resúmenes (surface)
+[ledger] tt0101272: 201 resúmenes (surface)
+[ledger] tt0103772: 163 resúmenes (surface)
+[ledger] tt0104257: 186 resúmenes (surface)
+[ledger] tt0104348: 109 resúmenes (surface)
+[ledger] tt0105695: 202 resúmenes (surface)
+[ledger] tt0107808: 220 resúmenes (surface)
+[ledger] tt0107822: 119 resúmenes (surface)
+[ledger] tt0108330: 141 resúmenes (surface)
+[ledger] tt0109686: 129 resúmenes (surface)
+[ledger] tt0110074: 147 resúmenes (surface)
+[ledger] listo
