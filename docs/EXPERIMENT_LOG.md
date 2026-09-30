@@ -1106,3 +1106,29 @@ el sistema pone en el mismo tópico.
 
 `results/exp018_test.json` · `results/exp018_posthoc_dev.json` · `results/exp018_posthoc_conf.json`
 
+---
+
+## G-enlace · Revisión ciega de enlaces no contiguos (pre-registro del análisis)
+- **Fecha:** 2026-09-30 (registrado antes de ver cualquier veredicto)
+- **Juez:** revisión automática por modelo (Claude, 6 revisores independientes,
+  10 casos cada uno), a pedido del usuario ("no human input required"). **No
+  es la revisión humana** que G-enlace pre-registró en VERSIONS.md; se
+  documenta como juez sustituto.
+- **Casos:**
+  - 30 enlaces del sistema: pares de apariciones del MISMO tópico CAVA
+    separadas por ≥ 80 shots; mapas con la configuración validada de EXP-018.
+  - 30 controles: misma película, mismo desfase temporal (mediana 40.2 min en
+    ambos), tramos de tópicos DISTINTOS.
+- **Ciego:** los revisores ven solo keyframes (3 por lado), resúmenes y tiempos.
+  Instrucciones idénticas para casos y controles; ningún revisor sabe qué
+  conjunto evalúa. Sin etiqueta de tópico, provenance ni cast.
+- **Veredicto por caso:** yes / no / unsure ("mismo hilo = mismos personajes
+  principales en la misma situación, relación, conflicto o trama").
+- **Criterio:**
+  1. Tasa de "yes" en enlaces del sistema > tasa en controles, Fisher exacto
+     unilateral p < 0.05; "unsure" cuenta como no-yes.
+  2. Se reporta también la precisión absoluta (yes / (yes + no)).
+- **Invalidación:** si la tasa de "yes" del sistema no supera a los controles,
+  los enlaces no contiguos de CAVA no son mejores que emparejar momentos
+  lejanos de la misma película al azar.
+
