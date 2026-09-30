@@ -143,7 +143,7 @@ def test_average_link_mode_does_not_chain():
     orig = mm._return_labels
     fixed = {"s1": s1, "s2": s2, "s3": s3}
     try:
-        mm._return_labels = lambda embs, cuts, pct: fixed[int(embs[0, 0])]
+        mm._return_labels = lambda embs, cuts, pct, **kw: fixed[int(embs[0, 0])]
         sig = {k: np.full((n, 2), float(i), np.float32) for i, k in enumerate(["s1", "s2", "s3"])}
         fixed = {0: s1, 1: s2, 2: s3}
         comp = mm.manage(sig, percentile=99, link_quorum=2, return_percentile=50)
@@ -192,3 +192,25 @@ def test_versions_gate_on_synthetic_map():
     assert rep["recap60"]["total_s"][0] <= 60
     thread = v["threads"]["playlists"][0]
     assert len({c["topic_id"] for c in thread}) == 1 and len(thread) >= 2  # follows a returning topic
+
+
+def test_abstention_silence_does_not_block_links():
+    x, size = _abab()
+    y = x + 0.05 * np.random.default_rng(9).normal(size=x.shape)
+    dia = x + 0.05 * np.random.default_rng(4).normal(size=x.shape)
+    dia[2 * size:3 * size] = 0.0          # the returning block A has no dialogue
+    kw = dict(percentile=95, link_quorum=2, return_percentile=50, link_mode="average")
+    no_abst = manage({"visual": x, "vjudge": y, "dialogue": dia}, **kw)
+    abst = manage({"visual": x, "vjudge": y, "dialogue": dia}, abstain=True, **kw)
+    assert abst.labels[0] == abst.labels[2 * size]          # visual + vjudge (both active) link it
+    assert abst.labels[0] != abst.labels[size]
+    assert abst.per_signal_labels["dialogue"][2 * size] == -1
+    assert no_abst.per_signal_labels["dialogue"][2 * size] >= 0
+
+
+def test_abstention_needs_quorum_of_active_voters():
+    x, size = _abab()
+    silent = np.zeros_like(x)
+    plan = manage({"visual": x, "dialogue": silent, "ocr": silent.copy()}, percentile=95,
+                  link_quorum=2, return_percentile=50, link_mode="average", abstain=True)
+    assert len(set(plan.labels.tolist())) == len(x)          # 1 active voter < quorum 2: no links

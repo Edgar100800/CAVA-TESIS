@@ -82,7 +82,8 @@ def _collapse_runs(passing: np.ndarray, votes: np.ndarray) -> list[int]:
     return cuts
 
 
-def _return_labels(embs: np.ndarray, cuts: list[int], pct: float) -> np.ndarray:
+def _return_labels(embs: np.ndarray, cuts: list[int], pct: float,
+                   abstain: bool = False) -> np.ndarray:
     """Etiquetas de tópico de UNA señal permitiendo retornos no contiguos.
 
     Segmentos = tramos entre los cortes propios de la señal. En orden temporal,
@@ -92,7 +93,8 @@ def _return_labels(embs: np.ndarray, cuts: list[int], pct: float) -> np.ndarray:
     señal; si no, abre tópico nuevo. Nunca vuelve al tópico del que se acaba de
     cortar (su último segmento es el inmediatamente anterior), y cada segmento
     se une a un solo tópico existente (sin fusionar tópicos entre sí).
-    Segmentos sin evidencia (filas nulas) no se enlazan."""
+    Segmentos sin evidencia (filas nulas) no se enlazan. Con `abstain`, cada shot
+    sin evidencia propia (fila nula) recibe -1: la señal no vota sobre él."""
     n = len(embs)
     bounds = [0] + sorted(cuts) + [n]
     x = _l2(np.asarray(embs, dtype=np.float32))
@@ -131,6 +133,8 @@ def _return_labels(embs: np.ndarray, cuts: list[int], pct: float) -> np.ndarray:
     labels = np.zeros(n, dtype=np.int64)
     for k, (a, b) in enumerate(zip(bounds, bounds[1:])):
         labels[a:b] = seg_topic[k]
+    if abstain:
+        labels[np.linalg.norm(np.asarray(embs, dtype=np.float32), axis=1) == 0] = -1
     return labels
 
 
@@ -161,7 +165,8 @@ def manage(signals: dict[str, np.ndarray], *,
            tolerance_bins: int = 1,
            boundary_signals: dict[str, np.ndarray] | None = None,
            return_percentile: float | None = None,
-           link_mode: str = "components") -> TopicPlan:
+           link_mode: str = "components",
+           abstain: bool = False) -> TopicPlan:
     """signals: {nombre: [n, D]} embeddings POR SEÑAL (nunca fusionados).
     link_quorum: nº de señales que deben agrupar un par para enlazarlo.
     boundary_signals: {nombre: score[n-1]} votantes que solo aportan fronteras
@@ -173,7 +178,12 @@ def manage(signals: dict[str, np.ndarray], *,
       un tópico gigante). "average" = consenso por enlace promedio sobre la matriz
       de votos: dos grupos se unen solo si, en promedio sobre TODOS sus pares,
       ≥ link_quorum señales los agrupan. Sigue siendo conteo de votos; no fusiona
-      representaciones (ADR-0001)."""
+      representaciones (ADR-0001).
+    abstain: con return_percentile, un shot sin evidencia en una señal (p. ej.
+      sin diálogo) no recibe voto de esa señal (etiqueta -1). Un par se enlaza
+      solo si hay ≥ link_quorum votantes ACTIVOS en él y, en modo average, la
+      fracción media de activos que coinciden alcanza link_quorum / total.
+      Así el silencio deja de contar como desacuerdo (ADR-0001: señales activas)."""
     n = n_segments or min(len(v) for v in signals.values())
     signals = {k: np.asarray(v, dtype=np.float32)[:n] for k, v in signals.items()}
     w = {"transcript": 1.0, "visual": 1.0, "ocr": 1.0, "audio": 0.5, **(weights or {})}
@@ -184,7 +194,8 @@ def manage(signals: dict[str, np.ndarray], *,
         per_boundary[name] = s
         per_cuts[name] = _signal_cuts(s, percentile, min_gap)
         if return_percentile is not None:
-            per_labels[name] = _return_labels(embs, per_cuts[name], return_percentile)
+            per_labels[name] = _return_labels(embs, per_cuts[name], return_percentile,
+                                              abstain=abstain)
         else:
             per_labels[name] = segment_topic_labels(np.zeros((n, 1)),
                                                     per_cuts[name]) if per_cuts[name] \
@@ -233,8 +244,15 @@ def manage(signals: dict[str, np.ndarray], *,
     from scipy.sparse import csr_matrix
     from scipy.sparse.csgraph import connected_components
     V = np.zeros((n, n), dtype=np.float32)
+    A = np.zeros((n, n), dtype=np.float32) if abstain else None
     for name, labs in per_labels.items():
-        V += w.get(name, 1.0) * (labs[:, None] == labs[None, :])
+        if abstain:
+            act = labs >= 0
+            both = act[:, None] & act[None, :]
+            V += w.get(name, 1.0) * ((labs[:, None] == labs[None, :]) & both)
+            A += w.get(name, 1.0) * both
+        else:
+            V += w.get(name, 1.0) * (labs[:, None] == labs[None, :])
     np.fill_diagonal(V, 0.0)
     if link_mode == "components":
         _, comp_id = connected_components(csr_matrix(V >= link_quorum), directed=False)
@@ -242,7 +260,11 @@ def manage(signals: dict[str, np.ndarray], *,
         from scipy.cluster.hierarchy import fcluster, linkage
         from scipy.spatial.distance import squareform
         total_link_w = sum(w.get(k, 1.0) for k in per_labels) or 1.0
-        D = 1.0 - V / total_link_w
+        if abstain:
+            frac = np.where(A >= link_quorum, V / np.maximum(A, 1e-9), 0.0)
+            D = 1.0 - frac
+        else:
+            D = 1.0 - V / total_link_w
         np.fill_diagonal(D, 0.0)
         if n > 1:
             Z = linkage(squareform(D, checks=False), method="average")
@@ -261,8 +283,10 @@ def manage(signals: dict[str, np.ndarray], *,
         members = comp[root]
         support = {}
         for name, labs in per_labels.items():
-            _, inv, counts = np.unique(labs[members], return_inverse=True, return_counts=True)
-            inside = int((counts[inv] > 1).sum())  # miembros que comparten etiqueta con otro
+            lm = labs[members]
+            _, inv, counts = np.unique(lm, return_inverse=True, return_counts=True)
+            shared = (counts[inv] > 1) & (lm >= 0)   # -1 = abstención, no es acuerdo
+            inside = int(shared.sum())  # miembros que comparten etiqueta con otro
             support[name] = round(inside / len(members), 3)
         g = TopicGroup(topic_id=gid, segment_indices=sorted(members),
                        centroid=np.zeros(1), coherence=0.0)
