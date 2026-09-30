@@ -6,7 +6,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3959.67
+     3647.01
     ],
     "budget_s": null,
     "ok": true
@@ -14,7 +14,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.87
+     59.68
     ],
     "budget_s": 60.0,
     "ok": true
@@ -22,7 +22,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     660.0
+     660.34
     ],
     "budget_s": 661.2930000000001,
     "ok": true
@@ -30,9 +30,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     495.67,
-     656.71,
-     446.32
+     497.46,
+     614.97,
+     427.65
     ],
     "budget_s": 661.2930000000001,
     "ok": true
@@ -43,7 +43,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3945.54
+     3868.7
     ],
     "budget_s": null,
     "ok": true
@@ -51,7 +51,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.51
+     58.88
     ],
     "budget_s": 60.0,
     "ok": true
@@ -59,7 +59,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     631.39
+     631.11
     ],
     "budget_s": 631.8310000000001,
     "ok": true
@@ -67,9 +67,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     618.77,
-     631.31,
-     631.46
+     599.58,
+     619.76,
+     630.45
     ],
     "budget_s": 631.8310000000001,
     "ok": true
@@ -80,7 +80,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     4324.6
+     4279.88
     ],
     "budget_s": null,
     "ok": true
@@ -88,7 +88,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.43
+     59.54
     ],
     "budget_s": 60.0,
     "ok": true
@@ -96,7 +96,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     693.81
+     694.14
     ],
     "budget_s": 694.2370000000001,
     "ok": true
@@ -104,9 +104,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     382.79,
-     291.62,
-     251.0
+     231.96,
+     392.63,
+     476.19
     ],
     "budget_s": 694.2370000000001,
     "ok": true
@@ -117,7 +117,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     6124.88
+     6968.69
     ],
     "budget_s": null,
     "ok": true
@@ -125,7 +125,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.61
+     59.77
     ],
     "budget_s": 60.0,
     "ok": true
@@ -133,7 +133,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     1172.74
+     1173.23
     ],
     "budget_s": 1173.236,
     "ok": true
@@ -141,9 +141,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     1171.36,
-     1170.35,
-     405.04
+     1169.32,
+     1154.42,
+     873.56
     ],
     "budget_s": 1173.236,
     "ok": true
@@ -154,7 +154,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3678.59
+     3955.85
     ],
     "budget_s": null,
     "ok": true
@@ -162,7 +162,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.43
+     59.88
     ],
     "budget_s": 60.0,
     "ok": true
@@ -170,7 +170,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     747.41
+     747.54
     ],
     "budget_s": 747.5810000000001,
     "ok": true
@@ -178,9 +178,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     743.58,
-     741.28,
-     745.53
+     739.41,
+     417.56,
+     561.65
     ],
     "budget_s": 747.5810000000001,
     "ok": true
@@ -191,7 +191,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     4092.23
+     4100.52
     ],
     "budget_s": null,
     "ok": true
@@ -199,7 +199,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.66
+     59.94
     ],
     "budget_s": 60.0,
     "ok": true
@@ -207,7 +207,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     784.83
+     785.25
     ],
     "budget_s": 785.354,
     "ok": true
@@ -215,9 +215,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     783.99,
-     784.59,
-     697.98
+     783.61,
+     784.48,
+     730.96
     ],
     "budget_s": 785.354,
     "ok": true
@@ -228,303 +228,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     4048.87
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.46
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     720.85
-    ],
-    "budget_s": 720.884,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     433.75,
-     546.43,
-     164.46
-    ],
-    "budget_s": 720.884,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0080684": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3211.9
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.64
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     734.33
-    ],
-    "budget_s": 734.837,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     729.69,
-     730.57,
-     395.69
-    ],
-    "budget_s": 734.837,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0083929": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3010.81
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.43
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     518.77
-    ],
-    "budget_s": 518.778,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     398.87,
-     394.68,
-     509.63
-    ],
-    "budget_s": 518.778,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0087332": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4276.66
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.92
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     602.72
-    ],
-    "budget_s": 602.807,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     214.32,
-     308.05,
-     279.75
-    ],
-    "budget_s": 602.807,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0090756": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     5012.49
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.26
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     720.72
-    ],
-    "budget_s": 720.988,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     692.65,
-     718.64,
-     297.46
-    ],
-    "budget_s": 720.988,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0094737": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4853.83
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.97
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     755.51
-    ],
-    "budget_s": 755.9590000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     306.81,
-     712.92,
-     517.81
-    ],
-    "budget_s": 755.9590000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0096446": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4493.92
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.9
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     723.32
-    ],
-    "budget_s": 723.657,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     189.44,
-     177.24,
-     116.76
-    ],
-    "budget_s": 723.657,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0097576": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4692.9
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.21
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     760.08
-    ],
-    "budget_s": 760.8760000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     391.61,
-     699.45,
-     487.04
-    ],
-    "budget_s": 760.8760000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0099685": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4572.29
+     3405.82
     ],
     "budget_s": null,
     "ok": true
@@ -540,28 +244,28 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     838.79
+     720.71
     ],
-    "budget_s": 838.9490000000001,
+    "budget_s": 720.884,
     "ok": true
    },
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     835.57,
-     838.91,
-     500.73
+     717.59,
+     442.66,
+     522.8
     ],
-    "budget_s": 838.9490000000001,
+    "budget_s": 720.884,
     "ok": true
    },
    "G_version": true
   },
-  "tt0102138": {
+  "tt0080684": {
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     6310.14
+     3094.12
     ],
     "budget_s": null,
     "ok": true
@@ -569,7 +273,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.97
+     59.92
     ],
     "budget_s": 60.0,
     "ok": true
@@ -577,65 +281,28 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     1192.0
+     734.53
     ],
-    "budget_s": 1192.102,
+    "budget_s": 734.837,
     "ok": true
    },
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     978.02,
-     1191.46,
-     548.27
+     733.89,
+     732.44,
+     729.4
     ],
-    "budget_s": 1192.102,
+    "budget_s": 734.837,
     "ok": true
    },
    "G_version": true
   },
-  "tt0103074": {
+  "tt0083929": {
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3592.72
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.81
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     753.56
-    ],
-    "budget_s": 754.166,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     748.68,
-     692.04,
-     631.94
-    ],
-    "budget_s": 754.166,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0105236": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3899.48
+     2799.44
     ],
     "budget_s": null,
     "ok": true
@@ -651,28 +318,28 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     571.03
+     518.55
     ],
-    "budget_s": 571.101,
+    "budget_s": 518.778,
     "ok": true
    },
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     479.28,
-     459.37,
-     412.86
+     518.52,
+     269.49,
+     517.09
     ],
-    "budget_s": 571.101,
+    "budget_s": 518.778,
     "ok": true
    },
    "G_version": true
   },
-  "tt0108160": {
+  "tt0087332": {
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     4045.25
+     4309.65
     ],
     "budget_s": null,
     "ok": true
@@ -680,7 +347,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.22
+     59.97
     ],
     "budget_s": 60.0,
     "ok": true
@@ -688,28 +355,28 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     598.14
+     602.71
     ],
-    "budget_s": 598.186,
+    "budget_s": 602.807,
     "ok": true
    },
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     580.48,
-     165.92,
-     259.89
+     488.33,
+     321.12,
+     108.03
     ],
-    "budget_s": 598.186,
+    "budget_s": 602.807,
     "ok": true
    },
    "G_version": true
   },
-  "tt0110475": {
+  "tt0090756": {
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     2938.35
+     4768.31
     ],
     "budget_s": null,
     "ok": true
@@ -717,7 +384,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.84
+     59.97
     ],
     "budget_s": 60.0,
     "ok": true
@@ -725,28 +392,102 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     566.06
+     720.43
     ],
-    "budget_s": 566.489,
+    "budget_s": 720.988,
     "ok": true
    },
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     565.99,
-     225.73,
-     138.11
+     714.09,
+     720.68,
+     469.8
     ],
-    "budget_s": 566.489,
+    "budget_s": 720.988,
     "ok": true
    },
    "G_version": true
   },
-  "tt0112641": {
+  "tt0094737": {
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     5756.2
+     4369.78
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.92
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     755.29
+    ],
+    "budget_s": 755.9590000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     468.97,
+     535.74,
+     661.83
+    ],
+    "budget_s": 755.9590000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0096446": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3894.24
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.89
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     723.45
+    ],
+    "budget_s": 723.657,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     342.65,
+     371.95,
+     287.16
+    ],
+    "budget_s": 723.657,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0097576": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4688.4
     ],
     "budget_s": null,
     "ok": true
@@ -762,7 +503,266 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     1029.48
+     760.06
+    ],
+    "budget_s": 760.8760000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     398.74,
+     266.16,
+     724.68
+    ],
+    "budget_s": 760.8760000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0099685": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4405.93
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.42
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     838.7
+    ],
+    "budget_s": 838.9490000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     838.36,
+     836.01,
+     576.17
+    ],
+    "budget_s": 838.9490000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0102138": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     6141.32
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.85
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     1192.07
+    ],
+    "budget_s": 1192.102,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     1182.94,
+     1190.72,
+     138.4
+    ],
+    "budget_s": 1192.102,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0103074": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3359.11
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.81
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     753.52
+    ],
+    "budget_s": 754.166,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     748.68,
+     692.04,
+     601.46
+    ],
+    "budget_s": 754.166,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0105236": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3641.21
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.98
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     570.99
+    ],
+    "budget_s": 571.101,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     559.29,
+     335.04,
+     558.42
+    ],
+    "budget_s": 571.101,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0108160": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4134.3
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.72
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     597.96
+    ],
+    "budget_s": 598.186,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     591.2,
+     307.33,
+     289.73
+    ],
+    "budget_s": 598.186,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0110475": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     2918.77
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.97
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     566.05
+    ],
+    "budget_s": 566.489,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     564.36,
+     253.84,
+     161.42
+    ],
+    "budget_s": 566.489,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0112641": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     5585.56
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.89
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     1029.62
     ],
     "budget_s": 1029.804,
     "ok": true
@@ -770,9 +770,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     978.29,
-     970.43,
-     629.57
+     1007.15,
+     971.1,
+     917.6
     ],
     "budget_s": 1029.804,
     "ok": true
@@ -783,7 +783,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     5644.98
+     5779.33
     ],
     "budget_s": null,
     "ok": true
@@ -791,7 +791,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.8
+     59.91
     ],
     "budget_s": 60.0,
     "ok": true
@@ -799,7 +799,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     844.2
+     844.31
     ],
     "budget_s": 844.7330000000001,
     "ok": true
@@ -807,9 +807,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     237.32,
-     251.74,
-     313.02
+     266.45,
+     264.46,
+     316.07
     ],
     "budget_s": 844.7330000000001,
     "ok": true
@@ -820,7 +820,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3724.49
+     3316.15
     ],
     "budget_s": null,
     "ok": true
@@ -836,7 +836,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     646.59
+     646.5
     ],
     "budget_s": 646.9920000000001,
     "ok": true
@@ -844,9 +844,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     645.44,
-     215.71,
-     263.13
+     646.11,
+     538.51,
+     496.13
     ],
     "budget_s": 646.9920000000001,
     "ok": true
@@ -857,7 +857,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3579.04
+     3535.8
     ],
     "budget_s": null,
     "ok": true
@@ -865,7 +865,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.55
+     59.38
     ],
     "budget_s": 60.0,
     "ok": true
@@ -873,7 +873,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     708.71
+     709.2
     ],
     "budget_s": 709.2330000000001,
     "ok": true
@@ -881,9 +881,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     376.14,
-     707.59,
-     465.59
+     646.99,
+     707.71,
+     194.57
     ],
     "budget_s": 709.2330000000001,
     "ok": true
@@ -894,7 +894,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     4448.51
+     4015.5
     ],
     "budget_s": null,
     "ok": true
@@ -902,7 +902,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.59
+     59.84
     ],
     "budget_s": 60.0,
     "ok": true
@@ -910,7 +910,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     804.88
+     805.01
     ],
     "budget_s": 805.042,
     "ok": true
@@ -918,9 +918,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     804.88,
-     227.9,
-     80.07
+     252.63,
+     220.57,
+     803.56
     ],
     "budget_s": 805.042,
     "ok": true
@@ -931,7 +931,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     4815.71
+     4749.68
     ],
     "budget_s": null,
     "ok": true
@@ -939,7 +939,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.56
+     59.38
     ],
     "budget_s": 60.0,
     "ok": true
@@ -947,7 +947,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     798.42
+     797.79
     ],
     "budget_s": 798.553,
     "ok": true
@@ -955,9 +955,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     797.6,
-     244.81,
-     472.52
+     795.29,
+     696.12,
+     255.2
     ],
     "budget_s": 798.553,
     "ok": true
@@ -968,7 +968,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     4364.82
+     4186.89
     ],
     "budget_s": null,
     "ok": true
@@ -976,7 +976,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.18
+     59.92
     ],
     "budget_s": 60.0,
     "ok": true
@@ -984,7 +984,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     698.25
+     698.38
     ],
     "budget_s": 698.816,
     "ok": true
@@ -992,9 +992,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     414.26,
-     411.29,
-     478.18
+     694.53,
+     478.18,
+     124.3
     ],
     "budget_s": 698.816,
     "ok": true
@@ -1005,7 +1005,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     4145.28
+     3918.15
     ],
     "budget_s": null,
     "ok": true
@@ -1013,7 +1013,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.96
+     59.76
     ],
     "budget_s": 60.0,
     "ok": true
@@ -1021,7 +1021,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     813.67
+     813.55
     ],
     "budget_s": 814.195,
     "ok": true
@@ -1029,9 +1029,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     813.32,
-     363.96,
-     372.18
+     735.34,
+     813.57,
+     583.87
     ],
     "budget_s": 814.195,
     "ok": true
@@ -1042,7 +1042,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     5355.36
+     5316.35
     ],
     "budget_s": null,
     "ok": true
@@ -1066,9 +1066,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     462.58,
-     318.23,
-     294.83
+     739.47,
+     294.76,
+     617.98
     ],
     "budget_s": 765.5250000000001,
     "ok": true
@@ -1079,229 +1079,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3911.62
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.47
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     717.45
-    ],
-    "budget_s": 717.556,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     486.79,
-     620.38,
-     448.26
-    ],
-    "budget_s": 717.556,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0145487": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     6447.4
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.83
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     694.87
-    ],
-    "budget_s": 694.8710000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     51.21,
-     42.11,
-     28.85
-    ],
-    "budget_s": 694.8710000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0166924": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3763.38
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.72
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     852.51
-    ],
-    "budget_s": 852.6270000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     850.79,
-     846.91,
-     852.49
-    ],
-    "budget_s": 852.6270000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0167261": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     7628.98
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     60.0
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     1287.86
-    ],
-    "budget_s": 1288.0110000000002,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     194.99,
-     447.98,
-     392.62
-    ],
-    "budget_s": 1288.0110000000002,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0167404": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3956.9
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.43
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     610.31
-    ],
-    "budget_s": 611.1260000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     467.65,
-     457.33,
-     467.6
-    ],
-    "budget_s": 611.1260000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0186151": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3092.09
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.92
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     681.44
-    ],
-    "budget_s": 682.1100000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     680.02,
-     215.29,
-     661.52
-    ],
-    "budget_s": 682.1100000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0209958": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3602.66
+     3857.44
     ],
     "budget_s": null,
     "ok": true
@@ -1317,28 +1095,28 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     613.43
+     716.97
     ],
-    "budget_s": 613.4399999999999,
+    "budget_s": 717.556,
     "ok": true
    },
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     374.14,
-     421.4,
-     354.72
+     714.99,
+     716.66,
+     489.63
     ],
-    "budget_s": 613.4399999999999,
+    "budget_s": 717.556,
     "ok": true
    },
    "G_version": true
   },
-  "tt0258463": {
+  "tt0145487": {
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3424.79
+     6359.34
     ],
     "budget_s": null,
     "ok": true
@@ -1346,7 +1124,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.88
+     59.92
     ],
     "budget_s": 60.0,
     "ok": true
@@ -1354,176 +1132,28 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     669.19
+     694.75
     ],
-    "budget_s": 669.291,
+    "budget_s": 694.8710000000001,
     "ok": true
    },
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     433.74,
-     433.07,
-     511.53
+     42.07,
+     42.13,
+     27.06
     ],
-    "budget_s": 669.291,
+    "budget_s": 694.8710000000001,
     "ok": true
    },
    "G_version": true
   },
-  "tt0268126": {
+  "tt0166924": {
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3901.79
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.35
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     662.02
-    ],
-    "budget_s": 662.0640000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     660.77,
-     482.49,
-     373.44
-    ],
-    "budget_s": 662.0640000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0311113": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3531.84
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.84
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     767.68
-    ],
-    "budget_s": 768.015,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     766.79,
-     452.36,
-     634.91
-    ],
-    "budget_s": 768.015,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0343818": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3885.0
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.3
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     637.71
-    ],
-    "budget_s": 637.9520000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     547.68,
-     374.01,
-     175.3
-    ],
-    "budget_s": 637.9520000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0370263": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3647.1
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.51
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     589.06
-    ],
-    "budget_s": 589.354,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     361.53,
-     451.8,
-     585.19
-    ],
-    "budget_s": 589.354,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0371724": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4594.67
+     5515.68
     ],
     "budget_s": null,
     "ok": true
@@ -1539,213 +1169,28 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     650.64
+     852.29
     ],
-    "budget_s": 651.0050000000001,
+    "budget_s": 852.6270000000001,
     "ok": true
    },
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     164.84,
-     207.22,
-     316.03
+     670.57,
+     431.78,
+     384.9
     ],
-    "budget_s": 651.0050000000001,
+    "budget_s": 852.6270000000001,
     "ok": true
    },
    "G_version": true
   },
-  "tt0408236": {
+  "tt0167261": {
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     4780.61
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.34
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     667.56
-    ],
-    "budget_s": 668.173,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     232.01,
-     504.85,
-     204.88
-    ],
-    "budget_s": 668.173,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0434409": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4389.49
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.84
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     794.87
-    ],
-    "budget_s": 794.9540000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     470.1,
-     420.1,
-     728.44
-    ],
-    "budget_s": 794.9540000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0467200": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     2968.77
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.8
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     670.19
-    ],
-    "budget_s": 670.801,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     667.99,
-     668.28,
-     362.87
-    ],
-    "budget_s": 670.801,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0758758": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4486.48
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.68
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     856.88
-    ],
-    "budget_s": 857.2139999999999,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     661.41,
-     786.25,
-     754.27
-    ],
-    "budget_s": 857.2139999999999,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0808151": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4851.85
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.76
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     827.02
-    ],
-    "budget_s": 827.273,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     740.37,
-     592.97,
-     230.31
-    ],
-    "budget_s": 827.273,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt0898367": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3754.63
+     6891.18
     ],
     "budget_s": null,
     "ok": true
@@ -1761,7 +1206,562 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     621.32
+     1287.54
+    ],
+    "budget_s": 1288.0110000000002,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     570.06,
+     504.2,
+     365.58
+    ],
+    "budget_s": 1288.0110000000002,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0167404": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4054.14
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.43
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     609.87
+    ],
+    "budget_s": 611.1260000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     610.34,
+     559.67,
+     555.71
+    ],
+    "budget_s": 611.1260000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0186151": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3268.4
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.8
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     681.65
+    ],
+    "budget_s": 682.1100000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     678.39,
+     379.74,
+     667.94
+    ],
+    "budget_s": 682.1100000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0209958": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3449.27
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.46
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     613.39
+    ],
+    "budget_s": 613.4399999999999,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     612.84,
+     394.69,
+     548.4
+    ],
+    "budget_s": 613.4399999999999,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0258463": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3366.2
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.67
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     668.98
+    ],
+    "budget_s": 669.291,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     669.05,
+     659.08,
+     489.92
+    ],
+    "budget_s": 669.291,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0268126": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3732.32
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.35
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     661.85
+    ],
+    "budget_s": 662.0640000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     567.47,
+     653.22,
+     486.92
+    ],
+    "budget_s": 662.0640000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0311113": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3361.7
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.43
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     767.93
+    ],
+    "budget_s": 768.015,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     748.53,
+     760.4,
+     607.95
+    ],
+    "budget_s": 768.015,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0343818": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3600.31
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.81
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     637.37
+    ],
+    "budget_s": 637.9520000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     542.76,
+     384.89,
+     381.3
+    ],
+    "budget_s": 637.9520000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0370263": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3112.86
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.89
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     588.83
+    ],
+    "budget_s": 589.354,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     358.24,
+     172.27,
+     252.64
+    ],
+    "budget_s": 589.354,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0371724": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4672.06
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.93
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     650.98
+    ],
+    "budget_s": 651.0050000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     132.22,
+     79.99,
+     316.03
+    ],
+    "budget_s": 651.0050000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0408236": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4350.76
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.89
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     668.14
+    ],
+    "budget_s": 668.173,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     465.23,
+     504.9,
+     256.17
+    ],
+    "budget_s": 668.173,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0434409": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4353.1
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.97
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     794.87
+    ],
+    "budget_s": 794.9540000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     789.11,
+     722.65,
+     472.72
+    ],
+    "budget_s": 794.9540000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0467200": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3955.16
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.55
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     670.64
+    ],
+    "budget_s": 670.801,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     289.17,
+     466.15,
+     305.7
+    ],
+    "budget_s": 670.801,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0758758": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4155.86
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.68
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     856.91
+    ],
+    "budget_s": 857.2139999999999,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     856.71,
+     851.54,
+     444.28
+    ],
+    "budget_s": 857.2139999999999,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0808151": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4441.53
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.85
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     827.03
+    ],
+    "budget_s": 827.273,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     824.64,
+     652.6,
+     306.26
+    ],
+    "budget_s": 827.273,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt0898367": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4038.68
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.64
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     621.68
     ],
     "budget_s": 621.71,
     "ok": true
@@ -1769,9 +1769,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     618.21,
-     401.96,
-     315.47
+     613.87,
+     607.46,
+     252.7
     ],
     "budget_s": 621.71,
     "ok": true
@@ -1782,7 +1782,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     4607.1
+     4798.42
     ],
     "budget_s": null,
     "ok": true
@@ -1790,7 +1790,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.5
+     59.6
     ],
     "budget_s": 60.0,
     "ok": true
@@ -1798,7 +1798,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     693.47
+     692.7
     ],
     "budget_s": 693.611,
     "ok": true
@@ -1806,9 +1806,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     435.33,
-     269.44,
-     244.49
+     481.48,
+     365.52,
+     240.24
     ],
     "budget_s": 693.611,
     "ok": true
@@ -1819,192 +1819,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3440.65
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.59
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     684.73
-    ],
-    "budget_s": 685.046,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     684.76,
-     684.95,
-     684.98
-    ],
-    "budget_s": 685.046,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt1100089": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4800.71
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.5
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     805.1
-    ],
-    "budget_s": 805.9590000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     718.04,
-     598.48,
-     741.14
-    ],
-    "budget_s": 805.9590000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt1182345": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3258.76
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.64
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     555.55
-    ],
-    "budget_s": 555.6840000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     416.69,
-     461.9,
-     215.68
-    ],
-    "budget_s": 555.6840000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt1284575": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     2709.0
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.64
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     562.06
-    ],
-    "budget_s": 562.3810000000001,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     461.65,
-     298.76,
-     547.21
-    ],
-    "budget_s": 562.3810000000001,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt1409024": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     3317.72
-    ],
-    "budget_s": null,
-    "ok": true
-   },
-   "recap60": {
-    "n_playlists": 1,
-    "total_s": [
-     59.38
-    ],
-    "budget_s": 60.0,
-    "ok": true
-   },
-   "highlights10pct": {
-    "n_playlists": 1,
-    "total_s": [
-     587.95
-    ],
-    "budget_s": 588.057,
-    "ok": true
-   },
-   "threads": {
-    "n_playlists": 3,
-    "total_s": [
-     207.93,
-     563.21,
-     273.78
-    ],
-    "budget_s": 588.057,
-    "ok": true
-   },
-   "G_version": true
-  },
-  "tt1504320": {
-   "full_chapters": {
-    "n_playlists": 1,
-    "total_s": [
-     4979.43
+     3418.64
     ],
     "budget_s": null,
     "ok": true
@@ -2020,7 +1835,192 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     668.56
+     684.91
+    ],
+    "budget_s": 685.046,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     669.95,
+     677.37,
+     684.86
+    ],
+    "budget_s": 685.046,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1100089": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4685.45
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.88
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     805.6
+    ],
+    "budget_s": 805.9590000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     804.54,
+     706.91,
+     616.0
+    ],
+    "budget_s": 805.9590000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1182345": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3043.38
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.64
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     555.68
+    ],
+    "budget_s": 555.6840000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     504.67,
+     416.69,
+     445.8
+    ],
+    "budget_s": 555.6840000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1284575": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     2768.02
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.97
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     561.97
+    ],
+    "budget_s": 562.3810000000001,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     484.97,
+     500.13,
+     373.94
+    ],
+    "budget_s": 562.3810000000001,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1409024": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     3469.11
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.72
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     587.86
+    ],
+    "budget_s": 588.057,
+    "ok": true
+   },
+   "threads": {
+    "n_playlists": 3,
+    "total_s": [
+     207.93,
+     276.91,
+     140.58
+    ],
+    "budget_s": 588.057,
+    "ok": true
+   },
+   "G_version": true
+  },
+  "tt1504320": {
+   "full_chapters": {
+    "n_playlists": 1,
+    "total_s": [
+     4859.27
+    ],
+    "budget_s": null,
+    "ok": true
+   },
+   "recap60": {
+    "n_playlists": 1,
+    "total_s": [
+     59.51
+    ],
+    "budget_s": 60.0,
+    "ok": true
+   },
+   "highlights10pct": {
+    "n_playlists": 1,
+    "total_s": [
+     668.14
     ],
     "budget_s": 669.091,
     "ok": true
@@ -2029,8 +2029,8 @@
     "n_playlists": 3,
     "total_s": [
      566.64,
-     254.83,
-     137.59
+     182.82,
+     65.39
     ],
     "budget_s": 669.091,
     "ok": true
@@ -2041,7 +2041,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3828.34
+     3873.76
     ],
     "budget_s": null,
     "ok": true
@@ -2049,7 +2049,7 @@
    "recap60": {
     "n_playlists": 1,
     "total_s": [
-     59.96
+     59.84
     ],
     "budget_s": 60.0,
     "ok": true
@@ -2057,7 +2057,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     594.2
+     594.21
     ],
     "budget_s": 594.241,
     "ok": true
@@ -2065,8 +2065,8 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     366.18,
-     366.0,
+     294.82,
+     399.34,
      593.45
     ],
     "budget_s": 594.241,
@@ -2078,7 +2078,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     3322.46
+     3176.32
     ],
     "budget_s": null,
     "ok": true
@@ -2094,7 +2094,7 @@
    "highlights10pct": {
     "n_playlists": 1,
     "total_s": [
-     615.06
+     614.97
     ],
     "budget_s": 615.538,
     "ok": true
@@ -2102,9 +2102,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     571.03,
-     614.98,
-     435.37
+     586.05,
+     608.7,
+     480.63
     ],
     "budget_s": 615.538,
     "ok": true
@@ -2115,7 +2115,7 @@
    "full_chapters": {
     "n_playlists": 1,
     "total_s": [
-     2855.25
+     2836.4
     ],
     "budget_s": null,
     "ok": true
@@ -2139,9 +2139,9 @@
    "threads": {
     "n_playlists": 3,
     "total_s": [
-     387.66,
+     390.08,
      492.03,
-     422.34
+     427.06
     ],
     "budget_s": 493.394,
     "ok": true

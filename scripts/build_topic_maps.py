@@ -3,7 +3,8 @@
 Señales (sin fusión): visual (SigLIP por shot), dialogue (bge del subtítulo),
 vjudge (bge del resumen VJudge de la unidad del shot) y, si se da
 --segloop-dir, SegLoop como votante de fronteras. Parámetros = pre-registro
-EXP-017b (percentile 80, return_percentile 90, link_mode average, quorum 2).
+EXP-018 validado (percentile 80, return_percentile 90, link_mode average,
+abstención de señales sin evidencia, quorum 2).
 """
 import argparse
 import json
@@ -26,6 +27,7 @@ def main():
     ap.add_argument("--summary-dir", required=True)
     ap.add_argument("--segloop-dir", default=None)
     ap.add_argument("--out", default="data/topic_maps")
+    ap.add_argument("--no-abstain", action="store_true", help="configuración EXP-017b (sin abstención)")
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -45,7 +47,8 @@ def main():
             bnd = {"segloop": np.asarray(np.load(Path(args.segloop_dir) / f"{tt}.npz")["segloop"][:n - 1],
                                          np.float32)}
         doc = build_topic_map(tt, {"visual": vis[:n], "dialogue": dia[:n], "vjudge": vj},
-                              meta["shot_times"][:n], unit_summaries=sums, boundary_signals=bnd)
+                              meta["shot_times"][:n], unit_summaries=sums, boundary_signals=bnd,
+                              abstain=not args.no_abstain)
         (out / f"{tt}.topic_map.json").write_text(json.dumps(doc, ensure_ascii=False, indent=1))
         d = doc["levels"]["default"]
         print(f"[topicmap] {tt}: {d['n_topics']} tópicos ({d['n_returning']} con retornos), "
