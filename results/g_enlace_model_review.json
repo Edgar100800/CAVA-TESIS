@@ -1,0 +1,20 @@
+{
+ "system": {
+  "yes": 25,
+  "no": 1,
+  "unsure": 4
+ },
+ "controls": {
+  "yes": 19,
+  "no": 6,
+  "unsure": 5
+ },
+ "yes_rate_system": 0.8333333333333334,
+ "yes_rate_controls": 0.6333333333333333,
+ "fisher_one_sided_p": 0.07158254066094849,
+ "precision_system": 0.9615384615384616,
+ "precision_controls": 0.76,
+ "high_conf_yes_system": 5,
+ "high_conf_yes_controls": 10,
+ "film_knowledge_used": 59
+}

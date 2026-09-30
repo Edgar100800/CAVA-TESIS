@@ -162,6 +162,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-014 | "El razonador (14B) o los resúmenes entity-tracking desbloquean el nivel beat" | Ninguna celda supera a SegLoop; efectos 14b−7b −0.014 ± 0.011 y new−old −0.013 ± 0.013 en replicación |
 | EXP-016 | "El quorum ≥2 de {visual, diálogo, resúmenes} enlaza hilos mejor que visual sola" | −0.017 ± 0.005 de precisión en 47 películas train nuevas; diálogo no replica como votante |
 | EXP-017 / 017b | "El mapa de tópicos por consenso sin fusión agrupa hilos mejor (MCC, proxy cast) que la fusión y que v2.1" | components percola; average no supera a fused (+0.002 / −0.001); visual sola es mejor en MCC. G-coherencia sí se cumple y supera a fused en cada señal |
+| G-enlace (juez modelo) | "Los enlaces no contiguos de CAVA son juzgados mismo hilo más que momentos lejanos al azar" | 83 % vs 63 %, Fisher p = 0.072 (umbral 0.05): no se cumple; infradimensionado (~60 por brazo) |
 
 ---
 
@@ -1131,4 +1132,36 @@ el sistema pone en el mismo tópico.
 - **Invalidación:** si la tasa de "yes" del sistema no supera a los controles,
   los enlaces no contiguos de CAVA no son mejores que emparejar momentos
   lejanos de la misma película al azar.
+
+### Resultado G-enlace (revisión ciega por modelo, 30 enlaces + 30 controles)
+| | enlaces CAVA | controles (mismo desfase) |
+|---|---|---|
+| mismo hilo (yes) | **25 (83 %)** | 19 (63 %) |
+| distinto (no) | 1 | 6 |
+| dudoso (unsure) | 4 | 5 |
+| precisión entre decididos | **96 %** | 76 % |
+
+- **Criterio pre-registrado:** Fisher exacto unilateral sobre yes / no-yes,
+  **p = 0.072 → NO se cumple** (umbral 0.05). La dirección es la esperada: los
+  enlaces CAVA se juzgan "mismo hilo" 20 puntos más que momentos lejanos al
+  azar de la misma película.
+- **Descriptivo (no pre-registrado, no decide):** excluyendo los "unsure",
+  25/26 frente a 19/25, p = 0.044.
+- **Potencia:** con las tasas observadas hacen falta ~60 casos por brazo para
+  80 % de potencia; con 30 la prueba estaba infradimensionada.
+- **Límites del juez:**
+  1. Es un modelo, no un humano. Revisores independientes y ciegos al
+     conjunto, pero no a la película: 59 de 60 juicios usaron conocimiento
+     del film.
+  2. Las películas con una sola trama dominante hacen que muchos controles
+     parezcan "mismo hilo" (tasa base 63 %). El juez distingue poco y el
+     margen posible es estrecho.
+  3. Hubo más "yes" de alta confianza en controles (10) que en enlaces (5):
+     muchos controles caen en arcos muy reconocibles (clímax, persecución).
+- **Estado:** G-enlace sin cumplir con este juez; señal positiva no
+  concluyente. Siguiente paso pre-registrable: ~60 + 60 casos NUEVOS con el
+  mismo protocolo, sin reutilizar estos 60 (evita el testing secuencial
+  sobre la misma muestra).
+
+`results/g_enlace_model_review.json` · `data/review_g_enlace/verdicts_*.json`
 
