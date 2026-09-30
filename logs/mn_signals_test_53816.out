@@ -1,0 +1,7 @@
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights:  61%|██████▏   | 250/408 [00:00<00:00, 2498.23it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 2539.20it/s]
+[mn] 25/59 tt0118715: 1069 shots, 53 escenas GT, done=8
+[mn] 50/59 tt1038919: 2012 shots, 105 escenas GT, done=33
+[mn] 59/59 tt2582846: 1873 shots, 145 escenas GT, done=42
+MOVIENET_EXTRACT_DONE done=42 skipped=17

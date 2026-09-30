@@ -1,0 +1,200 @@
+[exp018] 47 películas test con señales y cast
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 36/199 [00:00<00:00, 359.90it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1748.12it/s]
+[dialogue] tt0052357: 1100 shots
+[dialogue] tt0063442: 1143 shots
+[dialogue] tt0068646: 1249 shots
+[dialogue] tt0073195: 1243 shots
+[dialogue] tt0078788: 1588 shots
+[dialogue] tt0082089: 606 shots
+[dialogue] tt0086190: 2177 shots
+[dialogue] tt0088944: 1842 shots
+[dialogue] tt0092099: 1874 shots
+[dialogue] tt0096320: 1137 shots
+[dialogue] tt0099423: 2429 shots
+[dialogue] tt0100405: 1131 shots
+[dialogue] tt0103776: 1778 shots
+[dialogue] tt0103855: 2150 shots
+[dialogue] tt0107290: 1327 shots
+[dialogue] tt0108399: 1940 shots
+[dialogue] tt0113277: 1999 shots
+[dialogue] tt0115759: 2033 shots
+[dialogue] tt0117060: 1536 shots
+[dialogue] tt0118715: 1069 shots
+[dialogue] tt0119488: 1779 shots
+[dialogue] tt0120689: 2397 shots
+[dialogue] tt0120890: 1150 shots
+[dialogue] tt0123755: 1062 shots
+[dialogue] tt0137523: 2356 shots
+[dialogue] tt0163025: 1470 shots
+[dialogue] tt0172495: 2608 shots
+[dialogue] tt0190332: 1645 shots
+[dialogue] tt0217505: 1804 shots
+[dialogue] tt0281358: 1188 shots
+[dialogue] tt0319061: 1837 shots
+[dialogue] tt0361748: 1447 shots
+[dialogue] tt0379786: 2134 shots
+[dialogue] tt0409459: 2765 shots
+[dialogue] tt0440963: 2760 shots
+[dialogue] tt0479884: 1827 shots
+[dialogue] tt0780571: 1364 shots
+[dialogue] tt0822832: 1549 shots
+[dialogue] tt0945513: 1442 shots
+[dialogue] tt0976051: 1287 shots
+[dialogue] tt1038919: 2012 shots
+[dialogue] tt1119646: 1805 shots
+[dialogue] tt1205489: 1380 shots
+[dialogue] tt1375666: 2609 shots
+[dialogue] tt1412386: 1487 shots
+[dialogue] tt1707386: 2548 shots
+[dialogue] tt2488496: 2395 shots
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   1%|          | 5/729 [00:00<00:15, 46.74it/s]Loading weights:   2%|▏         | 16/729 [00:00<00:08, 79.46it/s]Loading weights:   4%|▍         | 30/729 [00:00<00:07, 99.77it/s]Loading weights:   6%|▌         | 42/729 [00:00<00:06, 106.36it/s]Loading weights:   7%|▋         | 54/729 [00:00<00:06, 111.05it/s]Loading weights:   9%|▉         | 68/729 [00:00<00:05, 120.36it/s]Loading weights:  11%|█         | 82/729 [00:00<00:05, 126.05it/s]Loading weights:  13%|█▎        | 95/729 [00:00<00:05, 126.04it/s]Loading weights:  15%|█▌        | 112/729 [00:00<00:04, 132.35it/s]Loading weights:  17%|█▋        | 126/729 [00:01<00:05, 120.23it/s]Loading weights:  20%|█▉        | 143/729 [00:01<00:04, 133.55it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:04, 136.36it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:04, 118.62it/s]Loading weights:  26%|██▌       | 191/729 [00:01<00:04, 130.25it/s]Loading weights:  28%|██▊       | 205/729 [00:01<00:04, 130.08it/s]Loading weights:  30%|███       | 219/729 [00:01<00:03, 130.91it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:04, 115.94it/s]Loading weights:  34%|███▎      | 246/729 [00:02<00:04, 111.00it/s]Loading weights:  37%|███▋      | 268/729 [00:02<00:03, 115.65it/s]Loading weights:  39%|███▊      | 282/729 [00:02<00:03, 120.73it/s]Loading weights:  40%|████      | 295/729 [00:02<00:03, 120.58it/s]Loading weights:  43%|████▎     | 310/729 [00:02<00:03, 126.68it/s]Loading weights:  45%|████▍     | 328/729 [00:02<00:03, 124.73it/s]Loading weights:  53%|█████▎    | 386/729 [00:02<00:01, 238.66it/s]Loading weights:  66%|██████▋   | 483/729 [00:02<00:00, 431.28it/s]Loading weights:  78%|███████▊  | 571/729 [00:03<00:00, 552.23it/s]Loading weights:  91%|█████████ | 662/729 [00:03<00:00, 652.04it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 227.75it/s]
+[ledger] tt0052357: 138 resúmenes (surface)
+[ledger] tt0063442: 143 resúmenes (surface)
+[ledger] tt0068646: 157 resúmenes (surface)
+[ledger] tt0073195: 156 resúmenes (surface)
+[ledger] tt0078788: 199 resúmenes (surface)
+[ledger] tt0082089: 76 resúmenes (surface)
+[ledger] tt0086190: 273 resúmenes (surface)
+[ledger] tt0088944: 231 resúmenes (surface)
+[ledger] tt0092099: 235 resúmenes (surface)
+[ledger] tt0096320: 143 resúmenes (surface)
+[ledger] tt0099423: 304 resúmenes (surface)
+[ledger] tt0100405: 142 resúmenes (surface)
+[ledger] tt0103776: 223 resúmenes (surface)
+[ledger] tt0103855: 269 resúmenes (surface)
+[ledger] tt0107290: 166 resúmenes (surface)
+[ledger] tt0108399: 243 resúmenes (surface)
+[ledger] tt0113277: 250 resúmenes (surface)
+[ledger] tt0115759: 255 resúmenes (surface)
+[ledger] tt0117060: 192 resúmenes (surface)
+[ledger] tt0118715: 134 resúmenes (surface)
+[ledger] tt0119488: 223 resúmenes (surface)
+[ledger] tt0120689: 300 resúmenes (surface)
+[ledger] tt0120890: 144 resúmenes (surface)
+[ledger] tt0123755: 133 resúmenes (surface)
+[ledger] tt0137523: 295 resúmenes (surface)
+[ledger] tt0163025: 184 resúmenes (surface)
+[ledger] tt0172495: 326 resúmenes (surface)
+[ledger] tt0190332: 206 resúmenes (surface)
+[ledger] tt0217505: 226 resúmenes (surface)
+[ledger] tt0281358: 149 resúmenes (surface)
+[ledger] tt0319061: 230 resúmenes (surface)
+[ledger] tt0361748: 181 resúmenes (surface)
+[ledger] tt0379786: 267 resúmenes (surface)
+[ledger] tt0409459: 346 resúmenes (surface)
+[ledger] tt0440963: 345 resúmenes (surface)
+[ledger] tt0479884: 229 resúmenes (surface)
+[ledger] tt0780571: 171 resúmenes (surface)
+[ledger] tt0822832: 194 resúmenes (surface)
+[ledger] tt0945513: 181 resúmenes (surface)
+[ledger] tt0976051: 161 resúmenes (surface)
+[ledger] tt1038919: 252 resúmenes (surface)
+[ledger] tt1119646: 226 resúmenes (surface)
+[ledger] tt1205489: 173 resúmenes (surface)
+[ledger] tt1375666: 327 resúmenes (surface)
+[ledger] tt1412386: 186 resúmenes (surface)
+[ledger] tt1707386: 319 resúmenes (surface)
+[ledger] tt2488496: 300 resúmenes (surface)
+[ledger] listo
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 3220.75it/s]
+[topicmap] tt0052357: pares 319661 | MCC cava +0.006 fused -0.041 contig +0.006 avg -0.006 (60 tópicos)
+[topicmap] tt0063442: pares 216645 | MCC cava +0.020 fused -0.039 contig +0.011 avg -0.012 (68 tópicos)
+[topicmap] tt0068646: pares 260755 | MCC cava +0.041 fused -0.019 contig +0.000 avg -0.011 (78 tópicos)
+[topicmap] tt0073195: pares 150705 | MCC cava +0.013 fused +0.038 contig +0.002 avg +0.008 (89 tópicos)
+[topicmap] tt0078788: pares 255488 | MCC cava +0.023 fused -0.019 contig +0.000 avg +0.006 (98 tópicos)
+[topicmap] tt0082089: pares 65252 | MCC cava +0.000 fused +0.013 contig +0.000 avg +0.003 (59 tópicos)
+[topicmap] tt0086190: pares 397825 | MCC cava +0.000 fused +0.015 contig +0.005 avg +0.012 (92 tópicos)
+[topicmap] tt0088944: pares 686491 | MCC cava +0.046 fused +0.014 contig +0.006 avg +0.015 (99 tópicos)
+[topicmap] tt0092099: pares 479021 | MCC cava -0.019 fused -0.007 contig +0.005 avg -0.009 (52 tópicos)
+[topicmap] tt0096320: pares 301388 | MCC cava +0.006 fused +0.018 contig +0.000 avg +0.038 (86 tópicos)
+[topicmap] tt0099423: pares 753706 | MCC cava -0.027 fused +0.024 contig +0.005 avg +0.009 (116 tópicos)
+[topicmap] tt0100405: pares 333321 | MCC cava -0.013 fused +0.005 contig +0.006 avg -0.002 (97 tópicos)
+[topicmap] tt0103776: pares 413922 | MCC cava -0.005 fused +0.019 contig +0.002 avg +0.014 (87 tópicos)
+[topicmap] tt0103855: pares 1145793 | MCC cava +0.000 fused +0.015 contig +0.002 avg +0.010 (36 tópicos)
+[topicmap] tt0107290: pares 164595 | MCC cava +0.000 fused +0.035 contig +0.027 avg -0.009 (101 tópicos)
+[topicmap] tt0108399: pares 682380 | MCC cava +0.007 fused -0.011 contig -0.005 avg +0.018 (113 tópicos)
+[topicmap] tt0113277: pares 718451 | MCC cava -0.012 fused +0.012 contig +0.000 avg +0.007 (96 tópicos)
+[topicmap] tt0115759: pares 543467 | MCC cava -0.008 fused -0.014 contig +0.004 avg +0.021 (102 tópicos)
+[topicmap] tt0117060: pares 453112 | MCC cava +0.022 fused -0.001 contig +0.005 avg +0.006 (77 tópicos)
+[topicmap] tt0118715: pares 198083 | MCC cava +0.077 fused +0.009 contig +0.006 avg +0.014 (81 tópicos)
+[topicmap] tt0119488: pares 705256 | MCC cava +0.041 fused +0.001 contig -0.002 avg -0.002 (116 tópicos)
+[topicmap] tt0120689: pares 1186991 | MCC cava +0.012 fused +0.007 contig +0.002 avg +0.010 (139 tópicos)
+[topicmap] tt0120890: pares 356561 | MCC cava +0.009 fused -0.011 contig +0.020 avg +0.010 (90 tópicos)
+[topicmap] tt0123755: pares 316888 | MCC cava -0.017 fused +0.021 contig +0.001 avg +0.013 (71 tópicos)
+[topicmap] tt0137523: pares 1234311 | MCC cava -0.020 fused -0.021 contig +0.006 avg -0.006 (132 tópicos)
+[topicmap] tt0163025: pares 350356 | MCC cava +0.013 fused +0.024 contig +0.000 avg -0.006 (88 tópicos)
+[topicmap] tt0172495: pares 1140696 | MCC cava -0.020 fused +0.035 contig -0.009 avg +0.013 (79 tópicos)
+[topicmap] tt0190332: pares 780780 | MCC cava +0.000 fused +0.016 contig +0.043 avg +0.017 (24 tópicos)
+[topicmap] tt0217505: pares 565091 | MCC cava +0.000 fused +0.016 contig +0.001 avg +0.007 (104 tópicos)
+[topicmap] tt0281358: pares 386219 | MCC cava +0.004 fused +0.041 contig +0.000 avg +0.019 (89 tópicos)
+[topicmap] tt0319061: pares 642784 | MCC cava +0.015 fused -0.026 contig +0.000 avg +0.038 (112 tópicos)
+[topicmap] tt0361748: pares 332690 | MCC cava +0.000 fused -0.017 contig +0.034 avg +0.003 (77 tópicos)
+[topicmap] tt0379786: pares 903172 | MCC cava +0.016 fused -0.001 contig -0.008 avg -0.003 (109 tópicos)
+[topicmap] tt0409459: pares 1001542 | MCC cava +0.014 fused +0.011 contig -0.003 avg +0.014 (123 tópicos)
+[topicmap] tt0440963: pares 1053087 | MCC cava +0.013 fused +0.024 contig +0.023 avg +0.032 (116 tópicos)
+[topicmap] tt0479884: pares 553221 | MCC cava +0.049 fused +0.008 contig +0.008 avg +0.004 (104 tópicos)
+[topicmap] tt0780571: pares 355437 | MCC cava +0.011 fused +0.023 contig -0.024 avg +0.010 (76 tópicos)
+[topicmap] tt0822832: pares 450962 | MCC cava -0.020 fused +0.003 contig +0.012 avg +0.007 (119 tópicos)
+[topicmap] tt0945513: pares 581441 | MCC cava +0.049 fused -0.009 contig +0.000 avg +0.005 (81 tópicos)
+[topicmap] tt0976051: pares 291643 | MCC cava +0.072 fused +0.004 contig +0.013 avg +0.015 (85 tópicos)
+[topicmap] tt1038919: pares 1014077 | MCC cava +0.012 fused +0.014 contig +0.004 avg +0.018 (93 tópicos)
+[topicmap] tt1119646: pares 785052 | MCC cava -0.019 fused -0.004 contig -0.002 avg +0.008 (76 tópicos)
+[topicmap] tt1205489: pares 456139 | MCC cava +0.030 fused +0.012 contig +0.002 avg +0.003 (76 tópicos)
+[topicmap] tt1375666: pares 1639055 | MCC cava +0.000 fused +0.009 contig -0.002 avg -0.001 (102 tópicos)
+[topicmap] tt1412386: pares 216056 | MCC cava -0.002 fused +0.001 contig +0.000 avg +0.010 (105 tópicos)
+[topicmap] tt1707386: pares 1220879 | MCC cava -0.013 fused +0.003 contig +0.006 avg +0.009 (91 tópicos)
+[topicmap] tt2488496: pares 990623 | MCC cava -0.004 fused -0.006 contig -0.002 avg +0.013 (97 tópicos)
+
+47 películas
+| sistema | MCC | tópicos | tasa de enlace |
+|---|---|---|---|
+| cava | +0.0090 | 4 | 0.990 |
+| cava_abst | +0.0113 | 139 | 0.044 |
+| cava_abst_r95 | +0.0115 | 217 | 0.020 |
+| cava_avg | +0.0083 | 91 | 0.054 |
+| cava_avg_r80 | +0.0091 | 48 | 0.088 |
+| cava_avg_r95 | +0.0069 | 146 | 0.032 |
+| cava_r80 | +0.0038 | 2 | 0.999 |
+| cava_r95 | +0.0086 | 9 | 0.960 |
+| contiguous | +0.0045 | 86 | 0.001 |
+| dialogue | +0.0053 | 81 | 0.331 |
+| fused | +0.0053 | 40 | 0.197 |
+| visual | +0.0195 | 57 | 0.248 |
+| vjudge | +0.0079 | 32 | 0.159 |
+  cava_vs_fused: {'mean': 0.0037, 'se': 0.0046, 'n': 47, 'z': 0.8}
+  cava_vs_contiguous: {'mean': 0.0045, 'se': 0.0038, 'n': 47, 'z': 1.19}
+  cava_vs_visual: {'mean': -0.0105, 'se': 0.0053, 'n': 47, 'z': -1.99}
+  cava_vs_dialogue: {'mean': 0.0037, 'se': 0.0044, 'n': 47, 'z': 0.82}
+  cava_vs_vjudge: {'mean': 0.0011, 'se': 0.0044, 'n': 47, 'z': 0.24}
+  cava_avg_vs_fused: {'mean': 0.0031, 'se': 0.0028, 'n': 47, 'z': 1.11}
+  cava_avg_vs_contiguous: {'mean': 0.0038, 'se': 0.0023, 'n': 47, 'z': 1.68}
+  cava_avg_vs_visual: {'mean': -0.0112, 'se': 0.0037, 'n': 47, 'z': -3.03}
+  cava_avg_vs_dialogue: {'mean': 0.003, 'se': 0.0026, 'n': 47, 'z': 1.17}
+  cava_avg_vs_vjudge: {'mean': 0.0004, 'se': 0.0024, 'n': 47, 'z': 0.16}
+  cava_avg_vs_cava: {'mean': -0.0007, 'se': 0.0038, 'n': 47, 'z': -0.17}
+  cava_abst_vs_fused: {'mean': 0.006, 'se': 0.0024, 'n': 47, 'z': 2.46}
+  cava_abst_vs_contiguous: {'mean': 0.0068, 'se': 0.0027, 'n': 47, 'z': 2.48}
+  cava_abst_vs_visual: {'mean': -0.0082, 'se': 0.003, 'n': 47, 'z': -2.74}
+  cava_abst_vs_dialogue: {'mean': 0.006, 'se': 0.0037, 'n': 47, 'z': 1.61}
+  cava_abst_vs_vjudge: {'mean': 0.0034, 'se': 0.0024, 'n': 47, 'z': 1.38}
+  cava_abst_vs_cava_avg: {'mean': 0.003, 'se': 0.0017, 'n': 47, 'z': 1.78}
+  prec_minus_base_cava_abst: {'mean': 0.0264, 'se': 0.0047, 'n': 47, 'z': 5.59}
+  prec_minus_base_fused: {'mean': 0.0054, 'se': 0.0028, 'n': 47, 'z': 1.95}
+  prec_minus_base_visual: {'mean': 0.016, 'se': 0.0037, 'n': 47, 'z': 4.31}
+  G-coherencia (media, mín película, fracción > 0):
+    cava_visual: {'mean': 0.0487, 'min_film': -0.0162, 'frac_positive': 0.923}
+    cava_dialogue: {'mean': 0.0255, 'min_film': -0.0456, 'frac_positive': 0.895}
+    cava_vjudge: {'mean': 0.0422, 'min_film': -0.0285, 'frac_positive': 0.897}
+    cava_avg_visual: {'mean': 0.0388, 'min_film': 0.0151, 'frac_positive': 1.0}
+    cava_avg_dialogue: {'mean': 0.0264, 'min_film': 0.0091, 'frac_positive': 1.0}
+    cava_avg_vjudge: {'mean': 0.0803, 'min_film': 0.0316, 'frac_positive': 1.0}
+    cava_abst_visual: {'mean': 0.0528, 'min_film': 0.0236, 'frac_positive': 1.0}
+    cava_abst_dialogue: {'mean': 0.0178, 'min_film': 0.0026, 'frac_positive': 1.0}
+    cava_abst_vjudge: {'mean': 0.1214, 'min_film': 0.0573, 'frac_positive': 1.0}
+    fused_visual: {'mean': 0.0266, 'min_film': 0.0048, 'frac_positive': 1.0}
+    fused_dialogue: {'mean': 0.0074, 'min_film': -0.0034, 'frac_positive': 0.977}
+    fused_vjudge: {'mean': 0.0673, 'min_film': 0.0209, 'frac_positive': 1.0}
+    contiguous_visual: {'mean': 0.0669, 'min_film': 0.0378, 'frac_positive': 1.0}
+    contiguous_dialogue: {'mean': 0.0494, 'min_film': 0.0255, 'frac_positive': 1.0}
+    contiguous_vjudge: {'mean': 0.1551, 'min_film': 0.0779, 'frac_positive': 1.0}
+EXP018_DONE

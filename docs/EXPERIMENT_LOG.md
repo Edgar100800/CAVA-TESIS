@@ -1069,3 +1069,40 @@ el sistema pone en el mismo tópico.
 
 `scripts/eval_topic_map.py --average --abstain`
 
+### Resultado EXP-018 — confirmación pre-registrada en el split test (job 53817, 47 películas)
+| criterio (test) | resultado | |
+|---|---|---|
+| 1. MCC(cava_abst) − MCC(fused) | **+0.0060 ± 0.0024 (z 2.46)** | ✅ |
+| 1. MCC(cava_abst) − MCC(contiguous) | **+0.0068 ± 0.0027 (z 2.48)** | ✅ |
+| 2. precisión de enlace − tasa base | **+0.026 ± 0.005 (z 5.6)** (fused +0.005, z 1.95; visual +0.016, z 4.3) | ✅ |
+| 3. G-coherencia: margen > 0 por señal | visual 0.053 · diálogo 0.018 · vjudge 0.121, en el 100 % de películas | ✅ |
+
+- **✅ VALIDADO (pre-registrado, split test nunca usado):** "el mapa de tópicos
+  CAVA — cada señal con sus propios tópicos que retornan, consenso por enlace
+  promedio entre señales activas, sin fusión — agrupa hilos mejor que la fusión
+  de señales (modo de fallo de A2Summ-X) y que el gestor v2.1 contiguo". Sus
+  enlaces son los más precisos de todos los sistemas (margen sobre el azar ~5×
+  el de fused) y conserva la estructura de cada señal (G-coherencia).
+- **Salvedades:**
+  1. Magnitudes pequeñas en términos absolutos: MCC 0.011 frente a 0.005 de
+     fused. La pertenencia a partición dura contra el proxy cast es exigente
+     y el proxy es débil.
+  2. visual sola obtiene más MCC que cava_abst en test (−0.008 ± 0.003) y en
+     train. El proxy "mismos personajes" favorece por construcción a la señal
+     de caras; visual enlaza el 25 % de los pares con menos precisión sobre el
+     azar (+0.016 frente a +0.026).
+  3. Heterogeneidad: en train (post hoc) cava_abst empata con fused (+0.000 ±
+     0.003); en val (post hoc) +0.006 ± 0.004. El criterio se evaluó y se
+     cumple en test; train muestra que la ventaja sobre fused no es uniforme
+     entre muestras.
+  4. G-enlace (revisión humana, 30 casos) sigue pendiente y es el juez neutral
+     del proxy.
+- **Post hoc** (el diagnóstico se hizo sobre val, no decide):
+
+  | conjunto | cava_abst − fused | cava_abst − contiguous | precisión − base |
+  |---|---|---|---|
+  | val | +0.006 ± 0.004 | +0.009 ± 0.005 | +0.035 ± 0.009 |
+  | train | +0.000 ± 0.003 | +0.007 ± 0.003 | +0.029 ± 0.007 |
+
+`results/exp018_test.json` · `results/exp018_posthoc_dev.json` · `results/exp018_posthoc_conf.json`
+
