@@ -98,7 +98,7 @@ def build_topic_map(video_id: str, signals: dict[str, np.ndarray],
                     unit_summaries: list[dict] | None = None,
                     boundary_signals: dict[str, np.ndarray] | None = None,
                     percentile: float = 80, return_percentile: float = 90,
-                    link_quorum: int = 2) -> dict:
+                    link_quorum: int = 2, abstain: bool = False) -> dict:
     """Mapa de tópicos en dos granularidades con los parámetros pre-registrados
     de EXP-017b (percentile 80, return_percentile 90, link_mode average)."""
     n = min(len(v) for v in signals.values())
@@ -111,12 +111,12 @@ def build_topic_map(video_id: str, signals: dict[str, np.ndarray],
            "signals": sorted(signals) + sorted(boundary_signals or {}),
            "unit_times": [[round(a, 2), round(b, 2)] for a, b in shot_times[:n]],
            "params": {"percentile": percentile, "return_percentile": return_percentile,
-                      "link_mode": "average", "quorum_by_level": levels},
+                      "link_mode": "average", "abstain": abstain, "quorum_by_level": levels},
            "levels": {}}
     for name, q in levels.items():
         plan = manage(signals, n_segments=n, percentile=percentile, link_quorum=q,
                       return_percentile=return_percentile, link_mode="average",
-                      boundary_signals=boundary_signals)
+                      boundary_signals=boundary_signals, abstain=abstain)
         topics = topics_from_plan(plan, shot_times, signals, unit_summaries)
         doc["levels"][name] = {"n_topics": len(topics),
                                "n_returning": sum(1 for t in topics if t["returns"]),

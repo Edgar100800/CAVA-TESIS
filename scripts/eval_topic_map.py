@@ -63,6 +63,7 @@ def main():
     ap.add_argument("--min-gap", type=int, default=80)
     ap.add_argument("--out", required=True)
     ap.add_argument("--average", action="store_true", help="EXP-017b: añade link_mode=average")
+    ap.add_argument("--abstain", action="store_true", help="EXP-018: añade cava_abst (average + abstain)")
     args = ap.parse_args()
     bge = BgeEmbedder()
     rows = {}
@@ -110,6 +111,10 @@ def main():
             plans["cava_avg"] = manage(sig, return_percentile=90, **AV)
             plans["cava_avg_r80"] = manage(sig, return_percentile=80, **AV)
             plans["cava_avg_r95"] = manage(sig, return_percentile=95, **AV)
+        if args.abstain:
+            AB = KW | {"link_mode": "average", "abstain": True}
+            plans["cava_abst"] = manage(sig, return_percentile=90, **AB)
+            plans["cava_abst_r95"] = manage(sig, return_percentile=95, **AB)
         for k in ("visual", "dialogue", "vjudge"):
             plans[k] = manage({k: sig[k]}, return_percentile=90, **(KW | {"link_quorum": 1}))
         if args.segloop_dir and (Path(args.segloop_dir) / f"{tt}.npz").exists():
@@ -127,7 +132,9 @@ def main():
             r[f"mcc_{name}"] = mcc(pred, y)
             r[f"n_topics_{name}"] = int(len(set(lab.tolist())))
             r[f"link_rate_{name}"] = float(pred.mean())
-        for name in [x for x in ("cava", "cava_avg", "fused", "contiguous") if x in plans]:
+            r[f"prec_{name}"] = float((pred & y).sum() / pred.sum()) if pred.sum() else float(y.mean())
+            r[f"rec_{name}"] = float((pred & y).sum() / y.sum())
+        for name in [x for x in ("cava", "cava_avg", "cava_abst", "fused", "contiguous") if x in plans]:
             for k in ("visual", "dialogue", "vjudge"):
                 r[f"coh_{name}_{k}"] = coherence_margin(plans[name].labels, sig[k])
         rows[tt] = r
@@ -147,7 +154,8 @@ def main():
                    for m in ("mcc", "n_topics", "link_rate")} for s in systems}
     coh = {f"{name}_{k}": {"mean": round(float(np.mean(v)), 4), "min_film": round(float(np.min(v)), 4),
                            "frac_positive": round(float(np.mean(np.array(v) > 0)), 3)}
-           for name in ("cava", "cava_avg", "fused", "contiguous") for k in ("visual", "dialogue", "vjudge")
+           for name in ("cava", "cava_avg", "cava_abst", "fused", "contiguous")
+           for k in ("visual", "dialogue", "vjudge")
            if (v := [r[f"coh_{name}_{k}"] for r in rows.values()
                      if r.get(f"coh_{name}_{k}") is not None])}
     crit = {"cava_vs_fused": paired("mcc_cava", "mcc_fused"),
@@ -158,6 +166,12 @@ def main():
     if any("mcc_cava_avg" in r for r in rows.values()):
         for b in ("fused", "contiguous", "visual", "dialogue", "vjudge", "cava"):
             crit[f"cava_avg_vs_{b}"] = paired("mcc_cava_avg", f"mcc_{b}")
+    if any("mcc_cava_abst" in r for r in rows.values()):
+        for b in ("fused", "contiguous", "visual", "dialogue", "vjudge", "cava_avg"):
+            crit[f"cava_abst_vs_{b}"] = paired("mcc_cava_abst", f"mcc_{b}")
+        crit["prec_minus_base_cava_abst"] = paired("prec_cava_abst", "pos_rate")
+        crit["prec_minus_base_fused"] = paired("prec_fused", "pos_rate")
+        crit["prec_minus_base_visual"] = paired("prec_visual", "pos_rate")
     if any("mcc_cava_avg+segloop" in r for r in rows.values()):
         crit["cava_avg+segloop_vs_cava_avg"] = paired("mcc_cava_avg+segloop", "mcc_cava_avg")
     if any("mcc_cava+segloop" in r for r in rows.values()):

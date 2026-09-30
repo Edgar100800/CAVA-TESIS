@@ -1029,3 +1029,43 @@ el sistema pone en el mismo tópico.
 
 `results/exp017b_topicmap_dev.json` · `results/exp017b_topicmap_conf.json`
 
+---
+
+## EXP-018 · Abstención de señales sin evidencia; confirmación en el split test (pre-registro)
+- **Fecha:** 2026-09-29 (registrado antes de ejecutar en cualquier dato)
+- **Motivo (diagnóstico post EXP-017b, 10 películas de desarrollo):**
+  - El 33 % de los shots no tiene diálogo. Con retornos, cada tramo silencioso
+    recibe un tópico de diálogo propio y el diálogo vota en contra de
+    enlazarlo: el silencio cuenta como desacuerdo.
+  - Quitar el diálogo subió la precisión de enlace de 0.304 a 0.333 (azar
+    0.283).
+  - Todos los sistemas quedan cerca del azar en precisión contra el proxy
+    cast (0.29–0.33 frente a 0.283): el proxy es débil y sesgado a lo visual.
+- **Corrección** (`abstain=True`, commit previo): un shot sin evidencia en una
+  señal no recibe voto de ella. Un par se enlaza solo con ≥ link_quorum
+  votantes activos y mayoría media de activos coincidentes. Es la regla
+  "señales activas" de ADR-0001.
+- **Corpus de confirmación: split test de MovieNet-318** (autorizado; nunca
+  usado en CAVA).
+  - Películas con story y cast; unidades fijas de 8 shots; resúmenes VJudge
+    con el prompt de EXP-012.
+  - SegLoop NO interviene en test: el test_lock de SegLoop queda intacto.
+- **Sistemas:**
+  - `cava_abst`: visual + diálogo + vjudge; percentile 80, return_percentile
+    90, link_mode average, abstain, link_quorum 2.
+  - Mismos baselines que EXP-017b: fused, contiguous, visual / diálogo /
+    vjudge solas, cava_avg.
+- **Criterios (solo en test, una ejecución):**
+  1. **Primario:** MCC(cava_abst) − MCC(fused) > 2 SE y MCC(cava_abst) −
+     MCC(contiguous) > 2 SE, pareado por película.
+  2. Precisión de enlace de cava_abst − tasa base > 2 SE: la partición dice
+     algo más allá del azar.
+  3. G-coherencia: margen > 0 en cada señal en cada película.
+- **Descriptivo, no decide:** la misma evaluación en desarrollo (val) y en la
+  confirmación anterior (train), marcada como post hoc. El diagnóstico se hizo
+  sobre val.
+- **G-enlace:** decide la revisión humana (`data/review_g_enlace/`), no el
+  proxy cast.
+
+`scripts/eval_topic_map.py --average --abstain`
+
