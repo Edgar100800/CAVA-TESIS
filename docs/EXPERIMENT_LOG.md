@@ -1366,3 +1366,30 @@ Comparación pareada con las etiquetas de unidad sobre los mismos mapas:
 
 `results/exp019b_{unit,topic}_{dev,test}.json` · `data/topic_labels/`
 
+---
+
+## EXP-019c · Registro de personajes por video + re-etiquetado (pre-registro)
+- **Fecha:** 2026-10-01 (registrado antes de generar)
+- **Motivo:** en 019b la etiqueta solo puede nombrar a quien se nombra en el
+  diálogo de los propios tramos del tópico. Los tópicos con poco o ningún
+  diálogo ("sin contexto") quedan en descripciones genéricas aunque el
+  personaje se nombre en otra parte del video.
+- **Configuración** (solo salidas de CAVA, sin GT):
+  1. Registro por video: Qwen2.5-14B-Instruct frozen lee TODAS las etiquetas
+     de tópico de 019b y devuelve la lista de personajes del video, "Nombre —
+     descripción breve (rol, apariencia)", solo con nombres que aparecen en
+     esas etiquetas.
+  2. Re-etiquetado: mismo prompt de 019b más el registro. El modelo puede
+     identificar a un personaje descrito con un nombre del registro solo si
+     la descripción encaja; si no, mantiene la descripción.
+- **Mismos mapas, GT y métricas que EXP-019/019b** (val y test).
+- **Criterios** (pareados por película, desarrollo Y confirmación):
+  1. tasa de nombrado(019c) − tasa(019b) > 2 SE;
+  2. precisión(019c, propia) − precisión(019c, barajada) > 2 SE;
+  3. precisión propia(019c) − precisión propia(019b) no menor que −2 SE
+     (guarda contra nombres inventados o mal asignados);
+  4. MRR(019c) − MRR(019b) no menor que −2 SE.
+- **Se reporta aparte:** tasa de nombrado y precisión en tópicos "sin
+  contexto", es decir, sin ningún alias del cast en su propio diálogo
+  (diálogo limpio de SDH).
+
