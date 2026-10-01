@@ -1423,3 +1423,30 @@ Comparación pareada con las etiquetas de unidad sobre los mismos mapas:
 - **Se reporta aparte:** tópicos sin contexto (tasa de nombrado y precisión)
   y la precisión de los nombres heredados por sí solos.
 
+### Resultado EXP-019d
+Receptores (tópicos sin nombres): 1690; heredan nombres por enlace de dos
+señales: 674 (40 %).
+
+| criterio / medida | desarrollo (val) | confirmación (test) |
+|---|---|---|
+| 1. tasa de nombrado 019d − 019b | **0.54 → 0.61, +0.068 ± 0.011 (z 6.4)** ✅ | **0.49 → 0.55, +0.060 ± 0.011 (z 5.5)** ✅ |
+| 2. precisión 019d propia − barajada | +0.163 ± 0.012 (z 14.0) ✅ | +0.122 ± 0.015 (z 8.4) ✅ |
+| 3. precisión propia 019d − 019b (≥ −2 SE) | +0.017 ± 0.008 (z 2.2) ✅ | +0.001 ± 0.014 ✅ |
+| sin contexto: tasa de nombrado | 0.24 → 0.33 | 0.22 → 0.28 |
+| sin contexto: precisión | 0.20 → 0.27 | 0.33 → 0.37 |
+| precisión de los nombres heredados solos | 0.54 (216 tópicos) | 0.57 (163 tópicos) |
+| (desc.) MRR 019d − 019b | −0.003 ± 0.003 | −0.010 ± 0.002 (z −4.1) |
+
+- **✅ VALIDADO (pre-registrado, desarrollo y test):** propagar nombres por los
+  enlaces de CAVA (visual + vjudge, cada uno con su percentil, quorum 2, sin
+  fusión) categoriza más tópicos por personaje sin perder precisión. Los
+  nombres heredados aciertan como los oídos directamente (0.54–0.57 frente a
+  0.50–0.60). La mejora se concentra en los tópicos sin contexto.
+- **Coste (no pre-registrado):** el MRR baja levemente en test (−0.010): al
+  heredar, la etiqueta reemplaza su texto de personajes y pierde algo de
+  coincidencia con el diálogo propio.
+- Combinable con EXP-019c (registro); se evaluará cuando termine el job 53926.
+
+`results/exp019d_prop_{dev,test}.json` · `scripts/propagate_names.py` ·
+`data/topic_labels_prop/*.propagation.json` (receptor → donante, similitudes)
+
