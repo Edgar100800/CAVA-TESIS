@@ -10,7 +10,17 @@ Salida (resumible): <out>/<tt>.topic_labels.json {topic_id: label}
 import argparse
 import json
 import os
+import re
 from pathlib import Path
+
+# subtítulos SDH: "RATCHED: ..." y "[INMATE COUGHS]" no existen en ASR de producción;
+# se eliminan para que la etiqueta no reciba nombres que un video nuevo no daría
+SDH_SPEAKER = re.compile(r"\b[A-Z][A-Z .'\-]{1,30}:\s*")
+SDH_CUE = re.compile(r"[\[(][^\])]{0,60}[\])]")
+
+
+def clean_said(text):
+    return re.sub(r"\s+", " ", SDH_CUE.sub(" ", SDH_SPEAKER.sub(" ", text))).strip()
 
 PROMPT = (
     "Below is what an automatic system observed in ONE topic of a film: the stretches "
@@ -29,7 +39,7 @@ def stretches_text(t, max_spans):
         a, b = t["spans"][i]
         ctx = t["context"][i]
         seen = " ".join(ctx["seen"])[:400] or "(nothing described)"
-        said = ctx["said"][:300] or "(no dialogue)"
+        said = clean_said(ctx["said"])[:300] or "(no dialogue)"
         out.append(f"Stretch {n} ({a / 60:.1f}-{b / 60:.1f} min): Seen: {seen} Said: \"{said}\"")
     return "\n".join(out)
 

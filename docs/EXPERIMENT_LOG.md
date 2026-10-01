@@ -1317,4 +1317,10 @@ prueba de contenido.
   personajes correctos.
 
 `scripts/vjudge_topic_labels.py` · `scripts/eval_categorization.py --labels-dir`
+- **Enmienda al pre-registro de EXP-019b (antes de generar ninguna etiqueta):**
+  - Algunos subtítulos son SDH, con etiquetas de hablante ("RATCHED: …") y
+    sonidos ("[INMATE COUGHS]").
+  - Se eliminan del diálogo que lee el etiquetador, porque un ASR de
+    producción no los tendría y darían nombres gratis.
+  - Criterios sin cambios. Job 53914 aún en espera: lee el script corregido.
 
