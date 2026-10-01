@@ -17,6 +17,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from narrative_eval import BgeEmbedder  # noqa: E402
+from vjudge_topic_labels import clean_said  # noqa: E402
 
 
 def alias_index(chars):
@@ -77,8 +78,10 @@ def main():
                         cnt[c] = cnt.get(c, 0) + 1
             gtc = {c for c, k in cnt.items() if k >= 2}
             lines = list(dict.fromkeys(l for s in t["shots"] if s < len(shots) for l in shots[s]["lines"]))
+            own_dialogue = clean_said(" ".join(c["said"] for c in t.get("context", [])))
+            ctxless = not any(a in re.findall(r"[a-z]+", own_dialogue.lower()) for a in amap)
             info.append({"gt": gtc, "named": named(t["label"], amap), "label": t["label"] or "",
-                         "text": " ".join(lines)[:2000]})
+                         "text": " ".join(lines)[:2000], "ctxless": ctxless})
         valid = [x for x in info if x["gt"]]
         if len(valid) < 3:
             continue
@@ -89,7 +92,12 @@ def main():
                       for j, y in enumerate(valid) if j != i and y["named"]]
             if others and x["named"]:
                 shuf.append(float(np.mean(others)))
+        cl = [x for x in valid if x["ctxless"]]
+        cl_own = [len(x["named"] & x["gt"]) / len(x["named"]) for x in cl if x["named"]]
         r = {"n_topics": len(valid), "naming_rate": float(np.mean([bool(x["named"]) for x in valid])),
+             "n_ctxless": len(cl),
+             "naming_rate_ctxless": float(np.mean([bool(x["named"]) for x in cl])) if cl else None,
+             "prec_own_ctxless": float(np.mean(cl_own)) if cl_own else None,
              "prec_own": float(np.mean(own)) if own else None,
              "prec_shuffled": float(np.mean(shuf)) if shuf else None}
         withtext = [x for x in valid if x["text"].strip()]
@@ -110,7 +118,8 @@ def main():
     crit = {"1_prec_own_vs_shuffled": paired(rows, "prec_own", "prec_shuffled"),
             "2_mrr_vs_chance": paired(rows, "mrr", "mrr_chance")}
     summ = {k: round(float(np.mean([r[k] for r in rows.values() if r.get(k) is not None])), 4)
-            for k in ("naming_rate", "prec_own", "prec_shuffled", "mrr", "mrr_chance", "top1", "n_topics")}
+            for k in ("naming_rate", "prec_own", "prec_shuffled", "mrr", "mrr_chance", "top1", "n_topics",
+                      "n_ctxless", "naming_rate_ctxless", "prec_own_ctxless")}
     Path(args.out).write_text(json.dumps({"protocol": "exp019_categorization_v1", "n_films": len(rows),
                                           "summary": summ, "criteria": crit, "per_film": rows}, indent=1))
     print(f"\n{len(rows)} películas · {summ}")
