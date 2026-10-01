@@ -59,6 +59,9 @@ def main():
     ap.add_argument("--corpus", default="data/movienet_topics")
     ap.add_argument("--out", default="data/topic_labels_cat")
     ap.add_argument("--min-dur", type=float, default=30.0)
+    ap.add_argument("--no-links", action="store_true", help="ablación: sin nombres por enlaces")
+    ap.add_argument("--no-registry", action="store_true", help="ablación: sin descripción → nombre")
+    ap.add_argument("--no-ids", action="store_true", help="ablación: sin identidades P# en el texto")
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -103,7 +106,7 @@ def main():
 
         # 2) nombres por enlaces (019d, modo añadir)
         for i in range(K):
-            if names[i]:
+            if names[i] or args.no_links:
                 continue
             donors = [j for j in range(K) if j != i and names[j] and not np.isnan(Sv[i, j])
                       and not np.isnan(Sj[i, j]) and Sv[i, j] >= tv90 and Sj[i, j] >= tj75]
@@ -112,7 +115,7 @@ def main():
 
         # 3) descripción -> nombre por el registro
         desc = [(i, p) for i in range(K) for p in phrases(own[i]) if not names_in(p)]
-        if desc and registry:
+        if desc and registry and not args.no_registry:
             D = bge([p for _, p in desc])
             R = bge([r for _, r in registry])
             S = D @ R.T
@@ -165,11 +168,21 @@ def main():
             if fresh:
                 extra.append("NAMES: " + ", ".join(fresh))
                 n_added += 1
-            if t["topic_id"] in ids_of:
+            if t["topic_id"] in ids_of and not args.no_ids:
                 extra.append("IDS: " + "; ".join(ids_of[t["topic_id"]]))
             if extra:
                 new[str(t["topic_id"])] = own[i] + " || " + " || ".join(extra)
         (out / f"{tt}.topic_labels.json").write_text(json.dumps(new, ensure_ascii=False))
+        # campos estructurados (diseño final): el texto de la etiqueta no se toca
+        chars = {}
+        for i, t in enumerate(topics):
+            fresh = sorted({c for c in added[i] if names_in(c) - own_tokens[i]})
+            chars[str(t["topic_id"])] = {
+                "names": sorted(names[i]),
+                "inherited_names": fresh,
+                "identities": [{"id": p_, "description": identities[p_]["description"]}
+                               for p_ in identities if t["topic_id"] in identities[p_]["topics"]]}
+        (out / f"{tt}.characters.json").write_text(json.dumps(chars, indent=1, ensure_ascii=False))
         (out / f"{tt}.identities.json").write_text(json.dumps(identities, indent=1, ensure_ascii=False))
         print(f"[categorize] {tt}: +nombres {n_added}, "
               f"identidades {len(identities)}", flush=True)

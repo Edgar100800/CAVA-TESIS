@@ -1548,3 +1548,28 @@ señales: 674 (40 %).
 
 `results/exp019e_{cat,base019b,ids}_train.json`
 
+### Ablación post hoc de EXP-019e (train; diagnóstico, no cambia el veredicto)
+| componente (frente a 019b) | Δ nombrado | Δ precisión | Δ MRR |
+|---|---|---|---|
+| solo enlaces (regla 019d) | +0.072 (z 7.2) | +0.004 (z 0.4) | −0.018 (z −7.4) |
+| solo registro (descripción → nombre) | +0.133 (z 7.8) | **−0.070 (z −4.1)** | −0.036 (z −8.6) |
+| enlaces + registro | +0.173 (z 9.5) | −0.049 (z −3.0) | −0.046 (z −10.3) |
+| solo identidades P# | +0.008 | −0.007 | −0.037 (z −7.6) |
+| enlaces + identidades: cobertura | **0.48 → 0.80** · consistencia de P# 0.95 vs 0.84 (p ≈ 0) · 11 P# por película | | |
+
+- **Causa de la caída de precisión:** el emparejamiento descripción →
+  registro (ruido de la regla p95). Los enlaces mantienen la precisión y
+  replican 019d en películas nuevas.
+- **Causa de la caída de MRR:** añadir cualquier texto a la etiqueta (enlaces,
+  registro o P#) diluye el texto que se compara con el diálogo, y las P#
+  compartidas igualan etiquetas de tópicos distintos.
+- **Decisión de diseño:** los personajes van como campos ESTRUCTURADOS del
+  tópico (`characters`: nombres propios + heredados por enlace con
+  provenance, e identidades P#), no dentro del texto de la etiqueta. Así el
+  texto queda como 019b (MRR intacto por construcción).
+  - El emparejamiento por registro queda fuera hasta tener una regla con
+    umbral absoluto y margen (pendiente de pre-registro).
+  - Evidencia de cada componente: enlaces = 019d pre-registrado (val, test)
+    + replicación en train; identidades = criterio 5 de 019e pre-registrado
+    en train. La combinación es post hoc y se declara así.
+
