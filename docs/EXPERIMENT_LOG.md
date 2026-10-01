@@ -1324,3 +1324,19 @@ prueba de contenido.
     producción no los tendría y darían nombres gratis.
   - Criterios sin cambios. Job 53914 aún en espera: lee el script corregido.
 
+### Sensibilidad EXP-019: subtítulos SDH
+- Las etiquetas de unidad de EXP-019 se generaron con el diálogo crudo, y
+  algunos subtítulos son SDH (con etiquetas de hablante "NOMBRE:").
+- Solo 2 de 58 películas val y 5 de 47 test tienen etiquetas en > 5 % de los
+  cues (`scripts/sdh_films.txt`).
+- Sin esas 7 películas:
+
+  | | desarrollo | confirmación |
+  |---|---|---|
+  | precisión propia − barajada | +0.189 ± 0.020 (z 9.4) | +0.170 ± 0.021 (z 8.1) |
+  | MRR − azar | +0.232 ± 0.015 (z 15.7) | +0.263 ± 0.015 (z 17.2) |
+
+- **EXP-019 se sostiene sin los SDH**; la validación no depende de esa fuga.
+
+`results/exp019_categ_dev_nosdh.json` · `results/exp019_categ_test_nosdh.json`
+
