@@ -1213,3 +1213,46 @@ el sistema pone en el mismo tópico.
 
 `results/g_enlace_model_review_batch2.json` · `data/review_g_enlace/batch2_*`
 
+---
+
+## EXP-019 · Certificación de la categorización de tópicos contra el contenido real (pre-registro)
+- **Fecha:** 2026-09-30 (registrado antes de construir el GT completo y de medir)
+- **Objetivo:** el producto es video largo → tópicos categorizados → clips →
+  reconstrucciones (versiones por tópico, índice completo con rangos,
+  resúmenes). La trama era una capa de validación intermedia. Aquí se
+  certifica que cada tópico está bien categorizado: su etiqueta dice quién
+  está y de qué trata, contrastado con lo que MovieNet sabe de punta a punta.
+- **GT de contenido por shot** (`scripts/build_content_gt.py`, solo validación):
+  - quién aparece = cast por shot → personaje (meta);
+  - quién habla y qué dice = guion (HABLANTE + línea) alineado a subtítulos
+    por contención idf y camino monótono, con varios cues por línea.
+  - Calidad observada en un muestreo de 12 pares en 2 películas: ~10/12
+    correctos. Los errores son cues cortos asignados a una línea vecina y
+    cues con dos hablantes atribuidos a uno. Es GT ruidoso; el ruido es igual
+    para la etiqueta propia y la barajada, así que no sesga la comparación.
+- **Tópicos:** mapas validados en EXP-018 (abstain, nivel default); tópicos
+  de duración ≥ 30 s con ≥ 1 personaje en el GT.
+  - GT de personajes del tópico = personajes presentes (en pantalla o
+    hablando) en ≥ 2 shots del tópico.
+- **Etiqueta:** la etiqueta VJudge actual del tópico (resumen de su unidad
+  dominante). Personajes nombrados = palabras en mayúscula de la etiqueta que
+  coinciden con un alias del cast de la película.
+- **Métricas por película:**
+  1. **Precisión de personajes:** fracción de personajes nombrados que están
+     en el GT del tópico (solo etiquetas que nombran ≥ 1). Control: la misma
+     medida con la etiqueta de OTRO tópico de la película (media sobre todos
+     los demás tópicos).
+  2. **Recuperación de contenido:** coseno bge entre la etiqueta y las líneas
+     del guion del tópico. MRR del propio tópico entre todos los de la
+     película; control = MRR del azar (H_N / N).
+  - Se reporta también la tasa de nombrado (fracción de etiquetas que nombran
+    un personaje conocido).
+- **Criterios** (desarrollo = val 58; confirmación = test 47, mapas sin
+  SegLoop porque test no lo permite):
+  1. precisión(propia) − precisión(barajada) > 2 SE pareado por película.
+  2. MRR − MRR_azar > 2 SE pareado por película.
+  - Ambos en desarrollo Y confirmación.
+- **Invalidación:** si fallan, las etiquetas actuales no certifican de qué
+  trata el tópico y la categorización necesita una etiqueta de nivel tópico
+  (siguiente paso: etiqueta construida desde todos los tramos del tópico).
+
