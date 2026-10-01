@@ -32,6 +32,32 @@ PROMPT = (
 )
 
 
+REGISTRY_PROMPT = (
+    "Below are topic labels produced for ONE film, each followed by a short description "
+    "of what was seen in that topic.\n\n{labels}\n\n"
+    "List every NAMED character that appears in these labels, once each, as:\n"
+    "Name - short description (role, typical appearance, who they are usually with)\n"
+    "Use only names that appear in the labels above. At most 15 lines. No other text."
+)
+REGISTRY_HEADER = (
+    "Characters known from the rest of this film (use one of these names ONLY if the "
+    "description clearly matches a person in these stretches; otherwise keep a short "
+    "description):\n{registry}\n\n"
+)
+
+
+def registry_input(doc, labels):
+    rows = []
+    for t in doc["levels"]["default"]["topics"]:
+        lab = labels.get(str(t["topic_id"]))
+        if not lab:
+            continue
+        i = max(range(len(t["spans"])), key=lambda k: t["spans"][k][1] - t["spans"][k][0])
+        seen = " ".join(t["context"][i]["seen"])[:140]
+        rows.append(f"- {lab} [seen: {seen}]")
+    return "\n".join(rows[:60])
+
+
 def stretches_text(t, max_spans):
     idx = sorted(range(len(t["spans"])), key=lambda i: -(t["spans"][i][1] - t["spans"][i][0]))[:max_spans]
     out = []
@@ -52,6 +78,9 @@ def main():
     ap.add_argument("--min-dur", type=float, default=30.0)
     ap.add_argument("--max-spans", type=int, default=8)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--registry-from", default=None,
+                    help="EXP-019c: dir con etiquetas de la 1ª pasada; construye un registro de "
+                         "personajes por video y re-etiqueta con él")
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -71,8 +100,27 @@ def main():
         done = json.loads(f_out.read_text()) if f_out.exists() else {}
         todo = [t for t in doc["levels"]["default"]["topics"]
                 if t["duration_s"] >= args.min_dur and str(t["topic_id"]) not in done]
+        header = ""
+        if args.registry_from:
+            f_reg = out / f"{tt}.registry.txt"
+            if f_reg.exists():
+                registry = f_reg.read_text()
+            else:
+                prev = json.loads((Path(args.registry_from) / f"{tt}.topic_labels.json").read_text())
+                rtext = REGISTRY_PROMPT.format(labels=registry_input(doc, prev))
+                if args.dry_run:
+                    registry = f"[dry registry input {len(rtext)} chars]"
+                else:
+                    chat = tok.apply_chat_template([{"role": "user", "content": rtext}],
+                                                   tokenize=False, add_generation_prompt=True)
+                    inputs = tok([chat], return_tensors="pt").to(model.device)
+                    with torch.inference_mode():
+                        g = model.generate(**inputs, max_new_tokens=400, do_sample=False)
+                    registry = tok.decode(g[0, inputs.input_ids.shape[1]:], skip_special_tokens=True).strip()
+                f_reg.write_text(registry)
+            header = REGISTRY_HEADER.format(registry=registry) if registry.strip() else ""
         for t in todo:
-            text = PROMPT.format(stretches=stretches_text(t, args.max_spans))
+            text = header + PROMPT.format(stretches=stretches_text(t, args.max_spans))
             if args.dry_run:
                 label = f"[dry {len(text)} chars]"
             else:
