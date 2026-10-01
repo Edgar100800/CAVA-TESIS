@@ -1573,3 +1573,28 @@ señales: 674 (40 %).
     + replicación en train; identidades = criterio 5 de 019e pre-registrado
     en train. La combinación es post hoc y se declara así.
 
+---
+
+## Conjunto de confirmación nuevo: train2 (91 películas)
+Películas train de MovieNet-318 con cast, guion, story y subtítulos, nunca
+usadas en ningún experimento (`scripts/exp019_train2_films.txt`). Datos
+generados con el mismo código que val/test/train por el job 53932: señales,
+resúmenes VJudge de 8 shots, mapas con contexto, GT de contenido, etiquetas
+019b y registro. Las 47 train de EXP-016/019e pasan a ser desarrollo.
+
+## EXP-019f · Filtro de identidades genéricas (pre-registro)
+- **Fecha:** 2026-10-01, antes de que existan los datos de train2.
+- **Regla fijada:** una frase descriptiva solo puede formar identidad P# si
+  tiene ≥ 2 palabras distintivas (fuera de una lista fija de palabras
+  genéricas: man, woman, other, two, group, object…). Ejemplos: "man in
+  yellow shirt" pasa (yellow, shirt); "other man", "woman" y "man with
+  object" no.
+- **Criterios en train2:**
+  1. Las identidades del filtro superan a pares de tópicos al azar de la misma
+     película (Fisher unilateral, p < 0.05).
+  2. Sobre las identidades SIN filtro: las que cumplen la regla tienen mayor
+     tasa de pares que comparten personaje del GT que las que no la cumplen
+     (conjuntos disjuntos; Fisher unilateral, p < 0.05).
+- **Se reporta:** coste en cobertura (fracción de tópicos con ≥ 1 categoría
+  de personaje, con y sin filtro).
+
