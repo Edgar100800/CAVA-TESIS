@@ -25,6 +25,17 @@ from narrative_eval import BgeEmbedder  # noqa: E402
 from propagate_names import centroid  # noqa: E402
 
 NAME = re.compile(r"\b[A-Z][a-z]+\b")
+# EXP-019f: palabras que no identifican a nadie por sí solas
+GENERIC = {"man", "men", "woman", "women", "person", "people", "other", "another", "others",
+           "two", "three", "four", "several", "group", "someone", "boy", "boys", "girl", "girls",
+           "guy", "guys", "figure", "figures", "individual", "individuals", "character",
+           "characters", "one", "some", "few", "many", "young", "older", "old", "small",
+           "large", "the", "with", "and", "his", "her", "their", "who", "from", "object",
+           "unknown", "unidentified", "background", "observing", "standing", "sitting"}
+
+
+def distinctive_words(phrase):
+    return {w for w in re.findall(r"[a-z]+", phrase.lower()) if len(w) > 2 and w not in GENERIC}
 
 
 def phrases(label):
@@ -62,6 +73,12 @@ def main():
     ap.add_argument("--no-links", action="store_true", help="ablación: sin nombres por enlaces")
     ap.add_argument("--no-registry", action="store_true", help="ablación: sin descripción → nombre")
     ap.add_argument("--no-ids", action="store_true", help="ablación: sin identidades P# en el texto")
+    ap.add_argument("--identity-min-words", type=int, default=0,
+                    help="EXP-019f: una frase solo forma identidad P# si tiene ≥ N palabras distintivas")
+    ap.add_argument("--registry-abs", type=float, default=None,
+                    help="EXP-019g: umbral absoluto de similitud descripción–registro (reemplaza p95)")
+    ap.add_argument("--registry-margin", type=float, default=0.0,
+                    help="EXP-019g: margen mínimo sobre la segunda mejor entrada")
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -119,11 +136,13 @@ def main():
             D = bge([p for _, p in desc])
             R = bge([r for _, r in registry])
             S = D @ R.T
-            thr = np.percentile(S, 95)
+            thr = np.percentile(S, 95) if args.registry_abs is None else args.registry_abs
             keep = []
             for k, (i, p) in enumerate(desc):
-                b = int(np.argmax(S[k]))
-                if S[k, b] >= thr:
+                order = np.argsort(-S[k])
+                b = int(order[0])
+                margin = S[k, b] - (S[k, order[1]] if len(order) > 1 else -1.0)
+                if S[k, b] >= thr and (args.registry_abs is None or margin >= args.registry_margin):
                     added[i].add(registry[b][0])
                 else:
                     keep.append((i, p))
@@ -131,6 +150,8 @@ def main():
 
         # 4) identidades por apariencia (texto Y visual, enlace promedio)
         identities = {}
+        if args.identity_min_words:
+            desc = [(i, p) for i, p in desc if len(distinctive_words(p)) >= args.identity_min_words]
         if len(desc) >= 2:
             D = bge([p for _, p in desc])
             St = D @ D.T
