@@ -1256,3 +1256,38 @@ el sistema pone en el mismo tópico.
   trata el tópico y la categorización necesita una etiqueta de nivel tópico
   (siguiente paso: etiqueta construida desde todos los tramos del tópico).
 
+### Resultado EXP-019
+GT de contenido: 105 películas. Cobertura de alineación guion↔subtítulos:
+mediana 44 % de cues, con cola baja (algunas películas sin subtítulos o con
+guion que difiere del montaje). Los tópicos sin líneas alineadas salen de la
+prueba de contenido.
+
+| criterio | desarrollo (val, 56) | confirmación (test, 47) |
+|---|---|---|
+| 1. precisión de personajes propia − barajada | **+0.187 ± 0.019 (z 9.7)** · 0.57 vs 0.37 | **+0.156 ± 0.021 (z 7.5)** · 0.64 vs 0.48 |
+| 2. MRR − azar | **+0.227 ± 0.015 (z 15.3)** · 0.36 vs 0.14 | **+0.256 ± 0.015 (z 17.4)** · 0.38 vs 0.12 |
+| top-1 (~39 tópicos por película; azar ≈ 2.6 %) | 24 % | 26 % |
+| tasa de nombrado | 28 % | 22 % |
+
+- **✅ VALIDADO (pre-registrado, desarrollo y test):** la etiqueta de cada
+  tópico CAVA certifica de qué trata frente al contenido real. Cuando nombra
+  personajes, acierta muy por encima de etiquetas de otros tópicos, y
+  describe lo que se dice en sus rangos lo bastante bien como para encontrar
+  su propio tópico entre ~39 (MRR ×3 sobre el azar).
+- **Límites:**
+  1. Solo el 22–28 % de las etiquetas nombra un personaje; el resto usa
+     descripciones genéricas ("a man in a suit"). La categorización por
+     personajes queda incompleta.
+  2. La etiqueta (resumen VJudge) vio el diálogo de su unidad, así que la
+     prueba de contenido es parcialmente circular con los subtítulos. Valida
+     que la etiqueta representa lo que se dice en el tópico, no comprensión
+     visual independiente.
+  3. La etiqueta sale de UNA unidad (la dominante). Un tópico con retornos
+     tiene más contenido del que su etiqueta resume (top-1 24–26 %).
+- **Siguiente:** etiqueta de nivel tópico construida desde todos sus tramos,
+  con personajes explícitos, y contexto por clip (quién aparece, quién habla,
+  qué dice) en el mapa.
+
+`results/exp019_categ_dev.json` · `results/exp019_categ_test.json` ·
+`scripts/build_content_gt.py` · `scripts/eval_categorization.py`
+
