@@ -1598,3 +1598,27 @@ resúmenes VJudge de 8 shots, mapas con contexto, GT de contenido, etiquetas
 - **Se reporta:** coste en cobertura (fracción de tópicos con ≥ 1 categoría
   de personaje, con y sin filtro).
 
+## EXP-019g · Emparejamiento descripción → registro con umbral absoluto y margen (pre-registro)
+- **Fecha:** 2026-10-01, antes de que existan los datos de train2.
+- **Calibración en desarrollo** (47 train ya usadas), frente a solo enlaces;
+  regla de selección fijada antes del grid: máximo nombrado con Δprecisión ≥ 0.
+
+  | abs | margen | Δ nombrado | Δ precisión |
+  |---|---|---|---|
+  | ≥ 0.70 (12 combinaciones) | — | ≤ +0.007 | ≈ 0 |
+  | 0.50 | 0.02 | +0.127 | −0.050 |
+  | 0.50 | 0.05 | +0.071 | −0.014 |
+  | **0.50** | **0.10** | **+0.029** | **+0.006** |
+  | 0.55 | 0.10 | +0.027 | +0.006 |
+
+  Elegido: **abs 0.50, margen 0.10**. Ganancia modesta: las ganancias
+  mayores cuestan precisión.
+- **Regla:** una frase descriptiva recibe la entrada del registro más similar
+  si sim ≥ 0.50 y sim − segunda mejor ≥ 0.10. Se añade a los nombres
+  heredados por enlace (019d).
+- **Criterios en train2**, frente a "solo enlaces" en las mismas películas,
+  pareados:
+  1. tasa de nombrado > 2 SE;
+  2. precisión propia ≥ −2 SE;
+  3. precisión propia − barajada > 2 SE.
+
