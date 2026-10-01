@@ -51,6 +51,7 @@ def main():
     ap.add_argument("--batch", type=int, default=128)
     ap.add_argument("--split", choices=["train", "val", "test"], default=None,
                     help="solo películas de este split de MovieNet-318")
+    ap.add_argument("--films-file", default=None, help="solo estas películas")
     ap.add_argument("--require-story", action="store_true",
                     help="solo películas con anotación story (beats de trama)")
     args = ap.parse_args()
@@ -81,6 +82,9 @@ def main():
             anno.setdefault(r["video_id"], []).append(r)
 
     movies = sorted(anno)
+    if args.films_file:
+        keep = set(Path(args.films_file).read_text().split())
+        movies = [t for t in movies if t in keep]
     if args.require_story:
         ann = seg_root / "annotation"
         movies = [t for t in movies if (ann / f"{t}.json").exists()
