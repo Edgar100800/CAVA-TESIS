@@ -49,6 +49,8 @@ def main():
     ap.add_argument("--gt", default="data/movienet_content_gt")
     ap.add_argument("--min-dur", type=float, default=30.0)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--labels-dir", default=None,
+                    help="EXP-019b: usa <tt>.topic_labels.json en lugar de la etiqueta de unidad")
     args = ap.parse_args()
     bge = BgeEmbedder()
     rows = {}
@@ -60,6 +62,12 @@ def main():
         amap = alias_index(gt["characters"])
         shots = gt["shots"]
         topics = [t for t in doc["levels"]["default"]["topics"] if t["duration_s"] >= args.min_dur]
+        if args.labels_dir:
+            fl = Path(args.labels_dir) / f"{tt}.topic_labels.json"
+            if not fl.exists():
+                continue
+            tl = json.loads(fl.read_text())
+            topics = [t | {"label": tl.get(str(t["topic_id"]), t["label"])} for t in topics]
         info = []
         for t in topics:
             cnt = {}

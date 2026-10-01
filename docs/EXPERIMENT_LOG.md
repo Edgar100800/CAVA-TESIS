@@ -1291,3 +1291,30 @@ prueba de contenido.
 `results/exp019_categ_dev.json` · `results/exp019_categ_test.json` ·
 `scripts/build_content_gt.py` · `scripts/eval_categorization.py`
 
+---
+
+## EXP-019b · Etiqueta de nivel tópico desde todos sus tramos (pre-registro)
+- **Fecha:** 2026-09-30 (registrado antes de generar etiquetas)
+- **Motivo:** en EXP-019 solo el 22–28 % de las etiquetas nombra personajes,
+  y la etiqueta sale de una sola unidad del tópico.
+- **Configuración:**
+  - Qwen2.5-14B-Instruct frozen (texto, rev cf98f3b), greedy.
+  - Entrada: los tramos del tópico (hasta 8, los más largos, en orden
+    temporal), cada uno con lo que vio el VJudge y el diálogo en sus shots.
+    Es el `context` del mapa: solo señales propias de CAVA, sin GT.
+  - Salida: "CHARACTERS: … | TOPIC: …".
+  - Tópicos del nivel default con duración ≥ 30 s.
+- **Mismas películas, mapas, GT y métricas que EXP-019** (desarrollo = val,
+  confirmación = test).
+- **Criterios**, en desarrollo Y confirmación, pareados por película:
+  1. tasa de nombrado(topic) − tasa de nombrado(unidad) > 2 SE;
+  2. precisión(topic, propia) − precisión(topic, barajada) > 2 SE (la etiqueta
+     sigue certificando);
+  3. MRR(topic) − MRR(unidad) no menor que −2 SE (no se pierde contenido).
+- **Nota:** el diálogo entra al modelo, así que los nombres oídos pueden
+  aparecer en la etiqueta. Es legítimo en producción (ASR / subtítulos) y la
+  precisión contra cast + hablantes sigue siendo la prueba de que nombra a los
+  personajes correctos.
+
+`scripts/vjudge_topic_labels.py` · `scripts/eval_categorization.py --labels-dir`
+
