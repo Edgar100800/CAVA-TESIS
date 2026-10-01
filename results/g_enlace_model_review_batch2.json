@@ -1,0 +1,23 @@
+{
+ "batch": 2,
+ "system": {
+  "yes": 37,
+  "no": 12,
+  "unsure": 11
+ },
+ "controls": {
+  "yes": 39,
+  "no": 12,
+  "unsure": 9
+ },
+ "n": [
+  60,
+  60
+ ],
+ "yes_rate_system": 0.617,
+ "yes_rate_controls": 0.65,
+ "fisher_one_sided_p": 0.715,
+ "precision_system": 0.755,
+ "precision_controls": 0.765,
+ "descriptive_p_decided_only": 0.6356
+}

@@ -163,6 +163,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-016 | "El quorum ≥2 de {visual, diálogo, resúmenes} enlaza hilos mejor que visual sola" | −0.017 ± 0.005 de precisión en 47 películas train nuevas; diálogo no replica como votante |
 | EXP-017 / 017b | "El mapa de tópicos por consenso sin fusión agrupa hilos mejor (MCC, proxy cast) que la fusión y que v2.1" | components percola; average no supera a fused (+0.002 / −0.001); visual sola es mejor en MCC. G-coherencia sí se cumple y supera a fused en cada señal |
 | G-enlace (juez modelo) | "Los enlaces no contiguos de CAVA son juzgados mismo hilo más que momentos lejanos al azar" | 83 % vs 63 %, Fisher p = 0.072 (umbral 0.05): no se cumple; infradimensionado (~60 por brazo) |
+| G-enlace-2 (juez modelo, mezclado) | "Los enlaces no contiguos de CAVA son mismo hilo más que pares al azar" | 62 % vs 65 %, p = 0.72. El lote 1 (p = 0.07) estaba confundido por revisores distintos por brazo |
 
 ---
 
@@ -1177,4 +1178,38 @@ el sistema pone en el mismo tópico.
 - **Revisores:** 6 instancias independientes, 20 casos cada una; enlaces y
   controles mezclados al azar dentro de cada revisor. Nadie sabe qué caso es
   enlace y cuál control.
+
+### Resultado G-enlace-2 (lote nuevo, 60 + 60 mezclados a ciegas)
+| | enlaces CAVA | controles |
+|---|---|---|
+| mismo hilo (yes) | 37 (62 %) | 39 (65 %) |
+| distinto (no) | 12 | 12 |
+| dudoso | 11 | 9 |
+| precisión entre decididos | 76 % | 76 % |
+
+- **Criterio pre-registrado:** Fisher unilateral **p = 0.72 → NO se cumple.**
+  Los enlaces no contiguos de CAVA no se distinguen de momentos lejanos al
+  azar de la misma película a nivel "mismo hilo" con este juez.
+- **⚠️ INVALIDADO (juez modelo):** "los enlaces no contiguos de CAVA son
+  juzgados mismo hilo más que pares al azar con igual desfase".
+- **Relectura del lote 1:** en el lote 1 enlaces y controles los juzgaron
+  revisores DISTINTOS. La diferencia 83 % vs 63 % puede deberse a la
+  severidad de cada revisor y no al sistema. El lote 2 mezcla ambos en cada
+  revisor y elimina ese confundido; es el diseño válido y da diferencia nula.
+- **Lectura conjunta con EXP-018:**
+  - En el proxy "mismos personajes" (cast), el mapa CAVA supera a la fusión
+    y a v2.1, con los enlaces más precisos (z 5.6).
+  - En el juicio "misma trama" (con conocimiento del film), no supera al
+    azar.
+  - Los enlaces de CAVA siguen continuidad de personajes / escena, que es lo
+    que ven las señales (caras, diálogo, descripción). No siguen
+    *argumento*: el 63–65 % de pares al azar ya cuenta como "mismo hilo"
+    porque las películas tienen pocas tramas.
+  - Es coherente con EXP-010 → 014: ninguna señal frozen alcanzó el nivel
+    trama.
+- **Estado de los gates v2:** G-versión ✅ (58/58) · G-coherencia ✅ (dev,
+  conf, test) · G-enlace ❌ con juez modelo a nivel trama (la revisión humana
+  pre-registrada no se hizo).
+
+`results/g_enlace_model_review_batch2.json` · `data/review_g_enlace/batch2_*`
 
