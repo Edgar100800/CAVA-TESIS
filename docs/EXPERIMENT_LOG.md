@@ -1340,3 +1340,29 @@ prueba de contenido.
 
 `results/exp019_categ_dev_nosdh.json` · `results/exp019_categ_test_nosdh.json`
 
+### Resultado EXP-019b (job 53914, 4645 etiquetas de tópico en 105 películas)
+Comparación pareada con las etiquetas de unidad sobre los mismos mapas:
+
+| criterio | desarrollo (val) | confirmación (test) |
+|---|---|---|
+| 1. tasa de nombrado tópico − unidad | **0.28 → 0.54, +0.259 ± 0.020 (z 13.2)** ✅ | **0.22 → 0.49, +0.263 ± 0.020 (z 12.9)** ✅ |
+| 2. precisión de la etiqueta de tópico, propia − barajada | **+0.176 ± 0.013 (z 13.5)** ✅ | **+0.141 ± 0.016 (z 8.6)** ✅ |
+| 3. MRR tópico − unidad (no menor que −2 SE) | +0.025 ± 0.009 (z 2.7) ✅ | −0.020 ± 0.010 (z −1.96) ✅ por poco |
+| (desc.) precisión propia tópico − unidad | −0.076 ± 0.034 (z −2.3) | −0.001 ± 0.027 |
+
+- **✅ VALIDADO (pre-registrado, desarrollo y test):** la etiqueta de nivel
+  tópico duplica la fracción de tópicos categorizados por personaje (≈ 1 de
+  cada 2) y nombra a los personajes correctos muy por encima del azar, sin
+  perder la representación del contenido.
+- **Salvedades:**
+  - Al nombrar el doble, la precisión baja algo en desarrollo (0.57 → 0.50),
+    no en test.
+  - En test el MRR queda en el límite del criterio (z −1.96).
+  - Algunas etiquetas sin nombres caen en descripciones genéricas ("Two boys
+    on a sidewalk…", "Varying dialogues unrelated to a central theme"): son
+    tópicos que el propio etiquetador reconoce como poco cohesivos.
+- Los mapas reciben el campo `topic_label` (etiqueta de nivel tópico); `label`
+  se conserva (etiqueta de unidad).
+
+`results/exp019b_{unit,topic}_{dev,test}.json` · `data/topic_labels/`
+
