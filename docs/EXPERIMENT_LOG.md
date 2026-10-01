@@ -1393,3 +1393,33 @@ Comparación pareada con las etiquetas de unidad sobre los mismos mapas:
   contexto", es decir, sin ningún alias del cast en su propio diálogo
   (diálogo limpio de SDH).
 
+---
+
+## EXP-019d · Propagación de nombres por los enlaces de CAVA (pre-registro)
+- **Fecha:** 2026-10-01 (registrado antes de calcular)
+- **Idea (usuario):** cuando un personaje o un texto se repite en el video,
+  SegLoop + VJudge relacionan esos tramos como el mismo contenido. La
+  categoría (el nombre) conocida en un tramo puede aplicarse al otro. EXP-015,
+  EXP-018 y G-enlace muestran que los enlaces de CAVA siguen la continuidad de
+  personajes y situaciones, que es justo lo que hace falta para propagar
+  identidad.
+- **Mecanismo** (solo señales y salidas de CAVA; GT solo para evaluar):
+  - Tópicos del nivel default con ≥ 30 s; base = etiquetas de 019b.
+  - Nombres de un tópico = palabras en mayúscula del campo CHARACTERS de su
+    etiqueta (sin artículos ni descripciones genéricas). Donantes = tópicos
+    con ≥ 1 nombre.
+  - Receptores = tópicos cuya etiqueta no nombra a nadie.
+  - Enlace receptor–donante: centroide visual (SigLIP de sus shots) y
+    centroide vjudge (bge de sus resúmenes). Cada señal vota con su propio
+    percentil sobre los pares de tópicos de la película (visual ≥ p90,
+    vjudge ≥ p75); hacen falta los dos votos (quorum 2, sin fusión).
+  - Si hay donantes enlazados, el receptor hereda los nombres del de mayor
+    similitud visual: "CHARACTERS: <nombres heredados> | TOPIC: <su tópico>".
+- **Métricas:** las de EXP-019 (val y test), comparadas con 019b.
+- **Criterios** (pareados por película, desarrollo Y confirmación):
+  1. tasa de nombrado(019d) − tasa(019b) > 2 SE;
+  2. precisión(019d, propia) − precisión(019d, barajada) > 2 SE;
+  3. precisión propia(019d) − precisión propia(019b) no menor que −2 SE.
+- **Se reporta aparte:** tópicos sin contexto (tasa de nombrado y precisión)
+  y la precisión de los nombres heredados por sí solos.
+
