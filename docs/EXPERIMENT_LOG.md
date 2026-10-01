@@ -1510,4 +1510,16 @@ señales: 674 (40 %).
      unilateral, p < 0.05, agrupado sobre películas).
 - **Se reporta:** cobertura de categorías (fracción de tópicos con ≥ 1
   personaje categorizado, nombre o P#), sin contexto aparte.
+- **Notas de implementación de EXP-019e (antes de ver resultados en train):**
+  - Corregidos dos errores de código vistos en una prueba sobre una película
+    val: (a) los nombres se manejaban como palabras sueltas, así que
+    "Indiana Jones" se partía y se volvía a añadir a etiquetas que ya lo
+    tenían; (b) duplicados. Ahora son frases, y solo se añade un nombre si
+    aporta una palabra nueva a la etiqueta.
+  - **Debilidad conocida de la regla pre-registrada (sin cambios):** p95
+    dentro del video siempre deja pasar el 5 % superior de pares frase ×
+    entrada, aunque sean débiles (p. ej. "man running up a hill" →
+    "Sheriff"). Los roles no coinciden con alias del cast y no inflan la
+    evaluación, pero son ruido en el producto. Se reportará la tasa de
+    asignaciones de registro que caen en roles.
 
