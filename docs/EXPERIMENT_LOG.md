@@ -1470,3 +1470,44 @@ señales: 674 (40 %).
 
 `results/exp019c_reg_{dev,test}.json` · `data/topic_labels_reg/*.registry.txt`
 
+---
+
+## EXP-019e · Categorización de personajes completa: nombres + identidades por apariencia (pre-registro)
+- **Fecha:** 2026-10-01 (registrado antes de construir datos o etiquetas)
+- **Motivo:**
+  - 019d (enlaces) nombra sin tocar el texto del tópico.
+  - 019c (registro) aporta precisión en tópicos sin contexto, pero al
+    re-escribir la etiqueta pierde contenido.
+  - Propuesta del usuario: cuando no hay nombre, categorizar al personaje
+    por apariencia con una identidad estable en todo el video, y casarla con
+    un nombre del registro si la descripción coincide.
+- **Método** (solo salidas de CAVA; GT solo para evaluar), por video:
+  1. Texto de la etiqueta propia (019b) intacto.
+  2. Nombres por enlaces: regla de 019d en modo AÑADIR.
+  3. Descripción → nombre: cada frase descriptiva del campo CHARACTERS
+     recibe el nombre de la entrada del registro (019c, solo el registro)
+     cuya descripción sea más similar (bge), si esa similitud ≥ p95 de las
+     similitudes frase × entrada del video.
+  4. Identidades por apariencia: las frases que siguen sin nombre se agrupan
+     entre tópicos (enlace promedio). Un par entra al mismo grupo solo si dos
+     señales coinciden (sin fusión): texto (bge de las frases) ≥ p90 Y visual
+     (centroides SigLIP de sus tópicos) ≥ p75, percentiles del video. Los
+     grupos que abarcan ≥ 2 tópicos son identidades "P1, P2, …".
+  - Etiqueta final: "CHARACTERS: <nombres> ; <identidades P#: descripción> |
+    TOPIC: <texto propio>".
+- **Corpus de confirmación:** 47 películas train con cast y guion, nunca usadas
+  en EXP-019*. Se les construyen mapas (unidades fijas de 8 shots, sin
+  SegLoop), GT de contenido, etiquetas 019b y registro con el mismo código.
+  Val y test se reportan solo como descriptivo (ya vistos).
+- **Criterios (en train):**
+  1. tasa de nombrado(019e) − tasa(019b) > 2 SE;
+  2. precisión(019e) propia − barajada > 2 SE;
+  3. precisión propia(019e) − (019b) ≥ −2 SE;
+  4. MRR(019e) − MRR(019b) ≥ −2 SE;
+  5. consistencia de identidades: entre pares de tópicos que comparten una
+     identidad P#, la tasa de pares que comparten ≥ 1 personaje del GT supera
+     a la de pares de tópicos al azar de la misma película (Fisher
+     unilateral, p < 0.05, agrupado sobre películas).
+- **Se reporta:** cobertura de categorías (fracción de tópicos con ≥ 1
+  personaje categorizado, nombre o P#), sin contexto aparte.
+
