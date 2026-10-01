@@ -1165,3 +1165,16 @@ el sistema pone en el mismo tópico.
 
 `results/g_enlace_model_review.json` · `data/review_g_enlace/verdicts_*.json`
 
+### Pre-registro G-enlace-2 (lote nuevo, antes de muestrear)
+- **Protocolo idéntico** al lote 1: mismo prompt, revisores ciegos al
+  conjunto, veredicto yes / no / unsure, controles de la misma película con
+  desfase emparejado y tópicos distintos.
+- **n = 60 enlaces + 60 controles NUEVOS.** Se excluyen todos los tópicos y
+  pares del lote 1; semillas distintas (sistema 41, controles 43).
+- **Criterio:** Fisher exacto unilateral, yes frente a no-yes ("unsure"
+  cuenta como no-yes), p < 0.05, **solo sobre el lote 2**. El lote 1 no se
+  suma: la decisión no depende del resultado ya visto.
+- **Revisores:** 6 instancias independientes, 20 casos cada una; enlaces y
+  controles mezclados al azar dentro de cada revisor. Nadie sabe qué caso es
+  enlace y cuál control.
+
