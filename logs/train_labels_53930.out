@@ -1,0 +1,101 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 2/579 [00:00<01:12,  7.94it/s]Loading weights:   2%|▏         | 10/579 [00:00<00:17, 32.50it/s]Loading weights:   3%|▎         | 18/579 [00:00<00:12, 46.73it/s]Loading weights:   5%|▌         | 30/579 [00:00<00:08, 66.14it/s]Loading weights:   7%|▋         | 42/579 [00:00<00:06, 78.48it/s]Loading weights:   9%|▉         | 54/579 [00:00<00:05, 88.06it/s]Loading weights:  11%|█▏        | 66/579 [00:00<00:05, 93.78it/s]Loading weights:  13%|█▎        | 78/579 [00:01<00:05, 96.81it/s]Loading weights:  16%|█▌        | 90/579 [00:01<00:04, 99.24it/s]Loading weights:  18%|█▊        | 102/579 [00:01<00:04, 101.67it/s]Loading weights:  20%|█▉        | 114/579 [00:01<00:04, 102.77it/s]Loading weights:  22%|██▏       | 126/579 [00:01<00:04, 101.95it/s]Loading weights:  24%|██▎       | 137/579 [00:01<00:04, 100.39it/s]Loading weights:  26%|██▌       | 150/579 [00:01<00:04, 105.50it/s]Loading weights:  28%|██▊       | 162/579 [00:01<00:03, 104.77it/s]Loading weights:  30%|███       | 174/579 [00:01<00:03, 102.99it/s]Loading weights:  32%|███▏      | 186/579 [00:02<00:03, 103.71it/s]Loading weights:  34%|███▍      | 198/579 [00:02<00:03, 103.23it/s]Loading weights:  36%|███▋      | 210/579 [00:02<00:03, 104.13it/s]Loading weights:  38%|███▊      | 222/579 [00:02<00:03, 107.84it/s]Loading weights:  40%|████      | 234/579 [00:02<00:03, 105.90it/s]Loading weights:  42%|████▏     | 246/579 [00:02<00:03, 106.92it/s]Loading weights:  45%|████▍     | 258/579 [00:02<00:03, 103.60it/s]Loading weights:  47%|████▋     | 270/579 [00:02<00:02, 104.67it/s]Loading weights:  49%|████▊     | 282/579 [00:02<00:02, 104.88it/s]Loading weights:  51%|█████     | 294/579 [00:03<00:02, 103.67it/s]Loading weights:  53%|█████▎    | 306/579 [00:03<00:02, 101.78it/s]Loading weights:  55%|█████▍    | 318/579 [00:03<00:02, 102.39it/s]Loading weights:  57%|█████▋    | 330/579 [00:03<00:02, 102.17it/s]Loading weights:  59%|█████▉    | 342/579 [00:03<00:02, 102.59it/s]Loading weights:  61%|██████    | 354/579 [00:03<00:02, 101.09it/s]Loading weights:  63%|██████▎   | 366/579 [00:03<00:02, 100.87it/s]Loading weights:  65%|██████▌   | 378/579 [00:03<00:01, 101.14it/s]Loading weights:  67%|██████▋   | 390/579 [00:04<00:01, 100.36it/s]Loading weights:  69%|██████▉   | 402/579 [00:04<00:01, 104.07it/s]Loading weights:  72%|███████▏  | 414/579 [00:04<00:01, 105.90it/s]Loading weights:  74%|███████▎  | 426/579 [00:04<00:01, 103.73it/s]Loading weights:  76%|███████▌  | 438/579 [00:04<00:01, 102.89it/s]Loading weights:  78%|███████▊  | 450/579 [00:04<00:01, 102.22it/s]Loading weights:  80%|███████▉  | 462/579 [00:04<00:01, 101.29it/s]Loading weights:  82%|████████▏ | 474/579 [00:04<00:01, 100.81it/s]Loading weights:  84%|████████▍ | 486/579 [00:04<00:00, 100.62it/s]Loading weights:  86%|████████▌ | 498/579 [00:05<00:00, 100.75it/s]Loading weights:  88%|████████▊ | 510/579 [00:05<00:00, 100.54it/s]Loading weights:  90%|█████████ | 522/579 [00:05<00:00, 98.72it/s] Loading weights:  92%|█████████▏| 534/579 [00:05<00:00, 98.25it/s]Loading weights:  94%|█████████▍| 546/579 [00:05<00:00, 100.87it/s]Loading weights:  96%|█████████▋| 558/579 [00:05<00:00, 98.83it/s] Loading weights:  98%|█████████▊| 570/579 [00:05<00:00, 101.95it/s]Loading weights: 100%|██████████| 579/579 [00:05<00:00, 98.70it/s] 
+[topiclabels] tt0049730: 51 etiquetas
+[topiclabels] tt0056923: 47 etiquetas
+[topiclabels] tt0061418: 35 etiquetas
+[topiclabels] tt0062622: 58 etiquetas
+[topiclabels] tt0065214: 59 etiquetas
+[topiclabels] tt0065724: 49 etiquetas
+[topiclabels] tt0067116: 41 etiquetas
+[topiclabels] tt0070735: 51 etiquetas
+[topiclabels] tt0071315: 49 etiquetas
+[topiclabels] tt0072684: 60 etiquetas
+[topiclabels] tt0074285: 34 etiquetas
+[topiclabels] tt0075148: 54 etiquetas
+[topiclabels] tt0077405: 30 etiquetas
+[topiclabels] tt0077651: 49 etiquetas
+[topiclabels] tt0078841: 42 etiquetas
+[topiclabels] tt0079417: 41 etiquetas
+[topiclabels] tt0081505: 51 etiquetas
+[topiclabels] tt0082971: 49 etiquetas
+[topiclabels] tt0083658: 58 etiquetas
+[topiclabels] tt0084726: 40 etiquetas
+[topiclabels] tt0086250: 52 etiquetas
+[topiclabels] tt0086879: 61 etiquetas
+[topiclabels] tt0088847: 41 etiquetas
+[topiclabels] tt0090022: 60 etiquetas
+[topiclabels] tt0090605: 59 etiquetas
+[topiclabels] tt0091042: 31 etiquetas
+[topiclabels] tt0093565: 47 etiquetas
+[topiclabels] tt0093779: 36 etiquetas
+[topiclabels] tt0095016: 35 etiquetas
+[topiclabels] tt0096754: 55 etiquetas
+[topiclabels] tt0096895: 54 etiquetas
+[topiclabels] tt0097428: 44 etiquetas
+[topiclabels] tt0098724: 33 etiquetas
+[topiclabels] tt0099487: 49 etiquetas
+[topiclabels] tt0099674: 49 etiquetas
+[topiclabels] tt0100157: 46 etiquetas
+[topiclabels] tt0100802: 38 etiquetas
+[topiclabels] tt0101272: 34 etiquetas
+[topiclabels] tt0103772: 45 etiquetas
+[topiclabels] tt0104257: 58 etiquetas
+[topiclabels] tt0104348: 36 etiquetas
+[topiclabels] tt0105695: 60 etiquetas
+[topiclabels] tt0107808: 64 etiquetas
+[topiclabels] tt0107822: 48 etiquetas
+[topiclabels] tt0108330: 42 etiquetas
+[topiclabels] tt0109686: 47 etiquetas
+[topiclabels] tt0110074: 36 etiquetas
+[topiclabels] listo
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 2/579 [00:00<01:21,  7.05it/s]Loading weights:   1%|▏         | 8/579 [00:00<00:23, 24.77it/s]Loading weights:   3%|▎         | 18/579 [00:00<00:12, 45.03it/s]Loading weights:   5%|▍         | 28/579 [00:00<00:09, 61.14it/s]Loading weights:   7%|▋         | 41/579 [00:00<00:07, 75.01it/s]Loading weights:   9%|▉         | 53/579 [00:00<00:06, 81.70it/s]Loading weights:  11%|█         | 65/579 [00:00<00:06, 85.13it/s]Loading weights:  13%|█▎        | 77/579 [00:01<00:05, 88.78it/s]Loading weights:  15%|█▌        | 88/579 [00:01<00:05, 87.77it/s]Loading weights:  17%|█▋        | 101/579 [00:01<00:05, 92.31it/s]Loading weights:  20%|█▉        | 113/579 [00:01<00:04, 93.57it/s]Loading weights:  22%|██▏       | 125/579 [00:01<00:04, 92.73it/s]Loading weights:  24%|██▎       | 137/579 [00:01<00:04, 94.45it/s]Loading weights:  26%|██▌       | 148/579 [00:01<00:04, 91.93it/s]Loading weights:  28%|██▊       | 161/579 [00:02<00:04, 94.79it/s]Loading weights:  30%|██▉       | 173/579 [00:02<00:04, 95.46it/s]Loading weights:  32%|███▏      | 185/579 [00:02<00:04, 95.65it/s]Loading weights:  34%|███▍      | 197/579 [00:02<00:03, 96.47it/s]Loading weights:  36%|███▌      | 209/579 [00:02<00:03, 96.32it/s]Loading weights:  38%|███▊      | 219/579 [00:02<00:03, 95.66it/s]Loading weights:  40%|████      | 232/579 [00:02<00:03, 98.52it/s]Loading weights:  42%|████▏     | 242/579 [00:02<00:03, 98.24it/s]Loading weights:  44%|████▎     | 252/579 [00:02<00:03, 91.23it/s]Loading weights:  45%|████▌     | 262/579 [00:03<00:03, 90.84it/s]Loading weights:  47%|████▋     | 272/579 [00:03<00:03, 90.20it/s]Loading weights:  49%|████▊     | 282/579 [00:03<00:03, 87.26it/s]Loading weights:  51%|█████     | 294/579 [00:03<00:03, 89.79it/s]Loading weights:  53%|█████▎    | 305/579 [00:03<00:02, 93.23it/s]Loading weights:  55%|█████▍    | 317/579 [00:03<00:02, 93.04it/s]Loading weights:  57%|█████▋    | 329/579 [00:03<00:02, 93.00it/s]Loading weights:  59%|█████▉    | 341/579 [00:03<00:02, 93.41it/s]Loading weights:  61%|██████    | 353/579 [00:04<00:02, 94.65it/s]Loading weights:  63%|██████▎   | 365/579 [00:04<00:02, 94.02it/s]Loading weights:  65%|██████▌   | 377/579 [00:04<00:02, 97.25it/s]Loading weights:  67%|██████▋   | 389/579 [00:04<00:01, 97.35it/s]Loading weights:  69%|██████▉   | 401/579 [00:04<00:01, 94.96it/s]Loading weights:  71%|███████▏  | 413/579 [00:04<00:01, 94.57it/s]Loading weights:  73%|███████▎  | 425/579 [00:04<00:01, 95.84it/s]Loading weights:  75%|███████▌  | 437/579 [00:04<00:01, 95.78it/s]Loading weights:  78%|███████▊  | 449/579 [00:05<00:01, 96.38it/s]Loading weights:  80%|███████▉  | 461/579 [00:05<00:01, 97.04it/s]Loading weights:  82%|████████▏ | 473/579 [00:05<00:01, 97.02it/s]Loading weights:  84%|████████▍ | 485/579 [00:05<00:00, 97.10it/s]Loading weights:  86%|████████▌ | 497/579 [00:05<00:00, 96.77it/s]Loading weights:  88%|████████▊ | 508/579 [00:05<00:00, 91.56it/s]Loading weights:  90%|████████▉ | 520/579 [00:05<00:00, 92.44it/s]Loading weights:  92%|█████████▏| 533/579 [00:05<00:00, 96.35it/s]Loading weights:  94%|█████████▍| 545/579 [00:06<00:00, 96.97it/s]Loading weights:  96%|█████████▌| 556/579 [00:06<00:00, 91.51it/s]Loading weights:  98%|█████████▊| 569/579 [00:06<00:00, 95.05it/s]Loading weights: 100%|██████████| 579/579 [00:06<00:00, 90.66it/s]
+[topiclabels] tt0049730: registro
+[topiclabels] tt0056923: registro
+[topiclabels] tt0061418: registro
+[topiclabels] tt0062622: registro
+[topiclabels] tt0065214: registro
+[topiclabels] tt0065724: registro
+[topiclabels] tt0067116: registro
+[topiclabels] tt0070735: registro
+[topiclabels] tt0071315: registro
+[topiclabels] tt0072684: registro
+[topiclabels] tt0074285: registro
+[topiclabels] tt0075148: registro
+[topiclabels] tt0077405: registro
+[topiclabels] tt0077651: registro
+[topiclabels] tt0078841: registro
+[topiclabels] tt0079417: registro
+[topiclabels] tt0081505: registro
+[topiclabels] tt0082971: registro
+[topiclabels] tt0083658: registro
+[topiclabels] tt0084726: registro
+[topiclabels] tt0086250: registro
+[topiclabels] tt0086879: registro
+[topiclabels] tt0088847: registro
+[topiclabels] tt0090022: registro
+[topiclabels] tt0090605: registro
+[topiclabels] tt0091042: registro
+[topiclabels] tt0093565: registro
+[topiclabels] tt0093779: registro
+[topiclabels] tt0095016: registro
+[topiclabels] tt0096754: registro
+[topiclabels] tt0096895: registro
+[topiclabels] tt0097428: registro
+[topiclabels] tt0098724: registro
+[topiclabels] tt0099487: registro
+[topiclabels] tt0099674: registro
+[topiclabels] tt0100157: registro
+[topiclabels] tt0100802: registro
+[topiclabels] tt0101272: registro
+[topiclabels] tt0103772: registro
+[topiclabels] tt0104257: registro
+[topiclabels] tt0104348: registro
+[topiclabels] tt0105695: registro
+[topiclabels] tt0107808: registro
+[topiclabels] tt0107822: registro
+[topiclabels] tt0108330: registro
+[topiclabels] tt0109686: registro
+[topiclabels] tt0110074: registro
+[topiclabels] listo
+TRAIN_LABELS_DONE

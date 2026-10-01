@@ -165,6 +165,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | G-enlace (juez modelo) | "Los enlaces no contiguos de CAVA son juzgados mismo hilo más que momentos lejanos al azar" | 83 % vs 63 %, Fisher p = 0.072 (umbral 0.05): no se cumple; infradimensionado (~60 por brazo) |
 | G-enlace-2 (juez modelo, mezclado) | "Los enlaces no contiguos de CAVA son mismo hilo más que pares al azar" | 62 % vs 65 %, p = 0.72. El lote 1 (p = 0.07) estaba confundido por revisores distintos por brazo |
 | EXP-019c | "Re-etiquetar con un registro de personajes por video sube el nombrado sin perder contenido" | Nombrado +5 pts ✅ y precisión ✅, pero MRR −0.026 en test (z −3.2) ❌ |
+| EXP-019e (método completo) | "Nombres por enlaces + registro + identidades por apariencia categorizan más sin perder precisión ni contenido" | Nombrado 0.48→0.65 ✅, identidades 0.95 vs 0.84 ✅, pero precisión −0.052 (z −3.3) ❌ y MRR −0.061 (z −10.8) ❌ |
 
 ---
 
@@ -1522,4 +1523,28 @@ señales: 674 (40 %).
     "Sheriff"). Los roles no coinciden con alias del cast y no inflan la
     evaluación, pero son ruido en el producto. Se reportará la tasa de
     asignaciones de registro que caen en roles.
+
+### Resultado EXP-019e — confirmación pre-registrada en 47 películas train (job 53930)
+| criterio | resultado | |
+|---|---|---|
+| 1. tasa de nombrado 019e − 019b | **0.48 → 0.65, +0.175 ± 0.018 (z 9.6)** | ✅ |
+| 2. precisión propia − barajada | +0.129 ± 0.011 (z 11.7) | ✅ |
+| 3. precisión propia 019e − 019b (≥ −2 SE) | **−0.052 ± 0.016 (z −3.3)** | ❌ |
+| 4. MRR 019e − 019b (≥ −2 SE) | **−0.061 ± 0.006 (z −10.8)** | ❌ |
+| 5. consistencia de identidades P# | **0.95 vs 0.84 al azar, 1196 pares, Fisher p ≈ 0** | ✅ |
+| cobertura (≥ 1 personaje categorizado) | 0.48 → **0.81** (+0.326 ± 0.023) | |
+| sin contexto: nombrado / precisión | 0.20 → **0.46** / 0.27 → 0.30 | |
+
+- **⚠️ NO VALIDADO como método completo:** fallan los criterios 3 y 4.
+- **✅ Validado el componente de identidades por apariencia:** los tópicos que
+  comparten una P# comparten un personaje real el 95 % de las veces, frente al
+  84 % de pares al azar. La cobertura de categorías sube a 4 de cada 5
+  tópicos.
+- **Causas a diagnosticar (post hoc, siguiente):**
+  - el ruido conocido de la regla p95 de descripción → nombre (precisión);
+  - añadir NAMES / IDS al texto de la etiqueta diluye su embedding, y las
+    P# compartidas hacen parecidas las etiquetas de tópicos distintos
+    (MRR).
+
+`results/exp019e_{cat,base019b,ids}_train.json`
 

@@ -1,0 +1,439 @@
+{
+ "n_films": 47,
+ "identity_pairs": 1150,
+ "identity_share_rate": 0.9748,
+ "random_pair_share_rate": 0.857,
+ "fisher_p": 0.0,
+ "coverage_019e": 0.7995,
+ "named_019b": 0.4867,
+ "coverage_gain": {
+  "mean": 0.3128,
+  "se": 0.0241
+ },
+ "identities_per_film": 7.38,
+ "per_film": {
+  "tt0052357": {
+   "id_pairs": 33,
+   "id_share": 33,
+   "all_pairs": 820,
+   "all_share": 804,
+   "coverage": 0.6585365853658537,
+   "coverage_base_named": 0.0975609756097561,
+   "n_identities": 6
+  },
+  "tt0063442": {
+   "id_pairs": 5,
+   "id_share": 5,
+   "all_pairs": 630,
+   "all_share": 608,
+   "coverage": 0.6944444444444444,
+   "coverage_base_named": 0.4722222222222222,
+   "n_identities": 4
+  },
+  "tt0068646": {
+   "id_pairs": 35,
+   "id_share": 31,
+   "all_pairs": 990,
+   "all_share": 600,
+   "coverage": 0.9555555555555556,
+   "coverage_base_named": 0.5777777777777777,
+   "n_identities": 10
+  },
+  "tt0073195": {
+   "id_pairs": 51,
+   "id_share": 50,
+   "all_pairs": 946,
+   "all_share": 784,
+   "coverage": 0.8181818181818182,
+   "coverage_base_named": 0.3181818181818182,
+   "n_identities": 10
+  },
+  "tt0078788": {
+   "id_pairs": 22,
+   "id_share": 19,
+   "all_pairs": 1540,
+   "all_share": 1292,
+   "coverage": 0.8035714285714286,
+   "coverage_base_named": 0.39285714285714285,
+   "n_identities": 13
+  },
+  "tt0082089": {
+   "id_pairs": 19,
+   "id_share": 19,
+   "all_pairs": 435,
+   "all_share": 391,
+   "coverage": 0.9666666666666667,
+   "coverage_base_named": 0.9333333333333333,
+   "n_identities": 5
+  },
+  "tt0086190": {
+   "id_pairs": 21,
+   "id_share": 20,
+   "all_pairs": 561,
+   "all_share": 427,
+   "coverage": 0.9117647058823529,
+   "coverage_base_named": 0.5882352941176471,
+   "n_identities": 8
+  },
+  "tt0088944": {
+   "id_pairs": 21,
+   "id_share": 21,
+   "all_pairs": 496,
+   "all_share": 462,
+   "coverage": 0.625,
+   "coverage_base_named": 0.46875,
+   "n_identities": 8
+  },
+  "tt0092099": {
+   "id_pairs": 18,
+   "id_share": 18,
+   "all_pairs": 903,
+   "all_share": 903,
+   "coverage": 0.5813953488372093,
+   "coverage_base_named": 0.06976744186046512,
+   "n_identities": 9
+  },
+  "tt0096320": {
+   "id_pairs": 13,
+   "id_share": 11,
+   "all_pairs": 741,
+   "all_share": 645,
+   "coverage": 0.6666666666666666,
+   "coverage_base_named": 0.4358974358974359,
+   "n_identities": 6
+  },
+  "tt0099423": {
+   "id_pairs": 24,
+   "id_share": 24,
+   "all_pairs": 703,
+   "all_share": 572,
+   "coverage": 0.6842105263157895,
+   "coverage_base_named": 0.23684210526315788,
+   "n_identities": 11
+  },
+  "tt0100405": {
+   "id_pairs": 3,
+   "id_share": 3,
+   "all_pairs": 595,
+   "all_share": 587,
+   "coverage": 0.8571428571428571,
+   "coverage_base_named": 0.7142857142857143,
+   "n_identities": 1
+  },
+  "tt0103776": {
+   "id_pairs": 16,
+   "id_share": 15,
+   "all_pairs": 820,
+   "all_share": 722,
+   "coverage": 0.8292682926829268,
+   "coverage_base_named": 0.7560975609756098,
+   "n_identities": 7
+  },
+  "tt0103855": {
+   "id_pairs": 73,
+   "id_share": 73,
+   "all_pairs": 378,
+   "all_share": 378,
+   "coverage": 0.5714285714285714,
+   "coverage_base_named": 0.03571428571428571,
+   "n_identities": 5
+  },
+  "tt0107290": {
+   "id_pairs": 34,
+   "id_share": 32,
+   "all_pairs": 1275,
+   "all_share": 1033,
+   "coverage": 0.9019607843137255,
+   "coverage_base_named": 0.5686274509803921,
+   "n_identities": 15
+  },
+  "tt0108399": {
+   "id_pairs": 15,
+   "id_share": 15,
+   "all_pairs": 435,
+   "all_share": 336,
+   "coverage": 0.6666666666666666,
+   "coverage_base_named": 0.36666666666666664,
+   "n_identities": 1
+  },
+  "tt0113277": {
+   "id_pairs": 57,
+   "id_share": 56,
+   "all_pairs": 1431,
+   "all_share": 1115,
+   "coverage": 0.8518518518518519,
+   "coverage_base_named": 0.2962962962962963,
+   "n_identities": 12
+  },
+  "tt0115759": {
+   "id_pairs": 36,
+   "id_share": 36,
+   "all_pairs": 861,
+   "all_share": 746,
+   "coverage": 0.8809523809523809,
+   "coverage_base_named": 0.35714285714285715,
+   "n_identities": 9
+  },
+  "tt0117060": {
+   "id_pairs": 12,
+   "id_share": 12,
+   "all_pairs": 351,
+   "all_share": 337,
+   "coverage": 0.7407407407407407,
+   "coverage_base_named": 0.6666666666666666,
+   "n_identities": 5
+  },
+  "tt0118715": {
+   "id_pairs": 17,
+   "id_share": 17,
+   "all_pairs": 703,
+   "all_share": 672,
+   "coverage": 0.8421052631578947,
+   "coverage_base_named": 0.631578947368421,
+   "n_identities": 8
+  },
+  "tt0119488": {
+   "id_pairs": 17,
+   "id_share": 17,
+   "all_pairs": 946,
+   "all_share": 800,
+   "coverage": 0.8863636363636364,
+   "coverage_base_named": 0.5909090909090909,
+   "n_identities": 8
+  },
+  "tt0120689": {
+   "id_pairs": 52,
+   "id_share": 51,
+   "all_pairs": 903,
+   "all_share": 767,
+   "coverage": 0.8604651162790697,
+   "coverage_base_named": 0.6976744186046512,
+   "n_identities": 5
+  },
+  "tt0120890": {
+   "id_pairs": 20,
+   "id_share": 18,
+   "all_pairs": 1128,
+   "all_share": 873,
+   "coverage": 0.9583333333333334,
+   "coverage_base_named": 0.75,
+   "n_identities": 4
+  },
+  "tt0123755": {
+   "id_pairs": 8,
+   "id_share": 8,
+   "all_pairs": 435,
+   "all_share": 371,
+   "coverage": 0.7,
+   "coverage_base_named": 0.43333333333333335,
+   "n_identities": 3
+  },
+  "tt0137523": {
+   "id_pairs": 26,
+   "id_share": 26,
+   "all_pairs": 990,
+   "all_share": 990,
+   "coverage": 0.8222222222222222,
+   "coverage_base_named": 0.37777777777777777,
+   "n_identities": 8
+  },
+  "tt0163025": {
+   "id_pairs": 20,
+   "id_share": 20,
+   "all_pairs": 528,
+   "all_share": 502,
+   "coverage": 0.9696969696969697,
+   "coverage_base_named": 0.8484848484848485,
+   "n_identities": 7
+  },
+  "tt0172495": {
+   "id_pairs": 39,
+   "id_share": 37,
+   "all_pairs": 946,
+   "all_share": 764,
+   "coverage": 0.8636363636363636,
+   "coverage_base_named": 0.20454545454545456,
+   "n_identities": 15
+  },
+  "tt0190332": {
+   "id_pairs": 37,
+   "id_share": 35,
+   "all_pairs": 351,
+   "all_share": 312,
+   "coverage": 0.6296296296296297,
+   "coverage_base_named": 0.18518518518518517,
+   "n_identities": 6
+  },
+  "tt0217505": {
+   "id_pairs": 39,
+   "id_share": 36,
+   "all_pairs": 741,
+   "all_share": 595,
+   "coverage": 0.7948717948717948,
+   "coverage_base_named": 0.20512820512820512,
+   "n_identities": 16
+  },
+  "tt0281358": {
+   "id_pairs": 29,
+   "id_share": 29,
+   "all_pairs": 741,
+   "all_share": 699,
+   "coverage": 0.8205128205128205,
+   "coverage_base_named": 0.5897435897435898,
+   "n_identities": 8
+  },
+  "tt0319061": {
+   "id_pairs": 31,
+   "id_share": 31,
+   "all_pairs": 990,
+   "all_share": 717,
+   "coverage": 0.7111111111111111,
+   "coverage_base_named": 0.5777777777777777,
+   "n_identities": 8
+  },
+  "tt0361748": {
+   "id_pairs": 29,
+   "id_share": 29,
+   "all_pairs": 946,
+   "all_share": 545,
+   "coverage": 0.8636363636363636,
+   "coverage_base_named": 0.38636363636363635,
+   "n_identities": 9
+  },
+  "tt0379786": {
+   "id_pairs": 3,
+   "id_share": 3,
+   "all_pairs": 595,
+   "all_share": 544,
+   "coverage": 0.8857142857142857,
+   "coverage_base_named": 0.7142857142857143,
+   "n_identities": 3
+  },
+  "tt0409459": {
+   "id_pairs": 12,
+   "id_share": 12,
+   "all_pairs": 1035,
+   "all_share": 856,
+   "coverage": 0.7391304347826086,
+   "coverage_base_named": 0.5652173913043478,
+   "n_identities": 10
+  },
+  "tt0440963": {
+   "id_pairs": 49,
+   "id_share": 49,
+   "all_pairs": 595,
+   "all_share": 567,
+   "coverage": 0.8857142857142857,
+   "coverage_base_named": 0.42857142857142855,
+   "n_identities": 10
+  },
+  "tt0479884": {
+   "id_pairs": 28,
+   "id_share": 28,
+   "all_pairs": 528,
+   "all_share": 528,
+   "coverage": 0.7878787878787878,
+   "coverage_base_named": 0.3939393939393939,
+   "n_identities": 7
+  },
+  "tt0780571": {
+   "id_pairs": 33,
+   "id_share": 31,
+   "all_pairs": 703,
+   "all_share": 639,
+   "coverage": 0.9736842105263158,
+   "coverage_base_named": 0.8947368421052632,
+   "n_identities": 9
+  },
+  "tt0822832": {
+   "id_pairs": 20,
+   "id_share": 20,
+   "all_pairs": 1128,
+   "all_share": 1120,
+   "coverage": 0.6666666666666666,
+   "coverage_base_named": 0.2916666666666667,
+   "n_identities": 5
+  },
+  "tt0945513": {
+   "id_pairs": 7,
+   "id_share": 7,
+   "all_pairs": 351,
+   "all_share": 316,
+   "coverage": 0.7777777777777778,
+   "coverage_base_named": 0.48148148148148145,
+   "n_identities": 3
+  },
+  "tt0976051": {
+   "id_pairs": 16,
+   "id_share": 15,
+   "all_pairs": 946,
+   "all_share": 716,
+   "coverage": 0.7954545454545454,
+   "coverage_base_named": 0.2727272727272727,
+   "n_identities": 9
+  },
+  "tt1038919": {
+   "id_pairs": 8,
+   "id_share": 8,
+   "all_pairs": 561,
+   "all_share": 534,
+   "coverage": 0.6764705882352942,
+   "coverage_base_named": 0.4411764705882353,
+   "n_identities": 4
+  },
+  "tt1119646": {
+   "id_pairs": 6,
+   "id_share": 6,
+   "all_pairs": 378,
+   "all_share": 364,
+   "coverage": 0.9285714285714286,
+   "coverage_base_named": 0.8928571428571429,
+   "n_identities": 2
+  },
+  "tt1205489": {
+   "id_pairs": 8,
+   "id_share": 8,
+   "all_pairs": 703,
+   "all_share": 599,
+   "coverage": 0.8947368421052632,
+   "coverage_base_named": 0.631578947368421,
+   "n_identities": 9
+  },
+  "tt1375666": {
+   "id_pairs": 19,
+   "id_share": 19,
+   "all_pairs": 820,
+   "all_share": 800,
+   "coverage": 0.7317073170731707,
+   "coverage_base_named": 0.4634146341463415,
+   "n_identities": 5
+  },
+  "tt1412386": {
+   "id_pairs": 17,
+   "id_share": 16,
+   "all_pairs": 1176,
+   "all_share": 810,
+   "coverage": 0.8367346938775511,
+   "coverage_base_named": 0.4489795918367347,
+   "n_identities": 8
+  },
+  "tt1707386": {
+   "id_pairs": 28,
+   "id_share": 28,
+   "all_pairs": 903,
+   "all_share": 829,
+   "coverage": 0.7674418604651163,
+   "coverage_base_named": 0.4186046511627907,
+   "n_identities": 9
+  },
+  "tt2488496": {
+   "id_pairs": 24,
+   "id_share": 24,
+   "all_pairs": 946,
+   "all_share": 818,
+   "coverage": 0.8409090909090909,
+   "coverage_base_named": 0.7045454545454546,
+   "n_identities": 4
+  }
+ }
+}
