@@ -164,6 +164,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-017 / 017b | "El mapa de tópicos por consenso sin fusión agrupa hilos mejor (MCC, proxy cast) que la fusión y que v2.1" | components percola; average no supera a fused (+0.002 / −0.001); visual sola es mejor en MCC. G-coherencia sí se cumple y supera a fused en cada señal |
 | G-enlace (juez modelo) | "Los enlaces no contiguos de CAVA son juzgados mismo hilo más que momentos lejanos al azar" | 83 % vs 63 %, Fisher p = 0.072 (umbral 0.05): no se cumple; infradimensionado (~60 por brazo) |
 | G-enlace-2 (juez modelo, mezclado) | "Los enlaces no contiguos de CAVA son mismo hilo más que pares al azar" | 62 % vs 65 %, p = 0.72. El lote 1 (p = 0.07) estaba confundido por revisores distintos por brazo |
+| EXP-019c | "Re-etiquetar con un registro de personajes por video sube el nombrado sin perder contenido" | Nombrado +5 pts ✅ y precisión ✅, pero MRR −0.026 en test (z −3.2) ❌ |
 
 ---
 
@@ -1449,4 +1450,23 @@ señales: 674 (40 %).
 
 `results/exp019d_prop_{dev,test}.json` · `scripts/propagate_names.py` ·
 `data/topic_labels_prop/*.propagation.json` (receptor → donante, similitudes)
+
+### Resultado EXP-019c (job 53926, registro en 105 películas)
+| criterio | desarrollo (val) | confirmación (test) |
+|---|---|---|
+| 1. tasa de nombrado 019c − 019b | 0.54 → 0.59, +0.048 ± 0.013 (z 3.9) ✅ | 0.49 → 0.54, +0.056 ± 0.016 (z 3.5) ✅ |
+| 2. precisión propia − barajada | +0.168 ± 0.011 (z 15.6) ✅ | +0.123 ± 0.013 (z 9.3) ✅ |
+| 3. precisión propia 019c − 019b (≥ −2 SE) | +0.029 ± 0.015 ✅ | +0.024 ± 0.015 ✅ |
+| 4. MRR 019c − 019b (≥ −2 SE) | −0.007 ± 0.006 ✅ | **−0.026 ± 0.008 (z −3.2) ❌** |
+| sin contexto: nombrado / precisión | 0.24 → 0.33 / 0.20 → 0.34 | 0.22 → 0.27 / 0.33 → 0.38 |
+
+- **⚠️ NO VALIDADO:** falla el criterio 4 en test. Re-etiquetar con el
+  registro aleja la etiqueta de lo que se dice en el tópico.
+- **Lo que sí muestra:** el registro nombra más y con mejor precisión,
+  sobre todo sin contexto (desarrollo 0.20 → 0.34).
+- **Frente a 019d** (validado): nombrado similar (0.59 / 0.54 frente a
+  0.61 / 0.55), pero 019d no toca el texto del tópico y conserva el MRR mejor.
+  **019d queda como método por defecto.**
+
+`results/exp019c_reg_{dev,test}.json` · `data/topic_labels_reg/*.registry.txt`
 

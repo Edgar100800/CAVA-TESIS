@@ -1,0 +1,109 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 2/579 [00:00<01:18,  7.32it/s]Loading weights:   3%|▎         | 17/579 [00:00<00:10, 55.08it/s]Loading weights:   5%|▌         | 29/579 [00:00<00:07, 75.02it/s]Loading weights:   7%|▋         | 41/579 [00:00<00:06, 83.44it/s]Loading weights:   9%|▉         | 53/579 [00:00<00:06, 87.32it/s]Loading weights:  11%|█         | 64/579 [00:00<00:05, 86.85it/s]Loading weights:  13%|█▎        | 77/579 [00:00<00:05, 93.47it/s]Loading weights:  15%|█▌        | 89/579 [00:01<00:05, 94.92it/s]Loading weights:  17%|█▋        | 101/579 [00:01<00:04, 96.45it/s]Loading weights:  20%|█▉        | 113/579 [00:01<00:04, 95.14it/s]Loading weights:  22%|██▏       | 125/579 [00:01<00:04, 94.68it/s]Loading weights:  24%|██▎       | 137/579 [00:01<00:04, 95.66it/s]Loading weights:  26%|██▌       | 149/579 [00:01<00:04, 96.84it/s]Loading weights:  28%|██▊       | 160/579 [00:01<00:04, 91.51it/s]Loading weights:  30%|██▉       | 173/579 [00:01<00:04, 94.50it/s]Loading weights:  32%|███▏      | 185/579 [00:02<00:04, 94.11it/s]Loading weights:  34%|███▍      | 196/579 [00:02<00:04, 92.30it/s]Loading weights:  36%|███▌      | 209/579 [00:02<00:03, 96.84it/s]Loading weights:  38%|███▊      | 221/579 [00:02<00:03, 97.34it/s]Loading weights:  40%|████      | 233/579 [00:02<00:03, 97.28it/s]Loading weights:  42%|████▏     | 245/579 [00:02<00:03, 100.22it/s]Loading weights:  44%|████▍     | 257/579 [00:02<00:03, 100.16it/s]Loading weights:  46%|████▋     | 269/579 [00:02<00:03, 94.50it/s] Loading weights:  49%|████▊     | 282/579 [00:03<00:02, 101.72it/s]Loading weights:  51%|█████     | 294/579 [00:03<00:02, 100.57it/s]Loading weights:  53%|█████▎    | 306/579 [00:03<00:02, 97.43it/s] Loading weights:  55%|█████▍    | 318/579 [00:03<00:02, 96.25it/s]Loading weights:  57%|█████▋    | 330/579 [00:03<00:02, 96.08it/s]Loading weights:  59%|█████▉    | 341/579 [00:03<00:02, 99.27it/s]Loading weights:  61%|██████    | 353/579 [00:03<00:02, 97.35it/s]Loading weights:  63%|██████▎   | 365/579 [00:03<00:02, 97.98it/s]Loading weights:  65%|██████▌   | 377/579 [00:04<00:02, 96.92it/s]Loading weights:  67%|██████▋   | 389/579 [00:04<00:01, 98.17it/s]Loading weights:  69%|██████▉   | 400/579 [00:04<00:01, 100.30it/s]Loading weights:  71%|███████   | 412/579 [00:04<00:01, 101.83it/s]Loading weights:  73%|███████▎  | 425/579 [00:04<00:01, 104.01it/s]Loading weights:  75%|███████▌  | 437/579 [00:04<00:01, 102.63it/s]Loading weights:  78%|███████▊  | 449/579 [00:04<00:01, 104.58it/s]Loading weights:  80%|███████▉  | 461/579 [00:04<00:01, 103.81it/s]Loading weights:  82%|████████▏ | 473/579 [00:04<00:00, 106.40it/s]Loading weights:  84%|████████▍ | 485/579 [00:05<00:00, 104.79it/s]Loading weights:  86%|████████▌ | 497/579 [00:05<00:00, 106.48it/s]Loading weights:  88%|████████▊ | 509/579 [00:05<00:00, 105.23it/s]Loading weights:  90%|████████▉ | 521/579 [00:05<00:00, 103.56it/s]Loading weights:  92%|█████████▏| 533/579 [00:05<00:00, 102.47it/s]Loading weights:  94%|█████████▍| 545/579 [00:05<00:00, 101.84it/s]Loading weights:  96%|█████████▌| 556/579 [00:05<00:00, 97.31it/s] Loading weights:  98%|█████████▊| 569/579 [00:05<00:00, 101.14it/s]Loading weights: 100%|██████████| 579/579 [00:05<00:00, 96.57it/s] 
+[topiclabels] tt0048545: 34 etiquetas
+[topiclabels] tt0061722: 34 etiquetas
+[topiclabels] tt0066026: 45 etiquetas
+[topiclabels] tt0071562: 61 etiquetas
+[topiclabels] tt0072890: 33 etiquetas
+[topiclabels] tt0073486: 37 etiquetas
+[topiclabels] tt0076759: 39 etiquetas
+[topiclabels] tt0080684: 37 etiquetas
+[topiclabels] tt0083929: 34 etiquetas
+[topiclabels] tt0087332: 41 etiquetas
+[topiclabels] tt0090756: 40 etiquetas
+[topiclabels] tt0094737: 48 etiquetas
+[topiclabels] tt0096446: 55 etiquetas
+[topiclabels] tt0097576: 46 etiquetas
+[topiclabels] tt0099685: 42 etiquetas
+[topiclabels] tt0102138: 55 etiquetas
+[topiclabels] tt0103074: 43 etiquetas
+[topiclabels] tt0105236: 30 etiquetas
+[topiclabels] tt0108160: 46 etiquetas
+[topiclabels] tt0110475: 37 etiquetas
+[topiclabels] tt0112641: 51 etiquetas
+[topiclabels] tt0114558: 69 etiquetas
+[topiclabels] tt0116367: 34 etiquetas
+[topiclabels] tt0118571: 45 etiquetas
+[topiclabels] tt0119094: 53 etiquetas
+[topiclabels] tt0119822: 51 etiquetas
+[topiclabels] tt0120780: 48 etiquetas
+[topiclabels] tt0121765: 51 etiquetas
+[topiclabels] tt0129387: 52 etiquetas
+[topiclabels] tt0138097: 36 etiquetas
+[topiclabels] tt0145487: 77 etiquetas
+[topiclabels] tt0166924: 50 etiquetas
+[topiclabels] tt0167261: 89 etiquetas
+[topiclabels] tt0167404: 35 etiquetas
+[topiclabels] tt0186151: 39 etiquetas
+[topiclabels] tt0209958: 44 etiquetas
+[topiclabels] tt0258463: 35 etiquetas
+[topiclabels] tt0268126: 34 etiquetas
+[topiclabels] tt0311113: 31 etiquetas
+[topiclabels] tt0343818: 46 etiquetas
+[topiclabels] tt0370263: 51 etiquetas
+[topiclabels] tt0371724: 63 etiquetas
+[topiclabels] tt0408236: 52 etiquetas
+[topiclabels] tt0434409: 40 etiquetas
+[topiclabels] tt0467200: 43 etiquetas
+[topiclabels] tt0758758: 40 etiquetas
+[topiclabels] tt0808151: 49 etiquetas
+[topiclabels] tt0898367: 40 etiquetas
+[topiclabels] tt0964517: 52 etiquetas
+[topiclabels] tt1032755: 36 etiquetas
+[topiclabels] tt1100089: 43 etiquetas
+[topiclabels] tt1182345: 32 etiquetas
+[topiclabels] tt1284575: 26 etiquetas
+[topiclabels] tt1409024: 47 etiquetas
+[topiclabels] tt1504320: 44 etiquetas
+[topiclabels] tt1591095: 41 etiquetas
+[topiclabels] tt1659337: 32 etiquetas
+[topiclabels] tt2132285: 30 etiquetas
+[topiclabels] tt0052357: 46 etiquetas
+[topiclabels] tt0063442: 41 etiquetas
+[topiclabels] tt0068646: 58 etiquetas
+[topiclabels] tt0073195: 54 etiquetas
+[topiclabels] tt0078788: 70 etiquetas
+[topiclabels] tt0082089: 36 etiquetas
+[topiclabels] tt0086190: 41 etiquetas
+[topiclabels] tt0088944: 37 etiquetas
+[topiclabels] tt0092099: 47 etiquetas
+[topiclabels] tt0096320: 44 etiquetas
+[topiclabels] tt0099423: 41 etiquetas
+[topiclabels] tt0100405: 39 etiquetas
+[topiclabels] tt0103776: 46 etiquetas
+[topiclabels] tt0103855: 34 etiquetas
+[topiclabels] tt0107290: 62 etiquetas
+[topiclabels] tt0108399: 31 etiquetas
+[topiclabels] tt0113277: 58 etiquetas
+[topiclabels] tt0115759: 43 etiquetas
+[topiclabels] tt0117060: 27 etiquetas
+[topiclabels] tt0118715: 43 etiquetas
+[topiclabels] tt0119488: 49 etiquetas
+[topiclabels] tt0120689: 52 etiquetas
+[topiclabels] tt0120890: 55 etiquetas
+[topiclabels] tt0123755: 31 etiquetas
+[topiclabels] tt0137523: 51 etiquetas
+[topiclabels] tt0163025: 33 etiquetas
+[topiclabels] tt0172495: 50 etiquetas
+[topiclabels] tt0190332: 33 etiquetas
+[topiclabels] tt0217505: 49 etiquetas
+[topiclabels] tt0281358: 43 etiquetas
+[topiclabels] tt0319061: 48 etiquetas
+[topiclabels] tt0361748: 50 etiquetas
+[topiclabels] tt0379786: 36 etiquetas
+[topiclabels] tt0409459: 63 etiquetas
+[topiclabels] tt0440963: 38 etiquetas
+[topiclabels] tt0479884: 39 etiquetas
+[topiclabels] tt0780571: 42 etiquetas
+[topiclabels] tt0822832: 50 etiquetas
+[topiclabels] tt0945513: 30 etiquetas
+[topiclabels] tt0976051: 48 etiquetas
+[topiclabels] tt1038919: 35 etiquetas
+[topiclabels] tt1119646: 30 etiquetas
+[topiclabels] tt1205489: 40 etiquetas
+[topiclabels] tt1375666: 43 etiquetas
+[topiclabels] tt1412386: 49 etiquetas
+[topiclabels] tt1707386: 45 etiquetas
+[topiclabels] tt2488496: 47 etiquetas
+[topiclabels] listo
+TOPIC_LABELS_DONE
