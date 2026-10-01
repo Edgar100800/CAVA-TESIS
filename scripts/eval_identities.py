@@ -18,6 +18,7 @@ import numpy as np
 from scipy.stats import fisher_exact
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from categorize_characters import distinctive_words  # noqa: E402
 from eval_categorization import alias_index, named  # noqa: E402
 
 
@@ -40,8 +41,11 @@ def main():
     ap.add_argument("--gt", default="data/movienet_content_gt")
     ap.add_argument("--min-dur", type=float, default=30.0)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--filter-min-words", type=int, default=2,
+                    help="EXP-019f: separa identidades cuya descripción tiene ≥ N palabras distintivas")
     args = ap.parse_args()
     id_same = id_n = base_same = base_n = 0
+    pass_same = pass_n = fail_same = fail_n = 0
     cov, cov_base, per = [], [], {}
     for tt in Path(args.films_file).read_text().split():
         fm, fg = Path(args.maps) / f"{tt}.topic_map.json", Path(args.gt) / f"{tt}.json"
@@ -61,9 +65,15 @@ def main():
         base = json.loads((Path(args.base_labels) / f"{tt}.topic_labels.json").read_text())
         s_id = n_id = 0
         for v in idents.values():
+            ok = len(distinctive_words(v["description"])) >= args.filter_min_words
             for a, b in combinations([x for x in v["topics"] if x in G], 2):
                 n_id += 1
-                s_id += bool(G[a] & G[b])
+                sh = bool(G[a] & G[b])
+                s_id += sh
+                if ok:
+                    pass_n, pass_same = pass_n + 1, pass_same + sh
+                else:
+                    fail_n, fail_same = fail_n + 1, fail_same + sh
         s_all = n_all = 0
         for a, b in combinations(sorted(G), 2):
             n_all += 1
@@ -77,6 +87,8 @@ def main():
         per[tt] = {"id_pairs": n_id, "id_share": s_id, "all_pairs": n_all, "all_share": s_all,
                    "coverage": cov[-1], "coverage_base_named": cov_base[-1], "n_identities": len(idents)}
     _, p = fisher_exact([[id_same, id_n - id_same], [base_same, base_n - base_same]], alternative="greater")
+    _, p_pf = fisher_exact([[pass_same, pass_n - pass_same], [fail_same, fail_n - fail_same]],
+                           alternative="greater")
     d = np.array(cov) - np.array(cov_base)
     rep = {"n_films": len(per),
            "identity_pairs": id_n, "identity_share_rate": round(id_same / max(id_n, 1), 4),
@@ -84,6 +96,9 @@ def main():
            "coverage_019e": round(float(np.mean(cov)), 4), "named_019b": round(float(np.mean(cov_base)), 4),
            "coverage_gain": {"mean": round(float(d.mean()), 4),
                              "se": round(float(d.std(ddof=1) / np.sqrt(len(d))), 4)},
+           "filter_pass": {"pairs": pass_n, "share_rate": round(pass_same / max(pass_n, 1), 4)},
+           "filter_fail": {"pairs": fail_n, "share_rate": round(fail_same / max(fail_n, 1), 4)},
+           "fisher_p_pass_vs_fail": round(float(p_pf), 6),
            "identities_per_film": round(float(np.mean([v["n_identities"] for v in per.values()])), 2),
            "per_film": per}
     Path(args.out).write_text(json.dumps(rep, indent=1))
