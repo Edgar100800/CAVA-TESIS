@@ -21,8 +21,13 @@ def _longest_span(topic):
 
 
 def _clip(topic, span):
+    """Clip con su categoría: etiqueta de nivel tópico (EXP-019b) si existe y el
+    contexto del tramo (qué se ve / qué se dice) para el formato que lo consuma."""
+    ctx = None
+    if "context" in topic and span in topic["spans"]:
+        ctx = topic["context"][topic["spans"].index(span)]
     return {"t0": span[0], "t1": span[1], "topic_id": topic["topic_id"],
-            "label": topic["label"]}
+            "label": topic.get("topic_label") or topic["label"], "context": ctx}
 
 
 def _trim(topic, span, room, unit_times):
