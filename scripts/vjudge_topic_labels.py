@@ -81,6 +81,8 @@ def main():
     ap.add_argument("--registry-from", default=None,
                     help="EXP-019c: dir con etiquetas de la 1ª pasada; construye un registro de "
                          "personajes por video y re-etiqueta con él")
+    ap.add_argument("--registry-only", action="store_true",
+                    help="EXP-019e: con --registry-from, solo escribe <tt>.registry.txt (sin re-etiquetar)")
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -119,6 +121,9 @@ def main():
                     registry = tok.decode(g[0, inputs.input_ids.shape[1]:], skip_special_tokens=True).strip()
                 f_reg.write_text(registry)
             header = REGISTRY_HEADER.format(registry=registry) if registry.strip() else ""
+            if args.registry_only:
+                print(f"[topiclabels] {tt}: registro", flush=True)
+                continue
         for t in todo:
             text = header + PROMPT.format(stretches=stretches_text(t, args.max_spans))
             if args.dry_run:
