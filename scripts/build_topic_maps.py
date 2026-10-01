@@ -16,7 +16,10 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from narrative_eval import BgeEmbedder  # noqa: E402
+from narrative_interpreter import parse_srt  # noqa: E402
 from topicagg.topic_map import build_topic_map  # noqa: E402
+
+MN = Path("/home/edgar.chambilla/Tesis/SegLoop/data/movienet")
 
 
 def main():
@@ -46,9 +49,12 @@ def main():
         if args.segloop_dir and (Path(args.segloop_dir) / f"{tt}.npz").exists():
             bnd = {"segloop": np.asarray(np.load(Path(args.segloop_dir) / f"{tt}.npz")["segloop"][:n - 1],
                                          np.float32)}
+        st = meta["shot_times"][:n]
+        cues = parse_srt(MN / "subtitle" / f"{tt}.srt")
+        texts = [" ".join(x for a, b, x in cues if a < t1 and b > t0) for t0, t1 in st]
         doc = build_topic_map(tt, {"visual": vis[:n], "dialogue": dia[:n], "vjudge": vj},
-                              meta["shot_times"][:n], unit_summaries=sums, boundary_signals=bnd,
-                              abstain=not args.no_abstain)
+                              st, unit_summaries=sums, boundary_signals=bnd,
+                              abstain=not args.no_abstain, unit_texts=texts)
         (out / f"{tt}.topic_map.json").write_text(json.dumps(doc, ensure_ascii=False, indent=1))
         d = doc["levels"]["default"]
         print(f"[topicmap] {tt}: {d['n_topics']} tópicos ({d['n_returning']} con retornos), "

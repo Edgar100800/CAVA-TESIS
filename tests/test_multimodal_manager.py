@@ -172,6 +172,7 @@ def test_topic_map_structure_and_returns():
     assert a["returns"] >= 1 and len(a["spans"]) == a["returns"] + 1  # A comes back
     assert a["label"] == "block 0"
     assert set(a["provenance"]) == {"visual", "vjudge"}
+    assert len(a["context"]) == len(a["spans"]) and a["context"][0]["seen"] == ["block 0"]
     import json
     json.dumps(doc)                                             # serializable
 

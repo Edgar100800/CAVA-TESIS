@@ -17,6 +17,9 @@ produce un documento JSON-serializable:
                  fracción de shots que comparten etiqueta con otro) y coherencia
                  leave-one-out de sus embeddings
     flags        no_topic / needs_review (ticket 001)
+    context      por tramo (clip): qué vio el VJudge (resúmenes de las unidades
+                 que solapan el tramo) y qué se dice (diálogo de esos shots).
+                 Sale de las señales propias de CAVA, no de GT.
 Ninguna señal se fusiona: la provenance muestra cuáles sostienen cada tópico.
 """
 from __future__ import annotations
@@ -58,9 +61,22 @@ def _agreement(labels: np.ndarray, members: list[int]) -> float | None:
     return round(same / (len(members) * (len(members) - 1) / 2), 3)
 
 
+def _span_context(a, b, unit_summaries, unit_texts):
+    seen = []
+    for u in unit_summaries or []:
+        if u["lo"] <= b and u["hi"] > a and u["summary"] not in seen:
+            seen.append(u["summary"])
+    lines = []
+    for k in range(a, b + 1):
+        if unit_texts and k < len(unit_texts) and unit_texts[k] and unit_texts[k] not in lines:
+            lines.append(unit_texts[k])
+    return {"seen": seen, "said": " ".join(lines)[:1500]}
+
+
 def topics_from_plan(plan: TopicPlan, shot_times: list[list[float]],
                      signals: dict[str, np.ndarray],
-                     unit_summaries: list[dict] | None = None) -> list[dict]:
+                     unit_summaries: list[dict] | None = None,
+                     unit_texts: list[str] | None = None) -> list[dict]:
     out = []
     for g in plan.groups:
         members = sorted(g.segment_indices)
@@ -88,6 +104,7 @@ def topics_from_plan(plan: TopicPlan, shot_times: list[list[float]],
                            for k in g.signal_support},
             "flags": {"no_topic": bool(getattr(g, "no_topic", False)),
                       "needs_review": bool(getattr(g, "needs_review", False))},
+            "context": [_span_context(a, b, unit_summaries, unit_texts) for a, b in spans],
         })
     out.sort(key=lambda t: t["shots"][0])
     return out
@@ -98,7 +115,8 @@ def build_topic_map(video_id: str, signals: dict[str, np.ndarray],
                     unit_summaries: list[dict] | None = None,
                     boundary_signals: dict[str, np.ndarray] | None = None,
                     percentile: float = 80, return_percentile: float = 90,
-                    link_quorum: int = 2, abstain: bool = False) -> dict:
+                    link_quorum: int = 2, abstain: bool = False,
+                    unit_texts: list[str] | None = None) -> dict:
     """Mapa de tópicos en dos granularidades con los parámetros pre-registrados
     de EXP-017b (percentile 80, return_percentile 90, link_mode average)."""
     n = min(len(v) for v in signals.values())
@@ -117,7 +135,7 @@ def build_topic_map(video_id: str, signals: dict[str, np.ndarray],
         plan = manage(signals, n_segments=n, percentile=percentile, link_quorum=q,
                       return_percentile=return_percentile, link_mode="average",
                       boundary_signals=boundary_signals, abstain=abstain)
-        topics = topics_from_plan(plan, shot_times, signals, unit_summaries)
+        topics = topics_from_plan(plan, shot_times, signals, unit_summaries, unit_texts)
         doc["levels"][name] = {"n_topics": len(topics),
                                "n_returning": sum(1 for t in topics if t["returns"]),
                                "topics": topics}
