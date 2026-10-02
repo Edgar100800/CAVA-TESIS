@@ -1,0 +1,607 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2316.68it/s]
+[categorize] tt0113243: +nombres 2, identidades 7
+[categorize] tt0114369: +nombres 12, identidades 13
+[categorize] tt0114388: +nombres 4, identidades 5
+[categorize] tt0114814: +nombres 3, identidades 9
+[categorize] tt0115798: +nombres 5, identidades 11
+[categorize] tt0116209: +nombres 20, identidades 17
+[categorize] tt0116629: +nombres 6, identidades 11
+[categorize] tt0117500: +nombres 5, identidades 10
+[categorize] tt0117951: +nombres 4, identidades 5
+[categorize] tt0118636: +nombres 6, identidades 11
+[categorize] tt0118929: +nombres 7, identidades 14
+[categorize] tt0118971: +nombres 5, identidades 8
+[categorize] tt0119396: +nombres 15, identidades 17
+[categorize] tt0119528: +nombres 2, identidades 9
+[categorize] tt0119567: +nombres 7, identidades 13
+[categorize] tt0120660: +nombres 10, identidades 10
+[categorize] tt0120735: +nombres 2, identidades 3
+[categorize] tt0120755: +nombres 4, identidades 9
+[categorize] tt0120815: +nombres 5, identidades 2
+[categorize] tt0120902: +nombres 5, identidades 12
+[categorize] tt0120915: +nombres 1, identidades 9
+[categorize] tt0122690: +nombres 9, identidades 12
+[categorize] tt0126886: +nombres 1, identidades 2
+[categorize] tt0128445: +nombres 3, identidades 7
+[categorize] tt0134119: +nombres 10, identidades 9
+[categorize] tt0139654: +nombres 10, identidades 15
+[categorize] tt0142688: +nombres 15, identidades 12
+[categorize] tt0159365: +nombres 19, identidades 27
+[categorize] tt0164052: +nombres 6, identidades 12
+[categorize] tt0167190: +nombres 5, identidades 10
+[categorize] tt0169547: +nombres 10, identidades 9
+[categorize] tt0180073: +nombres 17, identidades 19
+[categorize] tt0183649: +nombres 3, identidades 8
+[categorize] tt0187393: +nombres 10, identidades 20
+[categorize] tt0208092: +nombres 3, identidades 2
+[categorize] tt0209144: +nombres 6, identidades 14
+[categorize] tt0213149: +nombres 7, identidades 18
+[categorize] tt0244244: +nombres 10, identidades 12
+[categorize] tt0246578: +nombres 9, identidades 11
+[categorize] tt0264395: +nombres 8, identidades 14
+[categorize] tt0286106: +nombres 17, identidades 16
+[categorize] tt0288477: +nombres 1, identidades 9
+[categorize] tt0315327: +nombres 7, identidades 8
+[categorize] tt0329101: +nombres 1, identidades 10
+[categorize] tt0338013: +nombres 7, identidades 8
+[categorize] tt0349903: +nombres 8, identidades 5
+[categorize] tt0363771: +nombres 5, identidades 14
+[categorize] tt0369339: +nombres 7, identidades 11
+[categorize] tt0372183: +nombres 10, identidades 11
+[categorize] tt0383574: +nombres 0, identidades 6
+[categorize] tt0407887: +nombres 7, identidades 12
+[categorize] tt0408790: +nombres 6, identidades 13
+[categorize] tt0421715: +nombres 15, identidades 22
+[categorize] tt0430357: +nombres 15, identidades 20
+[categorize] tt0435705: +nombres 8, identidades 16
+[categorize] tt0448157: +nombres 4, identidades 7
+[categorize] tt0454876: +nombres 9, identidades 12
+[categorize] tt0467406: +nombres 7, identidades 8
+[categorize] tt0493464: +nombres 10, identidades 17
+[categorize] tt0499549: +nombres 4, identidades 14
+[categorize] tt0780504: +nombres 11, identidades 14
+[categorize] tt0790686: +nombres 5, identidades 9
+[categorize] tt0796366: +nombres 1, identidades 6
+[categorize] tt0815236: +nombres 8, identidades 16
+[categorize] tt0824747: +nombres 14, identidades 25
+[categorize] tt0848228: +nombres 1, identidades 7
+[categorize] tt0913425: +nombres 8, identidades 7
+[categorize] tt0947798: +nombres 7, identidades 12
+[categorize] tt0963794: +nombres 4, identidades 13
+[categorize] tt0974661: +nombres 4, identidades 12
+[categorize] tt0985699: +nombres 0, identidades 11
+[categorize] tt0993846: +nombres 11, identidades 18
+[categorize] tt1037705: +nombres 9, identidades 10
+[categorize] tt1059786: +nombres 4, identidades 7
+[categorize] tt1068680: +nombres 2, identidades 4
+[categorize] tt1104001: +nombres 4, identidades 8
+[categorize] tt1124035: +nombres 4, identidades 6
+[categorize] tt1125849: +nombres 4, identidades 16
+[categorize] tt1193138: +nombres 5, identidades 9
+[categorize] tt1210166: +nombres 6, identidades 16
+[categorize] tt1219289: +nombres 6, identidades 7
+[categorize] tt1291584: +nombres 6, identidades 13
+[categorize] tt1401152: +nombres 10, identidades 17
+[categorize] tt1403865: +nombres 11, identidades 24
+[categorize] tt1411238: +nombres 7, identidades 10
+[categorize] tt1446714: +nombres 2, identidades 7
+[categorize] tt1454029: +nombres 4, identidades 8
+[categorize] tt1637725: +nombres 5, identidades 8
+[categorize] tt1800241: +nombres 4, identidades 10
+[categorize] tt1979320: +nombres 7, identidades 16
+[categorize] tt2140373: +nombres 5, identidades 12
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2799.08it/s]
+[categorize] tt0113243: +nombres 6, identidades 6
+[categorize] tt0114369: +nombres 14, identidades 12
+[categorize] tt0114388: +nombres 5, identidades 5
+[categorize] tt0114814: +nombres 7, identidades 5
+[categorize] tt0115798: +nombres 5, identidades 9
+[categorize] tt0116209: +nombres 22, identidades 15
+[categorize] tt0116629: +nombres 7, identidades 10
+[categorize] tt0117500: +nombres 9, identidades 8
+[categorize] tt0117951: +nombres 4, identidades 5
+[categorize] tt0118636: +nombres 16, identidades 7
+[categorize] tt0118929: +nombres 8, identidades 14
+[categorize] tt0118971: +nombres 9, identidades 7
+[categorize] tt0119396: +nombres 16, identidades 17
+[categorize] tt0119528: +nombres 5, identidades 9
+[categorize] tt0119567: +nombres 10, identidades 13
+[categorize] tt0120660: +nombres 12, identidades 10
+[categorize] tt0120735: +nombres 2, identidades 3
+[categorize] tt0120755: +nombres 5, identidades 8
+[categorize] tt0120815: +nombres 5, identidades 2
+[categorize] tt0120902: +nombres 7, identidades 12
+[categorize] tt0120915: +nombres 4, identidades 9
+[categorize] tt0122690: +nombres 14, identidades 8
+[categorize] tt0126886: +nombres 1, identidades 2
+[categorize] tt0128445: +nombres 7, identidades 8
+[categorize] tt0134119: +nombres 10, identidades 9
+[categorize] tt0139654: +nombres 16, identidades 14
+[categorize] tt0142688: +nombres 17, identidades 11
+[categorize] tt0159365: +nombres 21, identidades 25
+[categorize] tt0164052: +nombres 8, identidades 12
+[categorize] tt0167190: +nombres 11, identidades 10
+[categorize] tt0169547: +nombres 10, identidades 9
+[categorize] tt0180073: +nombres 35, identidades 16
+[categorize] tt0183649: +nombres 5, identidades 8
+[categorize] tt0187393: +nombres 14, identidades 20
+[categorize] tt0208092: +nombres 3, identidades 2
+[categorize] tt0209144: +nombres 17, identidades 13
+[categorize] tt0213149: +nombres 8, identidades 18
+[categorize] tt0244244: +nombres 12, identidades 10
+[categorize] tt0246578: +nombres 12, identidades 10
+[categorize] tt0264395: +nombres 12, identidades 11
+[categorize] tt0286106: +nombres 23, identidades 13
+[categorize] tt0288477: +nombres 5, identidades 9
+[categorize] tt0315327: +nombres 14, identidades 5
+[categorize] tt0329101: +nombres 3, identidades 9
+[categorize] tt0338013: +nombres 10, identidades 7
+[categorize] tt0349903: +nombres 10, identidades 5
+[categorize] tt0363771: +nombres 11, identidades 9
+[categorize] tt0369339: +nombres 10, identidades 9
+[categorize] tt0372183: +nombres 10, identidades 12
+[categorize] tt0383574: +nombres 2, identidades 4
+[categorize] tt0407887: +nombres 8, identidades 12
+[categorize] tt0408790: +nombres 7, identidades 14
+[categorize] tt0421715: +nombres 18, identidades 22
+[categorize] tt0430357: +nombres 17, identidades 19
+[categorize] tt0435705: +nombres 21, identidades 9
+[categorize] tt0448157: +nombres 7, identidades 7
+[categorize] tt0454876: +nombres 11, identidades 14
+[categorize] tt0467406: +nombres 7, identidades 8
+[categorize] tt0493464: +nombres 19, identidades 12
+[categorize] tt0499549: +nombres 6, identidades 14
+[categorize] tt0780504: +nombres 12, identidades 13
+[categorize] tt0790686: +nombres 5, identidades 9
+[categorize] tt0796366: +nombres 3, identidades 5
+[categorize] tt0815236: +nombres 8, identidades 16
+[categorize] tt0824747: +nombres 26, identidades 19
+[categorize] tt0848228: +nombres 1, identidades 7
+[categorize] tt0913425: +nombres 12, identidades 7
+[categorize] tt0947798: +nombres 11, identidades 10
+[categorize] tt0963794: +nombres 4, identidades 13
+[categorize] tt0974661: +nombres 6, identidades 14
+[categorize] tt0985699: +nombres 0, identidades 11
+[categorize] tt0993846: +nombres 11, identidades 18
+[categorize] tt1037705: +nombres 10, identidades 10
+[categorize] tt1059786: +nombres 12, identidades 6
+[categorize] tt1068680: +nombres 2, identidades 4
+[categorize] tt1104001: +nombres 4, identidades 6
+[categorize] tt1124035: +nombres 6, identidades 4
+[categorize] tt1125849: +nombres 8, identidades 14
+[categorize] tt1193138: +nombres 8, identidades 8
+[categorize] tt1210166: +nombres 6, identidades 16
+[categorize] tt1219289: +nombres 8, identidades 5
+[categorize] tt1291584: +nombres 13, identidades 11
+[categorize] tt1401152: +nombres 12, identidades 16
+[categorize] tt1403865: +nombres 16, identidades 23
+[categorize] tt1411238: +nombres 8, identidades 7
+[categorize] tt1446714: +nombres 5, identidades 7
+[categorize] tt1454029: +nombres 9, identidades 7
+[categorize] tt1637725: +nombres 6, identidades 8
+[categorize] tt1800241: +nombres 6, identidades 9
+[categorize] tt1979320: +nombres 8, identidades 15
+[categorize] tt2140373: +nombres 6, identidades 11
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2550.90it/s]
+[categorize] tt0113243: +nombres 2, identidades 7
+[categorize] tt0114369: +nombres 12, identidades 13
+[categorize] tt0114388: +nombres 4, identidades 5
+[categorize] tt0114814: +nombres 3, identidades 9
+[categorize] tt0115798: +nombres 5, identidades 11
+[categorize] tt0116209: +nombres 20, identidades 17
+[categorize] tt0116629: +nombres 6, identidades 11
+[categorize] tt0117500: +nombres 5, identidades 10
+[categorize] tt0117951: +nombres 4, identidades 5
+[categorize] tt0118636: +nombres 6, identidades 11
+[categorize] tt0118929: +nombres 7, identidades 14
+[categorize] tt0118971: +nombres 5, identidades 8
+[categorize] tt0119396: +nombres 15, identidades 17
+[categorize] tt0119528: +nombres 2, identidades 9
+[categorize] tt0119567: +nombres 7, identidades 13
+[categorize] tt0120660: +nombres 10, identidades 10
+[categorize] tt0120735: +nombres 2, identidades 3
+[categorize] tt0120755: +nombres 4, identidades 9
+[categorize] tt0120815: +nombres 5, identidades 2
+[categorize] tt0120902: +nombres 5, identidades 12
+[categorize] tt0120915: +nombres 1, identidades 9
+[categorize] tt0122690: +nombres 9, identidades 12
+[categorize] tt0126886: +nombres 1, identidades 2
+[categorize] tt0128445: +nombres 3, identidades 7
+[categorize] tt0134119: +nombres 10, identidades 9
+[categorize] tt0139654: +nombres 10, identidades 15
+[categorize] tt0142688: +nombres 15, identidades 12
+[categorize] tt0159365: +nombres 19, identidades 27
+[categorize] tt0164052: +nombres 6, identidades 12
+[categorize] tt0167190: +nombres 5, identidades 10
+[categorize] tt0169547: +nombres 10, identidades 9
+[categorize] tt0180073: +nombres 17, identidades 19
+[categorize] tt0183649: +nombres 3, identidades 8
+[categorize] tt0187393: +nombres 10, identidades 20
+[categorize] tt0208092: +nombres 3, identidades 2
+[categorize] tt0209144: +nombres 6, identidades 14
+[categorize] tt0213149: +nombres 7, identidades 18
+[categorize] tt0244244: +nombres 10, identidades 12
+[categorize] tt0246578: +nombres 9, identidades 11
+[categorize] tt0264395: +nombres 8, identidades 14
+[categorize] tt0286106: +nombres 17, identidades 16
+[categorize] tt0288477: +nombres 1, identidades 9
+[categorize] tt0315327: +nombres 7, identidades 8
+[categorize] tt0329101: +nombres 1, identidades 10
+[categorize] tt0338013: +nombres 7, identidades 8
+[categorize] tt0349903: +nombres 8, identidades 5
+[categorize] tt0363771: +nombres 5, identidades 14
+[categorize] tt0369339: +nombres 7, identidades 11
+[categorize] tt0372183: +nombres 10, identidades 11
+[categorize] tt0383574: +nombres 0, identidades 6
+[categorize] tt0407887: +nombres 7, identidades 12
+[categorize] tt0408790: +nombres 6, identidades 13
+[categorize] tt0421715: +nombres 15, identidades 22
+[categorize] tt0430357: +nombres 15, identidades 20
+[categorize] tt0435705: +nombres 8, identidades 16
+[categorize] tt0448157: +nombres 4, identidades 7
+[categorize] tt0454876: +nombres 9, identidades 12
+[categorize] tt0467406: +nombres 7, identidades 8
+[categorize] tt0493464: +nombres 10, identidades 17
+[categorize] tt0499549: +nombres 4, identidades 14
+[categorize] tt0780504: +nombres 11, identidades 14
+[categorize] tt0790686: +nombres 5, identidades 9
+[categorize] tt0796366: +nombres 1, identidades 6
+[categorize] tt0815236: +nombres 8, identidades 16
+[categorize] tt0824747: +nombres 14, identidades 25
+[categorize] tt0848228: +nombres 1, identidades 7
+[categorize] tt0913425: +nombres 8, identidades 7
+[categorize] tt0947798: +nombres 7, identidades 12
+[categorize] tt0963794: +nombres 4, identidades 13
+[categorize] tt0974661: +nombres 4, identidades 12
+[categorize] tt0985699: +nombres 0, identidades 11
+[categorize] tt0993846: +nombres 11, identidades 18
+[categorize] tt1037705: +nombres 9, identidades 10
+[categorize] tt1059786: +nombres 4, identidades 7
+[categorize] tt1068680: +nombres 2, identidades 4
+[categorize] tt1104001: +nombres 4, identidades 8
+[categorize] tt1124035: +nombres 4, identidades 6
+[categorize] tt1125849: +nombres 4, identidades 16
+[categorize] tt1193138: +nombres 5, identidades 9
+[categorize] tt1210166: +nombres 6, identidades 16
+[categorize] tt1219289: +nombres 6, identidades 7
+[categorize] tt1291584: +nombres 6, identidades 13
+[categorize] tt1401152: +nombres 10, identidades 17
+[categorize] tt1403865: +nombres 11, identidades 24
+[categorize] tt1411238: +nombres 7, identidades 10
+[categorize] tt1446714: +nombres 2, identidades 7
+[categorize] tt1454029: +nombres 4, identidades 8
+[categorize] tt1637725: +nombres 5, identidades 8
+[categorize] tt1800241: +nombres 4, identidades 10
+[categorize] tt1979320: +nombres 7, identidades 16
+[categorize] tt2140373: +nombres 5, identidades 12
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2901.59it/s]
+[categorize] tt0113243: +nombres 2, identidades 1
+[categorize] tt0114369: +nombres 12, identidades 9
+[categorize] tt0114388: +nombres 4, identidades 3
+[categorize] tt0114814: +nombres 3, identidades 4
+[categorize] tt0115798: +nombres 5, identidades 6
+[categorize] tt0116209: +nombres 20, identidades 3
+[categorize] tt0116629: +nombres 6, identidades 4
+[categorize] tt0117500: +nombres 5, identidades 4
+[categorize] tt0117951: +nombres 4, identidades 2
+[categorize] tt0118636: +nombres 6, identidades 2
+[categorize] tt0118929: +nombres 7, identidades 4
+[categorize] tt0118971: +nombres 5, identidades 2
+[categorize] tt0119396: +nombres 15, identidades 6
+[categorize] tt0119528: +nombres 2, identidades 1
+[categorize] tt0119567: +nombres 7, identidades 6
+[categorize] tt0120660: +nombres 10, identidades 3
+[categorize] tt0120735: +nombres 2, identidades 1
+[categorize] tt0120755: +nombres 4, identidades 3
+[categorize] tt0120815: +nombres 5, identidades 2
+[categorize] tt0120902: +nombres 5, identidades 4
+[categorize] tt0120915: +nombres 1, identidades 0
+[categorize] tt0122690: +nombres 9, identidades 3
+[categorize] tt0126886: +nombres 1, identidades 1
+[categorize] tt0128445: +nombres 3, identidades 1
+[categorize] tt0134119: +nombres 10, identidades 4
+[categorize] tt0139654: +nombres 10, identidades 8
+[categorize] tt0142688: +nombres 15, identidades 3
+[categorize] tt0159365: +nombres 19, identidades 6
+[categorize] tt0164052: +nombres 6, identidades 5
+[categorize] tt0167190: +nombres 5, identidades 3
+[categorize] tt0169547: +nombres 10, identidades 2
+[categorize] tt0180073: +nombres 17, identidades 8
+[categorize] tt0183649: +nombres 3, identidades 1
+[categorize] tt0187393: +nombres 10, identidades 5
+[categorize] tt0208092: +nombres 3, identidades 2
+[categorize] tt0209144: +nombres 6, identidades 6
+[categorize] tt0213149: +nombres 7, identidades 4
+[categorize] tt0244244: +nombres 10, identidades 3
+[categorize] tt0246578: +nombres 9, identidades 3
+[categorize] tt0264395: +nombres 8, identidades 8
+[categorize] tt0286106: +nombres 17, identidades 7
+[categorize] tt0288477: +nombres 1, identidades 3
+[categorize] tt0315327: +nombres 7, identidades 5
+[categorize] tt0329101: +nombres 1, identidades 2
+[categorize] tt0338013: +nombres 7, identidades 2
+[categorize] tt0349903: +nombres 8, identidades 1
+[categorize] tt0363771: +nombres 5, identidades 3
+[categorize] tt0369339: +nombres 7, identidades 5
+[categorize] tt0372183: +nombres 10, identidades 6
+[categorize] tt0383574: +nombres 0, identidades 3
+[categorize] tt0407887: +nombres 7, identidades 6
+[categorize] tt0408790: +nombres 6, identidades 8
+[categorize] tt0421715: +nombres 15, identidades 7
+[categorize] tt0430357: +nombres 15, identidades 5
+[categorize] tt0435705: +nombres 8, identidades 5
+[categorize] tt0448157: +nombres 4, identidades 1
+[categorize] tt0454876: +nombres 9, identidades 2
+[categorize] tt0467406: +nombres 7, identidades 1
+[categorize] tt0493464: +nombres 10, identidades 7
+[categorize] tt0499549: +nombres 4, identidades 5
+[categorize] tt0780504: +nombres 11, identidades 6
+[categorize] tt0790686: +nombres 5, identidades 3
+[categorize] tt0796366: +nombres 1, identidades 1
+[categorize] tt0815236: +nombres 8, identidades 6
+[categorize] tt0824747: +nombres 14, identidades 8
+[categorize] tt0848228: +nombres 1, identidades 2
+[categorize] tt0913425: +nombres 8, identidades 4
+[categorize] tt0947798: +nombres 7, identidades 6
+[categorize] tt0963794: +nombres 4, identidades 2
+[categorize] tt0974661: +nombres 4, identidades 3
+[categorize] tt0985699: +nombres 0, identidades 4
+[categorize] tt0993846: +nombres 11, identidades 3
+[categorize] tt1037705: +nombres 9, identidades 4
+[categorize] tt1059786: +nombres 4, identidades 3
+[categorize] tt1068680: +nombres 2, identidades 2
+[categorize] tt1104001: +nombres 4, identidades 2
+[categorize] tt1124035: +nombres 4, identidades 2
+[categorize] tt1125849: +nombres 4, identidades 5
+[categorize] tt1193138: +nombres 5, identidades 3
+[categorize] tt1210166: +nombres 6, identidades 4
+[categorize] tt1219289: +nombres 6, identidades 5
+[categorize] tt1291584: +nombres 6, identidades 2
+[categorize] tt1401152: +nombres 10, identidades 7
+[categorize] tt1403865: +nombres 11, identidades 8
+[categorize] tt1411238: +nombres 7, identidades 1
+[categorize] tt1446714: +nombres 2, identidades 4
+[categorize] tt1454029: +nombres 4, identidades 5
+[categorize] tt1637725: +nombres 5, identidades 2
+[categorize] tt1800241: +nombres 4, identidades 4
+[categorize] tt1979320: +nombres 7, identidades 6
+[categorize] tt2140373: +nombres 5, identidades 4
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 5859.82it/s]
+[categ] tt0113243: tópicos 32 nombra 0.22 prec 0.4761904761904762 vs 0.12698412698412698 | MRR 0.5120482659720702 vs 0.12991113533666193
+[categ] tt0114369: tópicos 38 nombra 0.00 prec None vs None | MRR None vs None
+[categ] tt0114388: tópicos 44 nombra 0.75 prec 0.6222222222222221 vs 0.4813289141414141 | MRR 0.3593865765156438 vs 0.09938013393929772
+[categ] tt0114814: tópicos 31 nombra 0.58 prec 0.5185185185185185 vs 0.43709150326797386 | MRR 0.5020721672507386 vs 0.14025610853451315
+[categ] tt0115798: tópicos 35 nombra 0.20 prec 0.2857142857142857 vs 0.16666666666666666 | MRR None vs None
+[categ] tt0116209: tópicos 54 nombra 0.65 prec 0.15238095238095237 vs 0.059593837535013995 | MRR 0.279211443033196 vs 0.08860418002875839
+[categ] tt0116629: tópicos 34 nombra 0.85 prec 0.49080459770114937 vs 0.25845648604269295 | MRR 0.29649223725867047 vs 0.12682797485739125
+[categ] tt0117500: tópicos 32 nombra 0.72 prec 0.6884057971014492 vs 0.4476284584980238 | MRR 0.2762514829096979 vs 0.136608751640933
+[categ] tt0117951: tópicos 37 nombra 0.59 prec 0.537878787878788 vs 0.39249639249639257 | MRR 0.5348123187282999 vs 0.1135563844276126
+[categ] tt0118636: tópicos 38 nombra 0.47 prec 0.46759259259259256 vs 0.4294662309368191 | MRR 0.3487016384171957 vs 0.14025610853451315
+[categ] tt0118929: tópicos 48 nombra 0.62 prec 0.6166666666666667 vs 0.3942528735632183 | MRR 0.16183104563135517 vs 0.1482469121621171
+[categ] tt0118971: tópicos 37 nombra 0.62 prec 0.6702898550724637 vs 0.5597826086956522 | MRR 0.3427321917666802 vs 0.11847946911476746
+[categ] tt0119396: tópicos 49 nombra 0.69 prec 0.7230392156862745 vs 0.5390671420083184 | MRR 0.36823850410467035 vs 0.0944247625900167
+[categ] tt0119528: tópicos 32 nombra 0.94 prec 0.6644444444444443 vs 0.39321839080459764 | MRR 0.35476683110648394 vs 0.12991113533666193
+[categ] tt0119567: tópicos 45 nombra 0.78 prec 0.4666666666666666 vs 0.3092436974789916 | MRR 0.2604899610231622 vs 0.12991113533666193
+[categ] tt0120660: tópicos 48 nombra 0.40 prec 0.3157894736842105 vs 0.15935672514619884 | MRR 0.2045990588654404 vs 0.11847946911476746
+[categ] tt0120735: tópicos 24 nombra 0.88 prec 0.24285714285714283 vs 0.16857142857142854 | MRR None vs None
+[categ] tt0120755: tópicos 42 nombra 0.50 prec 0.7285714285714286 vs 0.7047619047619047 | MRR 0.40130995878372194 vs 0.1135563844276126
+[categ] tt0120815: tópicos 36 nombra 0.53 prec 0.4842105263157894 vs 0.4464912280701755 | MRR 0.15628570065910222 vs 0.16236050048203654
+[categ] tt0120902: tópicos 43 nombra 0.53 prec 0.8840579710144927 vs 0.6946640316205531 | MRR 0.45267430632744654 vs 0.11847946911476746
+[categ] tt0120915: tópicos 40 nombra 0.55 prec 0.6371212121212121 vs 0.4482683982683982 | MRR None vs None
+[categ] tt0122690: tópicos 29 nombra 0.41 prec 0.2916666666666667 vs 0.2651515151515152 | MRR 0.22152720317540256 vs 0.18672313984966749
+[categ] tt0126886: tópicos 37 nombra 0.73 prec 0.6728395061728394 vs 0.40111585944919276 | MRR 0.457772590691251 vs 0.12390297653756213
+[categ] tt0128445: tópicos 34 nombra 0.79 prec 0.6882716049382716 vs 0.6022079772079771 | MRR None vs None
+[categ] tt0134119: tópicos 60 nombra 0.70 prec 0.7575396825396824 vs 0.5743999225706543 | MRR 0.4069275182561165 vs 0.08010783782314994
+[categ] tt0139654: tópicos 39 nombra 0.44 prec 0.6176470588235294 vs 0.4442401960784313 | MRR None vs None
+[categ] tt0142688: tópicos 45 nombra 0.78 prec 0.35714285714285715 vs 0.280672268907563 | MRR None vs None
+[categ] tt0159365: tópicos 59 nombra 0.80 prec 0.4858156028368794 vs 0.37557816836262714 | MRR 0.24342027246051956 vs 0.08860418002875839
+[categ] tt0164052: tópicos 45 nombra 0.40 prec 0.5185185185185186 vs 0.38453159041394336 | MRR 0.2693669627968248 vs 0.12112382324839507
+[categ] tt0167190: tópicos 37 nombra 0.62 prec 0.8478260869565217 vs 0.5256916996047432 | MRR 0.368715592159268 vs 0.12390297653756213
+[categ] tt0169547: tópicos 52 nombra 0.48 prec 0.7933333333333333 vs 0.5075 | MRR None vs None
+[categ] tt0180073: tópicos 46 nombra 0.00 prec None vs None | MRR None vs None
+[categ] tt0183649: tópicos 27 nombra 0.70 prec 0.8421052631578947 vs 0.6091617933723196 | MRR 0.2689765300059418 vs 0.1798869828571841
+[categ] tt0187393: tópicos 55 nombra 0.62 prec 0.39215686274509803 vs 0.25252525252525254 | MRR 0.2700202193948634 vs 0.10906520612657374
+[categ] tt0208092: tópicos 32 nombra 0.84 prec 0.4049382716049382 vs 0.29017094017094014 | MRR 0.2854411791911792 vs 0.15733159073972944
+[categ] tt0209144: tópicos 50 nombra 0.42 prec 0.6428571428571429 vs 0.3327380952380952 | MRR 0.36512471619556774 vs 0.09938013393929772
+[categ] tt0213149: tópicos 36 nombra 0.56 prec 0.4916666666666667 vs 0.30789473684210533 | MRR 0.28236958003255136 vs 0.136608751640933
+[categ] tt0244244: tópicos 32 nombra 0.28 prec 0.5555555555555556 vs 0.5069444444444444 | MRR 0.4767248697804253 vs 0.14412802789822526
+[categ] tt0246578: tópicos 43 nombra 0.74 prec 0.40625 vs 0.23336693548387097 | MRR 0.4841400824942872 vs 0.1135563844276126
+[categ] tt0264395: tópicos 39 nombra 0.62 prec 0.6680555555555556 vs 0.5024154589371981 | MRR 0.21764892413691786 vs 0.11595997768873996
+[categ] tt0286106: tópicos 45 nombra 0.76 prec 0.7058823529411765 vs 0.4670231729055258 | MRR 0.44322181053524307 vs 0.1069635759734094
+[categ] tt0288477: tópicos 32 nombra 0.69 prec 0.85 vs 0.6945165945165944 | MRR 0.29038347273641385 vs 0.20232661897886814
+[categ] tt0315327: tópicos 44 nombra 0.55 prec 0.7152777777777777 vs 0.41274154589371975 | MRR 0.3848686524675157 vs 0.10494959226436135
+[categ] tt0329101: tópicos 33 nombra 0.70 prec 0.5869565217391304 vs 0.48583662714097503 | MRR 0.18630280662416768 vs 0.16236050048203654
+[categ] tt0338013: tópicos 37 nombra 0.57 prec 0.4206349206349206 vs 0.419047619047619 | MRR 0.2869187933610659 vs 0.11847946911476746
+[categ] tt0349903: tópicos 32 nombra 0.62 prec 0.45 vs 0.5302631578947368 | MRR 0.31738037504291366 vs 0.18672313984966749
+[categ] tt0363771: tópicos 28 nombra 0.39 prec 0.6363636363636364 vs 0.2636363636363636 | MRR 0.3753710703497855 vs 0.14025610853451315
+[categ] tt0369339: tópicos 36 nombra 0.67 prec 0.6041666666666666 vs 0.5024154589371981 | MRR 0.3426747175171544 vs 0.14025610853451315
+[categ] tt0372183: tópicos 43 nombra 0.65 prec 0.648809523809524 vs 0.42197971781305116 | MRR 0.21465759367720147 vs 0.13316623769734634
+[categ] tt0383574: tópicos 31 nombra 0.71 prec 0.6742424242424242 vs 0.5914502164502164 | MRR 0.35337973273064555 vs 0.136608751640933
+[categ] tt0407887: tópicos 42 nombra 0.45 prec 0.631578947368421 vs 0.42251461988304095 | MRR 0.3291556323130583 vs 0.10301768587257949
+[categ] tt0408790: tópicos 30 nombra 0.27 prec 0.3333333333333333 vs 0.2857142857142857 | MRR None vs None
+[categ] tt0421715: tópicos 51 nombra 0.20 prec 0.3 vs 0.07777777777777778 | MRR 0.5083932880890574 vs 0.08860418002875839
+[categ] tt0430357: tópicos 45 nombra 0.76 prec 0.35539215686274506 vs 0.3297682709447415 | MRR 0.24151716483415375 vs 0.1135563844276126
+[categ] tt0435705: tópicos 34 nombra 0.38 prec 0.5897435897435898 vs 0.42948717948717946 | MRR 0.2508010038090252 vs 0.16776423864623977
+[categ] tt0448157: tópicos 30 nombra 0.63 prec 0.7894736842105263 vs 0.6627680311890838 | MRR 0.20240482157775394 vs 0.17358850975060616
+[categ] tt0454876: tópicos 45 nombra 0.16 prec 0.5714285714285714 vs 0.16666666666666669 | MRR 0.4677467645761543 vs 0.10301768587257949
+[categ] tt0467406: tópicos 37 nombra 0.54 prec 0.8208333333333332 vs 0.6743421052631579 | MRR 0.4747952094993793 vs 0.12390297653756213
+[categ] tt0493464: tópicos 45 nombra 0.36 prec 0.6979166666666666 vs 0.5937499999999999 | MRR 0.20262256968437642 vs 0.12112382324839507
+[categ] tt0499549: tópicos 65 nombra 0.66 prec 0.8034883720930232 vs 0.6758121077888518 | MRR 0.3378018732463906 vs 0.08352022203501974
+[categ] tt0780504: tópicos 47 nombra 0.68 prec 0.21354166666666666 vs 0.10349462365591397 | MRR 0.2543121023951777 vs 0.13316623769734634
+[categ] tt0790686: tópicos 29 nombra 0.83 prec 0.5819444444444445 vs 0.344927536231884 | MRR 0.5296815558179194 vs 0.16776423864623977
+[categ] tt0796366: tópicos 31 nombra 0.29 prec 0.3333333333333333 vs 0.1597222222222222 | MRR 0.37985777769378615 vs 0.136608751640933
+[categ] tt0815236: tópicos 43 nombra 0.65 prec 0.7202380952380951 vs 0.5153218694885362 | MRR 0.21403975169228193 vs 0.11126057929724605
+[categ] tt0824747: tópicos 63 nombra 0.44 prec 0.5196428571428572 vs 0.2893518518518518 | MRR 0.3517646722766019 vs 0.07505183974136138
+[categ] tt0848228: tópicos 41 nombra 0.71 prec 0.7856321839080459 vs 0.4678366174055829 | MRR 0.3979062484571917 vs 0.10494959226436135
+[categ] tt0913425: tópicos 39 nombra 0.62 prec 0.6076388888888888 vs 0.424969806763285 | MRR 0.45281409046231175 vs 0.12390297653756213
+[categ] tt0947798: tópicos 44 nombra 0.64 prec 0.5833333333333333 vs 0.5734126984126984 | MRR 0.3485002857766928 vs 0.12682797485739125
+[categ] tt0963794: tópicos 40 nombra 0.70 prec 0.8928571428571429 vs 0.8132716049382717 | MRR 0.27807862479125917 vs 0.1135563844276126
+[categ] tt0974661: tópicos 31 nombra 0.48 prec 0.3888888888888889 vs 0.296031746031746 | MRR 0.2749020313020313 vs 0.15263832711014028
+[categ] tt0985699: tópicos 37 nombra 0.30 prec 0.1409090909090909 vs 0.13621212121212123 | MRR 0.21922874168256642 vs 0.14025610853451315
+[categ] tt0993846: tópicos 48 nombra 0.71 prec 0.7397058823529411 vs 0.6277183600713012 | MRR 0.4284687165839711 vs 0.0944247625900167
+[categ] tt1037705: tópicos 30 nombra 0.77 prec 0.2971014492753623 vs 0.25955204216073774 | MRR 0.3401604543431057 vs 0.13316623769734634
+[categ] tt1059786: tópicos 28 nombra 0.64 prec 0.16666666666666666 vs 0.0915032679738562 | MRR 0.2441411444480498 vs 0.1482469121621171
+[categ] tt1068680: tópicos 22 nombra 0.55 prec 0.8263888888888888 vs 0.7563131313131314 | MRR 0.2315527726242012 vs 0.23225445189730906
+[categ] tt1104001: tópicos 51 nombra 0.69 prec 0.45714285714285713 vs 0.41596638655462187 | MRR 0.2004442651024038 vs 0.15733159073972944
+[categ] tt1124035: tópicos 34 nombra 0.82 prec 0.3964285714285714 vs 0.22504409171075834 | MRR 0.44413706427054594 vs 0.12991113533666193
+[categ] tt1125849: tópicos 42 nombra 0.74 prec 0.4139784946236559 vs 0.37849462365591396 | MRR 0.31811286738144323 vs 0.12112382324839507
+[categ] tt1193138: tópicos 37 nombra 0.59 prec 0.2727272727272727 vs 0.19444444444444448 | MRR 0.234335882355993 vs 0.12112382324839507
+[categ] tt1210166: tópicos 41 nombra 0.41 prec 0.20588235294117646 vs 0.09926470588235294 | MRR 0.2722901973595215 vs 0.11595997768873996
+[categ] tt1219289: tópicos 35 nombra 0.91 prec 0.5755208333333334 vs 0.5076444892473118 | MRR 0.3982215769833325 vs 0.12390297653756213
+[categ] tt1291584: tópicos 65 nombra 0.80 prec 0.8157051282051282 vs 0.5051533433886375 | MRR 0.5010230171646358 vs 0.07321962337062127
+[categ] tt1401152: tópicos 40 nombra 0.47 prec 0.7982456140350876 vs 0.4400584795321637 | MRR 0.34991495909761033 vs 0.13316623769734634
+[categ] tt1403865: tópicos 56 nombra 0.84 prec 0.5780141843971631 vs 0.40810977489978423 | MRR None vs None
+[categ] tt1411238: tópicos 34 nombra 0.65 prec 0.19696969696969696 vs 0.05104617604617605 | MRR 0.20168473783942192 vs 0.14412802789822526
+[categ] tt1446714: tópicos 39 nombra 0.51 prec 0.8583333333333334 vs 0.724122807017544 | MRR 0.19007606089171836 vs 0.1482469121621171
+[categ] tt1454029: tópicos 52 nombra 0.92 prec 0.545486111111111 vs 0.3438977541371158 | MRR 0.3800779637508172 vs 0.09289160781383578
+[categ] tt1637725: tópicos 42 nombra 0.43 prec 0.9166666666666666 vs 0.42647058823529416 | MRR 0.43056644891896656 vs 0.10494959226436135
+[categ] tt1800241: tópicos 33 nombra 0.42 prec 0.6785714285714286 vs 0.6098901098901098 | MRR 0.6072573790202617 vs 0.12991113533666193
+[categ] tt1979320: tópicos 55 nombra 0.47 prec 0.8846153846153846 vs 0.7253846153846155 | MRR 0.322056639635209 vs 0.10116275861864714
+[categ] tt2140373: tópicos 46 nombra 0.61 prec 0.369047619047619 vs 0.1349206349206349 | MRR 0.454052156787918 vs 0.10116275861864714
+
+91 películas · {'naming_rate': 0.5825, 'prec_own': 0.5624, 'prec_shuffled': 0.4064, 'mrr': 0.3361, 'mrr_chance': 0.1274, 'top1': 0.2109, 'n_topics': 40.3956, 'n_ctxless': 11.1758, 'naming_rate_ctxless': 0.3267, 'prec_own_ctxless': 0.3228}
+  1_prec_own_vs_shuffled: {'mean': 0.156, 'se': 0.0108, 'n': 89, 'z': 14.48}
+  2_mrr_vs_chance: {'mean': 0.2087, 'se': 0.0131, 'n': 80, 'z': 15.94}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6414.54it/s]
+[categ] tt0113243: tópicos 32 nombra 0.22 prec 0.4761904761904762 vs 0.12698412698412698 | MRR 0.5024204744087947 vs 0.12991113533666193
+[categ] tt0114369: tópicos 38 nombra 0.00 prec None vs None | MRR None vs None
+[categ] tt0114388: tópicos 44 nombra 0.75 prec 0.6222222222222221 vs 0.4813289141414141 | MRR 0.3593865765156438 vs 0.09938013393929772
+[categ] tt0114814: tópicos 31 nombra 0.58 prec 0.5185185185185185 vs 0.43709150326797386 | MRR 0.4961197862983577 vs 0.14025610853451315
+[categ] tt0115798: tópicos 35 nombra 0.20 prec 0.2857142857142857 vs 0.16666666666666666 | MRR None vs None
+[categ] tt0116209: tópicos 54 nombra 0.65 prec 0.15238095238095237 vs 0.059593837535013995 | MRR 0.2791949658540891 vs 0.08860418002875839
+[categ] tt0116629: tópicos 34 nombra 0.85 prec 0.49080459770114937 vs 0.25845648604269295 | MRR 0.29649223725867047 vs 0.12682797485739125
+[categ] tt0117500: tópicos 32 nombra 0.72 prec 0.6884057971014492 vs 0.4476284584980238 | MRR 0.2773027954887025 vs 0.136608751640933
+[categ] tt0117951: tópicos 37 nombra 0.59 prec 0.537878787878788 vs 0.39249639249639257 | MRR 0.5348123187282999 vs 0.1135563844276126
+[categ] tt0118636: tópicos 38 nombra 0.47 prec 0.46759259259259256 vs 0.4311002178649237 | MRR 0.3358632549961054 vs 0.14025610853451315
+[categ] tt0118929: tópicos 48 nombra 0.62 prec 0.6166666666666667 vs 0.3942528735632183 | MRR 0.16167178460252898 vs 0.1482469121621171
+[categ] tt0118971: tópicos 37 nombra 0.70 prec 0.592948717948718 vs 0.4901282051282051 | MRR 0.3209415609453203 vs 0.11847946911476746
+[categ] tt0119396: tópicos 49 nombra 0.69 prec 0.7034313725490196 vs 0.5294117647058824 | MRR 0.3664654544592803 vs 0.0944247625900167
+[categ] tt0119528: tópicos 32 nombra 0.94 prec 0.6477777777777777 vs 0.38689655172413784 | MRR 0.3555860835386396 vs 0.12991113533666193
+[categ] tt0119567: tópicos 45 nombra 0.80 prec 0.46759259259259256 vs 0.3145502645502645 | MRR 0.25938712121064494 vs 0.12991113533666193
+[categ] tt0120660: tópicos 48 nombra 0.40 prec 0.3157894736842105 vs 0.15935672514619884 | MRR 0.20456126597050464 vs 0.11847946911476746
+[categ] tt0120735: tópicos 24 nombra 0.88 prec 0.24285714285714283 vs 0.16857142857142854 | MRR None vs None
+[categ] tt0120755: tópicos 42 nombra 0.50 prec 0.7333333333333334 vs 0.7041666666666666 | MRR 0.40130995878372194 vs 0.1135563844276126
+[categ] tt0120815: tópicos 36 nombra 0.53 prec 0.4842105263157894 vs 0.4464912280701755 | MRR 0.15628570065910222 vs 0.16236050048203654
+[categ] tt0120902: tópicos 43 nombra 0.58 prec 0.8133333333333332 vs 0.6163888888888889 | MRR 0.45272192537506556 vs 0.11847946911476746
+[categ] tt0120915: tópicos 40 nombra 0.55 prec 0.6371212121212121 vs 0.4482683982683982 | MRR None vs None
+[categ] tt0122690: tópicos 29 nombra 0.52 prec 0.28888888888888886 vs 0.21904761904761907 | MRR 0.19501791524970602 vs 0.18672313984966749
+[categ] tt0126886: tópicos 37 nombra 0.73 prec 0.6728395061728394 vs 0.40111585944919276 | MRR 0.457772590691251 vs 0.12390297653756213
+[categ] tt0128445: tópicos 34 nombra 0.79 prec 0.6882716049382716 vs 0.6022079772079771 | MRR None vs None
+[categ] tt0134119: tópicos 60 nombra 0.70 prec 0.7575396825396824 vs 0.5743999225706543 | MRR 0.4069275182561165 vs 0.08010783782314994
+[categ] tt0139654: tópicos 39 nombra 0.51 prec 0.4666666666666666 vs 0.3719298245614035 | MRR None vs None
+[categ] tt0142688: tópicos 45 nombra 0.78 prec 0.35714285714285715 vs 0.28193277310924375 | MRR None vs None
+[categ] tt0159365: tópicos 59 nombra 0.80 prec 0.48404255319148937 vs 0.3790857230958988 | MRR 0.2332662108358697 vs 0.08860418002875839
+[categ] tt0164052: tópicos 45 nombra 0.44 prec 0.4666666666666667 vs 0.3425438596491229 | MRR 0.2627381749180369 vs 0.12112382324839507
+[categ] tt0167190: tópicos 37 nombra 0.73 prec 0.7222222222222222 vs 0.4241452991452992 | MRR 0.3675143018670686 vs 0.12390297653756213
+[categ] tt0169547: tópicos 52 nombra 0.48 prec 0.7933333333333333 vs 0.5075 | MRR None vs None
+[categ] tt0180073: tópicos 46 nombra 0.00 prec None vs None | MRR None vs None
+[categ] tt0183649: tópicos 27 nombra 0.70 prec 0.8421052631578947 vs 0.6091617933723196 | MRR 0.2689765300059418 vs 0.1798869828571841
+[categ] tt0187393: tópicos 55 nombra 0.65 prec 0.3935185185185185 vs 0.26203703703703707 | MRR 0.2695453855866963 vs 0.10906520612657374
+[categ] tt0208092: tópicos 32 nombra 0.88 prec 0.3904761904761904 vs 0.29003527336860674 | MRR 0.28553136678136676 vs 0.15733159073972944
+[categ] tt0209144: tópicos 50 nombra 0.42 prec 0.6428571428571429 vs 0.3327380952380952 | MRR 0.3497704740427363 vs 0.09938013393929772
+[categ] tt0213149: tópicos 36 nombra 0.56 prec 0.4916666666666667 vs 0.30789473684210533 | MRR 0.28236958003255136 vs 0.136608751640933
+[categ] tt0244244: tópicos 32 nombra 0.28 prec 0.5555555555555556 vs 0.5069444444444444 | MRR 0.4767248697804253 vs 0.14412802789822526
+[categ] tt0246578: tópicos 43 nombra 0.77 prec 0.3939393939393939 vs 0.2233270202020202 | MRR 0.48315831155283884 vs 0.1135563844276126
+[categ] tt0264395: tópicos 39 nombra 0.67 prec 0.6230769230769231 vs 0.44174358974358974 | MRR 0.21626003524802898 vs 0.11595997768873996
+[categ] tt0286106: tópicos 45 nombra 0.76 prec 0.7058823529411765 vs 0.4670231729055258 | MRR 0.4144957218091543 vs 0.1069635759734094
+[categ] tt0288477: tópicos 32 nombra 0.72 prec 0.8565217391304347 vs 0.6574110671936759 | MRR 0.29013837469719816 vs 0.20232661897886814
+[categ] tt0315327: tópicos 44 nombra 0.55 prec 0.7152777777777777 vs 0.41274154589371975 | MRR 0.38600041435721694 vs 0.10494959226436135
+[categ] tt0329101: tópicos 33 nombra 0.73 prec 0.5625 vs 0.4453502415458937 | MRR 0.18630280662416768 vs 0.16236050048203654
+[categ] tt0338013: tópicos 37 nombra 0.59 prec 0.4242424242424242 vs 0.4134199134199134 | MRR 0.266170494041338 vs 0.11847946911476746
+[categ] tt0349903: tópicos 32 nombra 0.66 prec 0.47619047619047616 vs 0.5214285714285714 | MRR 0.31558611666970793 vs 0.18672313984966749
+[categ] tt0363771: tópicos 28 nombra 0.57 prec 0.65625 vs 0.31562500000000004 | MRR 0.35401375549401864 vs 0.14025610853451315
+[categ] tt0369339: tópicos 36 nombra 0.67 prec 0.5833333333333334 vs 0.48520531400966177 | MRR 0.34705091463631826 vs 0.14025610853451315
+[categ] tt0372183: tópicos 43 nombra 0.65 prec 0.648809523809524 vs 0.42197971781305116 | MRR 0.21465759367720147 vs 0.13316623769734634
+[categ] tt0383574: tópicos 31 nombra 0.71 prec 0.6742424242424242 vs 0.5914502164502164 | MRR 0.3507935258340938 vs 0.136608751640933
+[categ] tt0407887: tópicos 42 nombra 0.45 prec 0.631578947368421 vs 0.42251461988304095 | MRR 0.3259810291384551 vs 0.10301768587257949
+[categ] tt0408790: tópicos 30 nombra 0.27 prec 0.3333333333333333 vs 0.2857142857142857 | MRR None vs None
+[categ] tt0421715: tópicos 51 nombra 0.24 prec 0.25 vs 0.07575757575757576 | MRR 0.49038950537939224 vs 0.08860418002875839
+[categ] tt0430357: tópicos 45 nombra 0.76 prec 0.35539215686274506 vs 0.3297682709447415 | MRR 0.24108429619476335 vs 0.1135563844276126
+[categ] tt0435705: tópicos 34 nombra 0.38 prec 0.5897435897435898 vs 0.42948717948717946 | MRR 0.22735305024743527 vs 0.16776423864623977
+[categ] tt0448157: tópicos 30 nombra 0.70 prec 0.7857142857142857 vs 0.7075396825396826 | MRR 0.2047857739587063 vs 0.17358850975060616
+[categ] tt0454876: tópicos 45 nombra 0.18 prec 0.5 vs 0.1607142857142857 | MRR 0.46794517727456697 vs 0.10301768587257949
+[categ] tt0467406: tópicos 37 nombra 0.54 prec 0.8208333333333332 vs 0.6743421052631579 | MRR 0.4747952094993793 vs 0.12390297653756213
+[categ] tt0493464: tópicos 45 nombra 0.49 prec 0.712121212121212 vs 0.5916305916305917 | MRR 0.18948034639189734 vs 0.12112382324839507
+[categ] tt0499549: tópicos 65 nombra 0.68 prec 0.8041666666666667 vs 0.662984496124031 | MRR 0.334165509610027 vs 0.08352022203501974
+[categ] tt0780504: tópicos 47 nombra 0.70 prec 0.23737373737373738 vs 0.11553030303030301 | MRR 0.23764543572851105 vs 0.13316623769734634
+[categ] tt0790686: tópicos 29 nombra 0.83 prec 0.5819444444444445 vs 0.344927536231884 | MRR 0.5296815558179194 vs 0.16776423864623977
+[categ] tt0796366: tópicos 31 nombra 0.29 prec 0.3333333333333333 vs 0.1597222222222222 | MRR 0.3788360663272472 vs 0.136608751640933
+[categ] tt0815236: tópicos 43 nombra 0.65 prec 0.7202380952380951 vs 0.5153218694885362 | MRR 0.20088185695543984 vs 0.11126057929724605
+[categ] tt0824747: tópicos 63 nombra 0.56 prec 0.47761904761904755 vs 0.30151260504201677 | MRR 0.3572757724534313 vs 0.07505183974136138
+[categ] tt0848228: tópicos 41 nombra 0.71 prec 0.7856321839080459 vs 0.4678366174055829 | MRR 0.3979062484571917 vs 0.10494959226436135
+[categ] tt0913425: tópicos 39 nombra 0.62 prec 0.5798611111111112 vs 0.41862922705314004 | MRR 0.45039399508033956 vs 0.12390297653756213
+[categ] tt0947798: tópicos 44 nombra 0.66 prec 0.5632183908045977 vs 0.5636288998357963 | MRR 0.3492443333957404 vs 0.12682797485739125
+[categ] tt0963794: tópicos 40 nombra 0.70 prec 0.8928571428571429 vs 0.8132716049382717 | MRR 0.27807862479125917 vs 0.1135563844276126
+[categ] tt0974661: tópicos 31 nombra 0.52 prec 0.39583333333333326 vs 0.29374999999999996 | MRR 0.26290203130203127 vs 0.15263832711014028
+[categ] tt0985699: tópicos 37 nombra 0.30 prec 0.1409090909090909 vs 0.13621212121212123 | MRR 0.21922874168256642 vs 0.14025610853451315
+[categ] tt0993846: tópicos 48 nombra 0.71 prec 0.7397058823529411 vs 0.6277183600713012 | MRR 0.4284687165839711 vs 0.0944247625900167
+[categ] tt1037705: tópicos 30 nombra 0.77 prec 0.2971014492753623 vs 0.25955204216073774 | MRR 0.3376767942123867 vs 0.13316623769734634
+[categ] tt1059786: tópicos 28 nombra 0.64 prec 0.16666666666666666 vs 0.09368191721132899 | MRR 0.25601239340369775 vs 0.1482469121621171
+[categ] tt1068680: tópicos 22 nombra 0.55 prec 0.8263888888888888 vs 0.7563131313131314 | MRR 0.2315527726242012 vs 0.23225445189730906
+[categ] tt1104001: tópicos 51 nombra 0.69 prec 0.45714285714285713 vs 0.41596638655462187 | MRR 0.2004442651024038 vs 0.15733159073972944
+[categ] tt1124035: tópicos 34 nombra 0.82 prec 0.3964285714285714 vs 0.22504409171075834 | MRR 0.4444303194025107 vs 0.12991113533666193
+[categ] tt1125849: tópicos 42 nombra 0.74 prec 0.3870967741935484 vs 0.3474014336917562 | MRR 0.30233322219003333 vs 0.12112382324839507
+[categ] tt1193138: tópicos 37 nombra 0.59 prec 0.2727272727272727 vs 0.19444444444444448 | MRR 0.23748714286019468 vs 0.12112382324839507
+[categ] tt1210166: tópicos 41 nombra 0.41 prec 0.20588235294117646 vs 0.09926470588235294 | MRR 0.2722901973595215 vs 0.11595997768873996
+[categ] tt1219289: tópicos 35 nombra 0.91 prec 0.5598958333333333 vs 0.4977318548387097 | MRR 0.39664739359096723 vs 0.12390297653756213
+[categ] tt1291584: tópicos 65 nombra 0.82 prec 0.8286163522012578 vs 0.5156930333817127 | MRR 0.4861750154931047 vs 0.07321962337062127
+[categ] tt1401152: tópicos 40 nombra 0.50 prec 0.825 vs 0.46315789473684194 | MRR 0.3460260702087215 vs 0.13316623769734634
+[categ] tt1403865: tópicos 56 nombra 0.84 prec 0.5780141843971631 vs 0.40810977489978423 | MRR None vs None
+[categ] tt1411238: tópicos 34 nombra 0.68 prec 0.23188405797101447 vs 0.059453227931488814 | MRR 0.20139305421440495 vs 0.14412802789822526
+[categ] tt1446714: tópicos 39 nombra 0.56 prec 0.8712121212121212 vs 0.6926406926406925 | MRR 0.18764793346359093 vs 0.1482469121621171
+[categ] tt1454029: tópicos 52 nombra 0.92 prec 0.5663194444444445 vs 0.3664302600472813 | MRR 0.38013519818305164 vs 0.09289160781383578
+[categ] tt1637725: tópicos 42 nombra 0.45 prec 0.868421052631579 vs 0.4239766081871345 | MRR 0.43056644891896656 vs 0.10494959226436135
+[categ] tt1800241: tópicos 33 nombra 0.42 prec 0.6785714285714286 vs 0.6098901098901098 | MRR 0.6030459094862116 vs 0.12991113533666193
+[categ] tt1979320: tópicos 55 nombra 0.47 prec 0.8846153846153846 vs 0.7253846153846155 | MRR 0.322056639635209 vs 0.10116275861864714
+[categ] tt2140373: tópicos 46 nombra 0.63 prec 0.3563218390804597 vs 0.13628899835796388 | MRR 0.4537937588551014 vs 0.10116275861864714
+
+91 películas · {'naming_rate': 0.5996, 'prec_own': 0.5541, 'prec_shuffled': 0.4007, 'mrr': 0.3322, 'mrr_chance': 0.1274, 'top1': 0.2067, 'n_topics': 40.3956, 'n_ctxless': 11.1758, 'naming_rate_ctxless': 0.3549, 'prec_own_ctxless': 0.3115}
+  1_prec_own_vs_shuffled: {'mean': 0.1535, 'se': 0.0101, 'n': 89, 'z': 15.15}
+  2_mrr_vs_chance: {'mean': 0.2048, 'se': 0.0131, 'n': 80, 'z': 15.65}
+{
+ "n_films": 91,
+ "identity_pairs": 4851,
+ "identity_share_rate": 0.9668,
+ "random_pair_share_rate": 0.8631,
+ "fisher_p": 0.0,
+ "coverage_019e": 0.8138,
+ "named_019b": 0.5059,
+ "coverage_gain": {
+  "mean": 0.3079,
+  "se": 0.0164
+ },
+ "filter_pass": {
+  "pairs": 1114,
+  "share_rate": 0.9605
+ },
+ "filter_fail": {
+  "pairs": 3737,
+  "share_rate": 0.9687
+ },
+ "fisher_p_pass_vs_fail": 0.922138,
+ "identities_per_film": 11.37
+}
+{
+ "n_films": 91,
+ "identity_pairs": 953,
+ "identity_share_rate": 0.9748,
+ "random_pair_share_rate": 0.8631,
+ "fisher_p": 0.0,
+ "coverage_019e": 0.6748,
+ "named_019b": 0.5059,
+ "coverage_gain": {
+  "mean": 0.1689,
+  "se": 0.0105
+ },
+ "filter_pass": {
+  "pairs": 953,
+  "share_rate": 0.9748
+ },
+ "filter_fail": {
+  "pairs": 0,
+  "share_rate": 0.0
+ },
+ "fisher_p_pass_vs_fail": 1.0,
+ "identities_per_film": 3.86
+}
+TRAIN2_EVAL_DONE

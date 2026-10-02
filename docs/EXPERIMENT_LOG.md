@@ -166,6 +166,8 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | G-enlace-2 (juez modelo, mezclado) | "Los enlaces no contiguos de CAVA son mismo hilo más que pares al azar" | 62 % vs 65 %, p = 0.72. El lote 1 (p = 0.07) estaba confundido por revisores distintos por brazo |
 | EXP-019c | "Re-etiquetar con un registro de personajes por video sube el nombrado sin perder contenido" | Nombrado +5 pts ✅ y precisión ✅, pero MRR −0.026 en test (z −3.2) ❌ |
 | EXP-019e (método completo) | "Nombres por enlaces + registro + identidades por apariencia categorizan más sin perder precisión ni contenido" | Nombrado 0.48→0.65 ✅, identidades 0.95 vs 0.84 ✅, pero precisión −0.052 (z −3.3) ❌ y MRR −0.061 (z −10.8) ❌ |
+| EXP-019g | "Emparejar descripción → registro con umbral absoluto y margen nombra más sin perder precisión" | +1.7 pts, pero precisión −0.008 (z −2.8) en train2 |
+| EXP-019f | "Filtrar identidades genéricas las hace más consistentes" | 0.961 vs 0.969 (p = 0.92); cuesta 14 pts de cobertura |
 
 ---
 
@@ -1621,4 +1623,44 @@ resúmenes VJudge de 8 shots, mapas con contexto, GT de contenido, etiquetas
   1. tasa de nombrado > 2 SE;
   2. precisión propia ≥ −2 SE;
   3. precisión propia − barajada > 2 SE.
+
+### Resultados en train2 (91 películas nuevas; jobs 53932 + 53942)
+**EXP-019g** (registro con abs 0.50 y margen 0.10, frente a solo enlaces):
+
+| criterio | resultado | |
+|---|---|---|
+| 1. tasa de nombrado | 0.583 → 0.600, +0.017 ± 0.004 (z 4.9) | ✅ |
+| 2. precisión propia (≥ −2 SE) | 0.562 → 0.554, **−0.008 ± 0.003 (z −2.8)** | ❌ |
+| 3. propia − barajada | +0.154 ± 0.010 (z 15.2) | ✅ |
+
+- **⚠️ NO VALIDADO:** el emparejamiento por registro aún cuesta precisión,
+  aunque sea poca, y aporta poco (+1.7 pts). Queda fuera del diseño.
+
+**EXP-019f** (filtro de identidades genéricas, ≥ 2 palabras distintivas):
+
+| criterio | resultado | |
+|---|---|---|
+| 1. identidades filtradas vs pares al azar | 0.975 vs 0.863 (953 pares), p ≈ 0 | ✅ |
+| 2. identidades que pasan vs que no pasan | **0.961 vs 0.969, p = 0.92** | ❌ |
+| coste | cobertura 0.81 → 0.67; identidades por película 11.4 → 3.9 | |
+
+- **⚠️ NO VALIDADO:** las identidades "vagas" son igual de consistentes contra
+  el GT que las específicas, porque los personajes principales aparecen en
+  casi todos los tópicos y el GT no distingue. El filtro solo quita
+  cobertura y queda fuera.
+- Límite de la métrica: la consistencia de P# frente al GT está cerca del
+  techo (0.86 al azar) y no puede premiar la especificidad de una
+  descripción. Juzgar si una identidad es útil requiere otra medida.
+
+**Confirmación del diseño final en train2** (tercer conjunto nuevo, mismo
+código):
+- nombres propios + heredados por enlace: tasa de nombrado 0.506 (019b) →
+  **0.583**, precisión 0.562;
+- identidades sin filtro consistentes: 0.97 vs 0.86 al azar;
+- cobertura de categoría de personaje: **0.51 → 0.81**.
+- **Diseño final validado:** etiqueta de tópico (019b) + campos
+  estructurados `characters` = nombres propios + heredados por enlaces
+  (019d) + identidades P# sin filtro (019e c5).
+
+`results/exp019g_t2_*.json` · `results/exp019f_t2_*.json`
 

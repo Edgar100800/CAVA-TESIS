@@ -1,0 +1,565 @@
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights:  46%|████▌     | 187/408 [00:00<00:00, 1867.79it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 2314.41it/s]
+[mn] 25/91 tt0134119: 1611 shots, 125 escenas GT, done=25
+[mn] 50/91 tt0383574: 2599 shots, 70 escenas GT, done=50
+[mn] 75/91 tt1068680: 1358 shots, 81 escenas GT, done=75
+[mn] 91/91 tt2140373: 1757 shots, 200 escenas GT, done=91
+MOVIENET_EXTRACT_DONE done=91 skipped=0
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  26%|██▌       | 52/199 [00:00<00:00, 512.63it/s]Loading weights:  52%|█████▏    | 104/199 [00:00<00:00, 503.17it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 683.87it/s]
+[dialogue] tt0113243: 1292 shots
+[dialogue] tt0114369: 1609 shots
+[dialogue] tt0114388: 1237 shots
+[dialogue] tt0114814: 1130 shots
+[dialogue] tt0115798: 1158 shots
+[dialogue] tt0116209: 1758 shots
+[dialogue] tt0116629: 2539 shots
+[dialogue] tt0117500: 3033 shots
+[dialogue] tt0117951: 1216 shots
+[dialogue] tt0118636: 1485 shots
+[dialogue] tt0118929: 2521 shots
+[dialogue] tt0118971: 2179 shots
+[dialogue] tt0119396: 1201 shots
+[dialogue] tt0119528: 1236 shots
+[dialogue] tt0119567: 1100 shots
+[dialogue] tt0120660: 3458 shots
+[dialogue] tt0120735: 1098 shots
+[dialogue] tt0120755: 2776 shots
+[dialogue] tt0120815: 1390 shots
+[dialogue] tt0120902: 1697 shots
+[dialogue] tt0120915: 2258 shots
+[dialogue] tt0122690: 1876 shots
+[dialogue] tt0126886: 940 shots
+[dialogue] tt0128445: 847 shots
+[dialogue] tt0134119: 1611 shots
+[dialogue] tt0139654: 1871 shots
+[dialogue] tt0142688: 1020 shots
+[dialogue] tt0159365: 2103 shots
+[dialogue] tt0164052: 1556 shots
+[dialogue] tt0167190: 2393 shots
+[dialogue] tt0169547: 1036 shots
+[dialogue] tt0180073: 1319 shots
+[dialogue] tt0183649: 978 shots
+[dialogue] tt0187393: 2584 shots
+[dialogue] tt0208092: 1480 shots
+[dialogue] tt0209144: 1846 shots
+[dialogue] tt0213149: 3581 shots
+[dialogue] tt0244244: 1693 shots
+[dialogue] tt0246578: 1277 shots
+[dialogue] tt0264395: 2098 shots
+[dialogue] tt0286106: 638 shots
+[dialogue] tt0288477: 2080 shots
+[dialogue] tt0315327: 1382 shots
+[dialogue] tt0329101: 1661 shots
+[dialogue] tt0338013: 1316 shots
+[dialogue] tt0349903: 1035 shots
+[dialogue] tt0363771: 2972 shots
+[dialogue] tt0369339: 1767 shots
+[dialogue] tt0372183: 2299 shots
+[dialogue] tt0383574: 2599 shots
+[dialogue] tt0407887: 2661 shots
+[dialogue] tt0408790: 1176 shots
+[dialogue] tt0421715: 1161 shots
+[dialogue] tt0430357: 1769 shots
+[dialogue] tt0435705: 1677 shots
+[dialogue] tt0448157: 2049 shots
+[dialogue] tt0454876: 1240 shots
+[dialogue] tt0467406: 1097 shots
+[dialogue] tt0493464: 2320 shots
+[dialogue] tt0499549: 2723 shots
+[dialogue] tt0780504: 823 shots
+[dialogue] tt0790686: 1467 shots
+[dialogue] tt0796366: 2269 shots
+[dialogue] tt0815236: 1513 shots
+[dialogue] tt0824747: 1738 shots
+[dialogue] tt0848228: 2872 shots
+[dialogue] tt0913425: 854 shots
+[dialogue] tt0947798: 1567 shots
+[dialogue] tt0963794: 1279 shots
+[dialogue] tt0974661: 1570 shots
+[dialogue] tt0985699: 2057 shots
+[dialogue] tt0993846: 2359 shots
+[dialogue] tt1037705: 1036 shots
+[dialogue] tt1059786: 2513 shots
+[dialogue] tt1068680: 1358 shots
+[dialogue] tt1104001: 1877 shots
+[dialogue] tt1124035: 873 shots
+[dialogue] tt1125849: 937 shots
+[dialogue] tt1193138: 1607 shots
+[dialogue] tt1210166: 1532 shots
+[dialogue] tt1219289: 1485 shots
+[dialogue] tt1291584: 2189 shots
+[dialogue] tt1401152: 2156 shots
+[dialogue] tt1403865: 1531 shots
+[dialogue] tt1411238: 956 shots
+[dialogue] tt1446714: 2178 shots
+[dialogue] tt1454029: 1584 shots
+[dialogue] tt1637725: 1938 shots
+[dialogue] tt1800241: 1433 shots
+[dialogue] tt1979320: 2362 shots
+[dialogue] tt2140373: 1757 shots
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   1%|          | 5/729 [00:00<00:16, 45.18it/s]Loading weights:   2%|▏         | 17/729 [00:00<00:08, 85.51it/s]Loading weights:   4%|▍         | 29/729 [00:00<00:07, 88.84it/s]Loading weights:   6%|▌         | 42/729 [00:00<00:06, 103.46it/s]Loading weights:   7%|▋         | 54/729 [00:00<00:06, 107.23it/s]Loading weights:  10%|▉         | 72/729 [00:00<00:05, 128.11it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:04, 129.91it/s]Loading weights:  14%|█▍        | 102/729 [00:00<00:05, 114.42it/s]Loading weights:  16%|█▌        | 114/729 [00:01<00:05, 115.26it/s]Loading weights:  17%|█▋        | 126/729 [00:01<00:05, 115.49it/s]Loading weights:  19%|█▉        | 138/729 [00:01<00:05, 113.89it/s]Loading weights:  21%|██        | 154/729 [00:01<00:04, 124.96it/s]Loading weights:  23%|██▎       | 171/729 [00:01<00:04, 121.97it/s]Loading weights:  25%|██▌       | 185/729 [00:01<00:04, 123.78it/s]Loading weights:  27%|██▋       | 198/729 [00:01<00:04, 115.42it/s]Loading weights:  29%|██▉       | 210/729 [00:01<00:04, 116.04it/s]Loading weights:  31%|███       | 226/729 [00:01<00:03, 127.19it/s]Loading weights:  33%|███▎      | 239/729 [00:02<00:03, 125.66it/s]Loading weights:  35%|███▍      | 252/729 [00:02<00:03, 126.74it/s]Loading weights:  36%|███▋      | 265/729 [00:02<00:03, 125.91it/s]Loading weights:  38%|███▊      | 280/729 [00:02<00:03, 125.37it/s]Loading weights:  40%|████      | 293/729 [00:02<00:03, 120.81it/s]Loading weights:  42%|████▏     | 306/729 [00:02<00:03, 115.16it/s]Loading weights:  44%|████▍     | 321/729 [00:02<00:03, 123.91it/s]Loading weights:  46%|████▌     | 334/729 [00:02<00:03, 125.38it/s]Loading weights:  58%|█████▊    | 424/729 [00:02<00:00, 344.32it/s]Loading weights:  70%|███████   | 511/729 [00:03<00:00, 491.46it/s]Loading weights:  82%|████████▏ | 600/729 [00:03<00:00, 605.88it/s]Loading weights:  95%|█████████▌| 693/729 [00:03<00:00, 693.87it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 222.28it/s]
+[ledger] tt0113243: 162 resúmenes (surface)
+[ledger] tt0114369: 202 resúmenes (surface)
+[ledger] tt0114388: 155 resúmenes (surface)
+[ledger] tt0114814: 142 resúmenes (surface)
+[ledger] tt0115798: 145 resúmenes (surface)
+[ledger] tt0116209: 220 resúmenes (surface)
+[ledger] tt0116629: 318 resúmenes (surface)
+[ledger] tt0117500: 380 resúmenes (surface)
+[ledger] tt0117951: 152 resúmenes (surface)
+[ledger] tt0118636: 186 resúmenes (surface)
+[ledger] tt0118929: 316 resúmenes (surface)
+[ledger] tt0118971: 273 resúmenes (surface)
+[ledger] tt0119396: 151 resúmenes (surface)
+[ledger] tt0119528: 155 resúmenes (surface)
+[ledger] tt0119567: 138 resúmenes (surface)
+[ledger] tt0120660: 433 resúmenes (surface)
+[ledger] tt0120735: 138 resúmenes (surface)
+[ledger] tt0120755: 347 resúmenes (surface)
+[ledger] tt0120815: 174 resúmenes (surface)
+[ledger] tt0120902: 213 resúmenes (surface)
+[ledger] tt0120915: 283 resúmenes (surface)
+[ledger] tt0122690: 235 resúmenes (surface)
+[ledger] tt0126886: 118 resúmenes (surface)
+[ledger] tt0128445: 106 resúmenes (surface)
+[ledger] tt0134119: 202 resúmenes (surface)
+[ledger] tt0139654: 234 resúmenes (surface)
+[ledger] tt0142688: 128 resúmenes (surface)
+[ledger] tt0159365: 263 resúmenes (surface)
+[ledger] tt0164052: 195 resúmenes (surface)
+[ledger] tt0167190: 300 resúmenes (surface)
+[ledger] tt0169547: 130 resúmenes (surface)
+[ledger] tt0180073: 165 resúmenes (surface)
+[ledger] tt0183649: 123 resúmenes (surface)
+[ledger] tt0187393: 323 resúmenes (surface)
+[ledger] tt0208092: 185 resúmenes (surface)
+[ledger] tt0209144: 231 resúmenes (surface)
+[ledger] tt0213149: 448 resúmenes (surface)
+[ledger] tt0244244: 212 resúmenes (surface)
+[ledger] tt0246578: 160 resúmenes (surface)
+[ledger] tt0264395: 263 resúmenes (surface)
+[ledger] tt0286106: 80 resúmenes (surface)
+[ledger] tt0288477: 260 resúmenes (surface)
+[ledger] tt0315327: 173 resúmenes (surface)
+[ledger] tt0329101: 208 resúmenes (surface)
+[ledger] tt0338013: 165 resúmenes (surface)
+[ledger] tt0349903: 130 resúmenes (surface)
+[ledger] tt0363771: 372 resúmenes (surface)
+[ledger] tt0369339: 221 resúmenes (surface)
+[ledger] tt0372183: 288 resúmenes (surface)
+[ledger] tt0383574: 325 resúmenes (surface)
+[ledger] tt0407887: 333 resúmenes (surface)
+[ledger] tt0408790: 147 resúmenes (surface)
+[ledger] tt0421715: 146 resúmenes (surface)
+[ledger] tt0430357: 222 resúmenes (surface)
+[ledger] tt0435705: 210 resúmenes (surface)
+[ledger] tt0448157: 257 resúmenes (surface)
+[ledger] tt0454876: 155 resúmenes (surface)
+[ledger] tt0467406: 138 resúmenes (surface)
+[ledger] tt0493464: 290 resúmenes (surface)
+[ledger] tt0499549: 341 resúmenes (surface)
+[ledger] tt0780504: 103 resúmenes (surface)
+[ledger] tt0790686: 184 resúmenes (surface)
+[ledger] tt0796366: 284 resúmenes (surface)
+[ledger] tt0815236: 190 resúmenes (surface)
+[ledger] tt0824747: 218 resúmenes (surface)
+[ledger] tt0848228: 359 resúmenes (surface)
+[ledger] tt0913425: 107 resúmenes (surface)
+[ledger] tt0947798: 196 resúmenes (surface)
+[ledger] tt0963794: 160 resúmenes (surface)
+[ledger] tt0974661: 197 resúmenes (surface)
+[ledger] tt0985699: 258 resúmenes (surface)
+[ledger] tt0993846: 295 resúmenes (surface)
+[ledger] tt1037705: 130 resúmenes (surface)
+[ledger] tt1059786: 315 resúmenes (surface)
+[ledger] tt1068680: 170 resúmenes (surface)
+[ledger] tt1104001: 235 resúmenes (surface)
+[ledger] tt1124035: 110 resúmenes (surface)
+[ledger] tt1125849: 118 resúmenes (surface)
+[ledger] tt1193138: 201 resúmenes (surface)
+[ledger] tt1210166: 192 resúmenes (surface)
+[ledger] tt1219289: 186 resúmenes (surface)
+[ledger] tt1291584: 274 resúmenes (surface)
+[ledger] tt1401152: 270 resúmenes (surface)
+[ledger] tt1403865: 192 resúmenes (surface)
+[ledger] tt1411238: 120 resúmenes (surface)
+[ledger] tt1446714: 273 resúmenes (surface)
+[ledger] tt1454029: 198 resúmenes (surface)
+[ledger] tt1637725: 243 resúmenes (surface)
+[ledger] tt1800241: 180 resúmenes (surface)
+[ledger] tt1979320: 296 resúmenes (surface)
+[ledger] tt2140373: 220 resúmenes (surface)
+[ledger] listo
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2521.44it/s]
+[topicmap] tt0113243: 127 tópicos (35 con retornos), fine 774
+[topicmap] tt0114369: 153 tópicos (46 con retornos), fine 1609
+[topicmap] tt0114388: 125 tópicos (41 con retornos), fine 458
+[topicmap] tt0114814: 112 tópicos (38 con retornos), fine 535
+[topicmap] tt0115798: 99 tópicos (42 con retornos), fine 511
+[topicmap] tt0116209: 155 tópicos (61 con retornos), fine 907
+[topicmap] tt0116629: 193 tópicos (54 con retornos), fine 1239
+[topicmap] tt0117500: 228 tópicos (78 con retornos), fine 1520
+[topicmap] tt0117951: 120 tópicos (37 con retornos), fine 529
+[topicmap] tt0118636: 138 tópicos (42 con retornos), fine 737
+[topicmap] tt0118929: 239 tópicos (79 con retornos), fine 1521
+[topicmap] tt0118971: 162 tópicos (53 con retornos), fine 775
+[topicmap] tt0119396: 99 tópicos (49 con retornos), fine 416
+[topicmap] tt0119528: 118 tópicos (41 con retornos), fine 479
+[topicmap] tt0119567: 107 tópicos (37 con retornos), fine 798
+[topicmap] tt0120660: 229 tópicos (90 con retornos), fine 1417
+[topicmap] tt0120735: 117 tópicos (34 con retornos), fine 525
+[topicmap] tt0120755: 172 tópicos (65 con retornos), fine 1825
+[topicmap] tt0120815: 146 tópicos (34 con retornos), fine 811
+[topicmap] tt0120902: 167 tópicos (58 con retornos), fine 1058
+[topicmap] tt0120915: 157 tópicos (55 con retornos), fine 1309
+[topicmap] tt0122690: 147 tópicos (43 con retornos), fine 1242
+[topicmap] tt0126886: 103 tópicos (27 con retornos), fine 410
+[topicmap] tt0128445: 83 tópicos (32 con retornos), fine 298
+[topicmap] tt0134119: 161 tópicos (66 con retornos), fine 584
+[topicmap] tt0139654: 146 tópicos (47 con retornos), fine 757
+[topicmap] tt0142688: 119 tópicos (30 con retornos), fine 681
+[topicmap] tt0159365: 152 tópicos (69 con retornos), fine 1039
+[topicmap] tt0164052: 141 tópicos (49 con retornos), fine 920
+[topicmap] tt0167190: 175 tópicos (62 con retornos), fine 1518
+[topicmap] tt0169547: 116 tópicos (54 con retornos), fine 475
+[topicmap] tt0180073: 158 tópicos (49 con retornos), fine 1319
+[topicmap] tt0183649: 102 tópicos (31 con retornos), fine 351
+[topicmap] tt0187393: 182 tópicos (61 con retornos), fine 1663
+[topicmap] tt0208092: 128 tópicos (52 con retornos), fine 671
+[topicmap] tt0209144: 170 tópicos (73 con retornos), fine 949
+[topicmap] tt0213149: 180 tópicos (57 con retornos), fine 1612
+[topicmap] tt0244244: 162 tópicos (45 con retornos), fine 961
+[topicmap] tt0246578: 131 tópicos (45 con retornos), fine 660
+[topicmap] tt0264395: 143 tópicos (65 con retornos), fine 898
+[topicmap] tt0286106: 98 tópicos (28 con retornos), fine 418
+[topicmap] tt0288477: 164 tópicos (57 con retornos), fine 1148
+[topicmap] tt0315327: 105 tópicos (49 con retornos), fine 491
+[topicmap] tt0329101: 150 tópicos (53 con retornos), fine 1076
+[topicmap] tt0338013: 119 tópicos (44 con retornos), fine 498
+[topicmap] tt0349903: 124 tópicos (29 con retornos), fine 516
+[topicmap] tt0363771: 117 tópicos (43 con retornos), fine 1741
+[topicmap] tt0369339: 152 tópicos (56 con retornos), fine 1002
+[topicmap] tt0372183: 200 tópicos (67 con retornos), fine 1668
+[topicmap] tt0383574: 213 tópicos (66 con retornos), fine 1539
+[topicmap] tt0407887: 203 tópicos (62 con retornos), fine 1172
+[topicmap] tt0408790: 139 tópicos (36 con retornos), fine 665
+[topicmap] tt0421715: 124 tópicos (38 con retornos), fine 668
+[topicmap] tt0430357: 172 tópicos (65 con retornos), fine 1159
+[topicmap] tt0435705: 130 tópicos (50 con retornos), fine 977
+[topicmap] tt0448157: 170 tópicos (59 con retornos), fine 1039
+[topicmap] tt0454876: 113 tópicos (36 con retornos), fine 832
+[topicmap] tt0467406: 119 tópicos (38 con retornos), fine 388
+[topicmap] tt0493464: 183 tópicos (65 con retornos), fine 1672
+[topicmap] tt0499549: 204 tópicos (94 con retornos), fine 1744
+[topicmap] tt0780504: 95 tópicos (29 con retornos), fine 685
+[topicmap] tt0790686: 135 tópicos (42 con retornos), fine 1000
+[topicmap] tt0796366: 163 tópicos (56 con retornos), fine 1262
+[topicmap] tt0815236: 130 tópicos (58 con retornos), fine 510
+[topicmap] tt0824747: 164 tópicos (70 con retornos), fine 722
+[topicmap] tt0848228: 241 tópicos (77 con retornos), fine 1867
+[topicmap] tt0913425: 93 tópicos (21 con retornos), fine 350
+[topicmap] tt0947798: 139 tópicos (44 con retornos), fine 891
+[topicmap] tt0963794: 93 tópicos (48 con retornos), fine 660
+[topicmap] tt0974661: 115 tópicos (47 con retornos), fine 633
+[topicmap] tt0985699: 229 tópicos (49 con retornos), fine 1121
+[topicmap] tt0993846: 181 tópicos (62 con retornos), fine 715
+[topicmap] tt1037705: 94 tópicos (38 con retornos), fine 633
+[topicmap] tt1059786: 140 tópicos (53 con retornos), fine 1275
+[topicmap] tt1068680: 108 tópicos (30 con retornos), fine 501
+[topicmap] tt1104001: 184 tópicos (57 con retornos), fine 1250
+[topicmap] tt1124035: 84 tópicos (31 con retornos), fine 334
+[topicmap] tt1125849: 84 tópicos (38 con retornos), fine 413
+[topicmap] tt1193138: 146 tópicos (46 con retornos), fine 690
+[topicmap] tt1210166: 132 tópicos (51 con retornos), fine 566
+[topicmap] tt1219289: 148 tópicos (44 con retornos), fine 774
+[topicmap] tt1291584: 229 tópicos (61 con retornos), fine 930
+[topicmap] tt1401152: 144 tópicos (73 con retornos), fine 1470
+[topicmap] tt1403865: 145 tópicos (69 con retornos), fine 811
+[topicmap] tt1411238: 97 tópicos (32 con retornos), fine 346
+[topicmap] tt1446714: 137 tópicos (57 con retornos), fine 1310
+[topicmap] tt1454029: 132 tópicos (47 con retornos), fine 534
+[topicmap] tt1637725: 172 tópicos (78 con retornos), fine 848
+[topicmap] tt1800241: 112 tópicos (23 con retornos), fine 408
+[topicmap] tt1979320: 200 tópicos (64 con retornos), fine 1390
+[topicmap] tt2140373: 161 tópicos (59 con retornos), fine 656
+[contentgt] tt0113243: líneas 744 cues 1024 alineados 84% hablante mapeado 92%
+[contentgt] tt0114369: líneas 957 cues 0 alineados 0% hablante mapeado 88%
+[contentgt] tt0114388: líneas 1182 cues 1466 alineados 80% hablante mapeado 89%
+[contentgt] tt0114814: líneas 705 cues 1114 alineados 56% hablante mapeado 89%
+[contentgt] tt0115798: líneas 0 cues 789 alineados 0% hablante mapeado 0%
+[contentgt] tt0116209: líneas 911 cues 1523 alineados 36% hablante mapeado 77%
+[contentgt] tt0116629: líneas 870 cues 1417 alineados 36% hablante mapeado 79%
+[contentgt] tt0117500: líneas 759 cues 1527 alineados 19% hablante mapeado 88%
+[contentgt] tt0117951: líneas 737 cues 1371 alineados 61% hablante mapeado 80%
+[contentgt] tt0118636: líneas 897 cues 988 alineados 35% hablante mapeado 91%
+[contentgt] tt0118929: líneas 672 cues 1104 alineados 6% hablante mapeado 48%
+[contentgt] tt0118971: líneas 1044 cues 2227 alineados 52% hablante mapeado 97%
+[contentgt] tt0119396: líneas 1569 cues 2155 alineados 48% hablante mapeado 91%
+[contentgt] tt0119528: líneas 1003 cues 1269 alineados 39% hablante mapeado 81%
+[contentgt] tt0119567: líneas 662 cues 1204 alineados 16% hablante mapeado 93%
+[contentgt] tt0120660: líneas 1141 cues 1628 alineados 11% hablante mapeado 80%
+[contentgt] tt0120735: líneas 0 cues 1568 alineados 0% hablante mapeado 0%
+[contentgt] tt0120755: líneas 786 cues 1080 alineados 53% hablante mapeado 98%
+[contentgt] tt0120815: líneas 1010 cues 1689 alineados 8% hablante mapeado 75%
+[contentgt] tt0120902: líneas 638 cues 776 alineados 64% hablante mapeado 98%
+[contentgt] tt0120915: líneas 0 cues 1438 alineados 0% hablante mapeado 0%
+[contentgt] tt0122690: líneas 734 cues 889 alineados 10% hablante mapeado 89%
+[contentgt] tt0126886: líneas 748 cues 1802 alineados 61% hablante mapeado 88%
+[contentgt] tt0128445: líneas 0 cues 1465 alineados 0% hablante mapeado 0%
+[contentgt] tt0134119: líneas 838 cues 1812 alineados 62% hablante mapeado 99%
+[contentgt] tt0139654: líneas 0 cues 2265 alineados 0% hablante mapeado 0%
+[contentgt] tt0142688: líneas 0 cues 1238 alineados 0% hablante mapeado 0%
+[contentgt] tt0159365: líneas 1066 cues 1495 alineados 42% hablante mapeado 92%
+[contentgt] tt0164052: líneas 957 cues 1069 alineados 32% hablante mapeado 80%
+[contentgt] tt0167190: líneas 780 cues 1211 alineados 54% hablante mapeado 79%
+[contentgt] tt0169547: líneas 0 cues 1351 alineados 0% hablante mapeado 0%
+[contentgt] tt0180073: líneas 1002 cues 0 alineados 0% hablante mapeado 91%
+[contentgt] tt0183649: líneas 977 cues 1300 alineados 12% hablante mapeado 64%
+[contentgt] tt0187393: líneas 835 cues 1399 alineados 26% hablante mapeado 45%
+[contentgt] tt0208092: líneas 952 cues 1522 alineados 26% hablante mapeado 75%
+[contentgt] tt0209144: líneas 819 cues 1229 alineados 56% hablante mapeado 100%
+[contentgt] tt0213149: líneas 832 cues 2485 alineados 11% hablante mapeado 76%
+[contentgt] tt0244244: líneas 653 cues 902 alineados 43% hablante mapeado 94%
+[contentgt] tt0246578: líneas 916 cues 1038 alineados 57% hablante mapeado 83%
+[contentgt] tt0264395: líneas 1050 cues 1475 alineados 27% hablante mapeado 94%
+[contentgt] tt0286106: líneas 578 cues 1052 alineados 63% hablante mapeado 51%
+[contentgt] tt0288477: líneas 789 cues 747 alineados 9% hablante mapeado 93%
+[contentgt] tt0315327: líneas 817 cues 1425 alineados 31% hablante mapeado 93%
+[contentgt] tt0329101: líneas 727 cues 1113 alineados 7% hablante mapeado 11%
+[contentgt] tt0338013: líneas 1106 cues 1548 alineados 30% hablante mapeado 88%
+[contentgt] tt0349903: líneas 1033 cues 1437 alineados 9% hablante mapeado 93%
+[contentgt] tt0363771: líneas 643 cues 1067 alineados 59% hablante mapeado 96%
+[contentgt] tt0369339: líneas 773 cues 1200 alineados 53% hablante mapeado 99%
+[contentgt] tt0372183: líneas 446 cues 1017 alineados 20% hablante mapeado 97%
+[contentgt] tt0383574: líneas 850 cues 1216 alineados 81% hablante mapeado 96%
+[contentgt] tt0407887: líneas 1334 cues 1905 alineados 57% hablante mapeado 91%
+[contentgt] tt0408790: líneas 596 cues 777 alineados 0% hablante mapeado 0%
+[contentgt] tt0421715: líneas 1248 cues 1806 alineados 65% hablante mapeado 98%
+[contentgt] tt0430357: líneas 647 cues 1110 alineados 26% hablante mapeado 96%
+[contentgt] tt0435705: líneas 834 cues 986 alineados 8% hablante mapeado 84%
+[contentgt] tt0448157: líneas 913 cues 1134 alineados 7% hablante mapeado 47%
+[contentgt] tt0454876: líneas 359 cues 968 alineados 78% hablante mapeado 46%
+[contentgt] tt0467406: líneas 931 cues 1904 alineados 59% hablante mapeado 97%
+[contentgt] tt0493464: líneas 705 cues 822 alineados 14% hablante mapeado 75%
+[contentgt] tt0499549: líneas 926 cues 1515 alineados 49% hablante mapeado 83%
+[contentgt] tt0780504: líneas 610 cues 568 alineados 32% hablante mapeado 98%
+[contentgt] tt0790686: líneas 533 cues 806 alineados 40% hablante mapeado 99%
+[contentgt] tt0796366: líneas 1015 cues 1321 alineados 57% hablante mapeado 87%
+[contentgt] tt0815236: líneas 1069 cues 1566 alineados 12% hablante mapeado 76%
+[contentgt] tt0824747: líneas 1119 cues 1964 alineados 65% hablante mapeado 89%
+[contentgt] tt0848228: líneas 963 cues 1754 alineados 81% hablante mapeado 89%
+[contentgt] tt0913425: líneas 1039 cues 1424 alineados 28% hablante mapeado 67%
+[contentgt] tt0947798: líneas 664 cues 950 alineados 57% hablante mapeado 94%
+[contentgt] tt0963794: líneas 1074 cues 1038 alineados 27% hablante mapeado 86%
+[contentgt] tt0974661: líneas 870 cues 1335 alineados 15% hablante mapeado 74%
+[contentgt] tt0985699: líneas 411 cues 1150 alineados 23% hablante mapeado 87%
+[contentgt] tt0993846: líneas 875 cues 3960 alineados 24% hablante mapeado 98%
+[contentgt] tt1037705: líneas 874 cues 835 alineados 35% hablante mapeado 88%
+[contentgt] tt1059786: líneas 1075 cues 1469 alineados 15% hablante mapeado 67%
+[contentgt] tt1068680: líneas 1327 cues 1397 alineados 9% hablante mapeado 63%
+[contentgt] tt1104001: líneas 816 cues 1076 alineados 7% hablante mapeado 13%
+[contentgt] tt1124035: líneas 937 cues 1628 alineados 75% hablante mapeado 96%
+[contentgt] tt1125849: líneas 990 cues 1343 alineados 22% hablante mapeado 85%
+[contentgt] tt1193138: líneas 1009 cues 1413 alineados 67% hablante mapeado 96%
+[contentgt] tt1210166: líneas 1590 cues 1780 alineados 33% hablante mapeado 87%
+[contentgt] tt1219289: líneas 1025 cues 1218 alineados 48% hablante mapeado 88%
+[contentgt] tt1291584: líneas 800 cues 2112 alineados 62% hablante mapeado 87%
+[contentgt] tt1401152: líneas 823 cues 887 alineados 40% hablante mapeado 66%
+[contentgt] tt1403865: líneas 1 cues 1364 alineados 0% hablante mapeado 0%
+[contentgt] tt1411238: líneas 1245 cues 1495 alineados 10% hablante mapeado 84%
+[contentgt] tt1446714: líneas 839 cues 1420 alineados 8% hablante mapeado 44%
+[contentgt] tt1454029: líneas 1337 cues 1918 alineados 41% hablante mapeado 97%
+[contentgt] tt1637725: líneas 1231 cues 1809 alineados 64% hablante mapeado 90%
+[contentgt] tt1800241: líneas 1179 cues 2947 alineados 73% hablante mapeado 91%
+[contentgt] tt1979320: líneas 678 cues 1370 alineados 40% hablante mapeado 98%
+[contentgt] tt2140373: líneas 1146 cues 1830 alineados 57% hablante mapeado 52%
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:00<03:23,  2.84it/s]Loading weights:   2%|▏         | 12/579 [00:00<00:17, 33.13it/s]Loading weights:   4%|▍         | 22/579 [00:00<00:10, 51.43it/s]Loading weights:   5%|▌         | 30/579 [00:00<00:09, 57.15it/s]Loading weights:   7%|▋         | 42/579 [00:00<00:07, 69.78it/s]Loading weights:   9%|▉         | 53/579 [00:00<00:06, 80.51it/s]Loading weights:  11%|█         | 65/579 [00:01<00:05, 88.60it/s]Loading weights:  13%|█▎        | 77/579 [00:01<00:05, 90.41it/s]Loading weights:  15%|█▌        | 89/579 [00:01<00:05, 91.66it/s]Loading weights:  17%|█▋        | 101/579 [00:01<00:05, 91.97it/s]Loading weights:  20%|█▉        | 113/579 [00:01<00:04, 93.28it/s]Loading weights:  22%|██▏       | 125/579 [00:01<00:04, 97.99it/s]Loading weights:  24%|██▎       | 137/579 [00:01<00:04, 97.53it/s]Loading weights:  26%|██▌       | 149/579 [00:01<00:04, 90.65it/s]Loading weights:  28%|██▊       | 162/579 [00:02<00:04, 94.36it/s]Loading weights:  30%|███       | 174/579 [00:02<00:04, 95.96it/s]Loading weights:  32%|███▏      | 186/579 [00:02<00:04, 95.32it/s]Loading weights:  34%|███▍      | 198/579 [00:02<00:03, 95.91it/s]Loading weights:  36%|███▋      | 210/579 [00:02<00:03, 100.10it/s]Loading weights:  38%|███▊      | 222/579 [00:02<00:03, 98.77it/s] Loading weights:  40%|████      | 234/579 [00:02<00:03, 98.64it/s]Loading weights:  42%|████▏     | 246/579 [00:02<00:03, 96.06it/s]Loading weights:  45%|████▍     | 258/579 [00:03<00:03, 94.90it/s]Loading weights:  47%|████▋     | 270/579 [00:03<00:03, 95.04it/s]Loading weights:  49%|████▊     | 282/579 [00:03<00:03, 95.19it/s]Loading weights:  51%|█████     | 294/579 [00:03<00:02, 97.84it/s]Loading weights:  53%|█████▎    | 306/579 [00:03<00:02, 100.87it/s]Loading weights:  55%|█████▍    | 318/579 [00:03<00:02, 98.42it/s] Loading weights:  57%|█████▋    | 330/579 [00:03<00:02, 97.52it/s]Loading weights:  59%|█████▉    | 342/579 [00:03<00:02, 100.23it/s]Loading weights:  61%|██████    | 354/579 [00:03<00:02, 99.71it/s] Loading weights:  63%|██████▎   | 366/579 [00:04<00:02, 98.26it/s]Loading weights:  65%|██████▌   | 377/579 [00:04<00:02, 94.42it/s]Loading weights:  67%|██████▋   | 390/579 [00:04<00:01, 100.14it/s]Loading weights:  69%|██████▉   | 402/579 [00:04<00:01, 101.71it/s]Loading weights:  72%|███████▏  | 414/579 [00:04<00:01, 98.82it/s] Loading weights:  74%|███████▎  | 426/579 [00:04<00:01, 97.63it/s]Loading weights:  75%|███████▌  | 437/579 [00:04<00:01, 100.79it/s]Loading weights:  78%|███████▊  | 449/579 [00:04<00:01, 99.47it/s] Loading weights:  80%|███████▉  | 461/579 [00:05<00:01, 96.82it/s]Loading weights:  82%|████████▏ | 473/579 [00:05<00:01, 96.29it/s]Loading weights:  84%|████████▍ | 485/579 [00:05<00:00, 94.28it/s]Loading weights:  86%|████████▌ | 496/579 [00:05<00:00, 98.17it/s]Loading weights:  88%|████████▊ | 507/579 [00:05<00:00, 93.59it/s]Loading weights:  90%|████████▉ | 520/579 [00:05<00:00, 97.31it/s]Loading weights:  92%|█████████▏| 530/579 [00:05<00:00, 97.56it/s]Loading weights:  93%|█████████▎| 540/579 [00:05<00:00, 92.35it/s]Loading weights:  95%|█████████▍| 550/579 [00:06<00:00, 92.23it/s]Loading weights:  97%|█████████▋| 560/579 [00:06<00:00, 89.89it/s]Loading weights:  98%|█████████▊| 570/579 [00:06<00:00, 85.48it/s]Loading weights: 100%|██████████| 579/579 [00:06<00:00, 91.67it/s]
+[topiclabels] tt0113243: 39 etiquetas
+[topiclabels] tt0114369: 40 etiquetas
+[topiclabels] tt0114388: 49 etiquetas
+[topiclabels] tt0114814: 37 etiquetas
+[topiclabels] tt0115798: 39 etiquetas
+[topiclabels] tt0116209: 61 etiquetas
+[topiclabels] tt0116629: 38 etiquetas
+[topiclabels] tt0117500: 33 etiquetas
+[topiclabels] tt0117951: 38 etiquetas
+[topiclabels] tt0118636: 41 etiquetas
+[topiclabels] tt0118929: 50 etiquetas
+[topiclabels] tt0118971: 38 etiquetas
+[topiclabels] tt0119396: 53 etiquetas
+[topiclabels] tt0119528: 35 etiquetas
+[topiclabels] tt0119567: 48 etiquetas
+[topiclabels] tt0120660: 49 etiquetas
+[topiclabels] tt0120735: 29 etiquetas
+[topiclabels] tt0120755: 44 etiquetas
+[topiclabels] tt0120815: 58 etiquetas
+[topiclabels] tt0120902: 48 etiquetas
+[topiclabels] tt0120915: 43 etiquetas
+[topiclabels] tt0122690: 34 etiquetas
+[topiclabels] tt0126886: 38 etiquetas
+[topiclabels] tt0128445: 37 etiquetas
+[topiclabels] tt0134119: 61 etiquetas
+[topiclabels] tt0139654: 43 etiquetas
+[topiclabels] tt0142688: 51 etiquetas
+[topiclabels] tt0159365: 66 etiquetas
+[topiclabels] tt0164052: 49 etiquetas
+[topiclabels] tt0167190: 41 etiquetas
+[topiclabels] tt0169547: 53 etiquetas
+[topiclabels] tt0180073: 51 etiquetas
+[topiclabels] tt0183649: 32 etiquetas
+[topiclabels] tt0187393: 59 etiquetas
+[topiclabels] tt0208092: 34 etiquetas
+[topiclabels] tt0209144: 51 etiquetas
+[topiclabels] tt0213149: 45 etiquetas
+[topiclabels] tt0244244: 38 etiquetas
+[topiclabels] tt0246578: 52 etiquetas
+[topiclabels] tt0264395: 42 etiquetas
+[topiclabels] tt0286106: 50 etiquetas
+[topiclabels] tt0288477: 36 etiquetas
+[topiclabels] tt0315327: 45 etiquetas
+[topiclabels] tt0329101: 37 etiquetas
+[topiclabels] tt0338013: 39 etiquetas
+[topiclabels] tt0349903: 48 etiquetas
+[topiclabels] tt0363771: 29 etiquetas
+[topiclabels] tt0369339: 39 etiquetas
+[topiclabels] tt0372183: 45 etiquetas
+[topiclabels] tt0383574: 35 etiquetas
+[topiclabels] tt0407887: 44 etiquetas
+[topiclabels] tt0408790: 39 etiquetas
+[topiclabels] tt0421715: 59 etiquetas
+[topiclabels] tt0430357: 57 etiquetas
+[topiclabels] tt0435705: 36 etiquetas
+[topiclabels] tt0448157: 31 etiquetas
+[topiclabels] tt0454876: 52 etiquetas
+[topiclabels] tt0467406: 41 etiquetas
+[topiclabels] tt0493464: 46 etiquetas
+[topiclabels] tt0499549: 72 etiquetas
+[topiclabels] tt0780504: 49 etiquetas
+[topiclabels] tt0790686: 36 etiquetas
+[topiclabels] tt0796366: 39 etiquetas
+[topiclabels] tt0815236: 43 etiquetas
+[topiclabels] tt0824747: 66 etiquetas
+[topiclabels] tt0848228: 48 etiquetas
+[topiclabels] tt0913425: 50 etiquetas
+[topiclabels] tt0947798: 48 etiquetas
+[topiclabels] tt0963794: 42 etiquetas
+[topiclabels] tt0974661: 33 etiquetas
+[topiclabels] tt0985699: 41 etiquetas
+[topiclabels] tt0993846: 52 etiquetas
+[topiclabels] tt1037705: 36 etiquetas
+[topiclabels] tt1059786: 29 etiquetas
+[topiclabels] tt1068680: 26 etiquetas
+[topiclabels] tt1104001: 56 etiquetas
+[topiclabels] tt1124035: 35 etiquetas
+[topiclabels] tt1125849: 45 etiquetas
+[topiclabels] tt1193138: 39 etiquetas
+[topiclabels] tt1210166: 52 etiquetas
+[topiclabels] tt1219289: 38 etiquetas
+[topiclabels] tt1291584: 70 etiquetas
+[topiclabels] tt1401152: 42 etiquetas
+[topiclabels] tt1403865: 60 etiquetas
+[topiclabels] tt1411238: 42 etiquetas
+[topiclabels] tt1446714: 44 etiquetas
+[topiclabels] tt1454029: 55 etiquetas
+[topiclabels] tt1637725: 44 etiquetas
+[topiclabels] tt1800241: 34 etiquetas
+[topiclabels] tt1979320: 56 etiquetas
+[topiclabels] tt2140373: 49 etiquetas
+[topiclabels] listo
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:00<03:45,  2.56it/s]Loading weights:   3%|▎         | 16/579 [00:00<00:14, 40.02it/s]Loading weights:   5%|▍         | 28/579 [00:00<00:10, 52.56it/s]Loading weights:   7%|▋         | 41/579 [00:00<00:08, 66.45it/s]Loading weights:   9%|▉         | 53/579 [00:00<00:07, 73.61it/s]Loading weights:  11%|█         | 64/579 [00:01<00:06, 82.15it/s]Loading weights:  13%|█▎        | 74/579 [00:01<00:05, 85.31it/s]Loading weights:  15%|█▍        | 84/579 [00:01<00:05, 84.22it/s]Loading weights:  16%|█▌        | 93/579 [00:01<00:05, 85.27it/s]Loading weights:  18%|█▊        | 102/579 [00:01<00:05, 82.03it/s]Loading weights:  19%|█▉        | 112/579 [00:01<00:05, 80.08it/s]Loading weights:  22%|██▏       | 126/579 [00:01<00:05, 89.69it/s]Loading weights:  24%|██▍       | 138/579 [00:01<00:04, 91.90it/s]Loading weights:  26%|██▌       | 150/579 [00:01<00:04, 93.18it/s]Loading weights:  28%|██▊       | 162/579 [00:02<00:04, 92.49it/s]Loading weights:  30%|███       | 174/579 [00:02<00:04, 92.08it/s]Loading weights:  32%|███▏      | 186/579 [00:02<00:04, 93.66it/s]Loading weights:  34%|███▍      | 198/579 [00:02<00:04, 92.85it/s]Loading weights:  36%|███▌      | 208/579 [00:02<00:04, 87.71it/s]Loading weights:  38%|███▊      | 222/579 [00:02<00:03, 99.20it/s]Loading weights:  40%|████      | 234/579 [00:02<00:03, 98.70it/s]Loading weights:  42%|████▏     | 246/579 [00:03<00:03, 96.68it/s]Loading weights:  45%|████▍     | 258/579 [00:03<00:03, 96.29it/s]Loading weights:  47%|████▋     | 270/579 [00:03<00:03, 94.57it/s]Loading weights:  49%|████▊     | 282/579 [00:03<00:03, 93.56it/s]Loading weights:  51%|█████     | 294/579 [00:03<00:03, 94.08it/s]Loading weights:  53%|█████▎    | 306/579 [00:03<00:02, 96.66it/s]Loading weights:  55%|█████▍    | 318/579 [00:03<00:02, 96.07it/s]Loading weights:  57%|█████▋    | 330/579 [00:03<00:02, 96.33it/s]Loading weights:  59%|█████▉    | 342/579 [00:04<00:02, 96.21it/s]Loading weights:  61%|██████    | 354/579 [00:04<00:02, 96.95it/s]Loading weights:  63%|██████▎   | 366/579 [00:04<00:02, 96.87it/s]Loading weights:  65%|██████▌   | 378/579 [00:04<00:02, 94.79it/s]Loading weights:  67%|██████▋   | 390/579 [00:04<00:02, 94.39it/s]Loading weights:  69%|██████▉   | 402/579 [00:04<00:01, 94.68it/s]Loading weights:  71%|███████   | 412/579 [00:04<00:01, 90.76it/s]Loading weights:  74%|███████▎  | 426/579 [00:04<00:01, 97.42it/s]Loading weights:  76%|███████▌  | 438/579 [00:05<00:01, 95.08it/s]Loading weights:  77%|███████▋  | 448/579 [00:05<00:01, 89.10it/s]Loading weights:  80%|███████▉  | 462/579 [00:05<00:01, 98.86it/s]Loading weights:  82%|████████▏ | 474/579 [00:05<00:01, 102.00it/s]Loading weights:  84%|████████▍ | 486/579 [00:05<00:00, 101.86it/s]Loading weights:  86%|████████▌ | 498/579 [00:05<00:00, 98.08it/s] Loading weights:  88%|████████▊ | 510/579 [00:05<00:00, 97.99it/s]Loading weights:  90%|█████████ | 522/579 [00:05<00:00, 97.21it/s]Loading weights:  92%|█████████▏| 532/579 [00:05<00:00, 95.80it/s]Loading weights:  94%|█████████▍| 545/579 [00:06<00:00, 98.53it/s]Loading weights:  96%|█████████▌| 556/579 [00:06<00:00, 94.50it/s]Loading weights:  98%|█████████▊| 569/579 [00:06<00:00, 96.68it/s]Loading weights: 100%|██████████| 579/579 [00:06<00:00, 90.04it/s]
+[topiclabels] tt0113243: registro
+[topiclabels] tt0114369: registro
+[topiclabels] tt0114388: registro
+[topiclabels] tt0114814: registro
+[topiclabels] tt0115798: registro
+[topiclabels] tt0116209: registro
+[topiclabels] tt0116629: registro
+[topiclabels] tt0117500: registro
+[topiclabels] tt0117951: registro
+[topiclabels] tt0118636: registro
+[topiclabels] tt0118929: registro
+[topiclabels] tt0118971: registro
+[topiclabels] tt0119396: registro
+[topiclabels] tt0119528: registro
+[topiclabels] tt0119567: registro
+[topiclabels] tt0120660: registro
+[topiclabels] tt0120735: registro
+[topiclabels] tt0120755: registro
+[topiclabels] tt0120815: registro
+[topiclabels] tt0120902: registro
+[topiclabels] tt0120915: registro
+[topiclabels] tt0122690: registro
+[topiclabels] tt0126886: registro
+[topiclabels] tt0128445: registro
+[topiclabels] tt0134119: registro
+[topiclabels] tt0139654: registro
+[topiclabels] tt0142688: registro
+[topiclabels] tt0159365: registro
+[topiclabels] tt0164052: registro
+[topiclabels] tt0167190: registro
+[topiclabels] tt0169547: registro
+[topiclabels] tt0180073: registro
+[topiclabels] tt0183649: registro
+[topiclabels] tt0187393: registro
+[topiclabels] tt0208092: registro
+[topiclabels] tt0209144: registro
+[topiclabels] tt0213149: registro
+[topiclabels] tt0244244: registro
+[topiclabels] tt0246578: registro
+[topiclabels] tt0264395: registro
+[topiclabels] tt0286106: registro
+[topiclabels] tt0288477: registro
+[topiclabels] tt0315327: registro
+[topiclabels] tt0329101: registro
+[topiclabels] tt0338013: registro
+[topiclabels] tt0349903: registro
+[topiclabels] tt0363771: registro
+[topiclabels] tt0369339: registro
+[topiclabels] tt0372183: registro
+[topiclabels] tt0383574: registro
+[topiclabels] tt0407887: registro
+[topiclabels] tt0408790: registro
+[topiclabels] tt0421715: registro
+[topiclabels] tt0430357: registro
+[topiclabels] tt0435705: registro
+[topiclabels] tt0448157: registro
+[topiclabels] tt0454876: registro
+[topiclabels] tt0467406: registro
+[topiclabels] tt0493464: registro
+[topiclabels] tt0499549: registro
+[topiclabels] tt0780504: registro
+[topiclabels] tt0790686: registro
+[topiclabels] tt0796366: registro
+[topiclabels] tt0815236: registro
+[topiclabels] tt0824747: registro
+[topiclabels] tt0848228: registro
+[topiclabels] tt0913425: registro
+[topiclabels] tt0947798: registro
+[topiclabels] tt0963794: registro
+[topiclabels] tt0974661: registro
+[topiclabels] tt0985699: registro
+[topiclabels] tt0993846: registro
+[topiclabels] tt1037705: registro
+[topiclabels] tt1059786: registro
+[topiclabels] tt1068680: registro
+[topiclabels] tt1104001: registro
+[topiclabels] tt1124035: registro
+[topiclabels] tt1125849: registro
+[topiclabels] tt1193138: registro
+[topiclabels] tt1210166: registro
+[topiclabels] tt1219289: registro
+[topiclabels] tt1291584: registro
+[topiclabels] tt1401152: registro
+[topiclabels] tt1403865: registro
+[topiclabels] tt1411238: registro
+[topiclabels] tt1446714: registro
+[topiclabels] tt1454029: registro
+[topiclabels] tt1637725: registro
+[topiclabels] tt1800241: registro
+[topiclabels] tt1979320: registro
+[topiclabels] tt2140373: registro
+[topiclabels] listo
+TRAIN2_PIPELINE_DONE
