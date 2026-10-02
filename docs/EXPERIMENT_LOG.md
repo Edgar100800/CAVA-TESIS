@@ -1664,3 +1664,28 @@ código):
 
 `results/exp019g_t2_*.json` · `results/exp019f_t2_*.json`
 
+### Análisis de especificidad de las identidades P# (descriptivo, post hoc)
+- **Pregunta:** ¿una P# corresponde a un personaje concreto, o solo recoge
+  a los protagonistas que están en todas partes?
+- **Medida:** lift = P(personaje en los tópicos de la P#) / P(personaje en
+  todos los tópicos de la película), con el personaje de mayor lift. Base de
+  comparación: grupos de tópicos al azar del mismo tamaño (la elección del
+  mejor personaje infla el lift).
+
+| conjunto | lift mediano de P# | lift mediano al azar | P(P# > azar) |
+|---|---|---|---|
+| val | 4.75 | 4.17 | 0.55 |
+| train2 | 3.91 | 3.50 | 0.63 |
+
+- Específicas frente a vagas: lift parecido en los cuatro conjuntos (3.6–5.5).
+- **Corrección importante:** las identidades P# son **solo débilmente
+  específicas**. Superan al azar por poco (0.55–0.63, donde 0.5 es azar).
+  Su 97 % frente a 86 % de consistencia (019e c5) es real, pero sale sobre
+  todo de que los protagonistas aparecen en casi todos los tópicos.
+  - Las P# NO deben presentarse como identificación fiable de personajes,
+    sino como agrupación por apariencia de baja especificidad.
+  - Los nombres heredados por enlace sí están validados en precisión.
+- **Implicación:** hace falta una señal de identidad más fuerte. La voz
+  (identidad del hablante) es la candidata natural, pero MovieNet no tiene
+  audio.
+
