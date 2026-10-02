@@ -1689,3 +1689,44 @@ código):
   (identidad del hablante) es la candidata natural, pero MovieNet no tiene
   audio.
 
+---
+
+## EXP-020 · AMI: señal de voz (espectrograma + tono) e identidad del hablante; CAVA fuera de películas (pre-registro)
+- **Fecha:** 2026-10-01 (registrado antes de calcular cualquier señal)
+- **Motivo:**
+  - Las identidades P# son poco específicas y MovieNet no tiene audio.
+  - Propuesta del usuario: usar la voz (espectrograma: altos y bajos)
+    como señal de identidad.
+  - AMI (CC BY 4.0) da audio + video de reuniones reales con GT de quién
+    habla y tópicos humanos que se repiten. Sirve también para validar el
+    mapa de tópicos de CAVA en otro dominio.
+- **Datos:** 40 reuniones de escenario (ES/IS/TS) con tópicos anotados;
+  audio Mix-Headset y video Corner. GT `scripts/ami_gt.py`: turnos por
+  hablante y tópicos de primer nivel (tipo de la ontología o descripción).
+  Mediana 30 min y 7 tópicos por reunión; 17 de 40 con tópicos que retornan.
+  - Desarrollo = `data/ami/dev_20.txt`, confirmación = `data/ami/conf_20.txt`
+    (partición aleatoria, semilla 7).
+- **Unidades:** ventanas fijas de 10 s.
+- **Señales:**
+  - `voice`: log-mel de 64 bandas (media y desviación) + tono f0
+    (autocorrelación: mediana, rango intercuartil, fracción sonora) +
+    energía.
+  - `visual`: SigLIP del fotograma central.
+  - `transcript`: ASR faster-whisper large-v3 → bge.
+  - `vjudge`: Qwen2.5-VL-7B frozen, resumen por unidad desde 3 fotogramas +
+    transcript ASR.
+  - Todo el texto viene del ASR, no de la transcripción manual.
+- **EXP-020a (identidad por voz):** unidades con hablante dominante (≥ 60 %
+  del habla de la unidad). Pares a ≥ 6 unidades (≥ 1 min) de distancia.
+  AUC de similitud mismo hablante vs distinto, por reunión.
+  1. AUC(voice) − AUC(visual) > 2 SE pareado por reunión;
+  2. AUC(voice) − 0.5 > 2 SE.
+- **EXP-020b (mapa de tópicos en AMI):** pares de unidades a ≥ 18 unidades
+  (≥ 3 min); positivo = misma etiqueta de tópico GT. Sistemas como en
+  EXP-018: cava_abst (con y sin `voice`), fused, contiguous, señales solas.
+  1. MCC(cava_abst con voz) − MCC(fused) > 2 SE;
+  2. MCC(cava_abst con voz) − MCC(contiguous) > 2 SE;
+  3. G-coherencia: margen > 0 por señal.
+  - Se reporta el efecto de añadir la voz (con − sin).
+- Ambos en desarrollo Y confirmación.
+
