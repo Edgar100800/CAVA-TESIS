@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 pairs = [("data/topic_maps", sys.argv[1]), ("data/topic_maps_test", sys.argv[1]),
-         ("data/topic_maps_train", sys.argv[1])]
+         ("data/topic_maps_train", sys.argv[1]), ("data/topic_maps_train2", sys.argv[1])]
 n = 0
 for maps, cat in pairs:
     for f in sorted(Path(maps).glob("*.topic_map.json")):
