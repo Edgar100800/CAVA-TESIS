@@ -1792,3 +1792,37 @@ código):
 
 `results/exp020_ami_{dev,conf}.json` · `topicagg/voice.py` · `scripts/eval_ami.py`
 
+---
+
+## EXP-022 · Identidades por voz (pre-registro)
+- **Fecha:** 2026-10-03 (registrado antes de calcular)
+- **Motivo:**
+  - Las identidades P# por apariencia son poco específicas (0.55–0.63
+    frente a grupos al azar).
+  - EXP-020a valida la voz como señal de identidad del hablante.
+- **Método fijo (sin GT):**
+  - Por reunión, unidades de 10 s con voz (vector no nulo).
+  - Clustering aglomerativo de enlace promedio sobre distancia coseno de los
+    vectores de voz.
+  - Número de identidades K ∈ {2, …, 8}, elegido por silueta máxima.
+  - Mismo procedimiento con visual (SigLIP) como comparación: apariencia
+    frente a voz.
+- **GT:** hablante dominante de la unidad (≥ 60 % del habla, > 3 s).
+- **Métricas por reunión** (unidades con hablante dominante):
+  - ARI entre identidades y hablantes reales;
+  - especificidad: lift del hablante principal de cada identidad frente a
+    grupos de unidades al azar del mismo tamaño.
+- **Criterios en las 40 reuniones NUEVAS** (`data/ami/meetings_fresh40.txt`):
+  1. ARI(voice) − ARI(visual) > 2 SE pareado;
+  2. ARI(voice) > 0 por más de 2 SE;
+  3. especificidad: fracción de identidades de voz cuyo lift supera al de un
+     grupo al azar del mismo tamaño, > 0.5 (binomial unilateral, p < 0.05).
+- Descriptivo en las 40 ya usadas.
+
+## EXP-021 · Granularidad adaptada al contenido (en desarrollo)
+- Exploración en datos ya usados (40 reuniones AMI y 20 películas val): grid
+  percentil de corte × percentil de retorno, más tres criterios internos sin
+  GT (coherencia, coherencia penalizada por fragmentación, silueta). Se
+  pre-registrará el criterio elegido antes de evaluar en las reuniones nuevas
+  y en train2 (MCC de mapas nunca medido allí).
+
