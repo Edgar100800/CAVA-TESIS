@@ -1,0 +1,302 @@
+{
+ "n": 40,
+ "ari_voice_mean": 0.3105,
+ "ari_visual_mean": 0.1029,
+ "1_voice_minus_visual": {
+  "mean": 0.2077,
+  "se": 0.0297
+ },
+ "2_voice_ari_gt0": {
+  "mean": 0.3105,
+  "se": 0.0262
+ },
+ "3_specificity": {
+  "wins": 133,
+  "total": 157,
+  "rate": 0.8471,
+  "binom_p": 0.0
+ },
+ "k_voice_median": 4.0,
+ "per_meeting": {
+  "ES2002d": {
+   "ari_voice": 0.26541029688349366,
+   "k_voice": 4,
+   "ari_visual": 0.09037068986969037,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2003c": {
+   "ari_voice": 0.3552874404702842,
+   "k_voice": 4,
+   "ari_visual": 0.32582076712423524,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2005c": {
+   "ari_voice": 0.5552412729342983,
+   "k_voice": 4,
+   "ari_visual": 0.032092890883687254,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2006b": {
+   "ari_voice": 0.4028062054947791,
+   "k_voice": 4,
+   "ari_visual": 0.04007523814616169,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2006d": {
+   "ari_voice": 0.33102155880394135,
+   "k_voice": 4,
+   "ari_visual": 0.021610096697425352,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2007b": {
+   "ari_voice": 0.4495245901639344,
+   "k_voice": 4,
+   "ari_visual": 0.041548108670300475,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2007c": {
+   "ari_voice": 0.38442676627441635,
+   "k_voice": 4,
+   "ari_visual": 0.09823511899081008,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2008c": {
+   "ari_voice": 0.47887943946721895,
+   "k_voice": 4,
+   "ari_visual": 0.06984254162314939,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2009a": {
+   "ari_voice": 0.2110673189910986,
+   "k_voice": 4,
+   "ari_visual": 0.05644844981830934,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2009c": {
+   "ari_voice": 0.2133175807671195,
+   "k_voice": 4,
+   "ari_visual": 0.13820791298345825,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2010a": {
+   "ari_voice": 0.07755401984872215,
+   "k_voice": 3,
+   "ari_visual": -0.012251717096714312,
+   "k_visual": 3,
+   "n_speakers": 3
+  },
+  "ES2011a": {
+   "ari_voice": -0.04174523216205218,
+   "k_voice": 3,
+   "ari_visual": 0.048572722571444175,
+   "k_visual": 3,
+   "n_speakers": 3
+  },
+  "ES2011b": {
+   "ari_voice": 0.4085857317688363,
+   "k_voice": 4,
+   "ari_visual": 0.04176835705572085,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2011d": {
+   "ari_voice": 0.19165263693669002,
+   "k_voice": 4,
+   "ari_visual": 0.044739581690274144,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2012c": {
+   "ari_voice": 0.3359978706402239,
+   "k_voice": 4,
+   "ari_visual": 0.06738607089509588,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2012d": {
+   "ari_voice": 0.20844706220370637,
+   "k_voice": 4,
+   "ari_visual": -0.002674070909867578,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2013a": {
+   "ari_voice": 0.01899667309824937,
+   "k_voice": 4,
+   "ari_visual": 0.09462021909958847,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2013b": {
+   "ari_voice": 0.4241441675455823,
+   "k_voice": 4,
+   "ari_visual": 0.02804040789390165,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2014d": {
+   "ari_voice": 0.22678266464915972,
+   "k_voice": 4,
+   "ari_visual": 0.030153877360075437,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2015d": {
+   "ari_voice": 0.14492691913368785,
+   "k_voice": 4,
+   "ari_visual": 0.11355858662714426,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2016b": {
+   "ari_voice": 0.7680278782865395,
+   "k_voice": 4,
+   "ari_visual": 0.09845561416340491,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "ES2016c": {
+   "ari_voice": 0.48539198395181926,
+   "k_voice": 4,
+   "ari_visual": 0.016694461859961037,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "IS1000d": {
+   "ari_voice": 0.24800889182195515,
+   "k_voice": 4,
+   "ari_visual": 0.08655932635040442,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "IS1001a": {
+   "ari_voice": 0.15859043796312336,
+   "k_voice": 4,
+   "ari_visual": 0.09701670107908424,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "IS1001b": {
+   "ari_voice": 0.3561423059740304,
+   "k_voice": 4,
+   "ari_visual": 0.18110210760631454,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "IS1005b": {
+   "ari_voice": 0.38350547422342396,
+   "k_voice": 4,
+   "ari_visual": 0.1084073305829965,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "IS1006a": {
+   "ari_voice": 0.5400765938274387,
+   "k_voice": 4,
+   "ari_visual": 0.23137038569392726,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "IS1006b": {
+   "ari_voice": 0.2993073409171233,
+   "k_voice": 4,
+   "ari_visual": 0.4211026366351424,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3003b": {
+   "ari_voice": 0.5201265855357812,
+   "k_voice": 4,
+   "ari_visual": 0.014382016548162612,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3003d": {
+   "ari_voice": 0.2723818220677895,
+   "k_voice": 4,
+   "ari_visual": 0.0678558861957552,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3005d": {
+   "ari_voice": 0.5021798409875803,
+   "k_voice": 4,
+   "ari_visual": 0.22598506506723334,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3006c": {
+   "ari_voice": 0.4585469502907166,
+   "k_voice": 4,
+   "ari_visual": -0.016475902323521502,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3006d": {
+   "ari_voice": 0.2867653371535546,
+   "k_voice": 4,
+   "ari_visual": 0.050293440274131344,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3007c": {
+   "ari_voice": 0.41962828933845236,
+   "k_voice": 4,
+   "ari_visual": 0.31876603902707557,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3008c": {
+   "ari_voice": 0.2836913566867831,
+   "k_voice": 4,
+   "ari_visual": 0.2730997585951922,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3009a": {
+   "ari_voice": 0.053460693640884724,
+   "k_voice": 4,
+   "ari_visual": 0.036174543540560974,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3009d": {
+   "ari_voice": 0.1425071775728938,
+   "k_voice": 4,
+   "ari_visual": 0.042789746416358736,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3010a": {
+   "ari_voice": 0.19079747381634174,
+   "k_voice": 4,
+   "ari_visual": 0.22663380244063278,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3011a": {
+   "ari_voice": 0.26540882559717477,
+   "k_voice": 4,
+   "ari_visual": 0.3073436846767568,
+   "k_visual": 4,
+   "n_speakers": 4
+  },
+  "TS3012a": {
+   "ari_voice": 0.1445303867403315,
+   "k_voice": 4,
+   "ari_visual": -0.04159627902786224,
+   "k_visual": 4,
+   "n_speakers": 4
+  }
+ }
+}

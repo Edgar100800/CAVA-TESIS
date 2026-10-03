@@ -3,7 +3,7 @@
 Señales (sin fusión, todas propias de CAVA): voice, visual, transcript (bge del
 ASR), vjudge (bge del resumen). Además de lo que lleva cualquier mapa (tramos,
 retornos, etiqueta, provenance, contexto por clip), cada tópico y cada clip
-llevan `speakers`: identidades de voz V# (ward + silueta, EXP-022b) con su
+llevan `speakers`: identidades de voz V# (ward + K por BIC, EXP-022d validado) con su
 fracción de unidades. El GT de AMI no se usa aquí.
 Salida: data/ami/topic_maps/<m>.topic_map.json y data/ami/versions/<m>.versions.json
 """
@@ -53,7 +53,7 @@ def main():
                "vjudge": bge([s["summary"] for s in sums[:n]])}
         doc = build_topic_map(m, sig, units[:n], unit_summaries=sums[:n], percentile=95,
                               return_percentile=90, abstain=True, unit_texts=texts)
-        vid = identities(np.asarray(z["voice"][:n], np.float32), "ward")
+        vid = identities(np.asarray(z["voice"][:n], np.float32), "ward", k_rule="bic")  # EXP-022d
         for level in doc["levels"].values():
             for t in level["topics"]:
                 t["speakers"] = speakers_of(t["shots"], vid)

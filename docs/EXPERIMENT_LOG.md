@@ -169,6 +169,8 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-019g | "Emparejar descripción → registro con umbral absoluto y margen nombra más sin perder precisión" | +1.7 pts, pero precisión −0.008 (z −2.8) en train2 |
 | EXP-019f | "Filtrar identidades genéricas las hace más consistentes" | 0.961 vs 0.969 (p = 0.92); cuesta 14 pts de cobertura |
 | EXP-020b | "El mapa CAVA con retornos agrupa tópicos de reuniones mejor que fused y que lo contiguo" | vs contiguous −0.155 / −0.156 (z −2.9 / −2.7): CAVA sobresegmenta (19 frente a 7 tópicos del GT) |
+| EXP-021c c3 | "El perfil meeting supera al perfil film en reuniones" | +0.036 ± 0.035 (z 1.0) en reuniones nuevas |
+| EXP-022b | "Ward supera al enlace promedio en identidades de voz" | +0.021 ± 0.016 (z 1.3) |
 
 ---
 
@@ -1910,4 +1912,44 @@ calcular sus señales):
 - **Exploración de retornos más raros** (desarrollo, descriptivo): p95/r99
   0.316 frente a p95/r90 0.299, dentro del ruido. No se añade variante; el
   perfil meeting sigue en p95/r90.
+
+### Resultados en 40 reuniones AMI NUEVAS (jobs 54177 + 54180)
+**EXP-020a, replicación:** AUC voice 0.737 frente a visual 0.549, voice −
+visual +0.188 ± 0.016 (**z 12.1**); voice − 0.5 = +0.237 ± 0.015. ✅
+
+**EXP-021c, perfil meeting (p95/r90) con voz:**
+
+| criterio | resultado | |
+|---|---|---|
+| 1. no inferior a contiguous v2.1 (p80) | −0.062 ± 0.039 (z −1.6, dentro de −2 SE) | ✅ |
+| 2. frente a fused | **+0.089 ± 0.027 (z 3.4)** | ✅ |
+| 3. frente al perfil film (p80/r90) | +0.036 ± 0.035 (z 1.0) | ❌ |
+| (desc.) aporte de la voz: con − sin | **+0.063 ± 0.028 (z 2.2)** | |
+
+- **Parcialmente validado:**
+  - el mapa CAVA para reuniones con voz no es inferior a la segmentación
+    contigua y supera a la fusión;
+  - la voz aporta de forma significativa como votante;
+  - la ventaja del perfil meeting sobre el film no se confirma (la
+    exploración ya mostraba ruido).
+  - En reuniones, lo contiguo sigue siendo una base muy fuerte (0.25):
+    CAVA lo iguala, no lo supera.
+
+**EXP-022 (identidades por voz) y variantes:**
+
+| variante | ARI voice | ARI visual | especificidad | criterio | |
+|---|---|---|---|---|---|
+| 022: promedio + silueta | 0.211 | 0.018 | 0.93 (76/82) | voice − visual +0.193 ± 0.025; ARI > 0 | ✅ |
+| 022b: ward + silueta | 0.232 | 0.070 | 0.89 | ward − promedio +0.021 ± 0.016 (z 1.3) | ❌ |
+| **022d: ward + BIC** | **0.297** | 0.080 | 0.87 | BIC − silueta +0.065 ± 0.018 (**z 3.5**); voice − visual +0.217 | ✅ |
+| 022c: ward + K real (cota) | 0.310 | 0.103 | 0.85 | descriptivo | |
+
+- **✅ VALIDADO:** las identidades por voz siguen a los hablantes reales
+  (ARI 0.21–0.30, frente a 0.02–0.10 de la apariencia) y son específicas
+  (87–93 % superan a grupos al azar, frente a 0.55–0.63 de las P# por
+  apariencia en películas).
+- La regla BIC queda a 0.013 de la cota con K conocido. **Regla de producto:
+  ward + K por BIC.**
+
+`results/exp021c_ami_fresh.json` · `results/exp022*_fresh.json`
 

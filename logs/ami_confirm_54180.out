@@ -1,0 +1,238 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2658.87it/s]
+[ami] ES2002d: (a) AUC voice 0.7627919587285382 visual 0.49352210560190113 | (b) MCC cava_voice +0.068 fused -0.034
+[ami] ES2003c: (a) AUC voice 0.7312479280006932 visual 0.6003955559302194 | (b) MCC cava_voice +0.250 fused +0.303
+[ami] ES2005c: (a) AUC voice 0.8161365784035145 visual 0.5151145962944825 | (b) MCC cava_voice +0.205 fused +0.098
+[ami] ES2006b: (a) AUC voice 0.8338077210226125 visual 0.5495343207900288 | (b) MCC cava_voice +0.349 fused +0.096
+[ami] ES2006d: (a) AUC voice 0.7710850787683494 visual 0.47442825814536344 | (b) MCC cava_voice +0.322 fused -0.091
+[ami] ES2007b: (a) AUC voice 0.8056078110645747 visual 0.5501143141063201 | (b) MCC cava_voice +0.044 fused -0.014
+[ami] ES2007c: (a) AUC voice 0.7373474063874935 visual 0.5750881421122267 | (b) MCC cava_voice +0.136 fused -0.026
+[ami] ES2008c: (a) AUC voice 0.8197547831825733 visual 0.5404331869981559 | (b) MCC cava_voice +0.519 fused +0.234
+[ami] ES2009a: (a) AUC voice 0.6527590002898516 visual 0.5862055445041353 | (b) MCC cava_voice -0.065 fused +0.033
+[ami] ES2009c: (a) AUC voice 0.7170185293764414 visual 0.560023178552826 | (b) MCC cava_voice +0.316 fused +0.034
+[ami] ES2010a: (a) AUC voice 0.6012794612794613 visual 0.47539201539201537 | (b) MCC cava_voice -0.132 fused -0.079
+[ami] ES2011a: (a) AUC voice 0.5808363294788327 visual 0.5245567324199139 | (b) MCC cava_voice +0.314 fused +0.331
+[ami] ES2011b: (a) AUC voice 0.6761671432063255 visual 0.5368141515392771 | (b) MCC cava_voice +0.355 fused +0.351
+[ami] ES2011d: (a) AUC voice 0.6374521036814426 visual 0.4936044327573253 | (b) MCC cava_voice -0.137 fused -0.118
+[ami] ES2012c: (a) AUC voice 0.7300406037574365 visual 0.5301931538879207 | (b) MCC cava_voice +0.193 fused +0.338
+[ami] ES2012d: (a) AUC voice 0.6290675676947548 visual 0.5769070767724873 | (b) MCC cava_voice +0.244 fused +0.032
+[ami] ES2013a: (a) AUC voice 0.561103941904479 visual 0.6259352412746724 | (b) MCC cava_voice -0.043 fused -0.048
+[ami] ES2013b: (a) AUC voice 0.8432794155420423 visual 0.5311260883649376 | (b) MCC cava_voice -0.005 fused +0.114
+[ami] ES2014d: (a) AUC voice 0.8145568430018717 visual 0.542797014205751 | (b) MCC cava_voice +0.028 fused +0.066
+[ami] ES2015d: (a) AUC voice 0.6754586923584177 visual 0.5506467806862597 | (b) MCC cava_voice +0.129 fused -0.033
+[ami] ES2016b: (a) AUC voice 0.8854846582995101 visual 0.6028275015894683 | (b) MCC cava_voice +0.151 fused +0.034
+[ami] ES2016c: (a) AUC voice 0.7803927526899568 visual 0.514355914331874 | (b) MCC cava_voice -0.045 fused +0.031
+[ami] IS1000d: (a) AUC voice 0.7303191964311598 visual 0.5326791928595367 | (b) MCC cava_voice +0.480 fused +0.329
+[ami] IS1001a: (a) AUC voice 0.6548998840973582 visual 0.5592169244501286 | (b) MCC cava_voice +0.251 fused -0.081
+[ami] IS1001b: (a) AUC voice 0.6751756495798408 visual 0.5827021475305957 | (b) MCC cava_voice +0.178 fused +0.049
+[ami] IS1005b: (a) AUC voice 0.742777074618622 visual 0.5937843672715012 | (b) MCC cava_voice +0.038 fused +0.083
+[ami] IS1006a: (a) AUC voice 0.8915827800385522 visual 0.5644677661169415 | (b) MCC cava_voice +0.208 fused +0.027
+[ami] IS1006b: (a) AUC voice 0.7630908378533215 visual 0.6081361156337339 | (b) MCC cava_voice +0.512 fused +0.238
+[ami] TS3003b: (a) AUC voice 0.8498333177990044 visual 0.6164384039261486 | (b) MCC cava_voice +0.187 fused +0.291
+[ami] TS3003d: (a) AUC voice 0.6396548380591064 visual 0.4959592784032033 | (b) MCC cava_voice +0.258 fused +0.200
+[ami] TS3005d: (a) AUC voice 0.8394373481513555 visual 0.5660469928974504 | (b) MCC cava_voice +0.226 fused +0.590
+[ami] TS3006c: (a) AUC voice 0.8218748910941834 visual 0.48875749543075925 | (b) MCC cava_voice +0.183 fused +0.305
+[ami] TS3006d: (a) AUC voice 0.7587318400823863 visual 0.5204788701313031 | (b) MCC cava_voice +0.275 fused +0.100
+[ami] TS3007c: (a) AUC voice 0.8386105578392734 visual 0.5739525583132822 | (b) MCC cava_voice +0.503 fused +0.212
+[ami] TS3008c: (a) AUC voice 0.7407331460279444 visual 0.609893913238613 | (b) MCC cava_voice +0.407 fused +0.157
+[ami] TS3009a: (a) AUC voice 0.5349737301393523 visual 0.5675442880008681 | (b) MCC cava_voice +0.505 fused +0.109
+[ami] TS3009d: (a) AUC voice 0.7163945961159583 visual 0.52156487461329 | (b) MCC cava_voice +0.037 fused +0.059
+[ami] TS3010a: (a) AUC voice 0.6137000071802973 visual 0.5216401488433385 | (b) MCC cava_voice +0.029 fused -0.095
+[ami] TS3011a: (a) AUC voice 0.8608378264099869 visual 0.6196314001373328 | (b) MCC cava_voice +0.126 fused -0.028
+[ami] TS3012a: (a) AUC voice 0.7401581511342425 visual 0.4546109342689189 | (b) MCC cava_voice -0.130 fused -0.279
+{
+ "protocol": "exp020_ami_v1",
+ "meetings": "data/ami/meetings_fresh40.txt",
+ "n_a": 40,
+ "n_b": 40,
+ "a_means": {
+  "auc_voice": 0.7369,
+  "auc_visual": 0.5487,
+  "auc_transcript": 0.5651,
+  "auc_vjudge": 0.5392
+ },
+ "a_criteria": {
+  "auc_voice_minus_visual": {
+   "mean": 0.1882,
+   "se": 0.0155,
+   "n": 40,
+   "z": 12.11
+  },
+  "auc_transcript_minus_visual": {
+   "mean": 0.0164,
+   "se": 0.0116,
+   "n": 40,
+   "z": 1.42
+  },
+  "auc_vjudge_minus_visual": {
+   "mean": -0.0095,
+   "se": 0.0088,
+   "n": 40,
+   "z": -1.08
+  },
+  "auc_voice_minus_0.5": {
+   "mean": 0.2369,
+   "se": 0.0147,
+   "n": 40
+  }
+ },
+ "b_means": {
+  "mcc_cava_voice": 0.1867,
+  "mcc_cava_novoice": 0.124,
+  "mcc_fused": 0.098,
+  "mcc_contiguous": 0.2489,
+  "mcc_voice": 0.1498,
+  "mcc_visual": 0.1229,
+  "mcc_transcript": 0.1129,
+  "mcc_vjudge": 0.0728,
+  "mcc_cava_film": 0.1512
+ },
+ "b_criteria": {
+  "cava_voice_vs_fused": {
+   "mean": 0.0888,
+   "se": 0.0265,
+   "n": 40,
+   "z": 3.35
+  },
+  "cava_voice_vs_contiguous": {
+   "mean": -0.0622,
+   "se": 0.0391,
+   "n": 40,
+   "z": -1.59
+  },
+  "cava_voice_vs_cava_novoice": {
+   "mean": 0.0628,
+   "se": 0.0283,
+   "n": 40,
+   "z": 2.22
+  },
+  "cava_voice_vs_voice": {
+   "mean": 0.0369,
+   "se": 0.0302,
+   "n": 40,
+   "z": 1.22
+  },
+  "cava_voice_vs_visual": {
+   "mean": 0.0638,
+   "se": 0.0372,
+   "n": 40,
+   "z": 1.72
+  },
+  "cava_voice_vs_transcript": {
+   "mean": 0.0738,
+   "se": 0.0305,
+   "n": 40,
+   "z": 2.42
+  },
+  "cava_voice_vs_vjudge": {
+   "mean": 0.1139,
+   "se": 0.0273,
+   "n": 40,
+   "z": 4.18
+  },
+  "cava_voice_vs_cava_film": {
+   "mean": 0.0355,
+   "se": 0.0349,
+   "n": 40,
+   "z": 1.02
+  }
+ },
+ "b_coherence": {
+  "voice": {
+   "mean": 0.1538,
+   "frac_positive": 1.0
+  },
+  "visual": {
+   "mean": 0.0101,
+   "frac_positive": 1.0
+  },
+  "transcript": {
+   "mean": 0.0451,
+   "frac_positive": 1.0
+  },
+  "vjudge": {
+   "mean": 0.0482,
+   "frac_positive": 1.0
+  }
+ }
+}
+{
+ "n": 40,
+ "ari_voice_mean": 0.2109,
+ "ari_visual_mean": 0.0181,
+ "1_voice_minus_visual": {
+  "mean": 0.1928,
+  "se": 0.0254
+ },
+ "2_voice_ari_gt0": {
+  "mean": 0.2109,
+  "se": 0.0238
+ },
+ "3_specificity": {
+  "wins": 76,
+  "total": 82,
+  "rate": 0.9268,
+  "binom_p": 0.0
+ },
+ "k_voice_median": 2.0
+}
+{
+ "n": 40,
+ "ari_voice_mean": 0.2322,
+ "ari_visual_mean": 0.0695,
+ "1_voice_minus_visual": {
+  "mean": 0.1627,
+  "se": 0.0262
+ },
+ "2_voice_ari_gt0": {
+  "mean": 0.2322,
+  "se": 0.0247
+ },
+ "3_specificity": {
+  "wins": 72,
+  "total": 81,
+  "rate": 0.8889,
+  "binom_p": 0.0
+ },
+ "k_voice_median": 2.0
+}
+{
+ "n": 40,
+ "ari_voice_mean": 0.3105,
+ "ari_visual_mean": 0.1029,
+ "1_voice_minus_visual": {
+  "mean": 0.2077,
+  "se": 0.0297
+ },
+ "2_voice_ari_gt0": {
+  "mean": 0.3105,
+  "se": 0.0262
+ },
+ "3_specificity": {
+  "wins": 133,
+  "total": 157,
+  "rate": 0.8471,
+  "binom_p": 0.0
+ },
+ "k_voice_median": 4.0
+}
+{
+ "n": 40,
+ "ari_voice_mean": 0.2967,
+ "ari_visual_mean": 0.0797,
+ "1_voice_minus_visual": {
+  "mean": 0.217,
+  "se": 0.0314
+ },
+ "2_voice_ari_gt0": {
+  "mean": 0.2967,
+  "se": 0.0261
+ },
+ "3_specificity": {
+  "wins": 107,
+  "total": 123,
+  "rate": 0.8699,
+  "binom_p": 0.0
+ },
+ "k_voice_median": 3.0
+}
+AMI_CONFIRM_DONE
