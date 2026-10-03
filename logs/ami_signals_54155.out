@@ -1,0 +1,73 @@
+[ami-signals] ES2004a: 105 unidades
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights:  50%|████▉     | 203/408 [00:00<00:00, 2029.60it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 2256.66it/s]
+[mjpeg @ 0x55c9e0312200] Non full-range YUV is non-standard, set strict_std_compliance to at most unofficial to use it.
+[vost#0:0/mjpeg @ 0x55c9e0311700] [enc:mjpeg @ 0x55c9e03120c0] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height.
+[vf#0:0 @ 0x55c9e02e6b80] Error sending frames to consumers: Invalid argument
+[vf#0:0 @ 0x55c9e02e6b80] Task finished with error code: -22 (Invalid argument)
+[vf#0:0 @ 0x55c9e02e6b80] Terminating thread with return code -22 (Invalid argument)
+[vost#0:0/mjpeg @ 0x55c9e0311700] [enc:mjpeg @ 0x55c9e03120c0] Could not open encoder before EOF
+[vost#0:0/mjpeg @ 0x55c9e0311700] Task finished with error code: -22 (Invalid argument)
+[vost#0:0/mjpeg @ 0x55c9e0311700] Terminating thread with return code -22 (Invalid argument)
+[out#0/image2 @ 0x55c9e02ed200] Nothing was written into output file, because at least one of its streams received no packets.
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:32,  7.89it/s]Loading weights:   1%|▏         | 10/729 [00:00<00:21, 33.36it/s]Loading weights:   3%|▎         | 25/729 [00:00<00:09, 72.45it/s]Loading weights:   5%|▍         | 35/729 [00:00<00:08, 80.57it/s]Loading weights:   6%|▋         | 46/729 [00:00<00:07, 88.94it/s]Loading weights:   8%|▊         | 60/729 [00:00<00:06, 103.60it/s]Loading weights:  10%|▉         | 72/729 [00:00<00:06, 106.35it/s]Loading weights:  12%|█▏        | 84/729 [00:00<00:05, 108.68it/s]Loading weights:  13%|█▎        | 97/729 [00:01<00:05, 114.77it/s]Loading weights:  15%|█▍        | 109/729 [00:01<00:05, 116.30it/s]Loading weights:  17%|█▋        | 124/729 [00:01<00:04, 123.20it/s]Loading weights:  19%|█▉        | 137/729 [00:01<00:05, 112.17it/s]Loading weights:  21%|██▏       | 155/729 [00:01<00:04, 128.51it/s]Loading weights:  23%|██▎       | 169/729 [00:01<00:04, 129.24it/s]Loading weights:  25%|██▌       | 183/729 [00:01<00:04, 128.18it/s]Loading weights:  27%|██▋       | 196/729 [00:01<00:05, 105.09it/s]Loading weights:  29%|██▉       | 215/729 [00:02<00:04, 123.56it/s]Loading weights:  31%|███▏      | 229/729 [00:02<00:03, 125.02it/s]Loading weights:  33%|███▎      | 243/729 [00:02<00:04, 112.88it/s]Loading weights:  35%|███▌      | 258/729 [00:02<00:04, 117.17it/s]Loading weights:  38%|███▊      | 275/729 [00:02<00:03, 128.72it/s]Loading weights:  40%|████      | 292/729 [00:02<00:03, 130.61it/s]Loading weights:  42%|████▏     | 306/729 [00:02<00:03, 118.38it/s]Loading weights:  44%|████▍     | 319/729 [00:02<00:03, 119.39it/s]Loading weights:  46%|████▌     | 332/729 [00:03<00:03, 121.08it/s]Loading weights:  59%|█████▊    | 427/729 [00:03<00:00, 342.51it/s]Loading weights:  71%|███████   | 516/729 [00:03<00:00, 493.83it/s]Loading weights:  82%|████████▏ | 597/729 [00:03<00:00, 581.37it/s]Loading weights:  94%|█████████▍| 688/729 [00:03<00:00, 674.76it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 209.44it/s]
+[mjpeg @ 0x55e088529200] Non full-range YUV is non-standard, set strict_std_compliance to at most unofficial to use it.
+[vost#0:0/mjpeg @ 0x55e088528700] [enc:mjpeg @ 0x55e0885290c0] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height.
+[vf#0:0 @ 0x55e0884fdb80] Error sending frames to consumers: Invalid argument
+[vf#0:0 @ 0x55e0884fdb80] Task finished with error code: -22 (Invalid argument)
+[vf#0:0 @ 0x55e0884fdb80] Terminating thread with return code -22 (Invalid argument)
+[vost#0:0/mjpeg @ 0x55e088528700] [enc:mjpeg @ 0x55e0885290c0] Could not open encoder before EOF
+[vost#0:0/mjpeg @ 0x55e088528700] Task finished with error code: -22 (Invalid argument)
+[vost#0:0/mjpeg @ 0x55e088528700] Terminating thread with return code -22 (Invalid argument)
+[out#0/image2 @ 0x55e088504200] Nothing was written into output file, because at least one of its streams received no packets.
+[mjpeg @ 0x5584a6ea5200] Non full-range YUV is non-standard, set strict_std_compliance to at most unofficial to use it.
+[vost#0:0/mjpeg @ 0x5584a6ea4700] [enc:mjpeg @ 0x5584a6ea50c0] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height.
+[vf#0:0 @ 0x5584a6e79b80] Error sending frames to consumers: Invalid argument
+[vf#0:0 @ 0x5584a6e79b80] Task finished with error code: -22 (Invalid argument)
+[vf#0:0 @ 0x5584a6e79b80] Terminating thread with return code -22 (Invalid argument)
+[vost#0:0/mjpeg @ 0x5584a6ea4700] [enc:mjpeg @ 0x5584a6ea50c0] Could not open encoder before EOF
+[vost#0:0/mjpeg @ 0x5584a6ea4700] Task finished with error code: -22 (Invalid argument)
+[vost#0:0/mjpeg @ 0x5584a6ea4700] Terminating thread with return code -22 (Invalid argument)
+[out#0/image2 @ 0x5584a6e80200] Nothing was written into output file, because at least one of its streams received no packets.
+[ami-signals] ES2007d: 125 unidades
+[ami-signals] ES2008a: 105 unidades
+[ami-signals] ES2011c: 162 unidades
+[ami-signals] ES2013c: 236 unidades
+[ami-signals] ES2013d: 190 unidades
+[ami-signals] ES2014a: 115 unidades
+[ami-signals] ES2014b: 232 unidades
+[ami-signals] ES2014c: 228 unidades
+[ami-signals] ES2016a: 139 unidades
+[ami-signals] ES2016d: 153 unidades
+[ami-signals] IS1000c: 212 unidades
+[ami-signals] IS1001c: 145 unidades
+[ami-signals] IS1002b: 237 unidades
+[ami-signals] IS1002d: 127 unidades
+[ami-signals] IS1003a: 92 unidades
+[ami-signals] IS1003c: 188 unidades
+[ami-signals] IS1003d: 210 unidades
+[ami-signals] IS1004a: 80 unidades
+[ami-signals] IS1004d: 197 unidades
+[ami-signals] IS1005c: 206 unidades
+[ami-signals] IS1006d: 184 unidades
+[ami-signals] IS1007b: 131 unidades
+[ami-signals] IS1007c: 212 unidades
+[ami-signals] IS1008c: 155 unidades
+[ami-signals] IS1009a: 84 unidades
+[ami-signals] IS1009b: 206 unidades
+[ami-signals] TS3003a: 151 unidades
+[ami-signals] TS3004a: 135 unidades
+[ami-signals] TS3004b: 225 unidades
+[ami-signals] TS3004d: 275 unidades
+[ami-signals] TS3006a: 126 unidades
+[ami-signals] TS3006b: 236 unidades
+[ami-signals] TS3008a: 136 unidades
+[ami-signals] TS3008d: 280 unidades
+[ami-signals] TS3009b: 246 unidades
+[ami-signals] TS3010c: 215 unidades
+[ami-signals] TS3010d: 192 unidades
+[ami-signals] TS3011b: 222 unidades
+[ami-signals] TS3011c: 240 unidades
+[ami-signals] listo
+AMI_SIGNALS_DONE

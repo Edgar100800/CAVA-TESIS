@@ -168,6 +168,7 @@ Lección: nunca seleccionar predicciones usando el GT antes de evaluar.
 | EXP-019e (método completo) | "Nombres por enlaces + registro + identidades por apariencia categorizan más sin perder precisión ni contenido" | Nombrado 0.48→0.65 ✅, identidades 0.95 vs 0.84 ✅, pero precisión −0.052 (z −3.3) ❌ y MRR −0.061 (z −10.8) ❌ |
 | EXP-019g | "Emparejar descripción → registro con umbral absoluto y margen nombra más sin perder precisión" | +1.7 pts, pero precisión −0.008 (z −2.8) en train2 |
 | EXP-019f | "Filtrar identidades genéricas las hace más consistentes" | 0.961 vs 0.969 (p = 0.92); cuesta 14 pts de cobertura |
+| EXP-020b | "El mapa CAVA con retornos agrupa tópicos de reuniones mejor que fused y que lo contiguo" | vs contiguous −0.155 / −0.156 (z −2.9 / −2.7): CAVA sobresegmenta (19 frente a 7 tópicos del GT) |
 
 ---
 
@@ -1742,4 +1743,52 @@ código):
   general disponible). Las 40 reuniones están completas (audio + cámara de
   sala). Una segunda pasada de señales completa las 7 que la primera omitió;
   la evaluación corre después, sobre las 40.
+
+### Resultado EXP-020 (AMI, 40 reuniones; jobs 54152 + 54155 + 54156)
+**EXP-020a, identidad del hablante por voz:**
+
+| AUC mismo vs distinto hablante | desarrollo (20) | confirmación (20) |
+|---|---|---|
+| voice (log-mel + tono) | **0.720** | **0.731** |
+| visual (cámara de sala) | 0.562 | 0.569 |
+| transcript (ASR, bge) / vjudge | 0.567 / 0.550 | 0.564 / 0.555 |
+| 1. voice − visual | **+0.157 ± 0.027 (z 5.8)** ✅ | **+0.162 ± 0.023 (z 7.0)** ✅ |
+| 2. voice − 0.5 | +0.220 ± 0.017 ✅ | +0.231 ± 0.019 ✅ |
+
+- **✅ VALIDADO (pre-registrado, desarrollo y confirmación):** la voz
+  (espectrograma + altos y bajos del tono, sin modelos) reconoce al mismo
+  hablante a lo largo de la reunión. Ninguna otra señal lo hace (visual,
+  ASR y VJudge ≈ 0.55–0.57).
+
+**EXP-020b, mapa de tópicos CAVA en reuniones:**
+
+| criterio | desarrollo | confirmación |
+|---|---|---|
+| 1. cava_voice − fused | +0.060 ± 0.038 (z 1.6) ❌ | +0.060 ± 0.040 (z 1.5) ❌ |
+| 2. cava_voice − contiguous | **−0.155 ± 0.053 (z −2.9)** ❌ | **−0.156 ± 0.058 (z −2.7)** ❌ |
+| 3. G-coherencia (margen > 0, todas las señales) | 100 % ✅ | 100 % ✅ |
+| (desc.) aporte de la voz: con − sin | +0.036 ± 0.030 | +0.056 ± 0.029 (z 1.9) |
+
+- **⚠️ NO VALIDADO:** en reuniones el mapa CAVA con retornos pierde frente a
+  la segmentación contigua v2.1 (MCC 0.16–0.19 frente a 0.31–0.34).
+- **Diagnóstico (descriptivo):** granularidad.
+
+  | por reunión (mediana) | tópicos |
+  |---|---|
+  | GT | 7 (≈ 2.1 min cada uno); solo el 14 % de las instancias retorna |
+  | CAVA | 18–20 |
+  | contiguous | 5 |
+
+  Los percentiles (corte 80, retorno 90) se fijaron en películas (~1350
+  shots, retornos frecuentes). En reuniones (~180 unidades de 10 s, tópicos
+  largos, pocos retornos) CAVA sobresegmenta y el MCC castiga los pares del
+  mismo tópico que quedan separados.
+- **Lectura:**
+  - La agregación por retornos no es universal: en contenido de tópicos
+    largos y contiguos, lo contiguo gana.
+  - La granularidad tiene que adaptarse al contenido. Es el pendiente
+    desde el ticket 005; no se ajusta aquí a posteriori.
+  - La voz aporta como votante (+0.04 a +0.06), sin significancia.
+
+`results/exp020_ami_{dev,conf}.json` · `topicagg/voice.py` · `scripts/eval_ami.py`
 
