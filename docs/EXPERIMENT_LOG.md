@@ -1737,4 +1737,9 @@ código):
     sala) y se reintentan las descargas. `ami_signals.py` omite reuniones sin
     archivos en vez de fallar, y se descartó la salida parcial de ES2007d.
   - Reuniones y criterios sin cambios.
+- **Enmienda 2 a EXP-020 (sin resultados):** las reuniones TS3008–TS3011 no
+  tienen Overview1. Se usa Overview2 (Overview3 en TS3008d, la única vista
+  general disponible). Las 40 reuniones están completas (audio + cámara de
+  sala). Una segunda pasada de señales completa las 7 que la primera omitió;
+  la evaluación corre después, sobre las 40.
 

@@ -4,7 +4,7 @@
 cd "$(dirname "$0")"
 B=https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus
 for m in $(cat meetings_40.txt); do
-  case $m in ES*) cam=Corner;; IS*) cam=C;; TS*) cam=Overview1;; esac
+  case $m in ES*) cam=Corner;; IS*) cam=C;; TS300[89]*|TS301*) cam=Overview2;; TS*) cam=Overview1;; esac
   mkdir -p media/$m
   for f in "audio/$m.Mix-Headset.wav:$m.Mix-Headset.wav" "video/$m.$cam.avi:$m.Room.avi"; do
     src=${f%%:*}; dst=media/$m/${f##*:}
