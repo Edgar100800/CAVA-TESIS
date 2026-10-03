@@ -18,4 +18,6 @@ cd /home/edgar.chambilla/Tesis/CAVA
 python scripts/eval_ami.py --meetings data/ami/meetings_fresh40.txt --percentile 95 --return-percentile 90 \
   --compare-film-profile --out results/exp021c_ami_fresh.json
 python scripts/eval_voice_identities.py --meetings data/ami/meetings_fresh40.txt --out results/exp022_voice_ids_fresh.json
+python scripts/eval_voice_identities.py --meetings data/ami/meetings_fresh40.txt --linkage ward --out results/exp022b_voice_ids_ward_fresh.json
+python scripts/eval_voice_identities.py --meetings data/ami/meetings_fresh40.txt --linkage ward --known-k --out results/exp022c_voice_ids_knownk_fresh.json
 echo AMI_CONFIRM_DONE

@@ -1858,3 +1858,21 @@ calcular sus señales):
      al de películas).
 - EXP-022 (identidades por voz) se confirma en las mismas reuniones.
 
+### EXP-022b/c · Variantes de agrupación de voz (pre-registro, antes de las señales de las reuniones nuevas)
+- **Desarrollo** (40 reuniones usadas, descriptivo), ARI medio:
+
+  | enlace | regla K | ARI | K mediana |
+  |---|---|---|---|
+  | promedio | silueta (EXP-022) | 0.186 | 2 |
+  | promedio | K = 4 conocido | 0.232 | 4 |
+  | ward | silueta | 0.202 | 2 |
+  | ward | K = 4 conocido | 0.287 | 4 |
+
+  Ward es mejor con todas las reglas. La silueta sub-agrupa (2 frente a 4
+  hablantes).
+- **EXP-022b (producción, sin prior):** ward + silueta. Mismos criterios que
+  EXP-022 en las 40 reuniones nuevas, más ARI(ward) − ARI(promedio) > 2 SE
+  pareado.
+- **EXP-022c (cota descriptiva):** ward + K = nº real de hablantes. Indica
+  cuánto se ganaría estimando bien el número de hablantes.
+

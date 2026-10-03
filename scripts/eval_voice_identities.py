@@ -21,17 +21,17 @@ from sklearn.metrics import adjusted_rand_score, silhouette_score
 D = Path("data/ami")
 
 
-def identities(x):
+def identities(x, method="average", fixed_k=None):
     ok = np.where(np.linalg.norm(x, axis=1) > 0)[0]
     xn = x[ok] / np.linalg.norm(x[ok], axis=1, keepdims=True)
-    Z = linkage(pdist(xn, "cosine"), method="average")
+    Z = linkage(xn, method="ward") if method == "ward" else linkage(pdist(xn, "cosine"), method="average")
     best, lab_best = -2, None
-    for k in range(2, 9):
+    for k in ([fixed_k] if fixed_k else range(2, 9)):
         lab = fcluster(Z, t=k, criterion="maxclust")
         if len(set(lab)) < 2:
             continue
         s = silhouette_score(xn, lab, metric="cosine")
-        if s > best:
+        if s > best or fixed_k:
             best, lab_best = s, lab
     out = np.full(len(x), -1)
     out[ok] = lab_best
@@ -63,6 +63,9 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--meetings", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--linkage", choices=["average", "ward"], default="average", help="EXP-022b: ward")
+    ap.add_argument("--known-k", action="store_true",
+                    help="EXP-022c (descriptivo): K = nº real de hablantes de la reunión (prior)")
     args = ap.parse_args()
     rng = random.Random(22)
     rows, wins, total = {}, 0, 0
@@ -74,8 +77,9 @@ def main():
         z = np.load(fz)
         dom = dominant(units, json.loads((D / "gt" / f"{m}.json").read_text())["speech"])
         r = {}
+        k_true = len({d for d in dom if d}) if args.known_k else None
         for name in ("voice", "visual"):
-            lab = identities(np.asarray(z[name], np.float32))
+            lab = identities(np.asarray(z[name], np.float32), args.linkage, k_true)
             idx = [i for i in range(len(units)) if dom[i] and lab[i] >= 0]
             r[f"ari_{name}"] = float(adjusted_rand_score([dom[i] for i in idx], [lab[i] for i in idx]))
             r[f"k_{name}"] = int(len(set(lab[lab >= 0].tolist())))
