@@ -105,7 +105,9 @@ def main():
         plans = {"cava_voice": manage(sig, return_percentile=R, **AB),
                  "cava_novoice": manage({k: v for k, v in sig.items() if k != "voice"}, return_percentile=R, **AB),
                  "fused": manage({"fused": fused}, return_percentile=R, **(KW | {"link_quorum": 1})),
-                 "contiguous": manage(sig, **KW)}
+                 # v2.1 contiguo en SU configuración (p80), no en la del perfil:
+                 # a p95 colapsa en un solo tópico y sería una base trivial
+                 "contiguous": manage(sig, **(KW | {"percentile": 80}))}
         for k in sig:
             plans[k] = manage({k: sig[k]}, return_percentile=R, **(KW | {"link_quorum": 1}))
         if args.compare_film_profile:

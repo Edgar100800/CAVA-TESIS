@@ -1901,3 +1901,13 @@ calcular sus señales):
   2. ARI(022d) − ARI(visual, misma regla) > 2 SE;
   3. especificidad > 0.5 (binomial, p < 0.05).
 
+### Enmienda a EXP-021c (2026-10-03, antes de calcular las señales de las reuniones nuevas)
+- **Defecto del pre-registro:** "contiguous con el mismo perfil" a p95 colapsa
+  en un solo tópico (MCC 0.058 en desarrollo): sería una base trivialmente
+  débil. La base justa es v2.1 contiguo en su propia configuración (p80),
+  que dio 0.31–0.34 en EXP-020. `eval_ami.py` usa p80 para contiguous desde
+  ahora; criterios sin otros cambios.
+- **Exploración de retornos más raros** (desarrollo, descriptivo): p95/r99
+  0.316 frente a p95/r90 0.299, dentro del ruido. No se añade variante; el
+  perfil meeting sigue en p95/r90.
+
