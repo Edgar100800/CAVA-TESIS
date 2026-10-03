@@ -215,3 +215,11 @@ def test_abstention_needs_quorum_of_active_voters():
     plan = manage({"visual": x, "dialogue": silent, "ocr": silent.copy()}, percentile=95,
                   link_quorum=2, return_percentile=50, link_mode="average", abstain=True)
     assert len(set(plan.labels.tolist())) == len(x)          # 1 active voter < quorum 2: no links
+
+
+def test_threads_not_applicable_without_returns():
+    from topicagg.versions import check_versions
+    v = {"full_chapters": {"budget_s": None, "playlists": [[{"t0": 0, "t1": 5}]]},
+         "threads": {"budget_s": 10, "playlists": [], "applicable": False}}
+    rep = check_versions(v)
+    assert rep["G_version"] and rep["threads"]["applicable"] is False

@@ -1876,3 +1876,16 @@ calcular sus señales):
 - **EXP-022c (cota descriptiva):** ward + K = nº real de hablantes. Indica
   cuánto se ganaría estimando bien el número de hablantes.
 
+### Producto: reuniones (AMI) con hablantes por voz
+- Mapas de tópicos de reuniones con el perfil "meeting" (p95/r90): 9–11
+  tópicos por reunión. Cada tópico y cada clip llevan `speakers`
+  (identidades de voz V#, ward + silueta, con su fracción); además etiqueta,
+  provenance y contexto (`scripts/build_ami_topic_maps.py`).
+- Versiones:
+  - "threads" solo aplica si el video tiene tópicos que retornan (si no, se
+    marca no aplicable en vez de fallar);
+  - nuevo perfil **speaker_threads**: por cada una de las 3 voces
+    principales, los clips donde esa voz domina (81 playlists en 40
+    reuniones).
+- G-versión: **40/40** reuniones AMI y 58/58 películas val.
+
