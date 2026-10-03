@@ -25,22 +25,26 @@ GRID = [(p, r) for p in (80, 90, 95, 97, 98.5) for r in (80, 90, 95)]
 
 
 def silhouette(labels, x):
+    """Silueta coseno vectorizada: distancia media a cada clúster vía S · one-hot."""
     xn = l2(np.asarray(x, np.float32))
     ok = np.linalg.norm(x, axis=1) > 0
     lab, xn = labels[ok], xn[ok]
-    if len(set(lab.tolist())) < 2 or len(lab) < 5:
+    cl, inv = np.unique(lab, return_inverse=True)
+    if len(cl) < 2 or len(lab) < 5:
         return None
-    S = xn @ xn.T
-    vals = []
-    for i in range(len(lab)):
-        same = lab == lab[i]
-        same[i] = False
-        if not same.any():
-            continue
-        a = 1 - S[i, same].mean()
-        b = min(1 - S[i, lab == c].mean() for c in set(lab.tolist()) if c != lab[i])
-        vals.append((b - a) / max(a, b, 1e-9))
-    return float(np.mean(vals)) if vals else None
+    D = 1.0 - xn @ xn.T
+    H = np.zeros((len(lab), len(cl)), np.float32)
+    H[np.arange(len(lab)), inv] = 1.0
+    cnt = H.sum(0)
+    M = D @ H
+    own = cnt[inv] - 1
+    a = M[np.arange(len(lab)), inv] / np.maximum(own, 1)
+    M_other = M / cnt[None, :]
+    M_other[np.arange(len(lab)), inv] = np.inf
+    b = M_other.min(1)
+    sil = (b - a) / np.maximum(np.maximum(a, b), 1e-9)
+    sil = sil[own > 0]
+    return float(sil.mean()) if len(sil) else None
 
 
 def evaluate(sig, pairs, y):
