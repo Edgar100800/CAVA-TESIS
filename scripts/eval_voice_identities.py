@@ -21,9 +21,21 @@ from sklearn.metrics import adjusted_rand_score, silhouette_score
 D = Path("data/ami")
 
 
-def identities(x, method="average", fixed_k=None):
+def bic_k(xn, kmax=8):
+    """EXP-022d: nº de identidades por BIC de una mezcla gaussiana (PCA 16, diag)."""
+    from sklearn.decomposition import PCA
+    from sklearn.mixture import GaussianMixture
+    xp = PCA(n_components=min(16, len(xn) - 1), random_state=0).fit_transform(xn)
+    bic = {k: GaussianMixture(k, covariance_type="diag", random_state=0).fit(xp).bic(xp)
+           for k in range(2, kmax + 1)}
+    return min(bic, key=bic.get)
+
+
+def identities(x, method="average", fixed_k=None, k_rule="silhouette"):
     ok = np.where(np.linalg.norm(x, axis=1) > 0)[0]
     xn = x[ok] / np.linalg.norm(x[ok], axis=1, keepdims=True)
+    if k_rule == "bic" and not fixed_k:
+        fixed_k = bic_k(xn)
     Z = linkage(xn, method="ward") if method == "ward" else linkage(pdist(xn, "cosine"), method="average")
     best, lab_best = -2, None
     for k in ([fixed_k] if fixed_k else range(2, 9)):
@@ -64,6 +76,8 @@ def main():
     ap.add_argument("--meetings", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--linkage", choices=["average", "ward"], default="average", help="EXP-022b: ward")
+    ap.add_argument("--k-rule", choices=["silhouette", "bic"], default="silhouette",
+                    help="EXP-022d: bic")
     ap.add_argument("--known-k", action="store_true",
                     help="EXP-022c (descriptivo): K = nº real de hablantes de la reunión (prior)")
     args = ap.parse_args()
@@ -79,7 +93,7 @@ def main():
         r = {}
         k_true = len({d for d in dom if d}) if args.known_k else None
         for name in ("voice", "visual"):
-            lab = identities(np.asarray(z[name], np.float32), args.linkage, k_true)
+            lab = identities(np.asarray(z[name], np.float32), args.linkage, k_true, args.k_rule)
             idx = [i for i in range(len(units)) if dom[i] and lab[i] >= 0]
             r[f"ari_{name}"] = float(adjusted_rand_score([dom[i] for i in idx], [lab[i] for i in idx]))
             r[f"k_{name}"] = int(len(set(lab[lab >= 0].tolist())))

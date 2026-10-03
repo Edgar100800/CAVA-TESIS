@@ -1889,3 +1889,15 @@ calcular sus señales):
     reuniones).
 - G-versión: **40/40** reuniones AMI y 58/58 películas val.
 
+### EXP-022d · K por BIC (pre-registro, antes de las señales de las reuniones nuevas)
+- **Desarrollo** (40 usadas, descriptivo), ward más regla de K:
+  - silueta: 0.202 (K = 2);
+  - eigengap: 0.205 (K = 2);
+  - **BIC de mezcla gaussiana (PCA 16, diag): 0.275 (K = 3)**;
+  - K real: 0.287 (cota).
+- **Regla fijada:** ward + K ∈ {2, …, 8} por BIC mínimo.
+- **Criterios en las 40 reuniones nuevas:**
+  1. ARI(022d) − ARI(022b, ward + silueta) > 2 SE pareado;
+  2. ARI(022d) − ARI(visual, misma regla) > 2 SE;
+  3. especificidad > 0.5 (binomial, p < 0.05).
+
