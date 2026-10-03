@@ -1729,4 +1729,12 @@ código):
   3. G-coherencia: margen > 0 por señal.
   - Se reporta el efecto de añadir la voz (con − sin).
 - Ambos en desarrollo Y confirmación.
+- **Enmienda a EXP-020 (2026-10-02, sin resultados todavía):**
+  - El job 54016 falló por datos. Solo las reuniones ES tienen cámara
+    "Corner"; IS usa "C" y TS "Overview1". Algunos 404 del espejo eran
+    transitorios.
+  - Se usa la cámara de sala de cada sitio (equivalente: vista general de la
+    sala) y se reintentan las descargas. `ami_signals.py` omite reuniones sin
+    archivos en vez de fallar, y se descartó la salida parcial de ES2007d.
+  - Reuniones y criterios sin cambios.
 

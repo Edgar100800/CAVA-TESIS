@@ -16,6 +16,6 @@ export PYTHONNOUSERSITE=1 HF_HOME=/home/edgar.chambilla/Tesis/SegLoop/data/hf_ca
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 cd /home/edgar.chambilla/Tesis/CAVA
 # la descarga (nodo de login) debe terminar antes
-while ! grep -q DOWNLOAD_DONE data/ami/download.log; do sleep 120; done
+while ! grep -q DOWNLOAD_DONE data/ami/download2.log; do sleep 120; done
 python scripts/ami_signals.py
 echo AMI_SIGNALS_DONE

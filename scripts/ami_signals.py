@@ -2,7 +2,8 @@
 
 Por reunión escribe data/ami/signals/<m>.npz y <m>.json:
   voice       espectrograma log-mel + tono (topicagg.voice), sin modelos
-  visual      SigLIP del fotograma central de la unidad (video Corner)
+  visual      SigLIP del fotograma central de la unidad (cámara de sala:
+              ES Corner, IS C, TS Overview1; guardada como <m>.Room.avi)
   transcript  ASR faster-whisper large-v3 (texto por unidad) -> bge en CPU aparte
 y data/ami/vjudge/<m>.summaries.json: resumen Qwen2.5-VL-7B frozen por unidad
 desde 3 fotogramas + el texto ASR de la unidad (formato de los mapas: lo, hi,
@@ -46,7 +47,10 @@ def main():
     os.environ.setdefault("HF_HOME", "/home/edgar.chambilla/Tesis/SegLoop/data/hf_cache")
 
     for m in meetings:
-        wav, vid = D / "media" / m / f"{m}.Mix-Headset.wav", D / "media" / m / f"{m}.Corner.avi"
+        wav, vid = D / "media" / m / f"{m}.Mix-Headset.wav", D / "media" / m / f"{m}.Room.avi"
+        if not (wav.exists() and vid.exists() and wav.stat().st_size > 1e6 and vid.stat().st_size > 1e6):
+            print(f"[ami-signals] {m}: falta audio o video, se omite", flush=True)
+            continue
         fj = sig_dir / f"{m}.json"
         meta = json.loads(fj.read_text()) if fj.exists() else {"meeting": m}
         if "units" in args.stages and "unit_times" not in meta:
