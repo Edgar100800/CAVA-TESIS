@@ -1826,3 +1826,35 @@ código):
   pre-registrará el criterio elegido antes de evaluar en las reuniones nuevas
   y en train2 (MCC de mapas nunca medido allí).
 
+### EXP-021 · Resultado de la exploración (desarrollo) y pre-registro de confirmación
+Desarrollo: 40 reuniones AMI ya usadas y 15 películas val. MCC medio:
+
+| selección | AMI | películas |
+|---|---|---|
+| config por defecto p80/r90 | 0.171 | **0.023** |
+| mejor config fija | **0.299** (p95/r90, ≈ 3.9 min por tópico) | 0.023 (p80/r90, ≈ 1.4 min) |
+| oráculo por ítem | 0.481 | 0.054 |
+| criterio interno: coherencia | 0.168 (≈ 20 tópicos) | 0.020 |
+| criterio interno: silueta | 0.193 (≈ 3 tópicos) | 0.017 |
+
+- **⚠️ NO VALIDADO (desarrollo):** ningún criterio interno sin GT elige bien
+  la granularidad. La coherencia prefiere lo fino; la silueta, lo muy grueso.
+- **No hay una granularidad universal:** ni en unidades ni en minutos (AMI
+  ~3.9 min por tópico frente a películas ~1.4 min).
+- **Decisión de diseño:** la granularidad es un **perfil de contenido
+  explícito** (coherente con "versiones por consumidor"), no algo que se
+  infiere:
+  - perfil "film" = p80/r90 (validado en EXP-018);
+  - perfil "meeting/talk" = p95/r90.
+
+**Pre-registro EXP-021c** (confirmación en las 40 reuniones NUEVAS, antes de
+calcular sus señales):
+- cava_voice con el perfil meeting (p95/r90, average, abstain, quorum 2,
+  señales voice + visual + transcript + vjudge).
+- Criterios:
+  1. no inferior a contiguous: MCC(cava_meeting) − MCC(contiguous) > −2 SE;
+  2. MCC(cava_meeting) − MCC(fused, mismo perfil) > 2 SE;
+  3. MCC(cava_meeting) − MCC(cava_voice p80/r90) > 2 SE (el perfil mejora
+     al de películas).
+- EXP-022 (identidades por voz) se confirma en las mismas reuniones.
+

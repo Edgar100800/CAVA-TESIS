@@ -48,7 +48,12 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--meetings", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--percentile", type=float, default=80, help="EXP-021c: perfil de contenido")
+    ap.add_argument("--return-percentile", type=float, default=90)
+    ap.add_argument("--compare-film-profile", action="store_true",
+                    help="EXP-021c: añade cava_voice con el perfil film (p80/r90)")
     args = ap.parse_args()
+    KW["percentile"] = args.percentile
     bge = BgeEmbedder()
     ra, rb = {}, {}
     for m in Path(args.meetings).read_text().split():
@@ -96,12 +101,15 @@ def main():
             continue
         AB = KW | {"link_mode": "average", "abstain": True}
         fused = np.concatenate([l2(np.asarray(v, np.float32)) for v in sig.values()], 1)
-        plans = {"cava_voice": manage(sig, return_percentile=90, **AB),
-                 "cava_novoice": manage({k: v for k, v in sig.items() if k != "voice"}, return_percentile=90, **AB),
-                 "fused": manage({"fused": fused}, return_percentile=90, **(KW | {"link_quorum": 1})),
+        R = args.return_percentile
+        plans = {"cava_voice": manage(sig, return_percentile=R, **AB),
+                 "cava_novoice": manage({k: v for k, v in sig.items() if k != "voice"}, return_percentile=R, **AB),
+                 "fused": manage({"fused": fused}, return_percentile=R, **(KW | {"link_quorum": 1})),
                  "contiguous": manage(sig, **KW)}
         for k in sig:
-            plans[k] = manage({k: sig[k]}, return_percentile=90, **(KW | {"link_quorum": 1}))
+            plans[k] = manage({k: sig[k]}, return_percentile=R, **(KW | {"link_quorum": 1}))
+        if args.compare_film_profile:
+            plans["cava_film"] = manage(sig, return_percentile=90, **(AB | {"percentile": 80}))
         rr = {"n_pairs_b": len(keep), "pos_rate_b": float(y.mean())}
         for name, p in plans.items():
             pred = np.array([p.labels[i] == p.labels[j] for i, j in keep])
@@ -117,7 +125,8 @@ def main():
     crit_a["auc_voice_minus_0.5"] = {"mean": round(float(d.mean()), 4),
                                      "se": round(float(d.std(ddof=1) / np.sqrt(len(d))), 4), "n": int(len(d))}
     crit_b = {f"cava_voice_vs_{b}": paired(rb, "mcc_cava_voice", f"mcc_{b}")
-              for b in ("fused", "contiguous", "cava_novoice", "voice", "visual", "transcript", "vjudge")}
+              for b in ("fused", "contiguous", "cava_novoice", "voice", "visual", "transcript", "vjudge", "cava_film")
+              if any(f"mcc_{b}" in r for r in rb.values())}
     coh = {k: {"mean": round(float(np.mean(v)), 4), "frac_positive": round(float(np.mean(np.array(v) > 0)), 3)}
            for k in ("voice", "visual", "transcript", "vjudge")
            if (v := [r[f"coh_cava_voice_{k}"] for r in rb.values() if r.get(f"coh_cava_voice_{k}") is not None])}
