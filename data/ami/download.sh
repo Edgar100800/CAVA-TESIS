@@ -8,7 +8,8 @@ for m in $(cat meetings_40.txt); do
   mkdir -p media/$m
   for f in "audio/$m.Mix-Headset.wav:$m.Mix-Headset.wav" "video/$m.$cam.avi:$m.Room.avi"; do
     src=${f%%:*}; dst=media/$m/${f##*:}
-    if [ "$(stat -c %s $dst 2>/dev/null || echo 0)" -lt 1000000 ]; then
+    want=$(curl -sIL $B/$m/$src | grep -i content-length | tail -1 | tr -dc 0-9)
+    if [ "$(stat -c %s $dst 2>/dev/null || echo 0)" != "$want" ]; then   # tamaño exacto del espejo
       curl -sSfL --retry 5 --retry-delay 10 -o $dst $B/$m/$src || echo "FAIL $m $src"
     fi
   done
