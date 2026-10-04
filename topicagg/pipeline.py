@@ -238,6 +238,9 @@ class Pipeline:
                     c["speakers"] = speakers_of([u for u in t["shots"] if units[u][0] >= a - 1e-6
                                                  and units[u][1] <= b + 1e-6], vid)
         self.doc["voice_identities"] = sorted({f"V{int(v)}" for v in vid if v >= 0})
+        # EXP-020/022: V# = hablante solo está validado en habla conversacional (perfil meeting);
+        # en film/documental la voz agrupa la escena acústica (EXP-026, desarrollo)
+        self.doc["voice_identity_kind"] = "speaker" if self.cfg["profile"] == "meeting" else "acoustic_group"
         (self.out / "topic_map.json").write_text(json.dumps(self.doc, ensure_ascii=False, indent=1))
 
     # 12-13
@@ -283,10 +286,11 @@ class Pipeline:
 
     def _index(self, v, gate):
         topics = sorted(self.doc["levels"]["default"]["topics"], key=lambda t: t["shots"][0])
+        vk = "hablantes" if self.doc.get("voice_identity_kind", "speaker") == "speaker" else "grupos acústicos"
         lines = [f"# {self.video.stem} — mapa de tópicos CAVA ({self.cfg['profile']})", "",
                  f"Duración {self.state['duration'] / 60:.1f} min · {len(topics)} tópicos · "
-                 f"voces {', '.join(self.doc.get('voice_identities', []))} · G-versión {gate['G_version']}", "",
-                 "| tópico | rangos (min) | duración | retornos | hablantes | etiqueta |", "|---|---|---|---|---|---|"]
+                 f"{vk} {', '.join(self.doc.get('voice_identities', []))} · G-versión {gate['G_version']}", "",
+                 f"| tópico | rangos (min) | duración | retornos | {vk} | etiqueta |", "|---|---|---|---|---|---|"]
         for t in topics:
             if t["duration_s"] < 20:
                 continue

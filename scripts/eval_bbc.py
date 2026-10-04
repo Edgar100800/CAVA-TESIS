@@ -153,8 +153,11 @@ def main():
         fused = np.concatenate([l2(v) for v in sig.values()], 1)
         plans = {f"cava_p{p}": manage(sig, percentile=p, return_percentile=90, **AB) for p in (70, 80, 90, 95)}
         plans["cava_fine"] = manage(sig, percentile=80, return_percentile=90, **(AB | {"link_quorum": len(sig)}))
-        plans["contiguous"] = manage(sig, percentile=80, **KW)
-        plans["fused"] = manage({"fused": fused}, percentile=80, return_percentile=90, **(KW | {"link_quorum": 1}))
+        for q in (80, 90, 95):
+            sfx = "" if q == 80 else f"_p{q}"
+            plans["contiguous" + sfx] = manage(sig, percentile=q, **KW)
+            plans["fused" + sfx] = manage({"fused": fused}, percentile=q, return_percentile=90,
+                                          **(KW | {"link_quorum": 1}))
         for k in sig:
             plans[k] = manage({k: sig[k]}, percentile=80, return_percentile=90, **(KW | {"link_quorum": 1}))
         for name, p in plans.items():
@@ -163,8 +166,9 @@ def main():
             r[f"f1b_{name}"] = f1_b(lab, gts)
             r[f"n_topics_{name}"] = len(set(lab.tolist()))
             r[f"n_runs_{name}"] = int(1 + (lab[1:] != lab[:-1]).sum())
-        for k in sig:
-            r[f"coh_cava_p80_{k}"] = coherence_margin(np.asarray(plans["cava_p80"].labels), sig[k])
+        for q in (80, 90, 95):
+            for k in sig:
+                r[f"coh_cava_p{q}_{k}"] = coherence_margin(np.asarray(plans[f"cava_p{q}"].labels), sig[k])
         speech = speech_gate(units, st["asr_segments"])
         r["speech_frac"] = float(speech.mean())
         for name, kw in (("base", {}), ("k1", {"k1": True}), ("gate", {"gate": speech}),
