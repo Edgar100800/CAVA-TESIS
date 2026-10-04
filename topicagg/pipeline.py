@@ -29,7 +29,8 @@ from pathlib import Path
 import numpy as np
 
 PROFILES = {"film": {"unit_s": 5.0, "percentile": 80, "return_percentile": 90},
-            "meeting": {"unit_s": 10.0, "percentile": 95, "return_percentile": 90}}
+            "meeting": {"unit_s": 10.0, "percentile": 95, "return_percentile": 90,
+                        "speaker_turns_w": 6}}  # EXP-023
 HF = "/home/edgar.chambilla/Tesis/SegLoop/data/hf_cache"
 VL = ("Qwen/Qwen2.5-VL-7B-Instruct", "cc594898137f460bfe9f0759e9844b3ce807cfb5")
 TXT = ("Qwen/Qwen2.5-14B-Instruct", "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8")
@@ -180,7 +181,14 @@ class Pipeline:
             vj[s["lo"]:s["hi"]] = v
         sig = {"voice": self.arrays["voice"][:n], "visual": self.arrays["visual"][:n],
                "transcript": bge(self.state["asr"]), "vjudge": vj}
+        bnd = None
+        if self.cfg.get("speaker_turns_w"):
+            from eval_voice_identities import identities
+            from speaker_turns import speaker_turn_scores
+            vid = identities(np.asarray(sig["voice"], np.float32), "ward", k_rule="bic")
+            bnd = {"turns": speaker_turn_scores(vid, self.cfg["speaker_turns_w"])}
         self.doc = build_topic_map(self.video.stem, sig, self.state["units"], unit_summaries=self.summaries,
+                                   boundary_signals=bnd,
                                    percentile=self.cfg["percentile"],
                                    return_percentile=self.cfg["return_percentile"], abstain=True,
                                    unit_texts=self.state["asr"])

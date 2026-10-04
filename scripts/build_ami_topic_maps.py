@@ -1,4 +1,4 @@
-"""Mapas de tópicos CAVA para reuniones AMI, perfil "meeting" (p95/r90), con hablantes.
+"""Mapas de tópicos CAVA para reuniones AMI, perfil "meeting" (p95/r90 + turnos w = 6), con hablantes.
 
 Señales (sin fusión, todas propias de CAVA): voice, visual, transcript (bge del
 ASR), vjudge (bge del resumen). Además de lo que lleva cualquier mapa (tramos,
@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from eval_voice_identities import identities  # noqa: E402
 from narrative_eval import BgeEmbedder  # noqa: E402
+from speaker_turns import speaker_turn_scores  # noqa: E402
 from topicagg.topic_map import build_topic_map  # noqa: E402
 from topicagg.versions import build_versions, check_versions  # noqa: E402
 
@@ -51,9 +52,10 @@ def main():
         texts = [t or "" for t in meta["asr_text"][:n]]
         sig = {"voice": z["voice"][:n], "visual": z["visual"][:n], "transcript": bge(texts),
                "vjudge": bge([s["summary"] for s in sums[:n]])}
-        doc = build_topic_map(m, sig, units[:n], unit_summaries=sums[:n], percentile=95,
-                              return_percentile=90, abstain=True, unit_texts=texts)
         vid = identities(np.asarray(z["voice"][:n], np.float32), "ward", k_rule="bic")  # EXP-022d
+        doc = build_topic_map(m, sig, units[:n], unit_summaries=sums[:n], percentile=95,
+                              return_percentile=90, abstain=True, unit_texts=texts,
+                              boundary_signals={"turns": speaker_turn_scores(vid, 6)})  # EXP-023
         for level in doc["levels"].values():
             for t in level["topics"]:
                 t["speakers"] = speakers_of(t["shots"], vid)

@@ -1982,6 +1982,38 @@ visual +0.188 ± 0.016 (**z 12.1**); voice − 0.5 = +0.237 ± 0.015. ✅
      contiguo, que hasta ahora CAVA solo igualaba);
   3. MCC(cava + turnos) − MCC(fused) > 2 SE.
 
+### Resultado EXP-023 (tercer lote, 39 reuniones evaluables; jobs 54273 + 54274)
+
+| sistema | MCC |
+|---|---|
+| **cava + turnos (w = 6)** | **0.234** |
+| contiguous v2.1 (p80) | 0.221 |
+| cava con voz | 0.159 |
+| fused | 0.100 |
+| cava sin voz | 0.093 |
+
+| criterio | diferencia | z | ¿cumple? |
+|---|---|---|---|
+| 1. turnos − cava con voz | +0.075 ± 0.032 | 2.32 | **sí** |
+| 2. turnos − contiguous | +0.013 ± 0.048 | 0.27 | **no** |
+| 3. turnos − fused | +0.134 ± 0.038 | 3.52 | **sí** |
+
+**Validado en parte.** El votante de turnos aporta lo mismo que en desarrollo
+(+0.075 frente a +0.074): es la mejora más estable vista en reuniones. Pero no
+supera a lo contiguo; solo lo iguala.
+
+Lectura honesta del lote:
+- En este lote, cava con voz y sin turnos queda **por debajo** de lo contiguo
+  (−0.062 ± 0.044, z −1.41). Los turnos lo devuelven a la paridad.
+- La señal de voz sigue identificando al hablante (AUC 0.73 frente a visual
+  0.55, z 12.9) y sigue aportando dentro de CAVA (con frente a sin voz:
+  z 2.46).
+- Conclusión: en reuniones, la frontera de tópico la marca sobre todo el
+  cambio de quién habla. El retorno de tópicos no agrega MCC sobre lo
+  contiguo en AMI (pocos retornos reales en el GT).
+
+**Decisión:** el perfil meeting pasa a incluir el votante de turnos (w = 6).
+
 ---
 
 ## EXP-024 · Pesos de voto por señal aprendidos (pre-registro)

@@ -70,7 +70,7 @@ La granularidad NO se infiere: ningún criterio interno sin GT eligió bien
 | perfil | unidad | corte | retorno | validación |
 |---|---|---|---|---|
 | film | 5 s (o shots) | p80 | p90 | EXP-018 (test MovieNet) |
-| meeting | 10 s | p95 | p90 | EXP-021c (AMI nuevas: no inferior a contiguo, supera a fusión) |
+| meeting | 10 s | p95 + votante de turnos w = 6 | p90 | EXP-021c, EXP-023 (iguala a contiguo, supera a fusión y a cava sin turnos) |
 
 ## 5. Qué está validado (pre-registrado y en datos no vistos)
 
@@ -99,7 +99,8 @@ La granularidad NO se infiere: ningún criterio interno sin GT eligió bien
 - Granularidad elegida por criterio interno (EXP-021): no funciona; de ahí
   los perfiles.
 - En reuniones, la segmentación contigua es una base muy fuerte: CAVA la
-  iguala (EXP-021c). EXP-023 (turnos de hablante) intenta superarla.
+  iguala (EXP-021c). Con turnos de hablante (EXP-023) mejora +0.075 MCC,
+  pero sigue sin superar a lo contiguo.
 
 ## 7. Datos de entrenamiento y pesos
 
