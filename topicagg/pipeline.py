@@ -205,7 +205,9 @@ class Pipeline:
         topics = [t for t in self.doc["levels"]["default"]["topics"] if t["duration_s"] >= min_dur]
         f = self.work / "topic_labels.json"
         done = json.loads(f.read_text()) if f.exists() else {}
-        todo = [t for t in topics if str(t["topic_id"]) not in done]
+        # clave = id + tramos: un mapa nuevo (otro perfil u otros votantes) no hereda etiquetas de otro tópico
+        key = lambda t: f'{t["topic_id"]}@' + ",".join(f"{a:.1f}-{b:.1f}" for a, b in t["spans"])  # noqa: E731
+        todo = [t for t in topics if key(t) not in done]
         if todo and self.do_labels:
             import torch
             from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -218,11 +220,11 @@ class Pipeline:
                 inp = tok([chat], return_tensors="pt").to(m.device)
                 with torch.inference_mode():
                     g = m.generate(**inp, max_new_tokens=70, do_sample=False)
-                done[str(t["topic_id"])] = tok.decode(g[0, inp.input_ids.shape[1]:], skip_special_tokens=True).strip().splitlines()[0]
+                done[key(t)] = tok.decode(g[0, inp.input_ids.shape[1]:], skip_special_tokens=True).strip().splitlines()[0]
                 f.write_text(json.dumps(done, ensure_ascii=False))
             del m
         for t in self.doc["levels"]["default"]["topics"]:
-            t["topic_label"] = done.get(str(t["topic_id"]), t["label"])
+            t["topic_label"] = done.get(key(t), t["label"])
 
     # 11
     def speakers(self):

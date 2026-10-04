@@ -2259,3 +2259,53 @@ pre-registrada: los V# fuera del perfil meeting son "grupos acústicos".
 
 Prueba de humo: bbc_05 con el perfil documentary da 36 tópicos (frente a ~55
 con film) y G-versión ✓.
+
+---
+
+## EXP-027 · Fronteras visuales con agrupamiento CAVA: "snap" (pre-registro)
+- **Fecha:** 2026-10-04 (antes de evaluar cualquier película de train2)
+- **Motivación:** EXP-025, secundaria: la señal visual sola corta mejor las
+  fronteras (F1 0.48) que el consenso CAVA (0.40), pero agrupa peor. ¿Se
+  pueden tener ambas cosas?
+- **Operador (`snap`, ADR-0001-compatible: usa las fronteras de UNA señal,
+  sin fusionar representaciones):**
+  1. Cada frontera del mapa CAVA se mueve a la frontera visual más cercana
+     si está a ≤ R.
+  2. Las unidades intermedias pasan al tópico del lado que se extiende.
+  3. Las fronteras visuales salen de manage() con la señal visual sola, p80,
+     r90 y quorum 1.
+- **Desarrollo:** BBC 01–11 (`scripts/explore_visual_boundaries.py`). Todos
+  los episodios ya se usaron; aquí son solo desarrollo.
+  - **Base:** cava p90, M 0.410 / F1 0.399.
+  - **Resultados frente a la base:**
+
+    | variante | ΔM | ΔF1 |
+    |---|---|---|
+    | snap R = 6 unidades (30 s) | +0.043 ± 0.006 | +0.045 ± 0.012 |
+    | snap R = 8 | +0.049 | +0.050 |
+    | **control** fronteras al azar (mismo nº que la visual), R = 6 | +0.003 | −0.096 |
+    | **control** suavizado (rachas < R se absorben), R = 6 | +0.020 | −0.085 |
+    | peso de voto visual 1.5 | −0.041 | +0.041 |
+    | peso de voto visual 2.0 | −0.087 | +0.052 |
+
+    Solo el snap mejora ambas métricas. El efecto viene de las fronteras
+    visuales, no del suavizado.
+- **R fijado = 30 s** (en el tiempo, no en unidades), donde la ganancia se
+  satura en desarrollo.
+- **Confirmación:** MovieNet train2, 91 películas.
+  - Dominio distinto: ficción, unidades = shots de ~3.2 s, escenas GT de
+    MovieNet.
+  - Nunca se usaron para evaluar estructura (solo personajes, EXP-019e).
+  - Señales del export (`data/training/movienet`): visual, dialogue,
+    vjudge.
+  - Configuración validada de películas: EXP-018 (p80, r90, average,
+    abstain, quorum 2).
+- **Métricas:**
+  - M_local: MCC de "misma escena" sobre pares de shots con centros a
+    ≤ 300 s;
+  - F1_b: fronteras, tolerancia ±1 shot.
+- **Criterios (SE pareado sobre películas):**
+  1. snap30 − cava > 2 SE en M_local **y** en F1_b;
+  2. snap30 − control al azar (snap30 a fronteras aleatorias, mismo nº,
+     5 semillas) > 2 SE en M_local **y** en F1_b.
+- **Secundaria (sin criterio):** snap con R = 6 unidades (6 shots).
