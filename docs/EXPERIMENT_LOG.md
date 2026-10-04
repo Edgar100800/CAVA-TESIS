@@ -1953,3 +1953,32 @@ visual +0.188 ± 0.016 (**z 12.1**); voice − 0.5 = +0.237 ± 0.015. ✅
 
 `results/exp021c_ami_fresh.json` · `results/exp022*_fresh.json`
 
+---
+
+## EXP-023 · Votante de fronteras por cambio de quién tiene la palabra (pre-registro)
+- **Fecha:** 2026-10-03 (registrado antes de calcular las señales del tercer
+  lote)
+- **Idea:** en reuniones, el cambio de tópico suele coincidir con un cambio
+  de quién habla (por ejemplo, el turno del siguiente presentador). Votante
+  de fronteras: divergencia Jensen-Shannon entre el histograma de
+  identidades de voz (ward + BIC, EXP-022d) de las `w` unidades anteriores y
+  el de las siguientes (`scripts/speaker_turns.py`).
+- **Desarrollo** (40 reuniones usadas, perfil meeting), MCC:
+
+  | sistema | MCC | frente a base |
+  |---|---|---|
+  | base (cava con voz) | 0.299 | — |
+  | + turnos w = 3 | 0.290 | −0.009 ± 0.020 |
+  | **+ turnos w = 6** | **0.373** | **+0.074 ± 0.027** |
+  | + turnos w = 12 | 0.332 | +0.033 ± 0.039 |
+  | contiguous v2.1 (p80) | 0.326 | +0.027 ± 0.038 |
+
+  **w = 6 (1 min) queda fijado.**
+- **Confirmación:** tercer lote de 40 reuniones AMI nunca usadas
+  (`data/ami/meetings_fresh3.txt`), perfil meeting, mismas señales.
+- **Criterios:**
+  1. MCC(cava + turnos) − MCC(cava) > 2 SE;
+  2. MCC(cava + turnos) − MCC(contiguous v2.1 p80) > 2 SE (superar a lo
+     contiguo, que hasta ahora CAVA solo igualaba);
+  3. MCC(cava + turnos) − MCC(fused) > 2 SE.
+

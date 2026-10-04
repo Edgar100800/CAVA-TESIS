@@ -50,6 +50,8 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--percentile", type=float, default=80, help="EXP-021c: perfil de contenido")
     ap.add_argument("--return-percentile", type=float, default=90)
+    ap.add_argument("--turns-w", type=int, default=0,
+                    help="EXP-023: añade cava_turns (votante de cambio de hablante, ventana w)")
     ap.add_argument("--compare-film-profile", action="store_true",
                     help="EXP-021c: añade cava_voice con el perfil film (p80/r90)")
     args = ap.parse_args()
@@ -110,6 +112,12 @@ def main():
                  "contiguous": manage(sig, **(KW | {"percentile": 80}))}
         for k in sig:
             plans[k] = manage({k: sig[k]}, return_percentile=R, **(KW | {"link_quorum": 1}))
+        if args.turns_w:
+            from eval_voice_identities import identities
+            from speaker_turns import speaker_turn_scores
+            vid = identities(np.asarray(sig["voice"], np.float32), "ward", k_rule="bic")
+            plans["cava_turns"] = manage(sig, return_percentile=R,
+                                         boundary_signals={"turns": speaker_turn_scores(vid, args.turns_w)}, **AB)
         if args.compare_film_profile:
             plans["cava_film"] = manage(sig, return_percentile=90, **(AB | {"percentile": 80}))
         rr = {"n_pairs_b": len(keep), "pos_rate_b": float(y.mean())}
@@ -126,6 +134,11 @@ def main():
     d = np.array([r["auc_voice"] - 0.5 for r in ra.values() if r.get("auc_voice") is not None])
     crit_a["auc_voice_minus_0.5"] = {"mean": round(float(d.mean()), 4),
                                      "se": round(float(d.std(ddof=1) / np.sqrt(len(d))), 4), "n": int(len(d))}
+    if any("mcc_cava_turns" in r for r in rb.values()):
+        rep_turns = {f"cava_turns_vs_{b}": paired(rb, "mcc_cava_turns", f"mcc_{b}")
+                     for b in ("cava_voice", "contiguous", "fused")}
+    else:
+        rep_turns = {}
     crit_b = {f"cava_voice_vs_{b}": paired(rb, "mcc_cava_voice", f"mcc_{b}")
               for b in ("fused", "contiguous", "cava_novoice", "voice", "visual", "transcript", "vjudge", "cava_film")
               if any(f"mcc_{b}" in r for r in rb.values())}
@@ -138,7 +151,7 @@ def main():
                for k in rb[next(iter(rb))] if k.startswith("mcc_")} if rb else {}
     rep = {"protocol": "exp020_ami_v1", "meetings": args.meetings, "n_a": len(ra), "n_b": len(rb),
            "a_means": means_a, "a_criteria": crit_a, "b_means": means_b, "b_criteria": crit_b,
-           "b_coherence": coh, "per_meeting_a": ra, "per_meeting_b": rb}
+           "b_coherence": coh, "turns_criteria": rep_turns, "per_meeting_a": ra, "per_meeting_b": rb}
     Path(args.out).write_text(json.dumps(rep, indent=1))
     print(json.dumps({k: v for k, v in rep.items() if not k.startswith("per_")}, indent=1))
 
