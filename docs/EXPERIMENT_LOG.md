@@ -2465,3 +2465,40 @@ Comprobaciones previas a la adopción:
 - prueba de humo en IS1000c: 4 hablantes (4 participantes reales).
 - Pendiente: regenerar los mapas AMI de producto
   (`build_ami_topic_maps.py`) con xvec.
+
+---
+
+## EXP-029 · Detector de "un solo hablante" antes de agrupar identidades (pre-registro)
+- **Fecha:** 2026-10-04 (registrado antes de calcular o ver los embeddings
+  cacheados; job 54371)
+- **Problema (EXP-028):**
+  - K por BIC empieza en 2: con un solo hablante, xvec da error de K
+    1.9–2.3 en VoxConverse y 4.1 grupos para el narrador de BBC.
+  - Permitir K = 1 dentro de BIC sobre rasgos de voz colapsa reuniones
+    (EXP-026).
+- **Regla:** antes de ward + BIC, un detector decide si hay un solo hablante.
+  Si dice que sí, todas las unidades con habla son V1.
+- **Candidatos (todos sobre xvec, unidades con habla):**
+  - **D1 spread:** mediana de la similitud coseno de cada unidad con la
+    xvec media del archivo. Un hablante si ≥ τ.
+  - **D2 bic12:** BIC(GMM K=1) − BIC(GMM K=2) sobre PCA-16 (diag). Un
+    hablante si < τ.
+  - **D3 sil2:** silueta (coseno) de ward con K = 2. Un hablante si < τ.
+- **Desarrollo:** VoxConverse dev (31 archivos con un hablante, 185 con
+  varios) más AMI dev (`meetings_40`; nunca hay un solo hablante).
+  - Para cada candidato, τ maximiza la exactitud balanceada (uno frente a
+    varios) en VoxConverse dev, sujeto a 0 reuniones AMI dev declaradas de
+    un hablante.
+  - Se elige el candidato con mayor exactitud balanceada en dev.
+- **Confirmación:**
+  - VoxConverse test (232; 25 con un hablante);
+  - AMI fresh3 (40) como control negativo;
+  - BBC 01–11 (narrador único supuesto), sin criterio.
+- **Criterios:**
+  1. VoxConverse test: \|K_eff − K_true\| sin detector − con detector > 2 SE
+     pareado (todos los archivos);
+  2. VoxConverse test, archivos con ≥ 2 hablantes: ARI con − sin > −0.02
+     (no inferioridad);
+  3. AMI fresh3: 0 de 40 reuniones declaradas de un hablante.
+- **Secundarias:** exactitud balanceada en test; nº de episodios BBC
+  declarados de un hablante.
