@@ -2502,3 +2502,51 @@ Comprobaciones previas a la adopción:
   3. AMI fresh3: 0 de 40 reuniones declaradas de un hablante.
 - **Secundarias:** exactitud balanceada en test; nº de episodios BBC
   declarados de un hablante.
+
+### Resultado EXP-029 (job 54372 de caché; evaluación en CPU)
+
+**Desarrollo** (VoxConverse dev: 25 archivos con un hablante y 184 con
+varios; AMI dev: 40 reuniones), exactitud balanceada con τ óptimo y
+0 reuniones AMI declaradas de un hablante:
+
+| candidato | exactitud balanceada |
+|---|---|
+| **spread** | **0.881** (τ 0.976; un hablante 80 %, varios 96 %) |
+| bic12 | 0.722 |
+| sil2 | 0.660 |
+
+→ spread, congelado antes de la confirmación (commit "EXP-029 dev").
+
+**Confirmación:**
+
+| criterio | resultado | ¿cumple? |
+|---|---|---|
+| 1. VoxConverse test (232): error de K sin − con detector | +0.155 ± 0.060, z 2.60 | **sí** |
+| 2. archivos con ≥ 2 hablantes (205): ARI con − sin | −0.019 (margen −0.02) | **sí, por muy poco** |
+| 3. AMI fresh3: reuniones declaradas de un hablante | 0 de 40 | **sí** |
+
+Secundarias:
+- exactitud balanceada en test: 0.850;
+- en archivos con un hablante, el error de K baja de 1.88 a **0.28**.
+
+**Validado.** Advertencia: el criterio 2 pasa por muy poco. El detector
+cuesta casi 0.02 de ARI en contenido con varios hablantes (falsos
+"un hablante"). Es lo esperable con una especificidad del 96 %.
+
+**BBC (secundaria): 0 de 11 episodios detectados como de un hablante.**
+Diagnóstico:
+- El spread de BBC es 0.91–0.95, en el rango de "varios hablantes" de
+  VoxConverse (mediana 0.935).
+- El cuartil inferior de similitud al centro está en ~0.65: hay una cola
+  de unidades que no son del narrador.
+- Causa probable: el filtro de habla. En VoxConverse es VAD oráculo; en BBC
+  es "≥ 50 % cubierta por segmentos ASR", y Whisper cubre el 87 % del
+  documental, incluidos tramos de música y sonido animal.
+- El cuello de botella en documentales es el **VAD**, no el embedding.
+  Candidato a EXP-030: un VAD real como filtro de habla.
+
+**Adopción:**
+- `topicagg/speaker.single_speaker` en el pipeline (perfiles con xvec) y en
+  `build_ami_topic_maps.py`;
+- test en `tests/test_snap.py`;
+- el perfil documentary sigue publicando "grupos acústicos".

@@ -253,7 +253,13 @@ class Pipeline:
                 x = XVec(self.device)(load_audio(str(self.work / "audio.wav")), units, speech)
                 np.save(f, x)
         vid = np.full(len(units), -1)
-        if speech.sum() >= 10:
+        single = False
+        if self.cfg.get("speaker_embed"):
+            from .speaker import single_speaker
+            single = single_speaker(x, speech)  # EXP-029
+        if single:
+            vid[speech] = 1
+        elif speech.sum() >= 10:
             vid[speech] = identities(x[speech], "ward", k_rule="bic")
         for level in self.doc["levels"].values():
             for t in level["topics"]:

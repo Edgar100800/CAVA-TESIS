@@ -29,3 +29,17 @@ class XVec:
             with self.torch.no_grad():
                 out[chunk] = self.m(**inp).embeddings.float().cpu().numpy()
         return out
+
+
+SINGLE_TAU = 0.9762667417526245  # EXP-029: elegido en VoxConverse dev, confirmado en test
+
+
+def single_speaker(x: np.ndarray, gate: np.ndarray, tau: float = SINGLE_TAU) -> bool:
+    """EXP-029 (detector "spread"): un solo hablante si la mediana de la similitud coseno de cada unidad con
+    habla a la x-vector media del archivo es >= tau. Se aplica antes de ward + BIC (que nunca da K = 1)."""
+    ok = gate & (np.linalg.norm(x, axis=1) > 0)
+    if ok.sum() < 10:
+        return False
+    xn = x[ok] / np.linalg.norm(x[ok], axis=1, keepdims=True)
+    mu = xn.mean(0)
+    return bool(np.median(xn @ (mu / np.linalg.norm(mu))) >= tau)

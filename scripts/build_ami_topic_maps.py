@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from eval_voice_identities import identities  # noqa: E402
 from narrative_eval import BgeEmbedder  # noqa: E402
 from speaker_turns import speaker_turn_scores  # noqa: E402
+from topicagg.speaker import single_speaker  # noqa: E402
 from topicagg.topic_map import build_topic_map  # noqa: E402
 from topicagg.versions import build_versions, check_versions  # noqa: E402
 
@@ -60,7 +61,9 @@ def main():
         xz = np.load(D / "signals" / f"{m}.xvec.npz")
         xs, gate = xz["x"][:n].astype(np.float32), xz["gate"][:n]
         vid = np.full(n, -1)
-        if gate.sum() >= 10:
+        if single_speaker(xs, gate):  # EXP-029 (0/40 reuniones fresh3 lo activan)
+            vid[gate] = 1
+        elif gate.sum() >= 10:
             vid[gate] = identities(xs[gate], "ward", k_rule="bic")
         for level in doc["levels"].values():
             for t in level["topics"]:

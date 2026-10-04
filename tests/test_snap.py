@@ -24,3 +24,14 @@ def test_snap_moves_left_and_keeps_returns():
     ends = np.arange(1, 9) * 5.0
     out = snap_boundaries(lab, ref, ends, R=5.0)
     assert out.tolist() == [0, 0, 3, 3, 3, 3, 0, 0]
+
+
+def test_single_speaker_detector():
+    from topicagg.speaker import single_speaker
+    rng = np.random.default_rng(0)
+    base = rng.normal(size=512)
+    one = base + 0.05 * rng.normal(size=(40, 512))
+    two = np.concatenate([one[:20], -base + 0.05 * rng.normal(size=(20, 512))])
+    gate = np.ones(40, bool)
+    assert single_speaker(one, gate)
+    assert not single_speaker(two, gate)
