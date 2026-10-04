@@ -19,6 +19,15 @@ SDH_SPEAKER = re.compile(r"\b[A-Z][A-Z .'\-]{1,30}:\s*")
 SDH_CUE = re.compile(r"[\[(][^\])]{0,60}[\])]")
 
 
+_CJK = re.compile(r"[\u3000-\u9fff\uac00-\ud7af\uff00-\uffef]")
+
+
+def clean_label(text):
+    """La etiqueta se corta en el primer carácter CJK: Qwen a veces deriva de idioma a mitad de frase."""
+    m = _CJK.search(text)
+    return (text[:m.start()] if m else text).rstrip(" ,;:-")
+
+
 def clean_said(text):
     return re.sub(r"\s+", " ", SDH_CUE.sub(" ", SDH_SPEAKER.sub(" ", text))).strip()
 

@@ -2385,3 +2385,20 @@ Lectura honesta:
     AMI fresh3 (ARI, margen −0.02);
   - los rasgos de voz se quedan como votante de TÓPICO (lo validado en
     EXP-021c / 025).
+
+### Hallazgo: deriva de idioma en etiquetas 14B (2026-10-04)
+
+Qwen2.5-14B a veces continúa la etiqueta en chino a mitad de frase.
+
+Afectados:
+- pipeline: 2 de 368 etiquetas, ambas en bbc_09 (audio en italiano);
+- etiquetas MovieNet ya evaluadas (EXP-019): 374 de 28 394 entradas
+  (1.3 %).
+
+Impacto en EXP-019: los nombres en latín quedan intactos. El texto añadido
+solo podría sumar falsos "contenidos", y con 1.3 % de entradas no cambia las
+conclusiones. No se re-evalúa.
+
+**Corrección:** `clean_label` corta la etiqueta en el primer carácter CJK.
+Se aplica en el pipeline al leer la caché; bbc_09 se regeneró desde caché con
+el mismo mapa (37 tópicos, 65 clips).

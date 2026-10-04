@@ -202,7 +202,7 @@ class Pipeline:
     def labels(self, min_dur=30.0):
         import sys
         sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-        from vjudge_topic_labels import PROMPT, stretches_text
+        from vjudge_topic_labels import PROMPT, clean_label, stretches_text
         topics = [t for t in self.doc["levels"]["default"]["topics"] if t["duration_s"] >= min_dur]
         f = self.work / "topic_labels.json"
         done = json.loads(f.read_text()) if f.exists() else {}
@@ -225,7 +225,7 @@ class Pipeline:
                 f.write_text(json.dumps(done, ensure_ascii=False))
             del m
         for t in self.doc["levels"]["default"]["topics"]:
-            t["topic_label"] = done.get(key(t), t["label"])
+            t["topic_label"] = clean_label(done.get(key(t), t["label"]))
 
     # 11
     def speakers(self):
