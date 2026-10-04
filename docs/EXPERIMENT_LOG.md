@@ -2003,3 +2003,42 @@ visual +0.188 ± 0.016 (**z 12.1**); voice − 0.5 = +0.237 ± 0.015. ✅
 - **Criterio:** MCC(pesos aprendidos) − MCC(pesos iguales, quorum 2), mismas
   señales y perfil, > 2 SE pareado.
 
+
+## Producto · Pipeline de punta a punta sobre contenido largo (job 54272, 2026-10-03)
+
+`scripts/cava_run.py` sobre 4 videos sin GT (no es un experimento: es una
+corrida de producto; las observaciones de abajo son hipótesis, no resultados).
+
+| video | perfil | duración | tópicos | con retornos | voces | G-versión | clips |
+|---|---|---|---|---|---|---|---|
+| 98MoyGZKHXc (TVSum) | film | corto | — | — | — | ✓ | 9 |
+| IS1000c (AMI, audio Mix-Headset) | meeting | 35.7 min | 9 | — | — | ✓ | 18 |
+| bbc_01 (documental) | film | 49.3 min | 59 | 37 | 6 | ✓ | 146 |
+| bbc_02 (documental) | film | 48.1 min | 54 | 29 | 8 | ✓ | 126 |
+
+Verificado en los BBC:
+- todos los mp4 de versión llevan video y audio (ffprobe);
+- recap 60.0 s;
+- highlights 285–295 s, que es el 10 % de la duración;
+- hilos ≤ 10 % cada uno;
+- el mapa cubre el 100 % de la duración;
+- `index.md` trae rangos, retornos, hablantes y etiquetas.
+
+Los tópicos de menos de 30 s llevan como etiqueta el resumen VJudge, no la
+etiqueta de 14B (diseño: `labels(min_dur=30)`).
+
+Observaciones (abiertas):
+1. **Granularidad:** el perfil film (p80/r90) en un documental de 49 min da
+   ~55 tópicos de ~50 s, con retornos temáticos coherentes. Ejemplos:
+   - pingüinos al inicio y al final;
+   - osos polares en 3–8 min.
+
+   Hay varios tópicos casi duplicados (11 y 12, osos polares). Para un
+   consumidor, el nivel `default` es fino. Candidato: un perfil `documentary`
+   o un nivel `coarse`. Hay que pre-registrarlo con GT de capítulos; sin GT
+   no se valida.
+2. **Voces:** 6–8 identidades de voz en un documental con un solo narrador.
+   ward + BIC (validado en reuniones, EXP-022d) **sobre-segmenta** cuando hay
+   música y sonido ambiente. Las identidades de voz quedan validadas solo en
+   habla conversacional. Candidato: aplicar la voz solo en unidades con habla
+   ASR. Se pre-registraría con GT de hablantes en material narrado.
