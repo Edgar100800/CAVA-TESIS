@@ -2074,3 +2074,42 @@ Observaciones (abiertas):
    música y sonido ambiente. Las identidades de voz quedan validadas solo en
    habla conversacional. Candidato: aplicar la voz solo en unidades con habla
    ASR. Se pre-registraría con GT de hablantes en material narrado.
+
+### Resultado EXP-024 (tercer lote, 39 reuniones evaluables)
+
+- **Pesos aprendidos** (1.19 M pares de entrenamiento, 80 reuniones), con
+  quorum 1.36:
+
+  | voice | visual | transcript | vjudge | turns |
+  |---|---|---|---|---|
+  | 1.03 | 0.73 | 0.68 | 0.54 | **2.01** |
+
+- **Consistencia:** con pesos iguales se obtiene MCC 0.234, idéntico por
+  reunión al cava + turnos de EXP-023 (diferencia máxima 0.0). Es la misma
+  línea base.
+
+| criterio | MCC iguales | MCC aprendidos | diferencia | z | ¿cumple? |
+|---|---|---|---|---|---|
+| aprendidos − iguales > 2 SE | 0.234 | 0.265 | +0.031 ± 0.026 | 1.22 | **no** |
+
+**No validado.** La mejora va en la dirección esperada, pero no supera el
+umbral.
+
+Exploratorio (no pre-registrado; no cuenta como resultado):
+- aprendidos frente a contiguous: +0.044 ± 0.054 (z 0.81);
+- los pesos aprendidos dan tópicos más gruesos: 4.7 frente a 5.8 por reunión.
+
+Lo que sí deja el experimento:
+1. **La infraestructura de pesos funciona de punta a punta:**
+   export → rasgos por señal → pesos explícitos → `manage(weights=…)` →
+   evaluación en datos no vistos.
+2. **El orden de los pesos coincide con la evidencia independiente:**
+   - turnos ≈ 2× (EXP-023);
+   - voz > visual ≈ transcript > vjudge (AUC de EXP-020a).
+
+   Es una ponderación interpretable, no una caja negra.
+
+**Decisión:** el perfil meeting se queda con pesos iguales (lo validado). La
+siguiente palanca de pesos no es el peso de voto: es la granularidad (el
+quorum aprendido engrosa los tópicos). Hay que aprenderla con un objetivo
+que mida directamente la granularidad.

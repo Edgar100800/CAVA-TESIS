@@ -114,7 +114,10 @@ La granularidad NO se infiere: ningún criterio interno sin GT eligió bien
 
 **Qué se aprende:** pesos y umbrales **por señal** de `manage()` (permitido
 por ADR-0001), nunca un embedding fusionado. Primera instancia:
-`learn_vote_weights.py` (EXP-024).
+`learn_vote_weights.py` (EXP-024): funciona de punta a punta y da pesos
+interpretables (turnos ≈ 2, voz 1.0, visual 0.7, transcript 0.7, vjudge 0.5),
+pero la mejora (+0.031 MCC, z 1.2) no está validada. El perfil sigue con
+pesos iguales.
 
 Siguientes pesos naturales:
 - percentiles por señal;
