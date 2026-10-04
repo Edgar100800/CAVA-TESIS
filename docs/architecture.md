@@ -38,7 +38,7 @@ video (+ audio) ──► unidades fijas (film 5 s · meeting 10 s)
             ▼
    etiqueta de tópico   Qwen2.5-14B frozen sobre todos los tramos (EXP-019b)
    personajes           nombres propios + heredados por enlace (EXP-019d)
-   hablantes            identidades de voz, ward + K por BIC (EXP-022d)
+   hablantes            embedding WavLM-sv sobre unidades con habla, ward + K por BIC (EXP-022d, 026, 028)
             ▼
    versions   topicagg/versions.py   → G-versión
             ▼
@@ -55,7 +55,8 @@ Cada etapa se cachea en `<out>/<video>/work/` y se puede reanudar.
 | `topicagg/multimodal_manager.py` | `manage()`: votos por señal, retornos (`return_percentile`), enlace promedio (`link_mode="average"`), abstención (`abstain`), votantes de fronteras (`boundary_signals`), pesos por señal (`weights`) |
 | `topicagg/topic_map.py` | mapa de tópicos: tramos, retornos, etiqueta, provenance (`agreement`, `support`, coherencia), contexto por clip |
 | `topicagg/versions.py` | perfiles de consumo y gate G-versión |
-| `topicagg/voice.py` | señal de voz sin modelos (log-mel + f0 + energía) |
+| `topicagg/voice.py` | señal de voz sin modelos (log-mel + f0 + energía): votante de TÓPICO |
+| `topicagg/speaker.py` | embedding de hablante WavLM-sv (pesos fijados y verificados): IDENTIDAD (EXP-028) |
 | `topicagg/pipeline.py` | pipeline de punta a punta, resumible |
 | `scripts/cava_run.py` | CLI del pipeline |
 | `scripts/speaker_turns.py` | votante de fronteras por cambio de quién habla (EXP-023) |
@@ -88,6 +89,7 @@ La granularidad NO se infiere: ningún criterio interno sin GT eligió bien
 | Transfiere a documentales nunca vistos (escenas de 5 anotadores) | EXP-025 (z 6.1 frente a contiguo, 7.4 frente a fused) |
 | Identidades de voz solo sobre unidades con habla: menos grupos espurios, no inferior en AMI | EXP-026 (z 2.29; ARI −0.007) |
 | Fronteras de la señal visual + agrupamiento por consenso (snap a ≤ 30 s) | EXP-027 (MovieNet train2: M_local +0.091 z 26.6, F1 +0.054 z 23.0; frente a control al azar z 12.4 / 27.8) |
+| Identidad de hablante con embedding WavLM-sv | EXP-028 (VoxConverse test: AUC 0.96 frente a 0.74, z 28.5; ARI 0.63 frente a 0.25; AMI ARI 0.29 → 0.73) |
 | Versiones por consumidor cumplen presupuesto | G-versión: 58/58 películas, 80/80 reuniones |
 
 ## 6. Qué no funcionó (y por qué importa)
@@ -103,6 +105,9 @@ La granularidad NO se infiere: ningún criterio interno sin GT eligió bien
   la escena acústica (EXP-026). Fuera del perfil meeting, los V# se publican
   como "grupos acústicos".
 - K = 1 permitido en BIC (EXP-026, desarrollo): colapsa reuniones reales.
+- Contenido de un solo hablante (narrador): ninguna señal de identidad
+  resuelve K = 1 (EXP-028: BBC 4.1 grupos con xvec). Pendiente: detector de
+  "más de un hablante".
 - Fronteras exactas: en documentales la señal visual sola corta mejor que el
   consenso (F1 0.48 frente a 0.40). CAVA gana en agrupar, no en cortar.
 - Re-etiquetar con un registro de personajes o con umbral absoluto

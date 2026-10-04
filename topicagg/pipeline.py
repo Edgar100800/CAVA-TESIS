@@ -28,10 +28,14 @@ from pathlib import Path
 
 import numpy as np
 
-PROFILES = {"film": {"unit_s": 5.0, "percentile": 80, "return_percentile": 90, "snap_visual_s": 30.0},  # EXP-027
+PROFILES = {"film": {"unit_s": 5.0, "percentile": 80, "return_percentile": 90, "snap_visual_s": 30.0,  # EXP-027
+                     "speaker_embed": True},  # EXP-028
             "documentary": {"unit_s": 5.0, "percentile": 90, "return_percentile": 90,  # EXP-025
-                            "snap_visual_s": 30.0},
-            "meeting": {"unit_s": 10.0, "percentile": 95, "return_percentile": 90,
+                            "snap_visual_s": 30.0, "speaker_embed": True,
+                            # narrador único: K por BIC nunca da 1 y sobre-divide (EXP-028, BBC 4.1 grupos)
+                            "speaker_kind": "acoustic_group"},
+            "meeting": {"unit_s": 10.0, "speaker_embed": True,  # EXP-028 (AMI ARI 0.29 → 0.73)
+                        "percentile": 95, "return_percentile": 90,
                         "speaker_turns_w": 6}}  # EXP-023
 HF = "/home/edgar.chambilla/Tesis/SegLoop/data/hf_cache"
 VL = ("Qwen/Qwen2.5-VL-7B-Instruct", "cc594898137f460bfe9f0759e9844b3ce807cfb5")
@@ -238,6 +242,16 @@ class Pipeline:
         # EXP-026: solo unidades con habla ASR (≥ 50 % cubierta); no inferior en AMI, menos grupos espurios en BBC
         speech = np.array([sum(max(0.0, min(u1, b) - max(u0, a)) for a, b, *_ in self.state["asr_segments"])
                            >= 0.5 * (u1 - u0) for u0, u1 in units])
+        if self.cfg.get("speaker_embed"):
+            # EXP-028: identidad por embedding de hablante (WavLM-sv), no por rasgos de voz
+            f = self.work / "speaker_xvec.npy"
+            if f.exists():
+                x = np.load(f)
+            else:
+                from .speaker import XVec
+                from .voice import load_audio
+                x = XVec(self.device)(load_audio(str(self.work / "audio.wav")), units, speech)
+                np.save(f, x)
         vid = np.full(len(units), -1)
         if speech.sum() >= 10:
             vid[speech] = identities(x[speech], "ward", k_rule="bic")
@@ -248,9 +262,12 @@ class Pipeline:
                     c["speakers"] = speakers_of([u for u in t["shots"] if units[u][0] >= a - 1e-6
                                                  and units[u][1] <= b + 1e-6], vid)
         self.doc["voice_identities"] = sorted({f"V{int(v)}" for v in vid if v >= 0})
-        # EXP-020/022: V# = hablante solo está validado en habla conversacional (perfil meeting);
-        # en film/documental la voz agrupa la escena acústica (EXP-026, desarrollo)
-        self.doc["voice_identity_kind"] = "speaker" if self.cfg["profile"] == "meeting" else "acoustic_group"
+        # EXP-020/022: con rasgos de voz, V# = hablante solo en habla conversacional (meeting); fuera de ella la
+        # voz agrupa la escena acústica (EXP-026). EXP-028: el embedding de hablante sí identifica hablantes
+        # en material de difusión (VoxConverse), así que con él V# vuelve a ser "hablante".
+        self.doc["voice_identity_kind"] = self.cfg.get("speaker_kind") or (
+            "speaker" if self.cfg["profile"] == "meeting" or self.cfg.get("speaker_embed") else "acoustic_group")
+        self.doc["voice_identity_signal"] = "wavlm_sv" if self.cfg.get("speaker_embed") else "voice_features"
         (self.out / "topic_map.json").write_text(json.dumps(self.doc, ensure_ascii=False, indent=1))
 
     # 12-13

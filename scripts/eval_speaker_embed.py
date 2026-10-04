@@ -21,32 +21,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from eval_ami import auc  # noqa: E402
 from eval_bbc import k_eff, voice_ids  # noqa: E402
+from topicagg.speaker import WAVLM, XVec  # noqa: E402,F401
 from topicagg.voice import load_audio, voice_features  # noqa: E402
 
 V = Path("data/voxconverse")
-WAVLM = ("microsoft/wavlm-base-plus-sv", "939f573b5e1a33c20332a5fe9ac34f95a66c4f07")
 UNIT = 5.0
-
-
-class XVec:
-    def __init__(self, device=None):
-        device = device or ("cuda" if __import__("torch").cuda.is_available() else "cpu")
-        import torch
-        from transformers import AutoFeatureExtractor, WavLMForXVector
-        self.torch, self.device = torch, device
-        self.fe = AutoFeatureExtractor.from_pretrained(WAVLM[0], revision=WAVLM[1])
-        self.m = WavLMForXVector.from_pretrained(WAVLM[0], revision=WAVLM[1], use_safetensors=True).to(device).eval()
-
-    def __call__(self, audio, units, gate, sr=16000, bs=32):
-        out = np.zeros((len(units), 512), np.float32)
-        idx = [i for i in range(len(units)) if gate[i]]
-        for k in range(0, len(idx), bs):
-            chunk = idx[k:k + bs]
-            x = [audio[int(units[i][0] * sr):int(units[i][1] * sr)] for i in chunk]
-            inp = self.fe(x, sampling_rate=sr, return_tensors="pt", padding=True).to(self.device)
-            with self.torch.no_grad():
-                out[chunk] = self.m(**inp).embeddings.float().cpu().numpy()
-        return out
 
 
 def rttm(path):

@@ -2423,3 +2423,45 @@ Comparación con el perfil film anterior:
 
 Salida en `data/cava_runs_doc/`. Las versiones sin snap se conservan en
 `data/cava_runs_doc_nosnap/` (solo bbc_01).
+
+### Resultado EXP-028 (VoxConverse; jobs 54341, 54342, 54347)
+
+| split | AUC voz / xvec | ARI voz / xvec | \|K_eff − K_true\| voz / xvec |
+|---|---|---|---|
+| dev (216) | 0.790 / **0.976** | 0.308 / **0.604** | 2.03 / **1.59** |
+| test (232) | 0.735 / **0.962** | 0.249 / **0.635** | 1.84 / **1.27** |
+
+| criterio (test) | diferencia | z | ¿cumple? |
+|---|---|---|---|
+| 1. AUC xvec − voz | +0.226 ± 0.008 | 28.5 | **sí** |
+| 2. ARI xvec − voz | +0.386 ± 0.021 | 18.7 | **sí** |
+| 3. err voz − xvec | +0.565 ± 0.088 | 6.4 | **sí** |
+
+**Validado.**
+
+Comprobaciones previas a la adopción:
+- **AMI fresh3 (no inferioridad para el perfil meeting):** ARI 0.286 → 0.731
+  (+0.445 ± 0.041). Cumple de sobra: la identidad en reuniones mejora 2.5×.
+- **BBC (sin criterio):** K_eff de narrador 5.3 → 4.1. Mejora, pero no llega
+  a 1.
+
+**Modo de fallo común: un solo hablante.**
+- En VoxConverse, los archivos con K_true = 1 tienen error de K de 1.9–2.3
+  con xvec, frente a 1.2–1.5 en los de varios hablantes.
+- Causa: K por BIC empieza en 2, y ward sobre-divide. Permitir K = 1 en BIC
+  ya se descartó (EXP-026: colapsa reuniones).
+- Hace falta un detector previo de "¿hay más de un hablante?". Es candidato
+  a EXP-029.
+
+**Adopción:**
+- `topicagg/speaker.py` (XVec, pesos fijados) y caché
+  `work/speaker_xvec.npy`;
+- la IDENTIDAD (V#) usa xvec en los tres perfiles;
+- `voice_identity_kind`:
+  - meeting y film: "hablante";
+  - documentary: "grupo acústico", hasta resolver el narrador único;
+- el votante de turnos del perfil meeting (EXP-023) sigue con los rasgos de
+  voz, su configuración validada;
+- prueba de humo en IS1000c: 4 hablantes (4 participantes reales).
+- Pendiente: regenerar los mapas AMI de producto
+  (`build_ami_topic_maps.py`) con xvec.
