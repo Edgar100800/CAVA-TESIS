@@ -110,15 +110,58 @@ def topics_from_plan(plan: TopicPlan, shot_times: list[list[float]],
     return out
 
 
+def snap_boundaries(lab: np.ndarray, ref_lab: np.ndarray, ends: np.ndarray, R: float) -> np.ndarray:
+    """EXP-027: mueve cada frontera de `lab` a la frontera de `ref_lab` (la señal visual)
+    más cercana si está a <= R segundos; las unidades intermedias pasan al tópico del
+    lado que se extiende. Usa las fronteras de UNA señal, no fusiona representaciones."""
+    lab = np.asarray(lab).copy()
+    ref_lab = np.asarray(ref_lab)
+    vb = np.where(ref_lab[1:] != ref_lab[:-1])[0]
+    if not len(vb):
+        return lab
+    for b in np.where(lab[1:] != lab[:-1])[0]:
+        k = vb[np.argmin(np.abs(ends[vb] - ends[b]))]
+        if k != b and abs(ends[k] - ends[b]) <= R:
+            if k > b:
+                lab[b + 1:k + 1] = lab[b]
+            else:
+                lab[k + 1:b + 1] = lab[b + 1]
+    return lab
+
+
+def _apply_snap(plan, new_labels):
+    """Reasigna los miembros de cada grupo según las etiquetas tras el snap y recalcula el soporte."""
+    by_label = {int(min(g.segment_indices)): g for g in plan.groups}
+    groups = []
+    for lv, g in by_label.items():
+        members = [int(i) for i in np.where(new_labels == lv)[0]]
+        if not members:
+            continue
+        g.segment_indices = members
+        support = {}
+        for name, labs in plan.per_signal_labels.items():
+            lm = labs[members]
+            _, inv, counts = np.unique(lm, return_inverse=True, return_counts=True)
+            support[name] = round(int(((counts[inv] > 1) & (lm >= 0)).sum()) / len(members), 3)
+        g.signal_support = support
+        groups.append(g)
+    plan.groups = groups
+    plan.labels = new_labels
+    return plan
+
+
 def build_topic_map(video_id: str, signals: dict[str, np.ndarray],
                     shot_times: list[list[float]], *,
                     unit_summaries: list[dict] | None = None,
                     boundary_signals: dict[str, np.ndarray] | None = None,
                     percentile: float = 80, return_percentile: float = 90,
                     link_quorum: int = 2, abstain: bool = False,
-                    unit_texts: list[str] | None = None) -> dict:
+                    unit_texts: list[str] | None = None,
+                    snap_visual_s: float | None = None) -> dict:
     """Mapa de tópicos en dos granularidades con los parámetros pre-registrados
-    de EXP-017b (percentile 80, return_percentile 90, link_mode average)."""
+    de EXP-017b (percentile 80, return_percentile 90, link_mode average).
+    snap_visual_s: EXP-027, fronteras ajustadas a las de la señal visual a <= R s
+    (None = sin snap; validado en film y documental con R = 30, no en reuniones)."""
     n = min(len(v) for v in signals.values())
     n = min(n, len(shot_times))
     signals = {k: np.asarray(v, np.float32)[:n] for k, v in signals.items()}
@@ -129,12 +172,18 @@ def build_topic_map(video_id: str, signals: dict[str, np.ndarray],
            "signals": sorted(signals) + sorted(boundary_signals or {}),
            "unit_times": [[round(a, 2), round(b, 2)] for a, b in shot_times[:n]],
            "params": {"percentile": percentile, "return_percentile": return_percentile,
-                      "link_mode": "average", "abstain": abstain, "quorum_by_level": levels},
+                      "link_mode": "average", "abstain": abstain, "quorum_by_level": levels,
+                      "snap_visual_s": snap_visual_s if "visual" in signals else None},
            "levels": {}}
     for name, q in levels.items():
         plan = manage(signals, n_segments=n, percentile=percentile, link_quorum=q,
                       return_percentile=return_percentile, link_mode="average",
                       boundary_signals=boundary_signals, abstain=abstain)
+        if snap_visual_s and "visual" in signals:
+            ref = manage({"visual": signals["visual"]}, n_segments=n, percentile=percentile, link_quorum=1,
+                         return_percentile=return_percentile, link_mode="average", abstain=abstain).labels
+            ends = np.array([b for _, b in shot_times[:n]], float)
+            plan = _apply_snap(plan, snap_boundaries(plan.labels, ref, ends, snap_visual_s))
         topics = topics_from_plan(plan, shot_times, signals, unit_summaries, unit_texts)
         doc["levels"][name] = {"n_topics": len(topics),
                                "n_returning": sum(1 for t in topics if t["returns"]),

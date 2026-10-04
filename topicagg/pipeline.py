@@ -28,8 +28,9 @@ from pathlib import Path
 
 import numpy as np
 
-PROFILES = {"film": {"unit_s": 5.0, "percentile": 80, "return_percentile": 90},
-            "documentary": {"unit_s": 5.0, "percentile": 90, "return_percentile": 90},  # EXP-025
+PROFILES = {"film": {"unit_s": 5.0, "percentile": 80, "return_percentile": 90, "snap_visual_s": 30.0},  # EXP-027
+            "documentary": {"unit_s": 5.0, "percentile": 90, "return_percentile": 90,  # EXP-025
+                            "snap_visual_s": 30.0},
             "meeting": {"unit_s": 10.0, "percentile": 95, "return_percentile": 90,
                         "speaker_turns_w": 6}}  # EXP-023
 HF = "/home/edgar.chambilla/Tesis/SegLoop/data/hf_cache"
@@ -189,7 +190,7 @@ class Pipeline:
             vid = identities(np.asarray(sig["voice"], np.float32), "ward", k_rule="bic")
             bnd = {"turns": speaker_turn_scores(vid, self.cfg["speaker_turns_w"])}
         self.doc = build_topic_map(self.video.stem, sig, self.state["units"], unit_summaries=self.summaries,
-                                   boundary_signals=bnd,
+                                   boundary_signals=bnd, snap_visual_s=self.cfg.get("snap_visual_s"),
                                    percentile=self.cfg["percentile"],
                                    return_percentile=self.cfg["return_percentile"], abstain=True,
                                    unit_texts=self.state["asr"])

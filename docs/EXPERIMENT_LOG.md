@@ -2309,3 +2309,42 @@ con film) y G-versión ✓.
   2. snap30 − control al azar (snap30 a fronteras aleatorias, mismo nº,
      5 semillas) > 2 SE en M_local **y** en F1_b.
 - **Secundaria (sin criterio):** snap con R = 6 unidades (6 shots).
+
+### Resultado EXP-027 (MovieNet train2, 91 películas)
+
+| sistema | M_local | F1_b |
+|---|---|---|
+| cava (EXP-018) | 0.226 | 0.434 |
+| **snap30** | **0.317** | 0.488 |
+| control: snap30 a fronteras al azar | 0.274 | 0.326 |
+| visual sola | 0.289 | **0.535** |
+| snap 6 shots (secundaria) | 0.291 | 0.479 |
+
+| criterio | diferencia | z | ¿cumple? |
+|---|---|---|---|
+| 1. snap30 − cava, M_local | +0.091 ± 0.003 | 26.6 | **sí** |
+| 1. snap30 − cava, F1_b | +0.054 ± 0.002 | 23.0 | **sí** |
+| 2. snap30 − al azar, M_local | +0.043 ± 0.004 | 12.4 | **sí** |
+| 2. snap30 − al azar, F1_b | +0.162 ± 0.006 | 27.8 | **sí** |
+
+**Validado.** Desarrollado en documentales y confirmado en ficción.
+
+Lectura honesta:
+1. **Parte de la ganancia en M_local es absorción de fragmentos.** El control
+   al azar también sube M_local frente a cava (0.274 frente a 0.226). La
+   parte atribuible a las fronteras visuales es +0.043 en M_local y +0.162
+   en F1.
+2. **En escenas locales de películas, la visual sola (0.289) supera a cava
+   p80 (0.226).** Lo validado de CAVA en películas (EXP-018) son enlaces de
+   largo alcance (hilos y retornos), no escenas locales. Con snap, CAVA
+   supera también a la visual sola en M_local (0.317). La visual sola sigue
+   mejor en F1 de fronteras exactas (0.535 frente a 0.488).
+3. El mapa resultante combina las fronteras de una señal con el agrupamiento
+   por consenso. Es la división de trabajo que sugerían EXP-010–014 y
+   EXP-025.
+
+**Adopción:**
+- `build_topic_map(snap_visual_s=…)`, por defecto apagado;
+- perfiles film y documentary del pipeline con R = 30 s;
+- meeting sin snap (no validado en reuniones; la cámara de AMI es fija);
+- tests en `tests/test_snap.py`.

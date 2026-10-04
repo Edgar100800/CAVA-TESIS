@@ -32,6 +32,7 @@ video (+ audio) ──► unidades fijas (film 5 s · meeting 10 s)
      · votantes de fronteras opcionales: SegLoop, turnos de hablante
      · consenso por ENLACE PROMEDIO sobre la matriz de votos
      · ABSTENCIÓN: una señal sin evidencia en un shot no vota sobre él
+     · SNAP (film/documentary): fronteras del mapa → frontera visual a ≤ 30 s (EXP-027)
             ▼
    topic_map  topicagg/topic_map.py   (niveles fine/default, contexto por clip)
             ▼
@@ -86,6 +87,7 @@ La granularidad NO se infiere: ningún criterio interno sin GT eligió bien
 | Identidades de voz específicas; ward + BIC es la mejor regla | EXP-022 / 022d (ARI 0.30, especificidad 87–93 %) |
 | Transfiere a documentales nunca vistos (escenas de 5 anotadores) | EXP-025 (z 6.1 frente a contiguo, 7.4 frente a fused) |
 | Identidades de voz solo sobre unidades con habla: menos grupos espurios, no inferior en AMI | EXP-026 (z 2.29; ARI −0.007) |
+| Fronteras de la señal visual + agrupamiento por consenso (snap a ≤ 30 s) | EXP-027 (MovieNet train2: M_local +0.091 z 26.6, F1 +0.054 z 23.0; frente a control al azar z 12.4 / 27.8) |
 | Versiones por consumidor cumplen presupuesto | G-versión: 58/58 películas, 80/80 reuniones |
 
 ## 6. Qué no funcionó (y por qué importa)
