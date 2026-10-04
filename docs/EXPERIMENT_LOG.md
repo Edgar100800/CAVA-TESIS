@@ -1982,3 +1982,24 @@ visual +0.188 ± 0.016 (**z 12.1**); voice − 0.5 = +0.237 ± 0.015. ✅
      contiguo, que hasta ahora CAVA solo igualaba);
   3. MCC(cava + turnos) − MCC(fused) > 2 SE.
 
+---
+
+## EXP-024 · Pesos de voto por señal aprendidos (pre-registro)
+- **Fecha:** 2026-10-03 (registrado antes de exportar o calcular el tercer
+  lote)
+- **Idea:** primera ejecución de la infraestructura para "construir pesos".
+  ADR-0001 prohíbe fusionar representaciones pero declara los pesos por
+  señal como parámetros explícitos. Aquí se aprenden de GT.
+- **Método (`scripts/learn_vote_weights.py`):**
+  - Entrenamiento con las 80 reuniones AMI ya usadas (dev + conf, export
+    `data/training/ami`).
+  - Rasgo por señal y par de unidades lejanas (≥ 18): 1 si la señal agrupa el
+    par en su propio tópico (perfil meeting, retornos, abstención), 0 si no o
+    si se abstiene. Señales: voice, visual, transcript, vjudge, turns
+    (EXP-023, w = 6).
+  - Logística balanceada sobre "mismo tópico GT". Pesos = coeficientes (piso
+    0.05) normalizados a suma 5; quorum = −intercepto en esa escala.
+- **Prueba:** tercer lote AMI (`meetings_fresh3.txt`), nunca usado.
+- **Criterio:** MCC(pesos aprendidos) − MCC(pesos iguales, quorum 2), mismas
+  señales y perfil, > 2 SE pareado.
+
