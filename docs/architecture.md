@@ -70,6 +70,7 @@ La granularidad NO se infiere: ningún criterio interno sin GT eligió bien
 | perfil | unidad | corte | retorno | validación |
 |---|---|---|---|---|
 | film | 5 s (o shots) | p80 | p90 | EXP-018 (test MovieNet) |
+| documentary | 5 s | p90 | p90 | EXP-025 (BBC Planet Earth, dominio nuevo: 62 % del techo humano; supera a contiguo z 6.1, fused z 7.4, p80 z 2.6) |
 | meeting | 10 s | p95 + votante de turnos w = 6 | p90 | EXP-021c, EXP-023 (iguala a contiguo, supera a fusión y a cava sin turnos) |
 
 ## 5. Qué está validado (pre-registrado y en datos no vistos)
@@ -83,6 +84,8 @@ La granularidad NO se infiere: ningún criterio interno sin GT eligió bien
 | Los nombres se propagan por los enlaces sin perder precisión | EXP-019d (val, test, train, train2) |
 | La voz identifica al hablante | EXP-020a (AUC 0.72–0.74 frente a visual 0.55–0.57, z 5.8–12.1) |
 | Identidades de voz específicas; ward + BIC es la mejor regla | EXP-022 / 022d (ARI 0.30, especificidad 87–93 %) |
+| Transfiere a documentales nunca vistos (escenas de 5 anotadores) | EXP-025 (z 6.1 frente a contiguo, 7.4 frente a fused) |
+| Identidades de voz solo sobre unidades con habla: menos grupos espurios, no inferior en AMI | EXP-026 (z 2.29; ARI −0.007) |
 | Versiones por consumidor cumplen presupuesto | G-versión: 58/58 películas, 80/80 reuniones |
 
 ## 6. Qué no funcionó (y por qué importa)
@@ -93,7 +96,13 @@ La granularidad NO se infiere: ningún criterio interno sin GT eligió bien
 - Votación por mediana / quorum ingenuo entre señales (EXP-015 / 016): diluye
   a la mejor señal.
 - Identidades P# por apariencia: consistentes pero **poco específicas**
-  (0.55–0.63 frente a grupos al azar). Para identidad, la voz es la señal.
+  (0.55–0.63 frente a grupos al azar). Para identidad, la voz es la señal,
+  pero **solo en habla conversacional**: con narrador + música, la voz agrupa
+  la escena acústica (EXP-026). Fuera del perfil meeting, los V# se publican
+  como "grupos acústicos".
+- K = 1 permitido en BIC (EXP-026, desarrollo): colapsa reuniones reales.
+- Fronteras exactas: en documentales la señal visual sola corta mejor que el
+  consenso (F1 0.48 frente a 0.40). CAVA gana en agrupar, no en cortar.
 - Re-etiquetar con un registro de personajes o con umbral absoluto
   (EXP-019c / 019g): cuesta precisión o contenido.
 - Granularidad elegida por criterio interno (EXP-021): no funciona; de ahí

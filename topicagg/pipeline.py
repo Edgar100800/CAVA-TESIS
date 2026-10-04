@@ -29,6 +29,7 @@ from pathlib import Path
 import numpy as np
 
 PROFILES = {"film": {"unit_s": 5.0, "percentile": 80, "return_percentile": 90},
+            "documentary": {"unit_s": 5.0, "percentile": 90, "return_percentile": 90},  # EXP-025
             "meeting": {"unit_s": 10.0, "percentile": 95, "return_percentile": 90,
                         "speaker_turns_w": 6}}  # EXP-023
 HF = "/home/edgar.chambilla/Tesis/SegLoop/data/hf_cache"
@@ -230,7 +231,13 @@ class Pipeline:
         from build_ami_topic_maps import speakers_of
         from eval_voice_identities import identities
         units = self.state["units"]
-        vid = identities(np.asarray(self.arrays["voice"][:len(units)], np.float32), "ward", k_rule="bic")
+        x = np.asarray(self.arrays["voice"][:len(units)], np.float32)
+        # EXP-026: solo unidades con habla ASR (≥ 50 % cubierta); no inferior en AMI, menos grupos espurios en BBC
+        speech = np.array([sum(max(0.0, min(u1, b) - max(u0, a)) for a, b, *_ in self.state["asr_segments"])
+                           >= 0.5 * (u1 - u0) for u0, u1 in units])
+        vid = np.full(len(units), -1)
+        if speech.sum() >= 10:
+            vid[speech] = identities(x[speech], "ward", k_rule="bic")
         for level in self.doc["levels"].values():
             for t in level["topics"]:
                 t["speakers"] = speakers_of(t["shots"], vid)

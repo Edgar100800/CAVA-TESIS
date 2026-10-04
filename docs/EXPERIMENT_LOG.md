@@ -2188,3 +2188,74 @@ que mida directamente la granularidad.
   validada en habla conversacional (EXP-020/022). En el perfil film o
   documentary, los V# se marcan como "agrupación acústica", no como
   hablantes.
+
+### Resultado EXP-025 (BBC Planet Earth; jobs 54320 + 54322)
+
+**Desarrollo (01–04), M_local medio:**
+
+| p80 | p90 | p95 |
+|---|---|---|
+| 0.320 | **0.405** | 0.374 |
+
+→ **p\* = 90**, fijado antes de evaluar 05–11.
+
+**Confirmación (05–11, n = 7)**, M_local medio:
+
+| sistema | M_local | segmentos |
+|---|---|---|
+| techo humano | 0.662 | — |
+| **cava p90** | **0.413** | 79 |
+| cava p95 | 0.398 | 37 |
+| cava p80 | 0.344 | 138 |
+| fused p90 / p95 | 0.281 / 0.280 | — |
+| contiguous p80 | 0.239 | 10 |
+
+Escenas humanas por episodio: 25–70.
+
+| criterio | diferencia | z | ¿cumple? |
+|---|---|---|---|
+| 1. cava p90 − mejor contiguous | +0.174 ± 0.029 | 6.11 | **sí** |
+| 2. cava p90 − mejor fused | +0.126 ± 0.017 | 7.41 | **sí** |
+| 3. cava p90 − cava p80 | +0.069 ± 0.026 | 2.63 | **sí** |
+| 4. G-coherencia | 7/7 episodios en voice, visual, transcript y vjudge | — | **sí** |
+
+**Validado.**
+- CAVA transfiere a un dominio nuevo (documental, audio en italiano, nunca
+  ajustado) y alcanza el 62 % del techo humano.
+- El perfil `documentary` (5 s, p90, r90) queda justificado: la observación
+  de producto "demasiado fino" era correcta.
+- Lo contiguo, que en AMI era la base más dura, colapsa en documentales
+  (3–14 segmentos).
+
+Secundarias (sin criterio):
+- **F1 de fronteras:**
+  - cava p90: 0.40
+  - cava p80: 0.44
+  - visual solo: **0.48**
+  - techo humano: 0.65
+
+  Para cortar fronteras, la mejor señal sola es la visual. CAVA gana en
+  agrupar (M_local), no en fronteras exactas, lo mismo que en películas
+  (EXP-010–014).
+- **Comparación con SegLoop:** su F1 0.13 es a nivel de shot y no es
+  comparable directamente con este F1 por unidades de 5 s.
+
+### Resultado EXP-026 (voz con un narrador)
+
+| criterio | resultado | ¿cumple? |
+|---|---|---|
+| 1. BBC 03–11 (n = 9): err(base) − err(gate) | +0.89 ± 0.39, z 2.29 | **sí** |
+| 2. AMI fresh3: ARI(gate) − ARI(base) | −0.007 ± 0.009 (> −0.02) | **sí** |
+
+**Validado, con alcance limitado.** El filtro de habla reduce los grupos
+espurios, pero K_eff sigue en 5.7 frente a 1 (base 6.7). La voz en material
+narrado sigue sin identificar al hablante. Por eso queda la regla
+pre-registrada: los V# fuera del perfil meeting son "grupos acústicos".
+
+**Cambios en el pipeline:**
+- perfil `documentary`;
+- identidades de voz solo sobre unidades con habla ASR (todos los perfiles);
+- etiqueta de los V# según el perfil.
+
+Prueba de humo: bbc_05 con el perfil documentary da 36 tópicos (frente a ~55
+con film) y G-versión ✓.
