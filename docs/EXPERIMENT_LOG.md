@@ -2348,3 +2348,40 @@ Lectura honesta:
 - perfiles film y documentary del pipeline con R = 30 s;
 - meeting sin snap (no validado en reuniones; la cámara de AMI es fija);
 - tests en `tests/test_snap.py`.
+
+---
+
+## EXP-028 · Identidad del hablante fuera de reuniones: embedding de hablante frente a rasgos de voz (pre-registro)
+- **Fecha:** 2026-10-04 (registrado antes de descargar o ver VoxConverse)
+- **Motivación:**
+  - EXP-026: con narrador y música, los rasgos de voz (log-mel + tono,
+    z-score por video) agrupan la escena acústica, no al hablante.
+  - Para hablantes en material no conversacional hace falta una señal
+    invariante al fondo.
+- **Datos:** VoxConverse (Chung et al. 2020; anotaciones CC BY 4.0).
+  - Contenido: noticias, debates y programas de YouTube, con música, ruido
+    y solapamientos; diarización GT (RTTM).
+  - Desarrollo: dev (216 archivos). Confirmación: test (232), nunca visto.
+- **Señal nueva (`xvec`):** WavLM-base-plus-sv, frozen.
+  - Pesos: `refs/pr/4` (sha 939f573b), conversión safetensors de
+    SFconvertbot. Verificado: los 266 tensores son idénticos al
+    `pytorch_model.bin` oficial.
+  - Riesgo declarado: está entrenado en VoxCeleb (YouTube). Puede haber
+    personas en común con VoxConverse; los segmentos, no.
+- **Protocolo** (`scripts/eval_speaker_embed.py`):
+  - unidades de 5 s;
+  - hablante dominante GT: ≥ 60 % del habla y ≥ 1.5 s;
+  - filtro de habla con VAD oráculo (≥ 50 % de la unidad), el mismo para
+    ambas señales;
+  - identidades con ward + K por BIC (EXP-022d) para ambas.
+- **Criterios (test, SE pareado por archivo):**
+  1. AUC(xvec) − AUC(hand) > 2 SE;
+  2. ARI(xvec) − ARI(hand) > 2 SE;
+  3. |K_eff − K_true|(hand) − |K_eff − K_true|(xvec) > 2 SE.
+- **Si se valida:**
+  - `xvec` reemplaza a los rasgos de voz para la IDENTIDAD (V#) en todos los
+    perfiles;
+  - antes de cambiar el perfil meeting se comprueba la no inferioridad en
+    AMI fresh3 (ARI, margen −0.02);
+  - los rasgos de voz se quedan como votante de TÓPICO (lo validado en
+    EXP-021c / 025).
