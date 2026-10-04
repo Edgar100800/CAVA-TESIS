@@ -7,6 +7,7 @@ clips/*.mp4, version_<perfil>_<k>.mp4 y work/ (caché resumible de cada etapa).
 """
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -34,7 +35,8 @@ def main():
                         "n_topics": p.doc["levels"]["default"]["n_topics"],
                         "n_returning": p.doc["levels"]["default"]["n_returning"],
                         "voices": len(p.doc.get("voice_identities", []))}
-    Path(args.out, "run_report.json").write_text(json.dumps(report, indent=1))
+    tag = os.environ.get("SLURM_JOB_ID")
+    Path(args.out, f"run_report_{tag}.json" if tag else "run_report.json").write_text(json.dumps(report, indent=1))
     print(json.dumps(report, indent=1))
 
 

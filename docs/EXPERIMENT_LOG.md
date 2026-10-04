@@ -2113,3 +2113,78 @@ Lo que sí deja el experimento:
 siguiente palanca de pesos no es el peso de voto: es la granularidad (el
 quorum aprendido engrosa los tópicos). Hay que aprenderla con un objetivo
 que mida directamente la granularidad.
+
+---
+
+## EXP-025 · Documentales: estructura CAVA frente a escenas humanas (BBC Planet Earth, pre-registro)
+- **Fecha:** 2026-10-04 (registrado antes de calcular las señales de los
+  episodios 05–11, jobs 54320 / 54321)
+- **Dominio nuevo para CAVA:** BBC Planet Earth, 11 episodios de ~49 min,
+  audio en italiano, con escenas GT de 5 anotadores (Baraldi et al. 2015).
+  SegLoop se evaluó aquí zero-shot (F1 0.13); CAVA nunca se ajustó con
+  estos episodios.
+- **Pregunta:** ¿el perfil film transfiere a documentales, o hace falta un
+  perfil `documentary` más grueso (observación abierta de la corrida de
+  producto)?
+- **Métrica** (`scripts/eval_bbc.py`):
+  - M_local: MCC de "misma escena" sobre pares de unidades de 5 s a
+    distancia ≤ 5 min (60 unidades), promedio sobre los 5 anotadores.
+  - Secundarias: F1 de fronteras (±1 unidad) y techo humano (cada anotador
+    frente a los otros 4).
+- **Desarrollo:** episodios 01–04.
+
+  01–02 ya medidos (`results/exp025_bbc_dev12.json`):
+
+  | sistema | M_local |
+  |---|---|
+  | **cava p90** | **0.368** |
+  | cava p95 | 0.330 |
+  | cava p80 | 0.311 |
+  | cava p70 | 0.246 |
+  | fused p80 | 0.247 |
+  | contiguous p80 | 0.197 (colapsa en 5–11 segmentos) |
+  | techo humano | 0.57 |
+
+- **Regla de elección (fija desde ahora):** p* = el percentil en {80, 90, 95}
+  con mayor M_local medio en los episodios 01–04 (r90, average, abstain,
+  quorum 2).
+- **Confirmación:** episodios 05–11 (n = 7, nunca evaluados).
+- **Bases:** contiguous v2.1 y fused, cada una evaluada en p80 y en p*. Por
+  episodio se toma la **mejor** de las dos, lo que es conservador para CAVA.
+- **Criterios (M_local, SE pareado sobre los 7 episodios):**
+  1. cava p* − mejor contiguous > 2 SE;
+  2. cava p* − mejor fused > 2 SE;
+  3. si p* ≠ 80: cava p* − cava p80 > 2 SE (justifica el perfil
+     `documentary`);
+  4. G-coherencia: margen de coherencia > 0 para cada señal en ≥ 6 de 7
+     episodios.
+- **Limitación declarada:** el GT de escenas es contiguo. Un retorno legítimo
+  (el mismo tema más tarde) cuenta como error si cae dentro de 5 min. La
+  métrica favorece lo contiguo, no a CAVA.
+
+## EXP-026 · Voz con un solo narrador (pre-registro)
+- **Fecha:** 2026-10-04 (antes de las señales de 05–11)
+- **Observación de producto:** 6–8 identidades de voz en episodios con un
+  narrador.
+- **Desarrollo (BBC 01–02 + 15 reuniones AMI dev):**
+  1. **K = 1 permitido en BIC: descartado en desarrollo.** No cambia nada en
+     BBC (K_eff 6 y 8). En AMI, 3 de 15 reuniones colapsan a K = 1
+     (ARI 0).
+  2. Los grupos en BBC son parejos (~20 % cada uno), no un narrador dominante
+     más ruido. La voz, z-normalizada por video, capta la escena acústica
+     (música, ambiente), no al hablante. La silueta en BBC (0.20–0.31) cae
+     dentro del rango de AMI (0.25–0.42): no hay umbral que los separe.
+  3. Filtrar a las unidades con habla ASR (≥ 50 % de la unidad cubierta por
+     segmentos ASR) baja K_eff de 6 a 4 y de 8 a 5. Es el único candidato que
+     queda.
+- **Criterios:**
+  1. BBC 03–11 (n = 9): err(gate) < err(base) por > 2 SE pareado, con
+     err = |K_eff − 1| y K_eff = nº de identidades con ≥ 5 % de las unidades
+     con habla.
+  2. No inferioridad en AMI fresh3: ARI(gate) − ARI(base) > −0.02 (media).
+     En AMI el filtro es "unidad con texto ASR", porque AMI no guarda tiempos
+     de segmento.
+- **Lo que no cambia con ningún resultado:** la identidad por voz solo está
+  validada en habla conversacional (EXP-020/022). En el perfil film o
+  documentary, los V# se marcan como "agrupación acústica", no como
+  hablantes.
