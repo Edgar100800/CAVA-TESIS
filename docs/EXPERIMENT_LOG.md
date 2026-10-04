@@ -2402,3 +2402,24 @@ conclusiones. No se re-evalúa.
 **Corrección:** `clean_label` corta la etiqueta en el primer carácter CJK.
 Se aplica en el pipeline al leer la caché; bbc_09 se regeneró desde caché con
 el mismo mapa (37 tópicos, 65 clips).
+
+### Producto · BBC Planet Earth completo con el perfil documentary + snap (jobs 54332 + 54333)
+
+Configuración:
+- perfil `documentary`: p90 + snap 30 s (EXP-025 / 027);
+- identidades de voz con filtro de habla (EXP-026), publicadas como "grupos
+  acústicos";
+- etiquetas 14B limpias.
+
+Resultados por episodio (11 episodios):
+- 32–38 tópicos, de los cuales 10–15 con retornos;
+- 26–31 tópicos con etiqueta 14B (los de ≥ 30 s);
+- 62–70 clips; **730 clips** en total;
+- G-versión ✓ en 11/11.
+
+Comparación con el perfil film anterior:
+- antes: 54–59 tópicos y 126–146 clips por episodio;
+- ahora la granularidad se acerca a la de las escenas humanas.
+
+Salida en `data/cava_runs_doc/`. Las versiones sin snap se conservan en
+`data/cava_runs_doc_nosnap/` (solo bbc_01).
