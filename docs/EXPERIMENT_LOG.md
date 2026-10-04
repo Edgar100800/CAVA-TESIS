@@ -2550,3 +2550,25 @@ Diagnóstico:
   `build_ami_topic_maps.py`;
 - test en `tests/test_snap.py`;
 - el perfil documentary sigue publicando "grupos acústicos".
+
+### Producto · Mapas AMI regenerados con identidades xvec + detector de un hablante (job 54382)
+
+120 reuniones (las 80 de antes más el tercer lote), G-versión 120/120.
+Copia de los 80 mapas anteriores en `data/ami/{topic_maps,versions}_v022d_backup`.
+
+Identidades frente al GT (todas las reuniones AMI tienen 4 hablantes):
+
+| | voz (antes) | xvec (ahora) |
+|---|---|---|
+| ARI frente al hablante dominante | 0.288 | **0.726** |
+| K bruto (todas las identidades) | 3.18 | 4.13 |
+| K_eff (≥ 5 % de las unidades con habla) | 3.17 | 3.65 |
+| \|K_eff − 4\| | 0.95 | 0.97 |
+
+Lectura:
+- Los grupos de xvec son mucho más puros: ARI 2.5×.
+- El NÚMERO de hablantes se estima igual de mal con ambas señales (error
+  ~0.96).
+- xvec añade grupos pequeños (< 5 %): risas, solapamientos, ruido. En el
+  `index`, los V# con poca fracción deben leerse como menores.
+- El detector de un hablante no se activó en ninguna de las 120 reuniones.
