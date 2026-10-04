@@ -29,7 +29,8 @@ UNIT = 5.0
 
 
 class XVec:
-    def __init__(self, device="cuda"):
+    def __init__(self, device=None):
+        device = device or ("cuda" if __import__("torch").cuda.is_available() else "cpu")
         import torch
         from transformers import AutoFeatureExtractor, WavLMForXVector
         self.torch, self.device = torch, device
