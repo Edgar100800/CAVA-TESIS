@@ -3,7 +3,7 @@
 #SBATCH --account=tesis
 #SBATCH --qos=a-tesis
 #SBATCH --partition=gpu
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:a100:1
 #SBATCH --exclude=g001
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
