@@ -2614,3 +2614,35 @@ Lectura:
   Parakeet; fracción de habla en BBC.
 - **Adopción si 1–3 se cumplen:** Parakeet reemplaza a Whisper en todo el
   pipeline (texto por unidad y filtro de habla) y Whisper se retira.
+
+### Resultado EXP-030 (caché job 54414; evaluación en CPU)
+
+| criterio | Whisper | Parakeet | diferencia | ¿cumple? |
+|---|---|---|---|---|
+| 1a. Falsa habla (FSR), VoxConverse test, 114 archivos con ≥ 5 unidades sin habla | 0.669 | 0.666 | +0.003 ± 0.025, z 0.11 | **no** |
+| 1b. Pérdida de habla, margen +0.02 | 0.015 | 0.060 | +0.045 | **no** |
+| 2. \|K_eff − K_true\|, margen +0.05 | 1.241 | 1.203 | −0.039 | sí |
+| 3a. AMI fresh3 MCC, 39 reuniones (Whisper reproduce EXP-023: 0.2338) | 0.234 | 0.249 | +0.015 ± 0.033 | sí |
+| 3b. BBC M_local, 11 episodios, margen −0.02 | 0.462 | 0.440 | −0.022 ± 0.012 | **no, por poco** |
+
+**No validado.** Parakeet no reemplaza a Whisper; el pipeline sigue con
+Whisper large-v3. La ventaja de WER del leaderboard no se traduce en lo que
+CAVA usa del ASR:
+- **Filtro de habla en VoxConverse:** igual en falsa habla y peor en pérdida
+  de habla. A 5 s por unidad, ambos modelos transcriben las palabras de
+  unidades con menos del 50 % de habla. La métrica por unidad es gruesa, pero
+  es la pre-registrada.
+- **Texto por unidad:** transcribir 5 s aislados pierde contexto. En BBC
+  (italiano) el mapa empeora un poco; en AMI mejora sin ser significativo.
+
+Secundarias (pistas, no resultados):
+- **Fracción de habla en BBC:** Whisper 0.87, Parakeet 0.66. Parakeet sí
+  deja fuera la música.
+- **Narrador único en BBC:** con el filtro Parakeet ∩ Whisper, **10 de 11
+  episodios** quedan detectados como de un hablante (frente a 0 de 11 con
+  Whisper).
+  - Es la primera vez que el narrador se resuelve, pero no hay GT de habla
+    en material narrado para validarlo.
+  - Además exigiría correr dos ASR, contra el pedido de un solo modelo.
+  - Hipótesis abierta: para validarla hace falta un conjunto narrado con
+    VAD o diarización GT.
