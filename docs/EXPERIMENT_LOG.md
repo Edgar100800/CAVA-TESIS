@@ -2572,3 +2572,45 @@ Lectura:
 - xvec añade grupos pequeños (< 5 %): risas, solapamientos, ruido. En el
   `index`, los V# con poca fracción deben leerse como menores.
 - El detector de un hablante no se activó en ninguna de las 120 reuniones.
+
+---
+
+## EXP-030 · Parakeet TDT 0.6B v3 frente a Whisper large-v3 como ASR único del pipeline (pre-registro)
+- **Fecha:** 2026-10-04 (registrado antes de transcribir ningún conjunto de
+  evaluación con Parakeet)
+- **Pedido:** un solo modelo ASR. Parakeet sustituye a Whisper solo si se
+  valida aquí. La tabla del Open ASR Leaderboard (AMI 9.42 frente a 13.88 de
+  Whisper large-v3-turbo) es evidencia de WER en inglés, no de lo que CAVA
+  usa del ASR:
+  - el filtro de habla (EXP-026 / 029);
+  - el texto por unidad (señal `transcript` y etiquetas 14B);
+  - el italiano de BBC.
+- **Modelo:** `nvidia/parakeet-tdt-0.6b-v3`, revisión 541d1f99, safetensors
+  oficiales de NVIDIA, CC-BY-4.0, 25 idiomas (incluye el italiano).
+  - Ejecución: transformers `ParakeetForTDT`, decodificación greedy, una
+    transcripción por unidad (5 s film/documentary, 10 s meeting).
+  - Filtro de habla = la unidad tiene texto no vacío.
+  - Riesgo declarado: los datos de entrenamiento de NVIDIA incluyen AMI;
+    puede inflar la calidad del texto en AMI.
+- **Comparación:** Whisper large-v3 (faster-whisper, fp16, `vad_filter`)
+  exactamente como en el pipeline. Filtro de habla = unidad cubierta ≥ 50 %
+  por segmentos.
+- **Criterios:**
+  1. **Filtro de habla frente a VAD oráculo** (VoxConverse test; unidad de
+     habla GT = ≥ 50 % de habla RTTM). En archivos con ≥ 5 unidades GT sin
+     habla:
+     - tasa de falsa habla FSR(whisper) − FSR(parakeet) > 2 SE pareado;
+     - pérdida de habla, en todos los archivos: miss(parakeet) −
+       miss(whisper) < +0.02.
+  2. **Identidades** (VoxConverse test, xvec + detector EXP-029, con cada
+     filtro): \|K_eff − K_true\| parakeet − whisper < +0.05 (no
+     inferioridad).
+  3. **Mapas de tópicos con el texto de cada ASR** (no inferioridad,
+     media > −0.02):
+     - AMI fresh3: MCC del perfil meeting (cava + turnos, como EXP-023);
+     - BBC 01–11: M_local del perfil documentary con snap (como
+       EXP-025 / 027).
+- **Secundaria:** episodios BBC detectados de un hablante con el filtro de
+  Parakeet; fracción de habla en BBC.
+- **Adopción si 1–3 se cumplen:** Parakeet reemplaza a Whisper en todo el
+  pipeline (texto por unidad y filtro de habla) y Whisper se retira.
