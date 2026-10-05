@@ -387,7 +387,7 @@ class Pipeline:
                "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
                "video": {"path": str(self.video), "sha256": sha256(self.video), "duration_s": self.state.get("duration")},
                "audio": {"path": str(self.audio_src), "sha256": sha256(self.audio_src)} if self.audio_src else None,
-               "code": {"git_commit": git("rev-parse", "HEAD"), "git_dirty": bool(git("status", "--porcelain", "--", "topicagg", "scripts")),
+               "code": {"git_commit": git("rev-parse", "HEAD"), "git_dirty": bool(git("status", "--porcelain", "--untracked-files=no", "--", "topicagg", "scripts")),
                         "python": platform.python_version()},
                "profile": self.cfg, "summary_s": self.summary_s, "labels": self.do_labels,
                "models": {k: (list(v) if v else None) for k, v in models.items()},
