@@ -8,10 +8,13 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from topicagg.asr_parakeet import Parakeet  # noqa: E402
+from topicagg.speaker import XVec  # noqa: E402
 from topicagg.voice import load_audio  # noqa: E402
 
 O = Path("data/asr_compare")
+O.mkdir(parents=True, exist_ok=True)
 pk = Parakeet()
+xv = XVec()
 from faster_whisper import WhisperModel  # noqa: E402
 wm = WhisperModel("large-v3", device="cuda", compute_type="float16")
 
@@ -32,6 +35,8 @@ for split in ("test", "dev"):
         units = z["units"].tolist()
         audio = load_audio(str(w))
         segs, _ = wm.transcribe(str(w), vad_filter=True)
+        # xvec de TODAS las unidades: el criterio 2 necesita las unidades que un ASR marca como habla sin serlo
+        np.save(O / f"vox_{split}_{w.stem}.xall.npy", xv(audio, units, np.ones(len(units), bool)).astype(np.float16))
         save(f"vox_{split}", w.stem, {"units": units, "parakeet": pk.units(audio, units),
                                       "whisper_segments": [(s.start, s.end, s.text.strip()) for s in segs]})
         print(f"[asr] vox {split} {w.stem}", flush=True)
