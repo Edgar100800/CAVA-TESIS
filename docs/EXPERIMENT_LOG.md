@@ -2646,3 +2646,69 @@ Secundarias (pistas, no resultados):
   - Además exigiría correr dos ASR, contra el pedido de un solo modelo.
   - Hipótesis abierta: para validarla hace falta un conjunto narrado con
     VAD o diarización GT.
+
+---
+
+## Corrida limpia v1 para entrenamiento (RL): contrato de salida
+- **Fecha:** 2026-10-05
+- **Por corrida** (`<out>/<video>/`):
+  - `run_manifest.json`, esquema `cava-run-v1`:
+    - commit git y si el código está sucio;
+    - revisión exacta de los 6 modelos (Whisper large-v3, SigLIP, bge,
+      Qwen2.5-VL-7B, Qwen2.5-14B, WavLM-sv);
+    - perfil completo;
+    - sha256 de la entrada;
+    - tiempos por etapa;
+    - `gt_used: false`.
+  - `clips.jsonl`: una fila por clip, el espacio de acciones y trayectorias:
+    - `clip_id` (video:t0-t1), versión, playlist y orden;
+    - tramo, tópico, etiqueta, retornos y si está recortado;
+    - provenance por señal, hablantes, qué se ve y qué se dice.
+- **Clips nombrados por tramo exacto:** un mapa nuevo no reutiliza un clip
+  viejo. Era un riesgo real, visto con BBC.
+- **Recompensas:** se calculan aparte (`rewards.jsonl`), nunca dentro del
+  pipeline. El GT no toca el producto.
+- **Salida en directorio nuevo** `data/cava_runs_v1/`: sin cachés previas.
+  Toda la corrida se recalcula con el stack final.
+
+## EXP-031 · Recompensa de clips frente a importancia humana (TVSum, pre-registro)
+- **Fecha:** 2026-10-05 (antes de correr el pipeline sobre TVSum en v1)
+- **Datos:** TVSum, 50 videos (2–11 min, 3.5 h), importancia 1–5 por
+  fotograma de 20 anotadores. Perfil film, stack final, sin ajuste.
+- **Recompensa:**
+  - importancia media de los anotadores por segundo, en z-score por video;
+  - recompensa de un clip = media de z sobre sus segundos;
+  - recompensa de una versión = media ponderada por duración.
+- **Versión primaria:** highlights10pct. Secundaria: recap60.
+- **Bases (mismos clips en número y duración):**
+  - al azar: posiciones uniformes sin solapamiento, 1000 sorteos, media;
+  - uniforme: clips equiespaciados.
+- **Criterios (SE pareado sobre 50 videos):**
+  1. R(cava highlights) − R(al azar) > 2 SE;
+  2. R(cava highlights) − R(uniforme) > 2 SE.
+- **Expectativa declarada:** highlights elige los tópicos más LARGOS, no los
+  más importantes. No hay razón a priori para superar al azar. El resultado
+  fija la recompensa de partida antes de cualquier RL; no es un objetivo a
+  maximizar aquí.
+- **Secundarias:** percentil de CAVA en la nula al azar; correlación por
+  clip entre recompensa y duración del tópico; F1 estándar de TVSum al 15 %
+  (solo informativo).
+
+## EXP-032 · Estructura de tópicos frente a capítulos del autor (VidChapters blind40, pre-registro)
+- **Fecha:** 2026-10-05 (antes de correr el pipeline sobre blind40)
+- **Datos:** 40 videos de YouTube (10–40 min, media 21 min, 14 h; 8.8
+  capítulos de media) con capítulos del autor (VidChapters-7M).
+  - SegLoop sí usó este conjunto (validación ciega v6 y ajuste de fusión
+    v8). CAVA nunca: ningún parámetro de CAVA se fijó con él.
+- **Perfil primario:** documentary (p90 + snap 30 s; contenido largo no
+  ficción, EXP-025 / 027). Secundario: film.
+- **Métricas:**
+  - M_local: MCC "mismo capítulo" sobre pares de unidades de 5 s a ≤ 5 min;
+  - F1 de fronteras, ±1 unidad (secundaria ±3).
+- **Criterios (SE pareado sobre 40 videos):**
+  1. cava documentary − segmentación uniforme con el mismo nº de segmentos
+     > 2 SE (M_local);
+  2. cava documentary − mejor contiguous (p80 / p90) > 2 SE;
+  3. cava documentary − fused p90 > 2 SE.
+- **Limitación:** los capítulos del autor son más gruesos (~2.4 min) que las
+  escenas de BBC. No se ajusta la granularidad aquí.

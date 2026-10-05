@@ -291,7 +291,8 @@ class Pipeline:
                     continue
                 parts = []
                 for j, c in enumerate(pl):
-                    name = re.sub(r"[^\w]+", "_", f"{prof}_{k}_{j:03d}_{int(c['t0'])}s")[:80]
+                    # nombre por tramo exacto: un mapa distinto nunca reutiliza un clip viejo con el mismo nombre
+                    name = re.sub(r"[^\w.-]+", "_", f"{prof}_{k}_{j:03d}_{c['t0']:.2f}-{c['t1']:.2f}")[:90]
                     dst = clips_dir / f"{name}.mp4"
                     if cut and not dst.exists():
                         span = ["-ss", f"{c['t0']:.2f}", "-to", f"{c['t1']:.2f}"]
@@ -313,9 +314,90 @@ class Pipeline:
                     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst),
                                     "-c", "copy", str(self.out / f"version_{prof}_{k}.mp4")], capture_output=True)
         (self.out / "versions.json").write_text(json.dumps(v, ensure_ascii=False, indent=1))
+        self._clips_jsonl(v)
         self._index(v, gate)
         self.log(f"versiones: G-versión {gate['G_version']}, {made} clips")
         return gate
+
+    # registros para entrenamiento (RL): una fila por clip, sin GT; las recompensas se calculan aparte
+    def _clips_jsonl(self, v):
+        topics = {t["topic_id"]: t for t in self.doc["levels"]["default"]["topics"]}
+        rows = []
+        for prof, spec in v.items():
+            for k, pl in enumerate(spec.get("playlists", []) or []):
+                for j, c in enumerate(pl or []):
+                    t = topics.get(c["topic_id"], {})
+                    span = next((sp for sp in t.get("spans", []) if sp[0] <= c["t0"] + 1e-6 and c["t1"] <= sp[1] + 1e-6), None)
+                    ctx = t["context"][t["spans"].index(span)] if span and "context" in t else {}
+                    rows.append({
+                        "clip_id": f"{self.video.stem}:{c['t0']:.2f}-{c['t1']:.2f}",
+                        "video": self.video.stem, "profile": self.cfg["profile"],
+                        "version": prof, "playlist": k, "order": j, "file": c.get("file"),
+                        "t0": round(float(c["t0"]), 2), "t1": round(float(c["t1"]), 2),
+                        "duration_s": round(float(c["t1"] - c["t0"]), 2),
+                        "budget_s": spec.get("budget_s"),
+                        "topic_id": c["topic_id"], "topic_label": c.get("label"),
+                        "topic_duration_s": t.get("duration_s"), "topic_returns": t.get("returns"),
+                        "topic_span": span, "trimmed": bool(span and (c["t1"] - c["t0"]) < (span[1] - span[0]) - 1e-6),
+                        "provenance": t.get("provenance"), "flags": t.get("flags"),
+                        "speakers": (ctx or {}).get("speakers", t.get("speakers")),
+                        "seen": (ctx or {}).get("seen"), "said": (ctx or {}).get("said"),
+                    })
+        with open(self.out / "clips.jsonl", "w") as fh:
+            for r in rows:
+                fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+
+    def _manifest(self, gate, timings):
+        """Procedencia completa de la corrida: código, modelos (revisión exacta en caché), perfil, entrada."""
+        import datetime
+        import hashlib
+        import platform
+
+        def git(*a):
+            try:
+                return subprocess.run(["git", *a], cwd=Path(__file__).resolve().parents[1], capture_output=True,
+                                      text=True, check=True).stdout.strip()
+            except Exception:
+                return None
+
+        def snap(repo, pinned=None):
+            if pinned:
+                return pinned
+            ref = Path(HF) / "hub" / f"models--{repo.replace('/', '--')}" / "refs" / "main"
+            if ref.exists():
+                return ref.read_text().strip()
+            snaps = sorted((Path(HF) / "hub" / f"models--{repo.replace('/', '--')}" / "snapshots").glob("*"))
+            return snaps[0].name if len(snaps) == 1 else None
+
+        def sha256(path):
+            h = hashlib.sha256()
+            with open(path, "rb") as fh:
+                for b in iter(lambda: fh.read(1 << 20), b""):
+                    h.update(b)
+            return h.hexdigest()
+        from .speaker import WAVLM
+        models = {"asr": ("Systran/faster-whisper-large-v3", snap("Systran/faster-whisper-large-v3")),
+                  "visual": ("google/siglip-base-patch16-224", snap("google/siglip-base-patch16-224")),
+                  "text_embed": ("BAAI/bge-base-en-v1.5", snap("BAAI/bge-base-en-v1.5")),
+                  "vjudge": VL, "labels": TXT if self.do_labels else None}
+        if self.cfg.get("speaker_embed"):
+            models["speaker"] = WAVLM
+        d = self.doc["levels"]["default"]
+        man = {"schema": "cava-run-v1",
+               "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+               "video": {"path": str(self.video), "sha256": sha256(self.video), "duration_s": self.state.get("duration")},
+               "audio": {"path": str(self.audio_src), "sha256": sha256(self.audio_src)} if self.audio_src else None,
+               "code": {"git_commit": git("rev-parse", "HEAD"), "git_dirty": bool(git("status", "--porcelain", "--", "topicagg", "scripts")),
+                        "python": platform.python_version()},
+               "profile": self.cfg, "summary_s": self.summary_s, "labels": self.do_labels,
+               "models": {k: (list(v) if v else None) for k, v in models.items()},
+               "outputs": {"n_units": len(self.state["units"]), "n_topics": d["n_topics"],
+                           "n_returning": d["n_returning"], "voice_identities": self.doc.get("voice_identities"),
+                           "voice_identity_kind": self.doc.get("voice_identity_kind"),
+                           "G_version": gate["G_version"], "files": ["topic_map.json", "versions.json",
+                                                                     "clips.jsonl", "index.json", "index.md"]},
+               "gt_used": False, "timings_s": timings}
+        (self.out / "run_manifest.json").write_text(json.dumps(man, ensure_ascii=False, indent=1))
 
     def _index(self, v, gate):
         topics = sorted(self.doc["levels"]["default"]["topics"], key=lambda t: t["shots"][0])
@@ -339,11 +421,14 @@ class Pipeline:
               "speakers": t.get("speakers", []), "returns": t["returns"]} for t in topics], ensure_ascii=False, indent=1))
 
     def run(self, cut=True):
-        self.prepare()
-        self.asr()
-        self.signals()
-        self.vjudge()
-        self.topic_map()
-        self.labels()
-        self.speakers()
-        return self.versions_and_clips(cut=cut)
+        import time
+        timings = {}
+        for name in ("prepare", "asr", "signals", "vjudge", "topic_map", "labels", "speakers"):
+            t0 = time.time()
+            getattr(self, name)()
+            timings[name] = round(time.time() - t0, 1)
+        t0 = time.time()
+        gate = self.versions_and_clips(cut=cut)
+        timings["versions_and_clips"] = round(time.time() - t0, 1)
+        self._manifest(gate, timings)
+        return gate
