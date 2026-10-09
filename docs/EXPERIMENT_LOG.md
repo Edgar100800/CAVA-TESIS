@@ -2819,3 +2819,83 @@ Recompensa = z de la importancia humana media.
   3. M_local(capítulos) − mejor M_local de señal sola top-N > 2 SE.
 - **Si se valida:** nivel `chapters` en el mapa del producto y versión
   `full_chapters` por capítulo, con L fijo.
+
+---
+
+## EXP-034 · Filtro de habla aislado: voz frente a música y ambiente, y el narrador único (pre-registro)
+- **Fecha:** 2026-10-09 (registrado antes de calcular ningún filtro sobre
+  los conjuntos de abajo)
+- **Motivación (EXP-026 / 029 / 030):** en documentales el cuello de botella
+  de la identidad es el **filtro de habla**, no el embedding:
+  - Whisper marca como habla el 87 % de BBC, incluida música y sonido
+    animal; el detector de un hablante (spread, τ 0.976) da 0 de 11.
+  - Con Parakeet ∩ Whisper da 10 de 11, pero sin GT no se puede validar, y
+    son dos ASR (contra el pedido de un solo modelo).
+  - En BBC no hay GT de habla. Este experimento **aísla el procesamiento de
+    sonido** con conjuntos que sí tienen GT, y deja BBC como secundaria.
+- **Conjuntos:**
+  1. **AVASpeech-SMAD** (películas; etiquetas por frame de habla, de AVA-Speech,
+     y de música, manuales; minutos 15–30 de cada video; audio del S3
+     oficial de AVA). Unidades de 5 s. GT por unidad:
+     - habla = etiqueta de habla cubre ≥ 50 % de la unidad;
+     - sin habla se divide en *música* (música ≥ 50 %) y *otro*.
+     - División: ids ordenados, posiciones pares = desarrollo, impares =
+       confirmación.
+  2. **Narrador sintético con GT exacto** (VoxConverse + MUSAN). Archivos con
+     K_true = 1 (regla de EXP-028) y el mismo número con K_true ≥ 2 (sorteo,
+     semilla 0). Tres condiciones por archivo:
+     - limpio;
+     - música de MUSAN de fondo a SNR 5 dB;
+     - ruido/ambiente de MUSAN a SNR 5 dB.
+
+     El fondo cubre todo el archivo; su nivel se fija respecto al RMS del
+     habla RTTM. VoxConverse dev = desarrollo, test = confirmación; los
+     archivos de MUSAN se dividen por sha1 del nombre (par = desarrollo,
+     impar = confirmación).
+  3. **AMI fresh3** (40 reuniones; solo confirmación): no regresión.
+  4. **BBC 01–11:** solo secundarias, sin criterio.
+- **Candidatos (filtro por unidad):**
+  - **W** Whisper large-v3 exactamente como el pipeline (`vad_filter`,
+    unidad cubierta ≥ 50 % por segmentos). Base.
+  - **S** Silero VAD v5 (el ONNX que trae faster-whisper, opciones por
+    defecto), unidad cubierta ≥ 50 %.
+  - **I** inaSpeechSegmenter (CNN speech/music para TV; habla = male/female),
+    unidad cubierta ≥ 50 %.
+  - **A** AST AudioSet (`MIT/ast-finetuned-audioset-10-10-0.4593`, revisión
+    f826b80d), P(Speech) ≥ θ, θ ∈ {0.1, …, 0.9}.
+  - **S∩W, I∩W, A∩W:** el texto sigue saliendo de Whisper; el filtro solo
+    descarta unidades.
+  - Solo de referencia, no adoptable (dos ASR): **P** Parakeet (texto no
+    vacío) y **P∩W**.
+- **Selección en desarrollo (AVA dev, congelada antes de la confirmación):**
+  el candidato adoptable con mayor exactitud balanceada media por video
+  (recall de habla y especificidad), sujeto a recall ≥ recall(W) − 0.05.
+  τ del detector de un hablante **no se toca** (0.976, EXP-029).
+- **Criterios de confirmación (SE pareado):**
+  1. **AVA conf:** FSR(W) − FSR(elegido) > 2 SE por video (FSR = fracción de
+     unidades sin habla marcadas como habla), **y** recall(elegido) ≥
+     recall(W) − 0.05.
+  2. **Narrador sintético (VoxConverse test, K_true = 1, condiciones música y
+     ruido):** tasa de "un hablante" detectado con el elegido − con W > 2 SE
+     por mezcla.
+  3. **Sin falsos narradores (VoxConverse test, K_true ≥ 2, las tres
+     condiciones):** tasa de "un hablante" del elegido ≤ la de W + 0.05.
+  4. **AMI fresh3 (no regresión):** ARI de identidades elegido − W > −0.02, y
+     0 de 40 reuniones declaradas de un hablante.
+- **Lectura pre-declarada:**
+  - 1–4 se cumplen: el filtro elegido entra en el pipeline (todos los
+    perfiles) y el perfil documentary vuelve a publicar los V# como
+    "hablante".
+  - 1 sí y 2 no: el filtro mejora pero el narrador sigue sin resolverse; el
+    problema no es solo el VAD.
+  - 1 no: ningún candidato separa voz de música mejor que Whisper.
+- **Secundarias (sin criterio):** FSR solo en unidades de música y en
+  *otro*; desglose por condición y SNR; P y P∩W como referencia; en BBC,
+  fracción de habla, episodios de un hablante y K_eff; F1 por frame de I
+  frente al benchmark publicado de inaSpeechSegmenter en AVASpeech-SMAD
+  (control del código de evaluación); exportación de unidades BBC donde los
+  filtros discrepan, para escucharlas.
+- **Expectativa declarada:** S, I o A deberían bajar la falsa habla en música
+  (W cubre tramos de música porque sus segmentos atraviesan los huecos).
+  Que eso alcance para el narrador es la pregunta abierta: EXP-030 sugiere
+  que sí, pero sin GT.
