@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Avance semanal CAVA: implementación, experimentos, resultados y límites, 25 septiembre–1 octubre 2026.">
+<title>CAVA · Reporte semanal · 25 sep–1 oct 2026</title>
+<style>
+:root{--paper:#fafaf8;--panel:#ffffff;--ink:#172235;--muted:#40516a;--rule:#b6c0cb;--accent:#087557;--tint:#e7f4ee;--link:#234e87;--warn:#865c00;--bad:#a82d48;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light}
+marker[id$="-arrow"] polygon{fill:var(--muted)}marker[id$="-accent"] polygon{fill:var(--accent)}marker[id$="-link"] polygon{fill:var(--link)}svg>line{stroke:var(--rule)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);line-height:1.65}main,header,footer{max-width:1280px;margin:auto;padding:32px 40px}header{padding-top:64px;border-bottom:1px solid var(--rule)}h1{font-family:Georgia,serif;font-size:clamp(36px,5vw,60px);font-weight:400;line-height:1.12;margin:18px 0}h2{font-size:26px;line-height:1.3;margin:0 0 16px}h3{font-size:18px;margin:0 0 10px}p{margin:8px 0 16px}.eyebrow,code,.meta{font-family:ui-monospace,monospace}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}.lead{font-size:19px;max-width:1000px;color:var(--muted)}a{color:var(--link);text-underline-offset:3px}nav{display:flex;gap:20px;flex-wrap:wrap;padding:20px 0;font-size:14px}.chips{display:flex;gap:10px;flex-wrap:wrap}.chip{border:1px solid var(--rule);padding:5px 12px;border-radius:4px;font-size:12px}.ok{color:var(--accent)}.warn{color:var(--warn)}.bad{color:var(--bad)}section{padding:32px 0;border-bottom:1px solid var(--rule);scroll-margin-top:20px}.cards{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}.card{border:1px solid var(--rule);border-radius:6px;padding:24px;background:var(--panel)}.stat{font-size:38px;color:var(--accent);line-height:1.2}.muted,small,figcaption{color:var(--muted)}.notice{border-left:3px solid var(--warn);padding:12px 20px;background:var(--panel);margin:20px 0}.table-wrap,.diagram{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px;min-width:700px}th{text-align:left;color:var(--muted);font-weight:600}td,th{border-bottom:1px solid var(--rule);padding:13px 14px;vertical-align:top}td:first-child{font-weight:600}figure{margin:24px 0}svg{display:block;width:100%;min-width:900px;height:auto}.node{fill:var(--panel);stroke:var(--rule);stroke-width:1.5}.focal{fill:var(--tint);stroke:var(--accent)}.optional{stroke-dasharray:6 4}.node-name{font-size:16px;font-weight:600;fill:var(--ink)}.sub{font-size:12px;fill:var(--muted)}.technical{font-family:ui-monospace,monospace;font-size:12px;fill:var(--muted)}.zone{font-size:14px;fill:var(--muted)}.edge{stroke:var(--muted);fill:none;stroke-width:2}.legend{font-size:12px;fill:var(--muted)}figcaption{font-size:14px;margin-top:8px}.timeline{display:grid;grid-template-columns:110px 1fr;gap:0 24px}.day{color:var(--accent);font-family:ui-monospace,monospace;border-top:1px solid var(--rule);padding:18px 0}.event{border-top:1px solid var(--rule);padding:18px 0}.event p{margin:0}.sources{columns:2;column-gap:32px}.sources p{break-inside:avoid;font-size:14px}footer{font-size:12px;color:var(--muted)}@media(max-width:760px){main,header,footer{padding:24px 20px}.cards{grid-template-columns:1fr}.sources{columns:1}.timeline{grid-template-columns:80px 1fr;gap:16px}h1{font-size:38px}}
+@media print{ :root{--paper:#fff;--panel:#f4f6f8;--ink:#172235;--muted:#40516a;--rule:#b6c0cb;--accent:#087557;--tint:#e7f4ee;--link:#234e87;--warn:#865c00;--bad:#a82d48;color-scheme:light}body{font-size:11px}main,header,footer{padding:16px 0}h1{font-size:34px}h2{font-size:21px}nav{display:none}svg{min-width:0}table{min-width:0;font-size:10px}td,th{padding:7px}figure,.card{break-inside:avoid}section{padding:20px 0}.table-wrap,.diagram{overflow:visible}a{color:var(--link)}}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">CAVA · Consumer-Adaptive Video Architecture · informe de investigación</div>
+<h1>De fronteras de escena a<br><span class="ok">tópicos que regresan</span></h1>
+<p class="lead">La semana consolidó una arquitectura que conserva las señales por separado, enlaza apariciones no contiguas y produce etiquetas, contexto y playlists por consumidor. La evidencia respalda continuidad de personajes y situaciones; la comprensión de trama sigue sin validarse.</p>
+<div class="chips"><span class="chip">Periodo: 25 sep → 1 oct 2026</span><span class="chip">Estado consultado: 2 oct 2026 · Lima</span><span class="chip">HEAD: 4f4213d</span><span class="chip ok">20 tests pasan · verificación de este informe</span><span class="chip">243 mapas guardados</span></div>
+<nav aria-label="Secciones del informe"><a href="#resumen">Resultado</a><a href="#semana">Semana</a><a href="#arquitectura">Implementación</a><a href="#pruebas">Experimentos</a><a href="#limites">Límites</a><a href="#siguiente">AMI y próximos pasos</a><a href="#fuentes">Evidencia</a></nav>
+</header>
+<main>
+<section id="resumen">
+<h2>1 · Resultados actuales</h2>
+<div class="cards">
+<article class="card"><div class="eyebrow">EXP-018 · confirmación pre-registrada</div><p class="stat">0.0113 <small style="font-size:18px">MCC</small></p><h3>El mapa supera a fusión y agrupación contigua</h3><p>En 47 películas test: fusión 0.0053 y gestor contiguo 0.0045. Diferencias pareadas: +0.0060 ± 0.0024 (z=2.46) y +0.0068 ± 0.0027 (z=2.48). Precisión de enlace sobre tasa base: +0.0264 ± 0.0047 (z=5.59).</p><p class="muted">Efecto absoluto pequeño. Visual sola alcanza MCC 0.0195; CAVA no gana a todos los componentes. GT: coincidencia de personajes, no trama.</p><a href="results/exp018_test.json">Artifact EXP-018</a></article>
+<article class="card"><div class="eyebrow">Salida implementada</div><p class="stat">58 / 58</p><h3>Películas con cuatro perfiles dentro de presupuesto</h3><p>G-versión verifica playlists no vacías y presupuesto por perfil. Hay capítulos, recap de 60 s, highlights del 10 % e hilos con retornos. La selección respeta fronteras de shot.</p><p class="muted">Este gate verifica estructura y duración; no mide calidad humana del resumen. Las versiones son playlists de rangos; el piloto previo sí exportó 114 clips MP4 en tres videos TVSum.</p><a href="results/g_version_report.json">Artifact G-versión</a></article>
+</div>
+</section>
+<section id="semana">
+<h2>2 · Avances durante la semana</h2>
+<p class="muted">Fechas de ejecución según EXPERIMENT_LOG; algunos registros se incorporaron a Git después. El historial del repositorio comienza el 26 de septiembre.</p>
+<div class="timeline">
+<div class="day">25–27 sep</div><div class="event"><h3>Base CAVA y diagnóstico de granularidad</h3><p>Migración del gestor v2.1 desde A2Summ; ADR sin fusión. Barrido de 97 películas, ablaciones y tolerancias de frontera. El quorum evita el mega-grupo. Se retira F1=0.84 por uso del GT para ajustar predicciones; F1 fino registrado ≈0.37.</p></div>
+<div class="day">28 sep</div><div class="event"><h3>Controles que cambian la interpretación</h3><p>Correcciones de votos duplicados, corridas de consenso, señal plana y min_gap. Agregadores adaptativo/divisivo no superan a SegLoop con igual número de cortes. VJudge relacional no replica la mejora inicial; ledger con más contexto tampoco pasa sus gates.</p></div>
+<div class="day">29 sep</div><div class="event"><h3>El aporte aparece en enlazar, no en cortar</h3><p>Capitulación y experimento 2×2 de modelos/resúmenes sin mejora validada sobre SegLoop. EXP-015 replica señal de enlace a larga distancia. Se implementan tópicos con retornos, enlace promedio para evitar percolación y abstención cuando falta evidencia.</p></div>
+<div class="day">30 sep</div><div class="event"><h3>Confirmación del mapa y evaluación del producto</h3><p>EXP-018 pasa en test intacto. G-versión pasa 58/58. Revisión ciega por modelo no valida continuidad de trama. EXP-019 valida etiquetas frente a personajes y contenido; se genera contexto por tramo y se inicia etiquetado de tópico completo.</p></div>
+<div class="day">1 oct</div><div class="event"><h3>Etiquetas, personajes estructurados y nuevo dominio</h3><p>EXP-019b duplica nombrado; EXP-019d valida herencia de nombres por dos señales. Registro y filtros alternativos fallan guardas. Mapas ampliados a 243 películas; apariencia P# muestra baja especificidad. AMI pre-registrado con señal de voz, desarrollo/confirmación 20+20.</p></div>
+</div>
+<p><a href="docs/EXPERIMENT_LOG.md">Registro experimental completo</a> · <a href="docs/adr/0001-sin-fusion-de-representaciones.md">Decisión arquitectónica fundacional</a></p>
+</section>
+<section id="arquitectura">
+<h2>3 · Cómo está implementada la solución</h2>
+<p>Cada modalidad produce su propia estructura. El gestor agrega <strong>votos sobre relaciones</strong>, conservando las representaciones independientes. VJudge permanece frozen; bge convierte sus descripciones y el diálogo en señales separadas.</p>
+<figure><div class="diagram">
+<svg viewBox="0 0 1280 720" role="img" aria-labelledby="cava-core-title cava-core-desc">
+<title id="cava-core-title">CAVA: señales independientes y mapa de tópicos</title>
+<desc id="cava-core-desc">Shots y subtítulos alimentan tres señales independientes que votan fronteras y retornos; el gestor con abstención y enlace promedio produce un mapa trazable, con SegLoop opcional como votante de fronteras.</desc>
+<defs><marker id="core-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#b5c2d4"/></marker><marker id="core-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#34d399"/></marker><marker id="core-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#93c5fd"/></marker></defs>
+<text x="40" y="56" class="zone">ENTRADA</text><text x="304" y="56" class="zone">SEÑALES FROZEN · CADA UNA EN SU ESPACIO</text><text x="816" y="56" class="zone">CONSENSO Y SALIDA</text>
+<g class="edge" marker-end="url(#core-arrow)">
+<path d="M240 152 H304"/><path d="M240 280 H268 Q276 280 276 288 V384 Q276 392 284 392 H304"/><path d="M240 328 H256 Q264 328 264 336 V504 Q264 512 272 512 H304"/>
+<path d="M544 152 H608"/><path d="M544 392 H608"/><path d="M544 512 H608"/>
+<path d="M736 152 H776 Q784 152 784 160 V252 Q784 260 792 260 H816"/><path d="M736 392 H784 Q792 392 792 384 V328 Q792 320 800 320 H816"/><path d="M736 512 H800 Q808 512 808 504 V380 Q808 372 816 372"/>
+<path d="M996 424 V480"/>
+</g>
+<path d="M608 248 H576 Q568 248 568 256 V580 Q568 588 576 588 H992 Q1000 588 1000 580 V568" class="edge" stroke-dasharray="6 4" marker-end="url(#core-arrow)"/>
+<g><rect x="40" y="108" width="200" height="248" rx="6" class="node"/><text x="60" y="140" class="node-name">Shots / keyframes</text><text x="60" y="168" class="technical">SigLIP · MovieNet</text>
+<text x="60" y="280" class="node-name">Texto temporal</text><text x="60" y="308" class="sub">Subtítulos MovieNet</text><text x="60" y="332" class="sub">ASR en videos / AMI</text>
+<rect x="304" y="108" width="240" height="88" rx="6" class="node"/><text x="324" y="140" class="node-name">Señal visual</text><text x="324" y="168" class="technical">SigLIP por shot</text>
+<rect x="304" y="348" width="240" height="88" rx="6" class="node"/><text x="324" y="380" class="node-name">Señal diálogo</text><text x="324" y="408" class="technical">bge por subtítulo</text>
+<rect x="304" y="468" width="240" height="88" rx="6" class="node"/><text x="324" y="500" class="node-name">Señal VJudge</text><text x="324" y="528" class="technical">Qwen2.5-VL-7B → bge</text>
+<rect x="608" y="108" width="128" height="88" rx="6" class="node"/><text x="672" y="140" text-anchor="middle" class="node-name">Votos visual</text><text x="672" y="168" text-anchor="middle" class="sub">corte / retorno</text>
+<rect x="608" y="348" width="128" height="88" rx="6" class="node"/><text x="672" y="380" text-anchor="middle" class="node-name">Votos texto</text><text x="672" y="408" text-anchor="middle" class="sub">corte / retorno</text>
+<rect x="608" y="468" width="128" height="88" rx="6" class="node"/><text x="672" y="500" text-anchor="middle" class="node-name">Votos juez</text><text x="672" y="528" text-anchor="middle" class="sub">corte / retorno</text>
+<rect x="816" y="216" width="360" height="208" rx="6" class="node focal"/><text x="840" y="252" class="node-name">Gestor multimodal sin fusión</text><text x="840" y="288" class="technical">percentile=80 · return=90</text><text x="840" y="316" class="technical">link_quorum=2 · average</text><text x="840" y="352" class="sub">Sin evidencia → abstención</text><text x="840" y="380" class="sub">Enlace promedio evita cadenas espurias</text>
+<rect x="816" y="480" width="360" height="88" rx="6" class="node focal"/><text x="840" y="512" class="node-name">Mapa default + fine</text><text x="840" y="540" class="sub">shots · spans · retornos · provenance</text>
+</g>
+<text x="608" y="240" class="technical">SegLoop opcional</text><text x="608" y="264" class="sub">solo fronteras; ausente en test</text>
+<line x1="40" y1="640" x2="1240" y2="640" stroke="#43536a"/><text x="40" y="672" class="legend">Línea continua: señal / voto</text><text x="368" y="672" class="legend">Discontinua: frontera opcional en la construcción del mapa</text><text x="920" y="672" class="legend">Verde: núcleo CAVA</text>
+</svg></div>
+<figcaption>Vista de arquitectura, formato ancho 1280×720. La preparación de unidades VJudge usa keyframes y diálogo; se resume dentro de su señal para mantener legible el diagrama. GT externo al pipeline.</figcaption></figure>
+<p><strong>Detalle del consenso:</strong> los cortes usan votos por señal; el enlace con abstención requiere al menos dos votantes activos por par y coincidencia media de activos. El enlace promedio decide fusiones entre grupos considerando sus pares, evitando que una cadena local una toda la película. <code>fine</code> aumenta el quorum al número total de votantes.</p>
+<p><a href="topicagg/multimodal_manager.py">Gestor</a> · <a href="topicagg/topic_map.py">Mapa</a> · <a href="scripts/build_topic_maps.py">Construcción desde señales</a></p>
+<figure><div class="diagram">
+<svg viewBox="0 0 1280 720" role="img" aria-labelledby="cava-product-title cava-product-desc">
+<title id="cava-product-title">CAVA: categorías y versiones por consumidor</title>
+<desc id="cava-product-desc">El mapa genera etiquetas desde el contexto de sus tramos, nombres heredados y grupos de apariencia en campos estructurados, y cuatro perfiles de playlists alineados a shots con presupuestos verificados.</desc>
+<defs><marker id="product-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#b5c2d4"/></marker><marker id="product-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#34d399"/></marker><marker id="product-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#93c5fd"/></marker></defs>
+<text x="40" y="56" class="zone">CONTEXTO POR TRAMO</text><text x="440" y="56" class="zone">CATEGORIZACIÓN</text><text x="944" y="56" class="zone">PRODUCTO</text>
+<g class="edge" marker-end="url(#product-arrow)"><path d="M360 176 H440"/><path d="M760 176 H832 Q840 176 840 184 V268 Q840 276 848 276 H944"/><path d="M760 400 H832 Q840 400 840 392 V348 Q840 340 848 340 H944"/><path d="M1112 408 V480"/><path d="M360 392 H440"/></g>
+<rect x="40" y="108" width="320" height="136" rx="6" class="node"/><text x="64" y="144" class="node-name">Mapa y contexto</text><text x="64" y="176" class="sub">Qué vio VJudge + qué se dice</text><text x="64" y="208" class="technical">context · spans · topic_id</text>
+<rect x="440" y="108" width="320" height="136" rx="6" class="node focal"/><text x="464" y="144" class="node-name">Etiqueta de tópico · EXP-019b</text><text x="464" y="176" class="technical">Qwen2.5-14B-Instruct frozen</text><text x="464" y="208" class="sub">Hasta 8 tramos; diálogo limpio de SDH</text>
+<rect x="40" y="324" width="320" height="136" rx="6" class="node"/><text x="64" y="360" class="node-name">Señales + etiquetas propias</text><text x="64" y="392" class="sub">Centroides visuales / VJudge</text><text x="64" y="424" class="sub">Descripciones de apariencia</text>
+<rect x="440" y="300" width="320" height="208" rx="6" class="node"/><text x="464" y="336" class="node-name">Personajes estructurados</text><text x="464" y="372" class="sub">Nombres propios + heredados</text><text x="464" y="404" class="technical">visual p90 + vjudge p75</text><text x="464" y="440" class="sub">P# por texto + visual: baja especificidad</text><text x="464" y="476" class="sub">Etiqueta textual 019b conservada</text>
+<rect x="944" y="216" width="296" height="192" rx="6" class="node focal"/><text x="968" y="252" class="node-name">Tópico consumible</text><text x="968" y="288" class="technical">topic_label · characters</text><text x="968" y="320" class="technical">spans · context · provenance</text><text x="968" y="356" class="sub">Identidad y contenido separados</text>
+<rect x="944" y="480" width="296" height="112" rx="6" class="node"/><text x="968" y="516" class="node-name">Versiones / playlists</text><text x="968" y="548" class="sub">4 perfiles · presupuesto · shots</text><text x="968" y="572" class="technical">G_version: 58/58</text>
+<text x="40" y="552" class="sub">La asignación descripción → nombre por registro no se adopta.</text><text x="40" y="576" class="sub">La voz AMI es experimental y aún no valida esta capa.</text>
+<line x1="40" y1="640" x2="1240" y2="640" stroke="#43536a"/><text x="40" y="672" class="legend">Verde: etiqueta y artefacto de producto</text><text x="544" y="672" class="legend">Los campos de personajes conservan la procedencia del nombre</text>
+</svg></div><figcaption>Vista de producto, 1280×720. <code>versions.py</code> consume etiqueta y contexto; los personajes permanecen en el mapa como campos propios. La combinación final se decidió después del diagnóstico de EXP-019e y se confirmó descriptivamente en train2.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Perfil</th><th>Regla actual</th><th>Lo que realmente entrega</th></tr></thead><tbody>
+<tr><td>full_chapters</td><td>Tramo más largo de cada tópico, orden temporal.</td><td>Playlist capitulada; no reconstruye todo el video ni todas las apariciones.</td></tr>
+<tr><td>recap60</td><td>Tópicos por duración; prefijos de shots hasta 60 s.</td><td>Resumen por presupuesto; duración no equivale a importancia humana.</td></tr>
+<tr><td>highlights10pct</td><td>Misma política, presupuesto del 10 % del video.</td><td>Playlist alineada a shots, sin cortes dentro del shot.</td></tr>
+<tr><td>threads</td><td>Hasta 3 tópicos con más retornos; cap del 10 % por hilo.</td><td>Playlist por hilo con sus apariciones hasta el cap.</td></tr>
+</tbody></table></div>
+<p><a href="topicagg/versions.py">Implementación de perfiles y G-versión</a> · <a href="scripts/categorize_characters.py">Personajes</a> · <a href="scripts/merge_characters.py">Campos estructurados</a></p>
+</section>
+<section id="pruebas">
+<h2>4 · Qué probamos y qué aprendimos</h2>
+<p class="muted">AP: precisión promedio de ranking. MCC: correlación para pares de shots del mismo tópico. MRR: rango recíproco de recuperación de contenido. ± indica error estándar cuando se reporta; z es diferencia / error estándar. Los gates habituales exigían más de 2 SE, no una mejora visual del promedio.</p>
+<div class="table-wrap"><table><thead><tr><th>Prueba / muestra</th><th>Evidencia</th><th>Veredicto e implicación</th></tr></thead><tbody>
+<tr><td>EXP-001–008<br>97 películas; offset: 35</td><td>F1 fino 0.369 a ±1 shot; offset 0: F1 0.381. Consenso de dos señales F1 0.386 frente a ≈0.18 de cada una sola.</td><td class="warn">Diagnóstico inicial. Métricas con gestor anterior; confirm_rate de EXP-002 invalidado por duplicación. F1=0.84 retirado por fuga GT.</td></tr>
+<tr><td>EXP-009 / 010</td><td>Razonamiento VJudge AUC ≈0.51 frente a visual ≈0.66; intérprete integrado AP 0.51 frente a frames 0.54.</td><td class="bad">Sin mejora validada de separación temática / interpretación narrativa en estas formulaciones.</td></tr>
+<tr><td>EXP-011 adaptativo / divisivo<br>23 val</td><td>Adaptativo escena ΔF1 +0.197 sobre azar; SegLoop con K igualado +0.276. Divisivo ρ=0.9: ≈5 tópicos, sin ventaja.</td><td class="bad">La granularidad explica parte de la ganancia aparente; votos de continuidad no mejoran el ranking del componente.</td></tr>
+<tr><td>EXP-011 relacional<br>23 desarrollo + 35 réplica</td><td>ΔAP beat +0.027 ±0.017 inicial; réplica −0.002 ±0.012. Veto relativo supera veto aleatorio (p=0.015), no SegLoop.</td><td class="bad">No replica la mejora de trama. Voto no aleatorio no implica valor sobre el baseline.</td></tr>
+<tr><td>EXP-012 / 013 / 013b<br>58 val</td><td>Ledger ctx3: réplica ΔAP +0.006 ±0.014. Lista: 334/522 salidas truncadas. Logits por ítem: réplica +0.025 ±0.020.</td><td class="bad">Ledger y logits fallan gates; lista falla como instrumento. Más contexto, con estos modelos/prompts, no basta.</td></tr>
+<tr><td>EXP-014 · 2×2<br>resumen × razonador</td><td>Superficie / entity-tracking × VL-7B / texto-14B.</td><td class="bad">Ninguna celda valida mejora de beats sobre SegLoop.</td></tr>
+<tr><td>EXP-015 · enlaces<br>18 desarrollo + 28 réplica</td><td>Réplica ΔAP sobre prior temporal: visual +0.139 ±0.020; diálogo +0.088 ±0.016; VJudge +0.045 ±0.013.</td><td class="ok">Señal de enlace a larga distancia validada. Proxy: personajes compartidos, no trama.</td></tr>
+<tr><td>EXP-016 · quorum<br>47 train; 7437 unidades</td><td>Visual y VJudge replican; diálogo no. Quorum ≥2 de 3 pierde precisión frente a visual con igual nº de enlaces: −0.017 ±0.005.</td><td class="bad">Añadir votos débiles no garantiza complementariedad.</td></tr>
+<tr><td>EXP-017 / 017b</td><td>Components: mega-grupo de ≈94 % en diagnóstico. Average: ≈78–82 tópicos y coherencia positiva por señal.</td><td class="warn">Average corrige percolación, pero no pasa el gate MCC frente a fusión en ambos conjuntos.</td></tr>
+<tr><td>EXP-018<br>47 test intactos</td><td>MCC 0.0113; gana a fusion y contiguous con z≈2.5. Coherencia positiva en cada señal y cada película.</td><td class="ok">Mapa con abstención validado según su protocolo. Ventaja pequeña y no uniforme en train post hoc.</td></tr>
+<tr><td>G-enlace · juez modelo<br>lote 2: 60 + 60 ciegos</td><td>Mismo hilo: 37/60 enlaces (62 %) vs 39/60 controles (65 %); Fisher unilateral p=0.72.</td><td class="bad">Continuidad de trama no validada. La revisión humana pre-registrada no se realizó.</td></tr>
+<tr><td>EXP-019<br>56 val efectivos + 47 test</td><td>Precisión propia − barajada: +0.187 / +0.156. MRR − azar: +0.227 / +0.256. Nombra solo 28 % / 22 %.</td><td class="ok">Etiquetas representan personajes y contenido mejor que controles, con cobertura limitada.</td></tr>
+<tr><td>EXP-019b<br>4645 etiquetas; 105 films</td><td>Nombrado val 28→54 %, test 22→49 %. Guarda MRR test pasa por poco: z=−1.96.</td><td class="ok">Etiqueta de nivel tópico adoptada; el resultado no demuestra precisión perfecta.</td></tr>
+<tr><td>EXP-019d<br>val + test</td><td>Nombrado 54→61 % / 49→55 %; precisión heredados 0.54 / 0.57. Dos señales necesarias para heredar.</td><td class="ok">Herencia de nombres validada. Coste descriptivo MRR test −0.010.</td></tr>
+<tr><td>EXP-019c / e / f / g</td><td>Registro pierde MRR test (z=−3.2). Método e completo falla precisión y contenido en train. Filtro f y match g no pasan en 91 train2.</td><td class="warn">Se adopta etiqueta intacta + enlaces + P# en campos separados. Sin match de registro ni filtro genérico.</td></tr>
+<tr><td>G-versión / tests</td><td>Artifact de presupuesto 58/58. Suite actual: 20 passed in 9.50s, ejecutada el 2 oct.</td><td class="ok">Verificación de mecanismo y regresiones; no sustituye validación cualitativa.</td></tr>
+</tbody></table></div>
+<p>Los 243 mapas guardados corresponden a val 58 + test 47 + train 47 + train2 91; no equivalen a 243 películas evaluadas en cada experimento. EXP-018 usa exclusivamente su test de 47. Test ya se ha utilizado en experimentos posteriores: no describirlo como una futura confirmación nueva.</p>
+<div class="cards"><article class="card"><h3>Regresiones cubiertas por la suite</h3><p>Votos por índice, colapso de corridas de cortes, señal plana, golden v2.1, no encadenamiento del enlace promedio, abstención y agregación adaptativa/divisiva. Suite en <code>tests/</code>.</p><p class="meta">/home/edgar.chambilla/.conda/envs/segloop/bin/python -m pytest -q</p></article><article class="card"><h3>Protocolo experimental</h3><p>Gates registrados antes de generar/ver resultados, comparaciones pareadas por película, controles con mismo K, prior temporal, etiquetas barajadas, jueces aleatorios y réplicas separadas. Las ablaciones post hoc se identifican como diagnóstico.</p><p class="muted">La evidencia guardada se auditó para este informe; no se volvieron a ejecutar las inferencias GPU de la semana.</p></article></div>
+</section>
+<section id="limites">
+<h2>5 · Límites que deben acompañar los resultados</h2>
+<div class="cards"><article class="card"><h3>Personajes ≠ trama</h3><p>Cast Jaccard mide personajes compartidos. Puede favorecer caras y escenarios comunes. EXP-018 respalda esa continuidad; G-enlace-2 no demuestra hilo argumental. Tampoco se valida importancia humana con fronteras o duración.</p><h3>Identidades P# de baja especificidad</h3><p>Train2: consistencia 97 % vs 86 % al azar, pero los protagonistas aparecen en muchos tópicos. Análisis post hoc: P(P# supera lift aleatorio) solo 0.55 en val y 0.63 en train2. Cobertura 51→81 % significa categoría asignada, no personaje identificado con certeza.</p></article><article class="card"><h3>Contenido y etiquetas</h3><p>El guion alineado tiene mediana de cobertura de cues del 44 % y errores de alineación. La etiqueta también vio diálogo: el MRR valida representación del contenido hablado, no comprensión visual independiente. SDH se retiró antes de 019b; 019 mantiene su señal al excluir las siete películas SDH.</p><h3>Resultados retirados y diseño final</h3><p>F1=0.84 usa GT en el colapso y es inválido. La combinación etiqueta + personajes estructurados nace de una ablación post hoc; los componentes y su confirmación se reportan por separado. Los filtros y el registro que fallaron no se presentan como mejoras.</p></article></div>
+</section>
+<section id="siguiente">
+<h2>6 · AMI: implementación lista, validación pendiente</h2>
+<p>EXP-020 amplía CAVA a reuniones reales con audio y video: 40 reuniones, partición dev/conf de 20+20, semilla 7; unidades de 10 s. Se implementaron GT de hablantes/tópicos, señal de voz log-mel de 64 bandas + f0 + energía, SigLIP, ASR large-v3, VJudge y evaluación. El texto de entrada debe venir del ASR, no de las transcripciones manuales.</p>
+<div class="notice"><strong class="bad">Estado real al consultar Slurm el 2 de octubre:</strong> <code>54016 ami_signals</code> FAILED, 00:05:52, ExitCode 1:0. El log muestra video Corner ausente y fallo de ffmpeg al abrir <code>ES2008a.Mix-Headset.wav</code>. <code>54017 ami_eval</code> PENDING con <code>DependencyNeverSatisfied</code>. No hay un resultado AMI validado que presentar.</div>
+<div class="table-wrap"><table><thead><tr><th>Pregunta pre-registrada</th><th>Gate</th><th>Próximo paso</th></tr></thead><tbody>
+<tr><td>020a · identidad por voz</td><td>AUC voz − visual &gt;2 SE; AUC voz −0.5 &gt;2 SE. Hablante dominante ≥60 %, pares a ≥1 min.</td><td>Completar/verificar media y ejecutar señales válidas, antes de evaluar.</td></tr>
+<tr><td>020b · mapa fuera de películas</td><td>MCC con voz supera fused y contiguous por &gt;2 SE; coherencia por señal. Pares a ≥3 min.</td><td>Ejecutar dev y conf separadamente; reportar efecto con−sin voz.</td></tr>
+<tr><td>Producto y evaluación cualitativa</td><td>Calidad de etiquetas, retornos y versiones ante el consumidor.</td><td>Revisar muestras con contexto y procedencia; separar continuidad de personajes de trama.</td></tr>
+</tbody></table></div>
+<p><a href="scripts/ami_signals.py">Pipeline AMI</a> · <a href="topicagg/voice.py">Señal de voz</a> · <a href="scripts/eval_ami.py">Evaluación</a> · <a href="logs/ami_signals_54016.out">Log del fallo</a></p>
+<p class="muted">Este informe documenta el estado; no modifica ni reenvía los jobs.</p>
+</section>
+<section id="fuentes">
+<h2>7 · Fuentes y evidencia</h2>
+<div class="sources">
+<p><a href="docs/EXPERIMENT_LOG.md">EXPERIMENT_LOG</a> · protocolos, resultados, invalidaciones y límites EXP-001–020.</p>
+<p><a href="results/exp018_test.json">EXP-018 test</a> · MCC, diferencias pareadas, precisión y coherencia por película.</p>
+<p><a href="results/exp015_threads_replication.json">EXP-015 réplica</a> · enlace a larga distancia.</p>
+<p><a href="results/exp016_quorum_train.json">EXP-016</a> · control de quorum frente a visual.</p>
+<p><a href="results/exp011_step2R_replication.json">EXP-011 réplica</a> · VJudge relacional frente a SegLoop.</p>
+<p><a href="results/g_enlace_model_review_batch2.json">G-enlace lote 2</a> · revisión ciega por modelo y controles.</p>
+<p><a href="results/g_version_report.json">G-versión</a> · presupuesto y playlists 58/58.</p>
+<p><a href="results/exp019b_topic_test.json">EXP-019b test</a> · etiqueta de nivel tópico.</p>
+<p><a href="results/exp019d_prop_test.json">EXP-019d test</a> · propagación de nombres.</p>
+<p><a href="results/exp019g_t2_links.json">Train2 enlaces</a> · confirmación de nombres por enlace.</p>
+<p><a href="results/exp019f_t2_unfiltered.json">Train2 P# sin filtro</a> · consistencia y cobertura; interpretar junto al análisis de especificidad del log.</p>
+<p><a href="README.md">README</a> · contexto del proyecto. <a href="docs/integration-cava.md">Integración</a> y <a href="docs/journey.md">jornada</a> describen etapas anteriores; el código y el log experimental sustentan el estado reciente.</p>
+</div>
+</section>
+</main>
+<footer>Informe preparado el 2 de octubre de 2026 · Semana de trabajo 25 septiembre–1 octubre · Referencia visual: SegLoop weekly report 2026-09-11 (archivo encontrado, aunque su fecha es anterior a “la semana pasada”). HTML autónomo con CSS y SVG internos, sin CDN ni JavaScript; fuentes locales del sistema y Georgia. Los enlaces de evidencia requieren acompañar el archivo con el repositorio. Para PDF, usar Imprimir en el navegador.</footer>
+</body>
+</html>

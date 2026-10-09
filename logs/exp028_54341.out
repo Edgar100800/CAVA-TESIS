@@ -1,0 +1,682 @@
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights:  46%|████▌     | 123/266 [00:00<00:00, 1227.88it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 1750.33it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+abjxc {'n_units': 14, 'speech_frac': 0.929, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 6, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 6}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+afjiv {'n_units': 31, 'speech_frac': 0.903, 'k_true': 5, 'auc_hand': 0.935, 'ari_hand': 0.26, 'kerr_hand': 3, 'auc_xvec': 1.0, 'ari_xvec': 0.295, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ahnss {'n_units': 133, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.882, 'ari_hand': 0.427, 'kerr_hand': 2, 'auc_xvec': 0.973, 'ari_xvec': 0.613, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+aisvi {'n_units': 94, 'speech_frac': 0.989, 'k_true': 2, 'auc_hand': 0.808, 'ari_hand': 0.403, 'kerr_hand': 0, 'auc_xvec': 0.998, 'ari_xvec': 0.911, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+akthc {'n_units': 23, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.692, 'ari_hand': 0.073, 'kerr_hand': 5, 'auc_xvec': 0.997, 'ari_xvec': 0.153, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ampme {'n_units': 30, 'speech_frac': 0.967, 'k_true': 2, 'auc_hand': 0.662, 'ari_hand': 0.337, 'kerr_hand': 0, 'auc_xvec': 0.996, 'ari_xvec': 0.979, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+asxwr {'n_units': 48, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.921, 'ari_hand': 0.779, 'kerr_hand': 1, 'auc_xvec': 1.0, 'ari_xvec': 0.779, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+atgpi {'n_units': 25, 'speech_frac': 1.0, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+aufkn {'n_units': 37, 'speech_frac': 0.973, 'k_true': 1, 'auc_hand': 0.581, 'ari_hand': 0.067, 'kerr_hand': 1, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+azisu {'n_units': 39, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.938, 'ari_hand': 0.598, 'kerr_hand': 1, 'auc_xvec': 1.0, 'ari_xvec': 0.598, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+bauzd {'n_units': 100, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.761, 'ari_hand': 0.993, 'kerr_hand': 0, 'auc_xvec': 0.973, 'ari_xvec': 0.93, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+bdopb {'n_units': 191, 'speech_frac': 0.958, 'k_true': 6, 'auc_hand': 0.829, 'ari_hand': 0.395, 'kerr_hand': 4, 'auc_xvec': 0.979, 'ari_xvec': 0.96, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+bkwns {'n_units': 14, 'speech_frac': 0.714, 'k_true': 2, 'auc_hand': 0.804, 'ari_hand': 0.023, 'kerr_hand': 6, 'auc_xvec': 1.0, 'ari_xvec': 0.023, 'kerr_xvec': 6}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+blwmj {'n_units': 52, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.956, 'ari_hand': 0.699, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 0.896, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+bravd {'n_units': 79, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.849, 'ari_hand': 0.581, 'kerr_hand': 0, 'auc_xvec': 0.986, 'ari_xvec': 0.91, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+bspxd {'n_units': 68, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.72, 'ari_hand': 0.233, 'kerr_hand': 0, 'auc_xvec': 0.977, 'ari_xvec': 0.719, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+bwzyf {'n_units': 16, 'speech_frac': 0.938, 'k_true': 4, 'auc_hand': 0.576, 'ari_hand': 0.029, 'kerr_hand': 4, 'auc_xvec': 1.0, 'ari_xvec': 0.619, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+bxpwa {'n_units': 86, 'speech_frac': 0.965, 'k_true': 2, 'auc_hand': 0.869, 'ari_hand': 0.946, 'kerr_hand': 0, 'auc_xvec': 0.999, 'ari_xvec': 0.946, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+bydui {'n_units': 56, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.942, 'ari_hand': 0.713, 'kerr_hand': 1, 'auc_xvec': 1.0, 'ari_xvec': 0.713, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ccokr {'n_units': 41, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.756, 'ari_hand': 0.12, 'kerr_hand': 2, 'auc_xvec': 0.986, 'ari_xvec': 0.473, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+cjfer {'n_units': 127, 'speech_frac': 0.984, 'k_true': 6, 'auc_hand': 0.835, 'ari_hand': 0.171, 'kerr_hand': 4, 'auc_xvec': 0.993, 'ari_xvec': 0.907, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+cmfyw {'n_units': 97, 'speech_frac': 0.979, 'k_true': 5, 'auc_hand': 0.879, 'ari_hand': 0.388, 'kerr_hand': 3, 'auc_xvec': 0.99, 'ari_xvec': 0.739, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+cmhsm {'n_units': 124, 'speech_frac': 0.968, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+cobal {'n_units': 15, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.561, 'ari_hand': 0.023, 'kerr_hand': 6, 'auc_xvec': 1.0, 'ari_xvec': 0.036, 'kerr_xvec': 6}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+cqaec {'n_units': 45, 'speech_frac': 0.978, 'k_true': 2, 'auc_hand': 0.564, 'ari_hand': 0.044, 'kerr_hand': 0, 'auc_xvec': 0.76, 'ari_xvec': 0.209, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+crixb {'n_units': 60, 'speech_frac': 0.983, 'k_true': 2, 'auc_hand': 0.812, 'ari_hand': 0.584, 'kerr_hand': 0, 'auc_xvec': 0.992, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+cwryz {'n_units': 31, 'speech_frac': 0.935, 'k_true': 1, 'auc_hand': 0.974, 'ari_hand': 0.985, 'kerr_hand': 1, 'auc_xvec': 1.0, 'ari_xvec': 0.633, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+cyyxp {'n_units': 39, 'speech_frac': 0.846, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+czlvt {'n_units': 189, 'speech_frac': 1.0, 'k_true': 8, 'auc_hand': 0.804, 'ari_hand': 0.234, 'kerr_hand': 3, 'auc_xvec': 0.979, 'ari_xvec': 0.73, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+dbugl {'n_units': 160, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.923, 'ari_hand': 0.283, 'kerr_hand': 2, 'auc_xvec': 0.997, 'ari_xvec': 0.969, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+dhorc {'n_units': 61, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.939, 'ari_hand': 0.484, 'kerr_hand': 2, 'auc_xvec': 0.985, 'ari_xvec': 0.438, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+djngn {'n_units': 35, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.908, 'ari_hand': 1.0, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+djqif {'n_units': 97, 'speech_frac': 0.969, 'k_true': 2, 'auc_hand': 0.899, 'ari_hand': 0.83, 'kerr_hand': 0, 'auc_xvec': 0.999, 'ari_xvec': 0.833, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+dscgs {'n_units': 42, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.936, 'ari_hand': 0.639, 'kerr_hand': 0, 'auc_xvec': 0.999, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+dvngl {'n_units': 86, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.832, 'ari_hand': 0.493, 'kerr_hand': 2, 'auc_xvec': 0.996, 'ari_xvec': 0.848, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+eapdk {'n_units': 110, 'speech_frac': 0.991, 'k_true': 5, 'auc_hand': 0.93, 'ari_hand': 0.372, 'kerr_hand': 3, 'auc_xvec': 0.984, 'ari_xvec': 0.847, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+edixl {'n_units': 63, 'speech_frac': 1.0, 'k_true': 6, 'auc_hand': 0.882, 'ari_hand': 0.307, 'kerr_hand': 4, 'auc_xvec': 0.997, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ehpau {'n_units': 31, 'speech_frac': 0.968, 'k_true': 3, 'auc_hand': 0.62, 'ari_hand': 0.183, 'kerr_hand': 1, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+epdpg {'n_units': 108, 'speech_frac': 0.991, 'k_true': 1, 'auc_hand': 0.753, 'ari_hand': 0.873, 'kerr_hand': 1, 'auc_xvec': 0.995, 'ari_xvec': 0.771, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+eqttu {'n_units': 33, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.883, 'ari_hand': 0.751, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+esrit {'n_units': 43, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.969, 'ari_hand': 0.443, 'kerr_hand': 2, 'auc_xvec': 0.998, 'ari_xvec': 0.378, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+evtyi {'n_units': 174, 'speech_frac': 0.885, 'k_true': 2, 'auc_hand': 0.67, 'ari_hand': 0.171, 'kerr_hand': 0, 'auc_xvec': 0.999, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+exymw {'n_units': 24, 'speech_frac': 0.75, 'k_true': 5, 'auc_hand': 0.646, 'ari_hand': 0.226, 'kerr_hand': 3, 'auc_xvec': 0.968, 'ari_xvec': 0.752, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+eziem {'n_units': 36, 'speech_frac': 0.861, 'k_true': 6, 'auc_hand': 0.74, 'ari_hand': 0.156, 'kerr_hand': 4, 'auc_xvec': 0.987, 'ari_xvec': 0.405, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ezsgk {'n_units': 42, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.976, 'ari_hand': 1.0, 'kerr_hand': 0, 'auc_xvec': 0.946, 'ari_xvec': 0.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+falxo {'n_units': 88, 'speech_frac': 0.955, 'k_true': 5, 'auc_hand': 0.655, 'ari_hand': 0.253, 'kerr_hand': 3, 'auc_xvec': 0.979, 'ari_xvec': 0.648, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+femmv {'n_units': 35, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.985, 'ari_hand': 0.573, 'kerr_hand': 1, 'auc_xvec': 0.999, 'ari_xvec': 0.949, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+fkvvo {'n_units': 109, 'speech_frac': 1.0, 'k_true': 5, 'auc_hand': 0.842, 'ari_hand': 0.341, 'kerr_hand': 3, 'auc_xvec': 0.977, 'ari_xvec': 0.404, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+fsaal {'n_units': 40, 'speech_frac': 1.0, 'k_true': 5, 'auc_hand': 0.9, 'ari_hand': 0.346, 'kerr_hand': 3, 'auc_xvec': 0.984, 'ari_xvec': 0.881, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+fvyvb {'n_units': 158, 'speech_frac': 0.987, 'k_true': 5, 'auc_hand': 0.865, 'ari_hand': 0.457, 'kerr_hand': 2, 'auc_xvec': 0.978, 'ari_xvec': 0.9, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+fxgvy {'n_units': 11, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.631, 'ari_hand': 0.151, 'kerr_hand': 6, 'auc_xvec': 1.0, 'ari_xvec': 0.201, 'kerr_xvec': 6}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ggvel {'n_units': 29, 'speech_frac': 0.966, 'k_true': 3, 'auc_hand': 0.902, 'ari_hand': 0.635, 'kerr_hand': 1, 'auc_xvec': 0.999, 'ari_xvec': 0.955, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+gocbm {'n_units': 53, 'speech_frac': 1.0, 'k_true': 6, 'auc_hand': 0.912, 'ari_hand': 0.263, 'kerr_hand': 4, 'auc_xvec': 0.995, 'ari_xvec': 0.235, 'kerr_xvec': 4}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+gofnj {'n_units': 78, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.842, 'ari_hand': 0.834, 'kerr_hand': 0, 'auc_xvec': 0.999, 'ari_xvec': 0.887, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+goyli {'n_units': 131, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.923, 'ari_hand': 0.653, 'kerr_hand': 1, 'auc_xvec': 0.988, 'ari_xvec': 0.963, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+gpjne {'n_units': 37, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.727, 'ari_hand': 0.074, 'kerr_hand': 0, 'auc_xvec': 0.998, 'ari_xvec': 0.874, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+gqbvk {'n_units': 33, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.757, 'ari_hand': 0.578, 'kerr_hand': 2, 'auc_xvec': 1.0, 'ari_xvec': 0.964, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+gqdxy {'n_units': 76, 'speech_frac': 0.947, 'k_true': 3, 'auc_hand': 0.652, 'ari_hand': 0.048, 'kerr_hand': 1, 'auc_xvec': 0.981, 'ari_xvec': 0.636, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+grzbb {'n_units': 122, 'speech_frac': 0.705, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+gwtwd {'n_units': 11, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.931, 'ari_hand': 0.229, 'kerr_hand': 4, 'auc_xvec': 1.0, 'ari_xvec': 0.4, 'kerr_xvec': 4}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+gzvkx {'n_units': 45, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.859, 'ari_hand': 0.134, 'kerr_hand': 1, 'auc_xvec': 0.934, 'ari_xvec': 0.624, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+hgdez {'n_units': 191, 'speech_frac': 0.984, 'k_true': 5, 'auc_hand': 0.735, 'ari_hand': 0.062, 'kerr_hand': 3, 'auc_xvec': 0.994, 'ari_xvec': 0.688, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+hgeec {'n_units': 85, 'speech_frac': 1.0, 'k_true': 5, 'auc_hand': 0.924, 'ari_hand': 0.406, 'kerr_hand': 3, 'auc_xvec': 0.993, 'ari_xvec': 0.71, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+hiyis {'n_units': 18, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.98, 'ari_hand': 0.261, 'kerr_hand': 6, 'auc_xvec': 1.0, 'ari_xvec': 0.277, 'kerr_xvec': 6}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+hkzpa {'n_units': 193, 'speech_frac': 0.969, 'k_true': 2, 'auc_hand': 0.755, 'ari_hand': 0.574, 'kerr_hand': 0, 'auc_xvec': 0.993, 'ari_xvec': 0.753, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+houcx {'n_units': 62, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.932, 'ari_hand': 0.744, 'kerr_hand': 1, 'auc_xvec': 0.996, 'ari_xvec': 0.877, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+hqyok {'n_units': 5, 'speech_frac': 1.0, 'k_true': 1, 'auc_hand': None, 'ari_hand': None, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': None, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+hycgx {'n_units': 50, 'speech_frac': 0.98, 'k_true': 2, 'auc_hand': 0.76, 'ari_hand': -0.024, 'kerr_hand': 0, 'auc_xvec': 0.998, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ikgcq {'n_units': 26, 'speech_frac': 0.923, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+imbqf {'n_units': 71, 'speech_frac': 0.972, 'k_true': 4, 'auc_hand': 0.922, 'ari_hand': 0.379, 'kerr_hand': 2, 'auc_xvec': 0.995, 'ari_xvec': 0.317, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+imtug {'n_units': 30, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.797, 'ari_hand': 0.174, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ioasm {'n_units': 95, 'speech_frac': 0.905, 'k_true': 2, 'auc_hand': 0.572, 'ari_hand': 0.037, 'kerr_hand': 0, 'auc_xvec': 0.96, 'ari_xvec': 0.796, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ipqqq {'n_units': 68, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.751, 'ari_hand': 0.052, 'kerr_hand': 2, 'auc_xvec': 0.993, 'ari_xvec': 0.261, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+iqbww {'n_units': 47, 'speech_frac': 0.872, 'k_true': 3, 'auc_hand': 0.553, 'ari_hand': -0.02, 'kerr_hand': 1, 'auc_xvec': 0.983, 'ari_xvec': 0.629, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+iqtde {'n_units': 22, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.912, 'ari_hand': 0.214, 'kerr_hand': 2, 'auc_xvec': 1.0, 'ari_xvec': 0.786, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+irvat {'n_units': 45, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.844, 'ari_hand': 0.224, 'kerr_hand': 1, 'auc_xvec': 0.997, 'ari_xvec': 0.8, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+iwdjy {'n_units': 57, 'speech_frac': 0.789, 'k_true': 2, 'auc_hand': 0.723, 'ari_hand': 0.003, 'kerr_hand': 0, 'auc_xvec': 0.868, 'ari_xvec': 0.696, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+jcako {'n_units': 203, 'speech_frac': 0.926, 'k_true': 3, 'auc_hand': 0.714, 'ari_hand': 0.003, 'kerr_hand': 1, 'auc_xvec': 0.968, 'ari_xvec': 0.865, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+jhdav {'n_units': 30, 'speech_frac': 0.933, 'k_true': 4, 'auc_hand': 0.796, 'ari_hand': 0.107, 'kerr_hand': 2, 'auc_xvec': 0.926, 'ari_xvec': 0.192, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+jiqvr {'n_units': 17, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.591, 'ari_hand': -0.007, 'kerr_hand': 5, 'auc_xvec': 0.981, 'ari_xvec': 0.254, 'kerr_xvec': 5}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+jnivh {'n_units': 28, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.806, 'ari_hand': 0.102, 'kerr_hand': 1, 'auc_xvec': 0.967, 'ari_xvec': 0.398, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+jsdmu {'n_units': 30, 'speech_frac': 0.9, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 3, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+jsmbi {'n_units': 23, 'speech_frac': 0.957, 'k_true': 5, 'auc_hand': 0.803, 'ari_hand': 0.354, 'kerr_hand': 3, 'auc_xvec': 0.996, 'ari_xvec': 0.439, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+jtagk {'n_units': 59, 'speech_frac': 0.932, 'k_true': 2, 'auc_hand': 0.797, 'ari_hand': 0.726, 'kerr_hand': 0, 'auc_xvec': 0.889, 'ari_xvec': 0.812, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+jyflp {'n_units': 91, 'speech_frac': 1.0, 'k_true': 7, 'auc_hand': 0.737, 'ari_hand': 0.023, 'kerr_hand': 5, 'auc_xvec': 0.996, 'ari_xvec': 0.545, 'kerr_xvec': 4}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+jyirt {'n_units': 17, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.82, 'ari_hand': 0.161, 'kerr_hand': 5, 'auc_xvec': 1.0, 'ari_xvec': 0.232, 'kerr_xvec': 5}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+jynhe {'n_units': 123, 'speech_frac': 1.0, 'k_true': 5, 'auc_hand': 0.869, 'ari_hand': 0.421, 'kerr_hand': 2, 'auc_xvec': 0.997, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kbkon {'n_units': 24, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.869, 'ari_hand': -0.024, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 0.625, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kckqn {'n_units': 70, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.695, 'ari_hand': 0.067, 'kerr_hand': 1, 'auc_xvec': 0.999, 'ari_xvec': 0.871, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kctgl {'n_units': 22, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.867, 'ari_hand': 1.0, 'kerr_hand': 0, 'auc_xvec': 0.92, 'ari_xvec': 0.311, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kdfqk {'n_units': 207, 'speech_frac': 0.903, 'k_true': 2, 'auc_hand': 0.696, 'ari_hand': -0.074, 'kerr_hand': 0, 'auc_xvec': 0.983, 'ari_xvec': 0.709, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kefgo {'n_units': 76, 'speech_frac': 0.974, 'k_true': 3, 'auc_hand': 0.589, 'ari_hand': 0.235, 'kerr_hand': 1, 'auc_xvec': 0.983, 'ari_xvec': 0.739, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kiadt {'n_units': 153, 'speech_frac': 0.993, 'k_true': 2, 'auc_hand': 0.753, 'ari_hand': 0.8, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kkghn {'n_units': 162, 'speech_frac': 0.957, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kklpv {'n_units': 158, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.743, 'ari_hand': 0.968, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kkwkn {'n_units': 95, 'speech_frac': 0.989, 'k_true': 5, 'auc_hand': 0.821, 'ari_hand': 0.242, 'kerr_hand': 3, 'auc_xvec': 0.988, 'ari_xvec': 0.811, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kszpd {'n_units': 32, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.891, 'ari_hand': 0.503, 'kerr_hand': 2, 'auc_xvec': 0.97, 'ari_xvec': 0.234, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ktzmw {'n_units': 196, 'speech_frac': 0.99, 'k_true': 3, 'auc_hand': 0.836, 'ari_hand': 0.465, 'kerr_hand': 1, 'auc_xvec': 0.996, 'ari_xvec': 0.802, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+kuduk {'n_units': 112, 'speech_frac': 0.982, 'k_true': 4, 'auc_hand': 0.823, 'ari_hand': 0.444, 'kerr_hand': 2, 'auc_xvec': 0.989, 'ari_xvec': 0.528, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ldkmv {'n_units': 98, 'speech_frac': 1.0, 'k_true': 5, 'auc_hand': 0.855, 'ari_hand': 0.292, 'kerr_hand': 3, 'auc_xvec': 0.986, 'ari_xvec': 0.915, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ldnro {'n_units': 220, 'speech_frac': 0.991, 'k_true': 6, 'auc_hand': 0.71, 'ari_hand': 0.288, 'kerr_hand': 1, 'auc_xvec': 0.976, 'ari_xvec': 0.865, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+lfzib {'n_units': 57, 'speech_frac': 1.0, 'k_true': 7, 'auc_hand': 0.738, 'ari_hand': 0.244, 'kerr_hand': 5, 'auc_xvec': 0.962, 'ari_xvec': 0.351, 'kerr_xvec': 5}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+lknjp {'n_units': 21, 'speech_frac': 0.619, 'k_true': 4, 'auc_hand': 0.566, 'ari_hand': 0.4, 'kerr_hand': 4, 'auc_xvec': 0.97, 'ari_xvec': 0.609, 'kerr_xvec': 4}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+luvfz {'n_units': 44, 'speech_frac': 0.886, 'k_true': 6, 'auc_hand': 0.619, 'ari_hand': 0.007, 'kerr_hand': 4, 'auc_xvec': 0.96, 'ari_xvec': 0.179, 'kerr_xvec': 4}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mdbod {'n_units': 125, 'speech_frac': 0.992, 'k_true': 8, 'auc_hand': 0.905, 'ari_hand': 0.32, 'kerr_hand': 5, 'auc_xvec': 0.992, 'ari_xvec': 0.785, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mekog {'n_units': 177, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.789, 'ari_hand': 0.832, 'kerr_hand': 0, 'auc_xvec': 0.998, 'ari_xvec': 0.494, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mesob {'n_units': 32, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.613, 'ari_hand': 0.204, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 0.409, 'kerr_xvec': 5}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mevkw {'n_units': 21, 'speech_frac': 0.952, 'k_true': 3, 'auc_hand': 0.552, 'ari_hand': 0.189, 'kerr_hand': 4, 'auc_xvec': 0.994, 'ari_xvec': 0.793, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mgpok {'n_units': 113, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.894, 'ari_hand': 0.776, 'kerr_hand': 1, 'auc_xvec': 0.966, 'ari_xvec': 0.795, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+migzj {'n_units': 35, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.875, 'ari_hand': 0.102, 'kerr_hand': 2, 'auc_xvec': 0.991, 'ari_xvec': 0.384, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mjgil {'n_units': 42, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.681, 'ari_hand': 0.342, 'kerr_hand': 0, 'auc_xvec': 0.967, 'ari_xvec': 0.82, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mkrcv {'n_units': 123, 'speech_frac': 0.984, 'k_true': 4, 'auc_hand': 0.738, 'ari_hand': 0.58, 'kerr_hand': 2, 'auc_xvec': 0.969, 'ari_xvec': 0.397, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mpvoh {'n_units': 28, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.864, 'ari_hand': 0.32, 'kerr_hand': 2, 'auc_xvec': 0.892, 'ari_xvec': 0.264, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mqxsf {'n_units': 141, 'speech_frac': 0.965, 'k_true': 4, 'auc_hand': 0.607, 'ari_hand': -0.011, 'kerr_hand': 2, 'auc_xvec': 0.916, 'ari_xvec': 0.429, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mvjuk {'n_units': 75, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.811, 'ari_hand': 0.616, 'kerr_hand': 1, 'auc_xvec': 0.975, 'ari_xvec': 0.616, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+mwfmq {'n_units': 94, 'speech_frac': 0.926, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+nctdh {'n_units': 25, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.737, 'ari_hand': 0.308, 'kerr_hand': 2, 'auc_xvec': 0.999, 'ari_xvec': 0.788, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ndkwv {'n_units': 152, 'speech_frac': 0.987, 'k_true': 6, 'auc_hand': 0.812, 'ari_hand': 0.214, 'kerr_hand': 4, 'auc_xvec': 0.985, 'ari_xvec': 0.904, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+nfqjx {'n_units': 153, 'speech_frac': 0.967, 'k_true': 5, 'auc_hand': 0.821, 'ari_hand': 0.19, 'kerr_hand': 3, 'auc_xvec': 0.959, 'ari_xvec': 0.844, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ngyrk {'n_units': 31, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.574, 'ari_hand': -0.036, 'kerr_hand': 0, 'auc_xvec': 0.889, 'ari_xvec': 0.862, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+nnqfq {'n_units': 29, 'speech_frac': 1.0, 'k_true': 5, 'auc_hand': 0.99, 'ari_hand': 0.432, 'kerr_hand': 3, 'auc_xvec': 0.984, 'ari_xvec': 0.479, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+nrogz {'n_units': 89, 'speech_frac': 0.966, 'k_true': 2, 'auc_hand': 0.56, 'ari_hand': -0.061, 'kerr_hand': 0, 'auc_xvec': 0.928, 'ari_xvec': 0.581, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ntchr {'n_units': 82, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.983, 'ari_hand': 0.8, 'kerr_hand': 0, 'auc_xvec': 0.973, 'ari_xvec': 0.948, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+nxgad {'n_units': 34, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.85, 'ari_hand': 0.32, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 0.734, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+odkzj {'n_units': 118, 'speech_frac': 1.0, 'k_true': 7, 'auc_hand': 0.926, 'ari_hand': 0.204, 'kerr_hand': 5, 'auc_xvec': 0.99, 'ari_xvec': 0.928, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+oekmc {'n_units': 30, 'speech_frac': 0.967, 'k_true': 3, 'auc_hand': 0.516, 'ari_hand': 0.003, 'kerr_hand': 1, 'auc_xvec': 0.874, 'ari_xvec': 0.297, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+oenox {'n_units': 16, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.76, 'ari_hand': 0.084, 'kerr_hand': 6, 'auc_xvec': 0.979, 'ari_xvec': 0.129, 'kerr_xvec': 6}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+oklol {'n_units': 193, 'speech_frac': 0.995, 'k_true': 5, 'auc_hand': 0.684, 'ari_hand': 0.143, 'kerr_hand': 3, 'auc_xvec': 0.979, 'ari_xvec': 0.909, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+onpra {'n_units': 58, 'speech_frac': 0.914, 'k_true': 2, 'auc_hand': 0.662, 'ari_hand': 0.308, 'kerr_hand': 1, 'auc_xvec': 0.967, 'ari_xvec': 0.861, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ooxnm {'n_units': 64, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.82, 'ari_hand': 0.43, 'kerr_hand': 2, 'auc_xvec': 0.987, 'ari_xvec': 0.924, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+oxxwk {'n_units': 96, 'speech_frac': 0.917, 'k_true': 2, 'auc_hand': 0.697, 'ari_hand': -0.011, 'kerr_hand': 0, 'auc_xvec': 0.71, 'ari_xvec': 0.186, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+paibn {'n_units': 69, 'speech_frac': 0.986, 'k_true': 2, 'auc_hand': 0.922, 'ari_hand': 0.86, 'kerr_hand': 0, 'auc_xvec': 0.989, 'ari_xvec': 0.916, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+pgkde {'n_units': 59, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.887, 'ari_hand': 0.3, 'kerr_hand': 1, 'auc_xvec': 0.967, 'ari_xvec': 0.786, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+pilgb {'n_units': 114, 'speech_frac': 0.982, 'k_true': 3, 'auc_hand': 0.751, 'ari_hand': 0.039, 'kerr_hand': 1, 'auc_xvec': 0.997, 'ari_xvec': 0.937, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+plbbw {'n_units': 18, 'speech_frac': 0.833, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 7, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 7}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+pnook {'n_units': 70, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.685, 'ari_hand': 0.033, 'kerr_hand': 2, 'auc_xvec': 0.976, 'ari_xvec': 0.901, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+pnyir {'n_units': 93, 'speech_frac': 0.968, 'k_true': 6, 'auc_hand': 0.912, 'ari_hand': 0.34, 'kerr_hand': 4, 'auc_xvec': 0.986, 'ari_xvec': 0.435, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ppgjx {'n_units': 105, 'speech_frac': 0.933, 'k_true': 2, 'auc_hand': 0.622, 'ari_hand': 0.044, 'kerr_hand': 0, 'auc_xvec': 0.847, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+pqmho {'n_units': 28, 'speech_frac': 0.107, 'k_true': 1, 'auc_hand': None, 'ari_hand': None, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': None, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+praxo {'n_units': 102, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.868, 'ari_hand': 0.879, 'kerr_hand': 0, 'auc_xvec': 0.94, 'ari_xvec': 0.918, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qfdpp {'n_units': 65, 'speech_frac': 1.0, 'k_true': 3, 'auc_hand': 0.942, 'ari_hand': 0.561, 'kerr_hand': 1, 'auc_xvec': 1.0, 'ari_xvec': 0.985, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qhesr {'n_units': 31, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.642, 'ari_hand': -0.073, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qjgpl {'n_units': 25, 'speech_frac': 0.96, 'k_true': 3, 'auc_hand': 0.849, 'ari_hand': 0.352, 'kerr_hand': 1, 'auc_xvec': 0.749, 'ari_xvec': 0.186, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qouur {'n_units': 207, 'speech_frac': 0.986, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qppll {'n_units': 14, 'speech_frac': 1.0, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 7, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 7}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qpylu {'n_units': 9, 'speech_frac': 0.889, 'k_true': 2, 'auc_hand': 0.905, 'ari_hand': None, 'kerr_hand': 2, 'auc_xvec': 1.0, 'ari_xvec': None, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qrzjk {'n_units': 8, 'speech_frac': 1.0, 'k_true': 1, 'auc_hand': None, 'ari_hand': None, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': None, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qsfzo {'n_units': 29, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.993, 'ari_hand': 0.33, 'kerr_hand': 4, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qvtia {'n_units': 73, 'speech_frac': 0.658, 'k_true': 2, 'auc_hand': 0.741, 'ari_hand': 0.75, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qydmg {'n_units': 23, 'speech_frac': 1.0, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 7, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 5}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qygfk {'n_units': 86, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.765, 'ari_hand': 0.008, 'kerr_hand': 2, 'auc_xvec': 0.997, 'ari_xvec': 0.366, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+qzwxa {'n_units': 45, 'speech_frac': 0.978, 'k_true': 2, 'auc_hand': 0.91, 'ari_hand': 1.0, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+rcxzg {'n_units': 36, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.693, 'ari_hand': 0.21, 'kerr_hand': 2, 'auc_xvec': 0.965, 'ari_xvec': 0.933, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+rtvuw {'n_units': 12, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.448, 'ari_hand': 0.04, 'kerr_hand': 6, 'auc_xvec': 0.606, 'ari_xvec': 0.188, 'kerr_xvec': 6}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+rxgun {'n_units': 44, 'speech_frac': 0.977, 'k_true': 6, 'auc_hand': 0.799, 'ari_hand': 0.253, 'kerr_hand': 3, 'auc_xvec': 0.999, 'ari_xvec': 0.358, 'kerr_xvec': 4}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+sduml {'n_units': 137, 'speech_frac': 0.993, 'k_true': 5, 'auc_hand': 0.767, 'ari_hand': 0.323, 'kerr_hand': 3, 'auc_xvec': 0.97, 'ari_xvec': 0.827, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+sikkm {'n_units': 18, 'speech_frac': 0.722, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 7, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 6}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+sldwj {'n_units': 28, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.96, 'ari_hand': 0.224, 'kerr_hand': 6, 'auc_xvec': 0.977, 'ari_xvec': 0.913, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+sosnj {'n_units': 70, 'speech_frac': 0.986, 'k_true': 3, 'auc_hand': 0.884, 'ari_hand': 0.787, 'kerr_hand': 1, 'auc_xvec': 0.999, 'ari_xvec': 0.809, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+spzmn {'n_units': 32, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.587, 'ari_hand': -0.083, 'kerr_hand': 0, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+sqkup {'n_units': 27, 'speech_frac': 0.963, 'k_true': 4, 'auc_hand': 0.714, 'ari_hand': 0.293, 'kerr_hand': 2, 'auc_xvec': 0.963, 'ari_xvec': 0.647, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+suuxu {'n_units': 72, 'speech_frac': 0.75, 'k_true': 5, 'auc_hand': 0.629, 'ari_hand': -0.037, 'kerr_hand': 3, 'auc_xvec': 0.909, 'ari_xvec': 0.413, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+syiwe {'n_units': 14, 'speech_frac': 0.929, 'k_true': 3, 'auc_hand': 0.711, 'ari_hand': 0.202, 'kerr_hand': 5, 'auc_xvec': 0.982, 'ari_xvec': 0.332, 'kerr_xvec': 5}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+szsyz {'n_units': 10, 'speech_frac': 1.0, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 7, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 7}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+tcwsn {'n_units': 77, 'speech_frac': 0.961, 'k_true': 2, 'auc_hand': 0.649, 'ari_hand': -0.01, 'kerr_hand': 0, 'auc_xvec': 0.976, 'ari_xvec': 0.944, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+tfvyr {'n_units': 6, 'speech_frac': 1.0, 'k_true': 1, 'auc_hand': None, 'ari_hand': None, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': None, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+tguxv {'n_units': 53, 'speech_frac': 0.925, 'k_true': 2, 'auc_hand': 0.499, 'ari_hand': -0.019, 'kerr_hand': 0, 'auc_xvec': 0.999, 'ari_xvec': 0.575, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+tiams {'n_units': 31, 'speech_frac': 0.968, 'k_true': 4, 'auc_hand': 0.67, 'ari_hand': 0.012, 'kerr_hand': 2, 'auc_xvec': 0.993, 'ari_xvec': 0.584, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+tjkfn {'n_units': 130, 'speech_frac': 0.992, 'k_true': 3, 'auc_hand': 0.819, 'ari_hand': 0.375, 'kerr_hand': 1, 'auc_xvec': 0.993, 'ari_xvec': 0.909, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+tlprc {'n_units': 29, 'speech_frac': 1.0, 'k_true': 5, 'auc_hand': 0.667, 'ari_hand': 0.118, 'kerr_hand': 3, 'auc_xvec': 0.914, 'ari_xvec': 0.142, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+tplwz {'n_units': 47, 'speech_frac': 1.0, 'k_true': 5, 'auc_hand': 0.831, 'ari_hand': 0.17, 'kerr_hand': 3, 'auc_xvec': 0.997, 'ari_xvec': 0.252, 'kerr_xvec': 3}
+tucrg {'n_units': 6, 'speech_frac': 0.0, 'k_true': 1, 'auc_hand': None, 'ari_hand': None, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': None, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+txcok {'n_units': 86, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.819, 'ari_hand': 0.406, 'kerr_hand': 2, 'auc_xvec': 0.999, 'ari_xvec': 0.778, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+uatlu {'n_units': 30, 'speech_frac': 0.933, 'k_true': 3, 'auc_hand': 0.928, 'ari_hand': 0.616, 'kerr_hand': 1, 'auc_xvec': 1.0, 'ari_xvec': 0.599, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+udjij {'n_units': 113, 'speech_frac': 0.973, 'k_true': 5, 'auc_hand': 0.653, 'ari_hand': 0.018, 'kerr_hand': 3, 'auc_xvec': 0.885, 'ari_xvec': 0.151, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+uexjc {'n_units': 62, 'speech_frac': 1.0, 'k_true': 6, 'auc_hand': 0.819, 'ari_hand': 0.186, 'kerr_hand': 4, 'auc_xvec': 0.969, 'ari_xvec': 0.189, 'kerr_xvec': 4}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ufpel {'n_units': 81, 'speech_frac': 0.63, 'k_true': 3, 'auc_hand': 0.737, 'ari_hand': 0.22, 'kerr_hand': 1, 'auc_xvec': 0.983, 'ari_xvec': 0.837, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ulriv {'n_units': 93, 'speech_frac': 1.0, 'k_true': 5, 'auc_hand': 0.808, 'ari_hand': 0.298, 'kerr_hand': 3, 'auc_xvec': 0.984, 'ari_xvec': 0.333, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+usbgm {'n_units': 12, 'speech_frac': 1.0, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 7, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 7}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+uvnmy {'n_units': 35, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.861, 'ari_hand': 0.728, 'kerr_hand': 0, 'auc_xvec': 0.996, 'ari_xvec': 0.865, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+vbjlx {'n_units': 65, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.578, 'ari_hand': 0.006, 'kerr_hand': 2, 'auc_xvec': 0.99, 'ari_xvec': 0.393, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+vmaiq {'n_units': 148, 'speech_frac': 0.986, 'k_true': 4, 'auc_hand': 0.874, 'ari_hand': 0.17, 'kerr_hand': 2, 'auc_xvec': 0.994, 'ari_xvec': 0.82, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+vmbga {'n_units': 132, 'speech_frac': 0.985, 'k_true': 4, 'auc_hand': 0.868, 'ari_hand': 0.444, 'kerr_hand': 2, 'auc_xvec': 0.972, 'ari_xvec': 0.93, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+vysqj {'n_units': 18, 'speech_frac': 0.944, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 7, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 7}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+wbqza {'n_units': 131, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.92, 'ari_hand': 0.909, 'kerr_hand': 0, 'auc_xvec': 0.999, 'ari_xvec': 0.948, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+wdjyj {'n_units': 41, 'speech_frac': 0.976, 'k_true': 6, 'auc_hand': 0.849, 'ari_hand': 0.191, 'kerr_hand': 4, 'auc_xvec': 0.981, 'ari_xvec': 0.34, 'kerr_xvec': 4}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+wewoz {'n_units': 26, 'speech_frac': 0.962, 'k_true': 5, 'auc_hand': 0.846, 'ari_hand': 0.359, 'kerr_hand': 2, 'auc_xvec': 0.998, 'ari_xvec': 0.199, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+whmpa {'n_units': 11, 'speech_frac': 0.818, 'k_true': 1, 'auc_hand': None, 'ari_hand': None, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': None, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+willh {'n_units': 25, 'speech_frac': 0.92, 'k_true': 2, 'auc_hand': 0.898, 'ari_hand': 1.0, 'kerr_hand': 0, 'auc_xvec': 0.986, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+wjhgf {'n_units': 19, 'speech_frac': 0.895, 'k_true': 4, 'auc_hand': 0.753, 'ari_hand': 0.193, 'kerr_hand': 4, 'auc_xvec': 0.992, 'ari_xvec': 0.538, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+wmori {'n_units': 24, 'speech_frac': 0.875, 'k_true': 2, 'auc_hand': 0.504, 'ari_hand': 0.279, 'kerr_hand': 2, 'auc_xvec': 0.951, 'ari_xvec': 0.253, 'kerr_xvec': 4}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+wnfoi {'n_units': 48, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.786, 'ari_hand': 0.199, 'kerr_hand': 2, 'auc_xvec': 0.997, 'ari_xvec': 0.409, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+wspbh {'n_units': 130, 'speech_frac': 1.0, 'k_true': 6, 'auc_hand': 0.803, 'ari_hand': 0.074, 'kerr_hand': 4, 'auc_xvec': 0.998, 'ari_xvec': 0.925, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+xiglo {'n_units': 22, 'speech_frac': 0.909, 'k_true': 3, 'auc_hand': 0.78, 'ari_hand': -0.11, 'kerr_hand': 1, 'auc_xvec': 0.992, 'ari_xvec': 0.656, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+xmfzh {'n_units': 37, 'speech_frac': 1.0, 'k_true': 8, 'auc_hand': 0.852, 'ari_hand': 0.125, 'kerr_hand': 6, 'auc_xvec': 0.997, 'ari_xvec': 0.215, 'kerr_xvec': 6}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+xvllq {'n_units': 51, 'speech_frac': 0.961, 'k_true': 3, 'auc_hand': 0.882, 'ari_hand': 0.808, 'kerr_hand': 1, 'auc_xvec': 0.995, 'ari_xvec': 0.694, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+xxwgv {'n_units': 133, 'speech_frac': 1.0, 'k_true': 6, 'auc_hand': 0.891, 'ari_hand': 0.221, 'kerr_hand': 4, 'auc_xvec': 0.976, 'ari_xvec': 0.57, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+xypdm {'n_units': 85, 'speech_frac': 0.882, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ycxxe {'n_units': 29, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.969, 'ari_hand': 0.549, 'kerr_hand': 3, 'auc_xvec': 1.0, 'ari_xvec': 0.841, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ydlfw {'n_units': 41, 'speech_frac': 1.0, 'k_true': 6, 'auc_hand': 0.899, 'ari_hand': 0.246, 'kerr_hand': 4, 'auc_xvec': 0.969, 'ari_xvec': 0.295, 'kerr_xvec': 4}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+yfcmz {'n_units': 109, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.684, 'ari_hand': 0.766, 'kerr_hand': 2, 'auc_xvec': 0.964, 'ari_xvec': 0.693, 'kerr_xvec': 2}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ylnza {'n_units': 108, 'speech_frac': 0.991, 'k_true': 5, 'auc_hand': 0.787, 'ari_hand': 0.09, 'kerr_hand': 3, 'auc_xvec': 0.998, 'ari_xvec': 0.331, 'kerr_xvec': 3}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ypwjd {'n_units': 52, 'speech_frac': 0.923, 'k_true': 4, 'auc_hand': 0.891, 'ari_hand': 0.582, 'kerr_hand': 2, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+yrsve {'n_units': 118, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.814, 'ari_hand': 0.732, 'kerr_hand': 0, 'auc_xvec': 0.999, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ysgbf {'n_units': 24, 'speech_frac': 0.875, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 6, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+yuzyu {'n_units': 127, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.846, 'ari_hand': 0.842, 'kerr_hand': 0, 'auc_xvec': 0.993, 'ari_xvec': 0.935, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ywcwr {'n_units': 28, 'speech_frac': 0.964, 'k_true': 2, 'auc_hand': 0.919, 'ari_hand': 0.445, 'kerr_hand': 2, 'auc_xvec': 1.0, 'ari_xvec': 1.0, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+zajzs {'n_units': 39, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.8, 'ari_hand': 0.405, 'kerr_hand': 0, 'auc_xvec': 0.976, 'ari_xvec': 0.861, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+zcdsd {'n_units': 116, 'speech_frac': 1.0, 'k_true': 5, 'auc_hand': 0.83, 'ari_hand': 0.218, 'kerr_hand': 3, 'auc_xvec': 0.993, 'ari_xvec': 0.838, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+zfkap {'n_units': 22, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.831, 'ari_hand': 0.184, 'kerr_hand': 2, 'auc_xvec': 0.998, 'ari_xvec': 0.852, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+zidwg {'n_units': 35, 'speech_frac': 1.0, 'k_true': 4, 'auc_hand': 0.592, 'ari_hand': 0.131, 'kerr_hand': 2, 'auc_xvec': 0.997, 'ari_xvec': 0.996, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+zmndm {'n_units': 56, 'speech_frac': 1.0, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+zrlyl {'n_units': 114, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.792, 'ari_hand': 0.573, 'kerr_hand': 0, 'auc_xvec': 0.998, 'ari_xvec': 0.951, 'kerr_xvec': 0}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+ztzzr {'n_units': 60, 'speech_frac': 0.833, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 2, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+zvmyn {'n_units': 28, 'speech_frac': 0.893, 'k_true': 1, 'auc_hand': None, 'ari_hand': 0.0, 'kerr_hand': 1, 'auc_xvec': None, 'ari_xvec': 0.0, 'kerr_xvec': 1}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+zyffh {'n_units': 51, 'speech_frac': 1.0, 'k_true': 2, 'auc_hand': 0.787, 'ari_hand': 0.628, 'kerr_hand': 0, 'auc_xvec': 0.997, 'ari_xvec': 0.826, 'kerr_xvec': 2}
+{
+ "split": "dev",
+ "n": 216,
+ "means": {
+  "auc_hand": 0.7902,
+  "auc_xvec": 0.976,
+  "ari_hand": 0.3078,
+  "ari_xvec": 0.6042,
+  "kerr_hand": 2.0278,
+  "kerr_xvec": 1.5926,
+  "k_true": 3.1481,
+  "speech_frac": 0.9556
+ },
+ "criteria": {
+  "auc_xvec_minus_hand": {
+   "mean": 0.1858,
+   "se": 0.0084,
+   "n": 188,
+   "z": 22.11
+  },
+  "ari_xvec_minus_hand": {
+   "mean": 0.2964,
+   "se": 0.0229,
+   "n": 209,
+   "z": 12.97
+  },
+  "kerr_hand_minus_xvec": {
+   "mean": 0.4352,
+   "se": 0.0834,
+   "n": 216,
+   "z": 5.22
+  }
+ }
+}
+EXP028_DONE

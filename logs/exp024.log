@@ -1,0 +1,100 @@
+[learn] dev ES2004a: 3758 pares
+[learn] dev ES2007d: 5688 pares
+[learn] dev ES2008a: 3655 pares
+[learn] dev ES2011c: 9197 pares
+[learn] dev ES2013c: 22200 pares
+[learn] dev ES2013d: 14082 pares
+[learn] dev ES2014a: 4095 pares
+[learn] dev ES2014b: 21166 pares
+[learn] dev ES2014c: 19918 pares
+[learn] dev ES2016a: 7140 pares
+[learn] dev ES2016d: 8537 pares
+[learn] dev IS1000c: 17989 pares
+[learn] dev IS1001c: 7391 pares
+[learn] dev IS1002b: 21528 pares
+[learn] dev IS1002d: 5678 pares
+[learn] dev IS1003a: 1596 pares
+[learn] dev IS1003c: 12908 pares
+[learn] dev IS1003d: 17955 pares
+[learn] dev IS1004a: 1486 pares
+[learn] dev IS1004d: 15403 pares
+[learn] dev IS1005c: 15940 pares
+[learn] dev IS1006d: 12880 pares
+[learn] dev IS1007b: 5107 pares
+[learn] dev IS1007c: 16838 pares
+[learn] dev IS1008c: 8646 pares
+[learn] dev IS1009a: 1585 pares
+[learn] dev IS1009b: 15967 pares
+[learn] dev TS3003a: 8266 pares
+[learn] dev TS3004a: 6360 pares
+[learn] dev TS3004b: 20143 pares
+[learn] dev TS3004d: 31679 pares
+[learn] dev TS3006a: 5356 pares
+[learn] dev TS3006b: 23220 pares
+[learn] dev TS3008a: 6262 pares
+[learn] dev TS3008d: 30882 pares
+[learn] dev TS3009b: 24327 pares
+[learn] dev TS3010c: 16653 pares
+[learn] dev TS3010d: 12720 pares
+[learn] dev TS3011b: 19900 pares
+[learn] dev TS3011c: 23005 pares
+[learn] conf ES2002d: 24753 pares
+[learn] conf ES2003c: 20756 pares
+[learn] conf ES2005c: 21753 pares
+[learn] conf ES2006b: 19900 pares
+[learn] conf ES2006d: 15939 pares
+[learn] conf ES2007b: 11197 pares
+[learn] conf ES2007c: 23687 pares
+[learn] conf ES2008c: 17595 pares
+[learn] conf ES2009a: 7398 pares
+[learn] conf ES2009c: 15417 pares
+[learn] conf ES2010a: 963 pares
+[learn] conf ES2011a: 4034 pares
+[learn] conf ES2011b: 9333 pares
+[learn] conf ES2011d: 15068 pares
+[learn] conf ES2012c: 19933 pares
+[learn] conf ES2012d: 3003 pares
+[learn] conf ES2013a: 1908 pares
+[learn] conf ES2013b: 18739 pares
+[learn] conf ES2014d: 37152 pares
+[learn] conf ES2015d: 14062 pares
+[learn] conf ES2016b: 22525 pares
+[learn] conf ES2016c: 20421 pares
+[learn] conf IS1000d: 28441 pares
+[learn] conf IS1001a: 2628 pares
+[learn] conf IS1001b: 18528 pares
+[learn] conf IS1005b: 18558 pares
+[learn] conf IS1006a: 1848 pares
+[learn] conf IS1006b: 18721 pares
+[learn] conf TS3003b: 18193 pares
+[learn] conf TS3003d: 28475 pares
+[learn] conf TS3005d: 30415 pares
+[learn] conf TS3006c: 26832 pares
+[learn] conf TS3006d: 37972 pares
+[learn] conf TS3007c: 25200 pares
+[learn] conf TS3008c: 21321 pares
+[learn] conf TS3009a: 8663 pares
+[learn] conf TS3009d: 17205 pares
+[learn] conf TS3010a: 2701 pares
+[learn] conf TS3011a: 8402 pares
+[learn] conf TS3012a: 2278 pares
+[learn] pesos {'voice': 1.0342, 'visual': 0.73, 'transcript': 0.6848, 'vjudge': 0.5411, 'turns': 2.0098} quorum 1.3605
+{
+ "weights": {
+  "voice": 1.0342,
+  "visual": 0.73,
+  "transcript": 0.6848,
+  "vjudge": 0.5411,
+  "turns": 2.0098
+ },
+ "quorum": 1.3605,
+ "n_train_pairs": 1189023,
+ "n_test": 39,
+ "mcc_equal": 0.2338,
+ "mcc_learned": 0.265,
+ "learned_minus_equal": {
+  "mean": 0.0312,
+  "se": 0.0255
+ }
+}
+EXIT 0

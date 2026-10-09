@@ -1,0 +1,69 @@
+[cava] bbc_07: 49.3 min, 592 unidades (documentary)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10171.17it/s]
+[cava] bbc_07: mapa: 34 tópicos (14 con retornos)
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:00<01:51,  5.19it/s]Loading weights:   3%|▎         | 16/579 [00:00<00:08, 63.83it/s]Loading weights:   6%|▌         | 34/579 [00:00<00:05, 103.51it/s]Loading weights:   9%|▉         | 53/579 [00:00<00:04, 128.15it/s]Loading weights:  12%|█▏        | 72/579 [00:00<00:03, 144.99it/s]Loading weights:  15%|█▌        | 89/579 [00:00<00:03, 147.87it/s]Loading weights:  19%|█▊        | 108/579 [00:00<00:02, 157.53it/s]Loading weights:  22%|██▏       | 125/579 [00:00<00:02, 156.17it/s]Loading weights:  25%|██▍       | 144/579 [00:01<00:02, 163.07it/s]Loading weights:  28%|██▊       | 161/579 [00:01<00:02, 159.90it/s]Loading weights:  31%|███       | 180/579 [00:01<00:02, 165.60it/s]Loading weights:  34%|███▍      | 197/579 [00:01<00:02, 161.79it/s]Loading weights:  37%|███▋      | 214/579 [00:01<00:02, 161.10it/s]Loading weights:  40%|████      | 233/579 [00:01<00:02, 164.63it/s]Loading weights:  44%|████▎     | 252/579 [00:01<00:01, 168.57it/s]Loading weights:  46%|████▋     | 269/579 [00:01<00:01, 164.52it/s]Loading weights:  49%|████▉     | 286/579 [00:01<00:01, 163.98it/s]Loading weights:  53%|█████▎    | 304/579 [00:02<00:01, 164.14it/s]Loading weights:  56%|█████▌    | 324/579 [00:02<00:01, 171.81it/s]Loading weights:  59%|█████▉    | 342/579 [00:02<00:01, 161.49it/s]Loading weights:  63%|██████▎   | 364/579 [00:02<00:01, 166.22it/s]Loading weights:  66%|██████▋   | 384/579 [00:02<00:01, 173.19it/s]Loading weights:  69%|██████▉   | 402/579 [00:02<00:01, 162.68it/s]Loading weights:  73%|███████▎  | 424/579 [00:02<00:00, 174.78it/s]Loading weights:  76%|███████▋  | 442/579 [00:02<00:00, 168.61it/s]Loading weights:  79%|███████▉  | 460/579 [00:02<00:00, 164.35it/s]Loading weights:  83%|████████▎ | 480/579 [00:03<00:00, 171.50it/s]Loading weights:  86%|████████▌ | 498/579 [00:03<00:00, 161.16it/s]Loading weights:  90%|████████▉ | 520/579 [00:03<00:00, 165.49it/s]Loading weights:  93%|█████████▎| 539/579 [00:03<00:00, 169.63it/s]Loading weights:  96%|█████████▌| 557/579 [00:03<00:00, 167.75it/s]Loading weights:  99%|█████████▉| 575/579 [00:03<00:00, 168.76it/s]Loading weights: 100%|██████████| 579/579 [00:03<00:00, 158.69it/s]
+[cava] bbc_07: versiones: G-versión True, 70 clips
+[cava] bbc_08: 49.2 min, 591 unidades (documentary)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9700.01it/s]
+[cava] bbc_08: mapa: 34 tópicos (12 con retornos)
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:00<01:30,  6.41it/s]Loading weights:   0%|          | 2/579 [00:00<01:42,  5.65it/s]Loading weights:   3%|▎         | 17/579 [00:00<00:11, 50.37it/s]Loading weights:   6%|▌         | 34/579 [00:00<00:06, 87.13it/s]Loading weights:   9%|▉         | 53/579 [00:00<00:04, 112.49it/s]Loading weights:  12%|█▏        | 72/579 [00:00<00:03, 132.84it/s]Loading weights:  15%|█▌        | 89/579 [00:00<00:03, 139.46it/s]Loading weights:  19%|█▊        | 108/579 [00:00<00:03, 151.44it/s]Loading weights:  22%|██▏       | 125/579 [00:01<00:02, 152.25it/s]Loading weights:  25%|██▍       | 144/579 [00:01<00:02, 160.09it/s]Loading weights:  28%|██▊       | 161/579 [00:01<00:02, 158.22it/s]Loading weights:  31%|███       | 180/579 [00:01<00:02, 164.44it/s]Loading weights:  34%|███▍      | 197/579 [00:01<00:02, 161.36it/s]Loading weights:  37%|███▋      | 216/579 [00:01<00:02, 166.50it/s]Loading weights:  40%|████      | 233/579 [00:01<00:02, 162.91it/s]Loading weights:  44%|████▎     | 252/579 [00:01<00:01, 167.58it/s]Loading weights:  46%|████▋     | 269/579 [00:01<00:01, 163.96it/s]Loading weights:  50%|████▉     | 288/579 [00:02<00:01, 169.09it/s]Loading weights:  53%|█████▎    | 305/579 [00:02<00:01, 165.04it/s]Loading weights:  56%|█████▌    | 324/579 [00:02<00:01, 169.58it/s]Loading weights:  59%|█████▉    | 341/579 [00:02<00:01, 165.22it/s]Loading weights:  62%|██████▏   | 360/579 [00:02<00:01, 169.86it/s]Loading weights:  65%|██████▌   | 378/579 [00:02<00:01, 160.04it/s]Loading weights:  69%|██████▉   | 400/579 [00:02<00:01, 173.65it/s]Loading weights:  72%|███████▏  | 418/579 [00:02<00:00, 167.77it/s]Loading weights:  75%|███████▌  | 437/579 [00:02<00:00, 166.36it/s]Loading weights:  79%|███████▉  | 456/579 [00:03<00:00, 170.71it/s]Loading weights:  82%|████████▏ | 474/579 [00:03<00:00, 160.69it/s]Loading weights:  86%|████████▌ | 496/579 [00:03<00:00, 165.88it/s]Loading weights:  89%|████████▉ | 515/579 [00:03<00:00, 170.05it/s]Loading weights:  92%|█████████▏| 533/579 [00:03<00:00, 167.60it/s]Loading weights:  95%|█████████▌| 552/579 [00:03<00:00, 171.41it/s]Loading weights:  98%|█████████▊| 570/579 [00:03<00:00, 161.25it/s]Loading weights: 100%|██████████| 579/579 [00:03<00:00, 152.52it/s]
+[cava] bbc_08: versiones: G-versión True, 69 clips
+[cava] bbc_09: 49.2 min, 591 unidades (documentary)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10153.35it/s]
+[cava] bbc_09: mapa: 37 tópicos (10 con retornos)
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:00<01:28,  6.51it/s]Loading weights:   0%|          | 2/579 [00:00<01:47,  5.35it/s]Loading weights:   3%|▎         | 17/579 [00:00<00:11, 48.57it/s]Loading weights:   7%|▋         | 40/579 [00:00<00:05, 100.62it/s]Loading weights:   9%|▉         | 54/579 [00:00<00:04, 109.35it/s]Loading weights:  13%|█▎        | 76/579 [00:00<00:03, 138.83it/s]Loading weights:  16%|█▌        | 92/579 [00:00<00:03, 141.29it/s]Loading weights:  19%|█▉        | 112/579 [00:01<00:03, 155.19it/s]Loading weights:  22%|██▏       | 129/579 [00:01<00:02, 154.99it/s]Loading weights:  26%|██▌       | 148/579 [00:01<00:02, 162.31it/s]Loading weights:  28%|██▊       | 165/579 [00:01<00:02, 159.99it/s]Loading weights:  32%|███▏      | 184/579 [00:01<00:02, 165.78it/s]Loading weights:  35%|███▍      | 201/579 [00:01<00:02, 162.42it/s]Loading weights:  38%|███▊      | 220/579 [00:01<00:02, 167.47it/s]Loading weights:  41%|████      | 237/579 [00:01<00:02, 163.79it/s]Loading weights:  44%|████▍     | 256/579 [00:01<00:02, 160.18it/s]Loading weights:  48%|████▊     | 276/579 [00:01<00:01, 169.25it/s]Loading weights:  51%|█████     | 294/579 [00:02<00:01, 159.95it/s]Loading weights:  55%|█████▍    | 316/579 [00:02<00:01, 165.60it/s]Loading weights:  58%|█████▊    | 336/579 [00:02<00:01, 172.85it/s]Loading weights:  61%|██████    | 354/579 [00:02<00:01, 162.68it/s]Loading weights:  65%|██████▍   | 376/579 [00:02<00:01, 167.38it/s]Loading weights:  68%|██████▊   | 396/579 [00:02<00:01, 174.02it/s]Loading weights:  72%|███████▏  | 414/579 [00:02<00:01, 163.44it/s]Loading weights:  75%|███████▌  | 436/579 [00:02<00:00, 175.82it/s]Loading weights:  78%|███████▊  | 454/579 [00:03<00:00, 166.60it/s]Loading weights:  82%|████████▏ | 472/579 [00:03<00:00, 166.17it/s]Loading weights:  85%|████████▍ | 491/579 [00:03<00:00, 170.41it/s]Loading weights:  88%|████████▊ | 509/579 [00:03<00:00, 168.71it/s]Loading weights:  91%|█████████ | 527/579 [00:03<00:00, 169.62it/s]Loading weights:  94%|█████████▍| 545/579 [00:03<00:00, 168.17it/s]Loading weights:  97%|█████████▋| 564/579 [00:03<00:00, 172.05it/s]Loading weights: 100%|██████████| 579/579 [00:03<00:00, 153.18it/s]
+[cava] bbc_09: versiones: G-versión True, 65 clips
+[cava] bbc_10: 48.9 min, 587 unidades (documentary)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9790.24it/s]
+[cava] bbc_10: mapa: 32 tópicos (13 con retornos)
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:00<01:30,  6.37it/s]Loading weights:   0%|          | 2/579 [00:00<01:48,  5.29it/s]Loading weights:   3%|▎         | 16/579 [00:00<00:12, 45.18it/s]Loading weights:   7%|▋         | 40/579 [00:00<00:05, 100.80it/s]Loading weights:   9%|▉         | 54/579 [00:00<00:04, 109.29it/s]Loading weights:  13%|█▎        | 76/579 [00:00<00:03, 138.39it/s]Loading weights:  16%|█▌        | 92/579 [00:00<00:03, 140.70it/s]Loading weights:  19%|█▉        | 112/579 [00:01<00:03, 154.40it/s]Loading weights:  22%|██▏       | 129/579 [00:01<00:02, 154.09it/s]Loading weights:  26%|██▌       | 148/579 [00:01<00:02, 161.22it/s]Loading weights:  28%|██▊       | 165/579 [00:01<00:02, 158.84it/s]Loading weights:  32%|███▏      | 184/579 [00:01<00:02, 164.53it/s]Loading weights:  35%|███▍      | 201/579 [00:01<00:02, 161.28it/s]Loading weights:  38%|███▊      | 220/579 [00:01<00:02, 166.38it/s]Loading weights:  41%|████      | 237/579 [00:01<00:02, 162.78it/s]Loading weights:  44%|████▍     | 256/579 [00:01<00:01, 167.28it/s]Loading weights:  47%|████▋     | 273/579 [00:01<00:01, 163.76it/s]Loading weights:  50%|█████     | 292/579 [00:02<00:01, 168.68it/s]Loading weights:  53%|█████▎    | 309/579 [00:02<00:01, 164.52it/s]Loading weights:  57%|█████▋    | 328/579 [00:02<00:01, 169.38it/s]Loading weights:  60%|█████▉    | 345/579 [00:02<00:01, 165.17it/s]Loading weights:  63%|██████▎   | 364/579 [00:02<00:01, 169.55it/s]Loading weights:  66%|██████▌   | 381/579 [00:02<00:01, 165.04it/s]Loading weights:  69%|██████▉   | 400/579 [00:02<00:01, 169.78it/s]Loading weights:  72%|███████▏  | 418/579 [00:02<00:00, 164.67it/s]Loading weights:  75%|███████▌  | 437/579 [00:02<00:00, 164.11it/s]Loading weights:  79%|███████▉  | 456/579 [00:03<00:00, 168.81it/s]Loading weights:  82%|████████▏ | 473/579 [00:03<00:00, 164.73it/s]Loading weights:  85%|████████▍ | 492/579 [00:03<00:00, 169.18it/s]Loading weights:  88%|████████▊ | 509/579 [00:03<00:00, 164.81it/s]Loading weights:  91%|█████████ | 527/579 [00:03<00:00, 166.77it/s]Loading weights:  94%|█████████▍| 544/579 [00:03<00:00, 162.81it/s]Loading weights:  97%|█████████▋| 563/579 [00:03<00:00, 167.93it/s]Loading weights: 100%|██████████| 579/579 [00:03<00:00, 152.10it/s]
+[cava] bbc_10: versiones: G-versión True, 62 clips
+[cava] bbc_11: 49.0 min, 588 unidades (documentary)
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9940.88it/s]
+[cava] bbc_11: mapa: 35 tópicos (13 con retornos)
+Loading weights:   0%|          | 0/579 [00:00<?, ?it/s]Loading weights:   0%|          | 1/579 [00:00<03:20,  2.89it/s]Loading weights:   3%|▎         | 16/579 [00:00<00:12, 44.42it/s]Loading weights:   6%|▌         | 34/579 [00:00<00:06, 83.41it/s]Loading weights:   9%|▉         | 53/579 [00:00<00:04, 108.86it/s]Loading weights:  12%|█▏        | 71/579 [00:00<00:04, 126.82it/s]Loading weights:  15%|█▌        | 89/579 [00:00<00:03, 137.80it/s]Loading weights:  19%|█▊        | 108/579 [00:00<00:03, 150.02it/s]Loading weights:  22%|██▏       | 125/579 [00:01<00:03, 151.16it/s]Loading weights:  25%|██▍       | 142/579 [00:01<00:02, 153.71it/s]Loading weights:  28%|██▊       | 161/579 [00:01<00:02, 159.15it/s]Loading weights:  31%|███       | 178/579 [00:01<00:02, 159.21it/s]Loading weights:  34%|███▍      | 197/579 [00:01<00:02, 163.14it/s]Loading weights:  37%|███▋      | 215/579 [00:01<00:02, 164.76it/s]Loading weights:  40%|████      | 233/579 [00:01<00:02, 164.52it/s]Loading weights:  44%|████▎     | 252/579 [00:01<00:01, 168.46it/s]Loading weights:  46%|████▋     | 269/579 [00:01<00:01, 164.57it/s]Loading weights:  50%|████▉     | 288/579 [00:02<00:01, 169.38it/s]Loading weights:  53%|█████▎    | 305/579 [00:02<00:01, 165.31it/s]Loading weights:  56%|█████▌    | 322/579 [00:02<00:01, 164.21it/s]Loading weights:  59%|█████▉    | 341/579 [00:02<00:01, 159.11it/s]Loading weights:  63%|██████▎   | 364/579 [00:02<00:01, 175.26it/s]Loading weights:  66%|██████▌   | 382/579 [00:02<00:01, 168.76it/s]Loading weights:  69%|██████▉   | 400/579 [00:02<00:01, 164.37it/s]Loading weights:  73%|███████▎  | 420/579 [00:02<00:00, 171.79it/s]Loading weights:  76%|███████▌  | 438/579 [00:02<00:00, 161.35it/s]Loading weights:  79%|███████▉  | 460/579 [00:03<00:00, 174.28it/s]Loading weights:  83%|████████▎ | 478/579 [00:03<00:00, 168.14it/s]Loading weights:  86%|████████▌ | 497/579 [00:03<00:00, 166.46it/s]Loading weights:  89%|████████▉ | 516/579 [00:03<00:00, 170.21it/s]Loading weights:  92%|█████████▏| 534/579 [00:03<00:00, 159.85it/s]Loading weights:  96%|█████████▌| 556/579 [00:03<00:00, 173.00it/s]Loading weights:  99%|█████████▉| 574/579 [00:03<00:00, 167.29it/s]Loading weights: 100%|██████████| 579/579 [00:03<00:00, 152.31it/s]
+[cava] bbc_11: versiones: G-versión True, 70 clips
+{
+ "bbc_07": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 49.3,
+  "n_topics": 34,
+  "n_returning": 14,
+  "voices": 4
+ },
+ "bbc_08": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 49.2,
+  "n_topics": 34,
+  "n_returning": 12,
+  "voices": 5
+ },
+ "bbc_09": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 49.2,
+  "n_topics": 37,
+  "n_returning": 10,
+  "voices": 4
+ },
+ "bbc_10": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 48.9,
+  "n_topics": 32,
+  "n_returning": 13,
+  "voices": 7
+ },
+ "bbc_11": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 49.0,
+  "n_topics": 35,
+  "n_returning": 13,
+  "voices": 5
+ }
+}
+BBC_DOC_DONE

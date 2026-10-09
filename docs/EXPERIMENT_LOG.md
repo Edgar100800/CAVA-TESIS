@@ -2712,3 +2712,72 @@ Secundarias (pistas, no resultados):
   3. cava documentary − fused p90 > 2 SE.
 - **Limitación:** los capítulos del autor son más gruesos (~2.4 min) que las
   escenas de BBC. No se ajusta la granularidad aquí.
+
+### Corrida limpia v1 (jobs 54535, 54536, 54537)
+
+90 videos (TVSum 50 con perfil film; blind40 40 con perfil documentary),
+1 753 clips, G-versión 90/90, `gt_used: false` en todos.
+
+Todos los manifiestos registran el commit e0c24e8 con `git_dirty: true`.
+Causa:
+- el 2026-10-05 a las 12:12, antes de que arrancara ningún job, alguien
+  restauró `docs/EXPERIMENT_LOG.md` y borró los tres `v1_*.sbatch` del árbol
+  de trabajo;
+- el código del pipeline (`topicagg/`) no cambió, y Slurm usa su copia del
+  sbatch;
+- las corridas son reproducibles en e0c24e8. Los archivos se restauraron
+  desde git el 2026-10-09.
+
+### Resultado EXP-031 (TVSum, 50 videos)
+
+Recompensa = z de la importancia humana media.
+
+| versión | cava | al azar | uniforme | percentil frente a azar |
+|---|---|---|---|---|
+| highlights10pct | 0.057 | 0.041 | **0.322** | 0.51 |
+| recap60 | 0.148 | 0.099 | 0.227 | 0.53 |
+
+| criterio | diferencia | z | ¿cumple? |
+|---|---|---|---|
+| 1. highlights − al azar | +0.017 ± 0.076 | 0.22 | **no** |
+| 2. highlights − uniforme | −0.265 ± 0.117 | −2.26 | **no** (lo uniforme es mejor) |
+
+**No validado**, como se esperaba.
+- La regla de highlights (tópicos más largos) no sigue la importancia
+  humana: la correlación por clip entre duración del tópico y recompensa es
+  0.23.
+- Los clips equiespaciados cubren todo el video y capturan mejor lo que los
+  anotadores valoran. Base dura y conocida en TVSum.
+- F1 al 15 %: 0.114 (solo informativo).
+
+**Para RL:**
+- 0.057 es la recompensa de partida de la política fija;
+- lo uniforme (0.322) es la base a superar;
+- `rewards.jsonl` por clip ya existe para los 50 videos.
+
+### Resultado EXP-032 (blind40, 40 videos, capítulos del autor)
+
+| sistema | M_local | F1 ±1 | F1 ±3 |
+|---|---|---|---|
+| **cava documentary (producto)** | 0.310 | 0.223 | 0.348 |
+| cava film | 0.300 | 0.239 | 0.381 |
+| uniforme, mismo nº de segmentos (24.0) | 0.319 | 0.133 | 0.313 |
+| uniforme con el nº GT de capítulos (oráculo, 8.8) | **0.394** | 0.127 | 0.232 |
+| mejor contiguous | 0.264 | — | — |
+| fused p90 | 0.243 | 0.243 | 0.386 |
+
+| criterio | diferencia | z | ¿cumple? |
+|---|---|---|---|
+| 1. cava − uniforme mismo nº | −0.009 ± 0.021 | −0.44 | **no** |
+| 2. cava − mejor contiguous | +0.046 ± 0.042 | 1.10 | **no** |
+| 3. cava − fused | +0.067 ± 0.027 | 2.46 | sí |
+
+**No validado.** Lectura:
+- **La granularidad domina.** CAVA hace 24 segmentos (16 tópicos) donde el
+  autor pone 8.8 capítulos. Con el nº correcto, incluso lo uniforme llega a
+  0.394.
+- **Las fronteras de CAVA sí están mejor ubicadas** que las uniformes del
+  mismo nº (F1 ±1: 0.22 frente a 0.13). El agrupamiento local no gana
+  porque los segmentos son demasiado finos.
+- **Siguiente palanca:** un nivel de capítulo (más grueso) sobre el mapa,
+  pre-registrado y con su propio desarrollo. No se ajusta sobre blind40.

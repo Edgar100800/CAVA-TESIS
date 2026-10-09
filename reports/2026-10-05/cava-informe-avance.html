@@ -1,0 +1,381 @@
+<title>Informe de avance CAVA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Informe técnico de una columna: cabecera sobria, secciones con tablas y tiras de frames; se imprime en A4. */
+:root{
+  --paper:#fafaf8; --surface:#ffffff; --ink:#172235; --muted:#55606f; --rule:#dfe2e6;
+  --accent:#087557; --accent-soft:#e3f1ec; --link:#234e87;
+  --ok:#087557; --warn:#865c00; --bad:#a82d48; --warn-soft:#fbf3e0;
+  --box:#f1f3f5; --box-stroke:#b9c0c8;
+  --f-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12161d; --surface:#181e27; --ink:#e4e8ee; --muted:#9aa5b4; --rule:#2c3440;
+  --accent:#4fc19b; --accent-soft:#16302a; --link:#8fb4ea;
+  --ok:#4fc19b; --warn:#e0b354; --bad:#ef7f98; --warn-soft:#2c2617;
+  --box:#1f2631; --box-stroke:#465264; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12161d; --surface:#181e27; --ink:#e4e8ee; --muted:#9aa5b4; --rule:#2c3440;
+  --accent:#4fc19b; --accent-soft:#16302a; --link:#8fb4ea;
+  --ok:#4fc19b; --warn:#e0b354; --bad:#ef7f98; --warn-soft:#2c2617;
+  --box:#1f2631; --box-stroke:#465264; color-scheme:dark}
+
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.6;margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px;padding-block:40px 64px}
+a{color:var(--link)}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,4.4vw,40px)}
+h2{font-size:25px;padding-top:6px}
+h3{font-size:19px}
+p{margin:0;max-width:72ch}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:17px;color:var(--muted);max-width:68ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.meta span{border:1px solid var(--rule);border-radius:4px;padding:2px 8px;background:var(--surface)}
+header{display:grid;gap:14px;padding-bottom:26px;border-bottom:2px solid var(--ink)}
+section{display:grid;gap:14px;padding-block:30px;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+.num{font-family:var(--f-mono);color:var(--muted);font-size:14px;margin-right:6px}
+ul{margin:0;padding-left:20px;display:grid;gap:4px;max-width:72ch}
+.small{font-size:13.5px;color:var(--muted)}
+code,.mono{font-family:var(--f-mono);font-size:.88em}
+
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;display:grid;gap:4px;align-content:start;min-width:0}
+.stat b{font-family:var(--f-mono);font-weight:500;font-size:26px;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{font-size:13px;color:var(--muted);line-height:1.4}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:12px;font-family:var(--f-mono);font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;background:var(--paper)}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--f-mono);font-size:13px;white-space:nowrap}
+.v{font-family:var(--f-mono);font-size:12px;white-space:nowrap;font-weight:500}
+.ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+
+.notice{background:var(--warn-soft);border:1px solid var(--rule);border-left:3px solid var(--warn);border-radius:4px;padding:12px 16px;font-size:14.5px}
+
+.diagram{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface);padding:12px}
+.diagram svg{display:block;min-width:760px;width:100%;height:auto}
+.diagram .bx{fill:var(--box);stroke:var(--box-stroke);stroke-width:1}
+.diagram .bx.acc{fill:var(--accent-soft);stroke:var(--accent)}
+.diagram text{fill:var(--ink);font-family:var(--f-body);font-size:12px}
+.diagram .t{font-weight:600;font-size:12.5px}
+.diagram .s{fill:var(--muted);font-size:10.5px}
+.diagram .lbl{fill:var(--accent);font-family:var(--f-mono);font-size:10px;letter-spacing:.06em}
+.diagram .ln{stroke:var(--muted);stroke-width:1.2;fill:none}
+.diagram .ah{fill:var(--muted)}
+
+.video{display:grid;gap:12px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+.pair{display:grid;gap:8px}
+.frames{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.frames.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;display:grid;gap:4px;min-width:0}
+figure img{width:100%;max-width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;border:1px solid var(--rule);display:block;background:var(--box)}
+figcaption{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.topic{font-size:13.5px}
+.topic .tag{font-family:var(--f-mono);font-size:11px;color:var(--accent);border:1px solid var(--accent);border-radius:3px;padding:0 5px;margin-right:6px}
+.wide img{aspect-ratio:auto;object-fit:contain;background:#fff}
+
+footer{padding-top:24px;font-size:12.5px;color:var(--muted)}
+
+@media (max-width:760px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .two{grid-template-columns:minmax(0,1fr)}
+  .frames.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wrap{padding-block:28px 48px}
+}
+@media print{
+  @page{size:A4;margin:14mm 13mm}
+  :root{--paper:#fff;--surface:#fff;--ink:#111;--muted:#444;--rule:#ccc;--accent:#087557;--accent-soft:#e3f1ec;--box:#f3f4f6;--box-stroke:#999;color-scheme:light}
+  body{font-size:9.5pt;line-height:1.4}
+  .wrap{max-width:none;padding:0}
+  header,section,.video{display:block}
+  header>*+*,section>*+*,.video>*+*{margin-top:8px}
+  section{padding-block:10px}
+  h2{font-size:16pt} h3{font-size:12.5pt;margin-top:12px}
+  p,ul{max-width:none}
+  .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .stat b{font-size:16pt}
+  th,td{padding:3px 8px}
+  .two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .frames.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .wide img{max-height:58mm}
+  .stat,.stats,.diagram,figure,tr,.notice,.two,.pair,.frames{break-inside:avoid}
+  h2,h3{break-after:avoid}
+  .table-wrap,.diagram{overflow:visible}
+  .diagram svg{min-width:0}
+  a{color:inherit;text-decoration:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Tesis · informe de avance · 5 de octubre de 2026</div>
+  <h1>CAVA: organización multimodal de video largo por tópicos recurrentes</h1>
+  <p class="lead">Estado de la implementación y resultados hasta EXP-030, con las corridas del pipeline sobre los documentales de la BBC y dos videos de prueba de YouTube.</p>
+  <div class="meta"><span>EXP-020 a EXP-030</span><span>11 documentales · 730 clips</span><span>TVSum: 33/50 en curso</span></div>
+</header>
+
+<section id="intro">
+  <h2><span class="num">1</span>Introducción</h2>
+  <p>En un video largo los temas vuelven. Un conflicto reaparece a lo largo de una película, un punto de agenda se retoma en otra parte de una reunión y una especie regresa en distintos tramos de un documental. La segmentación de escenas, el capitulado y el resumen automático entregan intervalos contiguos o una selección de fragmentos, así que un tema que vuelve termina partido en pedazos sin relación entre sí. Fusionar las modalidades en un solo vector agrava el problema, porque se pierde qué señal sostuvo cada decisión y una señal ausente se trata como si aportara información.</p>
+  <p>La pregunta de la tesis es cómo organizar y describir segmentos relacionados y no contiguos de un video largo, conservando la evidencia de cada señal y produciendo versiones distintas del contenido. La hipótesis general es que el consenso entre decisiones independientes (con abstención y enlace promedio) supera tanto a la fusión de representaciones como a una partición contigua.</p>
+  <ul>
+    <li>OE1: integrar señales visuales, de diálogo, de voz y descripciones de un VLM. H1 plantea que la señal acústica identifica al hablante mejor que la visual o la textual.</li>
+    <li>OE2: construir mapas de tópicos por votos, quórum, abstención y enlace promedio. H2 (películas) y H3 (reuniones y documentales) los comparan con fusión y con partición contigua.</li>
+    <li>OE3: etiquetar tópicos y propagar nombres de personajes sin perder precisión (H4).</li>
+    <li>OE4: generar versiones por perfil (capítulos, recap, highlights, hilos) dentro de un presupuesto de duración.</li>
+    <li>OE5: medir el alcance narrativo con una revisión ciega de enlaces (H5).</li>
+  </ul>
+  <p class="small">Fuera de alcance: CAVA no afirma entender la trama ni identificar personajes de forma fiable, y no evalúa la calidad subjetiva de las versiones. En películas, "mismo tópico" se aproxima con personajes compartidos (Jaccard del reparto).</p>
+</section>
+
+<section id="sota">
+  <h2><span class="num">2</span>Estado del arte</h2>
+  <p>Cada línea de trabajo resuelve una parte del problema. Ninguna agrupa segmentos no contiguos y a la vez conserva la procedencia de cada señal.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Área</th><th>Trabajos</th><th>Qué entrega</th><th>Qué le falta para este problema</th></tr></thead>
+    <tbody>
+      <tr><td>Resumen de video</td><td>SumMe, TVSum, A2Summ</td><td>Fragmentos importantes</td><td>No agrupa lo que regresa ni explica por qué se eligió cada fragmento</td></tr>
+      <tr><td>Escenas y capítulos</td><td>TransNetV2, ShotCoL, SCRL, BaSSL, LGSS, MEGA, VidChapters-7M</td><td>Fronteras e intervalos contiguos</td><td>Un tema que vuelve queda en capítulos separados</td></tr>
+      <tr><td>Tópicos en texto y reuniones</td><td>TextTiling, Galley et al. 2003, corpus AMI</td><td>Segmentación temática del discurso</td><td>Contigua y solo textual</td></tr>
+      <tr><td>Identidad de hablante</td><td>x-vectors, WavLM, pyannote, VoxConverse</td><td>Quién habla y cuándo</td><td>Dice quién habla; el tema queda fuera</td></tr>
+      <tr><td>Fusión y consenso</td><td>Baltrušaitis et al., Strehl y Ghosh, Fred y Jain</td><td>Fusión temprana o tardía; consenso de clusterings</td><td>La fusión oculta la evidencia; el consenso no se ha aplicado a video largo con abstención</td></tr>
+      <tr><td>VLMs como instrumento</td><td>SigLIP, Qwen2.5-VL, Scene-VLM, Whisper, BGE</td><td>Embeddings, descripciones y transcripción</td><td>Describen el contenido; la estructura la tiene que decidir otro componente</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Antecedentes del grupo: A2Summ-X mejoró el F1 en TVSum con una rama textual (ΔF1 = 0.033, p = 0.014, N = 25) y mostró que en la fusión una señal domina a las demás, lo que llevó a mantener decisiones separadas en CAVA. SegLoop llegó a F1 53.19 y AP 55.33 en fronteras de escena con un ensamble; esas métricas no miden recurrencia temática.</p>
+</section>
+
+<section id="impl">
+  <h2><span class="num">3</span>Estado de la implementación</h2>
+  <p>El pipeline completo está implementado y corre de punta a punta sobre un video: desde el archivo de entrada hasta los clips de cada versión. Cada etapa guarda su avance, así que una corrida interrumpida retoma donde quedó. El diagrama muestra las etapas en el orden en que se ejecutan.</p>
+  <div class="diagram" role="img" aria-label="Flujo del pipeline CAVA: video a unidades, cinco señales independientes, gestor de consenso, mapa de tópicos, etiquetas e identidades de voz, versiones y clips">
+  <svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+    <defs><marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0,0 L8,4 L0,8 z"/></marker></defs>
+    <text class="lbl" x="20" y="22">ENTRADA</text>
+    <text class="lbl" x="200" y="22">SEÑALES INDEPENDIENTES</text>
+    <text class="lbl" x="455" y="22">DECISIÓN</text>
+    <text class="lbl" x="645" y="22">DESCRIPCIÓN</text>
+    <text class="lbl" x="830" y="22">PRODUCTO</text>
+
+    <rect class="bx" x="20" y="150" width="150" height="96" rx="6"/>
+    <text class="t" x="32" y="174">Preparación</text>
+    <text x="32" y="194">ffprobe + audio 16 kHz</text>
+    <text class="s" x="32" y="212">unidades de 5 s (película,</text>
+    <text class="s" x="32" y="227">documental) o 10 s (reunión)</text>
+
+    <rect class="bx" x="200" y="38" width="220" height="52" rx="6"/>
+    <text class="t" x="212" y="59">Visual · SigLIP</text>
+    <text class="s" x="212" y="77">1 frame por unidad</text>
+    <rect class="bx" x="200" y="100" width="220" height="52" rx="6"/>
+    <text class="t" x="212" y="121">Transcripción · Whisper large-v3</text>
+    <text class="s" x="212" y="139">texto por unidad → BGE</text>
+    <rect class="bx" x="200" y="162" width="220" height="52" rx="6"/>
+    <text class="t" x="212" y="183">VJudge · Qwen2.5-VL-7B</text>
+    <text class="s" x="212" y="201">3 frames + habla cada 40 s → BGE</text>
+    <rect class="bx" x="200" y="224" width="220" height="52" rx="6"/>
+    <text class="t" x="212" y="245">Voz · log-mel + pitch</text>
+    <text class="s" x="212" y="263">rasgos acústicos por unidad</text>
+    <rect class="bx" x="200" y="286" width="220" height="52" rx="6"/>
+    <text class="t" x="212" y="307">Turnos de hablante</text>
+    <text class="s" x="212" y="325">solo perfil reunión (w = 6)</text>
+
+    <rect class="bx acc" x="455" y="120" width="160" height="160" rx="6"/>
+    <text class="t" x="467" y="144">Mapa de tópicos</text>
+    <text x="467" y="164">cada señal vota aparte</text>
+    <text class="s" x="467" y="184">umbral por percentil</text>
+    <text class="s" x="467" y="199">(película 80, doc. 90,</text>
+    <text class="s" x="467" y="214">reunión 95)</text>
+    <text class="s" x="467" y="229">quórum 2 + abstención</text>
+    <text class="s" x="467" y="244">enlace promedio</text>
+    <text class="s" x="467" y="259">snap visual ≤ 30 s</text>
+
+    <rect class="bx" x="645" y="110" width="160" height="72" rx="6"/>
+    <text class="t" x="657" y="132">Etiquetas</text>
+    <text x="657" y="151">Qwen2.5-14B</text>
+    <text class="s" x="657" y="168">etiqueta por tópico ≥ 30 s</text>
+    <rect class="bx" x="645" y="200" width="160" height="88" rx="6"/>
+    <text class="t" x="657" y="222">Identidades de voz</text>
+    <text x="657" y="241">WavLM-sv x-vector</text>
+    <text class="s" x="657" y="258">Ward + BIC → V1, V2…</text>
+    <text class="s" x="657" y="273">detector de narrador único</text>
+
+    <rect class="bx acc" x="830" y="110" width="150" height="178" rx="6"/>
+    <text class="t" x="842" y="132">Versiones y clips</text>
+    <text class="s" x="842" y="154">capítulos completos</text>
+    <text class="s" x="842" y="170">recap de 60 s</text>
+    <text class="s" x="842" y="186">highlights (10 %)</text>
+    <text class="s" x="842" y="202">hilos temáticos</text>
+    <text class="s" x="842" y="218">hilos por hablante</text>
+    <text x="842" y="242">clips .mp4</text>
+    <text class="s" x="842" y="259">registro por clip +</text>
+    <text class="s" x="842" y="274">versiones de modelos</text>
+
+    <path class="ln" marker-end="url(#ar)" d="M170,198 C185,198 185,64 198,64"/>
+    <path class="ln" marker-end="url(#ar)" d="M170,198 C185,198 185,126 198,126"/>
+    <path class="ln" marker-end="url(#ar)" d="M170,198 L198,188"/>
+    <path class="ln" marker-end="url(#ar)" d="M170,198 C185,198 185,250 198,250"/>
+    <path class="ln" marker-end="url(#ar)" d="M170,198 C185,198 185,312 198,312"/>
+    <path class="ln" marker-end="url(#ar)" d="M420,64 C440,64 438,170 453,170"/>
+    <path class="ln" marker-end="url(#ar)" d="M420,126 C438,126 438,185 453,185"/>
+    <path class="ln" marker-end="url(#ar)" d="M420,188 L453,200"/>
+    <path class="ln" marker-end="url(#ar)" d="M420,250 C438,250 438,215 453,215"/>
+    <path class="ln" marker-end="url(#ar)" d="M420,312 C440,312 438,230 453,230"/>
+    <path class="ln" marker-end="url(#ar)" d="M615,170 L643,150"/>
+    <path class="ln" marker-end="url(#ar)" d="M615,230 L643,240"/>
+    <path class="ln" marker-end="url(#ar)" d="M805,146 L828,160"/>
+    <path class="ln" marker-end="url(#ar)" d="M805,244 L828,232"/>
+    <path class="ln" stroke-dasharray="4 3" marker-end="url(#ar)" d="M310,276 L310,360 L725,360 L725,290"/>
+    <text class="s" x="440" y="376">el audio alimenta también las identidades V#</text>
+  </svg>
+  </div>
+  <p>Cada señal compara pares de unidades y vota "mismo tópico" solo si supera su propio percentil. Si una señal no tiene datos (una unidad sin habla, por ejemplo), se abstiene en vez de votar en contra. Hacen falta dos votos para unir unidades. El mapa resultante guarda qué señales votaron cada enlace, y con eso cada tópico y cada retorno quedan trazables.</p>
+  <p>Cada corrida deja además un registro pensado para entrenamiento posterior: las versiones exactas de los modelos usados y una fila por clip con su tópico, duración y posición. Las recompensas se calculan fuera del pipeline (EXP-031), así que el GT nunca toca el producto.</p>
+</section>
+
+<section id="results">
+  <h2><span class="num">4</span>Resultados experimentales</h2>
+  <div class="stats">
+    <div class="stat"><b>0.413</b><span>M_local en documentales BBC de confirmación; el acuerdo entre humanos llega a 0.662</span></div>
+    <div class="stat"><b>0.249 → 0.635</b><span>ARI de identidades de hablante en VoxConverse test al pasar a x-vectors WavLM</span></div>
+    <div class="stat"><b>11/11</b><span>episodios BBC con versiones dentro de presupuesto; 730 clips</span></div>
+    <div class="stat"><b>33/50</b><span>videos TVSum procesados con la versión final del pipeline al cierre del informe</span></div>
+  </div>
+  <p>Todas las comparaciones usan el video como unidad: diferencia pareada por video y z = media / error estándar, con aceptación si z &gt; 2. Las hipótesis se registraron antes de correr la evaluación de confirmación.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Exp.</th><th>Pregunta</th><th>Resultado clave</th><th>Veredicto</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">020a</td><td>¿La voz identifica hablantes en AMI mejor que lo visual?</td><td>AUC 0.72 frente a 0.56; réplica en reuniones nuevas +0.188 (z 12.1)</td><td class="v ok">validado</td></tr>
+      <tr><td class="mono">020b</td><td>Mapa de tópicos en reuniones AMI</td><td>Frente a contiguo −0.155 (z −2.9): salen 18 a 20 tópicos donde hay 7</td><td class="v bad">no validado</td></tr>
+      <tr><td class="mono">021</td><td>Granularidad por perfil de contenido</td><td>No inferior a contiguo (z −1.6); supera a fusión +0.089 (z 3.4)</td><td class="v warn">parcial</td></tr>
+      <tr><td class="mono">022</td><td>Regla para contar hablantes</td><td>Ward + BIC: ARI 0.297 frente a 0.080 visual; BIC mejor que silueta (z 3.5)</td><td class="v ok">validado</td></tr>
+      <tr><td class="mono">023</td><td>Votante de turnos de habla</td><td>MCC 0.234; supera a voz (z 2.32) y fusión (z 3.52), empata con contiguo (z 0.27)</td><td class="v warn">parcial</td></tr>
+      <tr><td class="mono">024</td><td>Pesos de voto aprendidos</td><td>+0.031 ± 0.026 (z 1.22)</td><td class="v bad">no validado</td></tr>
+      <tr><td class="mono">025</td><td>Documentales BBC</td><td>M_local 0.413; frente a contiguo +0.174 (z 6.11), frente a fusión +0.126 (z 7.41). F1 de fronteras: visual sola 0.48, CAVA 0.40</td><td class="v ok">validado</td></tr>
+      <tr><td class="mono">026</td><td>Voz con un solo narrador</td><td>Error reducido +0.89 (z 2.29), pero quedan 5.7 grupos efectivos en vez de 1</td><td class="v warn">alcance limitado</td></tr>
+      <tr><td class="mono">027</td><td>Ajuste de fronteras a cortes visuales (91 películas)</td><td>M_local 0.226 → 0.317 (z 26.6); F1 0.434 → 0.488. La visual sola sigue en 0.535</td><td class="v ok">validado</td></tr>
+      <tr><td class="mono">028</td><td>x-vector WavLM frente a rasgos de voz</td><td>VoxConverse AUC 0.735 → 0.962, ARI 0.249 → 0.635; AMI ARI 0.286 → 0.731</td><td class="v ok">validado</td></tr>
+      <tr><td class="mono">029</td><td>Detector de un solo hablante</td><td>Error en K +0.155 (z 2.60), sin falsos positivos en AMI; en BBC detecta 0 de 11</td><td class="v warn">acotado</td></tr>
+      <tr><td class="mono">030</td><td>Parakeet en lugar de Whisper</td><td>Más habla perdida (0.060 frente a 0.015) y BBC −0.022; se queda Whisper</td><td class="v bad">no validado</td></tr>
+    </tbody>
+  </table></div>
+  <div class="notice">En curso: EXP-031 compara cada clip con la importancia humana de TVSum (recompensa por clip con nulos aleatorio y uniforme), y EXP-032 compara los tópicos con los capítulos del autor en VidChapters (40 videos). El primer lanzamiento de EXP-032 falló por falta de memoria al caer en una partición MIG de la GPU. Los trabajos se reenviaron pidiendo GPU completa y están en cola.</div>
+</section>
+
+<section id="videos">
+  <h2><span class="num">5</span>Pruebas sobre videos</h2>
+
+  <div class="video">
+    <h3>BBC Planet Earth, 11 episodios (perfil documental)</h3>
+    <p>Son 540 minutos de audio en italiano, unos 49 por episodio, en unidades de 5 s (6 501 en total). Los episodios 01 a 04 se usaron para desarrollo y del 05 al 11 para confirmación.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Ep.</th><th class="n">min</th><th class="n">unidades</th><th class="n">tópicos</th><th class="n">con retorno</th><th class="n">grupos de voz</th><th class="n">clips</th></tr></thead>
+      <tbody>
+        <tr><td>01</td><td class="n">49.3</td><td class="n">591</td><td class="n">32</td><td class="n">15</td><td class="n">4</td><td class="n">62</td></tr>
+        <tr><td>02</td><td class="n">48.1</td><td class="n">577</td><td class="n">34</td><td class="n">13</td><td class="n">5</td><td class="n">66</td></tr>
+        <tr><td>03</td><td class="n">49.3</td><td class="n">592</td><td class="n">33</td><td class="n">13</td><td class="n">4</td><td class="n">65</td></tr>
+        <tr><td>04</td><td class="n">49.0</td><td class="n">589</td><td class="n">34</td><td class="n">14</td><td class="n">5</td><td class="n">67</td></tr>
+        <tr><td>05</td><td class="n">49.2</td><td class="n">591</td><td class="n">32</td><td class="n">15</td><td class="n">7</td><td class="n">67</td></tr>
+        <tr><td>06</td><td class="n">49.3</td><td class="n">592</td><td class="n">38</td><td class="n">12</td><td class="n">8</td><td class="n">67</td></tr>
+        <tr><td>07</td><td class="n">49.3</td><td class="n">592</td><td class="n">34</td><td class="n">14</td><td class="n">4</td><td class="n">70</td></tr>
+        <tr><td>08</td><td class="n">49.2</td><td class="n">591</td><td class="n">34</td><td class="n">12</td><td class="n">5</td><td class="n">69</td></tr>
+        <tr><td>09</td><td class="n">49.2</td><td class="n">591</td><td class="n">37</td><td class="n">10</td><td class="n">4</td><td class="n">65</td></tr>
+        <tr><td>10</td><td class="n">48.9</td><td class="n">587</td><td class="n">32</td><td class="n">13</td><td class="n">7</td><td class="n">62</td></tr>
+        <tr><td>11</td><td class="n">49.0</td><td class="n">588</td><td class="n">35</td><td class="n">13</td><td class="n">5</td><td class="n">70</td></tr>
+      </tbody>
+    </table></div>
+    <p>Cada episodio tiene un solo narrador, pero el pipeline encuentra entre 4 y 8 grupos de voz. Estos grupos responden a la escena acústica (música, ambiente) y no a personas, y el detector de narrador único todavía no se activa en BBC. Con un filtro de habla Parakeet ∩ Whisper, el detector reconoce un narrador en 10 de 11 episodios (resultado secundario de EXP-030, sin GT).</p>
+    <div class="two">
+      <div class="pair">
+        <p class="topic"><span class="tag">ep. 05 · tópico 13</span>Higueras como fuente de alimento en la selva</p>
+        <div class="frames">
+          <figure><img src="img/bbc_t13_a.jpg" alt="Monos colgando de una higuera" loading="lazy"><figcaption>13:27 · primer tramo</figcaption></figure>
+          <figure><img src="img/bbc_t13_b.jpg" alt="Chimpancé comiendo un higo" loading="lazy"><figcaption>42:27 · retorno 29 min después</figcaption></figure>
+        </div>
+      </div>
+      <div class="pair">
+        <p class="topic"><span class="tag">ep. 05 · tópico 11</span>Crecimiento de plantas y supervivencia de chimpancés</p>
+        <div class="frames">
+          <figure><img src="img/bbc_t11_a.jpg" alt="Dosel de la selva visto desde abajo" loading="lazy"><figcaption>8:57 · primer tramo</figcaption></figure>
+          <figure><img src="img/bbc_t11_b.jpg" alt="Chimpancé en una higuera" loading="lazy"><figcaption>45:12 · retorno</figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <p class="small">El tópico 13 une dos tramos separados por media hora donde se ve la misma fuente de alimento. En el 11 el primer tramo muestra el dosel, sin chimpancés, porque la etiqueta resume el tópico entero y un tramo suelto puede verse distinto.</p>
+  </div>
+
+  <div class="video">
+    <h3>Resumen de Avengers: Endgame (YouTube, 35:11)</h3>
+    <p>Este video tiene un solo narrador que cuenta la película sobre sus imágenes, un caso cercano al documental. Se procesó con el pipeline completo (perfil documental) en 9 minutos de GPU.</p>
+    <div class="table-wrap"><table>
+      <tbody>
+        <tr><td>Unidades de 5 s</td><td class="n">422</td><td>Tópicos (nivel por defecto)</td><td class="n">28, 8 con retorno</td></tr>
+        <tr><td>Tópicos (nivel fino)</td><td class="n">71, 1 con retorno</td><td>Grupos de voz</td><td class="n">1 (V1, 100 %)</td></tr>
+        <tr><td>Versiones generadas</td><td class="n">7</td><td>Clips cortados</td><td class="n">47</td></tr>
+        <tr><td>Recap</td><td class="n">60 s</td><td>Highlights (10 %)</td><td class="n">210 s de 211</td></tr>
+        <tr><td>Capítulos completos</td><td class="n">28 clips, 22.6 min</td><td>Frames extraídos</td><td class="n">581</td></tr>
+      </tbody>
+    </table></div>
+    <div class="two">
+      <div class="pair">
+        <p class="topic"><span class="tag">tópico 24</span>Recuperación de las Gemas del Infinito y sus consecuencias</p>
+        <div class="frames">
+          <figure><img src="img/eg_t24_a.jpg" alt="Bruce Banner conversa con la Anciana en una azotea" loading="lazy"><figcaption>19:27 · primer tramo</figcaption></figure>
+          <figure><img src="img/eg_t24_b.jpg" alt="Thanos frente al campo de batalla" loading="lazy"><figcaption>30:47 · cuarto tramo</figcaption></figure>
+        </div>
+      </div>
+      <div class="pair">
+        <p class="topic"><span class="tag">tópico 6</span>Planes para enfrentar a Thanos y recuperar las gemas</p>
+        <div class="frames">
+          <figure><img src="img/eg_t6_a.jpg" alt="Personajes de Wakanda mirando la ciudad de noche" loading="lazy"><figcaption>4:47 · primer tramo</figcaption></figure>
+          <figure><img src="img/eg_t6_b.jpg" alt="Thor y Hulk en una cabaña" loading="lazy"><figcaption>13:17 · segundo de 6 tramos</figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <p class="small">El tópico 6 es el más largo (535 s en 6 tramos) y junta escenas que se ven muy distintas, como muestran estos dos frames. Un retorno indica que un tema se retoma en el video; no debe presentarse como un hilo de trama reconocido.</p>
+  </div>
+
+  <div class="video">
+    <h3>The Wild Project #384 con Luisito Comunica (YouTube, 2:59:27)</h3>
+    <p>Es una conversación de tres horas entre dos personas en un set fijo. Aquí se corrió el demo liviano (Whisper tiny y SigLIP en ventanas de 10 s), no el pipeline completo. No hay GT, así que estas cifras describen la salida sin medir su precisión.</p>
+    <div class="table-wrap"><table>
+      <tbody>
+        <tr><td>Ventanas de 10 s</td><td class="n">1 077</td><td>Segmentos ASR / palabras</td><td class="n">4 022 / 35 932</td></tr>
+        <tr><td>Cortes de consenso</td><td class="n">78 (79 tramos)</td><td>Duración de tramos</td><td class="n">mediana 1:30, media 2:16</td></tr>
+        <tr><td>Tramo más corto / más largo</td><td class="n">0:20 / 10:00</td><td>Cortes propuestos texto / visual</td><td class="n">172 / 189</td></tr>
+        <tr><td>Coinciden a ±10 s / ±20 s</td><td class="n">73 / 95</td><td>Grupos temáticos</td><td class="n">103</td></tr>
+        <tr><td>Grupos no contiguos</td><td class="n">18</td><td>Sin tópico / a revisar</td><td class="n">19 / 13</td></tr>
+      </tbody>
+    </table></div>
+    <div class="frames three">
+      <figure><img src="img/lc_a.jpg" alt="Luisito gesticulando frente al micrófono" loading="lazy"><figcaption>3:35 · tras el primer corte</figcaption></figure>
+      <figure><img src="img/lc_b.jpg" alt="Plano abierto de los dos conversando en el estudio" loading="lazy"><figcaption>50:05</figcaption></figure>
+      <figure><img src="img/lc_c.jpg" alt="Tabla de clasificación de países en pantalla con Luisito en recuadro" loading="lazy"><figcaption>2:30:05 · cambio de formato</figcaption></figure>
+    </div>
+    <figure class="wide"><img src="img/lc_stats.png" alt="Histograma de duración de los 79 tramos, minutos de los 15 grupos mayores y cortes por bloque de 30 minutos" loading="lazy"><figcaption>Duración de tramos, grupos mayores (en rojo los marcados para revisión) y cortes por bloque de 30 min</figcaption></figure>
+    <p class="small">En este formato la imagen casi no cambia, así que la mayor parte de la estructura la aporta el texto. Los 13 grupos marcados para revisión cubren el 79.7 % del video y el mayor suma 27.5 minutos, lo que indica que en una charla larga los grupos salen demasiado amplios. El siguiente paso para este video es correrlo con el pipeline completo y el perfil de reunión.</p>
+  </div>
+</section>
+
+<section id="next">
+  <h2><span class="num">6</span>Limitaciones y próximos pasos</h2>
+  <ul>
+    <li>En BBC y en películas la señal visual sola sigue marcando mejores fronteras que CAVA (F1 0.48 frente a 0.40 en BBC). El ajuste a cortes visuales cierra parte de la brecha, pero no toda.</li>
+    <li>En reuniones AMI el mapa no supera a la partición contigua; se fragmenta en más tópicos de los que hay.</li>
+    <li>Con un narrador, los grupos de voz responden al ambiente sonoro. El cuello de botella está en la detección de habla.</li>
+    <li>Los retornos son temas que se retoman y las etiquetas son descripciones del modelo de 14B; ninguna de las dos cosas prueba comprensión de la trama.</li>
+    <li>Pendiente: terminar las corridas con la versión final del pipeline (TVSum y VidChapters), calcular EXP-031 y EXP-032 y pasar los resultados a la tesis.</li>
+  </ul>
+</section>
+
+</div>

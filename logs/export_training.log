@@ -1,0 +1,324 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   4%|▎         | 7/199 [00:00<00:04, 44.64it/s]Loading weights:   6%|▌         | 12/199 [00:00<00:05, 31.29it/s]Loading weights:   8%|▊         | 16/199 [00:00<00:05, 31.29it/s]Loading weights:  10%|█         | 20/199 [00:00<00:05, 30.72it/s]Loading weights:  18%|█▊        | 36/199 [00:00<00:02, 64.96it/s]Loading weights:  25%|██▍       | 49/199 [00:00<00:01, 78.73it/s]Loading weights:  35%|███▌      | 70/199 [00:00<00:01, 102.95it/s]Loading weights:  41%|████      | 81/199 [00:01<00:01, 89.36it/s] Loading weights:  46%|████▌     | 91/199 [00:01<00:01, 80.07it/s]Loading weights: 100%|██████████| 199/199 [00:01<00:00, 150.09it/s]
+[export] ami dev ES2004a: 105 unidades
+[export] ami dev ES2007d: 125 unidades
+[export] ami dev ES2008a: 105 unidades
+[export] ami dev ES2011c: 162 unidades
+[export] ami dev ES2013c: 236 unidades
+[export] ami dev ES2013d: 190 unidades
+[export] ami dev ES2014a: 115 unidades
+[export] ami dev ES2014b: 232 unidades
+[export] ami dev ES2014c: 228 unidades
+[export] ami dev ES2016a: 139 unidades
+[export] ami dev ES2016d: 153 unidades
+[export] ami dev IS1000c: 212 unidades
+[export] ami dev IS1001c: 145 unidades
+[export] ami dev IS1002b: 237 unidades
+[export] ami dev IS1002d: 127 unidades
+[export] ami dev IS1003a: 92 unidades
+[export] ami dev IS1003c: 188 unidades
+[export] ami dev IS1003d: 210 unidades
+[export] ami dev IS1004a: 80 unidades
+[export] ami dev IS1004d: 197 unidades
+[export] ami dev IS1005c: 206 unidades
+[export] ami dev IS1006d: 184 unidades
+[export] ami dev IS1007b: 131 unidades
+[export] ami dev IS1007c: 212 unidades
+[export] ami dev IS1008c: 155 unidades
+[export] ami dev IS1009a: 84 unidades
+[export] ami dev IS1009b: 206 unidades
+[export] ami dev TS3003a: 151 unidades
+[export] ami dev TS3004a: 135 unidades
+[export] ami dev TS3004b: 225 unidades
+[export] ami dev TS3004d: 275 unidades
+[export] ami dev TS3006a: 126 unidades
+[export] ami dev TS3006b: 236 unidades
+[export] ami dev TS3008a: 136 unidades
+[export] ami dev TS3008d: 280 unidades
+[export] ami dev TS3009b: 246 unidades
+[export] ami dev TS3010c: 215 unidades
+[export] ami dev TS3010d: 192 unidades
+[export] ami dev TS3011b: 222 unidades
+[export] ami dev TS3011c: 240 unidades
+[export] ami conf ES2002d: 263 unidades
+[export] ami conf ES2003c: 226 unidades
+[export] ami conf ES2005c: 230 unidades
+[export] ami conf ES2006b: 219 unidades
+[export] ami conf ES2006d: 197 unidades
+[export] ami conf ES2007b: 169 unidades
+[export] ami conf ES2007c: 238 unidades
+[export] ami conf ES2008c: 211 unidades
+[export] ami conf ES2009a: 141 unidades
+[export] ami conf ES2009c: 196 unidades
+[export] ami conf ES2010a: 65 unidades
+[export] ami conf ES2011a: 112 unidades
+[export] ami conf ES2011b: 159 unidades
+[export] ami conf ES2011d: 199 unidades
+[export] ami conf ES2012c: 221 unidades
+[export] ami conf ES2012d: 95 unidades
+[export] ami conf ES2013a: 83 unidades
+[export] ami conf ES2013b: 213 unidades
+[export] ami conf ES2014d: 292 unidades
+[export] ami conf ES2015d: 194 unidades
+[export] ami conf ES2016b: 242 unidades
+[export] ami conf ES2016c: 231 unidades
+[export] ami conf IS1000d: 262 unidades
+[export] ami conf IS1001a: 91 unidades
+[export] ami conf IS1001b: 212 unidades
+[export] ami conf IS1005b: 219 unidades
+[export] ami conf IS1006a: 85 unidades
+[export] ami conf IS1006b: 216 unidades
+[export] ami conf TS3003b: 221 unidades
+[export] ami conf TS3003d: 262 unidades
+[export] ami conf TS3005d: 268 unidades
+[export] ami conf TS3006c: 259 unidades
+[export] ami conf TS3006d: 298 unidades
+[export] ami conf TS3007c: 242 unidades
+[export] ami conf TS3008c: 251 unidades
+[export] ami conf TS3009a: 151 unidades
+[export] ami conf TS3009d: 206 unidades
+[export] ami conf TS3010a: 105 unidades
+[export] ami conf TS3011a: 151 unidades
+[export] ami conf TS3012a: 86 unidades
+[export] movienet val tt0048545: 836 shots, 9 personajes
+[export] movienet val tt0061722: 448 shots, 5 personajes
+[export] movienet val tt0066026: 994 shots, 10 personajes
+[export] movienet val tt0071562: 1444 shots, 10 personajes
+[export] movienet val tt0072890: 1511 shots, 0 personajes
+[export] movienet val tt0073486: 1574 shots, 0 personajes
+[export] movienet val tt0076759: 2209 shots, 10 personajes
+[export] movienet val tt0080684: 1769 shots, 10 personajes
+[export] movienet val tt0083929: 1180 shots, 10 personajes
+[export] movienet val tt0087332: 1232 shots, 10 personajes
+[export] movienet val tt0090756: 895 shots, 6 personajes
+[export] movienet val tt0094737: 1296 shots, 8 personajes
+[export] movienet val tt0096446: 2385 shots, 0 personajes
+[export] movienet val tt0097576: 1609 shots, 10 personajes
+[export] movienet val tt0099685: 1247 shots, 9 personajes
+[export] movienet val tt0102138: 2567 shots, 0 personajes
+[export] movienet val tt0103074: 1158 shots, 10 personajes
+[export] movienet val tt0105236: 644 shots, 10 personajes
+[export] movienet val tt0108160: 706 shots, 7 personajes
+[export] movienet val tt0110475: 1325 shots, 0 personajes
+[export] movienet val tt0112641: 1831 shots, 10 personajes
+[export] movienet val tt0114558: 2805 shots, 9 personajes
+[export] movienet val tt0116367: 2038 shots, 10 personajes
+[export] movienet val tt0118571: 1745 shots, 10 personajes
+[export] movienet val tt0119094: 3013 shots, 10 personajes
+[export] movienet val tt0119822: 1737 shots, 8 personajes
+[export] movienet val tt0120780: 1598 shots, 6 personajes
+[export] movienet val tt0121765: 2028 shots, 7 personajes
+[export] movienet val tt0129387: 1181 shots, 10 personajes
+[export] movienet val tt0138097: 1786 shots, 0 personajes
+[export] movienet val tt0145487: 2030 shots, 10 personajes
+[export] movienet val tt0166924: 1294 shots, 0 personajes
+[export] movienet val tt0167261: 3720 shots, 0 personajes
+[export] movienet val tt0167404: 671 shots, 7 personajes
+[export] movienet val tt0186151: 1912 shots, 9 personajes
+[export] movienet val tt0209958: 1594 shots, 9 personajes
+[export] movienet val tt0258463: 1746 shots, 10 personajes
+[export] movienet val tt0268126: 1457 shots, 0 personajes
+[export] movienet val tt0311113: 1632 shots, 8 personajes
+[export] movienet val tt0343818: 2100 shots, 8 personajes
+[export] movienet val tt0370263: 2231 shots, 10 personajes
+[export] movienet val tt0371724: 1700 shots, 0 personajes
+[export] movienet val tt0408236: 1677 shots, 9 personajes
+[export] movienet val tt0434409: 2287 shots, 10 personajes
+[export] movienet val tt0467200: 1387 shots, 10 personajes
+[export] movienet val tt0758758: 1964 shots, 9 personajes
+[export] movienet val tt0808151: 2072 shots, 10 personajes
+[export] movienet val tt0898367: 1071 shots, 8 personajes
+[export] movienet val tt0964517: 1436 shots, 9 personajes
+[export] movienet val tt1032755: 1381 shots, 10 personajes
+[export] movienet val tt1100089: 1119 shots, 6 personajes
+[export] movienet val tt1182345: 1081 shots, 4 personajes
+[export] movienet val tt1284575: 1880 shots, 9 personajes
+[export] movienet val tt1409024: 1790 shots, 10 personajes
+[export] movienet val tt1504320: 1307 shots, 0 personajes
+[export] movienet val tt1591095: 1338 shots, 8 personajes
+[export] movienet val tt1659337: 1446 shots, 0 personajes
+[export] movienet val tt2132285: 597 shots, 8 personajes
+[export] movienet test tt0052357: 1100 shots, 6 personajes
+[export] movienet test tt0063442: 1143 shots, 10 personajes
+[export] movienet test tt0068646: 1249 shots, 10 personajes
+[export] movienet test tt0073195: 1243 shots, 8 personajes
+[export] movienet test tt0078788: 1588 shots, 9 personajes
+[export] movienet test tt0082089: 606 shots, 6 personajes
+[export] movienet test tt0086190: 2177 shots, 10 personajes
+[export] movienet test tt0088944: 1842 shots, 8 personajes
+[export] movienet test tt0092099: 1874 shots, 10 personajes
+[export] movienet test tt0096320: 1137 shots, 9 personajes
+[export] movienet test tt0099423: 2429 shots, 10 personajes
+[export] movienet test tt0100405: 1131 shots, 7 personajes
+[export] movienet test tt0103776: 1778 shots, 9 personajes
+[export] movienet test tt0103855: 2150 shots, 10 personajes
+[export] movienet test tt0107290: 1327 shots, 9 personajes
+[export] movienet test tt0108399: 1940 shots, 9 personajes
+[export] movienet test tt0113277: 1999 shots, 10 personajes
+[export] movienet test tt0115759: 2033 shots, 10 personajes
+[export] movienet test tt0117060: 1536 shots, 9 personajes
+[export] movienet test tt0118715: 1069 shots, 10 personajes
+[export] movienet test tt0119488: 1779 shots, 9 personajes
+[export] movienet test tt0120689: 2397 shots, 10 personajes
+[export] movienet test tt0120890: 1150 shots, 10 personajes
+[export] movienet test tt0123755: 1062 shots, 7 personajes
+[export] movienet test tt0137523: 2356 shots, 7 personajes
+[export] movienet test tt0163025: 1470 shots, 9 personajes
+[export] movienet test tt0172495: 2608 shots, 10 personajes
+[export] movienet test tt0190332: 1645 shots, 8 personajes
+[export] movienet test tt0217505: 1804 shots, 10 personajes
+[export] movienet test tt0281358: 1188 shots, 10 personajes
+[export] movienet test tt0319061: 1837 shots, 10 personajes
+[export] movienet test tt0361748: 1447 shots, 10 personajes
+[export] movienet test tt0379786: 2134 shots, 10 personajes
+[export] movienet test tt0409459: 2765 shots, 10 personajes
+[export] movienet test tt0440963: 2760 shots, 10 personajes
+[export] movienet test tt0479884: 1827 shots, 10 personajes
+[export] movienet test tt0780571: 1364 shots, 10 personajes
+[export] movienet test tt0822832: 1549 shots, 9 personajes
+[export] movienet test tt0945513: 1442 shots, 9 personajes
+[export] movienet test tt0976051: 1287 shots, 8 personajes
+[export] movienet test tt1038919: 2012 shots, 9 personajes
+[export] movienet test tt1119646: 1805 shots, 10 personajes
+[export] movienet test tt1205489: 1380 shots, 9 personajes
+[export] movienet test tt1375666: 2609 shots, 9 personajes
+[export] movienet test tt1412386: 1487 shots, 5 personajes
+[export] movienet test tt1707386: 2548 shots, 10 personajes
+[export] movienet test tt2488496: 2395 shots, 7 personajes
+[export] movienet train tt0049730: 653 shots, 10 personajes
+[export] movienet train tt0056923: 1235 shots, 8 personajes
+[export] movienet train tt0061418: 1619 shots, 8 personajes
+[export] movienet train tt0062622: 644 shots, 5 personajes
+[export] movienet train tt0065214: 2468 shots, 10 personajes
+[export] movienet train tt0065724: 836 shots, 7 personajes
+[export] movienet train tt0067116: 1165 shots, 7 personajes
+[export] movienet train tt0070735: 1078 shots, 9 personajes
+[export] movienet train tt0071315: 528 shots, 6 personajes
+[export] movienet train tt0072684: 761 shots, 10 personajes
+[export] movienet train tt0074285: 973 shots, 10 personajes
+[export] movienet train tt0075148: 896 shots, 9 personajes
+[export] movienet train tt0077405: 902 shots, 6 personajes
+[export] movienet train tt0077651: 619 shots, 8 personajes
+[export] movienet train tt0078841: 699 shots, 7 personajes
+[export] movienet train tt0079417: 921 shots, 7 personajes
+[export] movienet train tt0081505: 681 shots, 9 personajes
+[export] movienet train tt0082971: 1488 shots, 10 personajes
+[export] movienet train tt0083658: 1380 shots, 10 personajes
+[export] movienet train tt0084726: 1021 shots, 10 personajes
+[export] movienet train tt0086250: 1559 shots, 10 personajes
+[export] movienet train tt0086879: 2267 shots, 9 personajes
+[export] movienet train tt0088847: 1362 shots, 7 personajes
+[export] movienet train tt0090022: 1309 shots, 5 personajes
+[export] movienet train tt0090605: 2931 shots, 10 personajes
+[export] movienet train tt0091042: 1364 shots, 9 personajes
+[export] movienet train tt0093565: 969 shots, 10 personajes
+[export] movienet train tt0093779: 1448 shots, 9 personajes
+[export] movienet train tt0095016: 1816 shots, 9 personajes
+[export] movienet train tt0096754: 1873 shots, 10 personajes
+[export] movienet train tt0096895: 1723 shots, 9 personajes
+[export] movienet train tt0097428: 1257 shots, 10 personajes
+[export] movienet train tt0098724: 590 shots, 5 personajes
+[export] movienet train tt0099487: 862 shots, 10 personajes
+[export] movienet train tt0099674: 1385 shots, 10 personajes
+[export] movienet train tt0100157: 1243 shots, 5 personajes
+[export] movienet train tt0100802: 1890 shots, 10 personajes
+[export] movienet train tt0101272: 1603 shots, 10 personajes
+[export] movienet train tt0103772: 1298 shots, 9 personajes
+[export] movienet train tt0104257: 1487 shots, 9 personajes
+[export] movienet train tt0104348: 868 shots, 8 personajes
+[export] movienet train tt0105695: 1615 shots, 10 personajes
+[export] movienet train tt0107808: 1759 shots, 10 personajes
+[export] movienet train tt0107822: 945 shots, 6 personajes
+[export] movienet train tt0108330: 1122 shots, 10 personajes
+[export] movienet train tt0109686: 1030 shots, 9 personajes
+[export] movienet train tt0110074: 1169 shots, 9 personajes
+[export] movienet train2 tt0113243: 1292 shots, 10 personajes
+[export] movienet train2 tt0114369: 1609 shots, 5 personajes
+[export] movienet train2 tt0114388: 1237 shots, 9 personajes
+[export] movienet train2 tt0114814: 1130 shots, 10 personajes
+[export] movienet train2 tt0115798: 1158 shots, 7 personajes
+[export] movienet train2 tt0116209: 1758 shots, 9 personajes
+[export] movienet train2 tt0116629: 2539 shots, 10 personajes
+[export] movienet train2 tt0117500: 3033 shots, 10 personajes
+[export] movienet train2 tt0117951: 1216 shots, 10 personajes
+[export] movienet train2 tt0118636: 1485 shots, 7 personajes
+[export] movienet train2 tt0118929: 2521 shots, 10 personajes
+[export] movienet train2 tt0118971: 2179 shots, 10 personajes
+[export] movienet train2 tt0119396: 1201 shots, 9 personajes
+[export] movienet train2 tt0119528: 1236 shots, 10 personajes
+[export] movienet train2 tt0119567: 1100 shots, 10 personajes
+[export] movienet train2 tt0120660: 3458 shots, 10 personajes
+[export] movienet train2 tt0120735: 1098 shots, 8 personajes
+[export] movienet train2 tt0120755: 2776 shots, 9 personajes
+[export] movienet train2 tt0120815: 1390 shots, 9 personajes
+[export] movienet train2 tt0120902: 1697 shots, 10 personajes
+[export] movienet train2 tt0120915: 2258 shots, 10 personajes
+[export] movienet train2 tt0122690: 1876 shots, 10 personajes
+[export] movienet train2 tt0126886: 940 shots, 7 personajes
+[export] movienet train2 tt0128445: 847 shots, 6 personajes
+[export] movienet train2 tt0134119: 1611 shots, 9 personajes
+[export] movienet train2 tt0139654: 1871 shots, 10 personajes
+[export] movienet train2 tt0142688: 1020 shots, 9 personajes
+[export] movienet train2 tt0159365: 2103 shots, 10 personajes
+[export] movienet train2 tt0164052: 1556 shots, 9 personajes
+[export] movienet train2 tt0167190: 2393 shots, 9 personajes
+[export] movienet train2 tt0169547: 1036 shots, 9 personajes
+[export] movienet train2 tt0180073: 1319 shots, 10 personajes
+[export] movienet train2 tt0183649: 978 shots, 8 personajes
+[export] movienet train2 tt0187393: 2584 shots, 10 personajes
+[export] movienet train2 tt0208092: 1480 shots, 10 personajes
+[export] movienet train2 tt0209144: 1846 shots, 8 personajes
+[export] movienet train2 tt0213149: 3581 shots, 10 personajes
+[export] movienet train2 tt0244244: 1693 shots, 10 personajes
+[export] movienet train2 tt0246578: 1277 shots, 6 personajes
+[export] movienet train2 tt0264395: 2098 shots, 10 personajes
+[export] movienet train2 tt0286106: 638 shots, 6 personajes
+[export] movienet train2 tt0288477: 2080 shots, 9 personajes
+[export] movienet train2 tt0315327: 1382 shots, 8 personajes
+[export] movienet train2 tt0329101: 1661 shots, 10 personajes
+[export] movienet train2 tt0338013: 1316 shots, 8 personajes
+[export] movienet train2 tt0349903: 1035 shots, 6 personajes
+[export] movienet train2 tt0363771: 2972 shots, 10 personajes
+[export] movienet train2 tt0369339: 1767 shots, 9 personajes
+[export] movienet train2 tt0372183: 2299 shots, 10 personajes
+[export] movienet train2 tt0383574: 2599 shots, 10 personajes
+[export] movienet train2 tt0407887: 2661 shots, 9 personajes
+[export] movienet train2 tt0408790: 1176 shots, 7 personajes
+[export] movienet train2 tt0421715: 1161 shots, 5 personajes
+[export] movienet train2 tt0430357: 1769 shots, 10 personajes
+[export] movienet train2 tt0435705: 1677 shots, 9 personajes
+[export] movienet train2 tt0448157: 2049 shots, 7 personajes
+[export] movienet train2 tt0454876: 1240 shots, 6 personajes
+[export] movienet train2 tt0467406: 1097 shots, 8 personajes
+[export] movienet train2 tt0493464: 2320 shots, 9 personajes
+[export] movienet train2 tt0499549: 2723 shots, 10 personajes
+[export] movienet train2 tt0780504: 823 shots, 9 personajes
+[export] movienet train2 tt0790686: 1467 shots, 8 personajes
+[export] movienet train2 tt0796366: 2269 shots, 10 personajes
+[export] movienet train2 tt0815236: 1513 shots, 10 personajes
+[export] movienet train2 tt0824747: 1738 shots, 6 personajes
+[export] movienet train2 tt0848228: 2872 shots, 10 personajes
+[export] movienet train2 tt0913425: 854 shots, 8 personajes
+[export] movienet train2 tt0947798: 1567 shots, 7 personajes
+[export] movienet train2 tt0963794: 1279 shots, 8 personajes
+[export] movienet train2 tt0974661: 1570 shots, 9 personajes
+[export] movienet train2 tt0985699: 2057 shots, 10 personajes
+[export] movienet train2 tt0993846: 2359 shots, 10 personajes
+[export] movienet train2 tt1037705: 1036 shots, 10 personajes
+[export] movienet train2 tt1059786: 2513 shots, 9 personajes
+[export] movienet train2 tt1068680: 1358 shots, 10 personajes
+[export] movienet train2 tt1104001: 1877 shots, 8 personajes
+[export] movienet train2 tt1124035: 873 shots, 9 personajes
+[export] movienet train2 tt1125849: 937 shots, 6 personajes
+[export] movienet train2 tt1193138: 1607 shots, 10 personajes
+[export] movienet train2 tt1210166: 1532 shots, 7 personajes
+[export] movienet train2 tt1219289: 1485 shots, 9 personajes
+[export] movienet train2 tt1291584: 2189 shots, 9 personajes
+[export] movienet train2 tt1401152: 2156 shots, 10 personajes
+[export] movienet train2 tt1403865: 1531 shots, 9 personajes
+[export] movienet train2 tt1411238: 956 shots, 9 personajes
+[export] movienet train2 tt1446714: 2178 shots, 10 personajes
+[export] movienet train2 tt1454029: 1584 shots, 8 personajes
+[export] movienet train2 tt1637725: 1938 shots, 10 personajes
+[export] movienet train2 tt1800241: 1433 shots, 10 personajes
+[export] movienet train2 tt1979320: 2362 shots, 10 personajes
+[export] movienet train2 tt2140373: 1757 shots, 10 personajes

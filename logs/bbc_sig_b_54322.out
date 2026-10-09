@@ -1,0 +1,69 @@
+[cava] bbc_08: 49.2 min, 591 unidades (film)
+[cava] bbc_08: ASR 465 segmentos
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights:   2%|▏         | 9/408 [00:00<00:09, 43.29it/s]Loading weights:   4%|▎         | 15/408 [00:00<00:08, 47.43it/s]Loading weights:   5%|▍         | 20/408 [00:00<00:09, 42.56it/s]Loading weights:   9%|▊         | 35/408 [00:00<00:06, 58.48it/s]Loading weights:  10%|█         | 41/408 [00:00<00:08, 45.61it/s]Loading weights:  11%|█▏        | 46/408 [00:01<00:09, 39.70it/s]Loading weights:  12%|█▏        | 50/408 [00:01<00:10, 34.37it/s]Loading weights:  14%|█▍        | 57/408 [00:01<00:09, 37.10it/s]Loading weights:  15%|█▌        | 63/408 [00:01<00:08, 38.40it/s]Loading weights:  18%|█▊        | 74/408 [00:02<00:12, 26.41it/s]Loading weights:  21%|██▏       | 87/408 [00:02<00:08, 36.57it/s]Loading weights:  23%|██▎       | 92/408 [00:02<00:15, 20.89it/s]Loading weights:  26%|██▌       | 107/408 [00:03<00:12, 23.40it/s]Loading weights:  29%|██▉       | 120/408 [00:03<00:09, 30.43it/s]Loading weights:  31%|███       | 125/408 [00:04<00:13, 21.59it/s]Loading weights:  32%|███▏      | 130/408 [00:04<00:12, 22.82it/s]Loading weights:  36%|███▌      | 145/408 [00:05<00:16, 15.99it/s]Loading weights:  38%|███▊      | 154/408 [00:06<00:18, 13.46it/s]Loading weights:  40%|████      | 164/408 [00:07<00:15, 15.44it/s]Loading weights:  41%|████      | 167/408 [00:08<00:29,  8.12it/s]Loading weights:  41%|████▏     | 169/408 [00:09<00:29,  8.00it/s]Loading weights:  42%|████▏     | 173/408 [00:09<00:25,  9.38it/s]Loading weights:  47%|████▋     | 193/408 [00:09<00:09, 21.77it/s]Loading weights:  49%|████▉     | 199/408 [00:10<00:13, 15.10it/s]Loading weights:  51%|█████     | 209/408 [00:10<00:09, 20.38it/s]Loading weights:  55%|█████▌    | 225/408 [00:10<00:06, 29.26it/s]Loading weights:  57%|█████▋    | 231/408 [00:11<00:07, 22.65it/s]Loading weights:  58%|█████▊    | 236/408 [00:11<00:06, 24.80it/s]Loading weights:  60%|█████▉    | 244/408 [00:11<00:05, 29.62it/s]Loading weights:  62%|██████▏   | 251/408 [00:11<00:05, 31.12it/s]Loading weights:  63%|██████▎   | 258/408 [00:11<00:04, 32.78it/s]Loading weights:  66%|██████▌   | 270/408 [00:12<00:04, 31.18it/s]Loading weights:  67%|██████▋   | 275/408 [00:13<00:08, 16.52it/s]Loading weights:  69%|██████▉   | 282/408 [00:13<00:06, 18.04it/s]Loading weights:  70%|██████▉   | 285/408 [00:13<00:07, 15.85it/s]Loading weights:  73%|███████▎  | 296/408 [00:13<00:04, 23.29it/s]Loading weights:  74%|███████▎  | 300/408 [00:14<00:04, 24.43it/s]Loading weights:  75%|███████▍  | 304/408 [00:14<00:04, 23.88it/s]Loading weights:  76%|███████▌  | 310/408 [00:14<00:04, 20.34it/s]Loading weights:  80%|███████▉  | 325/408 [00:15<00:03, 25.52it/s]Loading weights:  80%|████████  | 328/408 [00:15<00:03, 25.69it/s]Loading weights:  81%|████████  | 331/408 [00:15<00:03, 21.03it/s]Loading weights:  83%|████████▎ | 340/408 [00:15<00:02, 26.61it/s]Loading weights:  85%|████████▍ | 346/408 [00:15<00:02, 30.57it/s]Loading weights:  87%|████████▋ | 356/408 [00:15<00:01, 42.19it/s]Loading weights:  90%|█████████ | 369/408 [00:16<00:00, 56.18it/s]Loading weights:  96%|█████████▌| 391/408 [00:16<00:00, 77.08it/s]Loading weights:  98%|█████████▊| 400/408 [00:16<00:00, 58.77it/s]Loading weights: 100%|██████████| 408/408 [00:16<00:00, 24.76it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:36<7:23:26, 36.55s/it]Loading weights:   1%|          | 4/729 [00:38<1:30:00,  7.45s/it]Loading weights:   1%|          | 5/729 [00:40<1:12:43,  6.03s/it]Loading weights:   1%|          | 6/729 [00:43<1:00:16,  5.00s/it]Loading weights:   1%|▏         | 10/729 [00:43<23:20,  1.95s/it] Loading weights:   2%|▏         | 11/729 [00:43<19:59,  1.67s/it]Loading weights:   2%|▏         | 13/729 [00:44<13:50,  1.16s/it]Loading weights:   2%|▏         | 16/729 [00:45<10:37,  1.12it/s]Loading weights:   2%|▏         | 17/729 [00:50<18:16,  1.54s/it]Loading weights:   3%|▎         | 22/729 [00:51<08:50,  1.33it/s]Loading weights:   3%|▎         | 23/729 [00:52<09:24,  1.25it/s]Loading weights:   3%|▎         | 24/729 [00:52<08:07,  1.45it/s]Loading weights:   3%|▎         | 25/729 [00:52<07:09,  1.64it/s]Loading weights:   4%|▍         | 28/729 [00:54<07:47,  1.50it/s]Loading weights:   4%|▍         | 29/729 [00:59<15:42,  1.35s/it]Loading weights:   5%|▍         | 34/729 [00:59<07:32,  1.54it/s]Loading weights:   5%|▍         | 35/729 [01:00<08:07,  1.42it/s]Loading weights:   5%|▌         | 39/729 [01:03<08:20,  1.38it/s]Loading weights:   6%|▌         | 41/729 [01:09<14:12,  1.24s/it]Loading weights:   6%|▌         | 45/729 [01:09<08:34,  1.33it/s]Loading weights:   6%|▋         | 46/729 [01:10<08:02,  1.42it/s]Loading weights:   6%|▋         | 47/729 [01:10<07:39,  1.48it/s]Loading weights:   7%|▋         | 49/729 [01:10<05:35,  2.03it/s]Loading weights:   7%|▋         | 50/729 [01:11<04:51,  2.33it/s]Loading weights:   7%|▋         | 52/729 [01:13<07:44,  1.46it/s]Loading weights:   7%|▋         | 53/729 [01:16<12:22,  1.10s/it]Loading weights:   7%|▋         | 54/729 [01:18<16:19,  1.45s/it]Loading weights:   8%|▊         | 57/729 [01:19<08:39,  1.29it/s]Loading weights:   8%|▊         | 58/729 [01:19<07:17,  1.53it/s]Loading weights:   8%|▊         | 59/729 [01:19<06:50,  1.63it/s]Loading weights:   8%|▊         | 61/729 [01:19<04:29,  2.48it/s]Loading weights:   9%|▊         | 63/729 [01:21<07:09,  1.55it/s]Loading weights:   9%|▉         | 65/729 [01:23<08:07,  1.36it/s]Loading weights:   9%|▉         | 66/729 [01:26<12:10,  1.10s/it]Loading weights:  10%|▉         | 70/729 [01:27<06:53,  1.60it/s]Loading weights:  10%|█         | 76/729 [01:29<05:00,  2.17it/s]Loading weights:  11%|█         | 77/729 [01:32<08:25,  1.29it/s]Loading weights:  11%|█         | 80/729 [01:32<05:47,  1.87it/s]Loading weights:  11%|█         | 82/729 [01:33<05:32,  1.95it/s]Loading weights:  12%|█▏        | 88/729 [01:35<04:18,  2.48it/s]Loading weights:  12%|█▏        | 89/729 [01:37<06:06,  1.75it/s]Loading weights:  12%|█▏        | 90/729 [01:38<07:57,  1.34it/s]Loading weights:  13%|█▎        | 94/729 [01:39<05:26,  1.95it/s]Loading weights:  13%|█▎        | 98/729 [01:39<03:28,  3.03it/s]Loading weights:  14%|█▎        | 100/729 [01:41<04:19,  2.42it/s]Loading weights:  14%|█▍        | 101/729 [01:42<06:02,  1.73it/s]Loading weights:  14%|█▍        | 102/729 [01:45<09:01,  1.16it/s]Loading weights:  15%|█▍        | 106/729 [01:45<05:02,  2.06it/s]Loading weights:  15%|█▍        | 108/729 [01:46<04:25,  2.34it/s]Loading weights:  15%|█▌        | 110/729 [01:46<03:32,  2.91it/s]Loading weights:  15%|█▌        | 112/729 [01:48<05:19,  1.93it/s]Loading weights:  16%|█▌        | 113/729 [01:49<06:13,  1.65it/s]Loading weights:  19%|█▊        | 136/729 [01:49<00:59,  9.94it/s]Loading weights:  22%|██▏       | 162/729 [01:49<00:25, 22.24it/s]Loading weights:  26%|██▌       | 186/729 [01:49<00:14, 36.51it/s]Loading weights:  30%|███       | 220/729 [01:49<00:08, 62.09it/s]Loading weights:  34%|███▎      | 245/729 [01:49<00:05, 81.74it/s]Loading weights:  37%|███▋      | 269/729 [01:50<00:04, 101.35it/s]Loading weights:  42%|████▏     | 304/729 [01:50<00:03, 140.28it/s]Loading weights:  45%|████▌     | 329/729 [01:50<00:02, 153.98it/s]Loading weights:  85%|████████▌ | 621/729 [01:50<00:00, 709.60it/s]Loading weights: 100%|██████████| 729/729 [01:50<00:00,  6.60it/s] 
+[cava] bbc_08: VJudge 74 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 56/199 [00:00<00:00, 557.21it/s]Loading weights:  68%|██████▊   | 135/199 [00:00<00:00, 648.44it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 912.00it/s]
+[cava] bbc_08: mapa: 54 tópicos (24 con retornos)
+[cava] bbc_08: versiones: G-versión True, 0 clips
+[cava] bbc_09: 49.2 min, 591 unidades (film)
+[cava] bbc_09: ASR 699 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 9686.61it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:28,  8.17it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:08, 78.62it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 110.35it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 149.78it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 173.03it/s]Loading weights:  15%|█▍        | 108/729 [00:00<00:03, 179.28it/s]Loading weights:  19%|█▊        | 136/729 [00:00<00:02, 198.43it/s]Loading weights:  23%|██▎       | 167/729 [00:00<00:02, 229.83it/s]Loading weights:  26%|██▋       | 192/729 [00:01<00:02, 234.12it/s]Loading weights:  30%|███       | 220/729 [00:01<00:02, 223.04it/s]Loading weights:  35%|███▍      | 255/729 [00:01<00:01, 248.76it/s]Loading weights:  39%|███▊      | 282/729 [00:01<00:01, 247.06it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 267.89it/s]Loading weights:  55%|█████▌    | 403/729 [00:01<00:00, 433.85it/s]Loading weights:  97%|█████████▋| 709/729 [00:01<00:00, 1177.94it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 409.98it/s] 
+[cava] bbc_09: VJudge 74 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9937.69it/s]
+[cava] bbc_09: mapa: 51 tópicos (27 con retornos)
+[cava] bbc_09: versiones: G-versión True, 0 clips
+[cava] bbc_10: 48.9 min, 587 unidades (film)
+[cava] bbc_10: ASR 477 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10516.63it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<01:15,  9.64it/s]Loading weights:   0%|          | 2/729 [00:00<01:34,  7.70it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:08, 83.00it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 121.36it/s]Loading weights:   9%|▊         | 63/729 [00:00<00:04, 152.84it/s]Loading weights:  12%|█▏        | 84/729 [00:00<00:03, 170.07it/s]Loading weights:  14%|█▍        | 102/729 [00:00<00:03, 165.82it/s]Loading weights:  18%|█▊        | 130/729 [00:00<00:02, 199.93it/s]Loading weights:  22%|██▏       | 161/729 [00:00<00:02, 226.10it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 225.01it/s]Loading weights:  30%|██▉       | 216/729 [00:01<00:02, 251.15it/s]Loading weights:  33%|███▎      | 242/729 [00:01<00:01, 251.06it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 252.85it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 242.49it/s]Loading weights:  44%|████▍     | 322/729 [00:01<00:01, 252.21it/s]Loading weights:  70%|███████   | 511/729 [00:01<00:00, 724.70it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 407.11it/s]
+[cava] bbc_10: VJudge 74 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9767.78it/s]
+[cava] bbc_10: mapa: 61 tópicos (28 con retornos)
+[cava] bbc_10: versiones: G-versión True, 0 clips
+[cava] bbc_11: 49.0 min, 588 unidades (film)
+[cava] bbc_11: ASR 404 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 9855.54it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:46,  4.37it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 64.26it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 119.32it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 144.94it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:04, 155.16it/s]Loading weights:  16%|█▌        | 113/729 [00:00<00:03, 180.38it/s]Loading weights:  19%|█▉        | 142/729 [00:00<00:02, 211.40it/s]Loading weights:  24%|██▎       | 172/729 [00:01<00:02, 233.27it/s]Loading weights:  27%|██▋       | 197/729 [00:01<00:02, 224.84it/s]Loading weights:  30%|███       | 222/729 [00:01<00:02, 230.63it/s]Loading weights:  35%|███▌      | 256/729 [00:01<00:01, 259.96it/s]Loading weights:  39%|███▉      | 283/729 [00:01<00:01, 241.89it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 250.08it/s]Loading weights:  61%|██████    | 445/729 [00:01<00:00, 529.33it/s]Loading weights: 100%|█████████▉| 728/729 [00:01<00:00, 1164.49it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 405.62it/s] 
+[cava] bbc_11: VJudge 74 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9613.32it/s]
+[cava] bbc_11: mapa: 56 tópicos (26 con retornos)
+[cava] bbc_11: versiones: G-versión True, 0 clips
+{
+ "bbc_08": {
+  "profile": "film",
+  "G_version": true,
+  "duration_min": 49.2,
+  "n_topics": 54,
+  "n_returning": 24,
+  "voices": 8
+ },
+ "bbc_09": {
+  "profile": "film",
+  "G_version": true,
+  "duration_min": 49.2,
+  "n_topics": 51,
+  "n_returning": 27,
+  "voices": 5
+ },
+ "bbc_10": {
+  "profile": "film",
+  "G_version": true,
+  "duration_min": 48.9,
+  "n_topics": 61,
+  "n_returning": 28,
+  "voices": 7
+ },
+ "bbc_11": {
+  "profile": "film",
+  "G_version": true,
+  "duration_min": 49.0,
+  "n_topics": 56,
+  "n_returning": 26,
+  "voices": 7
+ }
+}
+BBC_SIGNALS_DONE

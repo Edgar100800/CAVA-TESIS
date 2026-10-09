@@ -1,0 +1,51 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   3%|▎         | 5/199 [00:00<00:05, 38.05it/s]Loading weights:   6%|▌         | 11/199 [00:00<00:04, 40.00it/s]Loading weights:  11%|█         | 21/199 [00:00<00:02, 61.90it/s]Loading weights:  18%|█▊        | 36/199 [00:00<00:01, 88.67it/s]Loading weights:  24%|██▍       | 48/199 [00:00<00:01, 98.75it/s]Loading weights:  33%|███▎      | 65/199 [00:00<00:01, 116.90it/s]Loading weights:  39%|███▊      | 77/199 [00:00<00:01, 116.58it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 245.11it/s]
+{
+ "c1_fsr_whisper_minus_parakeet": {
+  "mean": 0.0026,
+  "se": 0.0252,
+  "n": 114,
+  "z": 0.11
+ },
+ "c1_miss_parakeet_minus_whisper": {
+  "mean": 0.0449,
+  "ok": false
+ },
+ "c2_kerr_parakeet_minus_whisper": {
+  "mean": -0.0388,
+  "ok": true
+ },
+ "means": {
+  "fsr_whisper": 0.669,
+  "fsr_parakeet": 0.6663,
+  "miss_whisper": 0.0151,
+  "miss_parakeet": 0.06,
+  "kerr_whisper": 1.2414,
+  "kerr_parakeet": 1.2026
+ },
+ "c3_ami_mcc_parakeet_minus_whisper": {
+  "mean": 0.0147,
+  "se": 0.0329,
+  "n": 39,
+  "z": 0.45
+ },
+ "c3_ami_means": {
+  "mcc_whisper": 0.2338,
+  "mcc_parakeet": 0.2485
+ },
+ "c3_bbc_mlocal_parakeet_minus_whisper": {
+  "mean": -0.0224,
+  "se": 0.0119,
+  "n": 11,
+  "z": -1.88
+ },
+ "c3_bbc_means": {
+  "m_local_whisper": 0.4623,
+  "m_local_parakeet": 0.4399,
+  "f1b_whisper": 0.4363,
+  "f1b_parakeet": 0.4305,
+  "speech_frac_whisper": 0.8711,
+  "speech_frac_parakeet": 0.6561
+ },
+ "secondary_bbc_single_parakeet_gate": 10,
+ "c3_ok": false
+}

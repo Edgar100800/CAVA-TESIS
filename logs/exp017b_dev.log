@@ -1,0 +1,90 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9251.56it/s]
+[topicmap] tt0048545: pares 152984 | MCC cava -0.007 fused -0.008 contig +0.000 avg +0.006 (55 tópicos)
+[topicmap] tt0061722: pares 35566 | MCC cava -0.085 fused -0.050 contig +0.000 avg +0.004 (46 tópicos)
+[topicmap] tt0066026: pares 100460 | MCC cava -0.039 fused +0.034 contig +0.000 avg +0.011 (65 tópicos)
+[topicmap] tt0071562: pares 363401 | MCC cava +0.002 fused +0.006 contig +0.000 avg +0.017 (71 tópicos)
+[topicmap] tt0076759: pares 680671 | MCC cava -0.021 fused -0.002 contig -0.003 avg +0.001 (96 tópicos)
+[topicmap] tt0080684: pares 510752 | MCC cava +0.000 fused -0.031 contig +0.003 avg +0.020 (69 tópicos)
+[topicmap] tt0083929: pares 322164 | MCC cava +0.000 fused +0.072 contig +0.000 avg +0.025 (68 tópicos)
+[topicmap] tt0087332: pares 222339 | MCC cava +0.009 fused +0.074 contig +0.000 avg -0.005 (73 tópicos)
+[topicmap] tt0090756: pares 151936 | MCC cava -0.021 fused -0.023 contig -0.015 avg +0.000 (66 tópicos)
+[topicmap] tt0094737: pares 488053 | MCC cava -0.056 fused -0.012 contig +0.000 avg +0.038 (78 tópicos)
+[topicmap] tt0097576: pares 417527 | MCC cava -0.007 fused +0.024 contig +0.007 avg -0.002 (95 tópicos)
+[topicmap] tt0099685: pares 253638 | MCC cava -0.022 fused +0.000 contig +0.000 avg +0.003 (72 tópicos)
+[topicmap] tt0103074: pares 272492 | MCC cava +0.035 fused +0.022 contig +0.003 avg +0.035 (58 tópicos)
+[topicmap] tt0105236: pares 110738 | MCC cava +0.005 fused +0.040 contig +0.000 avg +0.040 (57 tópicos)
+[topicmap] tt0108160: pares 112740 | MCC cava +0.005 fused -0.040 contig +0.000 avg +0.043 (65 tópicos)
+[topicmap] tt0112641: pares 627587 | MCC cava +0.008 fused +0.055 contig +0.000 avg +0.020 (95 tópicos)
+[topicmap] tt0114558: pares 1441359 | MCC cava -0.037 fused +0.047 contig +0.004 avg +0.003 (151 tópicos)
+[topicmap] tt0116367: pares 885327 | MCC cava -0.023 fused +0.005 contig +0.003 avg -0.007 (83 tópicos)
+[topicmap] tt0118571: pares 393100 | MCC cava +0.018 fused -0.020 contig +0.005 avg -0.010 (70 tópicos)
+[topicmap] tt0119094: pares 1767875 | MCC cava -0.024 fused +0.012 contig +0.019 avg +0.009 (102 tópicos)
+[topicmap] tt0119822: pares 954212 | MCC cava -0.005 fused -0.015 contig +0.034 avg +0.045 (86 tópicos)
+[topicmap] tt0120780: pares 517290 | MCC cava +0.000 fused -0.014 contig +0.003 avg +0.009 (89 tópicos)
+[topicmap] tt0121765: pares 503665 | MCC cava -0.002 fused -0.017 contig -0.020 avg -0.004 (74 tópicos)
+[topicmap] tt0129387: pares 399384 | MCC cava +0.009 fused +0.035 contig +0.000 avg +0.015 (88 tópicos)
+[topicmap] tt0145487: pares 775945 | MCC cava -0.023 fused -0.021 contig +0.003 avg +0.004 (130 tópicos)
+[topicmap] tt0167404: pares 92364 | MCC cava +0.024 fused +0.022 contig +0.000 avg +0.045 (58 tópicos)
+[topicmap] tt0186151: pares 465022 | MCC cava -0.001 fused +0.006 contig -0.003 avg +0.004 (77 tópicos)
+[topicmap] tt0209958: pares 338721 | MCC cava +0.030 fused +0.013 contig +0.006 avg +0.012 (72 tópicos)
+[topicmap] tt0258463: pares 391975 | MCC cava -0.017 fused -0.029 contig +0.065 avg -0.008 (76 tópicos)
+[topicmap] tt0311113: pares 267559 | MCC cava -0.002 fused +0.004 contig +0.015 avg -0.001 (67 tópicos)
+[topicmap] tt0343818: pares 787525 | MCC cava -0.005 fused -0.022 contig +0.021 avg +0.005 (107 tópicos)
+[topicmap] tt0370263: pares 557895 | MCC cava -0.007 fused +0.036 contig +0.129 avg +0.028 (88 tópicos)
+[topicmap] tt0408236: pares 868487 | MCC cava -0.001 fused +0.031 contig +0.015 avg +0.011 (99 tópicos)
+[topicmap] tt0434409: pares 941154 | MCC cava +0.018 fused +0.041 contig -0.002 avg +0.017 (102 tópicos)
+[topicmap] tt0467200: pares 467068 | MCC cava +0.000 fused +0.008 contig -0.000 avg +0.008 (28 tópicos)
+[topicmap] tt0758758: pares 653259 | MCC cava +0.037 fused +0.010 contig +0.009 avg +0.010 (84 tópicos)
+[topicmap] tt0808151: pares 380791 | MCC cava +0.017 fused +0.055 contig -0.010 avg +0.008 (95 tópicos)
+[topicmap] tt0898367: pares 243759 | MCC cava -0.067 fused -0.012 contig +0.014 avg +0.002 (66 tópicos)
+[topicmap] tt0964517: pares 440944 | MCC cava +0.012 fused +0.028 contig -0.001 avg +0.020 (85 tópicos)
+[topicmap] tt1032755: pares 239751 | MCC cava -0.022 fused -0.006 contig +0.006 avg -0.021 (70 tópicos)
+[topicmap] tt1100089: pares 246847 | MCC cava +0.002 fused -0.008 contig +0.000 avg -0.011 (70 tópicos)
+[topicmap] tt1182345: pares 230617 | MCC cava +0.090 fused +0.019 contig +0.000 avg -0.008 (71 tópicos)
+[topicmap] tt1284575: pares 885460 | MCC cava +0.055 fused +0.022 contig +0.000 avg +0.024 (73 tópicos)
+[topicmap] tt1409024: pares 720166 | MCC cava +0.046 fused +0.028 contig +0.002 avg +0.046 (90 tópicos)
+[topicmap] tt1591095: pares 366341 | MCC cava -0.048 fused +0.005 contig -0.001 avg +0.007 (79 tópicos)
+[topicmap] tt2132285: pares 43281 | MCC cava -0.045 fused -0.013 contig +0.000 avg +0.002 (47 tópicos)
+
+46 películas
+| sistema | MCC | tópicos | tasa de enlace |
+|---|---|---|---|
+| cava | -0.0036 | 9 | 0.975 |
+| cava+segloop | -0.0045 | 7 | 0.981 |
+| cava_avg | +0.0114 | 78 | 0.046 |
+| cava_avg+segloop | +0.0137 | 81 | 0.035 |
+| cava_avg_r80 | +0.0088 | 46 | 0.078 |
+| cava_avg_r95 | +0.0128 | 114 | 0.029 |
+| cava_r80 | -0.0002 | 4 | 0.996 |
+| cava_r95 | +0.0050 | 18 | 0.900 |
+| contiguous | +0.0067 | 95 | 0.002 |
+| dialogue | +0.0007 | 78 | 0.300 |
+| fused | +0.0089 | 36 | 0.208 |
+| visual | +0.0185 | 54 | 0.260 |
+| vjudge | +0.0215 | 32 | 0.147 |
+  cava_vs_fused: {'mean': -0.0125, 'se': 0.005, 'n': 46, 'z': -2.52}
+  cava_vs_contiguous: {'mean': -0.0103, 'se': 0.0058, 'n': 46, 'z': -1.76}
+  cava_vs_visual: {'mean': -0.0221, 'se': 0.0072, 'n': 46, 'z': -3.06}
+  cava_vs_dialogue: {'mean': -0.0043, 'se': 0.0053, 'n': 46, 'z': -0.82}
+  cava_vs_vjudge: {'mean': -0.0251, 'se': 0.005, 'n': 46, 'z': -4.99}
+  cava_avg_vs_fused: {'mean': 0.0024, 'se': 0.0044, 'n': 46, 'z': 0.55}
+  cava_avg_vs_contiguous: {'mean': 0.0046, 'se': 0.0039, 'n': 46, 'z': 1.19}
+  cava_avg_vs_visual: {'mean': -0.0071, 'se': 0.0049, 'n': 46, 'z': -1.45}
+  cava_avg_vs_dialogue: {'mean': 0.0107, 'se': 0.0032, 'n': 46, 'z': 3.33}
+  cava_avg_vs_vjudge: {'mean': -0.0101, 'se': 0.0036, 'n': 46, 'z': -2.8}
+  cava_avg_vs_cava: {'mean': 0.0149, 'se': 0.0047, 'n': 46, 'z': 3.17}
+  cava_avg+segloop_vs_cava_avg: {'mean': 0.0023, 'se': 0.002, 'n': 46, 'z': 1.17}
+  cava+segloop_vs_cava: {'mean': -0.0009, 'se': 0.0024, 'n': 46, 'z': -0.39}
+  G-coherencia (media, mín película, fracción > 0):
+    cava_visual: {'mean': 0.0675, 'min_film': 0.0269, 'frac_positive': 1.0}
+    cava_dialogue: {'mean': 0.0258, 'min_film': -0.0118, 'frac_positive': 0.844}
+    cava_vjudge: {'mean': 0.0745, 'min_film': -0.0034, 'frac_positive': 0.978}
+    cava_avg_visual: {'mean': 0.0485, 'min_film': 0.0239, 'frac_positive': 1.0}
+    cava_avg_dialogue: {'mean': 0.028, 'min_film': 0.011, 'frac_positive': 1.0}
+    cava_avg_vjudge: {'mean': 0.1632, 'min_film': 0.0741, 'frac_positive': 1.0}
+    fused_visual: {'mean': 0.0327, 'min_film': 0.0087, 'frac_positive': 1.0}
+    fused_dialogue: {'mean': 0.0086, 'min_film': 0.0005, 'frac_positive': 1.0}
+    fused_vjudge: {'mean': 0.1058, 'min_film': 0.0397, 'frac_positive': 1.0}
+    contiguous_visual: {'mean': 0.0841, 'min_film': 0.052, 'frac_positive': 1.0}
+    contiguous_dialogue: {'mean': 0.0494, 'min_film': 0.0298, 'frac_positive': 1.0}
+    contiguous_vjudge: {'mean': 0.437, 'min_film': 0.2388, 'frac_positive': 1.0}

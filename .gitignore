@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 data/
 .ipynb_checkpoints/
+test-video/videos/*
+test-video/results/*
+test-video/Zifr_c0dTlc/*

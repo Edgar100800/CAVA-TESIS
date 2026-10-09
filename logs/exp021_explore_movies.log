@@ -1,0 +1,16 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 11460.32it/s]
+[explore] tt0048545: best MCC +0.040 at p95 r80 (29 topics)
+[explore] tt0061722: best MCC +0.027 at p95 r95 (28 topics)
+[explore] tt0066026: best MCC +0.045 at p98.5 r80 (15 topics)
+[explore] tt0071562: best MCC +0.033 at p95 r95 (78 topics)
+[explore] tt0076759: best MCC +0.040 at p97 r90 (51 topics)
+[explore] tt0080684: best MCC +0.068 at p90 r80 (58 topics)
+[explore] tt0083929: best MCC +0.038 at p90 r90 (80 topics)
+[explore] tt0087332: best MCC +0.088 at p98.5 r80 (20 topics)
+[explore] tt0090756: best MCC +0.020 at p80 r95 (107 topics)
+[explore] tt0094737: best MCC +0.063 at p90 r95 (88 topics)
+[explore] tt0097576: best MCC +0.045 at p98.5 r80 (21 topics)
+[explore] tt0099685: best MCC +0.045 at p98.5 r95 (29 topics)
+[explore] tt0103074: best MCC +0.074 at p97 r90 (37 topics)
+[explore] tt0105236: best MCC +0.090 at p98.5 r90 (13 topics)
+[explore] tt0108160: best MCC +0.086 at p80 r80 (42 topics)

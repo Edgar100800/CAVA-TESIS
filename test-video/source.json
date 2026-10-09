@@ -1,0 +1,40 @@
+[
+  {
+    "video_id": "cLDm1TQOoGQ",
+    "source_url": "https://www.youtube.com/watch?v=cLDm1TQOoGQ",
+    "local_video": "videos/cLDm1TQOoGQ.mp4",
+    "original_filename": "The Wild Project #384 - Luisito Comunica ｜ El podcast que llevabais años esperando.mp4",
+    "origin": "Archivo subido por el usuario; descarga automática previa rechazada por YouTube",
+    "received_date": "2026-10-02",
+    "sha256": "b38b29ac03e0f7f2bef8e2a390a5fb3e297e4a8fc6b6ffc1c283ad381461f956",
+    "dataset_split": null
+  },
+  {
+    "video_id": "Zifr_c0dTlc",
+    "source_url": "https://www.youtube.com/watch?v=Zifr_c0dTlc",
+    "local_video": "Zifr_c0dTlc/Zifr_c0dTlc.mp4",
+    "original_filename": "AVENGERS: ENDGAME ENCORE (2026) RESUMEN EN MINUTOS.mp4",
+    "origin": "Descarga automática con yt-dlp (tras actualizarlo a 2026.08.19; la versión previa recibía HTTP 403)",
+    "download_date": "2026-10-04",
+    "sha256": "c346c8a9b50b101aa718f950aca273fa95d8d9713069b064dfb3afa7cede65d1",
+    "dataset_split": null
+  },
+  {
+    "video_id": "TheLastWinter",
+    "source_url": null,
+    "local_video": "videos/TheLastWinter.mp4",
+    "original_file": "videos/TheLastWinter.mkv",
+    "original_filename": "TheLastWinter.mkv",
+    "origin": "Archivo MKV subido por el usuario (pelicula; sin URL de origen)",
+    "received_date": "2026-10-05",
+    "original_format": "Matroska, HEVC 1920x960, EAC3 5.1 eng, SRT eng/eng SDH/hin/hin SDH, portada MJPEG 3840x2160; 5843.045 s",
+    "transcode": "prep_lastwinter.sbatch (job 54566): -map 0:v:0 -map 0:a:0, scale=-2:480, libx264 veryfast crf 23, aac estereo 128k; resultado 960x480, 5843.045 s",
+    "subtitles": [
+      "videos/TheLastWinter.eng.srt",
+      "videos/TheLastWinter.eng.sdh.srt"
+    ],
+    "sha256_original": "b3ab15c5fd78f5f54721af2d78169ad1affb69bd1688cbc0f12811cc2621af46",
+    "sha256": "fb1e30bc78b3a52666b88fb298d4f141391380e13977219a721c66d0ad5703c4",
+    "dataset_split": null
+  }
+]

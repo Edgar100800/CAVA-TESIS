@@ -1,0 +1,224 @@
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights:  77%|███████▋  | 314/408 [00:00<00:00, 3129.94it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 2883.82it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<01:20,  9.06it/s]Loading weights:   0%|          | 2/729 [00:00<04:00,  3.02it/s]Loading weights:   2%|▏         | 12/729 [00:00<00:31, 22.58it/s]Loading weights:   3%|▎         | 24/729 [00:00<00:15, 44.19it/s]Loading weights:   5%|▍         | 36/729 [00:00<00:11, 62.17it/s]Loading weights:   7%|▋         | 48/729 [00:01<00:08, 76.23it/s]Loading weights:   9%|▉         | 64/729 [00:01<00:07, 91.48it/s]Loading weights:  10%|█         | 76/729 [00:01<00:06, 98.68it/s]Loading weights:  12%|█▏        | 89/729 [00:01<00:06, 100.59it/s]Loading weights:  14%|█▍        | 101/729 [00:01<00:06, 97.36it/s]Loading weights:  16%|█▌        | 114/729 [00:01<00:05, 104.87it/s]Loading weights:  18%|█▊        | 129/729 [00:01<00:05, 116.81it/s]Loading weights:  19%|█▉        | 142/729 [00:01<00:05, 116.93it/s]Loading weights:  21%|██▏       | 155/729 [00:01<00:04, 115.63it/s]Loading weights:  23%|██▎       | 167/729 [00:02<00:04, 113.26it/s]Loading weights:  25%|██▍       | 179/729 [00:02<00:04, 112.02it/s]Loading weights:  26%|██▌       | 191/729 [00:02<00:05, 107.33it/s]Loading weights:  28%|██▊       | 204/729 [00:02<00:04, 112.55it/s]Loading weights:  30%|██▉       | 216/729 [00:02<00:04, 110.57it/s]Loading weights:  31%|███▏      | 228/729 [00:02<00:04, 109.83it/s]Loading weights:  33%|███▎      | 240/729 [00:02<00:04, 108.51it/s]Loading weights:  34%|███▍      | 251/729 [00:02<00:04, 105.87it/s]Loading weights:  36%|███▌      | 262/729 [00:02<00:04, 103.35it/s]Loading weights:  37%|███▋      | 273/729 [00:03<00:04, 102.38it/s]Loading weights:  39%|███▉      | 284/729 [00:03<00:04, 103.01it/s]Loading weights:  41%|████      | 297/729 [00:03<00:03, 110.49it/s]Loading weights:  42%|████▏     | 309/729 [00:03<00:03, 109.62it/s]Loading weights:  44%|████▍     | 321/729 [00:03<00:03, 108.75it/s]Loading weights:  46%|████▌     | 332/729 [00:03<00:03, 107.05it/s]Loading weights:  56%|█████▌    | 408/729 [00:03<00:01, 289.51it/s]Loading weights:  67%|██████▋   | 488/729 [00:03<00:00, 432.49it/s]Loading weights:  78%|███████▊  | 568/729 [00:03<00:00, 538.17it/s]Loading weights:  88%|████████▊ | 644/729 [00:03<00:00, 596.05it/s]Loading weights:  99%|█████████▉| 725/729 [00:04<00:00, 637.55it/s]Loading weights: 100%|██████████| 729/729 [00:04<00:00, 177.36it/s]
+[ami-signals] ES2004a: 105 unidades
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 7260.18it/s]
+[in#0 @ 0x5609ccaef980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x559762f9e980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55880a39c980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55e27a0b3980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5606d3376980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x564dbb4db980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x558456105980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x557d44ccf980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5576e7c54980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x556f949cd980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5615bf6e3980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5583b0d56980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x563ecea47980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x562c61c93980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55cd15f7e980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55fc199a1980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55952d0f2980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<05:46,  2.10it/s]Loading weights:   2%|▏         | 12/729 [00:00<00:26, 26.82it/s]Loading weights:   4%|▎         | 26/729 [00:00<00:12, 54.69it/s]Loading weights:   5%|▍         | 36/729 [00:00<00:10, 66.17it/s]Loading weights:   6%|▋         | 47/729 [00:00<00:08, 77.65it/s]Loading weights:   8%|▊         | 60/729 [00:00<00:07, 92.01it/s]Loading weights:  10%|█         | 76/729 [00:01<00:06, 96.89it/s]Loading weights:  12%|█▏        | 90/729 [00:01<00:06, 101.73it/s]Loading weights:  14%|█▍        | 104/729 [00:01<00:05, 111.54it/s]Loading weights:  16%|█▌        | 116/729 [00:01<00:05, 112.96it/s]Loading weights:  18%|█▊        | 128/729 [00:01<00:05, 113.90it/s]Loading weights:  19%|█▉        | 140/729 [00:01<00:05, 112.93it/s]Loading weights:  21%|██▏       | 156/729 [00:01<00:04, 125.54it/s]Loading weights:  23%|██▎       | 170/729 [00:01<00:04, 129.32it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:04, 126.55it/s]Loading weights:  27%|██▋       | 197/729 [00:02<00:04, 116.14it/s]Loading weights:  29%|██▉       | 210/729 [00:02<00:04, 111.08it/s]Loading weights:  31%|███       | 225/729 [00:02<00:04, 121.22it/s]Loading weights:  33%|███▎      | 238/729 [00:02<00:04, 121.06it/s]Loading weights:  34%|███▍      | 251/729 [00:02<00:03, 121.00it/s]Loading weights:  36%|███▌      | 264/729 [00:02<00:03, 123.00it/s]Loading weights:  38%|███▊      | 277/729 [00:02<00:03, 122.88it/s]Loading weights:  40%|███▉      | 290/729 [00:02<00:03, 123.57it/s]Loading weights:  42%|████▏     | 303/729 [00:03<00:03, 107.75it/s]Loading weights:  43%|████▎     | 315/729 [00:03<00:04, 101.77it/s]Loading weights:  45%|████▌     | 329/729 [00:03<00:03, 109.00it/s]Loading weights:  57%|█████▋    | 419/729 [00:03<00:00, 316.03it/s]Loading weights:  69%|██████▉   | 506/729 [00:03<00:00, 465.96it/s]Loading weights:  82%|████████▏ | 599/729 [00:03<00:00, 594.73it/s]Loading weights:  94%|█████████▍| 685/729 [00:03<00:00, 669.90it/s]Loading weights: 100%|██████████| 729/729 [00:03<00:00, 194.37it/s]
+[in#0 @ 0x55adea313980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x559382a22980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x560f0beec980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55dc5b860980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x562e483e9980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55a610712980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5623d51ec980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x556eb5db2980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5603cdb3d980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5602b0587980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x562363f57980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5648cc89f980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5616154e1980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x557edbe5f980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55821a551980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5588c0fe5980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55681a04e980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x564dc0ab3980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55b5efee2980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x562c9a126980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x563dd72d2980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x564b004ce980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x562f10acd980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55a4d2f45980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x562a734df980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55bcea105980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x562386d47980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55b975d47980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55efa66be980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55e8f1da2980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5619caecb980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x561a8ff10980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55a6ca23f980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55e4c0091980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x56163da4b980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55ad840d4980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5654abdaf980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55dc02730980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55e39bbde980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x559c08c40980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x561a96953980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55f6b97b6980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5560ddb45980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x562e0447e980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55e4e8b55980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x5616ed339980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x55e5ed4c4980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x564b68aa1980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x560216cc5980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x559227413980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[in#0 @ 0x563b06636980] Error opening input: No such file or directory
+Error opening input file data/ami/media/ES2007d/ES2007d.Corner.avi.
+Error opening input files: No such file or directory
+[ami-signals] ES2007d: 17 unidades
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/ami_signals.py", line 123, in <module>
+    main()
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/ami_signals.py", line 53, in main
+    audio = load_audio(str(wav))
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/Tesis/CAVA/topicagg/voice.py", line 24, in load_audio
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", str(sr), "-f", "f32le", "-"],
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ffmpeg', '-v', 'error', '-i', 'data/ami/media/ES2008a/ES2008a.Mix-Headset.wav', '-ac', '1', '-ar', '16000', '-f', 'f32le', '-']' returned non-zero exit status 254.
