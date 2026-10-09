@@ -2899,3 +2899,21 @@ Recompensa = z de la importancia humana media.
   (W cubre tramos de música porque sus segmentos atraviesan los huecos).
   Que eso alcance para el narrador es la pregunta abierta: EXP-030 sugiere
   que sí, pero sin GT.
+
+### Precisiones a EXP-034 (2026-10-09, antes de calcular ningún filtro sobre los conjuntos)
+- En AVA, FSR y recall de un video se cuentan solo si tiene ≥ 5 unidades sin
+  habla (FSR) o con habla (recall). La media es por video.
+- En AMI, el filtro W es el gate del caché de identidades (`*.xvec.npz`, el
+  mismo de EXP-028/029). Las x-vectors de todos los candidatos, W incluido,
+  se recalculan sobre todas las unidades, para comparar en igualdad.
+- **Control de alineación:** el repositorio de AVASpeech-SMAD publica las
+  predicciones de inaSpeechSegmenter por video. El acuerdo por unidad entre
+  nuestro I y el publicado comprueba que la ventana de audio (minutos 15–30)
+  coincide con la de las etiquetas.
+- **Prueba de humo:** antes del registro se pasó Silero sobre un solo video
+  AVA (`_7oWZq_s_Sk`, split conf) para probar la lectura de etiquetas. No se
+  eligió nada con eso.
+- **Videos AVA ausentes del S3 de AVA v2.1:** se excluyen, y el número se
+  reporta.
+- **Entorno:** inaSpeechSegmenter corre en un entorno aparte (`inaseg`,
+  TensorFlow 2.21, CPU), sin tocar `segloop`.
