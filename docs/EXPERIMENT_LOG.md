@@ -2781,3 +2781,41 @@ Recompensa = z de la importancia humana media.
   porque los segmentos son demasiado finos.
 - **Siguiente palanca:** un nivel de capítulo (más grueso) sobre el mapa,
   pre-registrado y con su propio desarrollo. No se ajusta sobre blind40.
+
+---
+
+## EXP-033 · Nivel de capítulo sobre el mapa CAVA (pre-registro)
+- **Fecha:** 2026-10-09 (antes de calcular las señales de desarrollo; job
+  55212)
+- **Motivación (EXP-032):**
+  - los mapas son ~2.7× más finos que los capítulos del autor;
+  - las fronteras de CAVA están mejor ubicadas que las uniformes (F1 ±1:
+    0.22 frente a 0.13), pero el agrupamiento local pierde por exceso de
+    segmentos.
+- **Operador (`chapters`):** capítulos contiguos a partir de las fronteras
+  del mapa del producto (perfil documentary, nivel default, con snap).
+  1. Candidatas = cambios de etiqueta entre unidades contiguas.
+  2. Fuerza de cada candidata = media, sobre las señales (voice, visual,
+     transcript, vjudge), del rango percentil de la puntuación de frontera
+     propia de la señal en ese índice. Son votos por señal, sin fusionar
+     representaciones.
+  3. Se conservan las N candidatas más fuertes, con N = round(duración / L).
+     N sale de la duración, nunca del GT.
+- **Desarrollo:** VidChapters raw_ext (50 videos, 22 min, 8.7 capítulos de
+  media). CAVA no lo usó; no se solapa con blind40.
+  - L se elige en {90, 120, 150, 180, 240, 300} s con el mayor M_local medio
+    en desarrollo.
+- **Confirmación:** blind40 (40).
+  - Reutilizado: ya se evaluó en EXP-032, pero ese experimento no fijó
+    ningún parámetro y L se fija solo en raw_ext. Se declara la
+    reutilización.
+- **Bases (mismo N por video):**
+  - segmentación uniforme;
+  - top-N de la puntuación de frontera de UNA señal (visual; transcript),
+    con min_gap 2.
+- **Criterios (SE pareado sobre 40 videos):**
+  1. M_local(capítulos) − M_local(uniforme mismo N) > 2 SE;
+  2. F1 ±3 (capítulos) − F1 ±3 (uniforme mismo N) > 2 SE;
+  3. M_local(capítulos) − mejor M_local de señal sola top-N > 2 SE.
+- **Si se valida:** nivel `chapters` en el mapa del producto y versión
+  `full_chapters` por capítulo, con L fijo.
