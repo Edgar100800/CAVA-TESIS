@@ -63,6 +63,10 @@ def main():
         o.parent.mkdir(parents=True, exist_ok=True)
         audio = load_audio(it["wav"])
         units = it["units"]
+        # la última unidad puede pasar el final del audio (AVA corto, BBC): relleno con silencio
+        need = int((max(b for _, b in units) + 1.0) * SR)
+        if len(audio) < need:
+            audio = np.concatenate([audio, np.zeros(need - len(audio), np.float32)])
         r = {"units": units}
         if it["dom"] in ("ava", "mix"):
             segs, _ = wm.transcribe(it["wav"], vad_filter=True)
