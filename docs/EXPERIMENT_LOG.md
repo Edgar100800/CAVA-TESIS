@@ -3026,3 +3026,81 @@ reuniones de un hablante.
   2. GT humano de las 110 unidades BBC exportadas.
 
   Con eso se decide S&W / I&W frente a W para el perfil documentary.
+
+---
+
+## EXP-035 · ¿Silero o ina + Whisper resuelven el narrador? Sintético con estructura de documental + GT humano en BBC (pre-registro)
+- **Fecha:** 2026-10-10 (registrado antes de generar las mezclas y de
+  muestrear las unidades BBC)
+- **Motivación (EXP-034):**
+  - S&W e I&W separan voz de música mucho mejor que W (FSR en AVA 0.16 y
+    0.13 frente a 0.73) y dan 11 de 11 narradores en BBC, pero sin GT.
+  - El sintético de EXP-034 tenía fondo bajo toda la voz y un 92 % de habla:
+    no le dejaba nada que descartar al filtro.
+- **Candidatos (congelados, sin ajuste):**
+  - W (base);
+  - A0.3&W (elegido en EXP-034);
+  - **S&W** y **I&W** (los dos de interés).
+
+  τ del detector de un hablante: 0.976 (EXP-029), sin cambios.
+
+### EXP-035a · Narrador sintético con estructura de documental
+- **Fuentes:** los mismos archivos de VoxConverse de EXP-034 (K = 1 y K ≥ 2;
+  dev = dev, test = confirmación) y la misma división de MUSAN.
+- **Generador:**
+  1. El habla de la fuente se corta en tramos por los silencios RTTM de
+     ≥ 0.5 s, conservando el audio original.
+  2. Debajo de la voz, fondo continuo a **SNR 15 dB** (música "agachada").
+  3. Tras cada tramo, con probabilidad 0.6, un **hueco de solo fondo** de
+     4–20 s (uniforme) a **0 dB** respecto al RMS del habla (la música sube
+     cuando nadie habla).
+  4. Condiciones: música, ruido/ambiente. Semilla 0. GT de habla y de
+     hablante trasladado de la RTTM.
+  - Dev solo se usa para comprobar el generador (fracción de habla GT entre
+    0.45 y 0.70). No se elige nada.
+- **Criterios (confirmación, VoxConverse test):**
+  1. K = 1, música y ruido: tasa de un hablante, G − W > 2 SE pareado,
+     evaluado por separado para G = S&W y G = I&W.
+  2. K ≥ 2: tasa de falsos narradores de G ≤ la de W + 0.05.
+
+### EXP-035b · GT humano en BBC
+- **Muestra estratificada (semilla 0)** por episodio, según el patrón de los
+  filtros en EXP-034 (sobre todas las unidades):
+  - c0 W no;
+  - c1 W sí, S&W no, I&W no;
+  - c2 W sí, S&W sí, I&W no;
+  - c3 W sí, S&W no, I&W sí;
+  - c4 W sí, S&W sí, I&W sí.
+
+  Por episodio se toman 2 / 5 / 3 / 3 / 3 unidades (todas si hay menos), unas
+  176 en total. Peso de cada unidad = tamaño del estrato / muestreadas.
+- **Anotación ciega:** página con un clip por unidad, en orden aleatorio, sin
+  estrato ni filtro visibles. Etiquetas:
+  - narrador;
+  - otra voz (persona distinta del narrador);
+  - voz con música (el narrador sobre la música);
+  - música sin voz;
+  - animal / ambiente;
+  - silencio;
+  - no sé.
+
+  Habla = narrador, otra voz, voz con música. Las unidades "no sé" se
+  excluyen y se reportan.
+- **Métricas ponderadas** (sobre las 11 × ~590 unidades), con SE por
+  bootstrap de episodios (2000 remuestreos, pareado entre filtros):
+  - FSR(G) = P(G marca habla | sin habla);
+  - recall(G) = P(G marca habla | habla).
+- **Criterios**, para G = S&W y G = I&W por separado:
+  1. FSR(W) − FSR(G) > 2 SE;
+  2. recall(G) ≥ 0.80. El filtro solo decide qué unidades reciben identidad
+     de hablante; el texto de Whisper sigue entrando en todas.
+  3. **Narrador único real:** "otra voz" < 5 % del habla ponderada. Si no se
+     cumple, BBC tiene conversaciones y "un hablante" no es la verdad del
+     dominio.
+- **Adopción en el perfil documentary:** G pasa 035b-1, 035b-2 y 035b-3 **y**
+  035a-2 (sin falsos narradores). Si pasan los dos, se adopta el de menor FSR
+  en 035b.
+  - Con la adopción, los V# del perfil documentary vuelven a publicarse como
+    "hablante".
+  - 035a-1 se reporta como generalidad. Si falla, se declara que la ganancia
+    depende de la estructura de huecos del documental.
