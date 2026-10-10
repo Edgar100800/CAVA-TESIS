@@ -99,14 +99,14 @@ def identities(x, gate):
     return voice_ids(x, gate=gate), False
 
 
-def narrator_rows(split, keys):
+def narrator_rows(split, keys, sub="mix"):
     rows = {}
-    for it in all_items(["mix"]):
+    for it in all_items([sub]):
         if it["split"] != split:
             continue
         g, _ = gates(it)
         m = json.loads(Path(it["wav"]).with_suffix(".json").read_text())
-        x = np.load(G / "cache" / "mix" / f"{it['id']}.xall.npy").astype(np.float32)
+        x = np.load(G / "cache" / sub / f"{it['id']}.xall.npy").astype(np.float32)
         gt = np.array(m["gt_speech"], bool)
         r = {"k_true": m["k_true"], "cond": m["cond"], "src": m["src"]}
         for k in keys:

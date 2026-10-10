@@ -1,0 +1,202 @@
+<title>Escucha BBC · EXP-035b</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: una columna de trabajo — clip actual arriba, botonera de etiquetas, tira de progreso abajo */
+:root {
+  --bg: #f3f5f2; --surface: #ffffff; --ink: #1d2420; --muted: #5d6a62; --line: #d6ddd7;
+  --accent: #2f6b4f; --accent-ink: #ffffff; --done: #cfe3d6; --skip: #ece4cf; --focus: #1f5ea8;
+  --f-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121614; --surface: #1b211e; --ink: #e5ece7; --muted: #9aa89f; --line: #2e3833;
+  --accent: #6fbf95; --accent-ink: #0d1411; --done: #24453a; --skip: #4a4330; --focus: #7fb2ff; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121614; --surface: #1b211e; --ink: #e5ece7; --muted: #9aa89f; --line: #2e3833;
+  --accent: #6fbf95; --accent-ink: #0d1411; --done: #24453a; --skip: #4a4330; --focus: #7fb2ff; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.5; }
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 48px; display: grid; gap: 20px; }
+header { display: grid; gap: 6px; }
+h1 { font-size: 1.4rem; margin: 0; text-wrap: balance; }
+.lede { margin: 0; color: var(--muted); max-width: 65ch; }
+.meter { display: flex; align-items: center; gap: 12px; font-variant-numeric: tabular-nums; }
+.bar { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.bar > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: grid; gap: 16px; }
+.cliphead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; }
+.clipid { font-family: var(--f-mono); font-size: .95rem; color: var(--muted); }
+.pos { font-family: var(--f-mono); font-weight: 600; font-size: 1.1rem; }
+.player { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 10px 14px; }
+button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.play { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 700; min-width: 9rem; }
+.labels { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+.labels button { text-align: left; display: flex; gap: 10px; align-items: baseline; }
+.labels kbd { font-family: var(--f-mono); font-size: .8rem; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; }
+.labels button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.labels button[aria-pressed="true"] kbd { color: var(--accent-ink); border-color: var(--accent-ink); }
+.labels small { display: block; color: var(--muted); font-size: .82rem; }
+.labels button[aria-pressed="true"] small { color: var(--accent-ink); }
+.status { min-height: 1.5em; color: var(--muted); font-size: .9rem; }
+.nav { display: flex; justify-content: space-between; gap: 8px; }
+.strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(34px, 1fr)); gap: 4px; }
+.strip button { padding: 4px 0; font-family: var(--f-mono); font-size: .72rem; border-radius: 4px; }
+.strip button.done { background: var(--done); }
+.strip button.unsure { background: var(--skip); }
+.strip button.cur { outline: 2px solid var(--accent); }
+details { color: var(--muted); font-size: .92rem; }
+details ul { padding-left: 1.2em; margin: 6px 0; }
+.offline { border: 1px dashed var(--line); border-radius: 8px; padding: 12px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Escucha BBC Planet Earth</h1>
+    <p class="lede">Clips de 5 segundos tomados al azar de los 11 episodios. Escucha cada uno y marca qué se oye. No hay respuestas correctas a priori: anota lo que oyes, aunque dudes.</p>
+    <div class="meter"><div class="bar"><i id="barfill"></i></div><span id="count">0 / 176</span></div>
+  </header>
+
+  <section class="card" aria-live="polite">
+    <div class="cliphead">
+      <span class="pos" id="pos">Clip 1</span>
+      <span class="clipid" id="clipid"></span>
+    </div>
+    <div class="player">
+      <button class="play" id="play" type="button">▶ Escuchar <kbd>espacio</kbd></button>
+      <audio id="audio" preload="auto"></audio>
+      <span class="status" id="playstate"></span>
+    </div>
+    <div class="labels" id="labels" role="group" aria-label="Etiqueta del clip"></div>
+    <div class="status" id="status">Cargando el registro de etiquetas…</div>
+    <div class="nav">
+      <button type="button" id="prev">← Anterior</button>
+      <button type="button" id="nextpending">Siguiente sin etiquetar →</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="strip" id="strip" aria-label="Todos los clips"></div>
+  </section>
+
+  <details>
+    <summary>Cómo decidir</summary>
+    <ul>
+      <li><b>Narrador</b>: la voz en off del documental, sin música notoria debajo.</li>
+      <li><b>Voz con música</b>: el narrador hablando mientras suena música.</li>
+      <li><b>Otra voz</b>: cualquier persona que no sea el narrador (entrevista, gente en escena), aunque sea breve.</li>
+      <li><b>Música sin voz</b>, <b>animal / ambiente</b>, <b>silencio</b>: nadie habla en la mayor parte del clip.</li>
+      <li>Si en el clip hay voz menos de la mitad del tiempo, elige lo que ocupa la mayor parte.</li>
+      <li><b>No sé</b> solo si de verdad no se puede decidir; esos clips se excluyen.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+const CLIPS = __CLIPS__;
+const LABELS = [
+  ["narrador", "Narrador", "voz en off, sin música notoria"],
+  ["voz_musica", "Voz con música", "el narrador sobre música"],
+  ["otra_voz", "Otra voz", "persona distinta del narrador"],
+  ["musica", "Música sin voz", ""],
+  ["ambiente", "Animal / ambiente", "sin voz humana"],
+  ["silencio", "Silencio", ""],
+  ["nose", "No sé", "se excluye del análisis"],
+];
+const $ = (id) => document.getElementById(id);
+const audio = $("audio");
+let cur = 0, mine = {}, col = null, uid = null, saving = false;
+
+function render() {
+  const clip = CLIPS[cur];
+  $("pos").textContent = `Clip ${cur + 1} de ${CLIPS.length}`;
+  $("clipid").textContent = clip;
+  for (const b of $("labels").querySelectorAll("button")) b.setAttribute("aria-pressed", String(mine[clip] === b.dataset.v));
+  const n = Object.keys(mine).length;
+  $("count").textContent = `${n} / ${CLIPS.length}`;
+  $("barfill").style.width = `${(100 * n) / CLIPS.length}%`;
+  $("strip").querySelectorAll("button").forEach((b, i) => {
+    const l = mine[CLIPS[i]];
+    b.className = (l ? (l === "nose" ? "unsure" : "done") : "") + (i === cur ? " cur" : "");
+  });
+}
+function load(i, autoplay) {
+  cur = (i + CLIPS.length) % CLIPS.length;
+  audio.src = `clips/${CLIPS[cur]}.mp3`;
+  render();
+  if (autoplay) audio.play().catch(() => {});
+}
+function nextPending() {
+  for (let k = 1; k <= CLIPS.length; k++) {
+    const j = (cur + k) % CLIPS.length;
+    if (!mine[CLIPS[j]]) return load(j, true);
+  }
+  $("status").textContent = "Todos los clips tienen etiqueta. Puedes revisar cualquiera desde la tira de abajo.";
+}
+async function setLabel(v) {
+  if (!col) { $("status").textContent = "Sin conexión al registro: la etiqueta no se puede guardar en esta vista."; return; }
+  if (saving) return;
+  const clip = CLIPS[cur];
+  saving = true;
+  mine[clip] = v; render();
+  try {
+    await col.doc(`${uid}__${clip}`).set({ annotator: uid, clip, label: v, at: new Date().toISOString() });
+    $("status").textContent = `Guardado: ${LABELS.find((l) => l[0] === v)[1]}.`;
+    saving = false;
+    setTimeout(nextPending, 250);
+  } catch (e) {
+    saving = false;
+    delete mine[clip]; render();
+    $("status").textContent = e && e.code === "not_granted"
+      ? "Tu acceso a esta página es de solo lectura: pide acceso de colaborador para anotar."
+      : "No se pudo guardar. Revisa la conexión y vuelve a elegir la etiqueta.";
+  }
+}
+
+LABELS.forEach(([v, name, hint], i) => {
+  const b = document.createElement("button");
+  b.type = "button"; b.dataset.v = v;
+  b.innerHTML = `<kbd>${i + 1}</kbd><span><span class="nm"></span><small></small></span>`;
+  b.querySelector(".nm").textContent = name;
+  b.querySelector("small").textContent = hint;
+  b.addEventListener("click", () => setLabel(v));
+  $("labels").appendChild(b);
+});
+CLIPS.forEach((c, i) => {
+  const b = document.createElement("button");
+  b.type = "button"; b.textContent = i + 1; b.title = c;
+  b.addEventListener("click", () => load(i, true));
+  $("strip").appendChild(b);
+});
+$("play").addEventListener("click", () => { audio.currentTime = 0; audio.play().catch(() => {}); });
+$("prev").addEventListener("click", () => load(cur - 1, true));
+$("nextpending").addEventListener("click", nextPending);
+audio.addEventListener("playing", () => $("playstate").textContent = "Reproduciendo…");
+audio.addEventListener("ended", () => $("playstate").textContent = "Fin del clip");
+audio.addEventListener("error", () => $("playstate").textContent = "No se pudo cargar el audio de este clip.");
+document.addEventListener("keydown", (e) => {
+  if (e.target.closest && e.target.closest("input,textarea")) return;
+  if (e.key === " ") { e.preventDefault(); $("play").click(); }
+  else if (/^[1-7]$/.test(e.key)) setLabel(LABELS[+e.key - 1][0]);
+  else if (e.key === "ArrowLeft") load(cur - 1, true);
+  else if (e.key === "ArrowRight") load(cur + 1, true);
+});
+load(0, false);
+
+(async () => {
+  const [db, user] = await Promise.all([claude.use("db"), claude.use("user")]);
+  uid = user ? await user.id() : null;
+  if (!db || !uid) {
+    $("status").innerHTML = '<span class="offline">Esta vista no puede guardar etiquetas (abre la página con tu cuenta de claude.ai). Puedes escuchar los clips igualmente.</span>';
+    return;
+  }
+  col = db.collection("labels");
+  col.where("annotator", "==", uid).onSnapshot((snap) => {
+    mine = {};
+    snap.docs.forEach((d) => { const x = d.data(); if (x && x.label && x.clip) mine[x.clip] = x.label; });
+    if ($("status").textContent.startsWith("Cargando")) $("status").textContent = Object.keys(mine).length ? "Retomando donde quedaste." : "Elige la etiqueta con un clic o con las teclas 1–7.";
+    render();
+  }, () => { $("status").textContent = "Se perdió la conexión con el registro; recarga la página."; });
+})();
+</script>

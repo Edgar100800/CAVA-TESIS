@@ -3116,3 +3116,13 @@ fue 0.770, fuera de la ventana pre-registrada (0.45–0.70).
 - Fracción de habla tras la corrección: ver la línea de abajo. Las mezclas
   se regeneraron desde cero.
 - Tras la corrección: dev 0.661, conf 0.582 (dentro de la ventana).
+
+### EXP-035b · muestra y página de anotación (2026-10-10)
+- **Muestra:** 176 clips (c0 22, c1 55, c2 33, c3 33, c4 33). La clave
+  privada (`sample.json`: episodio, unidad, estrato, peso) no se publica.
+- **Página de anotación ciega:** https://claude.ai/artifact/MgZL67zwzopXg6DXGJdxSo
+  - un clip por vista, en orden aleatorio, con nombres opacos;
+  - etiquetas en la colección `labels` (un documento por anotador y clip);
+  - fuente de la página en `scripts/exp035b_annotate_page.html`.
+- **Con más de un anotador:** mayoría por clip; los empates y "no sé" se
+  excluyen y se reportan.
