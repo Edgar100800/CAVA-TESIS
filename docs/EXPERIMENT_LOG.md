@@ -2959,3 +2959,70 @@ por el acuerdo con lo publicado.
   **secundarias sin criterio** (mismas métricas), porque separan voz de
   música mucho mejor y el piso de recall las excluyó. No cambian ningún
   criterio ni la elección.
+
+### Resultado EXP-034 (confirmación)
+
+| criterio | resultado | ¿cumple? |
+|---|---|---|
+| 1. AVA conf (76): FSR(W) − FSR(A0.3&W) | +0.323 ± 0.019, **z 16.9**; recall 0.880 frente a piso 0.874 | **sí** |
+| 2. Narrador sintético, K = 1, música y ruido (50): un hablante, elegido − W | 0.000 ± 0.000 | **no** |
+| 3. Falsos narradores, K ≥ 2 (75) | 0.013 frente a 0.013 | sí |
+| 4. AMI fresh3: ARI elegido − W | +0.040 ± 0.030; 0 de 40 de un hablante | sí |
+
+**No validado.** Aplica la lectura pre-declarada "1 sí y 2 no": el filtro
+separa mucho mejor la voz de la música, pero el narrador sintético sigue sin
+resolverse.
+
+**AVA conf** (secundarias):
+
+| filtro | recall | FSR | FSR en música | exactitud balanceada |
+|---|---|---|---|---|
+| W | 0.924 | 0.734 | 0.715 | 0.595 |
+| A0.3&W (elegido) | 0.880 | 0.411 | 0.327 | 0.735 |
+| P&W (ref.) | 0.843 | 0.356 | 0.274 | 0.744 |
+| S&W (sec.) | 0.809 | 0.162 | 0.108 | **0.824** |
+| I&W (sec.) | 0.726 | **0.126** | **0.075** | 0.800 |
+
+**Narrador sintético conf** (un hablante detectado en K = 1):
+
+| filtro | limpio | música 5 dB | ruido 5 dB |
+|---|---|---|---|
+| W | 0.56 | 0.04 | 0.20 |
+| A0.3&W | 0.56 | 0.04 | 0.20 |
+| S&W | 0.64 | 0.08 | 0.20 |
+| I&W | 0.64 | 0.24 | 0.24 |
+
+**Lectura honesta del criterio 2.** El diseño sintético no le dejaba margen
+al filtro:
+- las mezclas tienen un 92 % de unidades con habla GT;
+- el fondo suena debajo de TODA el habla a 5 dB.
+
+Lo que midió es la **contaminación de las x-vectors por el fondo**, no la
+selección de unidades. Es un hallazgo en sí: con música constante a 5 dB,
+el detector spread (τ 0.976) casi nunca reconoce a un solo hablante, sea
+cual sea el filtro. No se rescata el criterio: queda no cumplido.
+
+**BBC (secundaria, sin GT):**
+
+| | W | A0.3&W | P&W | S&W | I&W |
+|---|---|---|---|---|---|
+| episodios de un hablante | 0 | 7 | 10 | **11** | **11** |
+| fracción de habla | 0.87 | 0.62 | 0.62 | 0.50 | 0.52 |
+
+En el documental real, quitar las unidades de solo música sí basta para que
+aparezca el narrador único. Ahí la música llena los huecos más que sonar bajo
+la voz, al revés que en el sintético. Sigue sin GT: son 110 clips para
+escuchar en `data/gatebench/audit/bbc_XX/` (con `anotar.csv`).
+
+**AMI (secundaria):** ARI W 0.731 (reproduce el 0.726 de los mapas de
+producto) → A0.3&W 0.771, S&W 0.782, I&W 0.785. Ningún filtro declara
+reuniones de un hablante.
+
+**Decisión:**
+- El pipeline no cambia. A0.3&W no se adopta, porque EXP-034 no se valida.
+- Pendiente de pre-registrar (EXP-035):
+  1. un narrador sintético con la estructura de un documental (habla con
+     fondo bajo + huecos de solo música);
+  2. GT humano de las 110 unidades BBC exportadas.
+
+  Con eso se decide S&W / I&W frente a W para el perfil documentary.
