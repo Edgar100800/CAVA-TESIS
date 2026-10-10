@@ -2917,3 +2917,16 @@ Recompensa = z de la importancia humana media.
   reporta.
 - **Entorno:** inaSpeechSegmenter corre en un entorno aparte (`inaseg`,
   TensorFlow 2.21, CPU), sin tocar `segloop`.
+
+### Control de alineación de EXP-034 (2026-10-09, AVA dev)
+El acuerdo por unidad entre nuestro I y las predicciones publicadas de
+inaSpeechSegmenter es bajo: 0.735 de media, mínimo 0.25. El diagnóstico
+descarta un problema de alineación:
+- desfase óptimo de nuestro I frente al GT (frames de 0.1 s, ±10 s): **0.0 s
+  en los 72 videos** de desarrollo;
+- exactitud por unidad frente al GT: nuestro I 0.808, el publicado 0.722.
+
+Las predicciones publicadas vienen de otra versión del modelo o de otra
+configuración, no de otra ventana de audio. **La ventana minutos 15–30
+coincide con las etiquetas.** El control queda cumplido por el desfase, no
+por el acuerdo con lo publicado.
