@@ -2930,3 +2930,32 @@ Las predicciones publicadas vienen de otra versión del modelo o de otra
 configuración, no de otra ventana de audio. **La ventana minutos 15–30
 coincide con las etiquetas.** El control queda cumplido por el desfase, no
 por el acuerdo con lo publicado.
+
+### Desarrollo EXP-034 (jobs 55305 + 55371 de caché; 55372 de evaluación; AVA dev, 72 videos)
+**Elección congelada: A0.3&W** (Whisper ∩ AST con P(Speech) ≥ 0.3).
+
+| candidato | exactitud balanceada | recall | FSR | FSR en música |
+|---|---|---|---|---|
+| W (base) | 0.592 | 0.931 | 0.747 | 0.754 |
+| **A0.3&W (elegido)** | 0.746 | 0.892 | 0.399 | 0.335 |
+| S&W | **0.837** | 0.816 | 0.143 | 0.099 |
+| S | 0.830 | 0.849 | 0.188 | 0.131 |
+| I&W | 0.811 | 0.746 | 0.124 | 0.072 |
+| P&W (referencia) | 0.761 | 0.865 | 0.343 | 0.286 |
+
+- **El piso de recall decide.** Recall(W) − 0.05 = 0.881. S, S&W, I e I&W
+  tienen mejor exactitud balanceada pero quedan por debajo del piso. Se
+  aplica la regla pre-registrada sin cambios.
+- **Whisper marca como habla el 75 % de las unidades de música** de AVA. Es
+  el fallo que motivó el experimento, ahora medido con GT.
+- **Narrador sintético dev (descriptivo, no elige nada):** la detección de
+  un hablante en archivos con K = 1 cae de 0.61 (limpio) a 0.16–0.19 con
+  música o ruido a 5 dB, **con cualquier filtro** (W, A0.3&W, P, P&W). Sin
+  falsos narradores en K ≥ 2.
+  - Lectura provisional: a 5 dB el fondo dispersa las x-vectors del propio
+    narrador. El problema no sería solo qué unidades entran, sino cómo
+    suenan.
+- **Antes de la confirmación:** S&W e I&W se agregan a la confirmación como
+  **secundarias sin criterio** (mismas métricas), porque separan voz de
+  música mucho mejor y el piso de recall las excluyó. No cambian ningún
+  criterio ni la elección.

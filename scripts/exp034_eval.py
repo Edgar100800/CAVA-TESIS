@@ -23,6 +23,7 @@ THETAS = [round(0.1 * k, 1) for k in range(1, 10)]
 MIN_UNITS = 5  # unidades sin habla (FSR) / con habla (recall) mínimas por video AVA
 ADOPTABLE = ["W", "S", "I", "S&W", "I&W"] + [f"A{t}" for t in THETAS] + [f"A{t}&W" for t in THETAS]
 REFERENCE = ["P", "P&W"]
+SECONDARY = ["S&W", "I&W"]  # declaradas tras el dev, sin criterio (mejor bacc pero fuera del piso de recall)
 
 
 def gates(it):
@@ -172,7 +173,7 @@ def audit_bbc(it, g, ch, n=10, rng=np.random.default_rng(0)):
 def conf():
     sel = json.loads(Path("results/exp034_dev.json").read_text())
     ch = sel["choice"]
-    keys = ["W", ch] + REFERENCE
+    keys = ["W", ch] + REFERENCE + [k for k in SECONDARY if k != ch]
     # 1. AVA conf
     rows = ava_rows("conf")
     s = summary(rows, keys)
@@ -195,7 +196,7 @@ def conf():
         x = np.load(G / "cache" / "ami" / f"{it['id']}.xall.npy").astype(np.float32)
         dom = [d if d not in ("", "None") else None for d in c["dom_gt"]]
         r = {}
-        for k in ("W", ch):
+        for k in keys:
             vid, sg = identities(x, g[k])
             idx = [i for i in range(len(dom)) if dom[i] and vid[i] >= 0]
             r[k] = {"single": bool(sg), "ari": float(adjusted_rand_score([dom[i] for i in idx], vid[idx])) if len(idx) > 5 else None,
