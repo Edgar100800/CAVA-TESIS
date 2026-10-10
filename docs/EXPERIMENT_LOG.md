@@ -3104,3 +3104,15 @@ reuniones de un hablante.
     "hablante".
   - 035a-1 se reporta como generalidad. Si falla, se declara que la ganancia
     depende de la estructura de huecos del documental.
+
+### Corrección del generador de EXP-035a (verificación de dev, antes de calcular ningún filtro)
+Con tramos cortados por silencios ≥ 0.5 s, la fracción de habla GT en dev
+fue 0.770, fuera de la ventana pre-registrada (0.45–0.70).
+- Causa: muchos archivos de VoxConverse tienen pocos silencios largos
+  (mediana de 4 tramos por archivo en dev), así que había pocos huecos.
+- Corrección: cualquier frontera de segmento RTTM puede llevar un hueco
+  (min_sil = 0; solo se funden segmentos solapados). Se eligió por la
+  fracción simulada, sin mirar ningún filtro.
+- Fracción de habla tras la corrección: ver la línea de abajo. Las mezclas
+  se regeneraron desde cero.
+- Tras la corrección: dev 0.661, conf 0.582 (dentro de la ventana).

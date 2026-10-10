@@ -3,6 +3,7 @@
 Cada ítem: dominio, id, wav, unidades y split. Dominios:
   ava    AVASpeech-SMAD, minutos 15–30 (labels relativas a la ventana), unidades de 5 s
   mix    narrador sintético VoxConverse + MUSAN (scripts/exp034_mix.py), unidades de 5 s
+  docmix narrador sintético con estructura de documental (EXP-035a, scripts/exp035_mix.py)
   ami    AMI fresh3, Mix-Headset, unidades del caché de señales (10 s)
   bbc    BBC 01–11, audio del pipeline, unidades del pipeline (5 s)
 """
@@ -28,10 +29,10 @@ def ava_items():
             yield {"dom": "ava", "id": i, "wav": str(w), "units": grid(900.0), "split": "dev" if k % 2 == 0 else "conf"}
 
 
-def mix_items():
-    for f in sorted((G / "mix").glob("*/*.json")):
+def mix_items(sub="mix"):
+    for f in sorted((G / sub).glob("*/*.json")):
         m = json.loads(f.read_text())
-        yield {"dom": "mix", "id": f"{f.parent.name}_{f.stem}", "wav": str(f.with_suffix(".wav")), "units": m["units"],
+        yield {"dom": sub, "id": f"{f.parent.name}_{f.stem}", "wav": str(f.with_suffix(".wav")), "units": m["units"],
                "split": "dev" if f.parent.name == "dev" else "conf"}
 
 
@@ -50,7 +51,7 @@ def bbc_items():
 
 
 def all_items(doms=("ava", "mix", "ami", "bbc")):
-    f = {"ava": ava_items, "mix": mix_items, "ami": ami_items, "bbc": bbc_items}
+    f = {"ava": ava_items, "mix": mix_items, "docmix": lambda: mix_items("docmix"), "ami": ami_items, "bbc": bbc_items}
     for d in doms:
         yield from f[d]()
 

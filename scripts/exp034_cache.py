@@ -68,7 +68,7 @@ def main():
         if len(audio) < need:
             audio = np.concatenate([audio, np.zeros(need - len(audio), np.float32)])
         r = {"units": units}
-        if it["dom"] in ("ava", "mix"):
+        if it["dom"] in ("ava", "mix", "docmix"):
             segs, _ = wm.transcribe(it["wav"], vad_filter=True)
             r["whisper_segments"] = [(s.start, s.end, s.text.strip()) for s in segs]
             r["parakeet"] = pk.units(audio, units)
