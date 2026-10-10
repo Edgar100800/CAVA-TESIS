@@ -3126,3 +3126,36 @@ fue 0.770, fuera de la ventana pre-registrada (0.45–0.70).
   - fuente de la página en `scripts/exp035b_annotate_page.html`.
 - **Con más de un anotador:** mayoría por clip; los empates y "no sé" se
   excluyen y se reportan.
+
+### Resultado EXP-035a (caché job 55567, ina job 55568; docmix conf: 46 mezclas K = 1, 54 K ≥ 2)
+
+| criterio | S&W | I&W |
+|---|---|---|
+| 1. un hablante en K = 1, G − W | +0.413 ± 0.073, **z 5.6** ✅ | +0.413 ± 0.073, **z 5.6** ✅ |
+| 2. falsos narradores en K ≥ 2 (límite W + 0.05 = 0.050) | 0.056 (3 de 54) ❌ | 0.056 (3 de 54) ❌ |
+
+| filtro | un hablante K = 1 (música / ruido) | falsos (música / ruido) | \|K_eff − 1\| (música / ruido) | FSR | recall |
+|---|---|---|---|---|---|
+| W | 0.09 / 0.17 | 0.00 / 0.00 | 1.86 / 1.75 | 0.721 | 0.968 |
+| A0.3&W | 0.32 / 0.21 | 0.07 / 0.04 | 1.18 / 1.29 | 0.279 | 0.964 |
+| S&W | 0.55 / 0.54 | 0.07 / 0.04 | 0.55 / 0.46 | 0.068 | 0.960 |
+| I&W | 0.55 / 0.54 | 0.07 / 0.04 | 0.45 / 0.50 | **0.009** | 0.932 |
+
+**Criterio 2 no cumplido, por una mezcla** (3 de 54 frente a un límite de
+2.7). Por la regla pre-registrada, **la adopción queda bloqueada** sea cual
+sea el resultado de 035b.
+
+Lectura:
+- Con la estructura de documental (huecos de solo fondo), los filtros S&W e
+  I&W sí resuelven al narrador: la detección pasa de 0.09–0.17 a 0.54–0.55,
+  y el error de K baja de ~1.8 a ~0.5. El fallo de EXP-034 era del diseño
+  sintético, no del filtro.
+- **Los falsos narradores son archivos dominados por una voz:**
+  - gylzn: 83 % / 17 %, en música y en ruido;
+  - mjmgr: 86 %, con la segunda voz en 5.5 %, apenas sobre el umbral K ≥ 2.
+
+  W no los marca porque, con la música dentro, nada parece un solo hablante.
+  Al limpiar la entrada, el detector spread (τ 0.976, fijado con VAD oráculo
+  en EXP-029) queda en el borde con voces muy dominantes.
+- No se ajusta τ aquí. Es candidato a un experimento propio, con su
+  desarrollo.
