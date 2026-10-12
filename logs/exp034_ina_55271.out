@@ -1,0 +1,114 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791585256.441512 1770639 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/edgar.chambilla/.conda/envs/inaseg/lib/python3.10/site-packages/keras/src/layers/reshaping/reshape.py:38: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+E0000 00:00:1791585264.513022 1770639 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+W0000 00:00:1791585277.887805 1770639 cpu_allocator_impl.cc:82] Allocation of 829816512 exceeds 10% of free system memory.
+4540/4540 - 26s - 6ms/step
+[ina] bbc bbc_01
+W0000 00:00:1791585316.590231 1770639 cpu_allocator_impl.cc:82] Allocation of 795504528 exceeds 10% of free system memory.
+4353/4353 - 25s - 6ms/step
+[ina] bbc bbc_02
+W0000 00:00:1791585353.984649 1770639 cpu_allocator_impl.cc:82] Allocation of 820220352 exceeds 10% of free system memory.
+4488/4488 - 25s - 6ms/step
+[ina] bbc bbc_03
+W0000 00:00:1791585390.484738 1770639 cpu_allocator_impl.cc:82] Allocation of 815496528 exceeds 10% of free system memory.
+4462/4462 - 25s - 6ms/step
+[ina] bbc bbc_04
+W0000 00:00:1791585427.162594 1770639 cpu_allocator_impl.cc:82] Allocation of 822550848 exceeds 10% of free system memory.
+4501/4501 - 25s - 6ms/step
+[ina] bbc bbc_05
+4490/4490 - 25s - 5ms/step
+[ina] bbc bbc_06
+4524/4524 - 26s - 6ms/step
+[ina] bbc bbc_07
+4508/4508 - 26s - 6ms/step
+[ina] bbc bbc_08
+4509/4509 - 25s - 6ms/step
+[ina] bbc bbc_09
+4393/4393 - 25s - 6ms/step
+[ina] bbc bbc_10
+4402/4402 - 25s - 6ms/step
+[ina] bbc bbc_11
+3425/3425 - 19s - 6ms/step
+[ina] ami ES2002c
+1724/1724 - 10s - 6ms/step
+[ina] ami ES2003a
+2969/2969 - 17s - 6ms/step
+[ina] ami ES2003b
+3418/3418 - 19s - 6ms/step
+[ina] ami ES2004b
+3289/3289 - 19s - 6ms/step
+[ina] ami ES2004c
+686/686 - 4s - 6ms/step
+[ina] ami ES2005a
+3262/3262 - 19s - 6ms/step
+[ina] ami ES2005b
+2475/2475 - 14s - 6ms/step
+[ina] ami ES2005d
+1659/1659 - 9s - 6ms/step
+[ina] ami ES2007a
+3199/3199 - 18s - 6ms/step
+[ina] ami ES2008b
+3745/3745 - 21s - 6ms/step
+[ina] ami ES2008d
+1989/1989 - 11s - 6ms/step
+[ina] ami ES2009b
+1386/1386 - 8s - 6ms/step
+[ina] ami ES2010d
+1623/1623 - 9s - 6ms/step
+[ina] ami ES2012a
+1648/1648 - 9s - 6ms/step
+[ina] ami ES2015a
+3641/3641 - 21s - 6ms/step
+[ina] ami IS1000b
+1218/1218 - 7s - 6ms/step
+[ina] ami IS1001d
+3197/3197 - 18s - 6ms/step
+[ina] ami IS1004b
+3302/3302 - 19s - 6ms/step
+[ina] ami IS1004c
+1602/1602 - 9s - 6ms/step
+[ina] ami IS1005a
+3011/3011 - 17s - 6ms/step
+[ina] ami IS1006c
+3080/3080 - 17s - 6ms/step
+[ina] ami IS1007d
+1475/1475 - 8s - 6ms/step
+[ina] ami IS1008a
+2647/2647 - 15s - 6ms/step
+[ina] ami IS1008b
+2687/2687 - 15s - 6ms/step
+[ina] ami IS1009c
+2839/2839 - 16s - 5ms/step
+[ina] ami IS1009d
+3756/3756 - 21s - 6ms/step
+[ina] ami TS3003c
+4415/4415 - 25s - 6ms/step
+[ina] ami TS3004c
+1942/1942 - 11s - 6ms/step
+[ina] ami TS3005a
+3558/3558 - 20s - 6ms/step
+[ina] ami TS3005b
+3398/3398 - 19s - 6ms/step
+[ina] ami TS3005c
+2366/2366 - 13s - 6ms/step
+[ina] ami TS3007a
+4131/4131 - 24s - 6ms/step
+[ina] ami TS3007b
+4076/4076 - 23s - 6ms/step
+[ina] ami TS3007d
+3236/3236 - 18s - 6ms/step
+[ina] ami TS3008b
+3259/3259 - 18s - 6ms/step
+[ina] ami TS3010b
+2673/2673 - 15s - 6ms/step
+[ina] ami TS3011d
+3591/3591 - 21s - 6ms/step
+[ina] ami TS3012b
+3412/3412 - 20s - 6ms/step
+[ina] ami TS3012c
+3437/3437 - 19s - 6ms/step
+[ina] ami TS3012d
+EXP034_INA_DONE

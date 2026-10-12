@@ -1,0 +1,955 @@
+[cava] 0Bi1XcdpnQI: 24.2 min, 290 unidades (documentary)
+[cava] 0Bi1XcdpnQI: ASR 454 segmentos
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 11153.68it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:50,  4.28it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 62.98it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.45it/s]Loading weights:   9%|▊         | 63/729 [00:00<00:04, 138.38it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 168.41it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 171.85it/s]Loading weights:  19%|█▊        | 135/729 [00:00<00:03, 197.51it/s]Loading weights:  22%|██▏       | 161/729 [00:01<00:02, 215.32it/s]Loading weights:  25%|██▌       | 185/729 [00:01<00:02, 217.56it/s]Loading weights:  29%|██▉       | 213/729 [00:01<00:02, 234.18it/s]Loading weights:  33%|███▎      | 237/729 [00:01<00:02, 232.57it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 247.38it/s]Loading weights:  40%|████      | 293/729 [00:01<00:01, 241.95it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 235.09it/s]Loading weights:  49%|████▉     | 360/729 [00:01<00:01, 269.97it/s]Loading weights:  53%|█████▎    | 387/729 [00:02<00:02, 161.21it/s]Loading weights:  68%|██████▊   | 494/729 [00:02<00:00, 329.85it/s]Loading weights:  74%|███████▍  | 540/729 [00:03<00:01, 102.42it/s]Loading weights:  79%|███████▊  | 573/729 [00:04<00:02, 70.43it/s] Loading weights:  82%|████████▏ | 597/729 [00:05<00:02, 53.81it/s]Loading weights:  84%|████████▍ | 615/729 [00:05<00:02, 49.58it/s]Loading weights:  86%|████████▋ | 629/729 [00:06<00:02, 47.43it/s]Loading weights:  88%|████████▊ | 640/729 [00:06<00:02, 44.32it/s]Loading weights:  89%|████████▉ | 649/729 [00:06<00:01, 41.40it/s]Loading weights:  90%|████████▉ | 656/729 [00:07<00:01, 41.58it/s]Loading weights:  91%|█████████ | 662/729 [00:07<00:01, 38.07it/s]Loading weights:  92%|█████████▏| 669/729 [00:07<00:01, 39.19it/s]Loading weights:  95%|█████████▍| 691/729 [00:07<00:00, 63.73it/s]Loading weights: 100%|██████████| 729/729 [00:07<00:00, 95.90it/s]
+[cava] 0Bi1XcdpnQI: VJudge 37 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9403.63it/s]
+[cava] 0Bi1XcdpnQI: mapa: 17 tópicos (8 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 38/266 [00:00<00:00, 319.04it/s]Loading weights:  58%|█████▊    | 154/266 [00:00<00:00, 693.22it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 1017.17it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] 0Bi1XcdpnQI: versiones: G-versión True, 0 clips
+[cava] 3Jv6MkdHGaA: 18.8 min, 226 unidades (documentary)
+[cava] 3Jv6MkdHGaA: ASR 227 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 9785.54it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:03,  3.97it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 63.67it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 111.00it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 147.76it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 169.65it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 172.25it/s]Loading weights:  19%|█▊        | 136/729 [00:00<00:03, 186.78it/s]Loading weights:  23%|██▎       | 171/729 [00:01<00:02, 203.08it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 233.87it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 233.25it/s]Loading weights:  36%|███▌      | 261/729 [00:01<00:01, 244.59it/s]Loading weights:  39%|███▉      | 286/729 [00:01<00:01, 243.78it/s]Loading weights:  43%|████▎     | 315/729 [00:01<00:01, 251.30it/s]Loading weights:  52%|█████▏    | 381/729 [00:01<00:00, 365.73it/s]Loading weights:  91%|█████████ | 665/729 [00:01<00:00, 1072.99it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 393.02it/s] 
+[cava] 3Jv6MkdHGaA: VJudge 29 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9686.50it/s]
+[cava] 3Jv6MkdHGaA: mapa: 15 tópicos (3 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10503.03it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] 3Jv6MkdHGaA: versiones: G-versión True, 0 clips
+[cava] 4A4OgJOvR64: 12.1 min, 146 unidades (documentary)
+[cava] 4A4OgJOvR64: ASR 150 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 9906.43it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:49,  4.29it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 63.03it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.93it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 141.75it/s]Loading weights:  12%|█▏        | 87/729 [00:00<00:03, 164.97it/s]Loading weights:  15%|█▍        | 106/729 [00:00<00:03, 170.76it/s]Loading weights:  18%|█▊        | 132/729 [00:00<00:03, 195.92it/s]Loading weights:  22%|██▏       | 160/729 [00:00<00:02, 220.15it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 221.20it/s]Loading weights:  29%|██▊       | 209/729 [00:01<00:02, 222.33it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 225.70it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 250.10it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 237.70it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 237.12it/s]Loading weights:  66%|██████▌   | 481/729 [00:01<00:00, 629.76it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.41it/s]
+[cava] 4A4OgJOvR64: VJudge 19 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9928.59it/s]
+[cava] 4A4OgJOvR64: mapa: 10 tópicos (4 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 21165.27it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] 4A4OgJOvR64: versiones: G-versión True, 0 clips
+[cava] 6B8ly-OHdEo: 16.7 min, 201 unidades (documentary)
+[cava] 6B8ly-OHdEo: ASR 178 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10237.54it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:50,  4.26it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 62.73it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.17it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 149.36it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 158.05it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 166.37it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 185.37it/s]Loading weights:  21%|██        | 150/729 [00:00<00:02, 203.23it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:02, 211.72it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 245.28it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 224.39it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 250.68it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 238.04it/s]Loading weights:  44%|████▍     | 319/729 [00:01<00:01, 240.17it/s]Loading weights:  65%|██████▌   | 477/729 [00:01<00:00, 611.33it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 392.01it/s]
+[cava] 6B8ly-OHdEo: VJudge 26 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 11349.52it/s]
+[cava] 6B8ly-OHdEo: mapa: 13 tópicos (5 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10542.24it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] 6B8ly-OHdEo: versiones: G-versión True, 0 clips
+[cava] 6d7sBwOgPdU: 27.9 min, 335 unidades (documentary)
+[cava] 6d7sBwOgPdU: ASR 313 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10530.09it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:50,  4.26it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 62.84it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 110.10it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 147.33it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 169.17it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 173.70it/s]Loading weights:  18%|█▊        | 131/729 [00:00<00:03, 192.51it/s]Loading weights:  22%|██▏       | 161/729 [00:01<00:02, 216.42it/s]Loading weights:  25%|██▌       | 185/729 [00:01<00:02, 218.05it/s]Loading weights:  29%|██▉       | 214/729 [00:01<00:02, 234.91it/s]Loading weights:  33%|███▎      | 238/729 [00:01<00:02, 233.66it/s]Loading weights:  37%|███▋      | 267/729 [00:01<00:01, 244.39it/s]Loading weights:  40%|████      | 293/729 [00:01<00:01, 241.42it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 234.45it/s]Loading weights:  66%|██████▌   | 479/729 [00:01<00:00, 621.31it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.09it/s]
+[cava] 6d7sBwOgPdU: VJudge 42 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10063.01it/s]
+[cava] 6d7sBwOgPdU: mapa: 22 tópicos (4 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10305.03it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] 6d7sBwOgPdU: versiones: G-versión True, 0 clips
+[cava] 6WGtu48yIb8: 34.7 min, 417 unidades (documentary)
+[cava] 6WGtu48yIb8: ASR 725 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10312.43it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:50,  4.27it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 62.83it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.58it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 149.62it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 157.78it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 166.06it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 184.82it/s]Loading weights:  21%|██        | 150/729 [00:00<00:02, 203.61it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:02, 210.39it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 244.51it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 232.59it/s]Loading weights:  36%|███▌      | 261/729 [00:01<00:01, 245.94it/s]Loading weights:  39%|███▉      | 286/729 [00:01<00:01, 242.62it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 241.38it/s]Loading weights:  59%|█████▉    | 431/729 [00:01<00:00, 492.80it/s]Loading weights:  96%|█████████▋| 702/729 [00:01<00:00, 1119.75it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 392.36it/s] 
+[cava] 6WGtu48yIb8: VJudge 53 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9965.10it/s]
+[cava] 6WGtu48yIb8: mapa: 22 tópicos (7 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10053.66it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] 6WGtu48yIb8: versiones: G-versión True, 0 clips
+[cava] 8btvR9WkurE: 20.4 min, 245 unidades (documentary)
+[cava] 8btvR9WkurE: ASR 264 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10026.40it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:48,  4.31it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 63.38it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 117.39it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 150.63it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 159.08it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 167.31it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 186.32it/s]Loading weights:  21%|██        | 150/729 [00:00<00:02, 205.08it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:02, 211.22it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 243.87it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 232.21it/s]Loading weights:  36%|███▌      | 261/729 [00:01<00:01, 245.62it/s]Loading weights:  39%|███▉      | 286/729 [00:01<00:01, 243.50it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 253.67it/s]Loading weights:  53%|█████▎    | 385/729 [00:01<00:00, 378.11it/s]Loading weights:  92%|█████████▏| 669/729 [00:01<00:00, 1092.20it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.88it/s] 
+[cava] 8btvR9WkurE: VJudge 31 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9969.62it/s]
+[cava] 8btvR9WkurE: mapa: 16 tópicos (5 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10401.49it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] 8btvR9WkurE: versiones: G-versión True, 0 clips
+[cava] 9hmJtYmOAPQ: 26.9 min, 323 unidades (documentary)
+[cava] 9hmJtYmOAPQ: ASR 706 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 11007.75it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:49,  4.30it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 63.22it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:06, 113.97it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 151.49it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 159.70it/s]Loading weights:  14%|█▎        | 100/729 [00:00<00:03, 164.37it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 187.27it/s]Loading weights:  21%|██        | 150/729 [00:00<00:02, 205.12it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:02, 212.21it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 228.03it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 232.32it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 255.40it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 241.56it/s]Loading weights:  44%|████▍     | 319/729 [00:01<00:01, 243.53it/s]Loading weights:  67%|██████▋   | 485/729 [00:01<00:00, 640.61it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 395.15it/s]
+[cava] 9hmJtYmOAPQ: VJudge 41 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10191.91it/s]
+[cava] 9hmJtYmOAPQ: mapa: 14 tópicos (6 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10278.26it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] 9hmJtYmOAPQ: versiones: G-versión True, 0 clips
+[cava] ahq8v-ilbWM: 18.7 min, 225 unidades (documentary)
+[cava] ahq8v-ilbWM: ASR 452 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10146.25it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:50,  4.27it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 62.77it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.65it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 149.72it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 156.39it/s]Loading weights:  14%|█▍        | 102/729 [00:00<00:03, 160.55it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 180.66it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:02, 218.62it/s]Loading weights:  25%|██▌       | 185/729 [00:01<00:02, 222.68it/s]Loading weights:  29%|██▉       | 210/729 [00:01<00:02, 230.24it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 227.84it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 252.29it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 238.76it/s]Loading weights:  44%|████▍     | 319/729 [00:01<00:01, 240.43it/s]Loading weights:  66%|██████▌   | 481/729 [00:01<00:00, 627.34it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 392.41it/s]
+[cava] ahq8v-ilbWM: VJudge 29 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10040.86it/s]
+[cava] ahq8v-ilbWM: mapa: 18 tópicos (3 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10500.66it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] ahq8v-ilbWM: versiones: G-versión True, 0 clips
+[cava] AJALJPGJdfY: 19.5 min, 235 unidades (documentary)
+[cava] AJALJPGJdfY: ASR 451 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10207.68it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:24,  8.56it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 61.98it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:06, 112.81it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 150.33it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 156.74it/s]Loading weights:  14%|█▍        | 102/729 [00:00<00:03, 161.58it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 180.99it/s]Loading weights:  22%|██▏       | 160/729 [00:00<00:02, 226.76it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 225.77it/s]Loading weights:  29%|██▉       | 210/729 [00:01<00:02, 228.05it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 226.53it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:02, 228.87it/s]Loading weights:  42%|████▏     | 304/729 [00:01<00:01, 259.47it/s]Loading weights:  45%|████▌     | 331/729 [00:01<00:01, 244.41it/s]Loading weights:  84%|████████▎ | 609/729 [00:01<00:00, 915.23it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.68it/s]
+[cava] AJALJPGJdfY: VJudge 30 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9992.66it/s]
+[cava] AJALJPGJdfY: mapa: 14 tópicos (5 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10456.57it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] AJALJPGJdfY: versiones: G-versión True, 0 clips
+[cava] a_pjgiX4Osc: 33.5 min, 403 unidades (documentary)
+[cava] a_pjgiX4Osc: ASR 402 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 16043.76it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:48,  4.31it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 63.30it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 110.95it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 148.06it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 161.42it/s]Loading weights:  15%|█▌        | 112/729 [00:00<00:03, 173.24it/s]Loading weights:  19%|█▉        | 137/729 [00:00<00:03, 193.72it/s]Loading weights:  24%|██▎       | 172/729 [00:01<00:02, 229.64it/s]Loading weights:  27%|██▋       | 196/729 [00:01<00:02, 232.53it/s]Loading weights:  30%|███       | 221/729 [00:01<00:02, 229.64it/s]Loading weights:  34%|███▎      | 245/729 [00:01<00:02, 227.93it/s]Loading weights:  37%|███▋      | 270/729 [00:01<00:01, 232.82it/s]Loading weights:  42%|████▏     | 304/729 [00:01<00:01, 259.32it/s]Loading weights:  45%|████▌     | 331/729 [00:01<00:01, 243.58it/s]Loading weights:  82%|████████▏ | 595/729 [00:01<00:00, 904.78it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.70it/s]
+[cava] a_pjgiX4Osc: VJudge 51 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10214.49it/s]
+[cava] a_pjgiX4Osc: mapa: 27 tópicos (9 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10199.43it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] a_pjgiX4Osc: versiones: G-versión True, 0 clips
+[cava] AX11Aa7yzJM: 31.2 min, 374 unidades (documentary)
+[cava] AX11Aa7yzJM: ASR 674 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10564.61it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:24,  8.59it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 61.97it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.25it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 141.38it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 167.37it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 170.89it/s]Loading weights:  19%|█▊        | 135/729 [00:00<00:03, 196.19it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:02, 211.22it/s]Loading weights:  25%|██▌       | 185/729 [00:01<00:02, 216.88it/s]Loading weights:  29%|██▉       | 210/729 [00:01<00:02, 225.96it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 224.82it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 250.10it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 236.90it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 236.72it/s]Loading weights:  65%|██████▍   | 473/729 [00:01<00:00, 605.38it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 391.60it/s]
+[cava] AX11Aa7yzJM: VJudge 47 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10106.76it/s]
+[cava] AX11Aa7yzJM: mapa: 22 tópicos (8 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10119.13it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] AX11Aa7yzJM: versiones: G-versión True, 0 clips
+[cava] bFq6avyCQC4: 26.4 min, 317 unidades (documentary)
+[cava] bFq6avyCQC4: ASR 753 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 13341.31it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:49,  4.29it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 62.82it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.38it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 149.54it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 157.94it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 157.31it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 181.02it/s]Loading weights:  22%|██▏       | 160/729 [00:00<00:02, 227.14it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 217.26it/s]Loading weights:  29%|██▉       | 214/729 [00:01<00:02, 239.27it/s]Loading weights:  33%|███▎      | 239/729 [00:01<00:02, 236.66it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 245.84it/s]Loading weights:  40%|████      | 293/729 [00:01<00:01, 240.02it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 233.02it/s]Loading weights:  65%|██████▌   | 475/729 [00:01<00:00, 606.09it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 392.09it/s]
+[cava] bFq6avyCQC4: VJudge 40 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10211.61it/s]
+[cava] bFq6avyCQC4: mapa: 17 tópicos (6 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 13709.23it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] bFq6avyCQC4: versiones: G-versión True, 0 clips
+[cava] BQV1Qo8et60: 30.7 min, 369 unidades (documentary)
+[cava] BQV1Qo8et60: ASR 327 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10690.26it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:48,  4.31it/s]Loading weights:   2%|▏         | 17/729 [00:00<00:11, 59.64it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 118.10it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 150.83it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 159.27it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 167.38it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 178.75it/s]Loading weights:  22%|██▏       | 160/729 [00:00<00:02, 225.14it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 224.64it/s]Loading weights:  29%|██▉       | 210/729 [00:01<00:02, 226.71it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 224.93it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 250.21it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 237.69it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 236.67it/s]Loading weights:  64%|██████▍   | 469/729 [00:01<00:00, 593.87it/s]Loading weights: 100%|█████████▉| 728/729 [00:01<00:00, 1161.98it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 392.71it/s] 
+[cava] BQV1Qo8et60: VJudge 47 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9810.83it/s]
+[cava] BQV1Qo8et60: mapa: 23 tópicos (9 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10112.25it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] BQV1Qo8et60: versiones: G-versión True, 0 clips
+[cava] buj_yHoTKjI: 17.3 min, 208 unidades (documentary)
+[cava] buj_yHoTKjI: ASR 356 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10203.42it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:24,  8.61it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 62.09it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.07it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 149.57it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 157.79it/s]Loading weights:  14%|█▎        | 100/729 [00:00<00:03, 163.24it/s]Loading weights:  17%|█▋        | 124/729 [00:00<00:03, 183.75it/s]Loading weights:  21%|██        | 150/729 [00:00<00:02, 206.21it/s]Loading weights:  24%|██▎       | 173/729 [00:01<00:02, 209.96it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 246.69it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 227.90it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 251.21it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 237.56it/s]Loading weights:  44%|████▍     | 319/729 [00:01<00:01, 240.00it/s]Loading weights:  65%|██████▌   | 477/729 [00:01<00:00, 610.99it/s]Loading weights: 100%|█████████▉| 726/729 [00:01<00:00, 1133.97it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 391.90it/s] 
+[cava] buj_yHoTKjI: VJudge 26 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10285.48it/s]
+[cava] buj_yHoTKjI: mapa: 9 tópicos (5 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10717.02it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] buj_yHoTKjI: versiones: G-versión True, 0 clips
+[cava] cdSSA5L-Ndw: 16.4 min, 197 unidades (documentary)
+[cava] cdSSA5L-Ndw: ASR 478 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10614.08it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:51,  4.25it/s]Loading weights:   2%|▏         | 16/729 [00:00<00:12, 55.63it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 118.23it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 143.04it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 160.26it/s]Loading weights:  15%|█▌        | 112/729 [00:00<00:03, 171.81it/s]Loading weights:  19%|█▉        | 138/729 [00:00<00:03, 195.27it/s]Loading weights:  24%|██▎       | 172/729 [00:01<00:02, 227.14it/s]Loading weights:  27%|██▋       | 196/729 [00:01<00:02, 222.31it/s]Loading weights:  30%|███       | 222/729 [00:01<00:02, 221.36it/s]Loading weights:  35%|███▌      | 256/729 [00:01<00:01, 249.84it/s]Loading weights:  39%|███▊      | 282/729 [00:01<00:01, 234.35it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 255.30it/s]Loading weights:  52%|█████▏    | 382/729 [00:01<00:00, 365.33it/s]Loading weights:  89%|████████▉ | 650/729 [00:01<00:00, 1012.67it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 392.18it/s] 
+[cava] cdSSA5L-Ndw: VJudge 25 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10321.09it/s]
+[cava] cdSSA5L-Ndw: mapa: 16 tópicos (1 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10721.24it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] cdSSA5L-Ndw: versiones: G-versión True, 0 clips
+[cava] c-YqqGgqYDA: 16.3 min, 196 unidades (documentary)
+[cava] c-YqqGgqYDA: ASR 197 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10292.52it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:04,  3.94it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:09, 77.24it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 107.67it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 145.40it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 168.02it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 170.81it/s]Loading weights:  19%|█▊        | 136/729 [00:00<00:02, 198.91it/s]Loading weights:  22%|██▏       | 162/729 [00:01<00:02, 208.88it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:02, 212.42it/s]Loading weights:  30%|███       | 220/729 [00:01<00:02, 228.75it/s]Loading weights:  34%|███▎      | 246/729 [00:01<00:02, 232.73it/s]Loading weights:  37%|███▋      | 270/729 [00:01<00:01, 233.11it/s]Loading weights:  42%|████▏     | 304/729 [00:01<00:01, 258.97it/s]Loading weights:  45%|████▌     | 331/729 [00:01<00:01, 242.81it/s]Loading weights:  82%|████████▏ | 595/729 [00:01<00:00, 895.32it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 391.56it/s]
+[cava] c-YqqGgqYDA: VJudge 25 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10329.78it/s]
+[cava] c-YqqGgqYDA: mapa: 15 tópicos (2 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10696.47it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] c-YqqGgqYDA: versiones: G-versión True, 0 clips
+[cava] d3PaCalTomc: 19.7 min, 236 unidades (documentary)
+[cava] d3PaCalTomc: ASR 244 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10271.70it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:37,  7.45it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:09, 73.64it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:06, 101.76it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 141.34it/s]Loading weights:  12%|█▏        | 87/729 [00:00<00:03, 164.92it/s]Loading weights:  15%|█▍        | 106/729 [00:00<00:03, 171.14it/s]Loading weights:  18%|█▊        | 130/729 [00:00<00:03, 190.49it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:02, 213.21it/s]Loading weights:  25%|██▌       | 185/729 [00:01<00:02, 218.80it/s]Loading weights:  29%|██▉       | 214/729 [00:01<00:02, 238.18it/s]Loading weights:  33%|███▎      | 239/729 [00:01<00:02, 236.03it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 246.11it/s]Loading weights:  40%|████      | 293/729 [00:01<00:01, 240.54it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 233.64it/s]Loading weights:  66%|██████▌   | 479/729 [00:01<00:00, 620.44it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 390.51it/s]
+[cava] d3PaCalTomc: VJudge 30 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10095.14it/s]
+[cava] d3PaCalTomc: mapa: 13 tópicos (3 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10518.09it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] d3PaCalTomc: versiones: G-versión True, 0 clips
+[cava] DwFuK5cEb6w: 15.1 min, 182 unidades (documentary)
+[cava] DwFuK5cEb6w: ASR 172 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10498.56it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:25,  8.53it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 61.56it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 115.64it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 148.79it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 157.49it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 165.95it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 177.54it/s]Loading weights:  22%|██▏       | 160/729 [00:00<00:02, 224.20it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 223.86it/s]Loading weights:  29%|██▉       | 210/729 [00:01<00:02, 226.38it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 225.07it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 250.03it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 237.95it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 237.57it/s]Loading weights:  67%|██████▋   | 485/729 [00:01<00:00, 640.37it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.09it/s]
+[cava] DwFuK5cEb6w: VJudge 23 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10303.38it/s]
+[cava] DwFuK5cEb6w: mapa: 16 tópicos (2 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10578.52it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] DwFuK5cEb6w: versiones: G-versión True, 0 clips
+[cava] dWuFSEJukUs: 20.5 min, 247 unidades (documentary)
+[cava] dWuFSEJukUs: ASR 246 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10185.86it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:48,  4.31it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 63.27it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:06, 114.01it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 151.55it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 160.02it/s]Loading weights:  14%|█▎        | 100/729 [00:00<00:03, 165.13it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 188.33it/s]Loading weights:  21%|██        | 153/729 [00:00<00:02, 215.68it/s]Loading weights:  24%|██▍       | 176/729 [00:01<00:02, 215.86it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 243.13it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 231.55it/s]Loading weights:  36%|███▌      | 262/729 [00:01<00:01, 247.17it/s]Loading weights:  40%|███▉      | 288/729 [00:01<00:01, 246.48it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 253.44it/s]Loading weights:  53%|█████▎    | 390/729 [00:01<00:00, 394.05it/s]Loading weights:  94%|█████████▍| 685/729 [00:01<00:00, 1140.05it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 397.78it/s] 
+[cava] dWuFSEJukUs: VJudge 31 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10314.71it/s]
+[cava] dWuFSEJukUs: mapa: 18 tópicos (4 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10920.64it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] dWuFSEJukUs: versiones: G-versión True, 0 clips
+[cava] ey1R6Jsesdk: 18.5 min, 222 unidades (documentary)
+[cava] ey1R6Jsesdk: ASR 568 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10609.21it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:03,  3.96it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:09, 77.74it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 108.07it/s]Loading weights:   9%|▊         | 63/729 [00:00<00:04, 140.24it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 170.02it/s]Loading weights:  15%|█▍        | 108/729 [00:00<00:03, 175.47it/s]Loading weights:  19%|█▊        | 135/729 [00:00<00:03, 197.43it/s]Loading weights:  22%|██▏       | 162/729 [00:01<00:02, 211.52it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:02, 214.85it/s]Loading weights:  30%|███       | 220/729 [00:01<00:02, 242.49it/s]Loading weights:  34%|███▎      | 245/729 [00:01<00:02, 236.26it/s]Loading weights:  37%|███▋      | 270/729 [00:01<00:01, 231.10it/s]Loading weights:  42%|████▏     | 304/729 [00:01<00:01, 256.47it/s]Loading weights:  45%|████▌     | 330/729 [00:01<00:01, 239.29it/s]Loading weights:  85%|████████▍ | 617/729 [00:01<00:00, 950.93it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 395.89it/s]
+[cava] ey1R6Jsesdk: VJudge 28 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10114.72it/s]
+[cava] ey1R6Jsesdk: mapa: 17 tópicos (1 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10345.65it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] ey1R6Jsesdk: versiones: G-versión True, 0 clips
+[cava] FJaICKh5kR8: 16.0 min, 192 unidades (documentary)
+[cava] FJaICKh5kR8: ASR 256 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10659.57it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:33,  7.77it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:09, 75.68it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:06, 103.63it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 146.18it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 168.45it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 171.76it/s]Loading weights:  19%|█▊        | 136/729 [00:00<00:02, 199.63it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:02, 203.78it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:02, 214.77it/s]Loading weights:  30%|███       | 220/729 [00:01<00:02, 240.65it/s]Loading weights:  34%|███▎      | 245/729 [00:01<00:02, 227.11it/s]Loading weights:  37%|███▋      | 270/729 [00:01<00:01, 232.57it/s]Loading weights:  42%|████▏     | 303/729 [00:01<00:01, 246.30it/s]Loading weights:  45%|████▌     | 329/729 [00:01<00:01, 248.69it/s]Loading weights:  80%|███████▉  | 580/729 [00:01<00:00, 883.34it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 393.80it/s]
+[cava] FJaICKh5kR8: VJudge 24 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10249.10it/s]
+[cava] FJaICKh5kR8: mapa: 15 tópicos (3 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10536.76it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] FJaICKh5kR8: versiones: G-versión True, 0 clips
+[cava] GrMKVy-RLEA: 17.6 min, 211 unidades (documentary)
+[cava] GrMKVy-RLEA: ASR 318 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10300.89it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:24,  8.57it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 61.92it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:06, 112.66it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 149.88it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 158.50it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 166.65it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 185.89it/s]Loading weights:  20%|██        | 149/729 [00:00<00:02, 201.87it/s]Loading weights:  24%|██▎       | 173/729 [00:01<00:02, 209.76it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 246.46it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 225.54it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 241.54it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 243.33it/s]Loading weights:  44%|████▍     | 319/729 [00:01<00:01, 243.78it/s]Loading weights:  67%|██████▋   | 485/729 [00:01<00:00, 638.47it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 395.17it/s]
+[cava] GrMKVy-RLEA: VJudge 27 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10362.86it/s]
+[cava] GrMKVy-RLEA: mapa: 15 tópicos (4 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10305.89it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] GrMKVy-RLEA: versiones: G-versión True, 0 clips
+[cava] hRSCumKgDNw: 19.2 min, 230 unidades (documentary)
+[cava] hRSCumKgDNw: ASR 529 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10153.77it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:03,  3.97it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:09, 77.77it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 107.93it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 146.04it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 168.69it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 173.81it/s]Loading weights:  18%|█▊        | 131/729 [00:00<00:03, 192.74it/s]Loading weights:  22%|██▏       | 161/729 [00:01<00:02, 209.30it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:02, 216.32it/s]Loading weights:  30%|███       | 219/729 [00:01<00:02, 218.43it/s]Loading weights:  35%|███▌      | 256/729 [00:01<00:01, 253.96it/s]Loading weights:  39%|███▊      | 282/729 [00:01<00:01, 237.29it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 257.03it/s]Loading weights:  52%|█████▏    | 382/729 [00:01<00:00, 364.66it/s]Loading weights:  94%|█████████▎| 683/729 [00:01<00:00, 1095.71it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 396.05it/s] 
+[cava] hRSCumKgDNw: VJudge 29 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10366.47it/s]
+[cava] hRSCumKgDNw: mapa: 10 tópicos (6 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 12735.26it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] hRSCumKgDNw: versiones: G-versión True, 0 clips
+[cava] HwY3R_VE6so: 32.7 min, 393 unidades (documentary)
+[cava] HwY3R_VE6so: ASR 622 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10296.86it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:50,  4.28it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 62.87it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:06, 113.35it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 150.57it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 158.73it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 166.87it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 177.97it/s]Loading weights:  22%|██▏       | 160/729 [00:00<00:02, 223.27it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 223.25it/s]Loading weights:  29%|██▉       | 210/729 [00:01<00:02, 226.35it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 225.42it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 249.66it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 237.39it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 236.61it/s]Loading weights:  66%|██████▋   | 484/729 [00:01<00:00, 636.02it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 393.89it/s]
+[cava] HwY3R_VE6so: VJudge 50 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10150.27it/s]
+[cava] HwY3R_VE6so: mapa: 24 tópicos (10 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10264.36it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] HwY3R_VE6so: versiones: G-versión True, 0 clips
+[cava] icr4SHkmJqM: 28.6 min, 344 unidades (documentary)
+[cava] icr4SHkmJqM: ASR 1227 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10257.91it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:24,  8.58it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 61.86it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 115.94it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 149.33it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 157.98it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 166.53it/s]Loading weights:  17%|█▋        | 124/729 [00:00<00:03, 182.97it/s]Loading weights:  21%|██        | 150/729 [00:00<00:02, 205.40it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:02, 211.73it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 244.75it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 229.69it/s]Loading weights:  36%|███▌      | 261/729 [00:01<00:01, 242.81it/s]Loading weights:  39%|███▉      | 286/729 [00:01<00:01, 242.37it/s]Loading weights:  43%|████▎     | 315/729 [00:01<00:01, 250.35it/s]Loading weights:  52%|█████▏    | 382/729 [00:01<00:00, 369.98it/s]Loading weights:  93%|█████████▎| 677/729 [00:01<00:00, 1117.86it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.03it/s] 
+[cava] icr4SHkmJqM: VJudge 43 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9879.93it/s]
+[cava] icr4SHkmJqM: mapa: 18 tópicos (6 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10196.17it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] icr4SHkmJqM: versiones: G-versión True, 0 clips
+[cava] INJDDghuA0I: 21.5 min, 258 unidades (documentary)
+[cava] INJDDghuA0I: ASR 503 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10302.69it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:50,  4.28it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 63.15it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.95it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 149.93it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 158.50it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 158.10it/s]Loading weights:  17%|█▋        | 127/729 [00:00<00:03, 187.70it/s]Loading weights:  22%|██▏       | 159/729 [00:01<00:02, 207.74it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:02, 220.20it/s]Loading weights:  30%|███       | 220/729 [00:01<00:02, 223.20it/s]Loading weights:  35%|███▌      | 256/729 [00:01<00:01, 255.17it/s]Loading weights:  39%|███▉      | 283/729 [00:01<00:01, 240.87it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 245.89it/s]Loading weights:  60%|█████▉    | 434/729 [00:01<00:00, 487.49it/s]Loading weights: 100%|█████████▉| 726/729 [00:01<00:00, 1132.67it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 395.52it/s] 
+[cava] INJDDghuA0I: VJudge 33 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9975.34it/s]
+[cava] INJDDghuA0I: mapa: 17 tópicos (3 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10080.37it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] INJDDghuA0I: versiones: G-versión True, 0 clips
+[cava] KcitxgAGtOs: 22.0 min, 264 unidades (documentary)
+[cava] KcitxgAGtOs: ASR 601 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10340.91it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:24,  8.55it/s]Loading weights:   2%|▏         | 17/729 [00:00<00:12, 58.19it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:06, 113.68it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 143.12it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 168.99it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 173.75it/s]Loading weights:  18%|█▊        | 130/729 [00:00<00:03, 189.06it/s]Loading weights:  22%|██▏       | 160/729 [00:00<00:02, 221.70it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 221.45it/s]Loading weights:  29%|██▊       | 209/729 [00:01<00:02, 229.66it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 227.38it/s]Loading weights:  36%|███▌      | 261/729 [00:01<00:01, 242.64it/s]Loading weights:  39%|███▉      | 286/729 [00:01<00:01, 240.75it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 251.91it/s]Loading weights:  51%|█████     | 371/729 [00:01<00:01, 337.79it/s]Loading weights:  91%|█████████ | 661/729 [00:01<00:00, 1085.76it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 393.20it/s] 
+[cava] KcitxgAGtOs: VJudge 33 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9733.95it/s]
+[cava] KcitxgAGtOs: mapa: 19 tópicos (5 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10415.67it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] KcitxgAGtOs: versiones: G-versión True, 0 clips
+[cava] kr3mcjFUP7Q: 29.2 min, 351 unidades (documentary)
+[cava] kr3mcjFUP7Q: ASR 693 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10274.05it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:49,  4.29it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 63.07it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 110.20it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 144.25it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 170.20it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 172.97it/s]Loading weights:  18%|█▊        | 134/729 [00:00<00:03, 195.17it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:02, 206.75it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:02, 216.81it/s]Loading weights:  30%|███       | 220/729 [00:01<00:02, 244.25it/s]Loading weights:  34%|███▎      | 245/729 [00:01<00:02, 229.46it/s]Loading weights:  37%|███▋      | 270/729 [00:01<00:01, 233.77it/s]Loading weights:  42%|████▏     | 303/729 [00:01<00:01, 256.48it/s]Loading weights:  45%|████▌     | 329/729 [00:01<00:01, 247.17it/s]Loading weights:  79%|███████▊  | 573/729 [00:01<00:00, 858.68it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 395.33it/s]
+[cava] kr3mcjFUP7Q: VJudge 44 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10066.17it/s]
+[cava] kr3mcjFUP7Q: mapa: 23 tópicos (5 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10244.19it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] kr3mcjFUP7Q: versiones: G-versión True, 0 clips
+[cava] KYsieMvRpL0: 20.3 min, 244 unidades (documentary)
+[cava] KYsieMvRpL0: ASR 702 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 9905.45it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:04,  3.94it/s]Loading weights:   3%|▎         | 21/729 [00:00<00:09, 74.59it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 114.81it/s]Loading weights:   9%|▊         | 63/729 [00:00<00:04, 145.62it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 158.60it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 167.05it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 185.73it/s]Loading weights:  21%|██        | 150/729 [00:00<00:02, 204.28it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:02, 210.66it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 227.74it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 231.66it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 254.49it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 240.91it/s]Loading weights:  44%|████▍     | 319/729 [00:01<00:01, 242.38it/s]Loading weights:  67%|██████▋   | 486/729 [00:01<00:00, 640.74it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.83it/s]
+[cava] KYsieMvRpL0: VJudge 31 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9832.10it/s]
+[cava] KYsieMvRpL0: mapa: 17 tópicos (3 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10033.59it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] KYsieMvRpL0: versiones: G-versión True, 0 clips
+[cava] LDsA0aHXj5M: 25.7 min, 308 unidades (documentary)
+[cava] LDsA0aHXj5M: ASR 413 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 25536.10it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:03,  3.96it/s]Loading weights:   3%|▎         | 19/729 [00:00<00:10, 67.54it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.75it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 149.82it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 156.10it/s]Loading weights:  14%|█▍        | 102/729 [00:00<00:03, 160.70it/s]Loading weights:  17%|█▋        | 126/729 [00:00<00:03, 183.27it/s]Loading weights:  22%|██▏       | 160/729 [00:00<00:02, 225.91it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 224.44it/s]Loading weights:  29%|██▊       | 209/729 [00:01<00:02, 223.58it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 225.80it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 251.07it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 238.17it/s]Loading weights:  44%|████▍     | 319/729 [00:01<00:01, 240.29it/s]Loading weights:  66%|██████▌   | 481/729 [00:01<00:00, 627.55it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 393.28it/s]
+[cava] LDsA0aHXj5M: VJudge 39 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9910.90it/s]
+[cava] LDsA0aHXj5M: mapa: 20 tópicos (5 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10150.80it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] LDsA0aHXj5M: versiones: G-versión True, 0 clips
+[cava] lijq6vCAzTo: 18.6 min, 224 unidades (documentary)
+[cava] lijq6vCAzTo: ASR 702 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10077.12it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:07,  3.88it/s]Loading weights:   3%|▎         | 21/729 [00:00<00:09, 73.86it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 114.11it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 148.47it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 157.53it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 166.15it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 185.70it/s]Loading weights:  21%|██        | 150/729 [00:00<00:02, 204.57it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:02, 210.96it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 244.49it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 232.14it/s]Loading weights:  36%|███▌      | 261/729 [00:01<00:01, 245.67it/s]Loading weights:  39%|███▉      | 286/729 [00:01<00:01, 242.94it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 242.01it/s]Loading weights:  59%|█████▉    | 433/729 [00:01<00:00, 498.71it/s]Loading weights: 100%|█████████▉| 726/729 [00:01<00:00, 1182.25it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.24it/s] 
+[cava] lijq6vCAzTo: VJudge 28 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 15907.20it/s]
+[cava] lijq6vCAzTo: mapa: 13 tópicos (3 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10083.74it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] lijq6vCAzTo: versiones: G-versión True, 0 clips
+[cava] nQwJQ4FD8ek: 24.3 min, 292 unidades (documentary)
+[cava] nQwJQ4FD8ek: ASR 313 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10342.79it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:02,  3.99it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 60.15it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 107.12it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 144.04it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 166.68it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 172.13it/s]Loading weights:  18%|█▊        | 131/729 [00:00<00:03, 191.07it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:02, 219.63it/s]Loading weights:  25%|██▌       | 183/729 [00:01<00:02, 217.42it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 219.48it/s]Loading weights:  32%|███▏      | 232/729 [00:01<00:02, 220.38it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 253.17it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 239.76it/s]Loading weights:  44%|████▍     | 319/729 [00:01<00:01, 241.33it/s]Loading weights:  67%|██████▋   | 485/729 [00:01<00:00, 641.46it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 390.98it/s]
+[cava] nQwJQ4FD8ek: VJudge 37 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10032.65it/s]
+[cava] nQwJQ4FD8ek: mapa: 18 tópicos (5 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10055.56it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] nQwJQ4FD8ek: versiones: G-versión True, 0 clips
+[cava] Pl4mlxDCtv4: 18.8 min, 226 unidades (documentary)
+[cava] Pl4mlxDCtv4: ASR 227 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10464.73it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:04,  3.94it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:09, 77.25it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 114.39it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 148.54it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 157.60it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 166.29it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 185.73it/s]Loading weights:  20%|██        | 149/729 [00:00<00:02, 201.25it/s]Loading weights:  24%|██▎       | 173/729 [00:01<00:02, 209.00it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 246.19it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 233.02it/s]Loading weights:  35%|███▌      | 258/729 [00:01<00:01, 237.81it/s]Loading weights:  39%|███▉      | 283/729 [00:01<00:01, 238.80it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 245.21it/s]Loading weights:  59%|█████▉    | 433/729 [00:01<00:00, 500.56it/s]Loading weights:  99%|█████████▉| 721/729 [00:01<00:00, 1171.97it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 393.82it/s] 
+[cava] Pl4mlxDCtv4: VJudge 29 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9852.76it/s]
+[cava] Pl4mlxDCtv4: mapa: 16 tópicos (3 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 14105.99it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] Pl4mlxDCtv4: versiones: G-versión True, 0 clips
+[cava] PmYPTZe8ohw: 14.3 min, 172 unidades (documentary)
+[cava] PmYPTZe8ohw: ASR 152 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10380.18it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:24,  8.59it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 62.11it/s]Loading weights:   5%|▌         | 40/729 [00:00<00:06, 106.82it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 140.50it/s]Loading weights:  12%|█▏        | 89/729 [00:00<00:04, 158.38it/s]Loading weights:  16%|█▌        | 113/729 [00:00<00:03, 179.21it/s]Loading weights:  19%|█▉        | 137/729 [00:00<00:03, 194.86it/s]Loading weights:  24%|██▎       | 172/729 [00:01<00:02, 231.37it/s]Loading weights:  27%|██▋       | 196/729 [00:01<00:02, 233.22it/s]Loading weights:  30%|███       | 221/729 [00:01<00:02, 229.93it/s]Loading weights:  34%|███▎      | 246/729 [00:01<00:02, 230.66it/s]Loading weights:  37%|███▋      | 270/729 [00:01<00:01, 232.11it/s]Loading weights:  42%|████▏     | 304/729 [00:01<00:01, 259.04it/s]Loading weights:  45%|████▌     | 331/729 [00:01<00:01, 242.96it/s]Loading weights:  84%|████████▍ | 613/729 [00:01<00:00, 952.61it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 395.57it/s]
+[cava] PmYPTZe8ohw: VJudge 22 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10032.89it/s]
+[cava] PmYPTZe8ohw: mapa: 14 tópicos (2 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10409.35it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] PmYPTZe8ohw: versiones: G-versión True, 0 clips
+[cava] PnDHoJKvaxA: 16.0 min, 192 unidades (documentary)
+[cava] PnDHoJKvaxA: ASR 280 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10008.40it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:16,  3.70it/s]Loading weights:   4%|▍         | 28/729 [00:00<00:07, 93.53it/s]Loading weights:   6%|▋         | 46/729 [00:00<00:05, 120.63it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 141.39it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:04, 157.46it/s]Loading weights:  15%|█▌        | 112/729 [00:00<00:03, 178.07it/s]Loading weights:  19%|█▊        | 136/729 [00:00<00:03, 185.95it/s]Loading weights:  24%|██▎       | 172/729 [00:01<00:02, 227.26it/s]Loading weights:  27%|██▋       | 196/729 [00:01<00:02, 230.47it/s]Loading weights:  30%|███       | 221/729 [00:01<00:02, 227.69it/s]Loading weights:  34%|███▎      | 245/729 [00:01<00:02, 226.69it/s]Loading weights:  37%|███▋      | 270/729 [00:01<00:01, 231.88it/s]Loading weights:  42%|████▏     | 304/729 [00:01<00:01, 258.08it/s]Loading weights:  45%|████▌     | 330/729 [00:01<00:01, 239.81it/s]Loading weights:  85%|████████▍ | 617/729 [00:01<00:00, 964.03it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 395.32it/s]
+[cava] PnDHoJKvaxA: VJudge 24 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9724.99it/s]
+[cava] PnDHoJKvaxA: mapa: 15 tópicos (3 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10667.43it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] PnDHoJKvaxA: versiones: G-versión True, 0 clips
+[cava] QeDC-ZA56rM: 32.2 min, 387 unidades (documentary)
+[cava] QeDC-ZA56rM: ASR 453 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 14925.70it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:03,  3.97it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:09, 77.81it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 106.92it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 145.01it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 167.82it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 173.20it/s]Loading weights:  18%|█▊        | 131/729 [00:00<00:03, 192.26it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:02, 213.01it/s]Loading weights:  25%|██▌       | 185/729 [00:01<00:02, 211.04it/s]Loading weights:  30%|███       | 219/729 [00:01<00:02, 238.54it/s]Loading weights:  33%|███▎      | 244/729 [00:01<00:02, 241.44it/s]Loading weights:  37%|███▋      | 269/729 [00:01<00:02, 226.18it/s]Loading weights:  42%|████▏     | 303/729 [00:01<00:01, 253.32it/s]Loading weights:  45%|████▌     | 329/729 [00:01<00:01, 245.25it/s]Loading weights:  78%|███████▊  | 571/729 [00:01<00:00, 845.44it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 393.67it/s]
+[cava] QeDC-ZA56rM: VJudge 49 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9583.40it/s]
+[cava] QeDC-ZA56rM: mapa: 24 tópicos (5 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 9970.82it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] QeDC-ZA56rM: versiones: G-versión True, 0 clips
+[cava] qOtK5iNv1tM: 19.1 min, 230 unidades (documentary)
+[cava] qOtK5iNv1tM: ASR 238 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 9533.09it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:31,  3.43it/s]Loading weights:   4%|▍         | 29/729 [00:00<00:07, 92.24it/s]Loading weights:   7%|▋         | 51/729 [00:00<00:05, 129.78it/s]Loading weights:  10%|▉         | 70/729 [00:00<00:04, 145.64it/s]Loading weights:  12%|█▏        | 90/729 [00:00<00:04, 154.31it/s]Loading weights:  16%|█▌        | 113/729 [00:00<00:03, 167.31it/s]Loading weights:  20%|██        | 148/729 [00:00<00:02, 214.78it/s]Loading weights:  24%|██▎       | 173/729 [00:01<00:02, 216.58it/s]Loading weights:  27%|██▋       | 196/729 [00:01<00:02, 216.15it/s]Loading weights:  30%|███       | 221/729 [00:01<00:02, 221.65it/s]Loading weights:  35%|███▌      | 256/729 [00:01<00:01, 253.64it/s]Loading weights:  39%|███▊      | 282/729 [00:01<00:01, 236.28it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 245.57it/s]Loading weights:  60%|██████    | 439/729 [00:01<00:00, 505.42it/s]Loading weights: 100%|█████████▉| 726/729 [00:01<00:00, 1142.89it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.52it/s] 
+[cava] qOtK5iNv1tM: VJudge 29 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9806.68it/s]
+[cava] qOtK5iNv1tM: mapa: 17 tópicos (6 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10864.91it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] qOtK5iNv1tM: versiones: G-versión True, 0 clips
+[cava] Qp7pIa5BHEg: 32.3 min, 388 unidades (documentary)
+[cava] Qp7pIa5BHEg: ASR 691 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10913.68it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:49,  4.29it/s]Loading weights:   2%|▏         | 17/729 [00:00<00:11, 59.50it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 111.28it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 145.17it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 171.10it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 175.45it/s]Loading weights:  18%|█▊        | 132/729 [00:00<00:03, 197.20it/s]Loading weights:  22%|██▏       | 161/729 [00:01<00:02, 217.41it/s]Loading weights:  25%|██▌       | 185/729 [00:01<00:02, 219.38it/s]Loading weights:  29%|██▉       | 214/729 [00:01<00:02, 236.11it/s]Loading weights:  33%|███▎      | 238/729 [00:01<00:02, 234.84it/s]Loading weights:  36%|███▋      | 266/729 [00:01<00:01, 243.18it/s]Loading weights:  40%|████      | 293/729 [00:01<00:01, 244.29it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 236.49it/s]Loading weights:  65%|██████▌   | 474/729 [00:01<00:00, 610.32it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 395.32it/s]
+[cava] Qp7pIa5BHEg: VJudge 49 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9989.43it/s]
+[cava] Qp7pIa5BHEg: mapa: 25 tópicos (8 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10304.37it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] Qp7pIa5BHEg: versiones: G-versión True, 0 clips
+[cava] rf1uwk4FFzo: 20.8 min, 250 unidades (documentary)
+[cava] rf1uwk4FFzo: ASR 392 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10494.57it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:24,  8.56it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 61.97it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 116.23it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 149.62it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 158.52it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 166.90it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 186.17it/s]Loading weights:  21%|██        | 150/729 [00:00<00:02, 204.99it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:02, 212.20it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 245.43it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 233.18it/s]Loading weights:  36%|███▌      | 262/729 [00:01<00:01, 248.34it/s]Loading weights:  40%|███▉      | 288/729 [00:01<00:01, 248.19it/s]Loading weights:  43%|████▎     | 315/729 [00:01<00:01, 250.97it/s]Loading weights:  53%|█████▎    | 386/729 [00:01<00:00, 383.53it/s]Loading weights:  93%|█████████▎| 677/729 [00:01<00:00, 1120.27it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 396.12it/s] 
+[cava] rf1uwk4FFzo: VJudge 32 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10045.81it/s]
+[cava] rf1uwk4FFzo: mapa: 18 tópicos (4 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10330.89it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] rf1uwk4FFzo: versiones: G-versión True, 0 clips
+[cava] -RJIHZH8URw: 19.4 min, 233 unidades (documentary)
+[cava] -RJIHZH8URw: ASR 221 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10186.41it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:31,  7.91it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:09, 76.43it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 107.36it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 146.01it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 168.66it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 173.47it/s]Loading weights:  18%|█▊        | 130/729 [00:00<00:03, 190.25it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:02, 204.84it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:02, 216.30it/s]Loading weights:  30%|███       | 220/729 [00:01<00:02, 244.06it/s]Loading weights:  34%|███▎      | 245/729 [00:01<00:02, 237.44it/s]Loading weights:  37%|███▋      | 270/729 [00:01<00:01, 231.65it/s]Loading weights:  42%|████▏     | 304/729 [00:01<00:01, 256.85it/s]Loading weights:  45%|████▌     | 330/729 [00:01<00:01, 239.64it/s]Loading weights:  82%|████████▏ | 595/729 [00:01<00:00, 893.32it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 393.19it/s]
+[cava] -RJIHZH8URw: VJudge 30 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10118.15it/s]
+[cava] -RJIHZH8URw: mapa: 12 tópicos (1 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10599.32it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] -RJIHZH8URw: versiones: G-versión True, 0 clips
+[cava] R_ul0mESbqw: 16.7 min, 201 unidades (documentary)
+[cava] R_ul0mESbqw: ASR 224 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10424.76it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:24,  3.55it/s]Loading weights:   4%|▎         | 27/729 [00:00<00:08, 78.51it/s]Loading weights:   7%|▋         | 53/729 [00:00<00:05, 129.27it/s]Loading weights:  10%|█         | 76/729 [00:00<00:04, 155.63it/s]Loading weights:  13%|█▎        | 95/729 [00:00<00:03, 164.77it/s]Loading weights:  16%|█▌        | 114/729 [00:00<00:03, 165.60it/s]Loading weights:  20%|██        | 148/729 [00:00<00:02, 211.50it/s]Loading weights:  24%|██▎       | 172/729 [00:01<00:02, 211.15it/s]Loading weights:  27%|██▋       | 197/729 [00:01<00:02, 218.26it/s]Loading weights:  30%|███       | 221/729 [00:01<00:02, 220.93it/s]Loading weights:  35%|███▌      | 256/729 [00:01<00:01, 253.59it/s]Loading weights:  39%|███▊      | 282/729 [00:01<00:01, 236.23it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 246.01it/s]Loading weights:  59%|█████▉    | 431/729 [00:01<00:00, 486.91it/s]Loading weights:  98%|█████████▊| 715/729 [00:01<00:00, 1136.10it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 391.81it/s] 
+[cava] R_ul0mESbqw: VJudge 26 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10677.72it/s]
+[cava] R_ul0mESbqw: mapa: 11 tópicos (1 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10676.31it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] R_ul0mESbqw: versiones: G-versión True, 0 clips
+[cava] s0XTRlC_0zQ: 21.0 min, 253 unidades (documentary)
+[cava] s0XTRlC_0zQ: ASR 502 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 11751.33it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:04,  3.94it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:09, 77.37it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:05, 114.70it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 148.66it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 156.02it/s]Loading weights:  14%|█▍        | 102/729 [00:00<00:03, 161.11it/s]Loading weights:  18%|█▊        | 130/729 [00:00<00:03, 194.94it/s]Loading weights:  22%|██▏       | 160/729 [00:00<00:02, 224.16it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 223.97it/s]Loading weights:  29%|██▉       | 210/729 [00:01<00:02, 227.12it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 226.14it/s]Loading weights:  37%|███▋      | 267/729 [00:01<00:01, 249.40it/s]Loading weights:  40%|████      | 293/729 [00:01<00:01, 245.60it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 237.76it/s]Loading weights:  67%|██████▋   | 487/729 [00:01<00:00, 643.02it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 396.12it/s]
+[cava] s0XTRlC_0zQ: VJudge 32 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10058.89it/s]
+[cava] s0XTRlC_0zQ: mapa: 16 tópicos (6 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10407.61it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] s0XTRlC_0zQ: versiones: G-versión True, 0 clips
+[cava] Satm1lzyq8M: 29.0 min, 348 unidades (documentary)
+[cava] Satm1lzyq8M: ASR 679 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10433.91it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:31,  7.92it/s]Loading weights:   3%|▎         | 21/729 [00:00<00:09, 73.64it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 114.41it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 148.51it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 155.17it/s]Loading weights:  14%|█▍        | 102/729 [00:00<00:03, 160.18it/s]Loading weights:  18%|█▊        | 130/729 [00:00<00:03, 194.05it/s]Loading weights:  22%|██▏       | 160/729 [00:00<00:02, 223.85it/s]Loading weights:  25%|██▌       | 184/729 [00:01<00:02, 223.24it/s]Loading weights:  29%|██▊       | 209/729 [00:01<00:02, 222.90it/s]Loading weights:  32%|███▏      | 234/729 [00:01<00:02, 226.49it/s]Loading weights:  37%|███▋      | 267/729 [00:01<00:01, 248.07it/s]Loading weights:  40%|████      | 293/729 [00:01<00:01, 244.75it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 236.03it/s]Loading weights:  65%|██████▌   | 474/729 [00:01<00:00, 605.22it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 392.64it/s]
+[cava] Satm1lzyq8M: VJudge 44 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10506.88it/s]
+[cava] Satm1lzyq8M: mapa: 19 tópicos (8 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10194.86it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] Satm1lzyq8M: versiones: G-versión True, 0 clips
+[cava] uH_y682JSes: 20.2 min, 243 unidades (documentary)
+[cava] uH_y682JSes: ASR 265 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10762.13it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:25,  8.55it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 61.87it/s]Loading weights:   5%|▌         | 39/729 [00:00<00:06, 109.60it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 151.27it/s]Loading weights:  11%|█         | 82/729 [00:00<00:04, 159.61it/s]Loading weights:  14%|█▎        | 100/729 [00:00<00:04, 155.63it/s]Loading weights:  17%|█▋        | 123/729 [00:00<00:03, 176.40it/s]Loading weights:  22%|██▏       | 160/729 [00:01<00:02, 219.45it/s]Loading weights:  25%|██▌       | 185/729 [00:01<00:02, 223.95it/s]Loading weights:  29%|██▉       | 214/729 [00:01<00:02, 241.75it/s]Loading weights:  33%|███▎      | 239/729 [00:01<00:02, 238.16it/s]Loading weights:  37%|███▋      | 268/729 [00:01<00:01, 248.13it/s]Loading weights:  40%|████      | 294/729 [00:01<00:01, 235.84it/s]Loading weights:  44%|████▎     | 318/729 [00:01<00:01, 236.46it/s]Loading weights:  64%|██████▍   | 470/729 [00:01<00:00, 599.61it/s]Loading weights: 100%|█████████▉| 726/729 [00:01<00:00, 1161.90it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 392.30it/s] 
+[cava] uH_y682JSes: VJudge 31 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9929.53it/s]
+[cava] uH_y682JSes: mapa: 14 tópicos (2 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10973.70it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] uH_y682JSes: versiones: G-versión True, 0 clips
+[cava] VJvVhGitWDQ: 32.2 min, 387 unidades (documentary)
+[cava] VJvVhGitWDQ: ASR 489 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 12311.07it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:25,  8.54it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 61.86it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 109.32it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 147.00it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:03, 169.26it/s]Loading weights:  15%|█▍        | 107/729 [00:00<00:03, 174.05it/s]Loading weights:  18%|█▊        | 132/729 [00:00<00:03, 196.42it/s]Loading weights:  22%|██▏       | 161/729 [00:01<00:02, 209.20it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:02, 216.09it/s]Loading weights:  30%|███       | 220/729 [00:01<00:02, 243.05it/s]Loading weights:  34%|███▎      | 245/729 [00:01<00:02, 228.49it/s]Loading weights:  37%|███▋      | 269/729 [00:01<00:01, 230.85it/s]Loading weights:  42%|████▏     | 304/729 [00:01<00:01, 251.98it/s]Loading weights:  45%|████▌     | 330/729 [00:01<00:01, 244.55it/s]Loading weights:  81%|████████▏ | 593/729 [00:01<00:00, 899.79it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.28it/s]
+[cava] VJvVhGitWDQ: VJudge 49 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9815.91it/s]
+[cava] VJvVhGitWDQ: mapa: 17 tópicos (4 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10278.55it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] VJvVhGitWDQ: versiones: G-versión True, 0 clips
+[cava] vNgR8dwCdkA: 18.5 min, 223 unidades (documentary)
+[cava] vNgR8dwCdkA: ASR 326 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10037.99it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 2/729 [00:00<01:25,  8.53it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 61.81it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 109.69it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 139.27it/s]Loading weights:  12%|█▏        | 89/729 [00:00<00:03, 166.11it/s]Loading weights:  15%|█▌        | 110/729 [00:00<00:03, 175.60it/s]Loading weights:  19%|█▉        | 137/729 [00:00<00:02, 200.27it/s]Loading weights:  22%|██▏       | 162/729 [00:01<00:02, 214.67it/s]Loading weights:  26%|██▌       | 186/729 [00:01<00:02, 218.04it/s]Loading weights:  30%|███       | 219/729 [00:01<00:02, 230.16it/s]Loading weights:  34%|███▎      | 246/729 [00:01<00:02, 236.18it/s]Loading weights:  37%|███▋      | 270/729 [00:01<00:01, 235.95it/s]Loading weights:  42%|████▏     | 304/729 [00:01<00:01, 261.75it/s]Loading weights:  45%|████▌     | 331/729 [00:01<00:01, 244.89it/s]Loading weights:  81%|████████▏ | 594/729 [00:01<00:00, 899.42it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 394.01it/s]
+[cava] vNgR8dwCdkA: VJudge 28 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9926.11it/s]
+[cava] vNgR8dwCdkA: mapa: 14 tópicos (7 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10573.51it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] vNgR8dwCdkA: versiones: G-versión True, 0 clips
+[cava] VW4L6Mx9qoc: 23.2 min, 279 unidades (documentary)
+[cava] VW4L6Mx9qoc: ASR 285 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 13130.73it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:51,  4.25it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 62.68it/s]Loading weights:   5%|▌         | 39/729 [00:00<00:06, 110.07it/s]Loading weights:   9%|▊         | 62/729 [00:00<00:04, 145.32it/s]Loading weights:  11%|█         | 81/729 [00:00<00:04, 158.53it/s]Loading weights:  14%|█▍        | 101/729 [00:00<00:03, 169.91it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:03, 188.47it/s]Loading weights:  21%|██        | 150/729 [00:00<00:02, 206.40it/s]Loading weights:  24%|██▍       | 174/729 [00:01<00:02, 212.68it/s]Loading weights:  29%|██▊       | 208/729 [00:01<00:02, 245.17it/s]Loading weights:  32%|███▏      | 233/729 [00:01<00:02, 233.50it/s]Loading weights:  35%|███▌      | 257/729 [00:01<00:02, 235.29it/s]Loading weights:  39%|███▊      | 281/729 [00:01<00:01, 235.20it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 261.67it/s]Loading weights:  53%|█████▎    | 385/729 [00:01<00:00, 384.96it/s]Loading weights:  90%|████████▉ | 656/729 [00:01<00:00, 1061.62it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 393.99it/s] 
+[cava] VW4L6Mx9qoc: VJudge 35 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10001.52it/s]
+[cava] VW4L6Mx9qoc: mapa: 16 tópicos (4 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10664.88it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] VW4L6Mx9qoc: versiones: G-versión True, 0 clips
+[cava] wP7zvv9Znxg: 15.5 min, 187 unidades (documentary)
+[cava] wP7zvv9Znxg: ASR 179 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 9963.41it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<02:49,  4.30it/s]Loading weights:   2%|▏         | 18/729 [00:00<00:11, 63.31it/s]Loading weights:   6%|▌         | 41/729 [00:00<00:06, 110.83it/s]Loading weights:   9%|▉         | 64/729 [00:00<00:04, 144.86it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:04, 154.15it/s]Loading weights:  16%|█▌        | 113/729 [00:00<00:03, 179.09it/s]Loading weights:  19%|█▉        | 138/729 [00:00<00:02, 198.58it/s]Loading weights:  24%|██▎       | 172/729 [00:01<00:02, 231.13it/s]Loading weights:  27%|██▋       | 197/729 [00:01<00:02, 228.73it/s]Loading weights:  30%|███       | 222/729 [00:01<00:02, 223.74it/s]Loading weights:  35%|███▌      | 256/729 [00:01<00:01, 251.66it/s]Loading weights:  39%|███▊      | 282/729 [00:01<00:01, 235.89it/s]Loading weights:  43%|████▎     | 316/729 [00:01<00:01, 257.09it/s]Loading weights:  53%|█████▎    | 386/729 [00:01<00:00, 377.97it/s]Loading weights:  92%|█████████▏| 674/729 [00:01<00:00, 1080.71it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 397.15it/s] 
+[cava] wP7zvv9Znxg: VJudge 24 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9856.48it/s]
+[cava] wP7zvv9Znxg: mapa: 15 tópicos (2 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10309.13it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] wP7zvv9Znxg: versiones: G-versión True, 0 clips
+[cava] yL8UsC9fwv4: 26.8 min, 321 unidades (documentary)
+[cava] yL8UsC9fwv4: ASR 514 segmentos
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10961.43it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   0%|          | 1/729 [00:00<03:03,  3.96it/s]Loading weights:   3%|▎         | 22/729 [00:00<00:09, 77.64it/s]Loading weights:   5%|▌         | 39/729 [00:00<00:06, 101.93it/s]Loading weights:   9%|▉         | 65/729 [00:00<00:04, 140.17it/s]Loading weights:  12%|█▏        | 89/729 [00:00<00:03, 166.66it/s]Loading weights:  15%|█▌        | 111/729 [00:00<00:03, 178.72it/s]Loading weights:  19%|█▉        | 137/729 [00:00<00:02, 199.84it/s]Loading weights:  23%|██▎       | 166/729 [00:01<00:02, 222.32it/s]Loading weights:  26%|██▌       | 190/729 [00:01<00:02, 224.83it/s]Loading weights:  30%|███       | 220/729 [00:01<00:02, 240.26it/s]Loading weights:  34%|███▎      | 245/729 [00:01<00:02, 234.72it/s]Loading weights:  37%|███▋      | 270/729 [00:01<00:02, 229.42it/s]Loading weights:  42%|████▏     | 304/729 [00:01<00:01, 240.05it/s]Loading weights:  45%|████▌     | 330/729 [00:01<00:01, 244.64it/s]Loading weights:  83%|████████▎ | 607/729 [00:01<00:00, 944.41it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 395.35it/s]
+[cava] yL8UsC9fwv4: VJudge 41 resúmenes
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10192.03it/s]
+[cava] yL8UsC9fwv4: mapa: 18 tópicos (6 con retornos)
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 10315.90it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cava] yL8UsC9fwv4: versiones: G-versión True, 0 clips
+{
+ "0Bi1XcdpnQI": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 24.2,
+  "n_topics": 17,
+  "n_returning": 8,
+  "voices": 1
+ },
+ "3Jv6MkdHGaA": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 18.8,
+  "n_topics": 15,
+  "n_returning": 3,
+  "voices": 2
+ },
+ "4A4OgJOvR64": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 12.1,
+  "n_topics": 10,
+  "n_returning": 4,
+  "voices": 2
+ },
+ "6B8ly-OHdEo": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 16.7,
+  "n_topics": 13,
+  "n_returning": 5,
+  "voices": 2
+ },
+ "6d7sBwOgPdU": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 27.9,
+  "n_topics": 22,
+  "n_returning": 4,
+  "voices": 1
+ },
+ "6WGtu48yIb8": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 34.7,
+  "n_topics": 22,
+  "n_returning": 7,
+  "voices": 1
+ },
+ "8btvR9WkurE": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 20.4,
+  "n_topics": 16,
+  "n_returning": 5,
+  "voices": 1
+ },
+ "9hmJtYmOAPQ": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 26.9,
+  "n_topics": 14,
+  "n_returning": 6,
+  "voices": 1
+ },
+ "ahq8v-ilbWM": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 18.7,
+  "n_topics": 18,
+  "n_returning": 3,
+  "voices": 1
+ },
+ "AJALJPGJdfY": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 19.5,
+  "n_topics": 14,
+  "n_returning": 5,
+  "voices": 2
+ },
+ "a_pjgiX4Osc": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 33.5,
+  "n_topics": 27,
+  "n_returning": 9,
+  "voices": 1
+ },
+ "AX11Aa7yzJM": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 31.2,
+  "n_topics": 22,
+  "n_returning": 8,
+  "voices": 8
+ },
+ "bFq6avyCQC4": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 26.4,
+  "n_topics": 17,
+  "n_returning": 6,
+  "voices": 1
+ },
+ "BQV1Qo8et60": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 30.7,
+  "n_topics": 23,
+  "n_returning": 9,
+  "voices": 2
+ },
+ "buj_yHoTKjI": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 17.3,
+  "n_topics": 9,
+  "n_returning": 5,
+  "voices": 2
+ },
+ "cdSSA5L-Ndw": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 16.4,
+  "n_topics": 16,
+  "n_returning": 1,
+  "voices": 2
+ },
+ "c-YqqGgqYDA": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 16.3,
+  "n_topics": 15,
+  "n_returning": 2,
+  "voices": 1
+ },
+ "d3PaCalTomc": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 19.7,
+  "n_topics": 13,
+  "n_returning": 3,
+  "voices": 1
+ },
+ "DwFuK5cEb6w": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 15.1,
+  "n_topics": 16,
+  "n_returning": 2,
+  "voices": 1
+ },
+ "dWuFSEJukUs": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 20.5,
+  "n_topics": 18,
+  "n_returning": 4,
+  "voices": 4
+ },
+ "ey1R6Jsesdk": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 18.5,
+  "n_topics": 17,
+  "n_returning": 1,
+  "voices": 2
+ },
+ "FJaICKh5kR8": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 16.0,
+  "n_topics": 15,
+  "n_returning": 3,
+  "voices": 1
+ },
+ "GrMKVy-RLEA": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 17.6,
+  "n_topics": 15,
+  "n_returning": 4,
+  "voices": 1
+ },
+ "hRSCumKgDNw": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 19.2,
+  "n_topics": 10,
+  "n_returning": 6,
+  "voices": 3
+ },
+ "HwY3R_VE6so": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 32.7,
+  "n_topics": 24,
+  "n_returning": 10,
+  "voices": 1
+ },
+ "icr4SHkmJqM": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 28.6,
+  "n_topics": 18,
+  "n_returning": 6,
+  "voices": 3
+ },
+ "INJDDghuA0I": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 21.5,
+  "n_topics": 17,
+  "n_returning": 3,
+  "voices": 4
+ },
+ "KcitxgAGtOs": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 22.0,
+  "n_topics": 19,
+  "n_returning": 5,
+  "voices": 2
+ },
+ "kr3mcjFUP7Q": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 29.2,
+  "n_topics": 23,
+  "n_returning": 5,
+  "voices": 3
+ },
+ "KYsieMvRpL0": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 20.3,
+  "n_topics": 17,
+  "n_returning": 3,
+  "voices": 2
+ },
+ "LDsA0aHXj5M": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 25.7,
+  "n_topics": 20,
+  "n_returning": 5,
+  "voices": 2
+ },
+ "lijq6vCAzTo": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 18.6,
+  "n_topics": 13,
+  "n_returning": 3,
+  "voices": 2
+ },
+ "nQwJQ4FD8ek": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 24.3,
+  "n_topics": 18,
+  "n_returning": 5,
+  "voices": 1
+ },
+ "Pl4mlxDCtv4": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 18.8,
+  "n_topics": 16,
+  "n_returning": 3,
+  "voices": 1
+ },
+ "PmYPTZe8ohw": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 14.3,
+  "n_topics": 14,
+  "n_returning": 2,
+  "voices": 2
+ },
+ "PnDHoJKvaxA": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 16.0,
+  "n_topics": 15,
+  "n_returning": 3,
+  "voices": 1
+ },
+ "QeDC-ZA56rM": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 32.2,
+  "n_topics": 24,
+  "n_returning": 5,
+  "voices": 4
+ },
+ "qOtK5iNv1tM": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 19.1,
+  "n_topics": 17,
+  "n_returning": 6,
+  "voices": 2
+ },
+ "Qp7pIa5BHEg": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 32.3,
+  "n_topics": 25,
+  "n_returning": 8,
+  "voices": 1
+ },
+ "rf1uwk4FFzo": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 20.8,
+  "n_topics": 18,
+  "n_returning": 4,
+  "voices": 2
+ },
+ "-RJIHZH8URw": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 19.4,
+  "n_topics": 12,
+  "n_returning": 1,
+  "voices": 1
+ },
+ "R_ul0mESbqw": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 16.7,
+  "n_topics": 11,
+  "n_returning": 1,
+  "voices": 2
+ },
+ "s0XTRlC_0zQ": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 21.0,
+  "n_topics": 16,
+  "n_returning": 6,
+  "voices": 2
+ },
+ "Satm1lzyq8M": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 29.0,
+  "n_topics": 19,
+  "n_returning": 8,
+  "voices": 7
+ },
+ "uH_y682JSes": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 20.2,
+  "n_topics": 14,
+  "n_returning": 2,
+  "voices": 1
+ },
+ "VJvVhGitWDQ": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 32.2,
+  "n_topics": 17,
+  "n_returning": 4,
+  "voices": 4
+ },
+ "vNgR8dwCdkA": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 18.5,
+  "n_topics": 14,
+  "n_returning": 7,
+  "voices": 1
+ },
+ "VW4L6Mx9qoc": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 23.2,
+  "n_topics": 16,
+  "n_returning": 4,
+  "voices": 8
+ },
+ "wP7zvv9Znxg": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 15.5,
+  "n_topics": 15,
+  "n_returning": 2,
+  "voices": 1
+ },
+ "yL8UsC9fwv4": {
+  "profile": "documentary",
+  "G_version": true,
+  "duration_min": 26.8,
+  "n_topics": 18,
+  "n_returning": 6,
+  "voices": 1
+ }
+}
+V1_DONE

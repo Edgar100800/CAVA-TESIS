@@ -1,0 +1,460 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791651897.122511 1868834 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/edgar.chambilla/.conda/envs/inaseg/lib/python3.10/site-packages/keras/src/layers/reshaping/reshape.py:38: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+E0000 00:00:1791651901.871603 1868834 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+508/508 - 3s - 6ms/step
+[ina] docmix conf_aepyx__music
+519/519 - 3s - 6ms/step
+[ina] docmix conf_aepyx__noise
+2540/2540 - 14s - 6ms/step
+[ina] docmix conf_aorju__music
+2382/2382 - 13s - 6ms/step
+[ina] docmix conf_aorju__noise
+804/804 - 4s - 6ms/step
+[ina] docmix conf_bjruf__music
+765/765 - 4s - 6ms/step
+[ina] docmix conf_bjruf__noise
+1258/1258 - 7s - 6ms/step
+[ina] docmix conf_byapz__music
+1158/1158 - 6s - 6ms/step
+[ina] docmix conf_byapz__noise
+2602/2602 - 14s - 6ms/step
+[ina] docmix conf_cawnd__music
+2479/2479 - 14s - 6ms/step
+[ina] docmix conf_cawnd__noise
+1160/1160 - 7s - 6ms/step
+[ina] docmix conf_cpebh__music
+1077/1077 - 6s - 6ms/step
+[ina] docmix conf_cpebh__noise
+1952/1952 - 11s - 6ms/step
+[ina] docmix conf_crorm__music
+1796/1796 - 10s - 6ms/step
+[ina] docmix conf_crorm__noise
+84/84 - 0s - 6ms/step
+[ina] docmix conf_dohag__music
+123/123 - 1s - 6ms/step
+[ina] docmix conf_dohag__noise
+574/574 - 3s - 6ms/step
+[ina] docmix conf_eoyaz__music
+570/570 - 3s - 6ms/step
+[ina] docmix conf_eoyaz__noise
+102/102 - 1s - 6ms/step
+[ina] docmix conf_euqef__music
+94/94 - 1s - 6ms/step
+[ina] docmix conf_euqef__noise
+356/356 - 2s - 6ms/step
+[ina] docmix conf_gfneh__music
+489/489 - 3s - 6ms/step
+[ina] docmix conf_gfneh__noise
+W0000 00:00:1791652106.271473 1868834 cpu_allocator_impl.cc:82] Allocation of 673838928 exceeds 10% of free system memory.
+3687/3687 - 20s - 6ms/step
+[ina] docmix conf_guvqf__music
+W0000 00:00:1791652136.899335 1868834 cpu_allocator_impl.cc:82] Allocation of 620014752 exceeds 10% of free system memory.
+3393/3393 - 19s - 6ms/step
+[ina] docmix conf_guvqf__noise
+2093/2093 - 12s - 6ms/step
+[ina] docmix conf_gwloo__music
+1987/1987 - 11s - 6ms/step
+[ina] docmix conf_gwloo__noise
+848/848 - 5s - 6ms/step
+[ina] docmix conf_gylzn__music
+751/751 - 4s - 6ms/step
+[ina] docmix conf_gylzn__noise
+2564/2564 - 14s - 6ms/step
+[ina] docmix conf_jsymf__music
+2237/2237 - 12s - 6ms/step
+[ina] docmix conf_jsymf__noise
+1274/1274 - 7s - 6ms/step
+[ina] docmix conf_jttar__music
+1285/1285 - 7s - 6ms/step
+[ina] docmix conf_jttar__noise
+135/135 - 1s - 6ms/step
+[ina] docmix conf_jxydp__music
+135/135 - 1s - 6ms/step
+[ina] docmix conf_jxydp__noise
+2709/2709 - 15s - 6ms/step
+[ina] docmix conf_lbfnx__music
+2467/2467 - 14s - 6ms/step
+[ina] docmix conf_lbfnx__noise
+521/521 - 3s - 5ms/step
+[ina] docmix conf_lilfy__music
+458/458 - 3s - 6ms/step
+[ina] docmix conf_lilfy__noise
+2511/2511 - 14s - 6ms/step
+[ina] docmix conf_mhwyr__music
+2566/2566 - 14s - 6ms/step
+[ina] docmix conf_mhwyr__noise
+574/574 - 3s - 6ms/step
+[ina] docmix conf_mjmgr__music
+651/651 - 4s - 5ms/step
+[ina] docmix conf_mjmgr__noise
+1778/1778 - 10s - 6ms/step
+[ina] docmix conf_mupzb__music
+1477/1477 - 8s - 6ms/step
+[ina] docmix conf_mupzb__noise
+365/365 - 2s - 6ms/step
+[ina] docmix conf_mxdpo__music
+403/403 - 2s - 6ms/step
+[ina] docmix conf_mxdpo__noise
+115/115 - 1s - 6ms/step
+[ina] docmix conf_neiye__music
+86/86 - 1s - 6ms/step
+[ina] docmix conf_neiye__noise
+W0000 00:00:1791652410.902414 1868834 cpu_allocator_impl.cc:82] Allocation of 566830320 exceeds 10% of free system memory.
+3102/3102 - 17s - 6ms/step
+[ina] docmix conf_nlvdr__music
+2806/2806 - 16s - 6ms/step
+[ina] docmix conf_nlvdr__noise
+1458/1458 - 8s - 6ms/step
+[ina] docmix conf_nprxc__music
+1037/1037 - 6s - 6ms/step
+[ina] docmix conf_nprxc__noise
+714/714 - 4s - 6ms/step
+[ina] docmix conf_ooxlj__music
+561/561 - 3s - 6ms/step
+[ina] docmix conf_ooxlj__noise
+625/625 - 3s - 6ms/step
+[ina] docmix conf_oqwpd__music
+463/463 - 3s - 6ms/step
+[ina] docmix conf_oqwpd__noise
+781/781 - 4s - 6ms/step
+[ina] docmix conf_otmpf__music
+804/804 - 4s - 6ms/step
+[ina] docmix conf_otmpf__noise
+416/416 - 2s - 6ms/step
+[ina] docmix conf_ppexo__music
+464/464 - 3s - 6ms/step
+[ina] docmix conf_ppexo__noise
+622/622 - 3s - 6ms/step
+[ina] docmix conf_pxqme__music
+715/715 - 4s - 6ms/step
+[ina] docmix conf_pxqme__noise
+864/864 - 5s - 6ms/step
+[ina] docmix conf_qeejz__music
+743/743 - 4s - 5ms/step
+[ina] docmix conf_qeejz__noise
+1264/1264 - 7s - 6ms/step
+[ina] docmix conf_qlrry__music
+1167/1167 - 6s - 5ms/step
+[ina] docmix conf_qlrry__noise
+707/707 - 4s - 6ms/step
+[ina] docmix conf_rpkso__music
+639/639 - 4s - 6ms/step
+[ina] docmix conf_rpkso__noise
+603/603 - 3s - 6ms/step
+[ina] docmix conf_sfdvy__music
+512/512 - 3s - 6ms/step
+[ina] docmix conf_sfdvy__noise
+1728/1728 - 10s - 6ms/step
+[ina] docmix conf_svxzm__music
+1817/1817 - 10s - 5ms/step
+[ina] docmix conf_svxzm__noise
+1226/1226 - 7s - 6ms/step
+[ina] docmix conf_tiido__music
+1002/1002 - 6s - 6ms/step
+[ina] docmix conf_tiido__noise
+476/476 - 3s - 6ms/step
+[ina] docmix conf_tkhgs__music
+548/548 - 3s - 6ms/step
+[ina] docmix conf_tkhgs__noise
+W0000 00:00:1791652643.035479 1868834 cpu_allocator_impl.cc:82] Allocation of 719637744 exceeds 10% of free system memory.
+3938/3938 - 22s - 6ms/step
+[ina] docmix conf_uicid__music
+W0000 00:00:1791652674.978370 1868834 cpu_allocator_impl.cc:82] Allocation of 638504496 exceeds 10% of free system memory.
+3494/3494 - 19s - 6ms/step
+[ina] docmix conf_uicid__noise
+794/794 - 4s - 6ms/step
+[ina] docmix conf_uqxlg__music
+769/769 - 4s - 6ms/step
+[ina] docmix conf_uqxlg__noise
+414/414 - 2s - 5ms/step
+[ina] docmix conf_vylyk__music
+498/498 - 3s - 5ms/step
+[ina] docmix conf_vylyk__noise
+200/200 - 1s - 6ms/step
+[ina] docmix conf_wdvva__music
+171/171 - 1s - 6ms/step
+[ina] docmix conf_wdvva__noise
+628/628 - 4s - 6ms/step
+[ina] docmix conf_wibky__music
+562/562 - 3s - 6ms/step
+[ina] docmix conf_wibky__noise
+86/86 - 0s - 6ms/step
+[ina] docmix conf_xkmqx__music
+75/75 - 0s - 6ms/step
+[ina] docmix conf_xkmqx__noise
+1164/1164 - 7s - 6ms/step
+[ina] docmix conf_xlyov__music
+1132/1132 - 6s - 6ms/step
+[ina] docmix conf_xlyov__noise
+2441/2441 - 13s - 6ms/step
+[ina] docmix conf_xqxkt__music
+2196/2196 - 12s - 6ms/step
+[ina] docmix conf_xqxkt__noise
+582/582 - 3s - 6ms/step
+[ina] docmix conf_xvxwv__music
+472/472 - 3s - 6ms/step
+[ina] docmix conf_xvxwv__noise
+2693/2693 - 15s - 6ms/step
+[ina] docmix conf_ylgug__music
+2429/2429 - 13s - 6ms/step
+[ina] docmix conf_ylgug__noise
+1858/1858 - 10s - 6ms/step
+[ina] docmix conf_yzvon__music
+1780/1780 - 10s - 6ms/step
+[ina] docmix conf_yzvon__noise
+211/211 - 1s - 6ms/step
+[ina] docmix conf_zztbo__music
+282/282 - 2s - 6ms/step
+[ina] docmix conf_zztbo__noise
+105/105 - 1s - 6ms/step
+[ina] docmix dev_abjxc__music
+129/129 - 1s - 6ms/step
+[ina] docmix dev_abjxc__noise
+473/473 - 3s - 6ms/step
+[ina] docmix dev_afjiv__music
+437/437 - 2s - 6ms/step
+[ina] docmix dev_afjiv__noise
+1156/1156 - 6s - 5ms/step
+[ina] docmix dev_aisvi__music
+1073/1073 - 6s - 5ms/step
+[ina] docmix dev_aisvi__noise
+195/195 - 1s - 6ms/step
+[ina] docmix dev_atgpi__music
+221/221 - 1s - 6ms/step
+[ina] docmix dev_atgpi__noise
+319/319 - 2s - 6ms/step
+[ina] docmix dev_aufkn__music
+316/316 - 2s - 6ms/step
+[ina] docmix dev_aufkn__noise
+354/354 - 2s - 6ms/step
+[ina] docmix dev_azisu__music
+381/381 - 2s - 6ms/step
+[ina] docmix dev_azisu__noise
+714/714 - 4s - 6ms/step
+[ina] docmix dev_bspxd__music
+664/664 - 4s - 6ms/step
+[ina] docmix dev_bspxd__noise
+1220/1220 - 7s - 6ms/step
+[ina] docmix dev_cmhsm__music
+1130/1130 - 6s - 6ms/step
+[ina] docmix dev_cmhsm__noise
+380/380 - 2s - 6ms/step
+[ina] docmix dev_cwryz__music
+335/335 - 2s - 6ms/step
+[ina] docmix dev_cwryz__noise
+541/541 - 3s - 6ms/step
+[ina] docmix dev_cyyxp__music
+556/556 - 3s - 6ms/step
+[ina] docmix dev_cyyxp__noise
+849/849 - 5s - 5ms/step
+[ina] docmix dev_dvngl__music
+848/848 - 5s - 6ms/step
+[ina] docmix dev_dvngl__noise
+1698/1698 - 9s - 6ms/step
+[ina] docmix dev_epdpg__music
+1338/1338 - 7s - 5ms/step
+[ina] docmix dev_epdpg__noise
+1714/1714 - 9s - 6ms/step
+[ina] docmix dev_fvyvb__music
+1716/1716 - 9s - 6ms/step
+[ina] docmix dev_fvyvb__noise
+403/403 - 2s - 6ms/step
+[ina] docmix dev_gpjne__music
+442/442 - 2s - 6ms/step
+[ina] docmix dev_gpjne__noise
+1069/1069 - 6s - 5ms/step
+[ina] docmix dev_grzbb__music
+1001/1001 - 6s - 6ms/step
+[ina] docmix dev_grzbb__noise
+56/56 - 0s - 6ms/step
+[ina] docmix dev_hqyok__music
+33/33 - 0s - 7ms/step
+[ina] docmix dev_hqyok__noise
+360/360 - 2s - 6ms/step
+[ina] docmix dev_ikgcq__music
+361/361 - 2s - 6ms/step
+[ina] docmix dev_ikgcq__noise
+257/257 - 1s - 6ms/step
+[ina] docmix dev_jnivh__music
+264/264 - 1s - 6ms/step
+[ina] docmix dev_jnivh__noise
+394/394 - 2s - 6ms/step
+[ina] docmix dev_jsdmu__music
+339/339 - 2s - 6ms/step
+[ina] docmix dev_jsdmu__noise
+831/831 - 5s - 6ms/step
+[ina] docmix dev_kefgo__music
+759/759 - 5s - 6ms/step
+[ina] docmix dev_kefgo__noise
+2341/2341 - 16s - 7ms/step
+[ina] docmix dev_kkghn__music
+2027/2027 - 12s - 6ms/step
+[ina] docmix dev_kkghn__noise
+433/433 - 3s - 7ms/step
+[ina] docmix dev_kszpd__music
+385/385 - 3s - 7ms/step
+[ina] docmix dev_kszpd__noise
+2092/2092 - 14s - 7ms/step
+[ina] docmix dev_mekog__music
+1827/1827 - 13s - 7ms/step
+[ina] docmix dev_mekog__noise
+1428/1428 - 10s - 7ms/step
+[ina] docmix dev_mgpok__music
+1189/1189 - 9s - 7ms/step
+[ina] docmix dev_mgpok__noise
+1267/1267 - 9s - 7ms/step
+[ina] docmix dev_mkrcv__music
+1182/1182 - 9s - 7ms/step
+[ina] docmix dev_mkrcv__noise
+513/513 - 4s - 7ms/step
+[ina] docmix dev_mpvoh__music
+440/440 - 3s - 7ms/step
+[ina] docmix dev_mpvoh__noise
+1706/1706 - 13s - 7ms/step
+[ina] docmix dev_mqxsf__music
+1548/1548 - 12s - 7ms/step
+[ina] docmix dev_mqxsf__noise
+748/748 - 6s - 8ms/step
+[ina] docmix dev_mwfmq__music
+761/761 - 6s - 8ms/step
+[ina] docmix dev_mwfmq__noise
+240/240 - 2s - 8ms/step
+[ina] docmix dev_nnqfq__music
+285/285 - 2s - 8ms/step
+[ina] docmix dev_nnqfq__noise
+1087/1087 - 8s - 8ms/step
+[ina] docmix dev_nrogz__music
+1226/1226 - 9s - 8ms/step
+[ina] docmix dev_nrogz__noise
+615/615 - 5s - 8ms/step
+[ina] docmix dev_paibn__music
+630/630 - 5s - 8ms/step
+[ina] docmix dev_paibn__noise
+173/173 - 1s - 8ms/step
+[ina] docmix dev_plbbw__music
+169/169 - 1s - 8ms/step
+[ina] docmix dev_plbbw__noise
+33/33 - 0s - 9ms/step
+[ina] docmix dev_pqmho__music
+60/60 - 0s - 8ms/step
+[ina] docmix dev_pqmho__noise
+1188/1188 - 9s - 8ms/step
+[ina] docmix dev_praxo__music
+1048/1048 - 8s - 8ms/step
+[ina] docmix dev_praxo__noise
+1664/1664 - 13s - 8ms/step
+[ina] docmix dev_qouur__music
+1668/1668 - 13s - 8ms/step
+[ina] docmix dev_qouur__noise
+148/148 - 1s - 8ms/step
+[ina] docmix dev_qppll__music
+159/159 - 1s - 8ms/step
+[ina] docmix dev_qppll__noise
+61/61 - 1s - 8ms/step
+[ina] docmix dev_qrzjk__music
+95/95 - 1s - 8ms/step
+[ina] docmix dev_qrzjk__noise
+176/176 - 1s - 8ms/step
+[ina] docmix dev_qydmg__music
+230/230 - 2s - 8ms/step
+[ina] docmix dev_qydmg__noise
+746/746 - 6s - 8ms/step
+[ina] docmix dev_qygfk__music
+816/816 - 6s - 8ms/step
+[ina] docmix dev_qygfk__noise
+419/419 - 3s - 8ms/step
+[ina] docmix dev_rcxzg__music
+342/342 - 3s - 8ms/step
+[ina] docmix dev_rcxzg__noise
+171/171 - 1s - 8ms/step
+[ina] docmix dev_rtvuw__music
+122/122 - 1s - 8ms/step
+[ina] docmix dev_rtvuw__noise
+98/98 - 1s - 8ms/step
+[ina] docmix dev_sikkm__music
+129/129 - 1s - 8ms/step
+[ina] docmix dev_sikkm__noise
+298/298 - 2s - 8ms/step
+[ina] docmix dev_spzmn__music
+288/288 - 2s - 8ms/step
+[ina] docmix dev_spzmn__noise
+132/132 - 1s - 8ms/step
+[ina] docmix dev_szsyz__music
+86/86 - 1s - 8ms/step
+[ina] docmix dev_szsyz__noise
+731/731 - 6s - 8ms/step
+[ina] docmix dev_tcwsn__music
+705/705 - 5s - 8ms/step
+[ina] docmix dev_tcwsn__noise
+84/84 - 1s - 8ms/step
+[ina] docmix dev_tfvyr__music
+65/65 - 1s - 8ms/step
+[ina] docmix dev_tfvyr__noise
+33/33 - 0s - 9ms/step
+[ina] docmix dev_tucrg__music
+94/94 - 1s - 8ms/step
+[ina] docmix dev_tucrg__noise
+1500/1500 - 11s - 8ms/step
+[ina] docmix dev_udjij__music
+1529/1529 - 11s - 7ms/step
+[ina] docmix dev_udjij__noise
+841/841 - 6s - 8ms/step
+[ina] docmix dev_ulriv__music
+808/808 - 6s - 8ms/step
+[ina] docmix dev_ulriv__noise
+123/123 - 1s - 8ms/step
+[ina] docmix dev_usbgm__music
+115/115 - 1s - 8ms/step
+[ina] docmix dev_usbgm__noise
+586/586 - 4s - 8ms/step
+[ina] docmix dev_vbjlx__music
+611/611 - 5s - 8ms/step
+[ina] docmix dev_vbjlx__noise
+133/133 - 1s - 8ms/step
+[ina] docmix dev_vysqj__music
+140/140 - 1s - 8ms/step
+[ina] docmix dev_vysqj__noise
+71/71 - 1s - 8ms/step
+[ina] docmix dev_whmpa__music
+71/71 - 1s - 8ms/step
+[ina] docmix dev_whmpa__noise
+231/231 - 2s - 8ms/step
+[ina] docmix dev_willh__music
+188/188 - 1s - 8ms/step
+[ina] docmix dev_willh__noise
+262/262 - 2s - 8ms/step
+[ina] docmix dev_wmori__music
+228/228 - 2s - 8ms/step
+[ina] docmix dev_wmori__noise
+1494/1494 - 11s - 8ms/step
+[ina] docmix dev_xypdm__music
+1272/1272 - 10s - 8ms/step
+[ina] docmix dev_xypdm__noise
+873/873 - 7s - 8ms/step
+[ina] docmix dev_ylnza__music
+859/859 - 6s - 8ms/step
+[ina] docmix dev_ylnza__noise
+297/297 - 2s - 8ms/step
+[ina] docmix dev_ysgbf__music
+253/253 - 2s - 8ms/step
+[ina] docmix dev_ysgbf__noise
+234/234 - 2s - 8ms/step
+[ina] docmix dev_zfkap__music
+223/223 - 2s - 8ms/step
+[ina] docmix dev_zfkap__noise
+528/528 - 4s - 8ms/step
+[ina] docmix dev_zmndm__music
+507/507 - 4s - 8ms/step
+[ina] docmix dev_zmndm__noise
+1029/1029 - 8s - 8ms/step
+[ina] docmix dev_ztzzr__music
+800/800 - 6s - 8ms/step
+[ina] docmix dev_ztzzr__noise
+410/410 - 3s - 8ms/step
+[ina] docmix dev_zvmyn__music
+370/370 - 3s - 8ms/step
+[ina] docmix dev_zvmyn__noise
+EXP034_INA_DONE

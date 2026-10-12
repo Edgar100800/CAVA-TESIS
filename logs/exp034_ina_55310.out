@@ -1,0 +1,679 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791590260.348300 1808028 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/edgar.chambilla/.conda/envs/inaseg/lib/python3.10/site-packages/keras/src/layers/reshaping/reshape.py:38: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+E0000 00:00:1791590265.876667 1808028 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+249/249 - 2s - 7ms/step
+[ina] mix conf_aepyx__clean
+254/254 - 2s - 6ms/step
+[ina] mix conf_aepyx__music
+265/265 - 2s - 6ms/step
+[ina] mix conf_aepyx__noise
+1867/1867 - 11s - 6ms/step
+[ina] mix conf_aorju__clean
+1873/1873 - 10s - 6ms/step
+[ina] mix conf_aorju__music
+1861/1861 - 10s - 6ms/step
+[ina] mix conf_aorju__noise
+552/552 - 3s - 6ms/step
+[ina] mix conf_bjruf__clean
+561/561 - 3s - 6ms/step
+[ina] mix conf_bjruf__music
+564/564 - 3s - 6ms/step
+[ina] mix conf_bjruf__noise
+712/712 - 4s - 6ms/step
+[ina] mix conf_byapz__clean
+734/734 - 4s - 6ms/step
+[ina] mix conf_byapz__music
+724/724 - 4s - 6ms/step
+[ina] mix conf_byapz__noise
+1863/1863 - 10s - 6ms/step
+[ina] mix conf_cawnd__clean
+1873/1873 - 10s - 6ms/step
+[ina] mix conf_cawnd__music
+1869/1869 - 11s - 6ms/step
+[ina] mix conf_cawnd__noise
+1036/1036 - 6s - 6ms/step
+[ina] mix conf_cpebh__clean
+1046/1046 - 6s - 6ms/step
+[ina] mix conf_cpebh__music
+1044/1044 - 6s - 6ms/step
+[ina] mix conf_cpebh__noise
+1292/1292 - 7s - 5ms/step
+[ina] mix conf_crorm__clean
+1395/1395 - 8s - 6ms/step
+[ina] mix conf_crorm__music
+1387/1387 - 8s - 6ms/step
+[ina] mix conf_crorm__noise
+64/64 - 0s - 6ms/step
+[ina] mix conf_dohag__clean
+69/69 - 0s - 6ms/step
+[ina] mix conf_dohag__music
+67/67 - 0s - 6ms/step
+[ina] mix conf_dohag__noise
+324/324 - 2s - 6ms/step
+[ina] mix conf_eoyaz__clean
+331/331 - 2s - 6ms/step
+[ina] mix conf_eoyaz__music
+330/330 - 2s - 6ms/step
+[ina] mix conf_eoyaz__noise
+63/63 - 0s - 6ms/step
+[ina] mix conf_euqef__clean
+65/65 - 0s - 6ms/step
+[ina] mix conf_euqef__music
+65/65 - 0s - 6ms/step
+[ina] mix conf_euqef__noise
+250/250 - 1s - 6ms/step
+[ina] mix conf_gfneh__clean
+252/252 - 1s - 6ms/step
+[ina] mix conf_gfneh__music
+250/250 - 1s - 6ms/step
+[ina] mix conf_gfneh__noise
+1628/1628 - 9s - 5ms/step
+[ina] mix conf_guvqf__clean
+1693/1693 - 9s - 6ms/step
+[ina] mix conf_guvqf__music
+1686/1686 - 9s - 6ms/step
+[ina] mix conf_guvqf__noise
+1345/1345 - 7s - 6ms/step
+[ina] mix conf_gwloo__clean
+1358/1358 - 8s - 6ms/step
+[ina] mix conf_gwloo__music
+1351/1351 - 7s - 6ms/step
+[ina] mix conf_gwloo__noise
+540/540 - 3s - 6ms/step
+[ina] mix conf_gylzn__clean
+564/564 - 3s - 6ms/step
+[ina] mix conf_gylzn__music
+561/561 - 3s - 6ms/step
+[ina] mix conf_gylzn__noise
+1578/1578 - 9s - 6ms/step
+[ina] mix conf_jsymf__clean
+1629/1629 - 9s - 6ms/step
+[ina] mix conf_jsymf__music
+1598/1598 - 9s - 6ms/step
+[ina] mix conf_jsymf__noise
+1000/1000 - 6s - 6ms/step
+[ina] mix conf_jttar__clean
+1006/1006 - 6s - 6ms/step
+[ina] mix conf_jttar__music
+1003/1003 - 6s - 6ms/step
+[ina] mix conf_jttar__noise
+134/134 - 1s - 6ms/step
+[ina] mix conf_jxydp__clean
+135/135 - 1s - 6ms/step
+[ina] mix conf_jxydp__music
+135/135 - 1s - 6ms/step
+[ina] mix conf_jxydp__noise
+1822/1822 - 10s - 6ms/step
+[ina] mix conf_lbfnx__clean
+1873/1873 - 10s - 6ms/step
+[ina] mix conf_lbfnx__music
+1848/1848 - 10s - 6ms/step
+[ina] mix conf_lbfnx__noise
+294/294 - 2s - 6ms/step
+[ina] mix conf_lilfy__clean
+298/298 - 2s - 6ms/step
+[ina] mix conf_lilfy__music
+296/296 - 2s - 6ms/step
+[ina] mix conf_lilfy__noise
+1742/1742 - 10s - 6ms/step
+[ina] mix conf_mhwyr__clean
+1761/1761 - 10s - 6ms/step
+[ina] mix conf_mhwyr__music
+1756/1756 - 10s - 6ms/step
+[ina] mix conf_mhwyr__noise
+441/441 - 3s - 6ms/step
+[ina] mix conf_mjmgr__clean
+445/445 - 3s - 6ms/step
+[ina] mix conf_mjmgr__music
+443/443 - 3s - 6ms/step
+[ina] mix conf_mjmgr__noise
+665/665 - 4s - 6ms/step
+[ina] mix conf_mupzb__clean
+772/772 - 4s - 6ms/step
+[ina] mix conf_mupzb__music
+736/736 - 4s - 6ms/step
+[ina] mix conf_mupzb__noise
+284/284 - 2s - 6ms/step
+[ina] mix conf_mxdpo__clean
+305/305 - 2s - 6ms/step
+[ina] mix conf_mxdpo__music
+306/306 - 2s - 6ms/step
+[ina] mix conf_mxdpo__noise
+75/75 - 0s - 6ms/step
+[ina] mix conf_neiye__clean
+77/77 - 0s - 6ms/step
+[ina] mix conf_neiye__music
+77/77 - 0s - 6ms/step
+[ina] mix conf_neiye__noise
+1627/1627 - 9s - 6ms/step
+[ina] mix conf_nlvdr__clean
+1853/1853 - 10s - 6ms/step
+[ina] mix conf_nlvdr__music
+1787/1787 - 10s - 6ms/step
+[ina] mix conf_nlvdr__noise
+602/602 - 3s - 6ms/step
+[ina] mix conf_nprxc__clean
+621/621 - 3s - 6ms/step
+[ina] mix conf_nprxc__music
+617/617 - 3s - 6ms/step
+[ina] mix conf_nprxc__noise
+288/288 - 2s - 6ms/step
+[ina] mix conf_ooxlj__clean
+308/308 - 2s - 6ms/step
+[ina] mix conf_ooxlj__music
+300/300 - 2s - 6ms/step
+[ina] mix conf_ooxlj__noise
+368/368 - 2s - 6ms/step
+[ina] mix conf_oqwpd__clean
+371/371 - 2s - 6ms/step
+[ina] mix conf_oqwpd__music
+369/369 - 2s - 6ms/step
+[ina] mix conf_oqwpd__noise
+671/671 - 4s - 6ms/step
+[ina] mix conf_otmpf__clean
+673/673 - 4s - 6ms/step
+[ina] mix conf_otmpf__music
+673/673 - 4s - 6ms/step
+[ina] mix conf_otmpf__noise
+230/230 - 1s - 6ms/step
+[ina] mix conf_ppexo__clean
+279/279 - 2s - 6ms/step
+[ina] mix conf_ppexo__music
+270/270 - 2s - 6ms/step
+[ina] mix conf_ppexo__noise
+595/595 - 3s - 6ms/step
+[ina] mix conf_pxqme__clean
+605/605 - 3s - 6ms/step
+[ina] mix conf_pxqme__music
+603/603 - 3s - 6ms/step
+[ina] mix conf_pxqme__noise
+435/435 - 2s - 6ms/step
+[ina] mix conf_qeejz__clean
+444/444 - 3s - 6ms/step
+[ina] mix conf_qeejz__music
+448/448 - 3s - 6ms/step
+[ina] mix conf_qeejz__noise
+636/636 - 4s - 6ms/step
+[ina] mix conf_qlrry__clean
+677/677 - 4s - 6ms/step
+[ina] mix conf_qlrry__music
+671/671 - 4s - 6ms/step
+[ina] mix conf_qlrry__noise
+507/507 - 3s - 6ms/step
+[ina] mix conf_rpkso__clean
+515/515 - 3s - 6ms/step
+[ina] mix conf_rpkso__music
+510/510 - 3s - 6ms/step
+[ina] mix conf_rpkso__noise
+507/507 - 3s - 6ms/step
+[ina] mix conf_sfdvy__clean
+522/522 - 3s - 6ms/step
+[ina] mix conf_sfdvy__music
+519/519 - 3s - 6ms/step
+[ina] mix conf_sfdvy__noise
+1553/1553 - 9s - 6ms/step
+[ina] mix conf_svxzm__clean
+1559/1559 - 9s - 6ms/step
+[ina] mix conf_svxzm__music
+1550/1550 - 9s - 6ms/step
+[ina] mix conf_svxzm__noise
+525/525 - 3s - 6ms/step
+[ina] mix conf_tiido__clean
+541/541 - 3s - 6ms/step
+[ina] mix conf_tiido__music
+541/541 - 3s - 6ms/step
+[ina] mix conf_tiido__noise
+390/390 - 2s - 6ms/step
+[ina] mix conf_tkhgs__clean
+410/410 - 2s - 6ms/step
+[ina] mix conf_tkhgs__music
+408/408 - 2s - 6ms/step
+[ina] mix conf_tkhgs__noise
+1637/1637 - 9s - 6ms/step
+[ina] mix conf_uicid__clean
+1817/1817 - 10s - 6ms/step
+[ina] mix conf_uicid__music
+1774/1774 - 10s - 6ms/step
+[ina] mix conf_uicid__noise
+439/439 - 2s - 6ms/step
+[ina] mix conf_uqxlg__clean
+468/468 - 3s - 6ms/step
+[ina] mix conf_uqxlg__music
+481/481 - 3s - 6ms/step
+[ina] mix conf_uqxlg__noise
+251/251 - 1s - 6ms/step
+[ina] mix conf_vylyk__clean
+252/252 - 1s - 6ms/step
+[ina] mix conf_vylyk__music
+252/252 - 1s - 6ms/step
+[ina] mix conf_vylyk__noise
+100/100 - 1s - 6ms/step
+[ina] mix conf_wdvva__clean
+103/103 - 1s - 6ms/step
+[ina] mix conf_wdvva__music
+103/103 - 1s - 6ms/step
+[ina] mix conf_wdvva__noise
+442/442 - 2s - 6ms/step
+[ina] mix conf_wibky__clean
+472/472 - 3s - 6ms/step
+[ina] mix conf_wibky__music
+474/474 - 3s - 6ms/step
+[ina] mix conf_wibky__noise
+74/74 - 0s - 6ms/step
+[ina] mix conf_xkmqx__clean
+79/79 - 0s - 6ms/step
+[ina] mix conf_xkmqx__music
+79/79 - 0s - 6ms/step
+[ina] mix conf_xkmqx__noise
+1020/1020 - 6s - 6ms/step
+[ina] mix conf_xlyov__clean
+1028/1028 - 6s - 6ms/step
+[ina] mix conf_xlyov__music
+1028/1028 - 6s - 6ms/step
+[ina] mix conf_xlyov__noise
+1864/1864 - 10s - 6ms/step
+[ina] mix conf_xqxkt__clean
+1873/1873 - 10s - 6ms/step
+[ina] mix conf_xqxkt__music
+1870/1870 - 10s - 6ms/step
+[ina] mix conf_xqxkt__noise
+439/439 - 2s - 6ms/step
+[ina] mix conf_xvxwv__clean
+444/444 - 3s - 6ms/step
+[ina] mix conf_xvxwv__music
+442/442 - 2s - 6ms/step
+[ina] mix conf_xvxwv__noise
+1648/1648 - 9s - 6ms/step
+[ina] mix conf_ylgug__clean
+1829/1829 - 10s - 6ms/step
+[ina] mix conf_ylgug__music
+1782/1782 - 10s - 6ms/step
+[ina] mix conf_ylgug__noise
+1383/1383 - 8s - 6ms/step
+[ina] mix conf_yzvon__clean
+1394/1394 - 8s - 6ms/step
+[ina] mix conf_yzvon__music
+1391/1391 - 8s - 6ms/step
+[ina] mix conf_yzvon__noise
+166/166 - 1s - 6ms/step
+[ina] mix conf_zztbo__clean
+183/183 - 1s - 6ms/step
+[ina] mix conf_zztbo__music
+181/181 - 1s - 6ms/step
+[ina] mix conf_zztbo__noise
+106/106 - 1s - 6ms/step
+[ina] mix dev_abjxc__clean
+107/107 - 1s - 6ms/step
+[ina] mix dev_abjxc__music
+107/107 - 1s - 6ms/step
+[ina] mix dev_abjxc__noise
+223/223 - 1s - 6ms/step
+[ina] mix dev_afjiv__clean
+237/237 - 1s - 6ms/step
+[ina] mix dev_afjiv__music
+228/228 - 1s - 6ms/step
+[ina] mix dev_afjiv__noise
+719/719 - 4s - 6ms/step
+[ina] mix dev_aisvi__clean
+729/729 - 4s - 6ms/step
+[ina] mix dev_aisvi__music
+728/728 - 4s - 6ms/step
+[ina] mix dev_aisvi__noise
+189/189 - 1s - 6ms/step
+[ina] mix dev_atgpi__clean
+191/191 - 1s - 6ms/step
+[ina] mix dev_atgpi__music
+189/189 - 1s - 6ms/step
+[ina] mix dev_atgpi__noise
+281/281 - 2s - 6ms/step
+[ina] mix dev_aufkn__clean
+284/284 - 2s - 6ms/step
+[ina] mix dev_aufkn__music
+282/282 - 2s - 6ms/step
+[ina] mix dev_aufkn__noise
+302/302 - 2s - 6ms/step
+[ina] mix dev_azisu__clean
+304/304 - 2s - 6ms/step
+[ina] mix dev_azisu__music
+303/303 - 2s - 6ms/step
+[ina] mix dev_azisu__noise
+495/495 - 3s - 6ms/step
+[ina] mix dev_bspxd__clean
+526/526 - 3s - 6ms/step
+[ina] mix dev_bspxd__music
+517/517 - 3s - 6ms/step
+[ina] mix dev_bspxd__noise
+955/955 - 5s - 6ms/step
+[ina] mix dev_cmhsm__clean
+965/965 - 5s - 6ms/step
+[ina] mix dev_cmhsm__music
+958/958 - 5s - 6ms/step
+[ina] mix dev_cmhsm__noise
+238/238 - 1s - 6ms/step
+[ina] mix dev_cwryz__clean
+243/243 - 1s - 6ms/step
+[ina] mix dev_cwryz__music
+238/238 - 1s - 6ms/step
+[ina] mix dev_cwryz__noise
+278/278 - 2s - 6ms/step
+[ina] mix dev_cyyxp__clean
+299/299 - 2s - 6ms/step
+[ina] mix dev_cyyxp__music
+284/284 - 2s - 6ms/step
+[ina] mix dev_cyyxp__noise
+665/665 - 4s - 6ms/step
+[ina] mix dev_dvngl__clean
+668/668 - 4s - 6ms/step
+[ina] mix dev_dvngl__music
+665/665 - 4s - 6ms/step
+[ina] mix dev_dvngl__noise
+742/742 - 4s - 6ms/step
+[ina] mix dev_epdpg__clean
+817/817 - 5s - 6ms/step
+[ina] mix dev_epdpg__music
+806/806 - 4s - 6ms/step
+[ina] mix dev_epdpg__noise
+1151/1151 - 6s - 6ms/step
+[ina] mix dev_fvyvb__clean
+1221/1221 - 7s - 6ms/step
+[ina] mix dev_fvyvb__music
+1186/1186 - 7s - 6ms/step
+[ina] mix dev_fvyvb__noise
+279/279 - 2s - 6ms/step
+[ina] mix dev_gpjne__clean
+290/290 - 2s - 6ms/step
+[ina] mix dev_gpjne__music
+284/284 - 2s - 6ms/step
+[ina] mix dev_gpjne__noise
+930/930 - 5s - 6ms/step
+[ina] mix dev_grzbb__clean
+927/927 - 5s - 6ms/step
+[ina] mix dev_grzbb__music
+941/941 - 5s - 6ms/step
+[ina] mix dev_grzbb__noise
+35/35 - 0s - 7ms/step
+[ina] mix dev_hqyok__clean
+35/35 - 0s - 7ms/step
+[ina] mix dev_hqyok__music
+34/34 - 0s - 7ms/step
+[ina] mix dev_hqyok__noise
+197/197 - 1s - 6ms/step
+[ina] mix dev_ikgcq__clean
+202/202 - 1s - 6ms/step
+[ina] mix dev_ikgcq__music
+202/202 - 1s - 6ms/step
+[ina] mix dev_ikgcq__noise
+214/214 - 1s - 6ms/step
+[ina] mix dev_jnivh__clean
+218/218 - 1s - 6ms/step
+[ina] mix dev_jnivh__music
+215/215 - 1s - 6ms/step
+[ina] mix dev_jnivh__noise
+220/220 - 1s - 6ms/step
+[ina] mix dev_jsdmu__clean
+234/234 - 1s - 6ms/step
+[ina] mix dev_jsdmu__music
+233/233 - 1s - 6ms/step
+[ina] mix dev_jsdmu__noise
+579/579 - 3s - 6ms/step
+[ina] mix dev_kefgo__clean
+594/594 - 3s - 6ms/step
+[ina] mix dev_kefgo__music
+583/583 - 3s - 6ms/step
+[ina] mix dev_kefgo__noise
+1093/1093 - 6s - 6ms/step
+[ina] mix dev_kkghn__clean
+1249/1249 - 7s - 6ms/step
+[ina] mix dev_kkghn__music
+1187/1187 - 7s - 6ms/step
+[ina] mix dev_kkghn__noise
+248/248 - 1s - 6ms/step
+[ina] mix dev_kszpd__clean
+249/249 - 1s - 6ms/step
+[ina] mix dev_kszpd__music
+250/250 - 1s - 6ms/step
+[ina] mix dev_kszpd__noise
+1367/1367 - 8s - 6ms/step
+[ina] mix dev_mekog__clean
+1377/1377 - 8s - 6ms/step
+[ina] mix dev_mekog__music
+1372/1372 - 8s - 6ms/step
+[ina] mix dev_mekog__noise
+840/840 - 5s - 6ms/step
+[ina] mix dev_mgpok__clean
+872/872 - 5s - 6ms/step
+[ina] mix dev_mgpok__music
+860/860 - 5s - 6ms/step
+[ina] mix dev_mgpok__noise
+939/939 - 5s - 6ms/step
+[ina] mix dev_mkrcv__clean
+954/954 - 5s - 6ms/step
+[ina] mix dev_mkrcv__music
+946/946 - 5s - 6ms/step
+[ina] mix dev_mkrcv__noise
+216/216 - 1s - 6ms/step
+[ina] mix dev_mpvoh__clean
+219/219 - 1s - 6ms/step
+[ina] mix dev_mpvoh__music
+217/217 - 1s - 6ms/step
+[ina] mix dev_mpvoh__noise
+1068/1068 - 6s - 6ms/step
+[ina] mix dev_mqxsf__clean
+1093/1093 - 6s - 6ms/step
+[ina] mix dev_mqxsf__music
+1095/1095 - 6s - 6ms/step
+[ina] mix dev_mqxsf__noise
+719/719 - 4s - 6ms/step
+[ina] mix dev_mwfmq__clean
+729/729 - 4s - 6ms/step
+[ina] mix dev_mwfmq__music
+728/728 - 4s - 6ms/step
+[ina] mix dev_mwfmq__noise
+226/226 - 1s - 6ms/step
+[ina] mix dev_nnqfq__clean
+228/228 - 1s - 6ms/step
+[ina] mix dev_nnqfq__music
+228/228 - 1s - 6ms/step
+[ina] mix dev_nnqfq__noise
+687/687 - 4s - 5ms/step
+[ina] mix dev_nrogz__clean
+694/694 - 4s - 6ms/step
+[ina] mix dev_nrogz__music
+693/693 - 4s - 5ms/step
+[ina] mix dev_nrogz__noise
+520/520 - 3s - 6ms/step
+[ina] mix dev_paibn__clean
+533/533 - 3s - 6ms/step
+[ina] mix dev_paibn__music
+523/523 - 3s - 6ms/step
+[ina] mix dev_paibn__noise
+124/124 - 1s - 6ms/step
+[ina] mix dev_plbbw__clean
+137/137 - 1s - 6ms/step
+[ina] mix dev_plbbw__music
+136/136 - 1s - 6ms/step
+[ina] mix dev_plbbw__noise
+213/213 - 1s - 6ms/step
+[ina] mix dev_pqmho__clean
+218/218 - 1s - 6ms/step
+[ina] mix dev_pqmho__music
+217/217 - 1s - 6ms/step
+[ina] mix dev_pqmho__noise
+740/740 - 4s - 6ms/step
+[ina] mix dev_praxo__clean
+786/786 - 4s - 6ms/step
+[ina] mix dev_praxo__music
+769/769 - 4s - 6ms/step
+[ina] mix dev_praxo__noise
+1611/1611 - 9s - 6ms/step
+[ina] mix dev_qouur__clean
+1614/1614 - 9s - 6ms/step
+[ina] mix dev_qouur__music
+1612/1612 - 9s - 6ms/step
+[ina] mix dev_qouur__noise
+105/105 - 1s - 6ms/step
+[ina] mix dev_qppll__clean
+110/110 - 1s - 6ms/step
+[ina] mix dev_qppll__music
+107/107 - 1s - 6ms/step
+[ina] mix dev_qppll__noise
+60/60 - 0s - 6ms/step
+[ina] mix dev_qrzjk__clean
+62/62 - 0s - 6ms/step
+[ina] mix dev_qrzjk__music
+62/62 - 0s - 6ms/step
+[ina] mix dev_qrzjk__noise
+174/174 - 1s - 6ms/step
+[ina] mix dev_qydmg__clean
+177/177 - 1s - 6ms/step
+[ina] mix dev_qydmg__music
+177/177 - 1s - 6ms/step
+[ina] mix dev_qydmg__noise
+654/654 - 4s - 6ms/step
+[ina] mix dev_qygfk__clean
+668/668 - 4s - 5ms/step
+[ina] mix dev_qygfk__music
+664/664 - 4s - 6ms/step
+[ina] mix dev_qygfk__noise
+280/280 - 2s - 6ms/step
+[ina] mix dev_rcxzg__clean
+280/280 - 2s - 6ms/step
+[ina] mix dev_rcxzg__music
+279/279 - 2s - 6ms/step
+[ina] mix dev_rcxzg__noise
+87/87 - 1s - 6ms/step
+[ina] mix dev_rtvuw__clean
+89/89 - 1s - 6ms/step
+[ina] mix dev_rtvuw__music
+89/89 - 1s - 6ms/step
+[ina] mix dev_rtvuw__noise
+102/102 - 1s - 6ms/step
+[ina] mix dev_sikkm__clean
+141/141 - 1s - 6ms/step
+[ina] mix dev_sikkm__music
+140/140 - 1s - 6ms/step
+[ina] mix dev_sikkm__noise
+241/241 - 1s - 6ms/step
+[ina] mix dev_spzmn__clean
+243/243 - 1s - 6ms/step
+[ina] mix dev_spzmn__music
+243/243 - 1s - 6ms/step
+[ina] mix dev_spzmn__noise
+76/76 - 0s - 6ms/step
+[ina] mix dev_szsyz__clean
+78/78 - 0s - 6ms/step
+[ina] mix dev_szsyz__music
+78/78 - 0s - 6ms/step
+[ina] mix dev_szsyz__noise
+578/578 - 3s - 6ms/step
+[ina] mix dev_tcwsn__clean
+594/594 - 3s - 6ms/step
+[ina] mix dev_tcwsn__music
+595/595 - 3s - 6ms/step
+[ina] mix dev_tcwsn__noise
+44/44 - 0s - 7ms/step
+[ina] mix dev_tfvyr__clean
+44/44 - 0s - 6ms/step
+[ina] mix dev_tfvyr__music
+44/44 - 0s - 7ms/step
+[ina] mix dev_tfvyr__noise
+39/39 - 0s - 7ms/step
+[ina] mix dev_tucrg__clean
+40/40 - 0s - 7ms/step
+[ina] mix dev_tucrg__music
+39/39 - 0s - 7ms/step
+[ina] mix dev_tucrg__noise
+848/848 - 5s - 6ms/step
+[ina] mix dev_udjij__clean
+878/878 - 5s - 6ms/step
+[ina] mix dev_udjij__music
+870/870 - 5s - 6ms/step
+[ina] mix dev_udjij__noise
+713/713 - 4s - 6ms/step
+[ina] mix dev_ulriv__clean
+724/724 - 4s - 6ms/step
+[ina] mix dev_ulriv__music
+716/716 - 4s - 6ms/step
+[ina] mix dev_ulriv__noise
+91/91 - 1s - 6ms/step
+[ina] mix dev_usbgm__clean
+92/92 - 1s - 6ms/step
+[ina] mix dev_usbgm__music
+92/92 - 1s - 6ms/step
+[ina] mix dev_usbgm__noise
+497/497 - 3s - 6ms/step
+[ina] mix dev_vbjlx__clean
+506/506 - 3s - 6ms/step
+[ina] mix dev_vbjlx__music
+503/503 - 3s - 6ms/step
+[ina] mix dev_vbjlx__noise
+138/138 - 1s - 6ms/step
+[ina] mix dev_vysqj__clean
+139/139 - 1s - 6ms/step
+[ina] mix dev_vysqj__music
+139/139 - 1s - 6ms/step
+[ina] mix dev_vysqj__noise
+71/71 - 0s - 6ms/step
+[ina] mix dev_whmpa__clean
+85/85 - 0s - 6ms/step
+[ina] mix dev_whmpa__music
+76/76 - 0s - 6ms/step
+[ina] mix dev_whmpa__noise
+191/191 - 1s - 6ms/step
+[ina] mix dev_willh__clean
+196/196 - 1s - 6ms/step
+[ina] mix dev_willh__music
+194/194 - 1s - 6ms/step
+[ina] mix dev_willh__noise
+174/174 - 1s - 6ms/step
+[ina] mix dev_wmori__clean
+186/186 - 1s - 6ms/step
+[ina] mix dev_wmori__music
+170/170 - 1s - 6ms/step
+[ina] mix dev_wmori__noise
+648/648 - 4s - 6ms/step
+[ina] mix dev_xypdm__clean
+658/658 - 4s - 6ms/step
+[ina] mix dev_xypdm__music
+650/650 - 4s - 6ms/step
+[ina] mix dev_xypdm__noise
+835/835 - 5s - 6ms/step
+[ina] mix dev_ylnza__clean
+846/846 - 5s - 6ms/step
+[ina] mix dev_ylnza__music
+837/837 - 5s - 6ms/step
+[ina] mix dev_ylnza__noise
+186/186 - 1s - 6ms/step
+[ina] mix dev_ysgbf__clean
+188/188 - 1s - 6ms/step
+[ina] mix dev_ysgbf__music
+186/186 - 1s - 6ms/step
+[ina] mix dev_ysgbf__noise
+162/162 - 1s - 6ms/step
+[ina] mix dev_zfkap__clean
+167/167 - 1s - 6ms/step
+[ina] mix dev_zfkap__music
+164/164 - 1s - 6ms/step
+[ina] mix dev_zfkap__noise
+421/421 - 2s - 6ms/step
+[ina] mix dev_zmndm__clean
+437/437 - 2s - 6ms/step
+[ina] mix dev_zmndm__music
+435/435 - 2s - 6ms/step
+[ina] mix dev_zmndm__noise
+403/403 - 2s - 6ms/step
+[ina] mix dev_ztzzr__clean
+459/459 - 3s - 6ms/step
+[ina] mix dev_ztzzr__music
+441/441 - 2s - 6ms/step
+[ina] mix dev_ztzzr__noise
+173/173 - 1s - 6ms/step
+[ina] mix dev_zvmyn__clean
+206/206 - 1s - 6ms/step
+[ina] mix dev_zvmyn__music
+202/202 - 1s - 6ms/step
+[ina] mix dev_zvmyn__noise
+EXP034_INA_DONE

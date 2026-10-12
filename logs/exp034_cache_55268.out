@@ -1,0 +1,42 @@
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights:   4%|▎         | 27/723 [00:00<00:04, 155.88it/s]Loading weights:   6%|▌         | 43/723 [00:00<00:06, 111.66it/s]Loading weights:   8%|▊         | 55/723 [00:00<00:06, 109.18it/s]Loading weights:   9%|▉         | 66/723 [00:00<00:07, 90.64it/s] Loading weights:  13%|█▎        | 97/723 [00:00<00:04, 137.61it/s]Loading weights:  18%|█▊        | 127/723 [00:00<00:03, 177.50it/s]Loading weights:  20%|██        | 147/723 [00:01<00:03, 146.96it/s]Loading weights:  24%|██▍       | 174/723 [00:01<00:03, 175.73it/s]Loading weights:  29%|██▉       | 208/723 [00:01<00:02, 205.90it/s]Loading weights:  33%|███▎      | 241/723 [00:01<00:02, 207.47it/s]Loading weights:  36%|███▋      | 263/723 [00:01<00:02, 208.84it/s]Loading weights:  41%|████      | 296/723 [00:01<00:01, 229.24it/s]Loading weights:  47%|████▋     | 340/723 [00:01<00:01, 249.31it/s]Loading weights:  51%|█████     | 369/723 [00:01<00:01, 249.15it/s]Loading weights:  55%|█████▍    | 395/723 [00:02<00:01, 242.19it/s]Loading weights:  58%|█████▊    | 420/723 [00:02<00:01, 232.45it/s]Loading weights:  61%|██████▏   | 444/723 [00:02<00:01, 150.02it/s]Loading weights:  64%|██████▍   | 463/723 [00:02<00:02, 115.32it/s]Loading weights:  66%|██████▌   | 478/723 [00:02<00:02, 107.61it/s]Loading weights:  68%|██████▊   | 492/723 [00:03<00:02, 112.38it/s]Loading weights:  76%|███████▌  | 547/723 [00:03<00:00, 191.10it/s]Loading weights:  82%|████████▏ | 590/723 [00:03<00:00, 241.98it/s]Loading weights:  86%|████████▋ | 624/723 [00:03<00:00, 262.23it/s]Loading weights:  90%|█████████ | 654/723 [00:03<00:00, 243.99it/s]Loading weights:  94%|█████████▍| 682/723 [00:03<00:00, 186.14it/s]Loading weights: 100%|██████████| 723/723 [00:03<00:00, 190.45it/s]
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights:   9%|▉         | 24/266 [00:00<00:01, 151.44it/s]Loading weights:  15%|█▌        | 40/266 [00:00<00:01, 151.21it/s]Loading weights:  26%|██▌       | 69/266 [00:00<00:01, 194.26it/s]Loading weights:  35%|███▌      | 94/266 [00:00<00:00, 211.51it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 531.11it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/audio_utils.py:723: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+Loading weights:   0%|          | 0/203 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 29/203 [00:00<00:00, 237.50it/s]Loading weights:  26%|██▌       | 53/203 [00:00<00:00, 163.53it/s]Loading weights:  35%|███▍      | 71/203 [00:00<00:00, 164.30it/s]Loading weights:  52%|█████▏    | 106/203 [00:00<00:00, 198.42it/s]Loading weights:  63%|██████▎   | 127/203 [00:00<00:00, 179.26it/s]Loading weights:  72%|███████▏  | 146/203 [00:00<00:00, 178.09it/s]Loading weights: 100%|██████████| 203/203 [00:00<00:00, 235.90it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_01 (591 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_02 (577 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_03 (592 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_04 (589 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_05 (591 unidades)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp034_cache.py", line 90, in <module>
+    main()
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp034_cache.py", line 81, in main
+    r["ast_speech"], r["ast_music"] = ast(audio, units)
+                                      ^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp034_cache.py", line 41, in __call__
+    inp = self.fe(x, sampling_rate=SR, return_tensors="pt")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/audio_spectrogram_transformer/feature_extraction_audio_spectrogram_transformer.py", line 215, in __call__
+    features = [self._extract_fbank_features(waveform, max_length=self.max_length) for waveform in raw_speech]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/audio_spectrogram_transformer/feature_extraction_audio_spectrogram_transformer.py", line 215, in <listcomp>
+    features = [self._extract_fbank_features(waveform, max_length=self.max_length) for waveform in raw_speech]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/audio_spectrogram_transformer/feature_extraction_audio_spectrogram_transformer.py", line 124, in _extract_fbank_features
+    fbank = spectrogram(
+            ^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/audio_utils.py", line 966, in spectrogram
+    spectrogram = np.empty((num_frames, num_frequency_bins), dtype=np.complex64)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: negative dimensions are not allowed

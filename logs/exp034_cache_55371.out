@@ -1,0 +1,144 @@
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 203/723 [00:00<00:00, 2027.92it/s]Loading weights:  56%|█████▌    | 406/723 [00:00<00:00, 2028.38it/s]Loading weights:  84%|████████▍ | 609/723 [00:00<00:00, 2026.69it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 2075.21it/s]
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights:  86%|████████▌ | 229/266 [00:00<00:00, 2287.69it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 2534.00it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/audio_utils.py:723: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+Loading weights:   0%|          | 0/203 [00:00<?, ?it/s]Loading weights: 100%|██████████| 203/203 [00:00<00:00, 2223.99it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_06 (592 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_07 (592 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_08 (591 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_09 (591 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_10 (587 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] bbc bbc_11 (588 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2002c (243 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2003a (114 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2003b (211 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2004b (235 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2004c (234 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2005a (48 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2005b (232 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2005d (174 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2007a (121 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2008b (224 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2008d (263 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2009b (144 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2010d (97 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2012a (111 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami ES2015a (115 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1000b (235 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1001d (78 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1004b (219 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1004c (227 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1005a (103 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1006c (195 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1007d (203 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1008a (95 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1008b (177 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1009c (182 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami IS1009d (195 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3003c (257 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3004c (297 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3005a (132 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3005b (244 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3005c (241 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3007a (161 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3007b (336 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3007d (283 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3008b (232 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3010b (209 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3011d (216 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3012b (246 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3012c (238 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] ami TS3012d (235 unidades)
+EXP034_CACHE_DONE

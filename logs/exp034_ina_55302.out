@@ -1,0 +1,303 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791588382.466051 1774702 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/edgar.chambilla/.conda/envs/inaseg/lib/python3.10/site-packages/keras/src/layers/reshaping/reshape.py:38: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+E0000 00:00:1791588387.791856 1774702 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+1368/1368 - 8s - 6ms/step
+[ina] ava 053oq2xB3oU
+1395/1395 - 8s - 6ms/step
+[ina] ava 0f39OWEqJ24
+1279/1279 - 7s - 6ms/step
+[ina] ava 1j20qq1JyX4
+1312/1312 - 7s - 6ms/step
+[ina] ava 26V9UzqSguo
+1336/1336 - 7s - 6ms/step
+[ina] ava 2DUITARAsWQ
+1377/1377 - 8s - 6ms/step
+[ina] ava 2PpxiG0WU18
+1403/1403 - 8s - 6ms/step
+[ina] ava 2bxKkUgcqpk
+1339/1339 - 7s - 6ms/step
+[ina] ava 2fwni_Kjf2M
+1346/1346 - 8s - 6ms/step
+[ina] ava 2qQs3Y9OJX0
+1319/1319 - 7s - 6ms/step
+[ina] ava 32HR3MnDZ8g
+1351/1351 - 7s - 6ms/step
+[ina] ava 4ZpjKfu6Cl8
+1249/1249 - 7s - 5ms/step
+[ina] ava 4gVsDd8PV9U
+1288/1288 - 7s - 6ms/step
+[ina] ava 55Ihr6uVIDA
+1347/1347 - 8s - 6ms/step
+[ina] ava 5BDj0ow5hnA
+1253/1253 - 7s - 6ms/step
+[ina] ava 5YPjcdLbs5g
+1339/1339 - 8s - 6ms/step
+[ina] ava 5milLu-6bWI
+1328/1328 - 7s - 6ms/step
+[ina] ava 6d5u6FHvz7Q
+1394/1394 - 8s - 6ms/step
+[ina] ava 7YpF6DntOYw
+1350/1350 - 8s - 6ms/step
+[ina] ava 7nHkh4sP5Ks
+1306/1306 - 7s - 6ms/step
+[ina] ava 8VZEwOCQ8bc
+1381/1381 - 8s - 6ms/step
+[ina] ava 8aMv-ZGD4ic
+1309/1309 - 7s - 6ms/step
+[ina] ava 8nO5FFbIAog
+1399/1399 - 8s - 6ms/step
+[ina] ava 914yZXz-iRs
+1223/1223 - 7s - 6ms/step
+[ina] ava 9F2voT6QWvQ
+1272/1272 - 8s - 6ms/step
+[ina] ava 9Y_l9NsnYE0
+1315/1315 - 8s - 6ms/step
+[ina] ava 9bK05eBt1GM
+1283/1283 - 8s - 6ms/step
+[ina] ava 9mLYmkonWZQ
+1229/1229 - 7s - 6ms/step
+[ina] ava AN07xQokfiE
+1280/1280 - 8s - 6ms/step
+[ina] ava AYebXQ8eUkM
+1276/1276 - 8s - 6ms/step
+[ina] ava Ag-pXiLrd48
+1313/1313 - 8s - 6ms/step
+[ina] ava B1MAUxpKaV8
+1209/1209 - 7s - 6ms/step
+[ina] ava BCiuXAuCKAU
+1361/1361 - 8s - 6ms/step
+[ina] ava BY3sZmvUp-0
+1310/1310 - 8s - 6ms/step
+[ina] ava C25wkwAMB-w
+1363/1363 - 8s - 6ms/step
+[ina] ava CZ2NP8UsPuE
+1300/1300 - 8s - 6ms/step
+[ina] ava CrlfWnsS7ac
+1379/1379 - 8s - 6ms/step
+[ina] ava Db19rWN5BGo
+1334/1334 - 8s - 6ms/step
+[ina] ava Di1MG6auDYo
+1271/1271 - 8s - 6ms/step
+[ina] ava E7JcKooKVsM
+1396/1396 - 8s - 6ms/step
+[ina] ava Ekwy7wzLfjc
+1350/1350 - 8s - 6ms/step
+[ina] ava F3dPH6Xqf5M
+1406/1406 - 9s - 6ms/step
+[ina] ava G5Yr20A5z_Q
+1347/1347 - 8s - 6ms/step
+[ina] ava Gvp-cj3bmIY
+1375/1375 - 8s - 6ms/step
+[ina] ava HKjR70GCRPE
+1217/1217 - 7s - 6ms/step
+[ina] ava HV0H6oc4Kvs
+1376/1376 - 8s - 6ms/step
+[ina] ava Hi8QeP_VPu0
+1303/1303 - 8s - 6ms/step
+[ina] ava HymKCzQJbB8
+1333/1333 - 8s - 6ms/step
+[ina] ava IKdBLciu_-A
+1355/1355 - 8s - 6ms/step
+[ina] ava IzvOYVMltkI
+1298/1298 - 7s - 6ms/step
+[ina] ava J1jDc2rTJlg
+1356/1356 - 7s - 6ms/step
+[ina] ava J4bt4y9ShTA
+1341/1341 - 7s - 6ms/step
+[ina] ava JNb4nWexD0I
+1340/1340 - 8s - 6ms/step
+[ina] ava KHHgQ_Pe4cI
+1286/1286 - 7s - 6ms/step
+[ina] ava KVq6If6ozMY
+1369/1369 - 8s - 6ms/step
+[ina] ava KWoSGtglCms
+1327/1327 - 7s - 6ms/step
+[ina] ava K_SpqDJnlps
+1351/1351 - 7s - 5ms/step
+[ina] ava Kb1fduj-jdY
+1403/1403 - 8s - 6ms/step
+[ina] ava Ksd1JQFHYWA
+1335/1335 - 7s - 6ms/step
+[ina] ava Ma2hgTmveKQ
+1317/1317 - 7s - 6ms/step
+[ina] ava N0Dt9i9IUNg
+1288/1288 - 7s - 6ms/step
+[ina] ava N1K2bEZLL_A
+1329/1329 - 7s - 6ms/step
+[ina] ava N5UD8FGzDek
+1225/1225 - 7s - 6ms/step
+[ina] ava NEQ7Wpf-EtI
+1333/1333 - 8s - 6ms/step
+[ina] ava OGNnUvJq9RI
+1350/1350 - 7s - 6ms/step
+[ina] ava O_NYCUhZ9zw
+1291/1291 - 7s - 6ms/step
+[ina] ava OfMdakd4bHI
+1330/1330 - 7s - 6ms/step
+[ina] ava Ov0za6Xb1LM
+1329/1329 - 7s - 6ms/step
+[ina] ava P60OxWahxBQ
+1378/1378 - 8s - 6ms/step
+[ina] ava P90hF2S1JzA
+1366/1366 - 8s - 6ms/step
+[ina] ava PNZQ2UJfyQE
+1407/1407 - 8s - 6ms/step
+[ina] ava PmElx9ZVByw
+1288/1288 - 7s - 6ms/step
+[ina] ava QCLQYnt3aMo
+1363/1363 - 8s - 6ms/step
+[ina] ava QMwT7DFA5O4
+1379/1379 - 8s - 6ms/step
+[ina] ava Riu4ZKk4YdQ
+1280/1280 - 7s - 5ms/step
+[ina] ava S0tkhGJjwLA
+1331/1331 - 7s - 6ms/step
+[ina] ava T-Fc9ctuNVI
+1372/1372 - 8s - 6ms/step
+[ina] ava TzaVHtLXOzY
+1348/1348 - 8s - 6ms/step
+[ina] ava UOyyTUX5Vo4
+1310/1310 - 7s - 6ms/step
+[ina] ava U_WzY2k8IBM
+1390/1390 - 8s - 6ms/step
+[ina] ava UgZFdrNT6W0
+1340/1340 - 7s - 6ms/step
+[ina] ava UrsCy6qIGoo
+1341/1341 - 7s - 6ms/step
+[ina] ava Vmef_8MY46w
+1395/1395 - 8s - 5ms/step
+[ina] ava VsYPP2I0aUQ
+1381/1381 - 8s - 6ms/step
+[ina] ava WVde9pyaHg4
+1334/1334 - 7s - 5ms/step
+[ina] ava WlgxRNCHQzw
+1305/1305 - 7s - 6ms/step
+[ina] ava XV_FF3WC7kA
+1228/1228 - 7s - 6ms/step
+[ina] ava _7oWZq_s_Sk
+1322/1322 - 7s - 6ms/step
+[ina] ava _a9SWtcaNj8
+1305/1305 - 7s - 6ms/step
+[ina] ava _mAfwH6i90E
+1361/1361 - 7s - 5ms/step
+[ina] ava ax3q-RkVIt4
+1371/1371 - 8s - 6ms/step
+[ina] ava b5pRYl_djbs
+1337/1337 - 7s - 6ms/step
+[ina] ava bhlFavrh7WU
+1366/1366 - 8s - 6ms/step
+[ina] ava c9pEMjPT16M
+1176/1176 - 7s - 6ms/step
+[ina] ava cKA-qeZuH_w
+1373/1373 - 8s - 6ms/step
+[ina] ava cWYJHb25EVs
+1245/1245 - 7s - 6ms/step
+[ina] ava fD6VkIRlIRI
+1308/1308 - 7s - 6ms/step
+[ina] ava fNcxxBjEOgw
+1201/1201 - 7s - 6ms/step
+[ina] ava fpprSy6AzKk
+1299/1299 - 7s - 6ms/step
+[ina] ava g1wyIcLPbq0
+1209/1209 - 7s - 6ms/step
+[ina] ava gjdgj04FzR0
+1390/1390 - 8s - 6ms/step
+[ina] ava hHgg9WI8dTk
+1291/1291 - 7s - 6ms/step
+[ina] ava iSlDMboCSao
+1293/1293 - 7s - 5ms/step
+[ina] ava j5jmjhGBW44
+1334/1334 - 7s - 6ms/step
+[ina] ava jgAwJ0RqmYg
+1091/1091 - 6s - 6ms/step
+[ina] ava jqZpiHlJUig
+1287/1287 - 7s - 6ms/step
+[ina] ava kMy-6RtoOVU
+1404/1404 - 8s - 6ms/step
+[ina] ava l-jxh8gpxuY
+1266/1266 - 7s - 6ms/step
+[ina] ava l2XO3tQk8lI
+1391/1391 - 8s - 6ms/step
+[ina] ava lDmLcWWBp1E
+1350/1350 - 7s - 6ms/step
+[ina] ava lWXhqIAvarw
+1405/1405 - 8s - 6ms/step
+[ina] ava o4xQ-BEa3Ss
+1267/1267 - 7s - 6ms/step
+[ina] ava oD_wxyTHJ2I
+1290/1290 - 7s - 6ms/step
+[ina] ava oq_bufAhyl8
+1318/1318 - 7s - 6ms/step
+[ina] ava phVLLTMzmKk
+1377/1377 - 8s - 6ms/step
+[ina] ava phrYEKv0rmw
+1335/1335 - 7s - 6ms/step
+[ina] ava plkJ45_-pMk
+1186/1186 - 7s - 6ms/step
+[ina] ava qrkff49p4E4
+1407/1407 - 8s - 6ms/step
+[ina] ava qx2vAO5ofmo
+1357/1357 - 8s - 6ms/step
+[ina] ava rFgb2ECMcrY
+1321/1321 - 7s - 6ms/step
+[ina] ava rJKeqfTlAeY
+1282/1282 - 7s - 6ms/step
+[ina] ava rUYsoIIE37A
+1332/1332 - 7s - 6ms/step
+[ina] ava rXFlJbXyZyc
+1287/1287 - 7s - 6ms/step
+[ina] ava rk8Xm0EAOWs
+1381/1381 - 8s - 6ms/step
+[ina] ava sADELCyj10I
+1348/1348 - 7s - 6ms/step
+[ina] ava sUVhd0YTKgw
+1334/1334 - 7s - 6ms/step
+[ina] ava skiZueh4lfY
+1277/1277 - 7s - 6ms/step
+[ina] ava t1LXrJOvPDg
+1373/1373 - 8s - 6ms/step
+[ina] ava tNpZtigMc4g
+1367/1367 - 8s - 6ms/step
+[ina] ava tghXjom3120
+1322/1322 - 7s - 6ms/step
+[ina] ava tjqCzVjojCo
+1305/1305 - 7s - 6ms/step
+[ina] ava tt0t_a1EDCE
+1392/1392 - 8s - 6ms/step
+[ina] ava u1ltv6r14KQ
+1352/1352 - 8s - 6ms/step
+[ina] ava uNT6HrrnqPU
+1284/1284 - 7s - 6ms/step
+[ina] ava uwW0ejeosmk
+1407/1407 - 8s - 6ms/step
+[ina] ava uzPI7FcF79U
+1136/1136 - 6s - 6ms/step
+[ina] ava vfjywN5CN0Y
+1224/1224 - 7s - 6ms/step
+[ina] ava x-6CtPWVi6E
+1381/1381 - 8s - 6ms/step
+[ina] ava xJmRNZVDDCY
+1307/1307 - 7s - 6ms/step
+[ina] ava xO4ABy2iOQA
+1350/1350 - 7s - 6ms/step
+[ina] ava xmqSaQPzL1E
+1240/1240 - 7s - 6ms/step
+[ina] ava xp67EC-Hvwk
+1280/1280 - 7s - 5ms/step
+[ina] ava y7ncweROe9U
+1405/1405 - 8s - 6ms/step
+[ina] ava yMtGmGa8KZ0
+1292/1292 - 7s - 6ms/step
+[ina] ava yn9WN9lsHRE
+1355/1355 - 8s - 6ms/step
+[ina] ava yo-Kg2YxlZs
+1364/1364 - 8s - 6ms/step
+[ina] ava z-fsLpGHq6o
+1376/1376 - 8s - 6ms/step
+[ina] ava zC5Fh2tTS1U
+1349/1349 - 7s - 6ms/step
+[ina] ava zR725veL-DI
+EXP034_INA_DONE

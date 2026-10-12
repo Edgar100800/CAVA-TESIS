@@ -1,0 +1,97 @@
+/home/edgar.chambilla/Tesis/CAVA/scripts/exp034_eval.py:114: RuntimeWarning: Mean of empty slice
+  "fsr": float(g[k][~gt].mean()) if (~gt).sum() else None, "recall": float(g[k][gt].mean())}
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{
+ "choice": "A0.3&W",
+ "recall_floor": 0.8813106980467004,
+ "n_videos": 72,
+ "narrator_dev_descriptive": {
+  "W": {
+   "clean": {
+    "single_rate_k1": 0.6129032258064516,
+    "false_single_rate_k2": 0.03225806451612903,
+    "kerr_k1": 0.5806451612903226
+   },
+   "music": {
+    "single_rate_k1": 0.16129032258064516,
+    "false_single_rate_k2": 0.0,
+    "kerr_k1": 1.8064516129032258
+   },
+   "noise": {
+    "single_rate_k1": 0.1935483870967742,
+    "false_single_rate_k2": 0.0,
+    "kerr_k1": 1.7419354838709677
+   }
+  },
+  "A0.3&W": {
+   "clean": {
+    "single_rate_k1": 0.6129032258064516,
+    "false_single_rate_k2": 0.03225806451612903,
+    "kerr_k1": 0.3548387096774194
+   },
+   "music": {
+    "single_rate_k1": 0.1935483870967742,
+    "false_single_rate_k2": 0.0,
+    "kerr_k1": 1.7419354838709677
+   },
+   "noise": {
+    "single_rate_k1": 0.1935483870967742,
+    "false_single_rate_k2": 0.0,
+    "kerr_k1": 1.6129032258064515
+   }
+  },
+  "P": {
+   "clean": {
+    "single_rate_k1": 0.6129032258064516,
+    "false_single_rate_k2": 0.0,
+    "kerr_k1": 0.5161290322580645
+   },
+   "music": {
+    "single_rate_k1": 0.12903225806451613,
+    "false_single_rate_k2": 0.0,
+    "kerr_k1": 1.6774193548387097
+   },
+   "noise": {
+    "single_rate_k1": 0.1935483870967742,
+    "false_single_rate_k2": 0.0,
+    "kerr_k1": 1.8709677419354838
+   }
+  },
+  "P&W": {
+   "clean": {
+    "single_rate_k1": 0.6129032258064516,
+    "false_single_rate_k2": 0.03225806451612903,
+    "kerr_k1": 0.3548387096774194
+   },
+   "music": {
+    "single_rate_k1": 0.16129032258064516,
+    "false_single_rate_k2": 0.0,
+    "kerr_k1": 1.8064516129032258
+   },
+   "noise": {
+    "single_rate_k1": 0.1935483870967742,
+    "false_single_rate_k2": 0.0,
+    "kerr_k1": 1.6129032258064515
+   }
+  }
+ },
+ "control_ina_vs_published": {
+  "mean_unit_agreement": 0.7351851851851852,
+  "min": 0.25,
+  "n": 72
+ }
+}
+S&W      bacc 0.837 recall 0.816 fsr 0.143 fsr_music 0.099
+S        bacc 0.830 recall 0.849 fsr 0.188 fsr_music 0.131
+I&W      bacc 0.811 recall 0.746 fsr 0.124 fsr_music 0.072
+I        bacc 0.807 recall 0.775 fsr 0.161 fsr_music 0.090
+P&W      bacc 0.761 recall 0.865 fsr 0.343 fsr_music 0.286
+A0.4&W   bacc 0.759 recall 0.878 fsr 0.360 fsr_music 0.284
+A0.3&W   bacc 0.746 recall 0.892 fsr 0.399 fsr_music 0.335  ← elegido
+A0.5&W   bacc 0.742 recall 0.785 fsr 0.301 fsr_music 0.211
+A0.2&W   bacc 0.734 recall 0.898 fsr 0.431 fsr_music 0.373
+P        bacc 0.728 recall 0.918 fsr 0.463 fsr_music 0.376
+A0.4     bacc 0.720 recall 0.928 fsr 0.489 fsr_music 0.378
+A0.1&W   bacc 0.718 recall 0.906 fsr 0.470 fsr_music 0.420
+W        bacc 0.592 recall 0.931 fsr 0.747 fsr_music 0.754
