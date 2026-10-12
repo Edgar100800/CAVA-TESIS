@@ -3403,3 +3403,50 @@ Lectura corregida:
   se registró: una política lineal no puede expresar "centro" con ese rasgo.
   No se añade un rasgo cuadrático, porque eso sería ajustar a lo que ya se
   vio en TVSum.
+
+### Resultado EXP-033 (dev raw_ext job 55212, 50 videos; confirmación blind40, 40 videos; `scripts/exp033_chapters.py`)
+
+**Desarrollo (raw_ext), M_local medio por L:**
+
+| L (s) | 90 | 120 | 150 | 180 | 240 | 300 |
+|---|---|---|---|---|---|---|
+| capítulos | **0.382** | 0.335 | 0.314 | 0.284 | 0.241 | 0.212 |
+| uniforme, mismo N | 0.364 | 0.389 | 0.370 | 0.359 | 0.329 | 0.261 |
+
+- L = 90 s, en el **borde inferior** de la rejilla pre-registrada. No se
+  extiende la rejilla.
+- Señal de alarma ya en dev: lo uniforme con L = 120 (0.389) supera a los
+  capítulos con cualquier L.
+
+**Confirmación (blind40, L = 90 congelado; 8.8 capítulos GT de media):**
+
+| criterio | diferencia | z | ¿cumple? |
+|---|---|---|---|
+| 1. M_local capítulos − uniforme mismo N | +0.016 ± 0.027 | 0.59 | **no** |
+| 2. F1 ±3 capítulos − uniforme mismo N | +0.087 ± 0.034 | 2.57 | sí |
+| 3. M_local capítulos − mejor señal sola por video | −0.038 ± 0.030 | −1.23 | **no** |
+
+Medias: capítulos M_local 0.381 / F1 ±3 0.363; uniforme 0.365 / 0.276;
+top-N visual 0.325; top-N transcript 0.328; máximo por video de las dos
+0.418.
+
+**No validado.** Lectura:
+- **Las fronteras que elige el operador sí están mejor ubicadas** que las
+  uniformes con el mismo número (F1 ±3 +0.087, z 2.57). Es lo mismo que vio
+  EXP-032 a nivel de tópico.
+- **El agrupamiento local no mejora** frente a lo uniforme. Con L = 90 se
+  hacen ~14 capítulos frente a 8.8 del autor: la granularidad sigue
+  mandando.
+- **Criterio 3, tal como está implementado** (commit 8f7de03, anterior a
+  los datos), compara con el **máximo por video** de visual y transcript.
+  Es un oráculo que elige la señal a posteriori, más duro que "la mejor
+  señal sola" fija.
+  - Exploratorio, no cuenta: frente a cada señal fija, capítulos − visual
+    +0.056 ± 0.034 (z 1.63) y − transcript +0.053 ± 0.033 (z 1.62).
+  - Tampoco pasaría.
+- El mapa CAVA no tiene un nivel de capítulo validado. **No se adopta**
+  `chapters` ni la versión `full_chapters` por capítulo.
+- Lo que queda abierto es elegir el número de capítulos por video. Es la
+  palanca que domina desde EXP-032, y ninguna regla interna la resuelve
+  (EXP-021). Es candidata a ser una decisión de la política aprendida, no
+  una regla fija.

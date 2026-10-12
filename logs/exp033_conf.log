@@ -1,0 +1,75 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 11678.56it/s]
+vobtL3s_iVk L90=0.525
+fUcDLGdB7VU L90=0.302
+2-NfbOCPd2Q L90=0.458
+awZ741NmdWE L90=0.281
+o8cZHbSjFuI L90=0.546
+zpWISMTZ_PM L90=0.669
+dh78fWEFhf0 L90=0.154
+F6ZItLvQahk L90=0.311
+IqyJt5uEVIw L90=0.695
+dBocyTZH5CI L90=0.450
+t7eKAuJ8zg0 L90=0.318
+3BjmbSTedbM L90=0.465
+H-FtVFr1gng L90=0.140
+u5jv-nkV5OI L90=0.317
+dIUCRn01ecE L90=-0.056
+XxTQZRYdjHw L90=0.398
+sMfPCYyDnfA L90=0.255
+nj6ItJb1AbM L90=0.247
+Tz1BI_eEVJ4 L90=0.745
+6u6fG7DlAiU L90=0.257
+adBuxEjVwYk L90=-0.085
+pCAiLee4x9A L90=0.470
+-mpWsmmp8Jw L90=0.444
+PRsRMx374Gk L90=0.559
+e7mehz2W85g L90=0.661
+NwK8RYHN1EU L90=0.609
+cHkIeur6WO4 L90=0.333
+vHzX5ZUZNPs L90=0.546
+FbBpusmV870 L90=0.507
+ajDInoZtYPM L90=0.267
+vLFBnfo89NA L90=0.401
+HmjKHAxRPqk L90=0.210
+ALJ8ZNS87uE L90=0.418
+GPHr7RNKQyM L90=0.253
+tpVZ15lsWvw L90=0.226
+hjUxTKMUxqg L90=0.238
+OZPJDwGkg68 L90=0.563
+hRhmJwjAzdw L90=0.175
+mWNF_-L_Gz4 L90=0.400
+FkbJe8DjRu4 L90=0.552
+{
+ "L": 90,
+ "n": 40,
+ "c1_m_vs_uniform": {
+  "mean": 0.0157,
+  "se": 0.0267,
+  "n": 40,
+  "z": 0.59
+ },
+ "c2_f3_vs_uniform": {
+  "mean": 0.0871,
+  "se": 0.0339,
+  "n": 40,
+  "z": 2.57
+ },
+ "c3_m_vs_best_single": {
+  "mean": -0.0375,
+  "se": 0.0304,
+  "n": 40,
+  "z": -1.23
+ },
+ "means": {
+  "n_chapters_gt": 8.825,
+  "L90_chapters_m": 0.3806,
+  "L90_chapters_f3": 0.3628,
+  "L90_uniform_m": 0.3649,
+  "L90_uniform_f3": 0.2757,
+  "L90_top_visual_m": 0.3248,
+  "L90_top_visual_f3": 0.3054,
+  "L90_top_transcript_m": 0.3276,
+  "L90_top_transcript_f3": 0.3031,
+  "best_single_m": 0.4181
+ }
+}
