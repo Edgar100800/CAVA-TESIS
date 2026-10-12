@@ -3502,3 +3502,84 @@ Lectura:
      de punta a punta y queda como banco reproducible.
   3. Antes de ampliar la política (más rasgos, no lineal), se necesita más
      dato etiquetado. Ampliar el modelo con 45 videos solo ajustaría ruido.
+
+---
+
+## EXP-039 · Detector de "¿hay una segunda voz con soporte propio?" para el narrador con habla filtrada (pre-registro)
+- **Fecha:** 2026-10-12 (registrado antes de generar el conjunto nuevo y de
+  calcular cualquiera de los detectores de abajo sobre cualquier conjunto)
+- **Motivación (EXP-035a / 036):**
+  - con S&W o I&W el narrador se detecta (0.13 → 0.55 en K = 1), pero el
+    detector spread da falsos narradores en archivos con una voz dominante;
+  - subir τ no sirve (EXP-036). La causa es estructural: **la mediana del
+    coseno a la media ignora por construcción cualquier voz con < 50 % de
+    las unidades**. Una voz del 17 % no mueve la mediana.
+- **Literatura consultada (2026-10-12):**
+  - estimación del número de hablantes por *eigengap* sobre el grafo de
+    afinidad, sin ajuste en desarrollo (NME-SC, Park et al., IEEE SPL 2019,
+    arXiv 2003.02405);
+  - VBx (BUT, VoxConverse) estima el número de hablantes por ARD y acierta
+    más que AHC;
+  - modelos de segmentación con conteo local (pyannote segmentation-3.0,
+    powerset, ventanas de 10 s). No está instalado y es un modelo con
+    acceso restringido: queda fuera de este experimento y es el siguiente
+    candidato si este falla.
+- **Lo único que cambia:** el detector de un hablante **cuando la entrada es
+  S&W o I&W** (perfil documentary). Embedding (WavLM-sv, unidades de 5 s),
+  filtros y perfil meeting sin cambios.
+- **Candidatos** (sobre las x-vectors de las unidades que pasan el filtro;
+  ≥ 10 unidades, si no "varios", igual que EXP-029):
+  - **D0 spread:** mediana del coseno a la media ≥ τ; τ ∈ {0.960, …, 0.990}
+    (paso 0.001). Es el detector actual con τ libre.
+  - **D1 q15:** cuantil 0.15 del coseno a la media ≥ τ; τ ∈ {0.500, …,
+    0.990} (paso 0.005). Una voz con ≥ 15 % de las unidades mueve este
+    cuantil.
+  - **D2 minor:** centro robusto = media normalizada de las unidades con
+    coseno a la media ≥ su mediana. Fracción de unidades con coseno al
+    centro robusto < θ. Un hablante si esa fracción ≤ 0.10 (fijo).
+    θ ∈ {0.500, …, 0.990} (paso 0.005).
+  - **D3 bic12:** el de EXP-029 (BIC GMM K = 1 − K = 2 sobre PCA-16, por
+    unidad). Un hablante si < τ; τ en 200 valores equiespaciados entre el
+    mínimo y el máximo de dev.
+  - **D4 nme:** número de hablantes por eigengap normalizado (NME, Park
+    2019). Afinidad coseno, binarización de los p vecinos por fila,
+    simetrizada, laplaciano no normalizado, K ≤ 8; p ∈ {2, …, max(2, N/4)}
+    elegido por la regla NME (mínimo de p / g_p). Un hablante si K̂ = 1. Sin
+    parámetro ajustable.
+- **Conjunto nuevo: domix (voces dominantes).** Archivos de VoxConverse con
+  K_true ≥ 2, voz principal ≥ 70 % de las unidades con hablante, **no
+  usados** en docmix. Son 40 por split (dev y test), y se usan todos. Mismo
+  generador de documental de EXP-035a (fondo a 15 dB, huecos de 4–20 s a
+  0 dB, p = 0.6, música y ruido, división de MUSAN de EXP-034, semilla 0):
+  80 mezclas por split. Cachés con el mismo código de EXP-034 (Whisper,
+  Silero, AST, Parakeet, xvec) e ina.
+- **Desarrollo** (S&W e I&W agrupados, música y ruido; un solo umbral):
+  - docmix dev (K = 1 y K ≥ 2) + domix dev (K ≥ 2).
+  - Por candidato, el umbral con mayor (tasa de un hablante en K = 1 − tasa
+    de falsos en K ≥ 2, docmix y domix juntos), con falsos ≤ 0.02. Si
+    ningún umbral cumple, el de menos falsos (empate: más detección).
+    Empate en el objetivo: el umbral más estricto.
+  - Elegido = el candidato con mayor objetivo entre los que cumplen
+    falsos ≤ 0.02. Empate: el primero en el orden D0…D4.
+- **Confirmación** (para G = S&W y G = I&W por separado, con el detector y el
+  umbral congelados, frente al producto actual: W con spread τ 0.976):
+  1. docmix conf, K = 1: tasa de un hablante G − W > 2 SE pareado;
+  2. docmix conf, K ≥ 2: falsos de G ≤ los de W + 0.05;
+  3. **domix conf (nuevo, 80 mezclas): falsos de G ≤ los de W + 0.05;**
+  4. AMI fresh3 (40 reuniones) con G: como mucho 1 de 40 marcada como de un
+     hablante.
+- **Reutilización declarada:** docmix conf ya se miró en EXP-035a y 036 (es
+  la tercera vez). Por eso la condición nueva (3) se mide sobre domix conf,
+  que es nuevo y contiene justo el modo de fallo.
+- **Lectura pre-declarada:**
+  - 1–4 se cumplen: el detector queda listo para el perfil documentary,
+    pero la adopción **sigue requiriendo 035b** (GT humano de BBC);
+  - 1 sí y 3 no: con x-vectors de 5 s no se separa una voz dominante de un
+    monólogo; siguiente paso, segmentación con conteo local (pyannote);
+  - 1 no: ningún detector conserva la detección del narrador.
+- **Límite conocido:** una segunda voz del ~5 % (1 unidad en un archivo de
+  14) no es detectable con unidades de 5 s. Se reporta cuántos falsos son
+  de ese tipo.
+- **Secundarias (sin criterio):** todos los candidatos en conf con su umbral
+  de dev; desglose por condición y por fracción de la voz principal; nº de
+  episodios BBC declarados de un hablante con G y el elegido.
