@@ -3312,7 +3312,7 @@ highlights pasan a EXP-037.
   Si la política gana pero copia lo uniforme (rasgo de posición dominante,
   huecos casi constantes), se reporta como tal.
 
-### Resultado EXP-036 (`scripts/exp036_tau.py`, CPU sobre las cachés de EXP-035a; docmix dev 118 mezclas por filtro, conf 46 K = 1 / 54 K ≥ 2, AMI 40)
+### Resultado EXP-036 (`scripts/exp036_tau.py`, CPU sobre las cachés de EXP-035a; docmix dev 124 mezclas (59 K = 1, 65 K ≥ 2), conf 46 K = 1 / 54 K ≥ 2, AMI 40)
 
 **Desarrollo** (S&W e I&W agrupados, música y ruido):
 

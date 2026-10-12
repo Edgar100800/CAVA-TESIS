@@ -7,7 +7,7 @@
 #SBATCH --exclude=g001
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --time=23:00:00
+#SBATCH --time=06:00:00
 #SBATCH --output=logs/%x_%j.out
 # Corrida limpia v1 (contrato cava-run-v1) con el stack final, en directorio nuevo: summe (EXP-037/038 confirmación)
 # Cooking (de videos_corrupt) va al final: si falla, los otros 24 ya están hechos.
