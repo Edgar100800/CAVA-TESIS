@@ -3477,11 +3477,11 @@ Lectura:
   los videos de entrenamiento sube de −0.04 a ~0.29 por pliegue. En la
   categoría que queda fuera, la política queda al nivel del azar (0.014
   frente a −0.001).
-- **Los pesos no son estables entre pliegues.** El signo cambia en 12 de 17
+- **Los pesos no son estables entre pliegues.** El signo cambia en 11 de 17
   rasgos (p. ej., acuerdo transcript −1.6 a +2.6, retornos −3.6 a +0.8).
   - Estables en todos los pliegues: fracción del tópico (+1.3 a +2.7),
     cambio visual local (−0.5 a −3.2), habla en la unidad (−0.2 a −2.8),
-    acuerdo vjudge (−0.4 a −3.3).
+    acuerdo vjudge (−0.4 a −3.3), soporte transcript (+0.1 a +4.0).
   - Lo estable dice "tópicos grandes y tramos visualmente quietos": la misma
     preferencia de H0.
 - **Control de "solo centro / solo cubrir":** la posición lineal tiene peso
