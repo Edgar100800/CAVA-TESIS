@@ -3450,3 +3450,55 @@ top-N visual 0.325; top-N transcript 0.328; máximo por video de las dos
   palanca que domina desde EXP-032, y ninguna regla interna la resuelve
   (EXP-021). Es candidata a ser una decisión de la política aprendida, no
   una regla fija.
+
+### Resultado EXP-038 · TVSum dejando una categoría fuera (10 pliegues, 50 videos; `scripts/exp038_policy.py --mode loco`)
+
+| política / base | recompensa media en los videos de prueba |
+|---|---|
+| **política aprendida** | **0.014** |
+| centro (m unidades contiguas) | **0.300** |
+| H3 (EXP-037) | 0.066 |
+| H0 producto | 0.058 |
+| al azar | −0.001 |
+| uniforme en la rejilla | −0.042 |
+
+| criterio | diferencia | z | ¿cumple? |
+|---|---|---|---|
+| 3. política − uniforme | +0.056 ± 0.111 | 0.50 | **no** |
+| 3b. política − centro | −0.286 ± 0.119 | −2.40 | **no** (el centro es mejor) |
+| secundaria: política − H3 | −0.052 ± 0.119 | −0.44 | — |
+
+**Criterios 3 y 3b no cumplidos.** EXP-038 queda no validado sea cual sea
+el resultado de SumMe (criterios 1, 1b y 2), que se corre igual cuando
+termine el job de SumMe.
+
+Lectura:
+- **Aprende en entrenamiento y no generaliza.** La recompensa muestreada en
+  los videos de entrenamiento sube de −0.04 a ~0.29 por pliegue. En la
+  categoría que queda fuera, la política queda al nivel del azar (0.014
+  frente a −0.001).
+- **Los pesos no son estables entre pliegues.** El signo cambia en 12 de 17
+  rasgos (p. ej., acuerdo transcript −1.6 a +2.6, retornos −3.6 a +0.8).
+  - Estables en todos los pliegues: fracción del tópico (+1.3 a +2.7),
+    cambio visual local (−0.5 a −3.2), habla en la unidad (−0.2 a −2.8),
+    acuerdo vjudge (−0.4 a −3.3).
+  - Lo estable dice "tópicos grandes y tramos visualmente quietos": la misma
+    preferencia de H0.
+- **Control de "solo centro / solo cubrir":** la posición lineal tiene peso
+  medio +1.05 (prefiere el final, no el centro). La dispersión de los huecos
+  es 1.09 frente a 0.29 de lo uniforme: la política **concentra** sus
+  unidades, no cubre. No copia ninguna de las dos bases triviales; tampoco
+  las supera.
+- **Con 45 videos de entrenamiento y la importancia de TVSum como
+  recompensa, una política lineal sobre el estado del mapa no aprende nada
+  que transfiera entre categorías.** La recompensa está dominada por un
+  sesgo de posición (centro, +0.30) que el estado registrado no puede
+  expresar, y el resto es específico de categoría.
+- **Implicaciones para la línea RL:**
+  1. La recompensa de TVSum no sirve sola como señal de entrenamiento. Hace
+     falta una recompensa con más videos o menos sesgo de posición, o
+     normalizar la importancia por posición antes de usarla (pre-registrar).
+  2. El entorno (`clips.jsonl` + `rewards.jsonl` + este entrenador) funciona
+     de punta a punta y queda como banco reproducible.
+  3. Antes de ampliar la política (más rasgos, no lineal), se necesita más
+     dato etiquetado. Ampliar el modelo con 45 videos solo ajustaría ruido.

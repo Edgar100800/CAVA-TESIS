@@ -1,0 +1,114 @@
+[loco] categoría fuera: BK
+  época 0: R muestreada -0.0352
+  época 50: R muestreada 0.2778
+  época 100: R muestreada 0.2942
+  época 150: R muestreada 0.3149
+  época 200: R muestreada 0.3201
+  época 250: R muestreada 0.3070
+  época 299: R muestreada 0.3096
+[loco] categoría fuera: BT
+  época 0: R muestreada -0.0067
+  época 50: R muestreada 0.2599
+  época 100: R muestreada 0.2806
+  época 150: R muestreada 0.3096
+  época 200: R muestreada 0.3399
+  época 250: R muestreada 0.3003
+  época 299: R muestreada 0.3184
+[loco] categoría fuera: DS
+  época 0: R muestreada -0.0188
+  época 50: R muestreada 0.2362
+  época 100: R muestreada 0.2654
+  época 150: R muestreada 0.3093
+  época 200: R muestreada 0.2946
+  época 250: R muestreada 0.3009
+  época 299: R muestreada 0.3145
+[loco] categoría fuera: FM
+  época 0: R muestreada -0.0058
+  época 50: R muestreada 0.2124
+  época 100: R muestreada 0.2313
+  época 150: R muestreada 0.2749
+  época 200: R muestreada 0.3482
+  época 250: R muestreada 0.2905
+  época 299: R muestreada 0.3090
+[loco] categoría fuera: GA
+  época 0: R muestreada -0.0004
+  época 50: R muestreada 0.2201
+  época 100: R muestreada 0.2256
+  época 150: R muestreada 0.2820
+  época 200: R muestreada 0.3325
+  época 250: R muestreada 0.3157
+  época 299: R muestreada 0.3197
+[loco] categoría fuera: MS
+  época 0: R muestreada -0.0048
+  época 50: R muestreada 0.2433
+  época 100: R muestreada 0.2493
+  época 150: R muestreada 0.2541
+  época 200: R muestreada 0.2650
+  época 250: R muestreada 0.2604
+  época 299: R muestreada 0.2740
+[loco] categoría fuera: PK
+  época 0: R muestreada 0.0030
+  época 50: R muestreada 0.2158
+  época 100: R muestreada 0.2244
+  época 150: R muestreada 0.2634
+  época 200: R muestreada 0.2550
+  época 250: R muestreada 0.3192
+  época 299: R muestreada 0.2661
+[loco] categoría fuera: PR
+  época 0: R muestreada -0.0108
+  época 50: R muestreada 0.2051
+  época 100: R muestreada 0.2572
+  época 150: R muestreada 0.2699
+  época 200: R muestreada 0.3001
+  época 250: R muestreada 0.2920
+  época 299: R muestreada 0.2993
+[loco] categoría fuera: VT
+  época 0: R muestreada 0.0023
+  época 50: R muestreada 0.2527
+  época 100: R muestreada 0.2721
+  época 150: R muestreada 0.2973
+  época 200: R muestreada 0.3350
+  época 250: R muestreada 0.3157
+  época 299: R muestreada 0.3008
+[loco] categoría fuera: VU
+  época 0: R muestreada -0.0227
+  época 50: R muestreada 0.2902
+  época 100: R muestreada 0.2963
+  época 150: R muestreada 0.3305
+  época 200: R muestreada 0.3183
+  época 250: R muestreada 0.3206
+  época 299: R muestreada 0.3329
+{
+ "n": 50,
+ "c3_vs_uniform": {
+  "mean": 0.0559,
+  "se": 0.1109,
+  "n": 50,
+  "z": 0.5,
+  "pass": false
+ },
+ "c3b_vs_center": {
+  "mean": -0.2855,
+  "se": 0.1191,
+  "n": 50,
+  "z": -2.4,
+  "pass": false
+ },
+ "secondary_vs_H3": {
+  "mean": -0.0522,
+  "se": 0.1185,
+  "n": 50,
+  "z": -0.44,
+  "pass": false
+ },
+ "means": {
+  "policy": 0.014,
+  "uniform": -0.0419,
+  "center": 0.2996,
+  "random": -0.0011,
+  "H3": 0.0662,
+  "H0": 0.0575,
+  "gap_cv_policy": 1.0909,
+  "gap_cv_uniform": 0.2935
+ }
+}
