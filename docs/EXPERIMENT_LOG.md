@@ -3352,3 +3352,41 @@ Consecuencias:
   K = 1 sobre las unidades filtradas) en lugar de "¿la voz típica es
   homogénea?". Antes de eso hace falta el GT humano de BBC (035b) para saber
   si, en el dominio real, "otra voz" existe.
+
+### Resultado EXP-037 · desarrollo (TVSum, 50 videos; `scripts/exp037_highlights.py --mode dev`)
+
+| regla | recompensa media | uniforme (mismas duraciones) | al azar |
+|---|---|---|---|
+| H0 producto | 0.058 | — | — |
+| H1 cobertura | 0.063 | 0.038 | 0.017 |
+| H2 representativa | 0.057 | 0.038 | 0.018 |
+| **H3 saliente (H\*)** | **0.066** | 0.038 | 0.020 |
+
+H\* = **H3**, congelado antes de evaluar SumMe. En desarrollo, H3 − uniforme
+= +0.029 ± 0.100 (z 0.29) y H3 − H0 = +0.009 ± 0.117 (z 0.07). Las cuatro
+reglas están en el ruido.
+
+### ⚠️ Corrección de la lectura de EXP-031 (hallada al verificar la base uniforme de EXP-037)
+La base "uniforme" de EXP-031 (0.322) **no mide cobertura**:
+- highlights10pct es **un solo clip** en los 50 videos de TVSum (el tópico
+  más largo, recortado al 10 %);
+- `uniform_spans` con un solo clip lo coloca **en el centro del video**.
+
+La importancia de TVSum tiene un sesgo de posición fuerte. z media por
+decil de duración, de 0–10 % a 90–100 %:
+
+`−0.32 −0.22 −0.01 +0.25 +0.24 +0.31 +0.18 −0.01 −0.02 −0.38`
+
+Con el mismo presupuesto repartido en m unidades equiespaciadas, lo uniforme
+cae a −0.04, y con las duraciones de H1–H3 da 0.038.
+
+Lectura corregida:
+- **"Un clip en el centro del video" = 0.322** es la base dura de TVSum.
+  Explota el sesgo de posición de los anotadores, no la cobertura.
+- Lo que el reporte del 9 oct dice sobre "TVSum premia la cobertura" es
+  incorrecto. Se corrige en el próximo reporte.
+- Para EXP-038 esto es central: un rasgo de posición basta para aprender
+  "centro". El control de "solo cubrir" pre-registrado debe leerse también
+  como control de "solo centro": si el peso de posición domina, se reporta.
+- El resultado numérico de EXP-031 no cambia (no validado). Cambia la
+  explicación.
