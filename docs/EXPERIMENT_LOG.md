@@ -3311,3 +3311,44 @@ highlights pasan a EXP-037.
 
   Si la política gana pero copia lo uniforme (rasgo de posición dominante,
   huecos casi constantes), se reporta como tal.
+
+### Resultado EXP-036 (`scripts/exp036_tau.py`, CPU sobre las cachés de EXP-035a; docmix dev 118 mezclas por filtro, conf 46 K = 1 / 54 K ≥ 2, AMI 40)
+
+**Desarrollo** (S&W e I&W agrupados, música y ruido):
+
+| τ | un hablante K = 1 | falsos K ≥ 2 |
+|---|---|---|
+| 0.960 | 0.763 | 0.285 |
+| 0.970 | 0.627 | 0.092 |
+| 0.974 | 0.559 | 0.062 |
+| 0.976 (EXP-029) | 0.398 | 0.046 |
+| 0.980 | 0.280 | 0.031 |
+| **0.982 (elegido)** | 0.195 | 0.015 |
+| 0.985 | 0.076 | 0.000 |
+
+**Confirmación (τ 0.982):**
+
+| criterio | S&W | I&W |
+|---|---|---|
+| 1. un hablante en K = 1, G − W | 0.130 frente a 0.130, +0.000 ± 0.062, z 0.0 ❌ | 0.196 frente a 0.130, +0.065 ± 0.072, z 0.90 ❌ |
+| 2. falsos en K ≥ 2 (límite 0.05) | 0.019 (mjmgr, música) ✅ | 0.019 (mjmgr, música) ✅ |
+| 3. AMI, reuniones marcadas como un hablante (≤ 1) | 0 de 40 ✅ | 0 de 40 ✅ |
+
+**No validado.** Subir τ elimina los falsos narradores, pero también la
+detección del narrador real (0.55 → 0.13–0.20). En dev no hay ningún τ con
+detección alta y falsos bajos a la vez.
+
+La estadística spread (mediana del coseno a la media) **no separa** "un solo
+hablante" de "una voz que domina el 85 % con otra breve": en esos archivos
+casi todas las unidades son de la voz dominante, así que la mediana es igual
+a la de un monólogo. Es un límite del detector, no del umbral.
+
+Consecuencias:
+- El perfil documentary sigue publicando las voces como grupos acústicos.
+  La adopción de S&W / I&W queda bloqueada (035a-2 con τ 0.976, 036-1 con
+  τ 0.982).
+- Siguiente candidato, sin pre-registrar aún: un detector que pregunte
+  "¿hay una segunda voz con soporte propio?" (p. ej., BIC de K = 2 frente a
+  K = 1 sobre las unidades filtradas) en lugar de "¿la voz típica es
+  homogénea?". Antes de eso hace falta el GT humano de BBC (035b) para saber
+  si, en el dominio real, "otra voz" existe.
