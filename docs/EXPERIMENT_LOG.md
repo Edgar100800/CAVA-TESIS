@@ -3159,3 +3159,155 @@ Lectura:
   en EXP-029) queda en el borde con voces muy dominantes.
 - No se ajusta τ aquí. Es candidato a un experimento propio, con su
   desarrollo.
+
+---
+
+## Plan del 2026-10-12: cerrar EXP-033 y preparar el entrenamiento de la política de clips
+
+Orden acordado: EXP-033 (capítulos) → EXP-036 (umbral del narrador) →
+EXP-037 (highlights por importancia con regla fija) → EXP-038 (política
+aprendida). Los tres pre-registros de abajo se escriben y se commitean
+antes de calcular cualquiera de sus números.
+
+Nota de numeración: el reporte semanal del 9 oct llamaba "EXP-034" a los
+highlights por importancia. Ese número lo tomó el filtro de habla; los
+highlights pasan a EXP-037.
+
+### Precisión de EXP-033 (antes de correr su evaluación)
+- `topicagg/chapters.py` (commit 8f7de03, anterior al job 55212) conserva
+  round(D / L) − 1 fronteras, es decir, **round(D / L) capítulos**. La base
+  uniforme usa el mismo número. Es lo que el pre-registro llama "N", contado
+  en capítulos.
+
+---
+
+## EXP-036 · Umbral del detector de un hablante con habla filtrada (pre-registro)
+- **Fecha:** 2026-10-12 (antes de calcular el detector con cualquier τ
+  nuevo)
+- **Motivación (EXP-035a):** con S&W o I&W el narrador se detecta (+0.41,
+  z 5.6), pero hay 3 de 54 falsos narradores (límite 2.7). Son archivos
+  dominados por una voz (83 / 17 %, 86 %). τ = 0.976 se fijó en EXP-029 con
+  VAD oráculo sobre conversación; la entrada filtrada cambia la distribución
+  de la estadística.
+- **Lo único que cambia:** τ del detector spread (mediana del coseno de cada
+  unidad con la x-vector media) **cuando la entrada es S&W o I&W** (perfil
+  documentary). El perfil meeting conserva τ = 0.976 y la puerta W.
+- **Desarrollo:** docmix dev (VoxConverse dev; música y ruido; las mismas
+  mezclas de EXP-035a).
+  - Rejilla τ ∈ {0.960, 0.961, …, 0.990}.
+  - Se agrupan S&W e I&W (un solo τ para la entrada filtrada).
+  - Elegido = el τ con mayor (tasa de un hablante en K = 1 − tasa de falsos
+    en K ≥ 2), con la restricción falsos ≤ 0.02 en dev. Empate: el τ mayor.
+- **Confirmación:** docmix conf (VoxConverse test). Se reutiliza: es el
+  conjunto de EXP-035a, que no fijó nada. Se declara.
+- **Criterios**, para G = S&W y G = I&W por separado, con G a τ nuevo frente
+  al producto actual (W, τ 0.976):
+  1. K = 1: tasa de un hablante G − W > 2 SE pareado;
+  2. K ≥ 2: falsos narradores de G ≤ los de W + 0.05 (el mismo criterio que
+     bloqueó 035a).
+  3. No regresión fuera del documental: en AMI (40 reuniones, unidades de
+     10 s) con G a τ nuevo, como mucho 1 de 40 reuniones marcada como de un
+     hablante.
+- **Adopción en el perfil documentary:** G pasa 036-1, 036-2 y 036-3 **y**
+  035b-1, 035b-2 y 035b-3 (GT humano, pendiente). 036-2 sustituye a 035a-2
+  solo para el τ nuevo; el bloqueo de 035a sigue en pie para τ 0.976.
+
+---
+
+## EXP-037 · Highlights por importancia con una regla fija sobre el mapa (pre-registro)
+- **Fecha:** 2026-10-12 (antes de correr CAVA sobre SumMe y de calcular
+  cualquier regla nueva sobre TVSum)
+- **Motivación (EXP-031):** highlights10pct elige los tópicos más largos y
+  queda como el azar (0.057 frente a 0.041). Los clips equiespaciados ganan
+  (0.322): TVSum premia la cobertura.
+- **Presupuesto:** m = max(1, ⌊0.10 · D / 5⌋) unidades de 5 s, alineadas a
+  la rejilla del mapa (nivel default, sin tópicos no_topic, como el
+  producto).
+- **Reglas candidatas** (solo salidas del pipeline, sin GT):
+  - **H0, producto:** highlights10pct tal como está en `clips.jsonl`
+    (referencia).
+  - Para H1–H3, las m unidades se reparten entre tópicos en proporción a su
+    duración (resto mayor; empates por inicio más temprano). El cupo de un
+    tópico tiene como tope la longitud de su tramo más largo; lo que sobra
+    pasa al siguiente en el orden del resto. Cada tópico recibe una ventana
+    contigua de su cupo dentro de su tramo más largo, centrada en:
+    - **H1, cobertura:** el centro del tramo;
+    - **H2, representativa:** la unidad del tramo con mayor coseno visual
+      (SigLIP) a la media visual del tópico;
+    - **H3, saliente:** la unidad del tramo con mayor distintividad visual,
+      1 − coseno a la media visual del video.
+- **Recompensa:** la de EXP-031 (z por video de la importancia media por
+  segundo, media sobre los segundos elegidos). En SumMe, la importancia por
+  fotograma es `gt_score` (fracción de usuarios que lo eligieron).
+- **Desarrollo:** TVSum (50; ya visto en EXP-031). Se elige la regla H* de
+  H1–H3 con mayor recompensa media.
+- **Confirmación:** SumMe (25 videos de 1–6 min, nunca usados por CAVA).
+  - CAVA se corre con el stack final (perfil film) en
+    `data/cava_runs_v1_summe/`.
+  - Cooking está en `videos_corrupt/` de SegLoop (ffprobe da 85.8 s). Se
+    intenta; si el pipeline falla, se excluye y se declara.
+- **Criterios (SE pareado sobre los videos de SumMe):**
+  1. R(H*) − R(uniforme, mismas duraciones de clip) > 2 SE;
+  2. R(H*) − R(H0) > 2 SE;
+  3. R(H*) − R(al azar, 1000 sorteos, mismas duraciones) > 2 SE.
+- **Adopción:** si pasan 1 y 2, H* sustituye la regla de highlights10pct y
+  recap60.
+- **Expectativa declarada:** H1 se parece a lo uniforme por construcción;
+  superar lo uniforme por 2 SE con 25 videos es improbable. El resultado fija
+  la regla fija contra la que se mide EXP-038.
+- **Secundarias:** F1 estándar de SumMe al 15 % (máximo sobre usuarios), solo
+  informativo.
+
+---
+
+## EXP-038 · Política de clips aprendida por refuerzo (bandido contextual) (pre-registro)
+- **Fecha:** 2026-10-12 (antes de escribir el código de entrenamiento)
+- **Qué es y qué no es:** una decisión de un paso por video (qué unidades
+  entran en los highlights bajo el presupuesto), aprendida por gradiente de
+  política con la recompensa de importancia. Es un bandido contextual, no
+  RL secuencial. Con 50 videos de entrenamiento no hay datos para más.
+- **Estado por unidad de 5 s** (solo salidas del pipeline y del mapa; sin
+  GT):
+  - posición relativa t / D;
+  - fracción de la duración del video que ocupa su tópico;
+  - el tópico tiene retornos;
+  - primera unidad del tramo;
+  - acuerdo y soporte del tópico por señal (voice, visual, transcript,
+    vjudge; 0 si la señal se abstuvo);
+  - distintividad visual (1 − coseno a la media visual del video);
+  - cambio visual local (puntuación de frontera visual en la unidad);
+  - hay transcripción en la unidad;
+  - banderas needs_review y no_topic.
+
+  Rasgos en z-score por video.
+- **Política:** puntuación lineal w · f. Al entrenar se muestrean m
+  unidades sin reemplazo (Plackett–Luce, m como en EXP-037). Al evaluar se
+  toman las m de mayor puntuación.
+- **Entrenamiento (hiperparámetros fijos, sin búsqueda):**
+  - REINFORCE con línea base de la media de 16 muestras por video;
+  - Adam, lr 0.05, 300 épocas, L2 1e-3;
+  - semilla 0.
+- **Recompensa:** la de EXP-031 / EXP-037 (z de importancia sobre los
+  segundos elegidos). Ningún término de estructura: TVSum y SumMe ya premian
+  la cobertura, así que se mide si la política aprende algo más que cubrir.
+- **Evaluación:**
+  - **Interna:** TVSum dejando una categoría fuera (10 pliegues de 5
+    videos: entrena con 45, prueba con 5).
+  - **Externa:** entrena con los 50 de TVSum y prueba en SumMe.
+- **Bases (mismas m unidades por video):**
+  - uniforme (m unidades equiespaciadas en la rejilla);
+  - al azar (1000 sorteos);
+  - H* de EXP-037.
+- **Criterios (SE pareado por video):**
+  1. SumMe: R(política) − R(uniforme) > 2 SE;
+  2. SumMe: R(política) − R(H*) > 2 SE;
+  3. TVSum dejando una categoría fuera: R(política) − R(uniforme) > 2 SE.
+- **Validación:** 1, 2 y 3. Si solo pasa 3, se declara que lo aprendido no
+  transfiere de dominio.
+- **Control de "solo cubrir":**
+  - dispersión temporal de lo elegido (desviación de los huecos entre
+    unidades frente a lo uniforme);
+  - pesos aprendidos por rasgo, publicados.
+
+  Si la política gana pero copia lo uniforme (rasgo de posición dominante,
+  huecos casi constantes), se reporta como tal.
