@@ -4,6 +4,7 @@ Cada ítem: dominio, id, wav, unidades y split. Dominios:
   ava    AVASpeech-SMAD, minutos 15–30 (labels relativas a la ventana), unidades de 5 s
   mix    narrador sintético VoxConverse + MUSAN (scripts/exp034_mix.py), unidades de 5 s
   docmix narrador sintético con estructura de documental (EXP-035a, scripts/exp035_mix.py)
+  domix  voces dominantes (K >= 2, principal >= 70 %) con la misma estructura (EXP-039, scripts/exp039_mix.py)
   ami    AMI fresh3, Mix-Headset, unidades del caché de señales (10 s)
   bbc    BBC 01–11, audio del pipeline, unidades del pipeline (5 s)
 """
@@ -51,7 +52,8 @@ def bbc_items():
 
 
 def all_items(doms=("ava", "mix", "ami", "bbc")):
-    f = {"ava": ava_items, "mix": mix_items, "docmix": lambda: mix_items("docmix"), "ami": ami_items, "bbc": bbc_items}
+    f = {"ava": ava_items, "mix": mix_items, "docmix": lambda: mix_items("docmix"), "domix": lambda: mix_items("domix"),
+         "ami": ami_items, "bbc": bbc_items}
     for d in doms:
         yield from f[d]()
 
