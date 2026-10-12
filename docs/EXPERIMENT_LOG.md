@@ -3390,3 +3390,16 @@ Lectura corregida:
   como control de "solo centro": si el peso de posición domina, se reporta.
 - El resultado numérico de EXP-031 no cambia (no validado). Cambia la
   explicación.
+
+### Enmienda de EXP-038 (2026-10-12, antes de escribir su código; motivada por la corrección de EXP-031)
+- **Base nueva, "centro":** m unidades contiguas centradas en la mitad del
+  video. Es la base dura real de TVSum.
+- **Criterio nuevo, 1b:** SumMe, R(política) − R(centro) > 2 SE.
+- **Criterio nuevo, 3b:** TVSum dejando una categoría fuera,
+  R(política) − R(centro) > 2 SE.
+- **Validación:** 1, 1b, 2, 3 y 3b. La enmienda solo endurece; no se quita
+  ningún criterio.
+- Los rasgos no se tocan. La posición sigue entrando como t / D lineal, como
+  se registró: una política lineal no puede expresar "centro" con ese rasgo.
+  No se añade un rasgo cuadrático, porque eso sería ajustar a lo que ya se
+  vio en TVSum.
