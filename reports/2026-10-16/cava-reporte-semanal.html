@@ -1,0 +1,496 @@
+<title>CAVA · Reporte semanal · 9–16 oct 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Informe técnico de una columna, mismo sistema que los informes del 2, 5 y 9 de octubre: cabecera sobria, línea de tiempo, tablas y gráficos a escala. */
+:root{
+  --paper:#fafaf8; --surface:#ffffff; --ink:#172235; --muted:#55606f; --rule:#dfe2e6;
+  --accent:#087557; --accent-soft:#e3f1ec; --link:#234e87;
+  --ok:#087557; --warn:#865c00; --bad:#a82d48; --warn-soft:#fbf3e0;
+  --box:#f1f3f5; --box-stroke:#b9c0c8; --bar-muted:#c3c9d1;
+  --f-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12161d; --surface:#181e27; --ink:#e4e8ee; --muted:#9aa5b4; --rule:#2c3440;
+  --accent:#4fc19b; --accent-soft:#16302a; --link:#8fb4ea;
+  --ok:#4fc19b; --warn:#e0b354; --bad:#ef7f98; --warn-soft:#2c2617;
+  --box:#1f2631; --box-stroke:#465264; --bar-muted:#4a5566; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12161d; --surface:#181e27; --ink:#e4e8ee; --muted:#9aa5b4; --rule:#2c3440;
+  --accent:#4fc19b; --accent-soft:#16302a; --link:#8fb4ea;
+  --ok:#4fc19b; --warn:#e0b354; --bad:#ef7f98; --warn-soft:#2c2617;
+  --box:#1f2631; --box-stroke:#465264; --bar-muted:#4a5566; color-scheme:dark}
+
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.6;margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px;padding-block:40px 64px}
+a{color:var(--link)}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,4.4vw,40px)}
+h2{font-size:25px;padding-top:6px}
+h3{font-size:18px}
+p{margin:0;max-width:72ch}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lead{font-size:17px;color:var(--muted);max-width:70ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.meta span{border:1px solid var(--rule);border-radius:4px;padding:2px 8px;background:var(--surface)}
+.meta span.ok{color:var(--ok);border-color:var(--ok)}
+nav{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px}
+nav a{text-decoration:none;border-bottom:1px solid var(--rule)}
+nav a:hover,nav a:focus-visible{border-bottom-color:var(--link)}
+header{display:grid;gap:14px;padding-bottom:26px;border-bottom:2px solid var(--ink)}
+section{display:grid;gap:14px;padding-block:30px;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+.num{font-family:var(--f-mono);color:var(--muted);font-size:14px;margin-right:6px}
+ul,ol{margin:0;padding-left:20px;display:grid;gap:6px;max-width:74ch}
+.small{font-size:13.5px;color:var(--muted)}
+code,.mono{font-family:var(--f-mono);font-size:.88em}
+
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;display:grid;gap:4px;align-content:start;min-width:0}
+.stat .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.stat b{font-family:var(--f-mono);font-weight:500;font-size:24px;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1.15}
+.stat b.bad{color:var(--bad)}
+.stat span{font-size:13px;color:var(--muted);line-height:1.45}
+
+.timeline{display:grid;grid-template-columns:96px minmax(0,1fr);gap:0;border-left:0}
+.timeline .day{font-family:var(--f-mono);font-size:12.5px;color:var(--accent);padding:12px 12px 12px 0;border-top:1px solid var(--rule)}
+.timeline .event{padding:12px 0;border-top:1px solid var(--rule);display:grid;gap:4px;min-width:0}
+.timeline .event p{font-size:14.5px}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:12px;font-family:var(--f-mono);font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;background:var(--paper)}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--f-mono);font-size:13px;white-space:nowrap}
+.v{font-family:var(--f-mono);font-size:12px;white-space:nowrap;font-weight:500}
+.ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+
+.notice{background:var(--warn-soft);border:1px solid var(--rule);border-left:3px solid var(--warn);border-radius:4px;padding:12px 16px;font-size:14.5px;display:grid;gap:6px}
+
+.diagram{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface);padding:12px}
+.diagram svg{display:block;min-width:760px;width:100%;height:auto}
+.diagram .bx{fill:var(--box);stroke:var(--box-stroke);stroke-width:1}
+.diagram .bx.acc{fill:var(--accent-soft);stroke:var(--accent)}
+.diagram .bx.dash{fill:var(--paper);stroke:var(--box-stroke);stroke-dasharray:4 3}
+.diagram text{fill:var(--ink);font-family:var(--f-body);font-size:12px}
+.diagram .t{font-weight:600;font-size:12.5px}
+.diagram .s{fill:var(--muted);font-size:10.5px}
+.diagram .lbl{fill:var(--accent);font-family:var(--f-mono);font-size:10px;letter-spacing:.06em}
+.diagram .ln{stroke:var(--muted);stroke-width:1.2;fill:none}
+.diagram .ah{fill:var(--muted)}
+
+.chart{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface);padding:12px}
+.chart svg{display:block;min-width:620px;width:100%;height:auto}
+.chart text{fill:var(--ink);font-family:var(--f-body);font-size:12px}
+.chart .ax{fill:var(--muted);font-family:var(--f-mono);font-size:10.5px}
+.chart .grid{stroke:var(--rule);stroke-width:1}
+.chart .bar{fill:var(--bar-muted)}
+.chart .bar.cava{fill:var(--accent)}
+.chart .bar.ref{fill:none;stroke:var(--muted);stroke-dasharray:4 3}
+.chart .val{fill:var(--muted);font-family:var(--f-mono);font-size:11px}
+.chart .grp{fill:var(--muted);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+.two > div{display:grid;gap:8px;min-width:0}
+figcaption{font-size:12.5px;color:var(--muted)}
+
+.scope{display:grid;gap:12px;counter-reset:s}
+.scope article{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;display:grid;gap:6px;min-width:0}
+.scope .tag{font-family:var(--f-mono);font-size:11px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
+.scope .tag.warn{color:var(--warn)}
+.scope p{font-size:14.5px}
+
+footer{padding-top:24px;font-size:12.5px;color:var(--muted)}
+
+@media (max-width:760px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .two{grid-template-columns:minmax(0,1fr)}
+  .timeline{grid-template-columns:minmax(0,1fr)}
+  .timeline .day{padding-bottom:0}
+  .timeline .event{border-top:0;padding-top:4px}
+  .wrap{padding-block:28px 48px}
+}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+.chart .l1{fill:none;stroke:var(--accent);stroke-width:2}
+.chart .l2{fill:none;stroke:var(--bad);stroke-width:2}
+.chart .d1{fill:var(--accent)} .chart .d2{fill:var(--bad)}
+.chart .k1{fill:var(--accent);font-size:12px} .chart .k2{fill:var(--bad);font-size:12px}
+.chart .mk{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3}
+li > ul{margin-top:4px}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">CAVA · reporte semanal · 9 → 16 de octubre de 2026</div>
+  <h1>Aislar el audio, medir la recompensa y probar la primera política aprendida</h1>
+  <p class="lead">Esta semana trabajamos dos líneas. La primera aísla el procesamiento de sonido para resolver el narrador único de los documentales. La segunda cierra el nivel de capítulo y lleva la política de clips del contrato de datos a un primer entrenamiento. Ninguno de los seis experimentos cerrados pasó sus criterios, pero cada uno descartó una explicación concreta. Además, uno corrigió la lectura de la línea base de TVSum que usábamos para el entrenamiento. La parte final quedó frenada por la cola de GPU.</p>
+  <div class="meta"><span>EXP-033 a EXP-039</span><span>HEAD ae64c30</span><span class="ok">25 tests pasan</span><span>6 experimentos cerrados · 0 validados</span><span>1 corrección de lectura</span><span>SumMe en cola desde el 12 oct</span></div>
+  <nav aria-label="Secciones del informe"><a href="#resumen">Resultados</a><a href="#direcciones">Direcciones</a><a href="#semana">Semana</a><a href="#arquitectura">Implementación</a><a href="#pruebas">Experimentos</a><a href="#narrador">Narrador</a><a href="#politica">Política de clips</a><a href="#limites">Límites y bloqueos</a><a href="#alcance">Qué sigue</a><a href="#evidencia">Evidencia</a></nav>
+</header>
+
+<section id="resumen">
+  <h2><span class="num">1</span>Resultados actuales</h2>
+  <div class="stats">
+    <div class="stat"><span class="k">EXP-034 · filtro de habla</span><b>0.73 → 0.13</b><span>fracción de unidades sin habla que se marcan como voz (AVA-Speech, 76 videos de confirmación): Whisper solo frente a ina + Whisper.</span></div>
+    <div class="stat"><span class="k">EXP-035a · narrador</span><b>+0.41</b><span>detección del narrador único con el filtro (z 5.6, 46 mezclas con estructura de documental). Bloqueado por 3 de 54 falsos narradores.</span></div>
+    <div class="stat"><span class="k">EXP-038 · política aprendida</span><b class="bad">0.014</b><span>recompensa en categorías de TVSum no vistas. Un clip en el centro del video da 0.300.</span></div>
+    <div class="stat"><span class="k">GPU</span><b class="bad">&gt; 96 h</b><span>en cola la corrida de SumMe (job 56181), que confirma EXP-037 y EXP-038. Sin nodo A100 completo disponible.</span></div>
+  </div>
+  <p>Todas las comparaciones usan el video, la mezcla o la reunión como unidad: diferencia pareada, z = media / error estándar, y aceptación con z &gt; 2. Cada hipótesis, enmienda y umbral se registró en git antes de calcular los datos de confirmación.</p>
+</section>
+
+<section id="direcciones">
+  <h2><span class="num">2</span>Direcciones de la semana</h2>
+  <div class="two">
+    <div>
+      <h3>Línea A · el narrador en documentales</h3>
+      <p>El reporte anterior dejaba abierto por qué CAVA publica 6–8 voces en un documental con un solo narrador. Separamos el problema en dos: decidir qué unidades tienen habla y decidir cuántos hablantes hay.</p>
+      <ul>
+        <li><strong>Filtro de habla:</strong> resuelto en aislamiento. Silero o ina combinados con Whisper dejan de marcar la música como voz (EXP-034).</li>
+        <li><strong>Detección del narrador:</strong> con el filtro funciona en mezclas con estructura de documental (EXP-035a).</li>
+        <li><strong>Falsos narradores:</strong> el detector de un hablante también marca así archivos donde una voz domina el 85 %. Subir el umbral no lo arregla (EXP-036). Por eso EXP-039 prueba detectores que buscan una segunda voz.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Línea B · calidad de clips y entrenamiento</h3>
+      <p>Probamos si las decisiones de producto sobre el mapa (cuántos capítulos y qué clips) mejoran con una regla fija o con una política aprendida.</p>
+      <ul>
+        <li><strong>Capítulos:</strong> las fronteras elegidas están mejor ubicadas que las uniformes, pero el agrupamiento no mejora (EXP-033).</li>
+        <li><strong>Base de TVSum corregida:</strong> la base dura (0.322) era un clip en el centro del video. Los anotadores premian la mitad del video, no la cobertura.</li>
+        <li><strong>Primera política aprendida:</strong> ajusta los videos de entrenamiento, pero no generaliza a categorías nuevas (EXP-038). Con 45 videos y esta recompensa no hay señal suficiente.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="semana">
+  <h2><span class="num">3</span>Avances durante la semana</h2>
+  <div class="timeline">
+    <div class="day">9 oct</div>
+    <div class="event"><h3>Banco de audio aislado</h3><p>Montamos un banco para evaluar solo el sonido, sin video ni mapa. Usa tres fuentes: AVA-Speech (148 de 160 videos, con etiquetas de habla y de música), mezclas sintéticas de VoxConverse con fondos de MUSAN, y AMI como control de no regresión. Se pre-registra EXP-034 con cinco filtros candidatos y se verifica la alineación temporal de las etiquetas de AVA (desfase 0.0 s en 72 videos).</p></div>
+    <div class="day">10 oct</div>
+    <div class="event"><h3>El filtro separa voz de música; el sintético no medía lo que debía</h3><p>EXP-034: el filtro elegido reduce el habla falsa de 0.73 a 0.41 (z 16.9), y S&amp;W / I&amp;W la bajan a 0.16 / 0.13. El sintético tenía música bajo toda la voz y no permitía medir el narrador, y así se declaró. Se pre-registra EXP-035: un sintético con estructura de documental y GT humano ciego en BBC. Se publica la página de anotación con 176 clips estratificados.</p></div>
+    <div class="day">10 oct</div>
+    <div class="event"><h3>Narrador detectado, con falsos positivos</h3><p>EXP-035a: con huecos de solo música, los filtros S&amp;W e I&amp;W detectan al narrador (0.13 → 0.55, z 5.6). Hay 3 falsos narradores de 54 contra un límite de 2.7, así que la regla pre-registrada bloquea la adopción.</p></div>
+    <div class="day">11 oct</div>
+    <div class="event"><h3>Señales de desarrollo de EXP-033</h3><p>El job 55212 (50 videos raw_ext de VidChapters) arranca tras 41 h en cola y termina en 2 h 37 min.</p></div>
+    <div class="day">12 oct</div>
+    <div class="event"><h3>Capítulos, umbral, highlights y primera política</h3><p>Se pre-registran EXP-036, 037 y 038 antes de calcular nada. EXP-033: L = 90 s, no validado. EXP-036: no validado. EXP-037: la regla saliente H3 queda congelada para SumMe. Al verificar su base se corrige la lectura de EXP-031, y EXP-038 se enmienda con la base "centro" antes de escribir su código. EXP-038 en TVSum: no validado. Se pre-registra EXP-039 (cinco detectores de segunda voz, conjunto nuevo de voces dominantes).</p></div>
+    <div class="day">13–16 oct</div>
+    <div class="event"><h3>Bloqueo de GPU</h3><p>La corrida de SumMe sigue sin nodo desde el 12 oct a las 00:41 (<code>ReqNodeNotAvail</code>). La caché de EXP-039 falló por memoria al caer en una partición MIG, y su evaluación quedó con una dependencia que no se puede cumplir.</p></div>
+  </div>
+</section>
+
+<section id="arquitectura">
+  <h2><span class="num">4</span>Cómo está implementada la solución</h2>
+  <p>El producto no cambió esta semana: nada pasó sus criterios de adopción. En líneas discontinuas aparecen las piezas que se evaluaron y no se adoptaron. Cada señal decide por su cuenta y el gestor solo cuenta votos, sin fusionar representaciones.</p>
+  <div class="diagram" role="img" aria-label="Flujo de CAVA: preparación, cinco señales independientes, mapa de tópicos por votos, etiquetas e identidades de hablante, versiones y clips, registro para entrenamiento. En discontinuo: nivel de capítulo, filtro de habla y política aprendida, evaluados y no adoptados">
+  <svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+    <defs><marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0,0 L8,4 L0,8 z"/></marker></defs>
+    <text class="lbl" x="20" y="22">ENTRADA</text>
+    <text class="lbl" x="200" y="22">SEÑALES INDEPENDIENTES</text>
+    <text class="lbl" x="455" y="22">DECISIÓN</text>
+    <text class="lbl" x="645" y="22">DESCRIPCIÓN</text>
+    <text class="lbl" x="830" y="22">PRODUCTO</text>
+
+    <rect class="bx" x="20" y="150" width="150" height="96" rx="6"/>
+    <text class="t" x="32" y="174">Preparación</text>
+    <text x="32" y="194">audio 16 kHz</text>
+    <text class="s" x="32" y="212">unidades de 5 s (película,</text>
+    <text class="s" x="32" y="227">documental) o 10 s (reunión)</text>
+
+    <rect class="bx" x="200" y="38" width="220" height="52" rx="6"/>
+    <text class="t" x="212" y="59">Visual · SigLIP</text>
+    <text class="s" x="212" y="77">1 frame por unidad</text>
+    <rect class="bx" x="200" y="100" width="220" height="52" rx="6"/>
+    <text class="t" x="212" y="121">Transcripción · Whisper large-v3</text>
+    <text class="s" x="212" y="139">texto por unidad → BGE</text>
+    <rect class="bx" x="200" y="162" width="220" height="52" rx="6"/>
+    <text class="t" x="212" y="183">VJudge · Qwen2.5-VL-7B</text>
+    <text class="s" x="212" y="201">3 frames + habla cada 40 s → BGE</text>
+    <rect class="bx" x="200" y="224" width="220" height="52" rx="6"/>
+    <text class="t" x="212" y="245">Voz · log-mel + tono</text>
+    <text class="s" x="212" y="263">votante de tópico</text>
+    <rect class="bx" x="200" y="286" width="220" height="52" rx="6"/>
+    <text class="t" x="212" y="307">Turnos de hablante</text>
+    <text class="s" x="212" y="325">solo perfil reunión (w = 6)</text>
+
+    <rect class="bx acc" x="455" y="104" width="160" height="176" rx="6"/>
+    <text class="t" x="467" y="128">Mapa de tópicos</text>
+    <text x="467" y="148">cada señal vota aparte</text>
+    <text class="s" x="467" y="168">percentil por perfil</text>
+    <text class="s" x="467" y="183">(película 80, doc. 90,</text>
+    <text class="s" x="467" y="198">reunión 95)</text>
+    <text class="s" x="467" y="213">quórum 2 + abstención</text>
+    <text class="s" x="467" y="228">enlace promedio</text>
+    <text class="s" x="467" y="243">ajuste visual ≤ 30 s</text>
+    <text class="s" x="467" y="258">(película y documental)</text>
+
+    <rect class="bx dash" x="455" y="300" width="160" height="56" rx="6"/>
+    <text class="t" x="467" y="322">Nivel de capítulo</text>
+    <text class="s" x="467" y="340">EXP-033 · no validado</text>
+
+    <rect class="bx" x="645" y="104" width="160" height="72" rx="6"/>
+    <text class="t" x="657" y="126">Etiquetas</text>
+    <text x="657" y="145">Qwen2.5-14B</text>
+    <text class="s" x="657" y="162">por tópico ≥ 30 s</text>
+    <rect class="bx" x="645" y="194" width="160" height="88" rx="6"/>
+    <text class="t" x="657" y="216">Hablantes</text>
+    <text x="657" y="235">WavLM-sv x-vector</text>
+    <text class="s" x="657" y="252">Ward + BIC → V1, V2…</text>
+    <text class="s" x="657" y="267">detector de un hablante</text>
+
+    <rect class="bx dash" x="645" y="300" width="160" height="70" rx="6"/>
+    <text class="t" x="657" y="322">Filtro de habla</text>
+    <text class="s" x="657" y="340">Silero / ina + Whisper</text>
+    <text class="s" x="657" y="355">EXP-034–039 · sin adoptar</text>
+
+    <rect class="bx acc" x="830" y="104" width="150" height="110" rx="6"/>
+    <text class="t" x="842" y="126">Versiones y clips</text>
+    <text class="s" x="842" y="146">capítulos, recap 60 s,</text>
+    <text class="s" x="842" y="161">highlights 10 %, hilos,</text>
+    <text class="s" x="842" y="176">hilos por hablante</text>
+    <text class="s" x="842" y="196">mp4 + index.md</text>
+    <rect class="bx" x="830" y="232" width="150" height="88" rx="6"/>
+    <text class="t" x="842" y="254">Registro para RL</text>
+    <text class="s" x="842" y="273">run_manifest.json</text>
+    <text class="s" x="842" y="288">clips.jsonl</text>
+    <text class="s" x="842" y="303">rewards.jsonl (aparte)</text>
+    <rect class="bx dash" x="830" y="334" width="150" height="56" rx="6"/>
+    <text class="t" x="842" y="356">Política aprendida</text>
+    <text class="s" x="842" y="374">EXP-038 · no validada</text>
+
+    <path class="ln" d="M170,198 L188,198 L188,64 L198,64" marker-end="url(#ar)"/>
+    <path class="ln" d="M188,126 L198,126" marker-end="url(#ar)"/>
+    <path class="ln" d="M188,188 L198,188" marker-end="url(#ar)"/>
+    <path class="ln" d="M188,198 L188,312 L198,312" marker-end="url(#ar)"/>
+    <path class="ln" d="M188,250 L198,250" marker-end="url(#ar)"/>
+    <path class="ln" d="M420,64 L438,64 L438,192 L453,192" marker-end="url(#ar)"/>
+    <path class="ln" d="M420,126 L438,126"/>
+    <path class="ln" d="M420,188 L438,188"/>
+    <path class="ln" d="M420,250 L438,250"/>
+    <path class="ln" d="M420,312 L438,312 L438,192"/>
+    <path class="ln" d="M535,280 L535,298" marker-end="url(#ar)"/>
+    <path class="ln" d="M615,140 L643,140" marker-end="url(#ar)"/>
+    <path class="ln" d="M615,238 L643,238" marker-end="url(#ar)"/>
+    <path class="ln" d="M725,300 L725,286" marker-end="url(#ar)"/>
+    <path class="ln" d="M805,140 L828,140" marker-end="url(#ar)"/>
+    <path class="ln" d="M805,238 L816,238 L816,159 L828,159" marker-end="url(#ar)"/>
+    <path class="ln" d="M905,214 L905,230" marker-end="url(#ar)"/>
+    <path class="ln" d="M905,320 L905,332" marker-end="url(#ar)"/>
+  </svg>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Pieza evaluada</th><th>Qué haría</th><th>Estado</th><th>Qué falta para adoptarla</th></tr></thead>
+    <tbody>
+      <tr><td>Filtro de habla S&amp;W / I&amp;W</td><td>dar identidad de hablante solo a unidades con voz (perfil documental)</td><td class="v warn">listo, bloqueado</td><td>un detector sin falsos narradores (EXP-039) y GT humano de BBC (EXP-035b)</td></tr>
+      <tr><td>Nivel de capítulo</td><td>agrupar tópicos en capítulos con las N fronteras más fuertes</td><td class="v bad">no validado</td><td>elegir el número de capítulos por video; ninguna regla interna lo consigue</td></tr>
+      <tr><td>Regla de highlights H3</td><td>repartir el presupuesto entre tópicos, en su tramo más distintivo</td><td class="v warn">en espera</td><td>confirmación en SumMe (job 56181 en cola)</td></tr>
+      <tr><td>Política aprendida</td><td>elegir qué unidades entran en los highlights a partir del estado del mapa</td><td class="v bad">no validada</td><td>una recompensa con más datos o corregida por posición</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="pruebas">
+  <h2><span class="num">5</span>Qué probamos y qué aprendimos</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Exp.</th><th>Pregunta</th><th>Resultado clave</th><th>Veredicto</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">033</td><td>Nivel de capítulo sobre el mapa (L en raw_ext, confirmación en blind40)</td><td>L = 90 s. M_local frente a uniforme +0.016 (z 0.59); F1 ±3 +0.087 (z 2.57); frente a la mejor señal por video z −1.23</td><td class="v bad">no validado</td></tr>
+      <tr><td class="mono">034</td><td>Filtro de habla aislado (AVA-Speech, sintético, AMI)</td><td>Habla falsa 0.73 → 0.41 (z 16.9) con recall 0.88. El narrador sintético no cambia: el diseño tenía música bajo toda la voz</td><td class="v bad">no validado</td></tr>
+      <tr><td class="mono">035a</td><td>Narrador sintético con estructura de documental</td><td>Detección +0.413 ± 0.073 (z 5.6) con S&amp;W e I&amp;W; falsos narradores 3 de 54 (límite 2.7)</td><td class="v warn">parcial, bloqueado</td></tr>
+      <tr><td class="mono">035b</td><td>GT humano ciego en BBC (176 clips estratificados)</td><td>Página de anotación publicada; 0 de 176 etiquetados</td><td class="v warn">esperando anotación</td></tr>
+      <tr><td class="mono">036</td><td>Umbral del detector de un hablante con habla filtrada</td><td>τ 0.982 elimina los falsos (0.019) pero la detección cae a 0.13–0.20 (z 0.0 / 0.90)</td><td class="v bad">no validado</td></tr>
+      <tr><td class="mono">037</td><td>Highlights con una regla fija sobre el mapa</td><td>Desarrollo en TVSum: las cuatro reglas en el ruido (H3 0.066, H0 0.058). H3 congelada</td><td class="v warn">en espera de GPU</td></tr>
+      <tr><td class="mono">038</td><td>Política de clips aprendida (bandido contextual)</td><td>Categoría fuera: 0.014 frente a centro 0.300 (z −2.40) y uniforme −0.042 (z 0.50)</td><td class="v bad">no validado</td></tr>
+      <tr><td class="mono">039</td><td>Detectores de segunda voz (cuantil, voz minoritaria, BIC, eigengap NME)</td><td>Pre-registrado con un conjunto nuevo de 80 mezclas de voz dominante por split; la caché GPU falló por memoria</td><td class="v warn">por reenviar</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Datos nuevos de la semana: AVA-Speech (148 videos con etiquetas de habla y música), MUSAN (música y ruido, dividido por hash), mezclas de documental sobre VoxConverse (docmix, 124 dev / 100 conf; domix, 80 + 80), VidChapters raw_ext (50) y SumMe (25, preparado).</p>
+</section>
+
+<section id="narrador">
+  <h2><span class="num">6</span>Línea A · el narrador en documentales</h2>
+  <div class="two">
+    <div>
+      <h3>EXP-034 · cuánta música y ambiente pasa como voz</h3>
+      <div class="chart" role="img" aria-label="Fracción de unidades sin habla marcadas como voz en AVA-Speech conf: Whisper 0.734, AST y Whisper 0.411, Silero y Whisper 0.162, ina y Whisper 0.126">
+      <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+        <line class="grid" x1="200" y1="14" x2="200" y2="168"/>
+        <line class="grid" x1="310" y1="14" x2="310" y2="168"/>
+        <line class="grid" x1="420" y1="14" x2="420" y2="168"/>
+        <line class="grid" x1="530" y1="14" x2="530" y2="168"/>
+        <line class="grid" x1="640" y1="14" x2="640" y2="168"/>
+        <text class="ax" x="200" y="186" text-anchor="middle">0</text>
+        <text class="ax" x="310" y="186" text-anchor="middle">0.2</text>
+        <text class="ax" x="420" y="186" text-anchor="middle">0.4</text>
+        <text class="ax" x="530" y="186" text-anchor="middle">0.6</text>
+        <text class="ax" x="640" y="186" text-anchor="middle">0.8</text>
+        <text x="10" y="35">Whisper (producto)</text><rect class="bar" x="200" y="22" width="404" height="18"/><text class="val" x="610" y="36">0.734</text>
+        <text x="10" y="73">AST + Whisper</text><rect class="bar" x="200" y="60" width="226" height="18"/><text class="val" x="432" y="74">0.411</text>
+        <text x="10" y="111">Silero + Whisper</text><rect class="bar cava" x="200" y="98" width="89" height="18"/><text class="val" x="295" y="112">0.162</text>
+        <text x="10" y="149">ina + Whisper</text><rect class="bar cava" x="200" y="136" width="69" height="18"/><text class="val" x="275" y="150">0.126</text>
+      </svg>
+      </div>
+      <p class="small">Unidades de 5 s sin habla según las etiquetas humanas que el filtro marca como voz (76 videos de confirmación). Recall: 0.92, 0.88, 0.81 y 0.73. En BBC, sin GT, los dos filtros declaran un solo hablante en 11 de 11 episodios; Whisper solo, en 0.</p>
+    </div>
+    <div>
+      <h3>EXP-036 · no hay umbral que sirva</h3>
+      <div class="chart" role="img" aria-label="En desarrollo, al subir el umbral tau de 0.960 a 0.990 la detección del narrador baja de 0.76 a 0 y los falsos narradores de 0.29 a 0. Con tau 0.976 la detección es 0.40 y los falsos 0.046; con 0.982, 0.20 y 0.015">
+      <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+        <line class="grid" x1="70" y1="210" x2="670" y2="210"/>
+        <line class="grid" x1="70" y1="162.5" x2="670" y2="162.5"/>
+        <line class="grid" x1="70" y1="115" x2="670" y2="115"/>
+        <line class="grid" x1="70" y1="67.5" x2="670" y2="67.5"/>
+        <line class="grid" x1="70" y1="20" x2="670" y2="20"/>
+        <text class="ax" x="60" y="214" text-anchor="end">0</text>
+        <text class="ax" x="60" y="166" text-anchor="end">0.2</text>
+        <text class="ax" x="60" y="119" text-anchor="end">0.4</text>
+        <text class="ax" x="60" y="71" text-anchor="end">0.6</text>
+        <text class="ax" x="60" y="24" text-anchor="end">0.8</text>
+        <text class="ax" x="70" y="230" text-anchor="middle">0.960</text>
+        <text class="ax" x="270" y="230" text-anchor="middle">0.970</text>
+        <text class="ax" x="470" y="230" text-anchor="middle">0.980</text>
+        <text class="ax" x="670" y="230" text-anchor="middle">0.990</text>
+        <text class="ax" x="370" y="246" text-anchor="middle">umbral τ</text>
+        <line class="mk" x1="390" y1="20" x2="390" y2="210"/>
+        <line class="mk" x1="510" y1="20" x2="510" y2="210"/>
+        <text class="ax" x="386" y="34" text-anchor="end">0.976 actual</text>
+        <text class="ax" x="516" y="34">0.982 elegido</text>
+        <polyline class="l1" points="70,28.8 170,36.9 270,61.1 350,77.2 390,115.5 430,125.5 470,143.5 510,163.7 570,192 670,210"/>
+        <polyline class="l2" points="70,142.3 170,171.5 270,188.2 350,195.3 390,199.1 430,202.6 470,202.6 510,206.4 570,210 670,210"/>
+        <circle class="d1" cx="390" cy="115.5" r="3.5"/><circle class="d1" cx="510" cy="163.7" r="3.5"/>
+        <circle class="d2" cx="390" cy="199.1" r="3.5"/><circle class="d2" cx="510" cy="206.4" r="3.5"/>
+        <text class="k1" x="180" y="56">detección del narrador (K = 1)</text>
+        <text class="k2" x="180" y="158">falsos narradores (K ≥ 2)</text>
+      </svg>
+      </div>
+      <p class="small">docmix dev, S&amp;W e I&amp;W juntos. La mediana del coseno a la voz media no ve una segunda voz con menos de la mitad de las unidades. Por eso EXP-039 cambia el detector, no el umbral.</p>
+    </div>
+  </div>
+  <div class="notice"><p><strong>Lectura:</strong> el filtro de habla ya funciona. El cuello de botella pasó al detector de "un solo hablante", que no distingue un monólogo de una voz que domina el 85 % del tiempo. Para adoptar algo en el perfil documental faltan dos piezas: un detector que pase EXP-039 y el GT humano de BBC (EXP-035b), que dirá además si en BBC aparecen otras voces además del narrador.</p></div>
+</section>
+
+<section id="politica">
+  <h2><span class="num">7</span>Línea B · calidad de clips y política aprendida</h2>
+  <div class="two">
+    <div>
+      <h3>TVSum premia el centro del video</h3>
+      <div class="chart" role="img" aria-label="Importancia media de TVSum en z por decil de duración: −0.32, −0.22, −0.01, 0.25, 0.24, 0.31, 0.18, −0.01, −0.02, −0.38">
+      <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+        <line class="grid" x1="70" y1="20" x2="680" y2="20"/>
+        <line class="grid" x1="70" y1="67.5" x2="680" y2="67.5"/>
+        <line class="grid" x1="70" y1="115" x2="680" y2="115"/>
+        <line class="grid" x1="70" y1="162.5" x2="680" y2="162.5"/>
+        <line class="grid" x1="70" y1="210" x2="680" y2="210"/>
+        <text class="ax" x="60" y="24" text-anchor="end">+0.4</text>
+        <text class="ax" x="60" y="71" text-anchor="end">+0.2</text>
+        <text class="ax" x="60" y="119" text-anchor="end">0</text>
+        <text class="ax" x="60" y="166" text-anchor="end">−0.2</text>
+        <text class="ax" x="60" y="214" text-anchor="end">−0.4</text>
+        <rect class="bar" x="80.5" y="115" width="40" height="77"/>
+        <rect class="bar" x="141.5" y="115" width="40" height="52.5"/>
+        <rect class="bar" x="202.5" y="115" width="40" height="2.9"/>
+        <rect class="bar cava" x="263.5" y="56.3" width="40" height="58.7"/>
+        <rect class="bar cava" x="324.5" y="58.7" width="40" height="56.3"/>
+        <rect class="bar cava" x="385.5" y="42.6" width="40" height="72.4"/>
+        <rect class="bar cava" x="446.5" y="73.2" width="40" height="41.8"/>
+        <rect class="bar" x="507.5" y="115" width="40" height="2.9"/>
+        <rect class="bar" x="568.5" y="115" width="40" height="4.5"/>
+        <rect class="bar" x="629.5" y="115" width="40" height="89.5"/>
+        <text class="ax" x="100.5" y="230" text-anchor="middle">1</text>
+        <text class="ax" x="161.5" y="230" text-anchor="middle">2</text>
+        <text class="ax" x="222.5" y="230" text-anchor="middle">3</text>
+        <text class="ax" x="283.5" y="230" text-anchor="middle">4</text>
+        <text class="ax" x="344.5" y="230" text-anchor="middle">5</text>
+        <text class="ax" x="405.5" y="230" text-anchor="middle">6</text>
+        <text class="ax" x="466.5" y="230" text-anchor="middle">7</text>
+        <text class="ax" x="527.5" y="230" text-anchor="middle">8</text>
+        <text class="ax" x="588.5" y="230" text-anchor="middle">9</text>
+        <text class="ax" x="649.5" y="230" text-anchor="middle">10</text>
+        <text class="ax" x="375" y="246" text-anchor="middle">decil de la duración del video</text>
+      </svg>
+      </div>
+      <p class="small">Importancia media de 20 anotadores en z por video, 50 videos. La base "equiespaciada" de EXP-031 (0.322) era un solo clip en el centro, porque los highlights de TVSum siempre son un clip. Repartida en unidades a lo largo del video, cae a −0.04.</p>
+    </div>
+    <div>
+      <h3>EXP-038 · la política aprendida no generaliza</h3>
+      <div class="chart" role="img" aria-label="Recompensa media en la categoría no vista de TVSum: centro 0.300, regla H3 0.066, producto 0.058, política aprendida 0.014, azar −0.001, uniforme −0.042">
+      <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+        <line class="grid" x1="230" y1="14" x2="230" y2="222"/>
+        <line class="grid" x1="360" y1="14" x2="360" y2="222"/>
+        <line class="grid" x1="490" y1="14" x2="490" y2="222"/>
+        <line class="grid" x1="620" y1="14" x2="620" y2="222"/>
+        <text class="ax" x="230" y="240" text-anchor="middle">0</text>
+        <text class="ax" x="360" y="240" text-anchor="middle">0.1</text>
+        <text class="ax" x="490" y="240" text-anchor="middle">0.2</text>
+        <text class="ax" x="620" y="240" text-anchor="middle">0.3</text>
+        <text x="10" y="35">centro del video</text><rect class="bar ref" x="230" y="22" width="390" height="16"/><text class="val" x="626" y="35">0.300</text>
+        <text x="10" y="69">regla H3 (EXP-037)</text><rect class="bar" x="230" y="56" width="86" height="16"/><text class="val" x="322" y="69">0.066</text>
+        <text x="10" y="103">producto H0</text><rect class="bar" x="230" y="90" width="75" height="16"/><text class="val" x="311" y="103">0.058</text>
+        <text x="10" y="137">política aprendida</text><rect class="bar cava" x="230" y="124" width="18" height="16"/><text class="val" x="254" y="137">0.014</text>
+        <text x="10" y="171">al azar</text><rect class="bar" x="228.7" y="158" width="1.3" height="16"/><text class="val" x="236" y="171">−0.001</text>
+        <text x="10" y="205">uniforme en la rejilla</text><rect class="bar" x="175.4" y="192" width="54.6" height="16"/><text class="val" x="236" y="205">−0.042</text>
+      </svg>
+      </div>
+      <p class="small">10 pliegues dejando fuera una categoría (entrena con 45 videos, prueba con 5). Política lineal Plackett–Luce con REINFORCE sobre 17 rasgos del mapa. En entrenamiento sube a ~0.29; el signo de 11 de 17 pesos cambia entre pliegues.</p>
+    </div>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>EXP-033 · blind40, L = 90 s</th><th class="n">M_local</th><th class="n">F1 ±3</th></tr></thead>
+    <tbody>
+      <tr><td>capítulos sobre el mapa CAVA</td><td class="n">0.381</td><td class="n">0.363</td></tr>
+      <tr><td>uniforme, mismo número</td><td class="n">0.365</td><td class="n">0.276</td></tr>
+      <tr><td>top-N de una señal (visual · transcript)</td><td class="n">0.325 · 0.328</td><td class="n">0.305 · 0.303</td></tr>
+      <tr><td>mejor señal elegida por video (oráculo, criterio 3)</td><td class="n">0.418</td><td class="n">—</td></tr>
+    </tbody>
+  </table></div>
+  <div class="notice"><p><strong>Lectura:</strong> en capítulos y en highlights, el mapa ubica bien las fronteras, pero las dos decisiones de producto que dependen de él siguen sin superar bases simples. Para el entrenamiento, el hallazgo principal es de datos: la recompensa de TVSum está dominada por un sesgo de posición, y 45 videos no alcanzan para aprender algo que transfiera. Ampliar el modelo antes de cambiar la recompensa solo ajustaría ruido.</p></div>
+</section>
+
+<section id="limites">
+  <h2><span class="num">8</span>Límites y bloqueos</h2>
+  <ul>
+    <li><strong>Cola de GPU:</strong>
+      <ul>
+        <li>el desarrollo de EXP-033 esperó 41 h para correr 2 h 37 min;</li>
+        <li>la corrida de SumMe (~45 min de cómputo esperados, como TVSum) lleva más de 96 h en cola sin estimación;</li>
+        <li>una GPU genérica cae en particiones MIG sin memoria (falló la caché de EXP-039), así que los jobs grandes necesitan una A100 completa.</li>
+      </ul>
+    </li>
+    <li><strong>Anotación humana:</strong> EXP-035b depende de que una o más personas escuchen los 176 clips (unos 30 min). Sin eso, nada del perfil documental cambia.</li>
+    <li><strong>Reutilización de conjuntos:</strong> docmix conf se usó tres veces (EXP-035a, 036 y 039), y blind40 se usó en SegLoop, EXP-032 y EXP-033. Está declarado en cada pre-registro; EXP-039 añade un conjunto nuevo para el modo de fallo.</li>
+    <li><strong>Criterio 3 de EXP-033:</strong> el código compara con la mejor señal elegida por video, que es más duro que lo que dice el texto del pre-registro. Contra cada señal fija tampoco pasaría (z 1.6).</li>
+    <li><strong>Límite del detector:</strong> una segunda voz de ~5 % (una unidad de 5 s) no es detectable con esta resolución; EXP-039 lo reporta por separado.</li>
+  </ul>
+</section>
+
+<section id="alcance">
+  <h2><span class="num">9</span>Qué sigue</h2>
+  <p>En orden de prioridad, con el mismo protocolo: desarrollo y confirmación separados, criterio fijado antes de medir.</p>
+  <div class="scope">
+    <article><span class="tag warn">bloqueado por GPU · EXP-037 y EXP-038</span><h3>Confirmación en SumMe</h3><p>Cuando corra el job 56181: H3 frente a uniforme, producto y azar en SumMe, y la política entrenada en TVSum probada en SumMe. EXP-038 ya no se valida por TVSum, pero SumMe dirá si el sesgo de posición también existe allí.</p></article>
+    <article><span class="tag">siguiente · EXP-039</span><h3>Detectores de segunda voz</h3><p>Reenviar la caché con una A100 completa y correr la evaluación. Si un detector pasa los cuatro criterios, queda listo para el perfil documental a falta de EXP-035b. Si falla el de voces dominantes, el siguiente candidato es la segmentación con conteo local (pyannote).</p></article>
+    <article><span class="tag">siguiente · EXP-035b</span><h3>Escucha ciega de BBC</h3><p>Etiquetar los 176 clips en la página de anotación. Da la fracción real de música que pasa como voz, el recall de cada filtro y si BBC tiene otras voces además del narrador.</p></article>
+    <article><span class="tag">por pre-registrar · RL</span><h3>Una recompensa que se pueda aprender</h3><p>Dos caminos, a elegir con el asesor: (1) importancia de TVSum y SumMe normalizada por posición, para que la política no pueda ganar solo con el centro; (2) un conjunto grande de importancia, como Mr. HiSum (estadísticas de "most replayed" de YouTube, decenas de miles de videos), a revisar. La política lineal y el entrenador quedan como banco reproducible.</p></article>
+    <article><span class="tag warn">abierto</span><h3>Número de capítulos por video</h3><p>Es la palanca que domina desde EXP-032 y ninguna regla interna la resuelve (EXP-021, EXP-033). Es candidata a ser una decisión de la política una vez que exista una recompensa útil.</p></article>
+  </div>
+</section>
+
+<section id="evidencia">
+  <h2><span class="num">10</span>Fuentes y evidencia</h2>
+  <ul>
+    <li>Registro experimental con pre-registros, enmiendas, correcciones y resultados: <code>docs/EXPERIMENT_LOG.md</code> (EXP-033 a EXP-039)</li>
+    <li>Resultados: <code>results/exp033_dev.json</code>, <code>exp033_conf.json</code>, <code>exp034_conf.json</code>, <code>exp035a.json</code>, <code>exp036.json</code>, <code>exp037_dev.json</code>, <code>exp038_loco.json</code></li>
+    <li>Banco de audio: <code>scripts/exp034_*.py</code>, <code>exp035_*.py</code>, <code>exp036_tau.py</code>; datos en <code>data/gatebench/</code></li>
+    <li>Política de clips: <code>scripts/highlight_common.py</code>, <code>exp037_highlights.py</code>, <code>exp038_policy.py</code></li>
+    <li>Página de anotación de EXP-035b: <code>scripts/exp035b_annotate_page.html</code></li>
+  </ul>
+</section>
+
+<footer>Generado el 16 de octubre de 2026 a partir del repositorio CAVA (HEAD ae64c30). Las cifras provienen de los archivos de resultados y del registro experimental.</footer>
+</div>
