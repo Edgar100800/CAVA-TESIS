@@ -3583,3 +3583,20 @@ Lectura:
 - **Secundarias (sin criterio):** todos los candidatos en conf con su umbral
   de dev; desglose por condición y por fracción de la voz principal; nº de
   episodios BBC declarados de un hablante con G y el elegido.
+
+### Corrida SumMe para EXP-037 / 038 (antes de evaluar nada en SumMe)
+- **Job 56181:** 4.4 días en cola. Corrió 16 min en ag001 y terminó 19 de 25
+  videos. Falló en Scuba.mp4 porque ffmpeg no encuentra pista de audio.
+- **Videos sin audio en la fuente:** Scuba y St Maarten Landing. Ni el mp4
+  ni el webm de SumMe traen pista de audio (ffprobe), así que son videos
+  mudos.
+  - Entran con una pista silenciosa de su duración exacta
+    (`data/summe_silent/`), usando la opción de audio externo de
+    `cava_run.py`. Es lo que vería el producto con un video mudo: sin
+    transcripción y con voz vacía.
+  - No es una exclusión. Si el pipeline falla con ellos, se excluyen y se
+    declara.
+- **Job de la segunda parte:** `scripts/v1_summe2.sbatch`, con los 6 que
+  faltan (Statue of Liberty, Uncut_Evening_Flight, Valparaiso_Downhill,
+  Scuba, St Maarten Landing, Cooking). Va un comando por video, para que un
+  fallo no detenga al resto.
