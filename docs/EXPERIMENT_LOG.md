@@ -3600,3 +3600,9 @@ Lectura:
   faltan (Statue of Liberty, Uncut_Evening_Flight, Valparaiso_Downhill,
   Scuba, St Maarten Landing, Cooking). Va un comando por video, para que un
   fallo no detenga al resto.
+- **2026-10-22:** el job 57354 (A100) sigue en cola detrás de 7 jobs A100 de
+  2 días de otro usuario, con más prioridad. La misma segunda parte se lanza
+  en shards de la RTX A6000 de g002: job 58144, `scripts/v1_summe2_shard.sbatch`,
+  con ~42 GB libres medidos con `nvidia-smi` antes de lanzar. Arrancó por
+  backfill a las 13:11. Mismo código y mismos videos; solo cambia la GPU.
+  57354 queda como respaldo y se cancela si 58144 termina bien.
