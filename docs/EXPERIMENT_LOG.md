@@ -3606,3 +3606,76 @@ Lectura:
   con ~42 GB libres medidos con `nvidia-smi` antes de lanzar. Arrancó por
   backfill a las 13:11. Mismo código y mismos videos; solo cambia la GPU.
   57354 queda como respaldo y se cancela si 58144 termina bien.
+- **Resultado de la corrida:** job 58144 COMPLETED en 14 min. Los 25 videos
+  tienen `clips.jsonl` y G-versión True, incluidos los dos mudos (ASR 0
+  segmentos) y Cooking. Los 25 manifiestos tienen `git_dirty: false`. 57354
+  cancelado.
+
+### Resultado EXP-037 · confirmación (SumMe, 25 videos; H\* = H3 congelado en dev)
+
+| regla | recompensa media |
+|---|---|
+| **H3 saliente** | **0.278** |
+| H0 producto (24 videos, ver abajo) | 0.158 |
+| uniforme, mismas duraciones que H3 | 0.120 |
+| al azar | 0.010 |
+
+| criterio | diferencia | z | ¿cumple? |
+|---|---|---|---|
+| 1. H3 − uniforme | +0.158 ± 0.225 | 0.70 | **no** |
+| 2. H3 − H0 (n = 24) | +0.139 ± 0.226 | 0.61 | **no** |
+| 3. H3 − al azar | +0.269 ± 0.173 | 1.55 | **no** |
+
+**No validado.** H3 tiene la media más alta en SumMe, pero la varianza entre
+videos es grande (de −0.62 a +3.00) y ninguna diferencia llega a 2 SE.
+
+**Caso no previsto en el pre-registro (Jumps, 38 s):**
+- el presupuesto de highlights10pct es 3.8 s, menos que una unidad de 5 s,
+  así que el producto no devuelve ningún clip y H0 no tiene recompensa;
+- el criterio 2 se calcula sobre los 24 videos con H0 definido;
+- sensibilidad: con H0 = 0 en Jumps, +0.127 ± 0.217 (z 0.58), la misma
+  conclusión.
+
+Es además un defecto del producto: con videos de menos de 50 s, el 10 % no
+cabe en una unidad y los highlights salen vacíos. Las reglas H1–H3 usan
+m ≥ 1 y no lo tienen.
+
+### Resultado EXP-038 · SumMe (política entrenada con los 50 de TVSum)
+
+| política / base | recompensa media |
+|---|---|
+| H3 | 0.278 |
+| uniforme en la rejilla | 0.156 |
+| centro | 0.091 |
+| al azar | 0.002 |
+| **política aprendida** | **−0.265** |
+
+| criterio | diferencia | z | ¿cumple? |
+|---|---|---|---|
+| 1. política − uniforme | −0.421 ± 0.153 | −2.75 | **no** |
+| 1b. política − centro | −0.356 ± 0.152 | −2.34 | **no** |
+| 2. política − H3 | −0.544 ± 0.209 | −2.60 | **no** |
+| secundaria: política − al azar | −0.267 ± 0.102 | −2.62 | peor que el azar |
+
+**No validado: transfiere en negativo.** En SumMe, la política entrenada en
+TVSum es significativamente peor que elegir al azar.
+
+- **El sesgo de posición no es el mismo en los dos conjuntos.** z media por
+  decil de duración en SumMe:
+
+  `+0.13 +0.09 +0.21 +0.04 −0.10 −0.06 −0.10 +0.02 −0.14 −0.06`
+
+  Ahí se premia el principio, no el centro. Por eso el centro cae a 0.091 y
+  lo uniforme sube a 0.156.
+- **La política aprendió preferencias propias de TVSum:**
+  - posición +1.45, es decir, prefiere el final;
+  - cambio visual −2.99, prefiere tramos quietos;
+  - acuerdo vjudge −2.66.
+
+  En videos de usuario de SumMe (deportes, cámara en mano) esas
+  preferencias apuntan en contra.
+- **Cierre de EXP-038:** criterios 1, 1b, 2, 3 y 3b no cumplidos. La
+  recompensa de importancia de un solo conjunto pequeño no sirve para
+  entrenar una política de clips que generalice. Ver la propuesta de
+  recompensa en el reporte del 16 oct (normalizar por posición o un
+  conjunto grande).

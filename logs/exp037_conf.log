@@ -1,0 +1,57 @@
+Air_Force_One H0=-0.277 H3=-0.123
+Base jumping H0=-0.270 H3=-0.151
+Bearpark_climbing H0=-0.315 H3=-0.576
+Bike Polo H0=-0.269 H3=-0.116
+Bus_in_Rock_Tunnel H0=0.882 H3=1.085
+Car_railcrossing H0=1.045 H3=0.011
+Cockpit_Landing H0=-0.524 H3=0.472
+Cooking H0=-0.719 H3=-0.218
+Eiffel Tower H0=0.272 H3=0.179
+Excavators river crossing H0=1.230 H3=0.523
+Fire Domino H0=1.636 H3=-0.576
+Jumps H0=nan H3=-0.154
+Kids_playing_in_leaves H0=-0.521 H3=-0.622
+Notre_Dame H0=0.105 H3=-0.317
+Paintball H0=0.528 H3=0.925
+Playing_on_water_slide H0=0.331 H3=-0.286
+Saving dolphines H0=-0.740 H3=0.301
+Scuba H0=1.405 H3=0.204
+St Maarten Landing H0=-0.343 H3=3.003
+Statue of Liberty H0=0.372 H3=0.428
+Uncut_Evening_Flight H0=0.204 H3=0.101
+Valparaiso_Downhill H0=0.872 H3=1.521
+car_over_camera H0=-0.475 H3=1.942
+paluma_jump H0=-0.227 H3=-0.430
+playing_ball H0=-0.420 H3=-0.171
+{
+ "H_star": "H3",
+ "n": 25,
+ "c1_vs_uniform": {
+  "mean": 0.158,
+  "se": 0.2249,
+  "n": 25,
+  "z": 0.7,
+  "pass": false
+ },
+ "c2_vs_H0": {
+  "mean": NaN,
+  "se": NaN,
+  "n": 25,
+  "z": NaN,
+  "pass": false
+ },
+ "c3_vs_random": {
+  "mean": 0.2685,
+  "se": 0.1732,
+  "n": 25,
+  "z": 1.55,
+  "pass": false
+ },
+ "means": {
+  "H0": NaN,
+  "H3": 0.2783,
+  "H3_uniform": 0.1203,
+  "H3_random": 0.0098
+ },
+ "adopt": false
+}
