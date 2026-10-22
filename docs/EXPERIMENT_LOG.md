@@ -3583,6 +3583,15 @@ Lectura:
 - **Secundarias (sin criterio):** todos los candidatos en conf con su umbral
   de dev; desglose por condición y por fracción de la voz principal; nº de
   episodios BBC declarados de un hablante con G y el elegido.
+- **Jobs (2026-10-12):** 56270 mix y 56272 ina COMPLETED. 56271 cache FAILED
+  a los 70 s con CUDA OOM en faster-whisper: `--gres=gpu:1` genérico cayó en
+  ag001, cuyo A100 está partido en MIG (probablemente un slice chico). El
+  eval 56273 quedó en DependencyNeverSatisfied.
+- **Relanzado (2026-10-22):** 56273 cancelado. Cache en shards de RTX A6000:
+  job 58171, `scripts/exp039_cache_shard.sbatch` (`shard:rtxa6000:14`,
+  `expandable_segments`), corre en ds001; retoma desde lo ya escrito (1 item
+  de domix del 12 oct). Eval: job 58172, `afterok:58171`. Mismo código y
+  mismos datos; solo cambia el recurso.
 
 ### Corrida SumMe para EXP-037 / 038 (antes de evaluar nada en SumMe)
 - **Job 56181:** 4.4 días en cola. Corrió 16 min en ag001 y terminó 19 de 25
