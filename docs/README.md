@@ -6,6 +6,7 @@ Esta carpeta contiene **únicamente lo necesario para implementar y operar CAVA*
 |---|---|
 | `integration-cava.md` | Diseño de integración SegLoop+VJudge ▸ analizador (contrato, fases A–E) |
 | `granularity-plan.md` | Plan activo: afinado de granularidad temática (quant+qual) |
+| `progress.md` | Estado por módulo (implementado / validado), contenido y anotaciones disponibles, stack a congelar para el A/B |
 
 **No va aquí:**
 
