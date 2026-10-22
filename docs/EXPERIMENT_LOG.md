@@ -3592,6 +3592,11 @@ Lectura:
   `expandable_segments`), corre en ds001; retoma desde lo ya escrito (1 item
   de domix del 12 oct). Eval: job 58172, `afterok:58171`. Mismo código y
   mismos datos; solo cambia el recurso.
+  Domix son 160 archivos (31.9 h, unos 23 000 unidades de 5 s); a ~1 unidad/s
+  (471 unidades en 8 min) no cabe en las 4 h del job. No se pudo ampliar el
+  límite (permiso denegado), así que se encadenó un segundo cache, job 58174
+  (`--time=06:00:00`, `afterany:58171`), que retoma lo ya escrito. El eval
+  58172 pasó a `afterok:58174`.
 
 ### Corrida SumMe para EXP-037 / 038 (antes de evaluar nada en SumMe)
 - **Job 56181:** 4.4 días en cola. Corrió 16 min en ag001 y terminó 19 de 25
