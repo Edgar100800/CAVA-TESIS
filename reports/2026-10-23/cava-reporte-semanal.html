@@ -127,7 +127,7 @@ li > ul{margin-top:4px}
 <header>
   <div class="eyebrow">CAVA · reporte semanal · 16 → 23 de octubre de 2026</div>
   <h1>Del sistema implementado a la evaluación con personas</h1>
-  <p class="lead">Esta semana cerramos las últimas pruebas automáticas de calidad de clips en SumMe, levantamos el estado de los 26 módulos del sistema y diseñamos la evaluación con personas. Con tres semanas por delante, el sistema se congela tal como está implementado: lo que falta medir es si las versiones de clips de CAVA son preferidas por personas frente a líneas base propias, formato por formato, sobre contenido propio etiquetado por nosotros.</p>
+  <p class="lead">Esta semana cerramos las últimas pruebas automáticas de calidad de clips en SumMe, levantamos el estado de los 26 módulos del sistema y diseñamos la evaluación con personas. El sistema se congela tal como está implementado: lo que falta medir es si las versiones de clips de CAVA son preferidas por personas frente a líneas base propias, formato por formato, sobre contenido propio etiquetado por nosotros.</p>
   <div class="meta"><span>HEAD d51d201</span><span class="ok">25 tests pasan</span><span>26 módulos · 12 validados</span><span>5 formatos de clip</span><span>2 bases propias</span><span>EXP-037 · EXP-038 cerrados</span><span>EXP-040 por pre-registrar</span></div>
   <nav aria-label="Secciones del informe"><a href="#resumen">Resultados</a><a href="#semana">Semana</a><a href="#sume">SumMe</a><a href="#arquitectura">Implementación</a><a href="#estado">Estado por módulo</a><a href="#ab">Evaluación A/B</a><a href="#plan">Plan</a><a href="#decisiones">Decisiones</a><a href="#evidencia">Evidencia</a></nav>
 </header>
@@ -146,15 +146,15 @@ li > ul{margin-top:4px}
 <section id="semana">
   <h2><span class="num">2</span>Avances durante la semana</h2>
   <div class="timeline">
-    <div class="day">18 oct</div>
+    <div class="day">SumMe</div>
     <div class="event"><h3>SumMe corre a medias</h3><p>El job 56181 consigue la A100 tras 4.4 días de cola y procesa 19 de 25 videos en 16 min. Se detiene en Scuba: ni el mp4 ni el webm de SumMe traen pista de audio, y St Maarten Landing tampoco. Los dos entran con una pista silenciosa de su duración, declarada en el registro antes de evaluar.</p></div>
-    <div class="day">22 oct</div>
+    <div class="day">GPU</div>
     <div class="event"><h3>De la A100 a los shards</h3><p>La A100 queda detrás de 7 jobs de 2 días de otro usuario. Medimos la memoria libre de las A6000 con un job de prueba de 5 s (g002: 42 GB libres) y lanzamos los 6 videos restantes en shards: arrancan por backfill y terminan en 14 min. 25 de 25 videos, todos con <code>git_dirty: false</code>.</p></div>
-    <div class="day">22 oct</div>
+    <div class="day">Resultados</div>
     <div class="event"><h3>Confirmaciones de EXP-037 y EXP-038</h3><p>H3 no supera a lo uniforme ni al producto. La política aprendida es peor que el azar en SumMe. Aparece un defecto del producto: en videos de menos de 50 s los highlights salen vacíos.</p></div>
-    <div class="day">22 oct</div>
+    <div class="day">Inventario</div>
     <div class="event"><h3>Inventario del sistema</h3><p>Nuevo <code>docs/progress.md</code>: 26 módulos con su evidencia, qué se puede afirmar por tipo de contenido, los conjuntos con anotación disponibles y los huecos a declarar antes de mostrar el producto a personas.</p></div>
-    <div class="day">23 oct</div>
+    <div class="day">Evaluación</div>
     <div class="event"><h3>Diseño de la evaluación A/B</h3><p>Todos los formatos de clip contra dos líneas base propias, con el mismo presupuesto y la misma maquinaria de corte, sobre contenido propio etiquetado por nosotros. Ver la sección 6.</p></div>
   </div>
 </section>
@@ -410,14 +410,14 @@ li > ul{margin-top:4px}
   </section>
 
 <section id="plan">
-  <h2><span class="num">7</span>Plan de tres semanas</h2>
+  <h2><span class="num">7</span>Plan de la evaluación</h2>
 
   <div class="table-wrap"><table>
-    <thead><tr><th>Semana</th><th>Trabajo</th><th>Estado</th></tr></thead>
+    <thead><tr><th>Fase</th><th>Trabajo</th><th>Estado</th></tr></thead>
     <tbody>
-      <tr><td class="mono">23–29 oct</td><td>definir el contenido propio, implementar las bases U y S, pre-registrar EXP-040, correr CAVA en shards, páginas de etiquetado y de A/B</td><td class="v warn">en curso</td></tr>
-      <tr><td class="mono">30 oct–5 nov</td><td>etiquetado propio (2 anotadores), piloto con 3 personas, A/B completo</td><td class="v">pendiente</td></tr>
-      <tr><td class="mono">6–12 nov</td><td>análisis, ranking y redacción</td><td class="v">pendiente</td></tr>
+      <tr><td>1 · preparación</td><td>definir el contenido propio, implementar las bases U y S, pre-registrar EXP-040, correr CAVA en shards, páginas de etiquetado y de A/B</td><td class="v warn">en curso</td></tr>
+      <tr><td>2 · etiquetado y A/B</td><td>etiquetado propio (2 anotadores), piloto con 3 personas, A/B completo</td><td class="v">pendiente</td></tr>
+      <tr><td>3 · análisis</td><td>análisis, ranking y redacción</td><td class="v">pendiente</td></tr>
     </tbody>
   </table></div>
 
@@ -445,5 +445,5 @@ li > ul{margin-top:4px}
   </ul>
 </section>
 
-<footer>Documento en curso, generado el 23 de octubre de 2026 a partir del repositorio CAVA (HEAD d51d201). Se completa a medida que avanza la semana.</footer>
+<footer>Generado a partir del repositorio CAVA (HEAD d51d201). Las cifras provienen de los archivos de resultados y del registro experimental.</footer>
 </div>
