@@ -1,0 +1,425 @@
+{
+ "video_id": "nLPhL0YJYvg",
+ "titulo": "Las Tres Veces que Tuvo que ser Descubierto el Big Bang",
+ "titulo_corto": "QuantumFracture · Big Bang descubierto tres veces",
+ "canal": "QuantumFracture",
+ "duracion": 1581,
+ "fuente_transcripcion": "youtube_auto",
+ "anotador": "claude-opus-5-5",
+ "revisado_por": null,
+ "version_guia": "0.1-r",
+ "estado": "borrador",
+ "estructura": {
+  "formato": "video divulgativo narrado por un solo presentador, con historia de la ciencia y explicaciones",
+  "patron": "Intro (gancho) -> publicidad (Preply) -> contexto previo a la cosmología -> intento uno: Lemaître (expansión y átomo primigenio) -> lectura actual de la singularidad -> intento dos: Gamow y nucleosíntesis -> Hoyle y estado estacionario -> debate sin resolver -> intento tres: radiación de fondo -> balance -> recomendación (podcast) -> cierre",
+  "observaciones": "Narración cronológica estructurada en tres 'intentos', marcados explícitamente ('Intento número uno, completado', 'el intento dos terminó ahí', 'tercer intento exitoso'), que sirven de fronteras; también 'volvamos a la historia' y 'de vuelta al ruedo'. Hay digresiones del narrador con la visión moderna (singularidad, nucleosíntesis actual, edad del universo) intercaladas en el relato. Publicidad de Preply al inicio (incluye un fragmento en inglés) y autopromoción del podcast al final. El subtítulo automático deforma nombres: Lemaître aparece como 'Lemetre', 'Emetre', 'elemetre'; Hubble como 'Hel' y 'Havel'; Hoyle como 'Hoy', 'Hole' y 'Joel'; Slipher como 'Besto Slifer'; Penzias como 'Pencias'/'Pencios'; Peebles como 'Peels'; Bell como 'fel'; Preply como 'Prepli'/'Preple'; cuásares como 'cuares'. En 16:56 el subtítulo atribuye a Gamov el hallazgo del triple alfa, aunque el contexto es Hoyle."
+ },
+ "segmentos": [
+  {
+   "id": 1,
+   "inicio": 0,
+   "fin": 41,
+   "tipo": "intro",
+   "tema": "Gancho: el Big Bang se descubrió tres veces",
+   "subtemas": [],
+   "palabras_clave": [
+    "Big Bang",
+    "tres descubrimientos",
+    "origen del universo"
+   ],
+   "resumen": "El narrador anuncia que la teoría del Big Bang tuvo que descubrirse tres veces en más de 30 años y adelanta una historia con sacerdotes, huevos cósmicos, fugas en trineo, películas de terror y caca de paloma.",
+   "confianza": "alta"
+  },
+  {
+   "id": 2,
+   "inicio": 41,
+   "fin": 125,
+   "tipo": "publicidad",
+   "tema": "Patrocinio de Preply",
+   "subtemas": [
+    {
+     "inicio": 41,
+     "titulo": "Muestra de clase en inglés"
+    },
+    {
+     "inicio": 64,
+     "titulo": "Ventajas de practicar con un tutor"
+    },
+    {
+     "inicio": 114,
+     "titulo": "Enlace y agradecimiento"
+    }
+   ],
+   "palabras_clave": [
+    "Preply",
+    "idiomas",
+    "tutores"
+   ],
+   "resumen": "Fragmento de una clase de inglés sobre el Big Bang en Preply y anuncio de la plataforma de tutores de idiomas; el narrador agradece el patrocinio y remite al enlace de la descripción.",
+   "confianza": "alta"
+  },
+  {
+   "id": 3,
+   "inicio": 125,
+   "fin": 222,
+   "tipo": "tema",
+   "tema": "Contexto: el cosmos como objeto de estudio científico",
+   "subtemas": [
+    {
+     "inicio": 125,
+     "titulo": "Lo que sabían los astrónomos a principios del siglo XX"
+    },
+    {
+     "inicio": 181,
+     "titulo": "Paradojas de la gravedad newtoniana"
+    },
+    {
+     "inicio": 197,
+     "titulo": "Einstein y la relatividad general"
+    }
+   ],
+   "palabras_clave": [
+    "cosmología",
+    "Newton",
+    "Einstein",
+    "relatividad general"
+   ],
+   "resumen": "El narrador explica que a inicios del siglo XX el universo en su conjunto se veía como un problema especulativo y que la gravedad de Newton daba paradojas, hasta que la relatividad general de Einstein permitió calcular la evolución del espacio-tiempo.",
+   "confianza": "alta"
+  },
+  {
+   "id": 4,
+   "inicio": 222,
+   "fin": 335,
+   "tipo": "relato",
+   "tema": "Lemaître y el universo en expansión",
+   "subtemas": [
+    {
+     "inicio": 222,
+     "titulo": "Lemaître, físico, sacerdote y excombatiente"
+    },
+    {
+     "inicio": 243,
+     "titulo": "Friedmann y las observaciones de Slipher"
+    },
+    {
+     "inicio": 286,
+     "titulo": "Publicación ignorada y el 'tu física es abominable' de Einstein"
+    },
+    {
+     "inicio": 311,
+     "titulo": "1929: Hubble confirma la relación"
+    }
+   ],
+   "palabras_clave": [
+    "Georges Lemaître",
+    "Alexander Friedmann",
+    "Vesto Slipher",
+    "Edwin Hubble",
+    "expansión"
+   ],
+   "resumen": "Presenta a Georges Lemaître, físico y sacerdote belga, que en 1927 obtiene un cosmos en expansión que explica las observaciones de Slipher; su trabajo pasa desapercibido hasta que Hubble encuentra en 1929 la misma relación distancia-velocidad.",
+   "confianza": "alta"
+  },
+  {
+   "id": 5,
+   "inicio": 335,
+   "fin": 515,
+   "tipo": "relato",
+   "tema": "El átomo primigenio y su mala acogida (intento uno)",
+   "subtemas": [
+    {
+     "inicio": 335,
+     "titulo": "Rebobinar la película del universo"
+    },
+    {
+     "inicio": 354,
+     "titulo": "Átomo primigenio y 'día sin ayer'"
+    },
+    {
+     "inicio": 416,
+     "titulo": "Los rayos cósmicos como supuesta evidencia"
+    },
+    {
+     "inicio": 446,
+     "titulo": "Rechazo: Eddington y el prejuicio contra un comienzo"
+    },
+    {
+     "inicio": 475,
+     "titulo": "Lemaître separa ciencia y religión; Pío XI"
+    },
+    {
+     "inicio": 504,
+     "titulo": "La idea queda en standby"
+    }
+   ],
+   "palabras_clave": [
+    "átomo primigenio",
+    "huevo cósmico",
+    "rayos cósmicos",
+    "Eddington",
+    "Pío XI"
+   ],
+   "resumen": "Lemaître rebobina la expansión y propone en 1931 el átomo primigenio o huevo cósmico, apoyándose en la cuántica y en los rayos cósmicos; la idea se rechaza por especulativa y por sonar a creación, pese a que él separaba ciencia y religión, y queda en suspenso.",
+   "confianza": "alta"
+  },
+  {
+   "id": 6,
+   "inicio": 515,
+   "fin": 607,
+   "tipo": "tema",
+   "tema": "Lectura actual: el Big Bang no empezó en un punto",
+   "subtemas": [
+    {
+     "inicio": 515,
+     "titulo": "La semilla del Big Bang moderno"
+    },
+    {
+     "inicio": 536,
+     "titulo": "Origen de la confusión del punto infinitamente pequeño"
+    },
+    {
+     "inicio": 554,
+     "titulo": "Infinitos y límites de la relatividad general"
+    }
+   ],
+   "palabras_clave": [
+    "singularidad",
+    "relatividad general",
+    "gravedad cuántica",
+    "malentendido"
+   ],
+   "resumen": "El narrador valora que el razonamiento de Lemaître fue la semilla del Big Bang moderno pero también origen de la idea errónea de un punto que explota; explica que la singularidad indica que la relatividad general se usa fuera de su rango sin la cuántica.",
+   "confianza": "media"
+  },
+  {
+   "id": 7,
+   "inicio": 607,
+   "fin": 891,
+   "tipo": "relato",
+   "tema": "Gamow y la cocina de los elementos (intento dos)",
+   "subtemas": [
+    {
+     "inicio": 607,
+     "titulo": "Segundo protagonista: Gamow y sus fugas"
+    },
+    {
+     "inicio": 648,
+     "titulo": "Del origen del universo al origen de los átomos; Bethe"
+    },
+    {
+     "inicio": 702,
+     "titulo": "El universo primitivo como horno"
+    },
+    {
+     "inicio": 721,
+     "titulo": "Tablas de abundancias cósmicas"
+    },
+    {
+     "inicio": 748,
+     "titulo": "Artículo alfa-beta-gamma"
+    },
+    {
+     "inicio": 775,
+     "titulo": "Mecanismo de captura de neutrones"
+    },
+    {
+     "inicio": 841,
+     "titulo": "Fermi y Turkevich: los peldaños 5 y 8 que faltan"
+    }
+   ],
+   "palabras_clave": [
+    "George Gamow",
+    "Ralph Alpher",
+    "alfa-beta-gamma",
+    "nucleosíntesis",
+    "Hans Bethe",
+    "número másico"
+   ],
+   "resumen": "Segundo intento: Georgi Gamow, físico nuclear soviético que huyó a EE. UU., propone que el universo primitivo denso y caliente cocinó los elementos; con Alpher (y Bethe añadido como broma) publica el artículo alfa-beta-gamma, pero Fermi y Turkevich muestran que faltan núcleos estables de masa 5 y 8.",
+   "confianza": "alta"
+  },
+  {
+   "id": 8,
+   "inicio": 891,
+   "fin": 1078,
+   "tipo": "tema",
+   "tema": "Fred Hoyle, el estado estacionario y el proceso triple alfa",
+   "subtemas": [
+    {
+     "inicio": 891,
+     "titulo": "Hoyle bautiza el Big Bang"
+    },
+    {
+     "inicio": 911,
+     "titulo": "Estado estacionario y la película de terror"
+    },
+    {
+     "inicio": 960,
+     "titulo": "Creación continua de materia"
+    },
+    {
+     "inicio": 1020,
+     "titulo": "Triple alfa y el carbono 12"
+    },
+    {
+     "inicio": 1030,
+     "titulo": "El cabo suelto del helio"
+    },
+    {
+     "inicio": 1040,
+     "titulo": "Nucleosíntesis primordial y estelar hoy"
+    }
+   ],
+   "palabras_clave": [
+    "Fred Hoyle",
+    "estado estacionario",
+    "triple alfa",
+    "carbono 12",
+    "nucleosíntesis primordial"
+   ],
+   "resumen": "Fred Hoyle, que popularizó el término Big Bang, defiende con Bondi y Gold el estado estacionario con creación continua de materia; al intentar prescindir del Big Bang descubre el proceso triple alfa en gigantes rojas, aunque no explica la abundancia de helio. El narrador aclara que hoy ambas partes tenían algo de razón.",
+   "confianza": "alta"
+  },
+  {
+   "id": 9,
+   "inicio": 1078,
+   "fin": 1174,
+   "tipo": "tema",
+   "tema": "Big Bang contra estado estacionario: problemas de cada teoría",
+   "subtemas": [
+    {
+     "inicio": 1078,
+     "titulo": "Problema de la edad del universo"
+    },
+    {
+     "inicio": 1103,
+     "titulo": "Cuásares: mirar lejos es mirar al pasado"
+    },
+    {
+     "inicio": 1141,
+     "titulo": "Edad corregida a 13 800 millones de años"
+    },
+    {
+     "inicio": 1153,
+     "titulo": "Debate abierto y fin del intento dos"
+    }
+   ],
+   "palabras_clave": [
+    "edad del universo",
+    "cuásares",
+    "estado estacionario",
+    "energía oscura"
+   ],
+   "resumen": "En los 50 y 60 coexisten ambas teorías: el Big Bang arrastra una edad del universo demasiado baja (luego resuelta) y el estado estacionario choca con radiofuentes lejanas como los cuásares, que indican un pasado distinto; el intento dos termina sin decisión.",
+   "confianza": "alta"
+  },
+  {
+   "id": 10,
+   "inicio": 1174,
+   "fin": 1458,
+   "tipo": "relato",
+   "tema": "La radiación de fondo: predicción, palomas y descubrimiento (intento tres)",
+   "subtemas": [
+    {
+     "inicio": 1174,
+     "titulo": "La predicción olvidada de Alpher y Herman"
+    },
+    {
+     "inicio": 1238,
+     "titulo": "Penzias, Wilson y el ruido de la antena"
+    },
+    {
+     "inicio": 1274,
+     "titulo": "Las palomas y la 'sustancia dieléctrica blanca'"
+    },
+    {
+     "inicio": 1303,
+     "titulo": "Dicke y el universo cíclico en Princeton"
+    },
+    {
+     "inicio": 1345,
+     "titulo": "El 'teléfono escacharrado' y el Nobel"
+    },
+    {
+     "inicio": 1394,
+     "titulo": "El espectro de cuerpo negro se confirma"
+    },
+    {
+     "inicio": 1428,
+     "titulo": "Homogeneidad y pequeñas inhomogeneidades"
+    }
+   ],
+   "palabras_clave": [
+    "radiación cósmica de fondo",
+    "Penzias y Wilson",
+    "Robert Dicke",
+    "Alpher y Herman",
+    "Bell Labs"
+   ],
+   "resumen": "Alpher y Herman predicen en 1948 una radiación residual que cae en el olvido; en 1964 Penzias y Wilson hallan un ruido persistente en su antena de Bell Labs pese a limpiar los excrementos de paloma, y el grupo de Dicke en Princeton, que buscaba esa señal, lo identifica. Medidas posteriores confirman el espectro esperado.",
+   "confianza": "alta"
+  },
+  {
+   "id": 11,
+   "inicio": 1458,
+   "fin": 1542,
+   "tipo": "reflexion",
+   "tema": "Balance: los tres pilares y lo que el Big Bang no explica",
+   "subtemas": [
+    {
+     "inicio": 1458,
+     "titulo": "A la tercera va la vencida"
+    },
+    {
+     "inicio": 1499,
+     "titulo": "Los tres pilares observacionales"
+    },
+    {
+     "inicio": 1511,
+     "titulo": "La teoría no habla del inicio: inflación y gravedad cuántica"
+    }
+   ],
+   "palabras_clave": [
+    "Big Bang",
+    "tres pilares",
+    "inflación cósmica",
+    "gravedad cuántica"
+   ],
+   "resumen": "El narrador concluye que la radiación de fondo derrotó al estado estacionario y convirtió la cosmología en ciencia de precisión; resume los tres pilares (expansión, elementos ligeros, radiación de fondo) y advierte que la teoría no explica qué pasó antes.",
+   "confianza": "alta"
+  },
+  {
+   "id": 12,
+   "inicio": 1542,
+   "fin": 1567,
+   "tipo": "recomendacion",
+   "tema": "Nuevo podcast Quantum AM",
+   "subtemas": [],
+   "palabras_clave": [
+    "Quantum AM",
+    "podcast",
+    "Spotify"
+   ],
+   "resumen": "El narrador presenta el podcast del canal, Quantum AM, en el que un invitado elige un tema y hacen un programa de ciencia, disponible en Spotify, YouTube y otras plataformas.",
+   "confianza": "alta"
+  },
+  {
+   "id": 13,
+   "inicio": 1567,
+   "fin": 1581,
+   "tipo": "cierre",
+   "tema": "Despedida",
+   "subtemas": [],
+   "palabras_clave": [
+    "suscripción",
+    "despedida"
+   ],
+   "resumen": "Invita a suscribirse para ver más ciencia y agradece a la audiencia.",
+   "confianza": "alta"
+  }
+ ],
+ "corto": "QuantumFracture · Big Bang descubierto tres veces",
+ "capitulos": [],
+ "evaluacion": null
+}

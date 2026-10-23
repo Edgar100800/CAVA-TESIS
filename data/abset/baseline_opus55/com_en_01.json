@@ -1,0 +1,535 @@
+{
+ "video_id": "m-B3jIMMmUE",
+ "titulo": "Your prompts kinda suck",
+ "titulo_corto": "Theo - t3․gg · prompts en vez de funciones",
+ "canal": "Theo - t3․gg",
+ "duracion": 1907,
+ "fuente_transcripcion": "youtube_auto",
+ "anotador": "claude-opus-5-5",
+ "revisado_por": null,
+ "version_guia": "0.1-r",
+ "estado": "borrador",
+ "estructura": {
+  "formato": "monólogo de comentario técnico a cámara con demostraciones en pantalla de T3 Code; un solo presentador (Theo)",
+  "patron": "Intro (tesis) -> publicidad (Macroscope) -> XKCD y pensar como usuario -> ejemplos de pedir en vez de construir (tool calls, panel/chat, contexto, subagentes) -> giro a la 'caja de ingeniería': T3 triage como prompt -> preguntar al agente por sus capacidades -> prompts fuera de la ingeniería y correo en ChatGPT -> reflexión sobre sentirse ingeniero y nuevas primitivas -> mensaje a los desencantados -> cierre",
+  "observaciones": "El propio presentador marca dos fronteras explícitas: el fin del patrocinio (03:37) y el paso de la primera parte (prompts) a la segunda ('the real meat', 13:42). Las demás fronteras son paso a un nuevo ejemplo ('here's another real example'). Las demostraciones se entrelazan: el informe de tool calls (09:01) y el visualizador de contexto (13:19) llegan en segmentos posteriores al de su petición. El tema del 'valle de desesperación' reaparece en los segmentos 12 y 14. Subtítulo automático con nombres deformados: 'swyx.io/macroscope', 'Quad Coder Codex', 'title data dump', '61 Soul', 'cloud slop', y una frase ininteligible hacia 11:33 ('If you channel and flash bang warning')."
+ },
+ "segmentos": [
+  {
+   "id": 1,
+   "inicio": 0,
+   "fin": 102,
+   "tipo": "intro",
+   "tema": "Introducción: los ingenieros no prompt-ean lo suficiente",
+   "subtemas": [
+    {
+     "inicio": 0,
+     "titulo": "La exageración de la ingeniería de prompts"
+    },
+    {
+     "inicio": 42,
+     "titulo": "La tesis: no pedimos lo suficiente"
+    },
+    {
+     "inicio": 70,
+     "titulo": "Conversación con un fundador de Y Combinator"
+    }
+   ],
+   "palabras_clave": [
+    "ingeniería de prompts",
+    "agentes",
+    "caja de ingeniería",
+    "Y Combinator"
+   ],
+   "resumen": "Theo sostiene que la 'ingeniería de prompts' es humo y que los ingenieros prompt-ean mal porque sobre-ingenierizan; anuncia una guía para salir de la 'caja de ingeniería', motivada por una charla con un fundador de Y Combinator.",
+   "confianza": "alta"
+  },
+  {
+   "id": 2,
+   "inicio": 102,
+   "fin": 217,
+   "tipo": "publicidad",
+   "tema": "Patrocinio: Macroscope para revisión de código",
+   "subtemas": [
+    {
+     "inicio": 102,
+     "titulo": "Panel de actividad del equipo"
+    },
+    {
+     "inicio": 165,
+     "titulo": "Agentes personalizados en .macroscope"
+    },
+    {
+     "inicio": 180,
+     "titulo": "Archivo de consistencia de UI"
+    }
+   ],
+   "palabras_clave": [
+    "Macroscope",
+    "revisión de código",
+    "pull requests",
+    "T3 Code"
+   ],
+   "resumen": "Theo presenta a Macroscope: un panel con lo que envía cada miembro del equipo y agentes personalizados definidos en la carpeta .macroscope que revisan cada PR, como uno de consistencia de UI en T3 Code.",
+   "confianza": "alta"
+  },
+  {
+   "id": 3,
+   "inicio": 217,
+   "fin": 294,
+   "tipo": "tema",
+   "tema": "El cómic de XKCD y pensar como un usuario común",
+   "subtemas": [
+    {
+     "inicio": 217,
+     "titulo": "Olvidar el código: la experiencia 'normie'"
+    },
+    {
+     "inicio": 233,
+     "titulo": "XKCD: GPS fácil, reconocer un pájaro imposible"
+    },
+    {
+     "inicio": 277,
+     "titulo": "Ahora el problema lo tienen los ingenieros"
+    }
+   ],
+   "palabras_clave": [
+    "XKCD",
+    "visión por computadora",
+    "usuarios comunes",
+    "pensar en código"
+   ],
+   "resumen": "Usando el XKCD del parque nacional y la foto de un pájaro, Theo explica que antes los usuarios no sabían qué era difícil técnicamente y que ahora son los ingenieros quienes no saben qué pedirle al agente por pensar siempre en código.",
+   "confianza": "alta"
+  },
+  {
+   "id": 4,
+   "inicio": 294,
+   "fin": 471,
+   "tipo": "relato",
+   "tema": "Caso: el desglose de llamadas a herramientas en T3 Code",
+   "subtemas": [
+    {
+     "inicio": 294,
+     "titulo": "La conversación con un amigo"
+    },
+    {
+     "inicio": 322,
+     "titulo": "Fallos de Ripgrep por sintaxis Bash en Zsh"
+    },
+    {
+     "inicio": 345,
+     "titulo": "La petición de medir tiempos de tool calls"
+    },
+    {
+     "inicio": 375,
+     "titulo": "'Ya lo tenemos': demostración pidiéndolo en un hilo"
+    },
+    {
+     "inicio": 433,
+     "titulo": "Funciones que en realidad son información"
+    }
+   ],
+   "palabras_clave": [
+    "T3 Code",
+    "llamadas a herramientas",
+    "Ripgrep",
+    "Zsh",
+    "Claude"
+   ],
+   "resumen": "Theo cuenta que, auditando sus agentes, vio fallos de Claude con Ripgrep en Zsh; un amigo pidió una función para medir la duración de las llamadas a herramientas y Theo le mostró que basta con pedírselo al agente, lo que demuestra en vivo. Concluye que muchas 'funciones' son solo información.",
+   "confianza": "alta"
+  },
+  {
+   "id": 5,
+   "inicio": 471,
+   "fin": 620,
+   "tipo": "tema",
+   "tema": "El panel que debía ser un chat; informes pedidos",
+   "subtemas": [
+    {
+     "inicio": 471,
+     "titulo": "Un ejemplo hecho mal: el panel de tareas"
+    },
+    {
+     "inicio": 521,
+     "titulo": "Mejor un meta-hilo de chat"
+    },
+    {
+     "inicio": 541,
+     "titulo": "Resultado: informe de llamadas a herramientas"
+    },
+    {
+     "inicio": 567,
+     "titulo": "Pedir un visualizador de la ventana de contexto"
+    },
+    {
+     "inicio": 593,
+     "titulo": "Railway y los 70 000 tokens de contexto"
+    }
+   ],
+   "palabras_clave": [
+    "panel",
+    "meta-hilo",
+    "ventana de contexto",
+    "Railway",
+    "T3 Code"
+   ],
+   "resumen": "Theo admite que diseñó un panel de control de hilos lleno de botones antes de entender que bastaba un meta-hilo de chat; muestra el informe de llamadas a herramientas generado y pide un visualizador de la ventana de contexto, recordando que así descubrió 70 000 tokens inyectados por Railway.",
+   "confianza": "alta"
+  },
+  {
+   "id": 6,
+   "inicio": 620,
+   "fin": 701,
+   "tipo": "reflexion",
+   "tema": "Pedir en vez de construir",
+   "subtemas": [
+    {
+     "inicio": 620,
+     "titulo": "Esperar en segundo plano no importa"
+    },
+    {
+     "inicio": 634,
+     "titulo": "Conseguir sin construir"
+    },
+    {
+     "inicio": 660,
+     "titulo": "Visualizadores e historial de Last.fm como prompts"
+    }
+   ],
+   "palabras_clave": [
+    "pedir resultados",
+    "prompts",
+    "Last.fm",
+    "visualizadores"
+   ],
+   "resumen": "Theo anima a ejecutar tareas en segundo plano sin urgencia y a conseguir las cosas pidiéndolas en lugar de construirlas, lo que lleva a hacer muchas cosas que nunca habrían valido la pena, como visualizadores para un bug o una plataforma para su historial musical.",
+   "confianza": "media"
+  },
+  {
+   "id": 7,
+   "inicio": 701,
+   "fin": 822,
+   "tipo": "tema",
+   "tema": "Elegir subagentes con un prompt en lugar de una función",
+   "subtemas": [
+    {
+     "inicio": 701,
+     "titulo": "Pedir el resultado, no la función"
+    },
+    {
+     "inicio": 714,
+     "titulo": "Petición de elegir el subagente"
+    },
+    {
+     "inicio": 735,
+     "titulo": "Demo: dos delegados Opus 5.5 y un hilo con Grok"
+    },
+    {
+     "inicio": 793,
+     "titulo": "Skills y archivos Claude MD"
+    },
+    {
+     "inicio": 798,
+     "titulo": "Listo el visualizador de la ventana de contexto"
+    }
+   ],
+   "palabras_clave": [
+    "subagentes",
+    "orquestación",
+    "Opus 5.5",
+    "Grok",
+    "skills"
+   ],
+   "resumen": "Ante la petición de un selector de subagentes en el orquestador de T3 Code, Theo muestra que basta con pedírselo al modelo: lanza dos delegados de Opus 5.5 y un hilo nuevo con Grok; si uno repite instrucciones, conviene ajustar skills y archivos Claude MD. Llega el visualizador de contexto pedido antes.",
+   "confianza": "alta"
+  },
+  {
+   "id": 8,
+   "inicio": 822,
+   "fin": 1119,
+   "tipo": "tema",
+   "tema": "De vuelta a la ingeniería: T3 triage como prompt",
+   "subtemas": [
+    {
+     "inicio": 822,
+     "titulo": "Segunda parte: llevar la mentalidad a la ingeniería"
+    },
+    {
+     "inicio": 850,
+     "titulo": "Fallos de T3 Code en Windows"
+    },
+    {
+     "inicio": 870,
+     "titulo": "El comando npx t3 triage"
+    },
+    {
+     "inicio": 903,
+     "titulo": "Demo: el prompt pasa a Claude Code"
+    },
+    {
+     "inicio": 961,
+     "titulo": "De un flujo complejo a un único prompt"
+    },
+    {
+     "inicio": 1041,
+     "titulo": "Cinco líneas de código y treinta de markdown"
+    },
+    {
+     "inicio": 1078,
+     "titulo": "Flujos demasiado dinámicos para una función"
+    }
+   ],
+   "palabras_clave": [
+    "T3 triage",
+    "Claude Code",
+    "Codex",
+    "playbook",
+    "markdown"
+   ],
+   "resumen": "Theo pasa a la parte central: aplicar esta mentalidad al construir producto. Presenta npx t3 triage, que en vez de un diagnóstico complejo envía a Claude Code o Codex un único prompt con datos de la máquina y un playbook de soporte; lo que iban a ser miles de líneas quedó en cinco de código y treinta de markdown.",
+   "confianza": "media"
+  },
+  {
+   "id": 9,
+   "inicio": 1119,
+   "fin": 1300,
+   "tipo": "tema",
+   "tema": "Preguntarle al agente qué datos y capacidades tiene",
+   "subtemas": [
+    {
+     "inicio": 1119,
+     "titulo": "¿Qué queda por construir? Preguntar"
+    },
+    {
+     "inicio": 1130,
+     "titulo": "Datos de renderizado para depurar el parpadeo"
+    },
+    {
+     "inicio": 1166,
+     "titulo": "Queja sobre trabajar en la terminal"
+    },
+    {
+     "inicio": 1193,
+     "titulo": "Capacidades de uso del computador de Codex"
+    },
+    {
+     "inicio": 1241,
+     "titulo": "Lista de capacidades: apps, mouse, teclado, capturas"
+    },
+    {
+     "inicio": 1271,
+     "titulo": "Preguntar por qué no pudo hacer algo"
+    }
+   ],
+   "palabras_clave": [
+    "uso del computador",
+    "Codex",
+    "T3 triage",
+    "renderizado",
+    "capacidades"
+   ],
+   "resumen": "Theo propone preguntar al agente qué le falta: le pide en T3 triage qué datos de renderizado necesitaría y le pide a Codex que describa sus capacidades de uso del computador para clonarlas en T3 Code; también sugiere preguntar por qué falló algo o qué herramienta ayudaría.",
+   "confianza": "alta"
+  },
+  {
+   "id": 10,
+   "inicio": 1300,
+   "fin": 1380,
+   "tipo": "reflexion",
+   "tema": "Prompt-ear más allá de la ingeniería",
+   "subtemas": [
+    {
+     "inicio": 1300,
+     "titulo": "Recopilar archivos de resonancia magnética"
+    },
+    {
+     "inicio": 1316,
+     "titulo": "La analogía del correo electrónico"
+    },
+    {
+     "inicio": 1356,
+     "titulo": "Prompt-ear lo que nunca se habría construido"
+    },
+    {
+     "inicio": 1366,
+     "titulo": "Construir primitivas y conductos de datos"
+    }
+   ],
+   "palabras_clave": [
+    "resonancia magnética",
+    "brain rot",
+    "correo electrónico",
+    "primitivas"
+   ],
+   "resumen": "Theo cuenta que pidió a un agente reunir sus archivos de resonancia magnética de portales médicos y responde a quienes lo llaman 'brain rot' comparándolo con el correo electrónico; dice que prompt-ea lo que nunca habría construido y centra su trabajo en crear primitivas y conductos para los agentes.",
+   "confianza": "media"
+  },
+  {
+   "id": 11,
+   "inicio": 1380,
+   "fin": 1494,
+   "tipo": "anecdota",
+   "tema": "Conectar el correo a ChatGPT",
+   "subtemas": [
+    {
+     "inicio": 1380,
+     "titulo": "El ejemplo más tonto: conectar el correo"
+    },
+    {
+     "inicio": 1398,
+     "titulo": "Cinco buzones y la decadencia de Superhuman"
+    },
+    {
+     "inicio": 1426,
+     "titulo": "Tras la lesión de la mano, prueba ChatGPT"
+    },
+    {
+     "inicio": 1445,
+     "titulo": "Vigilar correos y la factura de AWS con dot"
+    },
+    {
+     "inicio": 1468,
+     "titulo": "MCP de T3 Code y conductos entre agentes"
+    }
+   ],
+   "palabras_clave": [
+    "ChatGPT",
+    "correo electrónico",
+    "Superhuman",
+    "AWS",
+    "MCP"
+   ],
+   "resumen": "Theo recomienda conectar el correo a ChatGPT: harto de Superhuman y Gmail, y tras lesionarse la mano, pasó de revisar el buzón diez veces al día a una; con agentes como dot vigila correos, como una factura de AWS, y lanza hilos de Claude en T3 Code mediante MCP.",
+   "confianza": "alta"
+  },
+  {
+   "id": 12,
+   "inicio": 1494,
+   "fin": 1597,
+   "tipo": "reflexion",
+   "tema": "Nunca se sintió más ingeniero",
+   "subtemas": [
+    {
+     "inicio": 1494,
+     "titulo": "Los bajones y el valle de desesperación"
+    },
+    {
+     "inicio": 1533,
+     "titulo": "Soluciones ingeniosas: prompts, MCP, web MCP"
+    },
+    {
+     "inicio": 1562,
+     "titulo": "Cinco apps en Rust e ideas que ahora son viables"
+    }
+   ],
+   "palabras_clave": [
+    "valle de desesperación",
+    "MCP",
+    "Rust",
+    "ingeniería"
+   ],
+   "resumen": "Theo afirma que, tras un 'valle de desesperación' en que el código deja de importar, la ingeniería ingeniosa vale más que nunca: exponer la app por MCP o web MCP, aprender Rust y gestión de memoria y abordar problemas que antes no compensaban.",
+   "confianza": "alta"
+  },
+  {
+   "id": 13,
+   "inicio": 1597,
+   "fin": 1678,
+   "tipo": "tema",
+   "tema": "Peticiones de funciones y nuevas primitivas en T3 Code",
+   "subtemas": [
+    {
+     "inicio": 1597,
+     "titulo": "La mitad de las peticiones son prompts"
+    },
+    {
+     "inicio": 1638,
+     "titulo": "Visualizadores en línea en lugar de HTML aparte"
+    },
+    {
+     "inicio": 1660,
+     "titulo": "Primitivas para funciones dinámicas"
+    }
+   ],
+   "palabras_clave": [
+    "peticiones de funciones",
+    "primitivas",
+    "visualizador",
+    "Codex",
+    "T3 Code"
+   ],
+   "resumen": "Theo dice que al menos la mitad de las peticiones de T3 Code se resolverían con un prompt, pero que faltan primitivas, como que el agente muestre visualizadores dentro de la app, igual que Codex, para que los usuarios creen sus propias funciones dinámicas.",
+   "confianza": "media"
+  },
+  {
+   "id": 14,
+   "inicio": 1678,
+   "fin": 1884,
+   "tipo": "reflexion",
+   "tema": "Para quienes sienten que pierden la ingeniería",
+   "subtemas": [
+    {
+     "inicio": 1678,
+     "titulo": "A quienes sienten que pierden lo que aman"
+    },
+    {
+     "inicio": 1690,
+     "titulo": "La curva de sentirse ingeniero"
+    },
+    {
+     "inicio": 1734,
+     "titulo": "De ingeniero de producto a sistemas operativos y compiladores"
+    },
+    {
+     "inicio": 1783,
+     "titulo": "Conexiones SQL y runtime de JavaScript propio"
+    },
+    {
+     "inicio": 1820,
+     "titulo": "Los críticos del brain rot y el valle"
+    }
+   ],
+   "palabras_clave": [
+    "valle de desesperación",
+    "brain rot",
+    "compiladores",
+    "runtime de JavaScript"
+   ],
+   "resumen": "Theo se dirige a quienes sienten que la ingeniería es menos divertida: describe la curva de sentirse ingeniero, dice que ahora construye un sistema operativo, compiladores y un runtime de JavaScript, y que los críticos del 'brain rot' están en el valle, que hay que atravesar.",
+   "confianza": "media"
+  },
+  {
+   "id": 15,
+   "inicio": 1884,
+   "fin": 1907,
+   "tipo": "cierre",
+   "tema": "Cierre: nunca hubo más que construir",
+   "subtemas": [
+    {
+     "inicio": 1884,
+     "titulo": "Pensar así en adelante"
+    },
+    {
+     "inicio": 1889,
+     "titulo": "Respuesta a 'pagado por OpenAI'"
+    },
+    {
+     "inicio": 1900,
+     "titulo": "Despedida"
+    }
+   ],
+   "palabras_clave": [
+    "OpenAI",
+    "construir",
+    "despedida"
+   ],
+   "resumen": "Theo pide pensar así en adelante, responde con sarcasmo a quienes dicen que OpenAI le paga y se despide animando a construir algo genial.",
+   "confianza": "alta"
+  }
+ ],
+ "corto": "Theo - t3․gg · prompts en vez de funciones",
+ "capitulos": [],
+ "evaluacion": null
+}

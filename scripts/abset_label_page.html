@@ -1,0 +1,286 @@
+<title>Etiquetado CAVA · conjunto propio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap">
+<style>
+/* Herramienta de etiquetado: barra superior (anotador + video), reproductor a la izquierda, panel de marcas a la derecha. */
+:root{
+  --bg:#f4f6f8; --surface:#ffffff; --ink:#18212c; --muted:#5b6774; --line:#d9dfe6;
+  --accent:#1f5f8b; --accent-ink:#ffffff; --accent-soft:#e4eef6; --ok:#2d7a4f; --warn:#9a6200; --bad:#a3333d;
+  --f-body:"Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"Source Code Pro", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161c; --surface:#18202a; --ink:#e3e9ef; --muted:#97a4b2; --line:#2b3542;
+  --accent:#6fb0e0; --accent-ink:#0c1318; --accent-soft:#1b2c3a; --ok:#6cc495; --warn:#e2b45a; --bad:#ef8a93; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161c; --surface:#18202a; --ink:#e3e9ef; --muted:#97a4b2; --line:#2b3542;
+  --accent:#6fb0e0; --accent-ink:#0c1318; --accent-soft:#1b2c3a; --ok:#6cc495; --warn:#e2b45a; --bad:#ef8a93; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:16px;padding-block:20px 48px;display:grid;gap:16px}
+h1{font-size:1.35rem;margin:0}
+h2{font-size:1.05rem;margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:10px;min-width:0}
+.top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:16px}
+label{font-weight:600;font-size:.9rem}
+input[type=text],select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px 9px;width:100%;box-sizing:border-box}
+button{font:inherit;cursor:pointer;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 12px}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+button:disabled{opacity:.5;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+kbd{font-family:var(--f-mono);font-size:.78rem;border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--muted)}
+.vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.vids button{text-align:left;display:grid;gap:2px;padding:8px 10px}
+.vids button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.vids small{color:var(--muted)}
+.chip{display:inline-block;font-size:.75rem;border-radius:999px;padding:0 8px;border:1px solid var(--line);color:var(--muted)}
+.chip.done{color:var(--ok);border-color:var(--ok)} .chip.prog{color:var(--warn);border-color:var(--warn)}
+.work{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px;align-items:start}
+video{width:100%;max-width:100%;background:#000;border-radius:6px;aspect-ratio:16/9}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.timeline{position:relative;height:28px;border:1px solid var(--line);border-radius:4px;background:var(--bg);cursor:pointer}
+.timeline .cap{position:absolute;top:0;bottom:0;width:2px;background:var(--accent)}
+.timeline .mom{position:absolute;top:2px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--warn)}
+.timeline .head{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--bad)}
+.list{display:grid;gap:6px;max-height:52vh;overflow:auto;padding-right:2px}
+.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:start;border:1px solid var(--line);border-radius:6px;padding:7px 8px}
+.row .t{font-family:var(--f-mono);font-size:.88rem;color:var(--accent);background:none;border:0;padding:2px 0}
+.row .x{border:0;background:none;color:var(--muted);padding:2px 6px}
+.spk{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:.88rem}
+.spk label{font-weight:400}
+.status{font-size:.9rem;color:var(--muted);min-height:1.4em}
+.notice{border:1px dashed var(--line);border-radius:6px;padding:10px 12px;color:var(--muted)}
+details summary{cursor:pointer;font-weight:600}
+details ul{margin:6px 0 0;padding-left:18px;display:grid;gap:4px}
+@media (max-width:820px){.top,.work{grid-template-columns:minmax(0,1fr)}.list{max-height:none}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:4px">
+    <h1>Etiquetado del conjunto propio</h1>
+    <p class="muted">Marca capítulos con título, los momentos más importantes y quién habla en cada capítulo. El video se carga desde tu computadora: solo se guardan tus marcas.</p>
+  </header>
+
+  <section class="top">
+    <div class="card">
+      <label for="who">Tu nombre</label>
+      <input type="text" id="who" placeholder="Nombre y apellido" autocomplete="name">
+      <p class="status" id="dbstate">Conectando con el registro…</p>
+    </div>
+    <div class="card">
+      <h2>Video</h2>
+      <div class="vids" id="vids"></div>
+    </div>
+  </section>
+
+  <section class="work" id="work" hidden>
+    <div class="card">
+      <div class="ctl">
+        <label for="file" style="font-weight:600">Archivo de <span id="fileid" class="mono"></span>.mp4</label>
+        <input type="file" id="file" accept="video/mp4,video/*">
+      </div>
+      <p class="status" id="filestate"></p>
+      <video id="v" controls preload="metadata" hidden></video>
+      <div class="timeline" id="tl" title="Clic para saltar a ese punto" hidden></div>
+      <div class="ctl" id="actions" hidden>
+        <button class="primary" type="button" id="addcap">+ Capítulo aquí <kbd>C</kbd></button>
+        <button type="button" id="addmom">+ Momento importante <kbd>M</kbd></button>
+        <span class="mono muted" id="now">0:00</span>
+        <span class="muted" style="font-size:.85rem"><kbd>espacio</kbd> reproducir · <kbd>←</kbd><kbd>→</kbd> 5 s</span>
+      </div>
+      <details>
+        <summary>Cómo etiquetar</summary>
+        <ul>
+          <li><b>Capítulo:</b> un cambio de tema. Marca su inicio y escribe un título corto. El primero empieza en 0:00. Pon tantos como tú pondrías al publicar el video, sin forzar un número.</li>
+          <li><b>Momentos importantes:</b> entre 3 y 5 instantes que no te perderías si solo pudieras ver un resumen.</li>
+          <li><b>Hablantes</b> (solo conversaciones): escribe los nombres o "Persona 1, 2…" y, en cada capítulo, marca quién habla.</li>
+          <li>No mires el video en YouTube ni sus capítulos mientras etiquetas.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap">
+        <h2 id="vtitle"></h2>
+        <span class="chip" id="vstate">sin empezar</span>
+      </div>
+      <div id="spkbox" hidden style="display:grid;gap:6px">
+        <label for="spknames">Hablantes (separados por coma)</label>
+        <input type="text" id="spknames" placeholder="Persona 1, Persona 2, Persona 3">
+      </div>
+      <h2>Capítulos <span class="muted mono" id="ncap"></span></h2>
+      <div class="list" id="caps"></div>
+      <h2>Momentos importantes <span class="muted mono" id="nmom"></span></h2>
+      <div class="list" id="moms"></div>
+      <div class="ctl">
+        <button class="primary" type="button" id="done">Marcar como terminado</button>
+        <span class="status" id="save"></span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+const VIDEOS = __VIDEOS__;
+const $ = (id) => document.getElementById(id);
+const v = $("v");
+const fmt = (t) => { t = Math.max(0, Math.round(t)); const h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), s = t % 60;
+  return (h ? h + ":" + String(m).padStart(2, "0") : m) + ":" + String(s).padStart(2, "0"); };
+let col = null, uid = null, cur = null, mine = {}, state = null, saveTimer = null, saving = false, dirty = false;
+
+function blank(id) { return { chapters: [{ t: 0, title: "", speakers: [] }], moments: [], speakers: [], status: "en_curso" }; }
+
+function renderVids() {
+  $("vids").innerHTML = "";
+  for (const x of VIDEOS) {
+    const b = document.createElement("button");
+    b.type = "button"; b.setAttribute("aria-pressed", String(cur && cur.id === x.id));
+    const st = mine[x.id]?.status;
+    b.innerHTML = `<span><b class="mono"></b> <span class="chip ${st === "terminado" ? "done" : st ? "prog" : ""}"></span></span><span class="t"></span><small></small>`;
+    b.querySelector("b").textContent = x.id;
+    b.querySelector(".chip").textContent = st === "terminado" ? "terminado" : st ? "en curso" : "sin empezar";
+    b.querySelector(".t").textContent = x.title;
+    b.querySelector("small").textContent = `${x.channel} · ${fmt(x.dur)} · ${x.lang}`;
+    b.addEventListener("click", () => openVideo(x));
+    $("vids").appendChild(b);
+  }
+}
+
+function openVideo(x) {
+  cur = x; state = structuredClone(mine[x.id] || blank(x.id));
+  $("work").hidden = false; $("fileid").textContent = x.id; $("vtitle").textContent = x.title;
+  $("spkbox").hidden = !x.conv; $("spknames").value = (state.speakers || []).join(", ");
+  v.hidden = true; $("tl").hidden = true; $("actions").hidden = true; v.removeAttribute("src");
+  $("file").value = ""; $("filestate").textContent = `Elige el archivo ${x.id}.mp4 (dura ${fmt(x.dur)}).`;
+  renderVids(); renderMarks();
+}
+
+$("file").addEventListener("change", () => {
+  const f = $("file").files[0]; if (!f) return;
+  if (!f.name.startsWith(cur.id)) $("filestate").textContent = `Ojo: el archivo se llama ${f.name}, no ${cur.id}.mp4. Revisa que sea el video correcto.`;
+  v.src = URL.createObjectURL(f); v.hidden = false;
+});
+v.addEventListener("loadedmetadata", () => {
+  const ok = Math.abs(v.duration - cur.dur) <= 3;
+  $("filestate").textContent = ok ? "Video cargado." : `La duración (${fmt(v.duration)}) no coincide con la de ${cur.id} (${fmt(cur.dur)}). Revisa el archivo.`;
+  $("tl").hidden = !ok; $("actions").hidden = !ok; renderTimeline();
+});
+v.addEventListener("timeupdate", () => { $("now").textContent = fmt(v.currentTime); const h = $("tl").querySelector(".head"); if (h) h.style.left = (100 * v.currentTime / cur.dur) + "%"; });
+$("tl").addEventListener("click", (e) => { const r = $("tl").getBoundingClientRect(); v.currentTime = cur.dur * (e.clientX - r.left) / r.width; });
+
+function renderTimeline() {
+  if (!cur) return;
+  const tl = $("tl"); tl.innerHTML = "";
+  for (const c of state.chapters) { const d = document.createElement("div"); d.className = "cap"; d.style.left = (100 * c.t / cur.dur) + "%"; tl.appendChild(d); }
+  for (const m of state.moments) { const d = document.createElement("div"); d.className = "mom"; d.style.left = (100 * m.t / cur.dur) + "%"; tl.appendChild(d); }
+  const h = document.createElement("div"); h.className = "head"; h.style.left = (100 * (v.currentTime || 0) / cur.dur) + "%"; tl.appendChild(h);
+}
+
+function renderMarks() {
+  state.chapters.sort((a, b) => a.t - b.t); state.moments.sort((a, b) => a.t - b.t);
+  const names = state.speakers || [];
+  $("caps").innerHTML = "";
+  state.chapters.forEach((c, i) => {
+    const r = document.createElement("div"); r.className = "row";
+    r.innerHTML = `<button type="button" class="t"></button><div style="display:grid;gap:4px;min-width:0"><input type="text" placeholder="Título del capítulo"><div class="spk"></div></div><button type="button" class="x" aria-label="Borrar capítulo">✕</button>`;
+    r.querySelector(".t").textContent = fmt(c.t);
+    r.querySelector(".t").addEventListener("click", () => { v.currentTime = c.t; });
+    const inp = r.querySelector("input"); inp.id = `cap_${cur.id}_${i}`; inp.value = c.title;
+    inp.addEventListener("input", () => { c.title = inp.value; touch(); });
+    if (cur.conv) {
+      const box = r.querySelector(".spk");
+      if (!names.length) box.innerHTML = '<span class="muted">Escribe arriba los nombres de los hablantes.</span>';
+      names.forEach((n) => {
+        const l = document.createElement("label"); const cb = document.createElement("input"); cb.type = "checkbox";
+        cb.checked = (c.speakers || []).includes(n);
+        cb.addEventListener("change", () => { c.speakers = names.filter((k) => k === n ? cb.checked : (c.speakers || []).includes(k)); touch(); });
+        l.append(cb, " " + n); box.appendChild(l);
+      });
+    }
+    const x = r.querySelector(".x");
+    if (i === 0) x.disabled = true;
+    x.addEventListener("click", () => { state.chapters.splice(i, 1); touch(); renderMarks(); });
+    $("caps").appendChild(r);
+  });
+  $("moms").innerHTML = state.moments.length ? "" : '<p class="muted">Todavía no hay momentos marcados.</p>';
+  state.moments.forEach((m, i) => {
+    const r = document.createElement("div"); r.className = "row";
+    r.innerHTML = `<button type="button" class="t"></button><input type="text" placeholder="Qué pasa (opcional)"><button type="button" class="x" aria-label="Borrar momento">✕</button>`;
+    r.querySelector(".t").textContent = fmt(m.t);
+    r.querySelector(".t").addEventListener("click", () => { v.currentTime = m.t; });
+    const inp = r.querySelector("input"); inp.id = `mom_${cur.id}_${i}`; inp.value = m.note || "";
+    inp.addEventListener("input", () => { m.note = inp.value; touch(); });
+    r.querySelector(".x").addEventListener("click", () => { state.moments.splice(i, 1); touch(); renderMarks(); });
+    $("moms").appendChild(r);
+  });
+  $("ncap").textContent = `(${state.chapters.length})`;
+  $("nmom").textContent = `(${state.moments.length} de 3–5)`;
+  $("vstate").textContent = state.status === "terminado" ? "terminado" : "en curso";
+  $("vstate").className = "chip " + (state.status === "terminado" ? "done" : "prog");
+  renderTimeline();
+}
+
+$("spknames").addEventListener("change", () => {
+  state.speakers = $("spknames").value.split(",").map((s) => s.trim()).filter(Boolean);
+  for (const c of state.chapters) c.speakers = (c.speakers || []).filter((n) => state.speakers.includes(n));
+  touch(); renderMarks();
+});
+function addChapter() { const t = Math.round(v.currentTime); if (state.chapters.some((c) => Math.abs(c.t - t) < 2)) return; state.chapters.push({ t, title: "", speakers: [] }); touch(); renderMarks(); }
+function addMoment() { const t = Math.round(v.currentTime); if (state.moments.some((m) => Math.abs(m.t - t) < 2)) return; state.moments.push({ t, note: "" }); touch(); renderMarks(); }
+$("addcap").addEventListener("click", addChapter);
+$("addmom").addEventListener("click", addMoment);
+$("done").addEventListener("click", () => {
+  const empty = state.chapters.filter((c) => !c.title.trim()).length;
+  if (empty) { $("save").textContent = `Faltan títulos en ${empty} capítulo(s).`; return; }
+  if (state.moments.length < 3 || state.moments.length > 5) { $("save").textContent = "Marca entre 3 y 5 momentos importantes."; return; }
+  state.status = "terminado"; touch(); renderMarks();
+});
+document.addEventListener("keydown", (e) => {
+  if (!cur || $("actions").hidden || e.target.closest("input,textarea,select")) return;
+  if (e.key === "c" || e.key === "C") { e.preventDefault(); addChapter(); }
+  else if (e.key === "m" || e.key === "M") { e.preventDefault(); addMoment(); }
+  else if (e.key === " ") { e.preventDefault(); v.paused ? v.play() : v.pause(); }
+  else if (e.key === "ArrowLeft") v.currentTime = Math.max(0, v.currentTime - 5);
+  else if (e.key === "ArrowRight") v.currentTime = Math.min(cur.dur, v.currentTime + 5);
+});
+
+function touch() { dirty = true; $("save").textContent = "Cambios sin guardar…"; clearTimeout(saveTimer); saveTimer = setTimeout(save, 1200); }
+async function save() {
+  if (!col || !cur) { $("save").textContent = "Sin conexión al registro: los cambios no se guardan."; return; }
+  const name = $("who").value.trim();
+  if (!name) { $("save").textContent = "Escribe tu nombre arriba para guardar."; return; }
+  if (saving) { clearTimeout(saveTimer); saveTimer = setTimeout(save, 800); return; }
+  saving = true; dirty = false;
+  const vid = cur.id, doc = structuredClone(state);
+  try {
+    await col.doc(`${uid}__${vid}`).set({ annotator: uid, annotator_name: name, video: vid, ...doc, updated_at: new Date().toISOString(), page_version: 1 });
+    mine[vid] = doc; renderVids();
+    $("save").textContent = doc.status === "terminado" ? "Guardado y marcado como terminado." : "Guardado.";
+  } catch (e) {
+    $("save").textContent = e && e.code === "not_granted" ? "Tu acceso es de solo lectura: pide acceso de colaborador." : "No se pudo guardar; vuelve a intentarlo en un momento.";
+    dirty = true;
+  } finally { saving = false; }
+}
+$("who").addEventListener("change", () => { try { localStorage.setItem("abset_name", $("who").value.trim()); } catch (e) {} if (cur && dirty) save(); });
+try { $("who").value = localStorage.getItem("abset_name") || ""; } catch (e) {}
+window.addEventListener("beforeunload", (e) => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
+
+renderVids();
+(async () => {
+  const [db, user] = await Promise.all([claude.use("db"), claude.use("user")]);
+  uid = user ? await user.id() : null;
+  if (!db || !uid) { $("dbstate").innerHTML = '<span class="notice">Esta vista no puede guardar (abre la página con tu cuenta de claude.ai). Puedes ver los videos, pero no etiquetar.</span>'; return; }
+  col = db.collection("labels");
+  col.where("annotator", "==", uid).onSnapshot((snap) => {
+    snap.docs.forEach((d) => { const x = d.data(); if (x && x.video) mine[x.video] = { chapters: x.chapters || [], moments: x.moments || [], speakers: x.speakers || [], status: x.status || "en_curso" }; });
+    const n = Object.values(mine).filter((x) => x.status === "terminado").length;
+    $("dbstate").textContent = `Registro conectado · ${n} de ${VIDEOS.length} videos terminados.`;
+    if (cur && !dirty && mine[cur.id]) { state = structuredClone(mine[cur.id]); renderMarks(); }
+    renderVids();
+  }, () => { $("dbstate").textContent = "Se perdió la conexión con el registro; recarga la página."; });
+})();
+</script>

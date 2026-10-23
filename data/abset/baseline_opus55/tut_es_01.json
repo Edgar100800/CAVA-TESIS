@@ -1,0 +1,208 @@
+{
+ "video_id": "A4QYEDQCnaQ",
+ "titulo": "Crea una Landing ESPECTACULAR con Claude Code",
+ "titulo_corto": "midudev · Landing con vídeo IA al hacer scroll",
+ "canal": "midudev",
+ "duracion": 1547,
+ "fuente_transcripcion": "youtube_auto",
+ "anotador": "claude-opus-5-5",
+ "revisado_por": null,
+ "version_guia": "0.1-r",
+ "estado": "borrador",
+ "estructura": {
+  "formato": "tutorial práctico en pantalla, un solo presentador (midudev) trabajando con Claude Code y el servicio Higgsfield",
+  "patron": "Intro (gancho con la web terminada) -> encargo del amigo y referencias -> publicidad integrada de Higgsfield e instalación del MCP -> preparar proyecto (fotos WebP y skills) -> consulta de costes y modelos -> prueba comparativa y precios en dólares -> comparación de resultados y elección de MiniMax -> prompt de seis clips y generación -> revisión de clips, coste y optimización -> prompt final y recorrido por la landing -> código abierto, despliegue y móvil -> cierre",
+  "observaciones": "Las fronteras las marcan los pasos del trabajo, a menudo anunciados por el presentador ('Ahora lo que voy a hacer es...', 'Ya tengo los resultados'), y los tiempos de espera de la generación (hay un corte con [música] hacia 16:17). El patrocinador, Higgsfield, se presenta hacia 02:13 y luego es la herramienta central de todo el video, así que solo el bloque de presentación y conexión del MCP se marca como publicidad. Subtítulo automático con muchos nombres deformados: Higgsfield aparece como 'Hickfield', 'Hiixfield', 'Higfield', 'Hitfield' o 'Hitsville'; Claude como 'Cloud', 'Clow', 'clot'; Kling como 'Cling', 'Clean', 'Clink'; Seedance como 'Sedans' o 'Sidans'; MiniMax como 'Minim Max' o 'Minimx'; Scroll World como 'scroll word' o 'scroll war'; WebP como 'wep'; el proyecto como 'Arcoushi'/'Arcoshi'. Varias cifras en dólares se pierden ('entre y $60', 'unos $ y medio')."
+ },
+ "segmentos": [
+  {
+   "id": 1,
+   "inicio": 0,
+   "fin": 31,
+   "tipo": "intro",
+   "tema": "Gancho: una web con vídeo hecha con cinco prompts",
+   "subtemas": [],
+   "palabras_clave": ["landing page", "scroll", "inteligencia artificial", "prompts"],
+   "resumen": "El presentador muestra una página cuyo fondo parece un vídeo que recorre un restaurante al hacer scroll y afirma que la hizo con cinco prompts y seis imágenes; adelanta que explicará skills, servicio, prompts y buenas prácticas.",
+   "confianza": "alta"
+  },
+  {
+   "id": 2,
+   "inicio": 31,
+   "fin": 130,
+   "tipo": "presentacion",
+   "tema": "El encargo del amigo, referencias y proyecto en Astro",
+   "subtemas": [
+    {"inicio": 31, "titulo": "Un restaurante japonés quiere una landing muy visual"},
+    {"inicio": 58, "titulo": "Referencias de X: fondos de vídeo y Scroll World"},
+    {"inicio": 102, "titulo": "Crear el proyecto con Astro"}
+   ],
+   "palabras_clave": ["restaurante japonés", "Arco", "Scroll World", "skill", "Astro"],
+   "resumen": "Un amigo con un restaurante japonés le pasa fotos estáticas y le pide una web con vídeos que se muevan al hacer scroll; el presentador muestra landings de referencia publicadas en X, una skill gratuita de su autor, y crea el proyecto con Astro, su framework favorito.",
+   "confianza": "alta"
+  },
+  {
+   "id": 3,
+   "inicio": 130,
+   "fin": 252,
+   "tipo": "publicidad",
+   "tema": "Patrocinio de Higgsfield y conexión de su MCP",
+   "subtemas": [
+    {"inicio": 130, "titulo": "Qué es Higgsfield: más de 30 modelos generativos"},
+    {"inicio": 170, "titulo": "API y MCP para ChatGPT, Claude y Claude Code"},
+    {"inicio": 194, "titulo": "El prompt instala la CLI, el login y las skills"},
+    {"inicio": 218, "titulo": "Sesión ya iniciada: todo listo"}
+   ],
+   "palabras_clave": ["Higgsfield", "patrocinio", "MCP", "Claude Code", "créditos"],
+   "resumen": "El presentador indica que Higgsfield patrocina el video y le dio los créditos; lo describe como una plataforma que reúne modelos de imagen, vídeo y audio y conecta su MCP con Claude Code pegando un prompt que instala la línea de comandos, autentica e instala skills.",
+   "confianza": "media"
+  },
+  {
+   "id": 4,
+   "inicio": 252,
+   "fin": 421,
+   "tipo": "tema",
+   "tema": "Preparar el proyecto: fotos en WebP e instalación de skills",
+   "subtemas": [
+    {"inicio": 252, "titulo": "Carpeta de fotos y conversión a WebP"},
+    {"inicio": 318, "titulo": "La skill Landing Page Design"},
+    {"inicio": 355, "titulo": "Instalarla en el proyecto pasando la URL"},
+    {"inicio": 397, "titulo": "Skill de Scroll World con /plugin marketplace"}
+   ],
+   "palabras_clave": ["WebP", "optimización de imágenes", "Landing Page Design", "Scroll World", "plugin"],
+   "resumen": "Copia las fotos a public/fotos y pide convertirlas a WebP para reducir latencia y peso; después instala en el proyecto la skill de código abierto Landing Page Design pasándole la URL a Claude Code y la de Scroll World mediante el marketplace de plugins.",
+   "confianza": "alta"
+  },
+  {
+   "id": 5,
+   "inicio": 421,
+   "fin": 717,
+   "tipo": "tema",
+   "tema": "Consultar costes y modelos antes de generar el vídeo",
+   "subtemas": [
+    {"inicio": 421, "titulo": "Prompt: recorrido por el restaurante, solo información"},
+    {"inicio": 466, "titulo": "Por qué pedir el coste antes de generar"},
+    {"inicio": 521, "titulo": "Créditos disponibles y coste estimado"},
+    {"inicio": 542, "titulo": "Enfoque recomendado: un clip por par de fotos"},
+    {"inicio": 572, "titulo": "Modelos con fotograma inicial y final"},
+    {"inicio": 663, "titulo": "Descartes y factores: fotos mixtas, gimbal, exportación"}
+   ],
+   "palabras_clave": ["créditos", "Kling", "MiniMax", "Seedance", "fotograma clave"],
+   "resumen": "Pide a Claude Code, vía Higgsfield, costes y modelos sin generar nada y aconseja hacerlo siempre para no gastar de más; la respuesta recomienda un clip por cada par de fotos consecutivas, compara Kling, MiniMax, Seedance y otros, y da consejos de prompt y de exportación para el scroll.",
+   "confianza": "alta"
+  },
+  {
+   "id": 6,
+   "inicio": 717,
+   "fin": 858,
+   "tipo": "tema",
+   "tema": "Prueba comparativa propuesta y precios en dólares",
+   "subtemas": [
+    {"inicio": 717, "titulo": "Probar la transición más difícil con varios modelos"},
+    {"inicio": 744, "titulo": "Equivalencia de créditos en dólares"},
+    {"inicio": 816, "titulo": "Encargar la prueba: sin audio, 16:9, sin tocar la web"}
+   ],
+   "palabras_clave": ["prueba", "dólares", "relación de aspecto 16:9", "comparativa de modelos"],
+   "resumen": "La herramienta propone probar la transición entre la mesa y la barra con varios modelos a la vez; el presentador pide los precios en dólares, comenta que el proyecto completo cuesta poco y encarga solo la prueba, sin audio, en 16:9 y sin modificar la web.",
+   "confianza": "media"
+  },
+  {
+   "id": 7,
+   "inicio": 858,
+   "fin": 981,
+   "tipo": "tema",
+   "tema": "Comparar los tres resultados y elegir MiniMax",
+   "subtemas": [
+    {"inicio": 858, "titulo": "Tiempos de generación"},
+    {"inicio": 875, "titulo": "Kling: bonito pero con un cambio brusco"},
+    {"inicio": 896, "titulo": "MiniMax: natural, giro demasiado rápido"},
+    {"inicio": 912, "titulo": "Seedance: fundido demasiado básico"},
+    {"inicio": 928, "titulo": "Elige MiniMax, el más barato"},
+    {"inicio": 941, "titulo": "Los recursos quedan guardados en Higgsfield"}
+   ],
+   "palabras_clave": ["Kling", "MiniMax", "Seedance", "transición", "Higgsfield"],
+   "resumen": "Revisa las tres pruebas: Kling tarda unos 20 minutos y mete un cambio raro, Seedance usa un fundido que no le convence y MiniMax le parece natural; decide generar todos los clips con MiniMax y recuerda que los recursos y prompts quedan disponibles en Higgsfield.",
+   "confianza": "alta"
+  },
+  {
+   "id": 8,
+   "inicio": 981,
+   "fin": 1110,
+   "tipo": "tema",
+   "tema": "Prompt detallado de seis clips y generación",
+   "subtemas": [
+    {"inicio": 981, "titulo": "Keyframes, ajustes y prompt por clip"},
+    {"inicio": 1017, "titulo": "Prompts negativos: sin fundidos, morphing ni gente"},
+    {"inicio": 1036, "titulo": "Keyframes ampliados a 16:9 con outpainting"},
+    {"inicio": 1090, "titulo": "Timeout del lote y reintentos automáticos"}
+   ],
+   "palabras_clave": ["prompt", "keyframes", "prompts negativos", "outpainting", "timeout"],
+   "resumen": "Pega un prompt largo con fotos de inicio y fin, ajustes comunes, dirección de cámara por clip y prompts negativos; mientras genera, explica que la herramienta amplió las fotos verticales a 16:9 inventando contenido y que relanza por su cuenta los clips que fallaron por timeout.",
+   "confianza": "alta"
+  },
+  {
+   "id": 9,
+   "inicio": 1110,
+   "fin": 1289,
+   "tipo": "tema",
+   "tema": "Revisión de los clips, descartes, coste y optimización",
+   "subtemas": [
+    {"inicio": 1110, "titulo": "Recorrido por los clips uno a seis"},
+    {"inicio": 1162, "titulo": "Dos descartes automáticos de Claude Code"},
+    {"inicio": 1207, "titulo": "Coste final: 137 créditos"},
+    {"inicio": 1234, "titulo": "Paso a 1080p y conversión a MP4 y WebM"}
+   ],
+   "palabras_clave": ["clips", "descartes", "137 créditos", "WebM", "1080p"],
+   "resumen": "Muestra cada clip y valora que las transiciones quedan bien aunque inventa pasillos y huecos; Claude Code descartó dos clips por su cuenta, el gasto fue de 137 créditos y pide convertir los vídeos a MP4 y WebM optimizados y sin audio.",
+   "confianza": "alta"
+  },
+  {
+   "id": 10,
+   "inicio": 1289,
+   "fin": 1413,
+   "tipo": "tema",
+   "tema": "Prompt final de la web y recorrido por la landing",
+   "subtemas": [
+    {"inicio": 1289, "titulo": "Prompt con dirección de arte, reservas y contenido"},
+    {"inicio": 1317, "titulo": "El scroll avanza el vídeo entre secciones"},
+    {"inicio": 1357, "titulo": "Botones, menús, reservas y contenido pendiente"},
+    {"inicio": 1379, "titulo": "Scroll inverso y detalles mejorables"}
+   ],
+   "palabras_clave": ["landing page", "dirección de arte", "Scroll World", "reservar mesa"],
+   "resumen": "Pega un prompt largo con la dirección de arte, la URL de reservas, platos, logo y temas legales; recorre la página generada, donde el vídeo de fondo avanza con el scroll entre secciones, y comenta que faltan fotos de platos y que algunas transiciones podrían mejorar.",
+   "confianza": "alta"
+  },
+  {
+   "id": 11,
+   "inicio": 1413,
+   "fin": 1476,
+   "tipo": "recomendacion",
+   "tema": "Código en GitHub, despliegue en Cloudflare y vista móvil",
+   "subtemas": [
+    {"inicio": 1413, "titulo": "Código y archivo de prompts en GitHub"},
+    {"inicio": 1432, "titulo": "Despliegue en Cloudflare"},
+    {"inicio": 1438, "titulo": "Prueba en móvil y posibles mejoras"}
+   ],
+   "palabras_clave": ["GitHub", "Cloudflare", "prompts", "móvil"],
+   "resumen": "El presentador ofrece el código y un archivo con los prompts en su GitHub y la web desplegada en Cloudflare; la prueba en móvil y sugiere vídeos específicos para móvil con lo importante más arriba.",
+   "confianza": "media"
+  },
+  {
+   "id": 12,
+   "inicio": 1476,
+   "fin": 1547,
+   "tipo": "cierre",
+   "tema": "Cierre: balance y despedida",
+   "subtemas": [
+    {"inicio": 1476, "titulo": "Balance: seis o siete prompts con Claude Code"},
+    {"inicio": 1504, "titulo": "Pide ideas en comentarios, like y suscripción"}
+   ],
+   "palabras_clave": ["Higgsfield", "Claude Code", "comentarios", "suscripción"],
+   "resumen": "Resume que probó Higgsfield y su MCP con Claude Code en unos seis o siete prompts, casi todo en directo, pide ideas para próximos vídeos en los comentarios y se despide.",
+   "confianza": "alta"
+  }
+ ],
+ "corto": "midudev · Landing con vídeo IA al hacer scroll",
+ "capitulos": [],
+ "evaluacion": null
+}

@@ -1,0 +1,547 @@
+{
+ "video_id": "0JXDSW4SIRA",
+ "titulo": "La realidad de los agentes empresariales en 2026 según los expertos",
+ "titulo_corto": "codigofacilito · agentes empresariales en 2026",
+ "canal": "codigofacilito",
+ "duracion": 3062,
+ "fuente_transcripcion": "youtube_auto",
+ "anotador": "claude-opus-5-5",
+ "revisado_por": null,
+ "version_guia": "0.1-r",
+ "estado": "borrador",
+ "estructura": {
+  "formato": "panel en vivo (foro de Código Facilito) con un moderador, Uriel, y dos invitados: Carlos Jaro (senior AI engineer en Banco Santander) y Antonio Peregrino (staff machine learning engineer); se leen comentarios del chat de YouTube",
+  "patron": "Presentación de los invitados -> perfiles -> qué es un agente -> especialización (modelo fundacional, herramientas, fine tuning) -> ingeniería de software frente a ciencia de datos (Antonio, Carlos, aclaración de Antonio) -> no determinismo y control (guardrails, contratos y evidencia, filtro de dominio, autoridad) -> qué estudiar (Carlos, Antonio) -> digresión sobre prompts -> pregunta bonus: modelos privados o abiertos (Antonio, Carlos) -> palabras finales y despedida",
+  "observaciones": "Las fronteras las marca casi siempre una pregunta nueva del moderador, que suele hacerla primero a un invitado y luego pedir al otro que complemente; por eso varios temas ocupan dos segmentos seguidos, uno por invitado. Temas recurrentes: el modelo como caja negra rodeada de ingeniería, el no determinismo y las herramientas. No hay publicidad; al final se menciona una charla de cierre posterior, lo que sugiere que el panel forma parte de un evento mayor. Subtítulo automático con nombres deformados: el moderador aparece como 'Uriel', 'Friel' y 'Gabriel'; Peregrino como 'Feregrino'; Claude como 'Cloud'; 'Antropic', 'Mira Morati/Murati', 'Hidden Technical De', 'Modern Doc' y 'Doc DV', 'Jaret Sofner, creador de Bon', 'Landrafts'. Hay un corte de audio de Antonio hacia 03:01-03:12."
+ },
+ "segmentos": [
+  {
+   "id": 1,
+   "inicio": 0,
+   "fin": 106,
+   "tipo": "presentacion",
+   "tema": "Presentación de los panelistas Carlos y Antonio",
+   "subtemas": [
+    {
+     "inicio": 8,
+     "titulo": "Carlos Jaro, senior AI engineer en Banco Santander"
+    },
+    {
+     "inicio": 33,
+     "titulo": "Antonio Peregrino, staff machine learning engineer"
+    },
+    {
+     "inicio": 59,
+     "titulo": "Saludos de los invitados"
+    }
+   ],
+   "palabras_clave": [
+    "Código Facilito",
+    "Banco Santander",
+    "Carlos Jaro",
+    "Antonio Peregrino"
+   ],
+   "resumen": "El moderador presenta a Carlos Jaro (ingeniero de IA en Banco Santander y profesor de Código Facilito) y a Antonio Peregrino (ingeniero de machine learning y profesor de la plataforma); ambos saludan a la audiencia.",
+   "confianza": "alta"
+  },
+  {
+   "id": 2,
+   "inicio": 106,
+   "fin": 317,
+   "tipo": "presentacion",
+   "tema": "Los invitados completan su perfil",
+   "subtemas": [
+    {
+     "inicio": 129,
+     "titulo": "Antonio: de MLOps a sistemas agénticos en su empresa"
+    },
+    {
+     "inicio": 208,
+     "titulo": "Carlos: trayectoria en datos y consultoría"
+    },
+    {
+     "inicio": 247,
+     "titulo": "Hot takes de Carlos: café, perros y Pandas"
+    }
+   ],
+   "palabras_clave": [
+    "MLOps",
+    "sistemas agénticos",
+    "sector bancario",
+    "Pandas"
+   ],
+   "resumen": "Antonio cuenta que pasó de versionar prompts a construir sistemas agénticos con más rigor; Carlos resume su carrera en datos, ahora en banca, y lanza tres 'hot takes', entre ellos que Pandas es una mala librería.",
+   "confianza": "alta"
+  },
+  {
+   "id": 3,
+   "inicio": 317,
+   "fin": 582,
+   "tipo": "tema",
+   "tema": "Qué distingue a un agente de una llamada API",
+   "subtemas": [
+    {
+     "inicio": 317,
+     "titulo": "Pregunta: agentes frente a un simple prompt"
+    },
+    {
+     "inicio": 363,
+     "titulo": "Antonio: el modelo decide, se llama a sí mismo y usa herramientas"
+    },
+    {
+     "inicio": 434,
+     "titulo": "Autonomía restringida por el desarrollador"
+    },
+    {
+     "inicio": 500,
+     "titulo": "Carlos: definición de Simon Willison y el loop agéntico"
+    }
+   ],
+   "palabras_clave": [
+    "agente",
+    "loop agéntico",
+    "herramientas",
+    "Simon Willison",
+    "autonomía"
+   ],
+   "resumen": "Antonio explica que un sistema agéntico interactúa con herramientas y consigo mismo con una autonomía limitada; Carlos cita la definición de Simon Willison: un modelo de lenguaje en un bucle con herramientas para cumplir una meta.",
+   "confianza": "alta"
+  },
+  {
+   "id": 4,
+   "inicio": 582,
+   "fin": 804,
+   "tipo": "tema",
+   "tema": "Cómo se especializa un agente sobre un modelo general",
+   "subtemas": [
+    {
+     "inicio": 582,
+     "titulo": "Pregunta: dónde entra la personalización"
+    },
+    {
+     "inicio": 659,
+     "titulo": "Modelo fundacional"
+    },
+    {
+     "inicio": 718,
+     "titulo": "Herramientas especializadas: Claude Code y Codex"
+    },
+    {
+     "inicio": 764,
+     "titulo": "Fine tuning como segundo ingrediente"
+    }
+   ],
+   "palabras_clave": [
+    "modelo fundacional",
+    "Codex",
+    "Claude Code",
+    "fine tuning",
+    "herramientas"
+   ],
+   "resumen": "Carlos sostiene que un agente se especializa combinando un modelo fundacional, las herramientas que se le ponen a disposición (como en los agentes de código) y, en ocasiones, un fine tuning para la tarea.",
+   "confianza": "alta"
+  },
+  {
+   "id": 5,
+   "inicio": 804,
+   "fin": 1018,
+   "tipo": "tema",
+   "tema": "De entrenar modelos a llamar APIs: ingeniería de software",
+   "subtemas": [
+    {
+     "inicio": 804,
+     "titulo": "Pregunta: cómo cambió el trabajo desde el machine learning tradicional"
+    },
+    {
+     "inicio": 835,
+     "titulo": "Antonio: ya no hay que entrenar el modelo"
+    },
+    {
+     "inicio": 915,
+     "titulo": "¿Es un problema de ingeniería de software?"
+    },
+    {
+     "inicio": 944,
+     "titulo": "Tensión con los científicos de datos en su empresa"
+    }
+   ],
+   "palabras_clave": [
+    "machine learning tradicional",
+    "API",
+    "evaluaciones",
+    "ingeniería de software",
+    "RAG"
+   ],
+   "resumen": "Antonio afirma que con modelos fundacionales el trabajo se reduce sobre todo a llamar APIs y construir el loop agéntico, de modo que pesa más la ingeniería de software, aunque la experimentación (prompts, RAG, evaluaciones) sigue siendo terreno de la ciencia de datos.",
+   "confianza": "alta"
+  },
+  {
+   "id": 6,
+   "inicio": 1018,
+   "fin": 1204,
+   "tipo": "tema",
+   "tema": "Carlos: la ingeniería alrededor de la caja negra",
+   "subtemas": [
+    {
+     "inicio": 1018,
+     "titulo": "Comentario del chat: RAG, funciones y herramientas"
+    },
+    {
+     "inicio": 1080,
+     "titulo": "El paper de Google sobre deuda técnica oculta en ML"
+    },
+    {
+     "inicio": 1128,
+     "titulo": "La experiencia en datos se capitaliza en los agentes"
+    }
+   ],
+   "palabras_clave": [
+    "Hidden Technical Debt",
+    "Google",
+    "caja negra",
+    "controles",
+    "producción"
+   ],
+   "resumen": "Carlos usa el paper de Google sobre la deuda técnica oculta en sistemas de machine learning para argumentar que el modelo es una caja pequeña y que lo que hace un sistema de calidad es la ingeniería que lo rodea.",
+   "confianza": "alta"
+  },
+  {
+   "id": 7,
+   "inicio": 1204,
+   "fin": 1285,
+   "tipo": "reflexion",
+   "tema": "Antonio: la ciencia de datos sigue vigente",
+   "subtemas": [
+    {
+     "inicio": 1204,
+     "titulo": "Aclaración: no desestima la ciencia de datos"
+    },
+    {
+     "inicio": 1265,
+     "titulo": "La IA como paraguas que incluye al machine learning"
+    }
+   ],
+   "palabras_clave": [
+    "ciencia de datos",
+    "machine learning tradicional",
+    "sistemas agénticos"
+   ],
+   "resumen": "Antonio aclara que en su empresa los agentes se nutren de predicciones de modelos de machine learning tradicional, que siguen siendo clave; ambos conviven.",
+   "confianza": "media"
+  },
+  {
+   "id": 8,
+   "inicio": 1285,
+   "fin": 1492,
+   "tipo": "tema",
+   "tema": "No determinismo y guardrails",
+   "subtemas": [
+    {
+     "inicio": 1285,
+     "titulo": "El moderador: ¿cómo garantizar respuestas correctas?"
+    },
+    {
+     "inicio": 1373,
+     "titulo": "Antonio: el modelo es determinista solo en condiciones ideales"
+    },
+    {
+     "inicio": 1409,
+     "titulo": "Nunca se cubre el 100 % de los casos"
+    },
+    {
+     "inicio": 1427,
+     "titulo": "Guardrails, filtrado y fine tuning"
+    }
+   ],
+   "palabras_clave": [
+    "determinismo",
+    "guardrails",
+    "fine tuning",
+    "pruebas"
+   ],
+   "resumen": "Ante la pregunta de cómo asegurar respuestas correctas, Antonio explica que el uso real introduce indeterminismo, que nunca se cubrirá el 100 % de los casos y que se minimiza el impacto con guardrails y fine tuning.",
+   "confianza": "alta"
+  },
+  {
+   "id": 9,
+   "inicio": 1492,
+   "fin": 1741,
+   "tipo": "tema",
+   "tema": "Carlos: validez en lugar de determinismo",
+   "subtemas": [
+    {
+     "inicio": 1492,
+     "titulo": "Pregunta: dominio y corrección de las respuestas"
+    },
+    {
+     "inicio": 1532,
+     "titulo": "Thinking Machines y por qué los modelos no son deterministas"
+    },
+    {
+     "inicio": 1628,
+     "titulo": "Analogía del plomero"
+    },
+    {
+     "inicio": 1703,
+     "titulo": "Contratos y evidencia para evaluar el resultado"
+    }
+   ],
+   "palabras_clave": [
+    "Mira Murati",
+    "Thinking Machines",
+    "no determinismo",
+    "plomero",
+    "evaluación"
+   ],
+   "resumen": "Carlos cita el blog de Thinking Machines sobre la imposibilidad práctica del determinismo y, con la analogía de dos plomeros, propone controlar al modelo como a un profesional: con un contrato y con evidencia que permita evaluar el resultado.",
+   "confianza": "alta"
+  },
+  {
+   "id": 10,
+   "inicio": 1741,
+   "fin": 1903,
+   "tipo": "tema",
+   "tema": "Restringir el dominio: el chatbot de McDonald's",
+   "subtemas": [
+    {
+     "inicio": 1741,
+     "titulo": "¿Basta con un segundo prompt de 'no hagas esto'?"
+    },
+    {
+     "inicio": 1800,
+     "titulo": "Antonio: un modelo pequeño que filtra la entrada"
+    },
+    {
+     "inicio": 1858,
+     "titulo": "Filtros de salida y palabras clave"
+    }
+   ],
+   "palabras_clave": [
+    "McDonald's",
+    "chatbot",
+    "clasificador",
+    "filtro de entrada",
+    "prompt"
+   ],
+   "resumen": "A partir del caso viral del chatbot de McDonald's que generaba código, Antonio propone colocar un modelo pequeño que filtre peticiones fuera de dominio antes del modelo caro, además de filtros a la salida.",
+   "confianza": "alta"
+  },
+  {
+   "id": 11,
+   "inicio": 1903,
+   "fin": 2073,
+   "tipo": "tema",
+   "tema": "Controlar la autoridad del modelo con código",
+   "subtemas": [
+    {
+     "inicio": 1903,
+     "titulo": "Pregunta del moderador a Carlos"
+    },
+    {
+     "inicio": 1926,
+     "titulo": "El martillo nuevo y lo determinista alrededor del modelo"
+    },
+    {
+     "inicio": 1981,
+     "titulo": "Ejemplo: bloqueo de tarjeta en una app bancaria"
+    },
+    {
+     "inicio": 2041,
+     "titulo": "Código pre y post modelo y aprobación humana"
+    }
+   ],
+   "palabras_clave": [
+    "autoridad",
+    "tools",
+    "banca",
+    "código pre y post modelo",
+    "aprobación humana"
+   ],
+   "resumen": "Carlos distingue que el modelo elija una herramienta de que tenga autoridad para ejecutarla: en su ejemplo bancario, un botón de confirmación y, si hace falta, un ejecutivo autorizan la acción.",
+   "confianza": "alta"
+  },
+  {
+   "id": 12,
+   "inicio": 2073,
+   "fin": 2264,
+   "tipo": "reflexion",
+   "tema": "Qué estudiar para construir agentes: la vía de Carlos",
+   "subtemas": [
+    {
+     "inicio": 2073,
+     "titulo": "El moderador: la complejidad no la resuelve el modelo"
+    },
+    {
+     "inicio": 2135,
+     "titulo": "Carlos, economista, y el 'ls -l' de sus inicios"
+    },
+    {
+     "inicio": 2213,
+     "titulo": "Sentarse al teclado y construir todos los días"
+    }
+   ],
+   "palabras_clave": [
+    "formación",
+    "economía",
+    "computer science",
+    "práctica"
+   ],
+   "resumen": "Carlos cuenta que llegó desde la economía sin saber programar y aconseja aceptar proyectos, preguntar y construir a diario; estudiar computer science ayuda, pero no es imprescindible.",
+   "confianza": "alta"
+  },
+  {
+   "id": 13,
+   "inicio": 2264,
+   "fin": 2426,
+   "tipo": "reflexion",
+   "tema": "Consejos de Antonio: fundamentos antes que frameworks",
+   "subtemas": [
+    {
+     "inicio": 2264,
+     "titulo": "El moderador: esto nos agarró a todos"
+    },
+    {
+     "inicio": 2309,
+     "titulo": "Python o TypeScript y dos rutas: herramientas o agente"
+    },
+    {
+     "inicio": 2364,
+     "titulo": "El prompt engineering como una herramienta más"
+    },
+    {
+     "inicio": 2412,
+     "titulo": "Frameworks como LangGraph"
+    }
+   ],
+   "palabras_clave": [
+    "Python",
+    "TypeScript",
+    "prompt engineering",
+    "embeddings",
+    "LangGraph"
+   ],
+   "resumen": "Antonio recomienda elegir Python o TypeScript y decidir entre construir herramientas (APIs, bases de datos, pruebas) o el agente (tokens, contexto, embeddings, RAG), y solo después pasar a frameworks.",
+   "confianza": "alta"
+  },
+  {
+   "id": 14,
+   "inicio": 2426,
+   "fin": 2545,
+   "tipo": "anecdota",
+   "tema": "Prompts motivacionales y maltratar a los modelos",
+   "subtemas": [
+    {
+     "inicio": 2426,
+     "titulo": "La conjetura de Riemann y el prompt 'tú puedes'"
+    },
+    {
+     "inicio": 2482,
+     "titulo": "Prompts que generan pánico"
+    },
+    {
+     "inicio": 2499,
+     "titulo": "Tratar mal a los modelos, arma de doble filo"
+    }
+   ],
+   "palabras_clave": [
+    "prompt engineering",
+    "Anthropic",
+    "conjetura de Riemann",
+    "motivación"
+   ],
+   "resumen": "En tono de broma, el moderador comenta un prompt motivacional usado con un modelo interno de Anthropic y otros que presionan al modelo; Carlos opina que tratar mal a los modelos es un arma de doble filo.",
+   "confianza": "media"
+  },
+  {
+   "id": 15,
+   "inicio": 2545,
+   "fin": 2720,
+   "tipo": "tema",
+   "tema": "Pregunta bonus: modelos privados o abiertos",
+   "subtemas": [
+    {
+     "inicio": 2545,
+     "titulo": "Modelos privados en nube o abiertos en infraestructura propia"
+    },
+    {
+     "inicio": 2620,
+     "titulo": "Antonio: una mezcla según problema y recursos"
+    },
+    {
+     "inicio": 2680,
+     "titulo": "Modelos en el dispositivo"
+    }
+   ],
+   "palabras_clave": [
+    "modelos abiertos",
+    "infraestructura propia",
+    "arquitectura multimodelo",
+    "Apple Intelligence"
+   ],
+   "resumen": "El moderador pregunta si ganarán los modelos privados o los abiertos en infraestructura propia; Antonio prevé una arquitectura multimodelo, con modelos pequeños locales y grandes en la nube para lo complejo.",
+   "confianza": "alta"
+  },
+  {
+   "id": 16,
+   "inicio": 2720,
+   "fin": 2899,
+   "tipo": "tema",
+   "tema": "Carlos: modelos locales y escenario híbrido",
+   "subtemas": [
+    {
+     "inicio": 2720,
+     "titulo": "Sus predicciones fallidas sobre ChatGPT"
+    },
+    {
+     "inicio": 2770,
+     "titulo": "Caso de un modelo abierto en una MacBook comparado con Opus"
+    },
+    {
+     "inicio": 2855,
+     "titulo": "Bromas sobre el colapso económico de los laboratorios"
+    }
+   ],
+   "palabras_clave": [
+    "modelos locales",
+    "MacBook",
+    "Opus",
+    "híbrido",
+    "laboratorios"
+   ],
+   "resumen": "Carlos admite que no lo sabe, pero cree que los problemas cotidianos se resolverán con modelos locales y los complejos con los grandes laboratorios; coincide con Antonio en un escenario híbrido de proporción incierta.",
+   "confianza": "alta"
+  },
+  {
+   "id": 17,
+   "inicio": 2899,
+   "fin": 3062,
+   "tipo": "cierre",
+   "tema": "Palabras finales y despedida",
+   "subtemas": [
+    {
+     "inicio": 2899,
+     "titulo": "Antonio: que no se desanimen"
+    },
+    {
+     "inicio": 2954,
+     "titulo": "Carlos: estamos a pocos prompts de construir lo que imaginemos"
+    },
+    {
+     "inicio": 3026,
+     "titulo": "Agradecimientos y despedida"
+    }
+   ],
+   "palabras_clave": [
+    "consejos finales",
+    "ingeniería de software",
+    "motivación",
+    "despedida"
+   ],
+   "resumen": "Antonio anima a no desanimarse y a estudiar ingeniería de software y desarrollo de agentes; Carlos invita a construir y motivarse a diario; el moderador agradece y despide el panel.",
+   "confianza": "alta"
+  }
+ ],
+ "corto": "codigofacilito · agentes empresariales en 2026",
+ "capitulos": [],
+ "evaluacion": null
+}

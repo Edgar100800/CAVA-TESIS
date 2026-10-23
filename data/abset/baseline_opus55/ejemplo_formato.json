@@ -1,0 +1,434 @@
+{
+ "video_id": "wpyleP9OnAo",
+ "titulo": "Septiembre 11: El Día que Cambió la Aviación | Nat Geo en Español",
+ "titulo_corto": "Nat Geo · 11-S: Gander controla el cielo",
+ "canal": "Nat Geo en Español",
+ "duracion": 2663,
+ "fuente_transcripcion": "youtube_manual",
+ "anotador": "claude",
+ "revisado_por": null,
+ "version_guia": "0.1",
+ "estado": "borrador",
+ "estructura": {
+  "formato": "documental de reconstrucción con dramatizaciones, testimonios y marcas horarias",
+  "patron": "Intro (adelanto) -> mañana en Gander y ataques -> contexto de Gander -> cierre del espacio aéreo -> desvío y aterrizaje masivo, alternando el centro de control, la torre y el hilo del vuelo American 49 (aparece 4 veces) -> pasajeros varados -> cierre con cielo vacío y reflexión",
+  "observaciones": "El documental (título original '9/11: Control the Sky') no trata los cambios posteriores en la seguridad aérea: se centra en cómo el centro de control y la torre de Gander, Canadá, aterrizaron 224 aviones desviados. Avanza en orden cronológico guiado por rótulos horarios (8:46 a 13:06 EST) que sirven de señales de frontera. El vuelo American 49 (capitana Beverley Bass) es el hilo conductor: segmentos 6, 8, 10 y 11. Hay unos 23 s sin subtítulos entre 2456 y 2479 (antes del último aterrizaje). Testimonios intercalados con diálogos de radio dramatizados."
+ },
+ "segmentos": [
+  {
+   "id": 1,
+   "inicio": 0,
+   "fin": 110,
+   "tipo": "intro",
+   "tema": "Introducción: secuestro del AA11 y adelanto del cierre del espacio aéreo",
+   "subtemas": [],
+   "palabras_clave": [
+    "American 11",
+    "World Trade Center",
+    "Gander",
+    "espacio aéreo cerrado"
+   ],
+   "resumen": "Audio del secuestro del vuelo American 11 y adelanto de la historia: con el espacio aéreo estadounidense cerrado, un pequeño equipo de Gander debe aterrizar más de 200 aviones. Presenta el título '9/11: control del cielo'.",
+   "confianza": "alta"
+  },
+  {
+   "id": 2,
+   "inicio": 110,
+   "fin": 385,
+   "tipo": "relato",
+   "tema": "Una mañana normal en Gander y los ataques a las Torres Gemelas",
+   "subtemas": [
+    {
+     "inicio": 110,
+     "titulo": "Dwayne Puddister llega a su turno"
+    },
+    {
+     "inicio": 181,
+     "titulo": "Harold O'Reilly, supervisor en su 50.º cumpleaños"
+    },
+    {
+     "inicio": 240,
+     "titulo": "8:46: primer impacto y el segundo avión en televisión"
+    },
+    {
+     "inicio": 328,
+     "titulo": "La noticia llega a la sala de control"
+    }
+   ],
+   "palabras_clave": [
+    "Gander",
+    "controladores",
+    "Torres Gemelas",
+    "segundo avión"
+   ],
+   "resumen": "Los controladores de Gander describen una mañana tranquila hasta que ven por televisión el impacto del segundo avión y entienden que no es un accidente.",
+   "confianza": "alta"
+  },
+  {
+   "id": 3,
+   "inicio": 385,
+   "fin": 482,
+   "tipo": "tema",
+   "tema": "Contexto: el aeropuerto y el centro de control de Gander",
+   "subtemas": [
+    {
+     "inicio": 385,
+     "titulo": "Historia y tamaño del aeropuerto"
+    },
+    {
+     "inicio": 425,
+     "titulo": "Gander, embudo del tráfico transatlántico"
+    }
+   ],
+   "palabras_clave": [
+    "aeropuerto de Gander",
+    "Segunda Guerra Mundial",
+    "Atlántico Norte",
+    "fuselaje ancho"
+   ],
+   "resumen": "Explica por qué Gander es clave: antigua escala de reabastecimiento con pistas enormes, y su centro controla la entrada de más de 400 vuelos que cruzan el Atlántico hacia el oeste.",
+   "confianza": "alta"
+  },
+  {
+   "id": 4,
+   "inicio": 482,
+   "fin": 805,
+   "tipo": "tema",
+   "tema": "Cierre del espacio aéreo estadounidense y plan de Gander",
+   "subtemas": [
+    {
+     "inicio": 482,
+     "titulo": "Pentágono: la FAA decide aterrizar a todos"
+    },
+    {
+     "inicio": 550,
+     "titulo": "Orden de derribo y falta de protocolos"
+    },
+    {
+     "inicio": 590,
+     "titulo": "9:45: Harold recibe la llamada del cierre"
+    },
+    {
+     "inicio": 693,
+     "titulo": "Desvío a siete aeropuertos canadienses"
+    },
+    {
+     "inicio": 764,
+     "titulo": "Riesgo de traer posibles amenazas a pueblos pequeños"
+    }
+   ],
+   "palabras_clave": [
+    "FAA",
+    "Ben Sliney",
+    "Pentágono",
+    "espacio aéreo cerrado",
+    "siete aeropuertos"
+   ],
+   "resumen": "Tras el ataque al Pentágono, la FAA cierra el espacio aéreo de EE. UU.; Harold recibe la noticia con incredulidad y ordena aterrizar los vuelos en siete aeropuertos pequeños, lejos de las grandes ciudades.",
+   "confianza": "alta"
+  },
+  {
+   "id": 5,
+   "inicio": 805,
+   "fin": 1029,
+   "tipo": "tema",
+   "tema": "Comunicar el desvío: pilotos y pasajeros en el aire",
+   "subtemas": [
+    {
+     "inicio": 805,
+     "titulo": "Perfiles de llegada y el reto de convencer a los pilotos"
+    },
+    {
+     "inicio": 853,
+     "titulo": "United 929: mensaje ACARS y defensa de la cabina con un hacha"
+    },
+    {
+     "inicio": 931,
+     "titulo": "El anuncio a los pasajeros"
+    },
+    {
+     "inicio": 961,
+     "titulo": "Pilotos que se resisten a desviarse"
+    },
+    {
+     "inicio": 1010,
+     "titulo": "Aviones pesados en un aeropuerto no preparado"
+    }
+   ],
+   "palabras_clave": [
+    "pilotos",
+    "ACARS",
+    "United 929",
+    "desvío",
+    "radio"
+   ],
+   "resumen": "Los controladores deben convencer a pilotos incrédulos de que aterricen en Gander; en un avión de United la tripulación se arma con lo que tiene para proteger la cabina.",
+   "confianza": "alta"
+  },
+  {
+   "id": 6,
+   "inicio": 1029,
+   "fin": 1237,
+   "tipo": "relato",
+   "tema": "American 49: la tripulación se entera en pleno vuelo",
+   "subtemas": [
+    {
+     "inicio": 1029,
+     "titulo": "Caída de la Torre Sur y contacto con American 49"
+    },
+    {
+     "inicio": 1065,
+     "titulo": "Noticias por la frecuencia común"
+    },
+    {
+     "inicio": 1162,
+     "titulo": "Aviones que regresan a Europa y punto de no retorno"
+    },
+    {
+     "inicio": 1215,
+     "titulo": "10:28: colapso de la Torre Norte"
+    }
+   ],
+   "palabras_clave": [
+    "American 49",
+    "Beverley Bass",
+    "frecuencia común",
+    "punto de no retorno"
+   ],
+   "resumen": "La capitana Beverley Bass y su copiloto se enteran de los ataques por radio, ven a otros aviones dar media vuelta e intentan volver a Europa sin autorización.",
+   "confianza": "alta"
+  },
+  {
+   "id": 7,
+   "inicio": 1237,
+   "fin": 1518,
+   "tipo": "tema",
+   "tema": "La torre de Gander: primeros aterrizajes y estacionamiento",
+   "subtemas": [
+    {
+     "inicio": 1237,
+     "titulo": "224 vuelos y 33 000 pasajeros en camino"
+    },
+    {
+     "inicio": 1287,
+     "titulo": "Continental 23, el primer aterrizaje"
+    },
+    {
+     "inicio": 1355,
+     "titulo": "Usar todo el pavimento disponible"
+    },
+    {
+     "inicio": 1420,
+     "titulo": "La torre asigna el estacionamiento"
+    },
+    {
+     "inicio": 1478,
+     "titulo": "Reacción a bordo tras aterrizar"
+    }
+   ],
+   "palabras_clave": [
+    "torre de Gander",
+    "Continental 23",
+    "pista",
+    "estacionamiento"
+   ],
+   "resumen": "La torre, que suele recibir siete vuelos internacionales al día, empieza a aterrizar uno cada cinco minutos y a improvisar dónde estacionarlos; los pasajeros reciben la noticia en tierra.",
+   "confianza": "alta"
+  },
+  {
+   "id": 8,
+   "inicio": 1518,
+   "fin": 1658,
+   "tipo": "tema",
+   "tema": "Orden de aterrizar y saturación de los aeropuertos",
+   "subtemas": [
+    {
+     "inicio": 1518,
+     "titulo": "10:45: 40 aviones en tierra"
+    },
+    {
+     "inicio": 1551,
+     "titulo": "American 49 pide seguir a Edmonton y recibe una orden"
+    },
+    {
+     "inicio": 1610,
+     "titulo": "¿Cuántos aviones más caben?"
+    }
+   ],
+   "palabras_clave": [
+    "American 49",
+    "Edmonton",
+    "orden de aterrizaje",
+    "capacidad"
+   ],
+   "resumen": "A American 49 se le niega seguir hasta Edmonton y se le ordena aterrizar en Gander, mientras el centro y la torre negocian cuántos aviones más caben.",
+   "confianza": "media"
+  },
+  {
+   "id": 9,
+   "inicio": 1658,
+   "fin": 1869,
+   "tipo": "tema",
+   "tema": "Pista 21: el aterrizaje frustrado de Sabena y la coordinación por voz",
+   "subtemas": [
+    {
+     "inicio": 1658,
+     "titulo": "La pista 21 y el giro de 180 grados"
+    },
+    {
+     "inicio": 1693,
+     "titulo": "TWA 819 tarda en salir y Sabena 539 da la vuelta"
+    },
+    {
+     "inicio": 1771,
+     "titulo": "11:45: 120 aviones en tierra y 104 en el aire"
+    },
+    {
+     "inicio": 1837,
+     "titulo": "Los sistemas no dan abasto: coordinación verbal"
+    }
+   ],
+   "palabras_clave": [
+    "pista 21",
+    "TWA 819",
+    "Sabena 539",
+    "motor y al aire",
+    "coordinación de voz"
+   ],
+   "resumen": "Un avión lento en la pista obliga a Sabena a abortar el aterrizaje; con los sistemas electrónicos saturados, los controladores ordenan el tráfico con estimaciones habladas.",
+   "confianza": "alta"
+  },
+  {
+   "id": 10,
+   "inicio": 1869,
+   "fin": 2076,
+   "tipo": "tema",
+   "tema": "Exceso de peso: la descarga de combustible de American 49",
+   "subtemas": [
+    {
+     "inicio": 1869,
+     "titulo": "Sobrepeso para aterrizar"
+    },
+    {
+     "inicio": 1918,
+     "titulo": "Se organiza una zona de descarga"
+    },
+    {
+     "inicio": 1964,
+     "titulo": "Descarga en vuelo y riesgos"
+    },
+    {
+     "inicio": 2017,
+     "titulo": "El combustible se atomiza; vuelta a la fila"
+    }
+   ],
+   "palabras_clave": [
+    "descarga de combustible",
+    "peso máximo de aterrizaje",
+    "American 49",
+    "triple siete"
+   ],
+   "resumen": "Los aviones que iban lejos llevan demasiado combustible para aterrizar; Gander aísla un espacio aéreo para que American 49 descargue combustible y vuelva a la secuencia.",
+   "confianza": "alta"
+  },
+  {
+   "id": 11,
+   "inicio": 2076,
+   "fin": 2293,
+   "tipo": "tema",
+   "tema": "Refuerzos voluntarios y aterrizaje de American 49",
+   "subtemas": [
+    {
+     "inicio": 2076,
+     "titulo": "Controladores que llegan sin ser llamados"
+    },
+    {
+     "inicio": 2133,
+     "titulo": "Un ballet orquestado: la fila de aproximación"
+    },
+    {
+     "inicio": 2162,
+     "titulo": "12:26: aterriza American 49"
+    },
+    {
+     "inicio": 2222,
+     "titulo": "Aviones estacionados en pistas en desuso y activas"
+    }
+   ],
+   "palabras_clave": [
+    "trabajo en equipo",
+    "voluntarios",
+    "American 49",
+    "aterrizaje",
+    "estacionamiento"
+   ],
+   "resumen": "Los controladores francos acuden por su cuenta y el equipo pasa de dos o tres a catorce; American 49 aterriza como el 36.º de 38 aviones de fuselaje ancho y se estaciona donde queda sitio.",
+   "confianza": "media"
+  },
+  {
+   "id": 12,
+   "inicio": 2293,
+   "fin": 2482,
+   "tipo": "tema",
+   "tema": "Pasajeros varados: Barbara Fast y la seguridad en tierra",
+   "subtemas": [
+    {
+     "inicio": 2293,
+     "titulo": "Barbara Fast, directora de inteligencia a bordo"
+    },
+    {
+     "inicio": 2367,
+     "titulo": "Más de 24 horas dentro de los aviones"
+    },
+    {
+     "inicio": 2383,
+     "titulo": "Amenazas de seguridad antes de desembarcar"
+    }
+   ],
+   "palabras_clave": [
+    "Barbara Fast",
+    "pasajeros",
+    "desembarque",
+    "seguridad"
+   ],
+   "resumen": "Una oficial de inteligencia a bordo informa a la capitana y sale al día siguiente; miles de pasajeros esperan horas en los aviones por el temor a bombas o terroristas.",
+   "confianza": "media"
+  },
+  {
+   "id": 13,
+   "inicio": 2482,
+   "fin": 2663,
+   "tipo": "cierre",
+   "tema": "Cierre: el último avión, el cielo vacío y el legado",
+   "subtemas": [
+    {
+     "inicio": 2482,
+     "titulo": "224 aviones en menos de cuatro horas"
+    },
+    {
+     "inicio": 2497,
+     "titulo": "Pantallas de radar vacías"
+    },
+    {
+     "inicio": 2554,
+     "titulo": "Los controladores como héroes"
+    },
+    {
+     "inicio": 2589,
+     "titulo": "Reapertura del espacio aéreo y reflexión final"
+    }
+   ],
+   "palabras_clave": [
+    "cielo vacío",
+    "héroes",
+    "reapertura",
+    "antes y después del 11-S"
+   ],
+   "resumen": "Aterriza el último avión y el radar queda vacío; los protagonistas valoran el trabajo en equipo y reflexionan sobre el 11-S como un punto de inflexión.",
+   "confianza": "alta"
+  }
+ ],
+ "corto": "Nat Geo · 11-S: Gander controla el cielo",
+ "capitulos": [],
+ "evaluacion": null
+}

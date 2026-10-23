@@ -1,0 +1,521 @@
+{
+ "video_id": "tz23G_UXCGA",
+ "titulo": "Something is jamming GPS over Europe. Here's what we found",
+ "titulo_corto": "Veritasium · Satélite ruso que interfiere el GPS",
+ "canal": "Veritasium",
+ "duracion": 2057,
+ "fuente_transcripcion": "youtube_manual",
+ "anotador": "claude-opus-5-5",
+ "revisado_por": null,
+ "version_guia": "0.1-r",
+ "estado": "borrador",
+ "estructura": {
+  "formato": "documental divulgativo de investigación con narrador (Derek y otro presentador del canal) y entrevistas a Todd Humphreys y a otros expertos",
+  "patron": "Hallazgo de las caídas de señal -> descartes hasta un satélite -> explicación de cómo funciona el GPS (tres bloques) -> patrón semanal -> publicidad -> acotar sospechosos -> punto muerto y datos crudos -> diferencia de tiempo de llegada -> Cosmos 2546 -> teorías sobre la intención -> impacto -> soluciones y spoofing -> cierre",
+  "observaciones": "No hay intro separada: el video abre directamente con el relato del aviso. La investigación avanza como una historia policial y se interrumpe con un largo bloque explicativo sobre el GPS (4:43-12:18), cuyo regreso se marca con 'brings us back to the question'. La publicidad de Ground News se integra con un ejemplo de titulares contradictorios y termina con 'back to the hunt for the source'. Las fronteras del relato se marcan con giros ('the trail went cold', 'until an email arrived'). Los subtítulos identifican voces como [Host], [Gregor], [Ramsey] y [Derek]; hay una frase incompleta en 04:53 ('your phone is actually of these satellites')."
+ },
+ "segmentos": [
+  {
+   "id": 1,
+   "inicio": 0,
+   "fin": 155,
+   "tipo": "relato",
+   "tema": "El aviso y la caída simultánea de las señales en Europa",
+   "subtemas": [
+    {
+     "inicio": 0,
+     "titulo": "Aviso a Todd Humphreys sobre dos fechas de 2021"
+    },
+    {
+     "inicio": 36,
+     "titulo": "Caída simultánea de la relación señal/ruido"
+    },
+    {
+     "inicio": 60,
+     "titulo": "75 días desde 2019 y alcance continental"
+    },
+    {
+     "inicio": 98,
+     "titulo": "Kaliningrado como candidato y por qué no basta"
+    }
+   ],
+   "palabras_clave": [
+    "Todd Humphreys",
+    "Zach Clements",
+    "relación señal/ruido",
+    "Kaliningrado"
+   ],
+   "resumen": "El narrador cuenta que Humphreys y su estudiante encuentran en datos públicos caídas bruscas y simultáneas de la señal GNSS en toda Europa durante 75 días; Humphreys explica que un emisor terrestre en Kaliningrado no alcanzaría esa escala.",
+   "confianza": "alta"
+  },
+  {
+   "id": 2,
+   "inicio": 155,
+   "fin": 283,
+   "tipo": "relato",
+   "tema": "Descartes: fuente en altura, no el Sol, sino un satélite",
+   "subtemas": [
+    {
+     "inicio": 155,
+     "titulo": "La geometría exige una fuente a más de 1200 km"
+    },
+    {
+     "inicio": 192,
+     "titulo": "¿Tormenta solar? Duración, frecuencia y cobertura no encajan"
+    },
+    {
+     "inicio": 258,
+     "titulo": "Un satélite: ¿intencional o accidental?"
+    }
+   ],
+   "palabras_clave": [
+    "curvatura de la Tierra",
+    "1200 km",
+    "interferencia solar",
+    "1577,5 MHz",
+    "satélite"
+   ],
+   "resumen": "El narrador descarta una fuente terrestre por la curvatura terrestre y el Sol porque las ráfagas duran 3 a 5 s, ocupan solo 5 MHz y se centran en Europa; Humphreys califica el hallazgo de inédito.",
+   "confianza": "alta"
+  },
+  {
+   "id": 3,
+   "inicio": 283,
+   "fin": 541,
+   "tipo": "tema",
+   "tema": "Cómo funciona el GPS: trilateración, relojes y quásares",
+   "subtemas": [
+    {
+     "inicio": 283,
+     "titulo": "GPS frente a GNSS"
+    },
+    {
+     "inicio": 302,
+     "titulo": "Demostración militar: cinco bombas en el mismo agujero"
+    },
+    {
+     "inicio": 335,
+     "titulo": "Distancia por tiempo de vuelo y trilateración"
+    },
+    {
+     "inicio": 406,
+     "titulo": "Error del reloj y la cuarta incógnita"
+    },
+    {
+     "inicio": 466,
+     "titulo": "Estaciones terrestres ubicadas mediante quásares"
+    }
+   ],
+   "palabras_clave": [
+    "GNSS",
+    "trilateración",
+    "reloj atómico",
+    "quásares",
+    "estaciones terrestres"
+   ],
+   "resumen": "El narrador explica que el receptor calcula distancias a partir del tiempo de la señal y necesita cuatro satélites por el error de su reloj; los entrevistados cuentan que la posición de las estaciones terrestres se fija con quásares.",
+   "confianza": "alta"
+  },
+  {
+   "id": 4,
+   "inicio": 541,
+   "fin": 646,
+   "tipo": "tema",
+   "tema": "Correcciones que hacen preciso al GPS",
+   "subtemas": [
+    {
+     "inicio": 541,
+     "titulo": "Más de 20 satélites a la vez"
+    },
+    {
+     "inicio": 562,
+     "titulo": "Relatividad especial y general"
+    },
+    {
+     "inicio": 581,
+     "titulo": "Rotación de la Tierra"
+    },
+    {
+     "inicio": 601,
+     "titulo": "Ionosfera y atmósfera baja"
+    },
+    {
+     "inicio": 619,
+     "titulo": "Satélites extra y precisión de 3 a 5 metros"
+    }
+   ],
+   "palabras_clave": [
+    "relatividad",
+    "rotación terrestre",
+    "ionosfera",
+    "precisión"
+   ],
+   "resumen": "El narrador recorre las fuentes de error (relatividad, rotación terrestre, atmósfera) y cómo los satélites adicionales permiten precisión de metros o incluso centímetros.",
+   "confianza": "alta"
+  },
+  {
+   "id": 5,
+   "inicio": 646,
+   "fin": 738,
+   "tipo": "tema",
+   "tema": "Una señal muy débil: el bloqueo y la banda protegida",
+   "subtemas": [
+    {
+     "inicio": 646,
+     "titulo": "50 vatios a 20 000 km: 10^-16 W en el teléfono"
+    },
+    {
+     "inicio": 678,
+     "titulo": "Qué es el bloqueo (jamming)"
+    },
+    {
+     "inicio": 690,
+     "titulo": "La banda de 1,1 a 1,6 GHz como punto óptimo"
+    },
+    {
+     "inicio": 721,
+     "titulo": "Banda protegida y transmisión ilegal"
+    }
+   ],
+   "palabras_clave": [
+    "jamming",
+    "potencia de señal",
+    "banda L",
+    "espectro radioeléctrico"
+   ],
+   "resumen": "Los entrevistados y el narrador explican que la señal llega con una potencia ínfima, por lo que es fácil ahogarla con ruido en la misma banda, que está protegida y cuya interferencia es ilegal.",
+   "confianza": "alta"
+  },
+  {
+   "id": 6,
+   "inicio": 738,
+   "fin": 813,
+   "tipo": "relato",
+   "tema": "¿Accidente o propósito? El patrón de días laborables",
+   "subtemas": [
+    {
+     "inicio": 738,
+     "titulo": "El misterio como novela policial"
+    },
+    {
+     "inicio": 774,
+     "titulo": "Eventos de martes a jueves en horario laboral europeo"
+    },
+    {
+     "inicio": 796,
+     "titulo": "Hay intervención humana; empieza la búsqueda"
+    }
+   ],
+   "palabras_clave": [
+    "patrón temporal",
+    "horario laboral",
+    "intervención humana"
+   ],
+   "resumen": "Humphreys razona que un fallo aleatorio no tendría preferencia por días; los eventos se concentran de martes a jueves en horario de oficina europeo, lo que apunta a intervención humana.",
+   "confianza": "alta"
+  },
+  {
+   "id": 7,
+   "inicio": 813,
+   "fin": 928,
+   "tipo": "publicidad",
+   "tema": "Publicidad: Ground News",
+   "subtemas": [
+    {
+     "inicio": 813,
+     "titulo": "Narrativas enfrentadas: el avión de la presidenta de la UE"
+    },
+    {
+     "inicio": 849,
+     "titulo": "Funciones de Ground News"
+    },
+    {
+     "inicio": 917,
+     "titulo": "Enlace y descuento"
+    }
+   ],
+   "palabras_clave": [
+    "Ground News",
+    "sesgo mediático",
+    "punto ciego",
+    "titulares"
+   ],
+   "resumen": "El narrador enlaza el caso del avión de la jefa de la UE, cubierto con titulares contradictorios, con el patrocinio de Ground News y describe sus funciones y su descuento.",
+   "confianza": "alta"
+  },
+  {
+   "id": 8,
+   "inicio": 928,
+   "fin": 1127,
+   "tipo": "relato",
+   "tema": "Acotar sospechosos: de 15 000 satélites al argelino",
+   "subtemas": [
+    {
+     "inicio": 928,
+     "titulo": "Por qué la intensidad no sirve para ubicar una fuente espacial"
+    },
+    {
+     "inicio": 978,
+     "titulo": "Filtro de visibilidad: unos 200 candidatos"
+    },
+    {
+     "inicio": 1021,
+     "titulo": "Varios eventos: 14 sospechosos"
+    },
+    {
+     "inicio": 1031,
+     "titulo": "Un satélite argelino con transmisor en la banda"
+    },
+    {
+     "inicio": 1062,
+     "titulo": "Dudas por las estaciones lejanas"
+    },
+    {
+     "inicio": 1090,
+     "titulo": "El argelino era otra víctima"
+    }
+   ],
+   "palabras_clave": [
+    "satélites geoestacionarios",
+    "14 sospechosos",
+    "satélite argelino",
+    "Svalbard"
+   ],
+   "resumen": "El narrador explica que exigir visibilidad simultánea reduce los candidatos a 14; un satélite argelino parecía encajar, pero Humphreys muestra que su señal también se degradaba, así que era otra víctima.",
+   "confianza": "alta"
+  },
+  {
+   "id": 9,
+   "inicio": 1127,
+   "fin": 1321,
+   "tipo": "relato",
+   "tema": "Punto muerto y búsqueda de la señal cruda",
+   "subtemas": [
+    {
+     "inicio": 1127,
+     "titulo": "Los otros 13 sin documentación"
+    },
+    {
+     "inicio": 1162,
+     "titulo": "El supuesto discutible de un solo satélite"
+    },
+    {
+     "inicio": 1202,
+     "titulo": "Receptores que solo miden una vez por segundo"
+    },
+    {
+     "inicio": 1257,
+     "titulo": "Presentación pública en la conferencia del ION"
+    },
+    {
+     "inicio": 1289,
+     "titulo": "El Centro Aeroespacial Alemán apunta su antena sin éxito"
+    }
+   ],
+   "palabras_clave": [
+    "supuesto de un solo satélite",
+    "datos crudos",
+    "Institute of Navigation",
+    "Centro Aeroespacial Alemán"
+   ],
+   "resumen": "Los investigadores quedan atascados cuatro meses porque los receptores solo dan medidas por segundo; presentan el caso en Baltimore y el Centro Aeroespacial Alemán intenta captar la señal sin resultado.",
+   "confianza": "alta"
+  },
+  {
+   "id": 10,
+   "inicio": 1321,
+   "fin": 1469,
+   "tipo": "relato",
+   "tema": "Datos crudos y diferencia de tiempo de llegada",
+   "subtemas": [
+    {
+     "inicio": 1321,
+     "titulo": "Llega el correo con datos crudos"
+    },
+    {
+     "inicio": 1335,
+     "titulo": "Ámsterdam y Trondheim, 11 de febrero de 2026"
+    },
+    {
+     "inicio": 1379,
+     "titulo": "Diferencia de tiempo de llegada e hiperboloide"
+    },
+    {
+     "inicio": 1424,
+     "titulo": "Una semana de trabajo por separado y un error de código"
+    }
+   ],
+   "palabras_clave": [
+    "datos crudos",
+    "TDOA",
+    "hiperboloide",
+    "Ámsterdam",
+    "Trondheim"
+   ],
+   "resumen": "Un correo aporta muestras crudas de dos estaciones; el narrador explica que la diferencia de llegada define un hiperboloide de 5 m de grosor, y Humphreys cuenta que su estudiante le encontró un error de código.",
+   "confianza": "alta"
+  },
+  {
+   "id": 11,
+   "inicio": 1469,
+   "fin": 1611,
+   "tipo": "relato",
+   "tema": "El culpable: Cosmos 2546 y la alerta de misiles rusa",
+   "subtemas": [
+    {
+     "inicio": 1469,
+     "titulo": "Prueba de todos los satélites contra el hiperboloide"
+    },
+    {
+     "inicio": 1504,
+     "titulo": "Solo encaja Cosmos 2546"
+    },
+    {
+     "inicio": 1532,
+     "titulo": "Sin revisión por pares, con verificación independiente"
+    },
+    {
+     "inicio": 1541,
+     "titulo": "Lanzado en 2020: una constelación de seis"
+    },
+    {
+     "inicio": 1562,
+     "titulo": "Parte del sistema ruso de alerta temprana"
+    },
+    {
+     "inicio": 1575,
+     "titulo": "Órbita Molniya y cobertura amplia"
+    }
+   ],
+   "palabras_clave": [
+    "Cosmos 2546",
+    "alerta temprana de misiles",
+    "órbita Molniya",
+    "Golden Dome"
+   ],
+   "resumen": "Solo el satélite ruso Cosmos 2546 coincide con la medida; como se lanzó en 2020, el narrador atribuye los eventos anteriores a su constelación de alerta temprana en órbita Molniya, capaz de cubrir incluso EE. UU.",
+   "confianza": "alta"
+  },
+  {
+   "id": 12,
+   "inicio": 1611,
+   "fin": 1750,
+   "tipo": "tema",
+   "tema": "¿Pruebas de bloqueo o mensajes encubiertos?",
+   "subtemas": [
+    {
+     "inicio": 1611,
+     "titulo": "Señal potente pero desplazada de la frecuencia GPS"
+    },
+    {
+     "inicio": 1635,
+     "titulo": "Teoría de Humphreys: pruebas de capacidad"
+    },
+    {
+     "inicio": 1676,
+     "titulo": "Segunda ráfaga sobre BeiDou"
+    },
+    {
+     "inicio": 1704,
+     "titulo": "Teoría alternativa: mensajes breves de comunicación"
+    }
+   ],
+   "palabras_clave": [
+    "intención",
+    "pruebas",
+    "BeiDou",
+    "comunicaciones encubiertas"
+   ],
+   "resumen": "Humphreys se inclina por pruebas periódicas de una capacidad de bloqueo, apoyado por una ráfaga en la banda de BeiDou; otro equipo propone que serían mensajes de comunicación protegidos por compartir banda.",
+   "confianza": "media"
+  },
+  {
+   "id": 13,
+   "inicio": 1750,
+   "fin": 1916,
+   "tipo": "tema",
+   "tema": "Qué pasaría si el sistema se activara del todo",
+   "subtemas": [
+    {
+     "inicio": 1750,
+     "titulo": "La brevedad explica que pasara inadvertido"
+    },
+    {
+     "inicio": 1763,
+     "titulo": "Bloqueadores terrestres frente a señal desde el espacio"
+    },
+    {
+     "inicio": 1830,
+     "titulo": "Dependencias ocultas del GPS"
+    },
+    {
+     "inicio": 1849,
+     "titulo": "Una nueva arma y una escalada"
+    },
+    {
+     "inicio": 1881,
+     "titulo": "La fragilidad ya existía: Sol y basura espacial"
+    }
+   ],
+   "palabras_clave": [
+    "dependencia del GNSS",
+    "guerra electrónica",
+    "escalada",
+    "síndrome de Kessler"
+   ],
+   "resumen": "El narrador y Humphreys describen el impacto de un bloqueo desde el espacio sobre aviación, finanzas y logística; Humphreys lo ve como una escalada y recuerda que el sistema ya era frágil.",
+   "confianza": "media"
+  },
+  {
+   "id": 14,
+   "inicio": 1916,
+   "fin": 2028,
+   "tipo": "tema",
+   "tema": "Soluciones: navegación resiliente y la amenaza del spoofing",
+   "subtemas": [
+    {
+     "inicio": 1916,
+     "titulo": "Arquitectura PNT: espacio, radio terrestre y fibra"
+    },
+    {
+     "inicio": 1946,
+     "titulo": "Redes de respaldo en Corea del Sur, China y Reino Unido"
+    },
+    {
+     "inicio": 1966,
+     "titulo": "Navegación magnética y cuántica"
+    },
+    {
+     "inicio": 1986,
+     "titulo": "Spoofing: posiciones falsas en vuelos y barcos"
+    }
+   ],
+   "palabras_clave": [
+    "PNT resiliente",
+    "eLoran",
+    "fibra óptica",
+    "spoofing"
+   ],
+   "resumen": "Humphreys propone combinar señales espaciales, emisiones terrestres y fibra; el narrador menciona países que ya lo hacen y adelanta el problema del spoofing, invitando a pedirlo en comentarios.",
+   "confianza": "alta"
+  },
+  {
+   "id": 15,
+   "inicio": 2028,
+   "fin": 2057,
+   "tipo": "cierre",
+   "tema": "Créditos y agradecimientos",
+   "subtemas": [],
+   "palabras_clave": [
+    "Todd Humphreys",
+    "Zach Clements",
+    "Universidad de Texas"
+   ],
+   "resumen": "El narrador acredita la investigación de Humphreys y Clements, remite al enlace de su trabajo y agradece a los espectadores.",
+   "confianza": "alta"
+  }
+ ],
+ "corto": "Veritasium · Satélite ruso que interfiere el GPS",
+ "capitulos": [],
+ "evaluacion": null
+}

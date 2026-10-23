@@ -1,0 +1,189 @@
+{
+ "video_id": "POylAyrYzTw",
+ "titulo": "I made a Game Boy game in 2026",
+ "titulo_corto": "Syntax · Juego de Game Boy en 4 días",
+ "canal": "Syntax",
+ "duracion": 1262,
+ "fuente_transcripcion": "youtube_auto",
+ "anotador": "claude-opus-5-5",
+ "revisado_por": null,
+ "version_guia": "0.1-r",
+ "estado": "borrador",
+ "estructura": {
+  "formato": "tutorial / diario de construcción en primera persona; un solo presentador (CJ, de Syntax) que cuenta cómo hizo un juego de Game Boy Color con ayuda de IA",
+  "patron": "Intro (gancho y anuncio de la versión física) -> planificación y elección de herramientas -> día uno: investigación, primera ROM y cadena de pruebas con IA -> modificación de la Game Boy Color -> día dos: pixel art y limitaciones gráficas -> día tres: recorte de alcance y errores -> historia, selección de personaje y día cuatro -> música -> modo demostración y comercial -> trabajo posterior a Hack Week y arte de caja -> cierre",
+  "observaciones": "Las fronteras las marcan los días del reto de cuatro días ('day one', 'day two'...) y frases de transición ('Now, ...', 'So, ...'); hay huecos breves sin subtítulos entre bloques (p. ej. 0:42-1:28, 2:33-2:40) que coinciden con cambios de tema. No hay publicidad de terceros: Sentry aparece como organizador de Hack Week y en el comercial del propio juego; la venta del juego físico en la tienda de Syntax es autopromoción (intro y final). Errores del subtítulo automático: 'Century' por Sentry, 'Pi Boy' por PyBoy, 'Same Boy' por SameBoy, 'Scott Wozniak'/'Scott West' (Scott y Wes), 'Buster Bug'/'bust-a-bug', 'tract mode' por attract mode, 'worm light' por worm light/Worm Light."
+ },
+ "segmentos": [
+  {
+   "id": 1,
+   "inicio": 0,
+   "fin": 88,
+   "tipo": "intro",
+   "tema": "Introducción: Syntax Error y anuncio del juego físico",
+   "subtemas": [
+    {"inicio": 0, "titulo": "El juego: plataformas con puzles y personajes de Syntax"},
+    {"inicio": 11, "titulo": "Hack Week y lo que mostrará el video"},
+    {"inicio": 55, "titulo": "Versión física en la tienda de Syntax"}
+   ],
+   "palabras_clave": ["Syntax Error", "Game Boy Color", "Hack Week", "IA", "tienda de Syntax"],
+   "resumen": "CJ presenta Syntax Error, un juego de plataformas y puzles para Game Boy hecho en 4 días durante la Hack Week, adelanta que mostrará las herramientas, la Game Boy modificada y el uso de IA, y anuncia una edición física en la tienda de Syntax.",
+   "confianza": "alta"
+  },
+  {
+   "id": 2,
+   "inicio": 88,
+   "fin": 240,
+   "tipo": "tema",
+   "tema": "Planificación del juego y elección del SDK",
+   "subtemas": [
+    {"inicio": 88, "titulo": "Historia, personajes y mecánicas de plataformas y puzles"},
+    {"inicio": 160, "titulo": "GB Studio frente a GBDK 2020"},
+    {"inicio": 209, "titulo": "Experiencia previa: un juego de Sega Genesis"}
+   ],
+   "palabras_clave": ["planificación", "Dr. Mario", "Sokoban", "GB Studio", "GBDK 2020", "Sega Genesis"],
+   "resumen": "CJ dedica medio día a definir la historia (el equipo de Syntax absorbido por un ordenador) y las mecánicas, con puzles inspirados en Dr. Mario, Bust-A-Move y Sokoban; descarta GB Studio y elige GBDK 2020 para escribir código C de bajo nivel, apoyado en su experiencia previa con un juego de Sega Genesis.",
+   "confianza": "alta"
+  },
+  {
+   "id": 3,
+   "inicio": 240,
+   "fin": 470,
+   "tipo": "tema",
+   "tema": "Día uno: primera ROM en hardware y pruebas automáticas con IA",
+   "subtemas": [
+    {"inicio": 240, "titulo": "Investigación de juegos y recursos de código abierto"},
+    {"inicio": 287, "titulo": "Objetivo del día uno: una ROM en la consola"},
+    {"inicio": 298, "titulo": "Cartucho flash con tarjeta SD para desarrollo"},
+    {"inicio": 361, "titulo": "PyBoy: la IA juega y revisa capturas"},
+    {"inicio": 413, "titulo": "Emulador SameBoy para probar en local"},
+    {"inicio": 427, "titulo": "ROM de depuración para formato y guardado"}
+   ],
+   "palabras_clave": ["GBDK 2020", "cartucho flash", "PyBoy", "SameBoy", "ROM de depuración"],
+   "resumen": "CJ revisa ejemplos de GBDK 2020 y la IA arma con ellos una ROM que corre en la Game Boy mediante un cartucho flash; luego monta una cadena en la que la IA compila, juega con PyBoy y revisa capturas, y él prueba en el emulador SameBoy, además de una ROM de depuración para comprobar formato y guardado del cartucho.",
+   "confianza": "alta"
+  },
+  {
+   "id": 4,
+   "inicio": 470,
+   "fin": 590,
+   "tipo": "tema",
+   "tema": "Modificación de la Game Boy Color con pantalla retroiluminada",
+   "subtemas": [
+    {"inicio": 470, "titulo": "Mientras la IA construye, el problema de la pantalla original"},
+    {"inicio": 508, "titulo": "Kit sin soldadura y herramientas necesarias"},
+    {"inicio": 529, "titulo": "Instalación por prueba y error"},
+    {"inicio": 560, "titulo": "Balance del día uno"}
+   ],
+   "palabras_clave": ["Game Boy Color", "pantalla retroiluminada", "kit sin soldadura", "carcasa"],
+   "resumen": "Mientras la IA construye el nivel uno y los menús, CJ instala un kit sin soldadura con pantalla retroiluminada y paletas de color, que le lleva una hora por las malas instrucciones; cierra el día uno con la cadena de herramientas lista.",
+   "confianza": "alta"
+  },
+  {
+   "id": 5,
+   "inicio": 590,
+   "fin": 779,
+   "tipo": "tema",
+   "tema": "Día dos: pixel art y limitaciones gráficas de la Game Boy",
+   "subtemas": [
+    {"inicio": 590, "titulo": "Arte provisional de la IA y Pixelorama"},
+    {"inicio": 632, "titulo": "Pantalla de 160x144 y teselas de 8x8"},
+    {"inicio": 666, "titulo": "Límites de color por pantalla y por tesela"},
+    {"inicio": 697, "titulo": "Capa de fondo desplazable y capa de ventana"},
+    {"inicio": 722, "titulo": "Fuente de texto a partir de teselas"},
+    {"inicio": 741, "titulo": "Personajes de 24x16 píxeles"}
+   ],
+   "palabras_clave": ["pixel art", "Pixelorama", "teselas 8x8", "paleta de colores", "itch.io"],
+   "resumen": "CJ dibuja todo el arte en Pixelorama mientras la IA usa marcadores provisionales, y explica las restricciones: pantalla de 160x144, teselas de 8x8 con un máximo de cuatro colores, capas de fondo y ventana, una fuente hecha de teselas y personajes de 3x2 teselas para ganar detalle.",
+   "confianza": "alta"
+  },
+  {
+   "id": 6,
+   "inicio": 779,
+   "fin": 878,
+   "tipo": "tema",
+   "tema": "Día tres: recortar el alcance y corregir errores de memoria",
+   "subtemas": [
+    {"inicio": 779, "titulo": "De tres niveles a tres pasillos y un jefe"},
+    {"inicio": 828, "titulo": "Colores erróneos y parpadeos: gestión de memoria por la IA"}
+   ],
+   "palabras_clave": ["alcance", "Syntax Doctor", "Buster Bug", "memoria", "sprites"],
+   "resumen": "A mitad del plazo CJ reduce el plan a tres pasillos con un puzle cada uno y un jefe final; la IA, que escribe todo el C, corrige colores de sprites mal cargados en memoria y parpadeos entre fotogramas a partir de instrucciones de alto nivel.",
+   "confianza": "alta"
+  },
+  {
+   "id": 7,
+   "inicio": 878,
+   "fin": 979,
+   "tipo": "tema",
+   "tema": "Secuencia de títulos, selección de personaje y día cuatro",
+   "subtemas": [
+    {"inicio": 878, "titulo": "Historia del juego y secuencia de títulos"},
+    {"inicio": 918, "titulo": "Pantalla de selección y poderes de cada personaje"},
+    {"inicio": 939, "titulo": "Balance del día tres y pulido del día cuatro"}
+   ],
+   "palabras_clave": ["secuencia de títulos", "selección de personaje", "poderes", "pulido"],
+   "resumen": "CJ muestra la escena inicial que cuenta la historia, con texto que se puede adelantar, y la pantalla de selección donde cada personaje tiene su poder; al final del día tres hay menú, guardado y dos niveles, y el día cuatro se dedica a pulir y a una versión simple del último nivel, puzle y jefe.",
+   "confianza": "media"
+  },
+  {
+   "id": 8,
+   "inicio": 979,
+   "fin": 1054,
+   "tipo": "tema",
+   "tema": "Música y efectos de sonido en formato UGE",
+   "subtemas": [
+    {"inicio": 979, "titulo": "Demo sin sonido y formato UGE"},
+    {"inicio": 1010, "titulo": "Generadores de sonido y secuenciador de cuatro canales"},
+    {"inicio": 1030, "titulo": "Canciones libres de itch.io adaptadas"}
+   ],
+   "palabras_clave": ["música", "UGE", "GBDK 2020", "secuenciador", "itch.io"],
+   "resumen": "CJ cuenta que la demo salió sin sonido y que trabaja en la música para la versión final: GBDK 2020 usa el formato UGE, el hardware tiene generadores que se ajustan y secuencian en hasta cuatro canales, y está adaptando canciones gratuitas de itch.io.",
+   "confianza": "alta"
+  },
+  {
+   "id": 9,
+   "inicio": 1054,
+   "fin": 1125,
+   "tipo": "tema",
+   "tema": "Modo demostración y comercial del juego",
+   "subtemas": [
+    {"inicio": 1054, "titulo": "Modo attract con pulsaciones pregrabadas"},
+    {"inicio": 1105, "titulo": "Comercial de Syntax Error"}
+   ],
+   "palabras_clave": ["modo attract", "jugabilidad pregrabada", "comercial", "Sentry"],
+   "resumen": "CJ construye un modo de demostración que reproduce partidas con pulsaciones pregrabadas antes del menú principal, lo usa para grabar material y muestra el comercial del juego hecho para su video de Hack Week.",
+   "confianza": "alta"
+  },
+  {
+   "id": 10,
+   "inicio": 1125,
+   "fin": 1236,
+   "tipo": "tema",
+   "tema": "Después de Hack Week: terminar el juego y arte de la caja",
+   "subtemas": [
+    {"inicio": 1125, "titulo": "Completar el plan original: dificultades y niveles más largos"},
+    {"inicio": 1168, "titulo": "Prototipo de caja con IA"},
+    {"inicio": 1188, "titulo": "Búsqueda de artistas humanos"},
+    {"inicio": 1218, "titulo": "Pide contactos de artistas"}
+   ],
+   "palabras_clave": ["edición física", "arte de caja", "IA generativa", "artistas", "pruebas de juego"],
+   "resumen": "CJ dice que en las semanas siguientes amplió el juego según el plan original y lo prepara como producto físico; hizo un prototipo de caja con IA pero promete arte humano en la portada y pide a la audiencia contactos de artistas.",
+   "confianza": "alta"
+  },
+  {
+   "id": 11,
+   "inicio": 1236,
+   "fin": 1262,
+   "tipo": "cierre",
+   "tema": "Cierre e invitación a comentar",
+   "subtemas": [],
+   "palabras_clave": ["comentarios", "tienda de Syntax", "despedida"],
+   "resumen": "CJ cierra invitando a dejar preguntas sobre el proceso y a contar juegos propios en los comentarios, y anticipa que el juego llegará pronto a la tienda de Syntax.",
+   "confianza": "alta"
+  }
+ ],
+ "corto": "Syntax · Juego de Game Boy en 4 días",
+ "capitulos": [],
+ "evaluacion": null
+}

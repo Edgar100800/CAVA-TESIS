@@ -1,0 +1,428 @@
+{
+ "video_id": "SlNgWtKGnoE",
+ "titulo": "Apple es incapaz de INNOVAR: iPhone Duo y iPhone 18 Pro",
+ "titulo_corto": "Nate Gentile · iPhone Duo e iPhone 18 Pro",
+ "canal": "Nate Gentile",
+ "duracion": 1592,
+ "fuente_transcripcion": "youtube_auto",
+ "anotador": "claude-opus-5-5",
+ "revisado_por": null,
+ "version_guia": "0.1-r",
+ "estado": "borrador",
+ "estructura": {
+  "formato": "monólogo de comentario tecnológico a cámara de un solo presentador (Nate Gentile) sobre la keynote de Apple, con productos en mano",
+  "patron": "Intro (decepción con el iPhone Duo) -> publicidad (Saily) -> comparación con Huawei y crítica a la falta de innovación -> aspectos positivos del Duo -> mención al patrocinador Rhino Shield -> experiencia con el iPhone Air -> especificaciones y dudas del Duo -> uso personal de un plegable -> iPhone Pro como herramienta de grabación -> novedades del iPhone 18 Pro -> estrategia de lanzamientos y precios -> cambio de CEO (Ternus y Cook) -> reflexión sobre el futuro y la IA -> cierre",
+  "observaciones": "Las fronteras se marcan con transiciones habladas ('y eso nos lleva al iPhone Pro', 'esos son todos los iPhones', 'antes de irme quería hablar del nuevo CEO'). Hay dos bloques publicitarios: la lectura de Saily (eSIM), que entra sin aviso a mitad de una frase sobre el Duo, y una mención integrada a Rhino Shield como patrocinador anual de la review. El tema recurrente es que Apple llega tarde a lo que ya hacen las marcas chinas. El presentador anuncia que la IA queda para otro vídeo, aunque la menciona al final. El subtítulo automático deforma nombres: 'iPhone Duúo', 'Shengen' (Shenzhen), 'Funel Cat' (Final Cut), 'Reno/Rino Shield', 'Dojin' (Douyin), 'Lear' (el Air), 'Team Cook', 'kin' (keynote), 'IMD' (I+D), 'boque' (bokeh), 'tel dedicada' (teleobjetivo), y 'es una SIM' por eSIM; muchas etiquetas [música] intercaladas."
+ },
+ "segmentos": [
+  {
+   "id": 1,
+   "inicio": 0,
+   "fin": 159,
+   "tipo": "intro",
+   "tema": "Introducción: keynote de Apple y sentimientos encontrados con el iPhone Duo",
+   "subtemas": [
+    {
+     "inicio": 0,
+     "titulo": "Presentación anual y filtraciones previas"
+    },
+    {
+     "inicio": 61,
+     "titulo": "El iPhone Air como prototipo del plegable"
+    },
+    {
+     "inicio": 116,
+     "titulo": "Mala experiencia con el Samsung Fold y poco hype"
+    },
+    {
+     "inicio": 145,
+     "titulo": "Adelanto del nuevo CEO y primera decepción"
+    }
+   ],
+   "palabras_clave": [
+    "Apple",
+    "iPhone Duo",
+    "iPhone Air",
+    "filtraciones",
+    "Samsung Fold"
+   ],
+   "resumen": "Nate comenta la presentación de Apple del día anterior y el nuevo iPhone plegable, que según él ya se había filtrado; lo ve como heredero del iPhone Air y dice que al verlo se le 'rompió el corazón' porque ya lo había visto antes.",
+   "confianza": "alta"
+  },
+  {
+   "id": 2,
+   "inicio": 159,
+   "fin": 251,
+   "tipo": "publicidad",
+   "tema": "Publicidad: eSIM de Saily para viajar",
+   "subtemas": [],
+   "palabras_clave": [
+    "Saily",
+    "eSIM",
+    "Nord VPN",
+    "código de descuento"
+   ],
+   "resumen": "Patrocinio de Saily: Nate explica cómo usa la eSIM al viajar (planes por país desde la app, más de 200 destinos, bloqueo de anuncios) y ofrece un 15 % de descuento con código.",
+   "confianza": "alta"
+  },
+  {
+   "id": 3,
+   "inicio": 251,
+   "fin": 459,
+   "tipo": "tema",
+   "tema": "Huawei Pura X Max y Apple que ya no innova",
+   "subtemas": [
+    {
+     "inicio": 251,
+     "titulo": "Visita a tiendas en Shenzhen y Huawei fuera de China"
+    },
+    {
+     "inicio": 296,
+     "titulo": "Pura X Max: el formato de plegable que le convence"
+    },
+    {
+     "inicio": 326,
+     "titulo": "Dimensiones casi idénticas al iPhone Duo"
+    },
+    {
+     "inicio": 349,
+     "titulo": "Lanzado 142 días antes; otros plegables y el nombre Surface Duo"
+    },
+    {
+     "inicio": 372,
+     "titulo": "Apple saca lo que ya tienen otras marcas, más tarde"
+    },
+    {
+     "inicio": 414,
+     "titulo": "Respuesta a los fans y fuerza de los móviles chinos"
+    }
+   ],
+   "palabras_clave": [
+    "Huawei Pura X Max",
+    "Shenzhen",
+    "Surface Duo",
+    "innovación",
+    "móviles chinos"
+   ],
+   "resumen": "Nate compara el iPhone Duo con el Huawei Pura X Max, que vio en China y tiene casi las mismas medidas pero salió meses antes; opina que Apple ya no lidera y solo saca productos que otras marcas ya tienen, y rebate a quienes dicen que lo hace mejor más tarde.",
+   "confianza": "alta"
+  },
+  {
+   "id": 4,
+   "inicio": 459,
+   "fin": 522,
+   "tipo": "tema",
+   "tema": "Lo que le gusta del iPhone Duo: formato y animación",
+   "subtemas": [
+    {
+     "inicio": 459,
+     "titulo": "Relación de aspecto tipo pasaporte para ver vídeo"
+    },
+    {
+     "inicio": 491,
+     "titulo": "Animación de apertura al estilo Vision Pro"
+    },
+    {
+     "inicio": 509,
+     "titulo": "Reparos para usarlo como móvil principal"
+    }
+   ],
+   "palabras_clave": [
+    "relación de aspecto",
+    "16:9",
+    "animación",
+    "Apple Vision Pro"
+   ],
+   "resumen": "Nate valora que la relación de aspecto aprovecha bien la pantalla para vídeo y que la animación de apertura y cierre recuerda a las Vision Pro, aunque adelanta que hay cosas que le echan para atrás.",
+   "confianza": "media"
+  },
+  {
+   "id": 5,
+   "inicio": 522,
+   "fin": 549,
+   "tipo": "publicidad",
+   "tema": "Mención a Rhino Shield y relación con Apple",
+   "subtemas": [],
+   "palabras_clave": [
+    "Rhino Shield",
+    "fundas",
+    "patrocinio",
+    "Apple"
+   ],
+   "resumen": "Nate aclara que compra los iPhone gracias a su patrocinador anual Rhino Shield, fabricante de fundas resistentes, y que Apple no le paga ni le manda producto.",
+   "confianza": "media"
+  },
+  {
+   "id": 6,
+   "inicio": 549,
+   "fin": 675,
+   "tipo": "tema",
+   "tema": "Un año con el iPhone Air: problemas que heredaría el Duo",
+   "subtemas": [
+    {
+     "inicio": 549,
+     "titulo": "Comparación de uso con el 17 Pro Max de Nate"
+    },
+    {
+     "inicio": 561,
+     "titulo": "Resistencia del Air frente al aluminio del Pro"
+    },
+    {
+     "inicio": 587,
+     "titulo": "Más calor y menos rendimiento"
+    },
+    {
+     "inicio": 603,
+     "titulo": "Cobertura y nueva antena"
+    },
+    {
+     "inicio": 629,
+     "titulo": "Batería corta y cámaras limitadas"
+    },
+    {
+     "inicio": 657,
+     "titulo": "Qué se trasladará al iPhone Duo"
+    }
+   ],
+   "palabras_clave": [
+    "iPhone Air",
+    "iPhone 17 Pro Max",
+    "batería",
+    "antena",
+    "cámaras"
+   ],
+   "resumen": "Con el Air que usó su pareja todo el año, Nate describe un móvil muy resistente pero que se calienta, tiene peor cobertura, poca batería y cámaras limitadas, y cree que parte de esos problemas pasarán al Duo.",
+   "confianza": "alta"
+  },
+  {
+   "id": 7,
+   "inicio": 675,
+   "fin": 881,
+   "tipo": "tema",
+   "tema": "iPhone Duo: cámaras, precio, bisagra y plegables en China",
+   "subtemas": [
+    {
+     "inicio": 675,
+     "titulo": "Solo dos cámaras y precio de 2339 euros"
+    },
+    {
+     "inicio": 704,
+     "titulo": "Cámara bajo la pantalla y adiós a Face ID"
+    },
+    {
+     "inicio": 740,
+     "titulo": "Compatibilidad con Apple Pencil"
+    },
+    {
+     "inicio": 772,
+     "titulo": "La bisagra y el pliegue: pantalla nanotexturizada"
+    },
+    {
+     "inicio": 808,
+     "titulo": "Fragilidad de la pantalla interior"
+    },
+    {
+     "inicio": 826,
+     "titulo": "El argumento del software y los plegables en China"
+    }
+   ],
+   "palabras_clave": [
+    "iPhone Duo",
+    "Face ID",
+    "Apple Pencil",
+    "bisagra",
+    "Douyin"
+   ],
+   "resumen": "Nate repasa las especificaciones del Duo: menos cámaras que el Pro siendo más caro, cámara bajo pantalla sin Face ID, soporte para Apple Pencil y una solución al pliegue; duda de la durabilidad y señala que en China los plegables ya son habituales y Apple sigue esa tendencia.",
+   "confianza": "alta"
+  },
+  {
+   "id": 8,
+   "inicio": 881,
+   "fin": 937,
+   "tipo": "reflexion",
+   "tema": "¿Para qué usaría Nate un móvil plegable?",
+   "subtemas": [
+    {
+     "inicio": 881,
+     "titulo": "Uso real del móvil: WhatsApp y grabar contenido"
+    },
+    {
+     "inicio": 903,
+     "titulo": "El único caso útil: vuelos medianos sin pantalla"
+    }
+   ],
+   "palabras_clave": [
+    "uso personal",
+    "vuelos",
+    "series",
+    "iPhone Pro"
+   ],
+   "resumen": "Nate dice que apenas usa el móvil más allá de mensajería y grabación, y que un plegable solo le serviría para ver series en vuelos de unas tres horas.",
+   "confianza": "alta"
+  },
+  {
+   "id": 9,
+   "inicio": 937,
+   "fin": 1066,
+   "tipo": "tema",
+   "tema": "El iPhone Pro como herramienta de grabación",
+   "subtemas": [
+    {
+     "inicio": 937,
+     "titulo": "La keynote grabada con iPhone y editada en Final Cut"
+    },
+    {
+     "inicio": 976,
+     "titulo": "Lo importante es la luz y la composición, no la cámara"
+    },
+    {
+     "inicio": 1017,
+     "titulo": "Balance del 17 Pro Max frente al 16 Pro Max"
+    }
+   ],
+   "palabras_clave": [
+    "keynote",
+    "Final Cut",
+    "iPhone 17 Pro Max",
+    "iPhone 16 Pro Max",
+    "durabilidad"
+   ],
+   "resumen": "Nate destaca que la keynote se graba con iPhone y que la cámara es una buena herramienta profesional; tras un año con el 17 Pro Max está muy contento y lo compara con el 16 Pro Max en calor, batería, cámaras y resistencia a caídas.",
+   "confianza": "alta"
+  },
+  {
+   "id": 10,
+   "inicio": 1066,
+   "fin": 1274,
+   "tipo": "tema",
+   "tema": "iPhone 18 Pro: colores, diafragma, firma digital y precio",
+   "subtemas": [
+    {
+     "inicio": 1066,
+     "titulo": "Nuevos colores"
+    },
+    {
+     "inicio": 1085,
+     "titulo": "Apertura variable: qué es y para qué sirve"
+    },
+    {
+     "inicio": 1175,
+     "titulo": "Fotos firmadas digitalmente por el sensor"
+    },
+    {
+     "inicio": 1228,
+     "titulo": "Más zoom y batería, 150 euros más caro"
+    },
+    {
+     "inicio": 1236,
+     "titulo": "El precio de la RAM y la crisis del hardware"
+    }
+   ],
+   "palabras_clave": [
+    "iPhone 18 Pro",
+    "obturador",
+    "diafragma",
+    "firma digital",
+    "RAM"
+   ],
+   "resumen": "Nate presenta el 18 Pro: la novedad principal es un diafragma (lo llama obturador) que permite controlar la luz y el desenfoque, más una firma digital de las fotos para distinguirlas de imágenes manipuladas con IA; sube 150 euros, según él por el precio de la RAM.",
+   "confianza": "alta"
+  },
+  {
+   "id": 11,
+   "inicio": 1274,
+   "fin": 1355,
+   "tipo": "tema",
+   "tema": "Sin iPhone normal: estrategia de lanzamiento, nombre y precios",
+   "subtemas": [
+    {
+     "inicio": 1274,
+     "titulo": "Por qué no hay iPhone normal ni Air"
+    },
+    {
+     "inicio": 1325,
+     "titulo": "El nombre Duo frente a Fold o Ultra"
+    },
+    {
+     "inicio": 1341,
+     "titulo": "Fechas de venta y precios"
+    }
+   ],
+   "palabras_clave": [
+    "iPhone 17",
+    "lanzamientos",
+    "iPhone Duo",
+    "precios"
+   ],
+   "resumen": "Nate teoriza que Apple separó el lanzamiento del iPhone normal, muy vendido, para dar protagonismo al Pro y al plegable; critica el nombre Duo y da precios y fechas de venta.",
+   "confianza": "alta"
+  },
+  {
+   "id": 12,
+   "inicio": 1355,
+   "fin": 1533,
+   "tipo": "tema",
+   "tema": "Cambio de CEO: John Ternus llega y Tim Cook se va",
+   "subtemas": [
+    {
+     "inicio": 1355,
+     "titulo": "La IA queda para otro vídeo"
+    },
+    {
+     "inicio": 1379,
+     "titulo": "Trayectoria de John Ternus en ingeniería"
+    },
+    {
+     "inicio": 1433,
+     "titulo": "Qué puede cambiar un CEO ingeniero"
+    },
+    {
+     "inicio": 1462,
+     "titulo": "El legado de Tim Cook: logística, China y Apple Silicon"
+    }
+   ],
+   "palabras_clave": [
+    "John Ternus",
+    "Tim Cook",
+    "Apple Silicon",
+    "Steve Jobs",
+    "CEO"
+   ],
+   "resumen": "Nate presenta a John Ternus, ingeniero con 25 años en Apple que lideró la transición a Apple Silicon, y cree que su perfil es bueno para la empresa; defiende el legado de Tim Cook en logística, China y Apple Silicon, y menciona el fracaso de Vision Pro.",
+   "confianza": "alta"
+  },
+  {
+   "id": 13,
+   "inicio": 1533,
+   "fin": 1578,
+   "tipo": "reflexion",
+   "tema": "El futuro de Apple y el reto de la inteligencia artificial",
+   "subtemas": [],
+   "palabras_clave": [
+    "Steve Jobs",
+    "inteligencia artificial",
+    "Google"
+   ],
+   "resumen": "Nate opina que la Apple de Steve Jobs no volverá porque el mundo ha cambiado, y que la IA es el gran reto: Apple llega tarde y su plan implica pagar 1000 millones de dólares al año a Google.",
+   "confianza": "media"
+  },
+  {
+   "id": 14,
+   "inicio": 1578,
+   "fin": 1592,
+   "tipo": "cierre",
+   "tema": "Despedida",
+   "subtemas": [],
+   "palabras_clave": [
+    "comentarios",
+    "suscripción"
+   ],
+   "resumen": "Nate pide opiniones en los comentarios, un me gusta y la suscripción, y se despide.",
+   "confianza": "alta"
+  }
+ ],
+ "corto": "Nate Gentile · iPhone Duo e iPhone 18 Pro",
+ "capitulos": [],
+ "evaluacion": null
+}

@@ -1,0 +1,503 @@
+{
+ "video_id": "WKa1Tq4u79A",
+ "titulo": "My Coding Skills Are Atrophying",
+ "titulo_corto": "Syntax · Potluck: habilidades atrofiadas e IA",
+ "canal": "Syntax",
+ "duracion": 3423,
+ "fuente_transcripcion": "youtube_auto",
+ "anotador": "claude-opus-5-5",
+ "revisado_por": null,
+ "version_guia": "0.1-r",
+ "estado": "borrador",
+ "estructura": {
+  "formato": "episodio de pódcast tipo potluck (preguntas de la audiencia) conducido por Wes Bos y Scott Tolinski, que leen y responden por turnos; CJ solo se menciona en el saludo de un oyente",
+  "patron": "Intro (adelanto de preguntas) -> nueve preguntas de la audiencia (habilidades atrofiadas, VS Code, flow, Solid, suscripción de IA, abandonar herramientas, UX en MPA, Hermes), algunas divididas en respuesta y reflexión o recomendación -> sick picks (Wes y Scott) -> cierre",
+  "observaciones": "Las fronteras las marca la lectura de cada pregunta ('next question from...', con el nombre del oyente). Temas recurrentes: el oyente como participante activo, la portabilidad entre harnesses y los costes de cambio. Digresiones humorísticas (Air Bud, Costco, Netflix) dentro de las respuestas. No hay publicidad explícita, aunque Scott promociona su video sobre salud mental y su librería Graffiti. Subtítulo automático sin marcas de hablante, por lo que la atribución a Wes o Scott se infiere de cómo se nombran; nombres deformados: 'Dan Aramov/Abraov' (Abramov), 'app protocol' (AT Protocol), 'Tim Burners Leebacked', 'Smeelt Kit' (SvelteKit), 'Hano' (Hono), 'Century' (Sentry), 'Codeex'/'Cloud Code' (Codex/Claude Code), 'radics', 'React area', 'Pascios/pesky' (passkeys), 'Ry Sullivan', 'charge S H A R G E' (Sharge), 'Amy Polar'."
+ },
+ "segmentos": [
+  {
+   "id": 1,
+   "inicio": 0,
+   "fin": 57,
+   "tipo": "intro",
+   "tema": "Bienvenida al potluck y adelanto de las preguntas",
+   "subtemas": [],
+   "palabras_clave": [
+    "Syntax",
+    "potluck",
+    "Hermes",
+    "VS Code",
+    "flow"
+   ],
+   "resumen": "Los conductores presentan el episodio potluck de preguntas de la audiencia y adelantan los temas: Hermes, qué IA contratar, dejar VS Code, habilidades atrofiadas y flow con IA; invitan a enviar preguntas en syntax.fm.",
+   "confianza": "alta"
+  },
+  {
+   "id": 2,
+   "inicio": 57,
+   "fin": 365,
+   "tipo": "tema",
+   "tema": "Habilidades de programación atrofiadas por la IA",
+   "subtemas": [
+    {
+     "inicio": 57,
+     "titulo": "Pregunta: el 80-90 % del código lo genera la IA"
+    },
+    {
+     "inicio": 96,
+     "titulo": "Scott: la neuroplasticidad y la pérdida de vías neuronales"
+    },
+    {
+     "inicio": 152,
+     "titulo": "Wes: la sintaxis importa menos que entender el flujo"
+    },
+    {
+     "inicio": 314,
+     "titulo": "Ejemplo de quien construye bien asistentes de IA"
+    }
+   ],
+   "palabras_clave": [
+    "atrofia",
+    "neuroplasticidad",
+    "participante activo",
+    "sintaxis",
+    "Sentry"
+   ],
+   "resumen": "Ante un oyente que ya no sabe hacer una petición HTTP sin IA, Scott explica que dejar de practicar debilita esas habilidades; Wes distingue memorizar la sintaxis de entender cómo fluye una aplicación y recomienda seguir resolviendo problemas.",
+   "confianza": "alta"
+  },
+  {
+   "id": 3,
+   "inicio": 365,
+   "fin": 669,
+   "tipo": "tema",
+   "tema": "¿Es hora de dejar VS Code?",
+   "subtemas": [
+    {
+     "inicio": 365,
+     "titulo": "Pregunta: VS Code y Copilot frente a agentes de terminal"
+    },
+    {
+     "inicio": 421,
+     "titulo": "Wes: los editores empujan hacia apps de agentes; él sigue en el editor"
+    },
+    {
+     "inicio": 526,
+     "titulo": "Scott: el rendimiento depende de las extensiones; usa Zed"
+    },
+    {
+     "inicio": 601,
+     "titulo": "Corregir el CSS a mano y bases de código inmantenibles"
+    }
+   ],
+   "palabras_clave": [
+    "VS Code",
+    "Zed",
+    "Cursor",
+    "Copilot",
+    "CSS"
+   ],
+   "resumen": "Wes cree que VS Code ya tiene casi todo lo que ofrecen Claude Code, Codex u OpenCode y que sigue siendo cómodo editar a mano; Scott defiende recortar extensiones en vez de abandonar VS Code y cuenta que usa Zed para arreglos rápidos.",
+   "confianza": "alta"
+  },
+  {
+   "id": 4,
+   "inicio": 669,
+   "fin": 797,
+   "tipo": "reflexion",
+   "tema": "Probar otras herramientas y la ergonomía de los diffs",
+   "subtemas": [
+    {
+     "inicio": 669,
+     "titulo": "Probar otro flujo un par de semanas en un proyecto secundario"
+    },
+    {
+     "inicio": 712,
+     "titulo": "Diffs editables en Zed y el paquete hunk"
+    },
+    {
+     "inicio": 738,
+     "titulo": "La barra lateral demasiado pequeña de Cursor y VS Code"
+    }
+   ],
+   "palabras_clave": [
+    "herramientas",
+    "proyecto secundario",
+    "diffs",
+    "Zed",
+    "barra lateral"
+   ],
+   "resumen": "Se aconseja probar herramientas nuevas en un proyecto secundario para decidir con criterio; Scott prefiere editar los diffs en Zed y Wes señala que la barra lateral estrecha de los editores dificulta trabajar con agentes.",
+   "confianza": "media"
+  },
+  {
+   "id": 5,
+   "inicio": 797,
+   "fin": 1037,
+   "tipo": "tema",
+   "tema": "Recuperar el flow programando con IA",
+   "subtemas": [
+    {
+     "inicio": 797,
+     "titulo": "Pregunta de Nick sobre el flow con IA"
+    },
+    {
+     "inicio": 841,
+     "titulo": "Digresión sobre Air Bud"
+    },
+    {
+     "inicio": 895,
+     "titulo": "Scott: la latencia y los 13 proyectos abiertos"
+    }
+   ],
+   "palabras_clave": [
+    "flow",
+    "atención",
+    "latencia",
+    "Air Bud",
+    "multitarea"
+   ],
+   "resumen": "Scott admite que la espera de las respuestas de la IA lo dispersa entre muchos proyectos (con una digresión sobre Air Bud) y recomienda trabajar en una sola cosa a la vez; Wes encuentra el flow en tareas pequeñas y en la investigación y arquitectura con IA.",
+   "confianza": "alta"
+  },
+  {
+   "id": 6,
+   "inicio": 1037,
+   "fin": 1375,
+   "tipo": "tema",
+   "tema": "AT Protocol frente a Solid: Scott lee la web de Solid",
+   "subtemas": [
+    {
+     "inicio": 1037,
+     "titulo": "Pregunta: AT Protocol de Dan Abramov frente a Solid de Tim Berners-Lee"
+    },
+    {
+     "inicio": 1102,
+     "titulo": "Scott revisa la portada de Solid sin entender qué es"
+    },
+    {
+     "inicio": 1318,
+     "titulo": "Solid como sistema de archivos web: pods y apps"
+    }
+   ],
+   "palabras_clave": [
+    "AT Protocol",
+    "Solid",
+    "Tim Berners-Lee",
+    "Dan Abramov",
+    "pods"
+   ],
+   "resumen": "Wes le oculta la pregunta a Scott y le pide que explique Solid leyendo su web en vivo; Scott critica que la portada no diga qué es hasta descubrir que es un sistema de archivos en línea con pods controlados por el usuario.",
+   "confianza": "alta"
+  },
+  {
+   "id": 7,
+   "inicio": 1375,
+   "fin": 1495,
+   "tipo": "reflexion",
+   "tema": "Adopción por usuarios comunes: datos propios y passkeys",
+   "subtemas": [
+    {
+     "inicio": 1375,
+     "titulo": "Las personas comunes no gestionarán sus propios datos"
+    },
+    {
+     "inicio": 1423,
+     "titulo": "El fracaso de las passkeys entre los usuarios"
+    },
+    {
+     "inicio": 1478,
+     "titulo": "Wes: falta usabilidad y buen diseño"
+    }
+   ],
+   "palabras_clave": [
+    "adopción",
+    "passkeys",
+    "usabilidad",
+    "datos personales"
+   ],
+   "resumen": "Scott ve Solid como buena idea pero duda de su adopción porque la gente no sabe gestionar sus datos ni sus contraseñas, como muestra el rechazo a las passkeys; Wes añade que los proyectos técnicos descuidan la usabilidad.",
+   "confianza": "alta"
+  },
+  {
+   "id": 8,
+   "inicio": 1495,
+   "fin": 1771,
+   "tipo": "tema",
+   "tema": "Si solo pudieras pagar una suscripción de IA",
+   "subtemas": [
+    {
+     "inicio": 1495,
+     "titulo": "Pregunta de Tim Smith"
+    },
+    {
+     "inicio": 1504,
+     "titulo": "Scott: el plan de Codex de OpenAI"
+    },
+    {
+     "inicio": 1589,
+     "titulo": "Wes: los planes de 100-200 dólares y el bloqueo de Anthropic"
+    },
+    {
+     "inicio": 1690,
+     "titulo": "IA incluida en otros servicios: Grok, Costco"
+    }
+   ],
+   "palabras_clave": [
+    "Codex",
+    "OpenAI",
+    "Anthropic",
+    "Claude Code",
+    "costes de cambio"
+   ],
+   "resumen": "Scott elegiría hoy el plan de Codex por su fiabilidad, aunque Claude sea mejor en diseño; Wes coincide porque Codex admite otros harnesses, comenta que los costes de cambio son bajos y bromea con la IA incluida en planes y compras.",
+   "confianza": "alta"
+  },
+  {
+   "id": 9,
+   "inicio": 1771,
+   "fin": 2036,
+   "tipo": "recomendacion",
+   "tema": "Hacer portátil la configuración: executor.sh y Swamp",
+   "subtemas": [
+    {
+     "inicio": 1771,
+     "titulo": "Scott: enlazar skills y archivos de agentes para cambiar de harness"
+    },
+    {
+     "inicio": 1825,
+     "titulo": "Wes: executor.sh de Rhys Sullivan"
+    },
+    {
+     "inicio": 1914,
+     "titulo": "La configuración de MCP y el paso a CLIs"
+    },
+    {
+     "inicio": 1995,
+     "titulo": "Scott: Swamp Club, automatización determinista"
+    }
+   ],
+   "palabras_clave": [
+    "portabilidad",
+    "executor.sh",
+    "MCP",
+    "Swamp",
+    "CLI"
+   ],
+   "resumen": "Scott aconseja mantener skills y procesos portátiles entre herramientas; Wes recomienda executor.sh para conectar herramientas y servidores MCP, y Scott presenta Swamp, que ejecuta automatizaciones en código en lugar de dejarlas a la IA.",
+   "confianza": "alta"
+  },
+  {
+   "id": 10,
+   "inicio": 2036,
+   "fin": 2185,
+   "tipo": "tema",
+   "tema": "Cuándo abandonar una herramienta que funciona: Express",
+   "subtemas": [
+    {
+     "inicio": 2036,
+     "titulo": "Pregunta de un oyente sueco sobre el coste de mantener una herramienta"
+    },
+    {
+     "inicio": 2085,
+     "titulo": "Wes: equilibrio entre lo fiable y lo que envejece"
+    },
+    {
+     "inicio": 2132,
+     "titulo": "De Express a Hono por TypeScript y middleware"
+    }
+   ],
+   "palabras_clave": [
+    "Express",
+    "Hono",
+    "TypeScript",
+    "migración",
+    "contratación"
+   ],
+   "resumen": "Wes cuenta que se quedó con Express años de más hasta que el soporte de TypeScript y la conversión de middleware le pesaron más que su fiabilidad, y migró a Hono; luego le pregunta a Scott si se arrepiente de alguna migración.",
+   "confianza": "alta"
+  },
+  {
+   "id": 11,
+   "inicio": 2185,
+   "fin": 2411,
+   "tipo": "reflexion",
+   "tema": "Migraciones lamentadas: GraphQL, Meteor y Drupal",
+   "subtemas": [
+    {
+     "inicio": 2185,
+     "titulo": "Scott: GraphQL y dejar Meteor en Level Up Tutorials"
+    },
+    {
+     "inicio": 2273,
+     "titulo": "Debió quedarse en Drupal"
+    },
+    {
+     "inicio": 2326,
+     "titulo": "Esperar a que la alternativa esté consolidada: el caso Sass"
+    },
+    {
+     "inicio": 2386,
+     "titulo": "Con IA los costes de cambio bajan"
+    }
+   ],
+   "palabras_clave": [
+    "GraphQL",
+    "Meteor",
+    "Drupal",
+    "SvelteKit",
+    "Sass"
+   ],
+   "resumen": "Scott lamenta haber migrado Level Up Tutorials de Drupal a Meteor y luego a GraphQL y otras pilas, que nunca se sintieron tan bien; concluyen que conviene cambiar cuando la alternativa está clara, como hoy pasar de Sass a CSS moderno, y que la IA abarata las migraciones.",
+   "confianza": "alta"
+  },
+  {
+   "id": 12,
+   "inicio": 2411,
+   "fin": 2653,
+   "tipo": "tema",
+   "tema": "Calidad de UX en aplicaciones multipágina renderizadas en servidor",
+   "subtemas": [
+    {
+     "inicio": 2411,
+     "titulo": "Pregunta de un desarrollador Django sobre librerías como shadcn"
+    },
+    {
+     "inicio": 2485,
+     "titulo": "Scott: web components y Web Awesome"
+    },
+    {
+     "inicio": 2533,
+     "titulo": "Wes: Flux UI de Caleb Porzio con Alpine.js"
+    },
+    {
+     "inicio": 2618,
+     "titulo": "Scott: Graffiti UI, CSS sin JavaScript"
+    }
+   ],
+   "palabras_clave": [
+    "web components",
+    "Web Awesome",
+    "Alpine.js",
+    "Flux UI",
+    "Graffiti"
+   ],
+   "resumen": "Para lograr una UX como la de shadcn sin React, Scott recomienda web components y la API de transiciones de página; Wes sugiere mirar lo que usan Laravel y Ruby, como Flux UI sobre Alpine.js, y Scott promociona su librería CSS Graffiti.",
+   "confianza": "alta"
+  },
+  {
+   "id": 13,
+   "inicio": 2653,
+   "fin": 2966,
+   "tipo": "tema",
+   "tema": "¿Usan Hermes u otro asistente personal?",
+   "subtemas": [
+    {
+     "inicio": 2653,
+     "titulo": "Scott: Hermes como agente para su esposa"
+    },
+    {
+     "inicio": 2737,
+     "titulo": "Demasiados perfiles y consumo de contexto"
+    },
+    {
+     "inicio": 2741,
+     "titulo": "Arreglar el NAS y Tailscale tras un apagón"
+    },
+    {
+     "inicio": 2779,
+     "titulo": "Wes: los asistentes se integran en las herramientas de código"
+    },
+    {
+     "inicio": 2900,
+     "titulo": "Digresión sobre los precios y contenidos de Netflix"
+    }
+   ],
+   "palabras_clave": [
+    "Hermes",
+    "asistente personal",
+    "Tailscale",
+    "Codex",
+    "Netflix"
+   ],
+   "resumen": "Scott usa Hermes como asistente para su esposa y para tareas de sus sistemas, aunque lo ve sobrecargado y glotón de contexto; Wes no usa nada autoalojado porque los asistentes ya se integran en ChatGPT, Codex y otros harnesses; cierran con quejas sobre Netflix.",
+   "confianza": "media"
+  },
+  {
+   "id": 14,
+   "inicio": 2966,
+   "fin": 3097,
+   "tipo": "recomendacion",
+   "tema": "Sick pick de Wes: batería Sharge Ice Mag 3",
+   "subtemas": [
+    {
+     "inicio": 2966,
+     "titulo": "Inicio de la sección sick picks"
+    },
+    {
+     "inicio": 3076,
+     "titulo": "Scott también la usa al viajar"
+    }
+   ],
+   "palabras_clave": [
+    "sick picks",
+    "Sharge",
+    "MagSafe",
+    "batería externa"
+   ],
+   "resumen": "Wes recomienda la batería MagSafe Sharge Ice Mag 3 por su cable USB-C integrado, su imán y su soporte; Scott dice que también tiene una y que es su favorita para viajar.",
+   "confianza": "alta"
+  },
+  {
+   "id": 15,
+   "inicio": 3097,
+   "fin": 3401,
+   "tipo": "recomendacion",
+   "tema": "Sick pick de Scott: placa ESP32 y dispositivos de escritorio",
+   "subtemas": [
+    {
+     "inicio": 3097,
+     "titulo": "Placa ESP32-S3 con pantalla táctil AMOLED"
+    },
+    {
+     "inicio": 3141,
+     "titulo": "La caja de ESP32 y programarlos con IA"
+    },
+    {
+     "inicio": 3290,
+     "titulo": "Proyecto de cyberdeck en Raspberry Pi"
+    },
+    {
+     "inicio": 3345,
+     "titulo": "Pantallas e-ink: Terminal X en la cocina"
+    }
+   ],
+   "palabras_clave": [
+    "ESP32",
+    "Waveshare",
+    "cyberdeck",
+    "Raspberry Pi",
+    "e-ink"
+   ],
+   "resumen": "Scott recomienda una placa ESP32-S3 con pantalla táctil para su proyecto de la hack week de Sentry; los conductores enseñan sus colecciones de ESP32, un cyberdeck en Raspberry Pi y pantallas e-ink como la Terminal X con cómics y calendario familiar.",
+   "confianza": "media"
+  },
+  {
+   "id": 16,
+   "inicio": 3401,
+   "fin": 3423,
+   "tipo": "cierre",
+   "tema": "Despedida e invitación a enviar preguntas",
+   "subtemas": [],
+   "palabras_clave": [
+    "potluck",
+    "syntax.fm"
+   ],
+   "resumen": "Los conductores se despiden e invitan a dejar preguntas con el botón potluck de syntax.fm.",
+   "confianza": "alta"
+  }
+ ],
+ "corto": "Syntax · Potluck: habilidades atrofiadas e IA",
+ "capitulos": [],
+ "evaluacion": null
+}

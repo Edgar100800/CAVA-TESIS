@@ -1,0 +1,360 @@
+{
+ "video_id": "p_S6NIEfu-U",
+ "titulo": "¿Qué es la AGI? ¿Cuándo llegará la INTELIGENCIA ARTIFICIAL GENERAL?",
+ "titulo_corto": "Dot CSV · Qué es la AGI y cuándo llegará",
+ "canal": "Dot CSV",
+ "duracion": 1468,
+ "fuente_transcripcion": "youtube_auto",
+ "anotador": "claude-opus-5-5",
+ "revisado_por": null,
+ "version_guia": "0.1-r",
+ "estado": "borrador",
+ "estructura": {
+  "formato": "vídeo divulgativo de explicación en solitario (Carlos Santana, Dot CSV), con gráficas y clips intercalados",
+  "patron": "Intro (gancho) -> definición de generalidad -> progreso en capacidad y generalidad -> realidad frente a marketing -> niveles de DeepMind -> definición de OpenAI, agentes y robótica -> predicción y despegue rápido -> automejora -> publicidad (UOC) -> conclusión sobre la ASI -> cierre",
+  "observaciones": "Monólogo argumentativo que vuelve una y otra vez al esquema de dos ejes (capacidad y generalidad); las fronteras se marcan con preguntas retóricas ('¿y qué tan cerca está la IA?', '¿cuándo va a ocurrir todo esto?') y con huecos sin subtítulos que parecen clips o música (42-77 s, 449-472 s, 1260-1264 s). El patrocinio de la UOC entra con una transición sobre la formación. Subtítulo automático: 'ML Bench' probablemente sea MLE-bench; falta texto en la cita del acuerdo OpenAI-Microsoft (hacia 529 s)."
+ },
+ "segmentos": [
+  {
+   "id": 1,
+   "inicio": 0,
+   "fin": 105,
+   "tipo": "intro",
+   "tema": "Introducción: el vértigo del avance de la IA y la pregunta por la AGI",
+   "subtemas": [
+    {
+     "inicio": 0,
+     "titulo": "Avances recientes: olimpiadas, programación y vídeo"
+    },
+    {
+     "inicio": 77,
+     "titulo": "La AGI como tema central del debate en 2025"
+    }
+   ],
+   "palabras_clave": [
+    "AGI",
+    "inteligencia artificial general",
+    "2025"
+   ],
+   "resumen": "Carlos (Dot CSV) repasa cómo la IA ha pasado de balbucear textos a resolver olimpiadas matemáticas y anuncia que el vídeo analiza por primera vez en el canal qué es la AGI y qué tan cerca está.",
+   "confianza": "alta"
+  },
+  {
+   "id": 2,
+   "inicio": 105,
+   "fin": 271,
+   "tipo": "tema",
+   "tema": "Qué significa la G de AGI: inteligencia general",
+   "subtemas": [
+    {
+     "inicio": 105,
+     "titulo": "Conferencia de Dartmouth de 1956"
+    },
+    {
+     "inicio": 151,
+     "titulo": "La calculadora y la ambigüedad del objetivo"
+    },
+    {
+     "inicio": 173,
+     "titulo": "Generalidad: amplio rango de tareas y aprender"
+    },
+    {
+     "inicio": 218,
+     "titulo": "Dos dimensiones: capacidad y generalidad (GPT-2, GPT-4, humanos)"
+    }
+   ],
+   "palabras_clave": [
+    "Dartmouth",
+    "generalidad",
+    "capacidad",
+    "GPT-4",
+    "GPT-2"
+   ],
+   "resumen": "El autor parte de la propuesta de Dartmouth y explica que lo que distingue a una AGI es la generalidad; propone un esquema de dos ejes, desempeño y rango de tareas, en el que la AGI llega cuando la IA iguala a los humanos en ambos.",
+   "confianza": "alta"
+  },
+  {
+   "id": 3,
+   "inicio": 271,
+   "fin": 472,
+   "tipo": "tema",
+   "tema": "Qué tan cerca estamos: más capacidad y más generalidad",
+   "subtemas": [
+    {
+     "inicio": 271,
+     "titulo": "Capacidades desde el boom del deep learning en 2012"
+    },
+    {
+     "inicio": 345,
+     "titulo": "Generalidad: de modelos de una tarea a modelos fundacionales"
+    },
+    {
+     "inicio": 385,
+     "titulo": "Multimodalidad"
+    },
+    {
+     "inicio": 406,
+     "titulo": "Test time compute y razonamiento"
+    },
+    {
+     "inicio": 442,
+     "titulo": "Sam Altman: saben cómo construir la AGI"
+    }
+   ],
+   "palabras_clave": [
+    "deep learning",
+    "modelos fundacionales",
+    "multimodalidad",
+    "test time compute",
+    "Sam Altman"
+   ],
+   "resumen": "Según el autor, la IA ha superado prueba tras prueba hasta aprobar exámenes profesionales humanos, y se ha vuelto más general con los modelos fundacionales, la multimodalidad y el cómputo en inferencia; cita a Sam Altman diciendo que OpenAI sabe cómo construir la AGI.",
+   "confianza": "alta"
+  },
+  {
+   "id": 4,
+   "inicio": 472,
+   "fin": 546,
+   "tipo": "tema",
+   "tema": "Realidad frente a marketing: incentivos para declarar la AGI",
+   "subtemas": [
+    {
+     "inicio": 472,
+     "titulo": "Valor económico de anunciar la AGI"
+    },
+    {
+     "inicio": 502,
+     "titulo": "La cláusula AGI del acuerdo OpenAI-Microsoft"
+    }
+   ],
+   "palabras_clave": [
+    "marketing",
+    "OpenAI",
+    "Microsoft",
+    "incentivos"
+   ],
+   "resumen": "El autor advierte de que a las empresas les conviene decir que saben construir una AGI y pone como ejemplo el acuerdo entre OpenAI y Microsoft, que deja fuera la tecnología que sea una AGI; de ahí la necesidad de definirla con más exactitud.",
+   "confianza": "alta"
+  },
+  {
+   "id": 5,
+   "inicio": 546,
+   "fin": 715,
+   "tipo": "tema",
+   "tema": "Los niveles de AGI de DeepMind",
+   "subtemas": [
+    {
+     "inicio": 546,
+     "titulo": "DeepMind y su tabla de 2024: percentil y generalidad"
+    },
+    {
+     "inicio": 591,
+     "titulo": "Nivel 1: IA general emergente (ChatGPT, Gemini)"
+    },
+    {
+     "inicio": 633,
+     "titulo": "Competente, experto, virtuoso y superhumano"
+    },
+    {
+     "inicio": 650,
+     "titulo": "IA estrecha frente a generalista"
+    },
+    {
+     "inicio": 676,
+     "titulo": "Actualizar la tabla: o3 en el percentil 99,8"
+    }
+   ],
+   "palabras_clave": [
+    "DeepMind",
+    "niveles de AGI",
+    "IA estrecha",
+    "ChatGPT",
+    "o3"
+   ],
+   "resumen": "El autor presenta la clasificación de DeepMind, que cruza el percentil de desempeño frente a los humanos con la generalidad y sitúa a ChatGPT y Gemini como IA general emergente; se pregunta en qué nivel quedarían hoy modelos como o3.",
+   "confianza": "alta"
+  },
+  {
+   "id": 6,
+   "inicio": 715,
+   "fin": 898,
+   "tipo": "tema",
+   "tema": "Definición de OpenAI: trabajos económicamente valiosos, agentes y robótica",
+   "subtemas": [
+    {
+     "inicio": 715,
+     "titulo": "OpenAI: sistema autónomo que supera a humanos en la mayoría de trabajos"
+    },
+    {
+     "inicio": 756,
+     "titulo": "Ser capaz en potencia frente a poder hacerlo: el taxista sin coche"
+    },
+    {
+     "inicio": 783,
+     "titulo": "Agentes autónomos: Operator y Deep Research"
+    },
+    {
+     "inicio": 845,
+     "titulo": "Robótica: el equivalente en el mundo físico"
+    }
+   ],
+   "palabras_clave": [
+    "OpenAI",
+    "trabajos económicamente valiosos",
+    "agentes autónomos",
+    "Operator",
+    "Deep Research",
+    "robótica"
+   ],
+   "resumen": "Con la definición de OpenAI, el autor distingue entre la capacidad potencial de un modelo y la infraestructura para ejercerla, y presenta los agentes autónomos y la robótica como las dos líneas de trabajo de 2025 para el mundo digital y el físico.",
+   "confianza": "alta"
+  },
+  {
+   "id": 7,
+   "inicio": 898,
+   "fin": 1065,
+   "tipo": "reflexion",
+   "tema": "Cuándo llegará: la AGI en dos tiempos y el despegue rápido",
+   "subtemas": [
+    {
+     "inicio": 898,
+     "titulo": "Predicción: primero la AGI digital, luego la física"
+    },
+    {
+     "inicio": 933,
+     "titulo": "Incertidumbre: los expertos hablan de esta década"
+    },
+    {
+     "inicio": 960,
+     "titulo": "Hemingway: gradualmente y luego de repente"
+    },
+    {
+     "inicio": 994,
+     "titulo": "Curvas exponenciales en la historia de la IA"
+    },
+    {
+     "inicio": 1008,
+     "titulo": "Despegue lento frente a despegue rápido y automejora"
+    }
+   ],
+   "palabras_clave": [
+    "predicción",
+    "Hemingway",
+    "curva exponencial",
+    "despegue rápido",
+    "automejora"
+   ],
+   "resumen": "El autor opina que la AGI llegará antes en el mundo digital con los agentes y más despacio en el físico, y usa la frase de Hemingway para explicar el crecimiento exponencial y la tesis del despegue rápido por automejora.",
+   "confianza": "media"
+  },
+  {
+   "id": 8,
+   "inicio": 1065,
+   "fin": 1264,
+   "tipo": "tema",
+   "tema": "La automejora en marcha: la IA que programa IA",
+   "subtemas": [
+    {
+     "inicio": 1065,
+     "titulo": "El avión empieza a despegar: IA en programación desde 2023"
+    },
+    {
+     "inicio": 1094,
+     "titulo": "Automatizar el diseño y la experimentación de IA"
+    },
+    {
+     "inicio": 1132,
+     "titulo": "Ingenieros de IA y el benchmark ML Bench"
+    },
+    {
+     "inicio": 1147,
+     "titulo": "Nichos, materiales, teoremas y semiconductores"
+    },
+    {
+     "inicio": 1200,
+     "titulo": "Ciclo de mejoras compuestas"
+    },
+    {
+     "inicio": 1228,
+     "titulo": "Sigmoides y recursos limitados"
+    }
+   ],
+   "palabras_clave": [
+    "automejora",
+    "programación",
+    "ingenieros de IA",
+    "ML Bench",
+    "semiconductores",
+    "sigmoide"
+   ],
+   "resumen": "Según el autor, estamos en el punto de despegue: la IA abarata la programación y pronto automatizará el desarrollo de la propia IA, lo que podría acelerar materiales, chips y energía en un ciclo que se retroalimenta, con el reto de no agotar recursos naturales ni la estabilidad social.",
+   "confianza": "media"
+  },
+  {
+   "id": 9,
+   "inicio": 1264,
+   "fin": 1359,
+   "tipo": "publicidad",
+   "tema": "Patrocinio: la formación continua y la UOC",
+   "subtemas": [
+    {
+     "inicio": 1264,
+     "titulo": "El papel de la formación ante los cambios"
+    },
+    {
+     "inicio": 1306,
+     "titulo": "La UOC, patrocinador del vídeo"
+    }
+   ],
+   "palabras_clave": [
+    "formación",
+    "UOC",
+    "universidad online"
+   ],
+   "resumen": "El autor enlaza la necesidad de seguir formándose con el patrocinio de la UOC, una universidad online con grados, másteres y cursos, y cuenta que le encaja para estudiar una carrera.",
+   "confianza": "alta"
+  },
+  {
+   "id": 10,
+   "inicio": 1359,
+   "fin": 1422,
+   "tipo": "reflexion",
+   "tema": "Conclusión: el ser humano no es el centro y la superinteligencia",
+   "subtemas": [
+    {
+     "inicio": 1359,
+     "titulo": "Copérnico y lo arbitrario de situarnos en la gráfica"
+    },
+    {
+     "inicio": 1397,
+     "titulo": "La ASI, tema para un próximo vídeo"
+    }
+   ],
+   "palabras_clave": [
+    "Copérnico",
+    "superinteligencia",
+    "ASI"
+   ],
+   "resumen": "El autor concluye que la AGI será una realidad, pero advierte que tomar a los humanos como referencia es arbitrario y que más allá está la superinteligencia artificial, que deja para otro vídeo.",
+   "confianza": "alta"
+  },
+  {
+   "id": 11,
+   "inicio": 1422,
+   "fin": 1468,
+   "tipo": "cierre",
+   "tema": "Despedida y canales de Dot CSV",
+   "subtemas": [],
+   "palabras_clave": [
+    "DotCSV",
+    "DotCSV Lab",
+    "suscripción"
+   ],
+   "resumen": "Pide compartir y dar like, y explica que DotCSV Lab cubre la actualidad y el canal principal los temas en profundidad.",
+   "confianza": "alta"
+  }
+ ],
+ "corto": "Dot CSV · Qué es la AGI y cuándo llegará",
+ "capitulos": [],
+ "evaluacion": null
+}
