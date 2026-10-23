@@ -129,7 +129,7 @@ li > ul{margin-top:4px}
   <h1>Del sistema implementado a la evaluación con personas</h1>
   <p class="lead">Esta semana cerramos las últimas pruebas automáticas de calidad de clips en SumMe, levantamos el estado de los 26 módulos del sistema y diseñamos la evaluación con personas. El sistema se congela tal como está implementado: lo que falta medir es si las versiones de clips de CAVA son preferidas por personas frente a líneas base propias, formato por formato, sobre contenido propio etiquetado por nosotros.</p>
   <div class="meta"><span>HEAD d51d201</span><span class="ok">25 tests pasan</span><span>26 módulos · 12 validados</span><span>5 formatos de clip</span><span>2 bases propias</span><span>EXP-037 · EXP-038 cerrados</span><span>EXP-040 por pre-registrar</span></div>
-  <nav aria-label="Secciones del informe"><a href="#resumen">Resultados</a><a href="#semana">Semana</a><a href="#sume">SumMe</a><a href="#arquitectura">Implementación</a><a href="#estado">Estado por módulo</a><a href="#ab">Evaluación A/B</a><a href="#plan">Plan</a><a href="#decisiones">Decisiones</a><a href="#evidencia">Evidencia</a></nav>
+  <nav aria-label="Secciones del informe"><a href="#resumen">Resultados</a><a href="#semana">Semana</a><a href="#sume">SumMe</a><a href="#transcripcion">Base por transcripción</a><a href="#arquitectura">Implementación</a><a href="#estado">Estado por módulo</a><a href="#ab">Evaluación A/B</a><a href="#plan">Plan</a><a href="#decisiones">Decisiones</a><a href="#evidencia">Evidencia</a></nav>
 </header>
 
 <section id="resumen">
@@ -154,6 +154,8 @@ li > ul{margin-top:4px}
     <div class="event"><h3>Confirmaciones de EXP-037 y EXP-038</h3><p>H3 no supera a lo uniforme ni al producto. La política aprendida es peor que el azar en SumMe. Aparece un defecto del producto: en videos de menos de 50 s los highlights salen vacíos.</p></div>
     <div class="day">Inventario</div>
     <div class="event"><h3>Inventario del sistema</h3><p>Nuevo <code>docs/progress.md</code>: 26 módulos con su evidencia, qué se puede afirmar por tipo de contenido, los conjuntos con anotación disponibles y los huecos a declarar antes de mostrar el producto a personas.</p></div>
+    <div class="day">Línea base</div>
+    <div class="event"><h3>Segmentación por transcripción</h3><p>Opus 5.5 segmenta 12 videos largos (20.2 h) a partir de los subtítulos de YouTube: 332 segmentos con tipo, resumen y subtemas. En el único documental con capítulos finos coincide con el autor en F1 0.95.</p></div>
     <div class="day">Evaluación</div>
     <div class="event"><h3>Diseño de la evaluación A/B</h3><p>Todos los formatos de clip contra dos líneas base propias, con el mismo presupuesto y la misma maquinaria de corte, sobre contenido propio etiquetado por nosotros. Ver la sección 6.</p></div>
   </div>
@@ -243,8 +245,61 @@ li > ul{margin-top:4px}
   <div class="notice"><p><strong>Defecto encontrado:</strong> con videos de menos de 50 s, el 10 % de la duración no cabe en una unidad de 5 s y la versión de highlights sale vacía (Jumps, 38 s). El criterio de EXP-037 contra el producto se calculó sobre los 24 videos restantes; con Jumps en 0 la conclusión es la misma (z 0.58). Se propone corregirlo antes de congelar: al menos una unidad.</p></div>
 </section>
 
+<section id="transcripcion">
+  <h2><span class="num">4</span>Línea base por transcripción: Opus 5.5 sobre subtítulos de YouTube</h2>
+  <p>Como punto de comparación preparamos una segmentación que no usa ninguna señal de CAVA: Claude Opus 5.5 lee solo los subtítulos de YouTube de cada video y, siguiendo una guía de etiquetado (versión 0.1), divide el video en segmentos temáticos con tipo, tema, resumen, subtemas con tiempo y palabras clave. Es el sistema más fuerte que se puede construir con el texto solo, y sirve para medir cuánto aporta lo multimodal.</p>
+  <div class="stats">
+    <div class="stat"><span class="k">Videos</span><b>12</b><span>9 entrevistas y conversaciones en español y 3 documentales de Nat Geo (2 en inglés, 1 en español).</span></div>
+    <div class="stat"><span class="k">Contenido</span><b>20.2 h</b><span>de 44 min a 3 h 40 min por video; subtítulos automáticos en 9, manuales en 3.</span></div>
+    <div class="stat"><span class="k">Segmentos</span><b>332</b><span>con 1 005 subtemas fechados; confianza alta en 289 y media en 43.</span></div>
+    <div class="stat"><span class="k">Granularidad</span><b>2.8–4.4 min</b><span>por segmento en promedio; cubre el 100 % de cada video, sin huecos ni solapes.</span></div>
+  </div>
+  <div class="two">
+    <div>
+      <h3>Duración media de segmento por video</h3>
+      <div class="chart" role="img" aria-label="Duración media de segmento por video, de 2.8 a 4.4 minutos. Las entrevistas van de 2.8 a 4.1 minutos y los documentales de 3.4 a 4.4">
+        <svg viewBox="0 0 700 342" xmlns="http://www.w3.org/2000/svg">
+        <line class="grid" x1="260" y1="12" x2="260" y2="308"/><text class="ax" x="260" y="324" text-anchor="middle">0</text>
+        <line class="grid" x1="336" y1="12" x2="336" y2="308"/><text class="ax" x="336" y="324" text-anchor="middle">1</text>
+        <line class="grid" x1="412" y1="12" x2="412" y2="308"/><text class="ax" x="412" y="324" text-anchor="middle">2</text>
+        <line class="grid" x1="488" y1="12" x2="488" y2="308"/><text class="ax" x="488" y="324" text-anchor="middle">3</text>
+        <line class="grid" x1="564" y1="12" x2="564" y2="308"/><text class="ax" x="564" y="324" text-anchor="middle">4</text>
+        <line class="grid" x1="640" y1="12" x2="640" y2="308"/><text class="ax" x="640" y="324" text-anchor="middle">5</text>
+        <text class="ax" x="450.0" y="338" text-anchor="middle">minutos por segmento (duración / n.º de segmentos)</text>
+        <text x="10" y="31">Chiringuito · Cristiano Ronaldo</text><rect class="bar" x="260" y="20" width="220.4" height="14"/><text class="val" x="486.4" y="31">2.9</text>
+        <text x="10" y="55">Confesiones 160 · O. Santa María</text><rect class="bar" x="260" y="44" width="212.8" height="14"/><text class="val" x="478.8" y="55">2.8</text>
+        <text x="10" y="79">Confesiones 86 · M. Zegarra</text><rect class="bar" x="260" y="68" width="281.2" height="14"/><text class="val" x="547.2" y="79">3.7</text>
+        <text x="10" y="103">Confesiones en vivo · M. Zegarra</text><rect class="bar" x="260" y="92" width="266.0" height="14"/><text class="val" x="532.0" y="103">3.5</text>
+        <text x="10" y="127">Confesiones 118 · J. Cervantes</text><rect class="bar" x="260" y="116" width="258.4" height="14"/><text class="val" x="524.4" y="127">3.4</text>
+        <text x="10" y="151">Luzu TV · Lionel Messi</text><rect class="bar" x="260" y="140" width="212.8" height="14"/><text class="val" x="478.8" y="151">2.8</text>
+        <text x="10" y="175">Wild Project 197 · I. Topuria</text><rect class="bar" x="260" y="164" width="311.6" height="14"/><text class="val" x="577.6" y="175">4.1</text>
+        <text x="10" y="199">Wild Project 384 · Luisito</text><rect class="bar" x="260" y="188" width="304.0" height="14"/><text class="val" x="570.0" y="199">4.0</text>
+        <text x="10" y="223">Uri Sabat · Adrián Díaz</text><rect class="bar" x="260" y="212" width="281.2" height="14"/><text class="val" x="547.2" y="223">3.7</text>
+        <text x="10" y="247">Nat Geo · Selva de Yunnan</text><rect class="bar cava" x="260" y="236" width="281.2" height="14"/><text class="val" x="547.2" y="247">3.7</text>
+        <text x="10" y="271">Nat Geo · 11-S en Gander</text><rect class="bar cava" x="260" y="260" width="258.4" height="14"/><text class="val" x="524.4" y="271">3.4</text>
+        <text x="10" y="295">Nat Geo · Parques nacionales</text><rect class="bar cava" x="260" y="284" width="334.4" height="14"/><text class="val" x="600.4" y="295">4.4</text>
+        </svg>
+      </div>
+      <p class="small">En verde, los documentales. Las conversaciones con preguntas cortas (Messi, Óscar Santa María) dan los segmentos más finos; las entrevistas largas y los documentales, los más gruesos.</p>
+    </div>
+    <div>
+      <h3>Frente a los capítulos del autor</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Video</th><th class="n">Capítulos</th><th class="n">Segmentos</th><th class="n">F1 ±30 s</th><th class="n">Pk</th></tr></thead>
+        <tbody>
+          <tr><td>Nat Geo · Selva de Yunnan</td><td class="n">11</td><td class="n">12</td><td class="n ok">0.952</td><td class="n">0.072</td></tr>
+          <tr><td>Wild Project 384 · Luisito</td><td class="n">15</td><td class="n">45</td><td class="n">0.345</td><td class="n">0.562</td></tr>
+          <tr><td>Nat Geo · Parques nacionales</td><td class="n">5</td><td class="n">50</td><td class="n">0.151</td><td class="n">0.555</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">Solo 3 de los 12 videos tienen capítulos en YouTube. Recall: 10 / 10, 10 / 14 y 4 / 4 cortes del autor encontrados. Donde el autor capitula fino (un documental por especies) la base coincide casi por completo; donde capitula grueso (un capítulo por episodio, o 15 capítulos en 3 h de conversación) la base es 3 a 10 veces más fina. Es el mismo problema de granularidad que vimos con CAVA en VidChapters.</p>
+    </div>
+  </div>
+  <div class="notice"><p><strong>Estado:</strong> las 12 segmentaciones son borradores sin revisión humana (guía 0.1). Sirven de dos maneras en la evaluación: como una tercera línea base para el A/B, "T: un modelo de lenguaje que solo lee la transcripción", y como guía de cómo etiquetar nuestro contenido. No sustituyen a nuestras etiquetas: si se usan como pre-etiquetado, se declara, porque sesgan al anotador.</p><p>Visor completo con las líneas de tiempo, los segmentos y los subtemas de los 12 videos: <a href="anexos/visor.html">anexos/visor.html</a>.</p></div>
+</section>
+
 <section id="arquitectura">
-  <h2><span class="num">4</span>Cómo está implementada la solución</h2>
+  <h2><span class="num">5</span>Cómo está implementada la solución</h2>
   <p>Este es el stack que se congela para la evaluación con personas. Las piezas en línea discontinua se evaluaron y no entran en el A/B.</p>
   <div class="diagram" role="img" aria-label="Flujo de CAVA: preparación, cinco señales independientes, mapa de tópicos por votos, etiquetas e identidades de hablante, versiones y clips, registro para entrenamiento. En discontinuo: nivel de capítulo, filtro de habla y política aprendida, evaluados y no adoptados">
   <svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
@@ -345,7 +400,7 @@ li > ul{margin-top:4px}
 </section>
 
 <section id="estado">
-  <h2><span class="num">5</span>Estado por módulo</h2>
+  <h2><span class="num">6</span>Estado por módulo</h2>
   <div class="table-wrap"><table>
     <thead><tr><th>Etapa</th><th>Módulo</th><th>Evidencia</th><th>Estado</th></tr></thead>
     <tbody>
@@ -388,7 +443,7 @@ li > ul{margin-top:4px}
 </section>
 
 <section id="ab">
-  <h2><span class="num">6</span>Evaluación A/B con personas <span class="small">· diseño propuesto</span></h2>
+  <h2><span class="num">7</span>Evaluación A/B con personas <span class="small">· diseño propuesto</span></h2>
   <p>Cada persona ve dos versiones del mismo formato y del mismo video, una al lado de la otra, en orden aleatorio y sin saber cuál es cuál. Elige la que prefiere (o "iguales") y puntúa la utilidad de cada una de 1 a 5. Todas las versiones usan la misma maquinaria: unidades de 5 s, el mismo corte y codificación, el mismo presupuesto y el mismo modelo de etiquetas. Solo cambia qué se elige.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Formato</th><th>CAVA</th><th>Base U · sin estructura</th><th>Base S · mejor señal sola</th></tr></thead>
@@ -403,6 +458,7 @@ li > ul{margin-top:4px}
   <ul>
     <li><strong>Base U</strong> es la que ganó a CAVA en los datos públicos (EXP-031, 032, 037); es la vara honesta.</li>
     <li><strong>Base S</strong> pone a prueba la tesis: si el consenso multimodal supera a la mejor señal sola.</li>
+    <li><strong>Base T</strong> (propuesta): la segmentación de Opus 5.5 sobre la transcripción (sección anterior), cortada con la misma maquinaria. Mide si CAVA aporta algo sobre un modelo de lenguaje fuerte que solo lee el texto.</li>
     <li><strong>Resultado principal por formato:</strong> tasa de victoria de CAVA frente a U, sin empates, con intervalo por bootstrap sobre videos y participantes.</li>
     <li><strong>Ranking:</strong> Bradley–Terry de CAVA, S y U por formato y por tipo de contenido.</li>
     <li><strong>Tamaño:</strong> ~200 juicios por formato para detectar una preferencia 60 / 40 (potencia 0.8, α 0.05); ~1 000 en total, por ejemplo 20 personas × 50 juicios de ~1 min.</li>
@@ -410,7 +466,7 @@ li > ul{margin-top:4px}
   </section>
 
 <section id="plan">
-  <h2><span class="num">7</span>Plan de la evaluación</h2>
+  <h2><span class="num">8</span>Plan de la evaluación</h2>
 
   <div class="table-wrap"><table>
     <thead><tr><th>Fase</th><th>Trabajo</th><th>Estado</th></tr></thead>
@@ -426,19 +482,21 @@ li > ul{margin-top:4px}
 
 
 <section id="decisiones">
-  <h2><span class="num">8</span>Decisiones pendientes</h2>
+  <h2><span class="num">9</span>Decisiones pendientes</h2>
   <ul>
     <li><strong>Contenido propio:</strong> qué videos se evalúan y quién los etiqueta. Ningún conjunto existente del proyecto se usa para el A/B.</li>
     <li><strong>Participantes:</strong> idioma, cuántas personas para el A/B y cuántas del equipo para etiquetar.</li>
     <li><strong>Base S:</strong> mantenerla (tres sistemas, tesis más fuerte) o solo CAVA frente a U (la mitad de juicios).</li>
+    <li><strong>Base T:</strong> sumar la segmentación por transcripción como tercer sistema de comparación; con cuatro sistemas se pasa de 3 a 6 pares por formato para el ranking.</li>
     <li><strong>Highlights en videos cortos:</strong> con menos de 50 s la versión sale vacía (el 10 % no cabe en una unidad de 5 s). Corregirlo antes de congelar y declararlo en el pre-registro.</li>
   </ul>
 </section>
 
 <section id="evidencia">
-  <h2><span class="num">9</span>Fuentes y evidencia</h2>
+  <h2><span class="num">10</span>Fuentes y evidencia</h2>
   <ul>
     <li>Estado por módulo: <code>docs/progress.md</code></li>
+    <li>Línea base por transcripción: <code>reports/2026-10-23/anexos/visor.html</code></li>
     <li>Resultados de la semana: <code>results/exp037_conf.json</code>, <code>exp038_summe.json</code>; corridas en <code>data/cava_runs_v1_summe/</code> (jobs 56181 y 58144)</li>
     <li>Registro experimental con pre-registros y resultados: <code>docs/EXPERIMENT_LOG.md</code></li>
     <li>Arquitectura: <code>docs/architecture.md</code></li>
