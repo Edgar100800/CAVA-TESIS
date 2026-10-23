@@ -156,6 +156,8 @@ li > ul{margin-top:4px}
     <div class="event"><h3>Inventario del sistema</h3><p>Nuevo <code>docs/progress.md</code>: 26 módulos con su evidencia, qué se puede afirmar por tipo de contenido, los conjuntos con anotación disponibles y los huecos a declarar antes de mostrar el producto a personas.</p></div>
     <div class="day">23 oct</div>
     <div class="event"><h3>Diseño de la evaluación A/B</h3><p>Todos los formatos de clip contra dos líneas base propias, con el mismo presupuesto y la misma maquinaria de corte, sobre contenido propio etiquetado por nosotros. Ver la sección 6.</p></div>
+    <div class="day">23 oct</div>
+    <div class="event"><h3>Conjunto propio identificado</h3><p>Recuperamos el conjunto de prueba de la primera versión de SegLoop (<code>videos_test/</code>, 7 videos de YouTube) y lo unimos a los 3 de <code>test-video/</code>: 10 videos fuera de todo conjunto congelado. Ver la sección 7.</p></div>
   </div>
 </section>
 
@@ -420,28 +422,34 @@ li > ul{margin-top:4px}
 
 <section id="contenido">
   <h2><span class="num">7</span>Contenido propio</h2>
-  <p>El A/B se hace sobre contenido propio, no sobre los conjuntos públicos. Encontramos cinco videos sin anotar descargados por el equipo; los otros videos de YouTube del proyecto pertenecen a VidChapters y ya traen los capítulos del autor.</p>
+  <p>El A/B se hace sobre contenido propio, no sobre los conjuntos públicos. La base es el conjunto de prueba que armamos en la primera versión de SegLoop (Fase 0, 16 de julio de 2026): <code>SegLoop/data/vidchapters/videos_test/</code>, con 5 videos descargados para validar la ingesta y 2 añadidos a mano el 28 de agosto. Se suman los 3 videos de <code>CAVA/test-video/</code>. Son 10 videos y ninguno está en los conjuntos congelados (held-out de SegLoop, blind40).</p>
   <div class="table-wrap"><table>
-    <thead><tr><th>Video</th><th>Tipo</th><th class="n">Duración</th><th>Ubicación</th><th>Corrido en CAVA</th></tr></thead>
+    <thead><tr><th>Video</th><th>Tipo</th><th class="n">Duración</th><th>Origen</th><th>Etiquetas existentes</th><th>Corrido en CAVA</th></tr></thead>
     <tbody>
-      <tr><td>The Wild Project #384 (cLDm1TQOoGQ)</td><td>podcast, español</td><td class="n">2 h 59 min</td><td><code>test-video/videos/</code></td><td>versión previa (demo TF-IDF)</td></tr>
-      <tr><td>Avengers: Endgame, resumen (Zifr_c0dTlc)</td><td>resumen de película, español</td><td class="n">35 min</td><td><code>test-video/Zifr_c0dTlc/</code></td><td>sí, anterior al contrato v1</td></tr>
-      <tr><td>The Last Winter</td><td>película, inglés (con subtítulos)</td><td class="n">1 h 37 min</td><td><code>test-video/videos/</code></td><td>sí, contrato v1</td></tr>
-      <tr><td>Xdxp3lbQKyQ</td><td>YouTube</td><td class="n">43 min</td><td>SegLoop <code>videos_test/</code></td><td>no</td></tr>
-      <tr><td>0tChvDMRLDE</td><td>YouTube</td><td class="n">10 min</td><td>SegLoop <code>videos_test/</code></td><td>no</td></tr>
+      <tr><td>The Wild Project #384 (cLDm1TQOoGQ)</td><td>podcast, español</td><td class="n">2 h 59 min</td><td>CAVA <code>test-video/</code></td><td>ninguna</td><td>versión previa (demo TF-IDF)</td></tr>
+      <tr><td>The Last Winter</td><td>película, inglés</td><td class="n">1 h 37 min</td><td>CAVA <code>test-video/</code></td><td>subtítulos</td><td>sí, contrato v1</td></tr>
+      <tr><td>Xdxp3lbQKyQ</td><td>YouTube (título no registrado)</td><td class="n">43 min</td><td>SegLoop <code>videos_test/</code></td><td>ninguna</td><td>no (solo SegLoop, <code>clips_eval/</code>)</td></tr>
+      <tr><td>Avengers: Endgame, resumen (Zifr_c0dTlc)</td><td>resumen de película, español</td><td class="n">35 min</td><td>CAVA <code>test-video/</code></td><td>ninguna</td><td>sí, anterior al contrato v1</td></tr>
+      <tr><td>Islamic Will, Mufti Abrar Mirza (0h6b3CtcwXg)</td><td>charla</td><td class="n">22 min</td><td>SegLoop <code>videos_test/</code></td><td>capítulos del autor (2)</td><td>no</td></tr>
+      <tr><td>My Oracle Deck Collection (0SFSNGmAeb8)</td><td>vlog / colección</td><td class="n">18 min</td><td>SegLoop <code>videos_test/</code></td><td>capítulos del autor (5)</td><td>no</td></tr>
+      <tr><td>25 Awesome DIY Soap Ideas (0bePOL5E92E)</td><td>tutorial</td><td class="n">13 min</td><td>SegLoop <code>videos_test/</code></td><td>capítulos del autor (5)</td><td>no</td></tr>
+      <tr><td>Life@Fox: A Day in the Life of an Honors Student (0FEw2nG7R-g)</td><td>vlog</td><td class="n">11 min</td><td>SegLoop <code>videos_test/</code></td><td>capítulos del autor (8)</td><td>no</td></tr>
+      <tr><td>0tChvDMRLDE</td><td>YouTube (título no registrado)</td><td class="n">10 min</td><td>SegLoop <code>videos_test/</code></td><td>ninguna</td><td>no (solo SegLoop, <code>clips_eval/</code>)</td></tr>
+      <tr><td>Ryan Adams, Shiver and Shake: tutorial (-sA2zDorx7U)</td><td>tutorial de música</td><td class="n">7 min</td><td>SegLoop <code>videos_test/</code></td><td>capítulos del autor (5)</td><td>no</td></tr>
     </tbody>
   </table></div>
   <ul>
-    <li><strong>Meta:</strong> 10–15 videos, 2–3 por tipo (película o corto, documental, reunión o podcast, charla o tutorial, video de usuario o deporte), de 10 a 40 min, en el idioma de los participantes.</li>
+    <li><strong>Cobertura por tipo:</strong> podcast, película, resumen de película, charla, tutoriales (2), vlogs (2) y 2 videos de YouTube por identificar. Faltan <strong>documental</strong> y <strong>reunión</strong>, los dos perfiles donde CAVA tiene validación más fuerte.</li>
+    <li><strong>Capítulos del autor:</strong> 5 de los videos los traen de VidChapters. Se pueden usar como segunda referencia, pero las etiquetas del A/B son las nuestras.</li>
     <li><strong>Etiquetado propio, antes de ver la salida de CAVA:</strong> capítulos con título (2 anotadores, con acuerdo medido), los 3–5 momentos más importantes y quién habla en cada tramo.</li>
-    <li><strong>Para qué sirve:</strong> una medición automática con nuestras propias etiquetas, que complementa la preferencia del A/B.</li>
+    <li><strong>Corridas:</strong> los 10 se corren de nuevo con el stack congelado en un directorio nuevo, en shards de A6000.</li>
   </ul>
 </section>
 
 <section id="decisiones">
   <h2><span class="num">8</span>Decisiones pendientes</h2>
   <ul>
-    <li><strong>Videos:</strong> confirmar si existe otro conjunto propio de YouTube además de los cinco listados, o completar 10–15 con archivos subidos (las descargas automáticas de YouTube se han rechazado antes).</li>
+    <li><strong>Videos:</strong> confirmar los 10 del conjunto propio y decidir si se añade un documental y una reunión (subidos por el equipo, o un episodio BBC y una reunión AMI re-etiquetados por nosotros).</li>
     <li><strong>Participantes:</strong> idioma, cuántas personas para el A/B y cuántas del equipo para etiquetar.</li>
     <li><strong>Base S:</strong> mantenerla (tres sistemas, tesis más fuerte) o solo CAVA frente a U (la mitad de juicios).</li>
     <li><strong>Defecto de highlights cortos:</strong> corregir antes de congelar, declarándolo en el pre-registro.</li>
