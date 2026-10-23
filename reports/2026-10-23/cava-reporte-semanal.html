@@ -125,22 +125,22 @@ li > ul{margin-top:4px}
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">CAVA · reporte semanal · 16 → 23 de octubre de 2026 · documento en curso</div>
-  <h1>Del registro experimental a la evaluación con personas</h1>
-  <p class="lead">Cerramos las confirmaciones pendientes en SumMe, levantamos un inventario de qué está implementado y qué está validado, y fijamos el diseño de la evaluación A/B con personas. Quedan tres semanas: el stack actual se congela tal como está, y lo que falta probar se mide directamente con usuarios, sobre contenido propio etiquetado por nosotros.</p>
-  <div class="meta"><span>EXP-037 · EXP-038 cerrados</span><span>HEAD 62c8ea0</span><span class="ok">25 tests pasan</span><span>26 módulos · 12 validados</span><span>SumMe 25 / 25 en shards</span><span>A/B: diseño propuesto</span></div>
-  <nav aria-label="Secciones del informe"><a href="#resumen">Resultados</a><a href="#semana">Semana</a><a href="#arquitectura">Implementación</a><a href="#estado">Estado por módulo</a><a href="#sume">SumMe</a><a href="#ab">Evaluación A/B</a><a href="#contenido">Contenido propio</a><a href="#decisiones">Decisiones</a><a href="#evidencia">Evidencia</a></nav>
+  <div class="eyebrow">CAVA · reporte semanal · 16 → 23 de octubre de 2026</div>
+  <h1>Del sistema implementado a la evaluación con personas</h1>
+  <p class="lead">Esta semana cerramos las últimas pruebas automáticas de calidad de clips en SumMe, levantamos el estado de los 26 módulos del sistema y diseñamos la evaluación con personas. Con tres semanas por delante, el sistema se congela tal como está implementado: lo que falta medir es si las versiones de clips de CAVA son preferidas por personas frente a líneas base propias, formato por formato, sobre contenido propio etiquetado por nosotros.</p>
+  <div class="meta"><span>HEAD d51d201</span><span class="ok">25 tests pasan</span><span>26 módulos · 12 validados</span><span>5 formatos de clip</span><span>2 bases propias</span><span>EXP-037 · EXP-038 cerrados</span><span>EXP-040 por pre-registrar</span></div>
+  <nav aria-label="Secciones del informe"><a href="#resumen">Resultados</a><a href="#semana">Semana</a><a href="#sume">SumMe</a><a href="#arquitectura">Implementación</a><a href="#estado">Estado por módulo</a><a href="#ab">Evaluación A/B</a><a href="#plan">Plan</a><a href="#decisiones">Decisiones</a><a href="#evidencia">Evidencia</a></nav>
 </header>
 
 <section id="resumen">
   <h2><span class="num">1</span>Resultados actuales</h2>
   <div class="stats">
-    <div class="stat"><span class="k">Estado del sistema</span><b>12 / 26</b><span>módulos validados con pre-registro y datos no vistos. 3 acotados, 3 parciales, 5 no validados, 1 sin probar; el resto es infraestructura de producto.</span></div>
-    <div class="stat"><span class="k">EXP-037 · regla H3 en SumMe</span><b class="bad">z 0.70</b><span>frente a lo uniforme. La regla tiene la media más alta (0.278), pero ninguna diferencia llega a 2 SE en 25 videos.</span></div>
-    <div class="stat"><span class="k">EXP-038 · política en SumMe</span><b class="bad">−0.265</b><span>recompensa de la política entrenada en TVSum. Peor que elegir al azar (z −2.62): lo aprendido no transfiere.</span></div>
-    <div class="stat"><span class="k">GPU</span><b>14 min</b><span>tardó SumMe en shards de la RTX A6000, tras 4.4 días de cola en la A100.</span></div>
+    <div class="stat"><span class="k">Sistema congelado</span><b>12 / 26</b><span>módulos validados con pre-registro y datos no vistos. 3 acotados, 3 parciales, 5 no validados y 1 sin probar quedan fuera del producto.</span></div>
+    <div class="stat"><span class="k">Formatos a evaluar</span><b>5</b><span>capítulos, recap de 60 s, highlights del 10 %, hilos de tópico e hilos por hablante.</span></div>
+    <div class="stat"><span class="k">Líneas base propias</span><b>2</b><span>U sin estructura (mismo presupuesto, clips equiespaciados) y S con la mejor señal sola (visual).</span></div>
+    <div class="stat"><span class="k">Juicios objetivo</span><b>~1 000</b><span>unos 200 por formato para detectar una preferencia 60 / 40, por ejemplo 20 personas × 50 juicios.</span></div>
   </div>
-  <p>La conclusión de la semana es de método: las referencias automáticas de importancia (TVSum, SumMe) tienen sesgos de posición distintos entre sí, y 75 videos no alcanzan para aprender ni para validar una política de clips. Para el producto, la medición que falta es la preferencia de personas reales.</p>
+  <p>Lo que motiva el cambio: las referencias automáticas de calidad de clips (importancia humana de TVSum y SumMe, capítulos de autor) no distinguen a CAVA de bases simples y tienen sesgos propios, como la posición en el video. La medición que falta es la preferencia directa de personas.</p>
 </section>
 
 <section id="semana">
@@ -156,14 +156,96 @@ li > ul{margin-top:4px}
     <div class="event"><h3>Inventario del sistema</h3><p>Nuevo <code>docs/progress.md</code>: 26 módulos con su evidencia, qué se puede afirmar por tipo de contenido, los conjuntos con anotación disponibles y los huecos a declarar antes de mostrar el producto a personas.</p></div>
     <div class="day">23 oct</div>
     <div class="event"><h3>Diseño de la evaluación A/B</h3><p>Todos los formatos de clip contra dos líneas base propias, con el mismo presupuesto y la misma maquinaria de corte, sobre contenido propio etiquetado por nosotros. Ver la sección 6.</p></div>
-    <div class="day">23 oct</div>
-    <div class="event"><h3>Conjunto propio identificado</h3><p>Recuperamos el conjunto de prueba de la primera versión de SegLoop (<code>videos_test/</code>, 7 videos de YouTube) y lo unimos a los 3 de <code>test-video/</code>: 10 videos fuera de todo conjunto congelado. Ver la sección 7.</p></div>
   </div>
 </section>
 
+<section id="sume">
+  <h2><span class="num">3</span>Confirmaciones en SumMe</h2>
+  <div class="two">
+    <div>
+      <h3>EXP-038 · la política aprendida en TVSum, probada en SumMe</h3>
+      <div class="chart" role="img" aria-label="Recompensa media en SumMe: regla H3 0.278, uniforme 0.156, centro 0.091, azar 0.002, política aprendida −0.265">
+      <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+        <line class="grid" x1="240" y1="14" x2="240" y2="190"/>
+        <line class="grid" x1="320" y1="14" x2="320" y2="190"/>
+        <line class="grid" x1="400" y1="14" x2="400" y2="190"/>
+        <line class="grid" x1="480" y1="14" x2="480" y2="190"/>
+        <line class="grid" x1="560" y1="14" x2="560" y2="190"/>
+        <line class="grid" x1="640" y1="14" x2="640" y2="190"/>
+        <text class="ax" x="240" y="208" text-anchor="middle">−0.2</text>
+        <text class="ax" x="320" y="208" text-anchor="middle">−0.1</text>
+        <text class="ax" x="400" y="208" text-anchor="middle">0</text>
+        <text class="ax" x="480" y="208" text-anchor="middle">0.1</text>
+        <text class="ax" x="560" y="208" text-anchor="middle">0.2</text>
+        <text class="ax" x="640" y="208" text-anchor="middle">0.3</text>
+        <text x="10" y="35">regla H3</text><rect class="bar" x="400" y="22" width="222.4" height="18"/><text class="val" x="628" y="36">0.278</text>
+        <text x="10" y="69">uniforme</text><rect class="bar" x="400" y="56" width="124.8" height="18"/><text class="val" x="531" y="70">0.156</text>
+        <text x="10" y="103">centro del video</text><rect class="bar ref" x="400" y="90" width="72.8" height="18"/><text class="val" x="479" y="104">0.091</text>
+        <text x="10" y="137">al azar</text><rect class="bar" x="400" y="124" width="1.6" height="18"/><text class="val" x="408" y="138">0.002</text>
+        <text x="10" y="171">política aprendida</text><rect class="bar cava" x="188" y="158" width="212" height="18"/><text class="val" x="182" y="172" text-anchor="end">−0.265</text>
+      </svg>
+      </div>
+      <p class="small">25 videos de SumMe; recompensa = z de la fracción de usuarios que eligieron cada segundo. La política fue entrenada con los 50 videos de TVSum, con los hiperparámetros pre-registrados.</p>
+    </div>
+    <div>
+      <h3>Los dos conjuntos premian posiciones distintas</h3>
+      <div class="chart" role="img" aria-label="Importancia media en z por decil de duración. TVSum premia los deciles centrales (hasta +0.31) y castiga los extremos (−0.32 y −0.38). SumMe premia el principio (hasta +0.21 en el tercer decil) y es levemente negativo después de la mitad">
+      <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+        <line class="grid" x1="70" y1="20" x2="680" y2="20"/>
+        <line class="grid" x1="70" y1="67.5" x2="680" y2="67.5"/>
+        <line class="grid" x1="70" y1="115" x2="680" y2="115"/>
+        <line class="grid" x1="70" y1="162.5" x2="680" y2="162.5"/>
+        <line class="grid" x1="70" y1="210" x2="680" y2="210"/>
+        <text class="ax" x="60" y="24" text-anchor="end">+0.4</text>
+        <text class="ax" x="60" y="71" text-anchor="end">+0.2</text>
+        <text class="ax" x="60" y="119" text-anchor="end">0</text>
+        <text class="ax" x="60" y="166" text-anchor="end">−0.2</text>
+        <text class="ax" x="60" y="214" text-anchor="end">−0.4</text>
+        <rect class="bar" x="78" y="115" width="22" height="77"/><rect class="bar cava" x="101" y="85.1" width="22" height="29.9"/>
+        <rect class="bar" x="139" y="115" width="22" height="52.5"/><rect class="bar cava" x="162" y="93.9" width="22" height="21.1"/>
+        <rect class="bar" x="200" y="115" width="22" height="2.9"/><rect class="bar cava" x="223" y="66.3" width="22" height="48.7"/>
+        <rect class="bar" x="261" y="56.3" width="22" height="58.7"/><rect class="bar cava" x="284" y="104.5" width="22" height="10.5"/>
+        <rect class="bar" x="322" y="58.7" width="22" height="56.3"/><rect class="bar cava" x="345" y="115" width="22" height="22.8"/>
+        <rect class="bar" x="383" y="42.6" width="22" height="72.4"/><rect class="bar cava" x="406" y="115" width="22" height="14.7"/>
+        <rect class="bar" x="444" y="73.2" width="22" height="41.8"/><rect class="bar cava" x="467" y="115" width="22" height="24.2"/>
+        <rect class="bar" x="505" y="115" width="22" height="2.9"/><rect class="bar cava" x="528" y="111.4" width="22" height="3.6"/>
+        <rect class="bar" x="566" y="115" width="22" height="4.5"/><rect class="bar cava" x="589" y="115" width="22" height="33"/>
+        <rect class="bar" x="627" y="115" width="22" height="89.5"/><rect class="bar cava" x="650" y="115" width="22" height="15"/>
+        <text class="ax" x="100.5" y="230" text-anchor="middle">1</text>
+        <text class="ax" x="161.5" y="230" text-anchor="middle">2</text>
+        <text class="ax" x="222.5" y="230" text-anchor="middle">3</text>
+        <text class="ax" x="283.5" y="230" text-anchor="middle">4</text>
+        <text class="ax" x="344.5" y="230" text-anchor="middle">5</text>
+        <text class="ax" x="405.5" y="230" text-anchor="middle">6</text>
+        <text class="ax" x="466.5" y="230" text-anchor="middle">7</text>
+        <text class="ax" x="527.5" y="230" text-anchor="middle">8</text>
+        <text class="ax" x="588.5" y="230" text-anchor="middle">9</text>
+        <text class="ax" x="649.5" y="230" text-anchor="middle">10</text>
+        <text class="ax" x="375" y="246" text-anchor="middle">decil de la duración del video</text>
+        <rect class="bar" x="520" y="28" width="12" height="10"/><text x="538" y="37">TVSum</text>
+        <rect class="bar cava" x="600" y="28" width="12" height="10"/><text x="618" y="37">SumMe</text>
+      </svg>
+      </div>
+      <p class="small">TVSum (50 videos) premia la mitad del video; SumMe (25 videos) premia el principio. Una política que aprende "dónde" en un conjunto falla en el otro.</p>
+    </div>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Criterio pre-registrado (SumMe)</th><th class="n">Diferencia</th><th class="n">z</th><th>Veredicto</th></tr></thead>
+    <tbody>
+      <tr><td>EXP-037 · H3 − uniforme</td><td class="n">+0.158 ± 0.225</td><td class="n">0.70</td><td class="v bad">no</td></tr>
+      <tr><td>EXP-037 · H3 − producto (24 videos)</td><td class="n">+0.139 ± 0.226</td><td class="n">0.61</td><td class="v bad">no</td></tr>
+      <tr><td>EXP-037 · H3 − al azar</td><td class="n">+0.269 ± 0.173</td><td class="n">1.55</td><td class="v bad">no</td></tr>
+      <tr><td>EXP-038 · política − uniforme</td><td class="n">−0.421 ± 0.153</td><td class="n">−2.75</td><td class="v bad">no</td></tr>
+      <tr><td>EXP-038 · política − centro</td><td class="n">−0.356 ± 0.152</td><td class="n">−2.34</td><td class="v bad">no</td></tr>
+      <tr><td>EXP-038 · política − H3</td><td class="n">−0.544 ± 0.209</td><td class="n">−2.60</td><td class="v bad">no</td></tr>
+    </tbody>
+  </table></div>
+  <div class="notice"><p><strong>Defecto encontrado:</strong> con videos de menos de 50 s, el 10 % de la duración no cabe en una unidad de 5 s y la versión de highlights sale vacía (Jumps, 38 s). El criterio de EXP-037 contra el producto se calculó sobre los 24 videos restantes; con Jumps en 0 la conclusión es la misma (z 0.58). Se propone corregirlo antes de congelar: al menos una unidad.</p></div>
+</section>
+
 <section id="arquitectura">
-  <h2><span class="num">3</span>Cómo está implementada la solución</h2>
-  <p>Este es el stack que se congela para la evaluación. Las piezas en línea discontinua se evaluaron y no entran en el A/B.</p>
+  <h2><span class="num">4</span>Cómo está implementada la solución</h2>
+  <p>Este es el stack que se congela para la evaluación con personas. Las piezas en línea discontinua se evaluaron y no entran en el A/B.</p>
   <div class="diagram" role="img" aria-label="Flujo de CAVA: preparación, cinco señales independientes, mapa de tópicos por votos, etiquetas e identidades de hablante, versiones y clips, registro para entrenamiento. En discontinuo: nivel de capítulo, filtro de habla y política aprendida, evaluados y no adoptados">
   <svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
     <defs><marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0,0 L8,4 L0,8 z"/></marker></defs>
@@ -263,7 +345,7 @@ li > ul{margin-top:4px}
 </section>
 
 <section id="estado">
-  <h2><span class="num">4</span>Estado por módulo</h2>
+  <h2><span class="num">5</span>Estado por módulo</h2>
   <div class="table-wrap"><table>
     <thead><tr><th>Etapa</th><th>Módulo</th><th>Evidencia</th><th>Estado</th></tr></thead>
     <tbody>
@@ -305,92 +387,8 @@ li > ul{margin-top:4px}
   </table></div>
 </section>
 
-<section id="sume">
-  <h2><span class="num">5</span>Confirmaciones en SumMe</h2>
-  <div class="two">
-    <div>
-      <h3>EXP-038 · la política aprendida en TVSum, probada en SumMe</h3>
-      <div class="chart" role="img" aria-label="Recompensa media en SumMe: regla H3 0.278, uniforme 0.156, centro 0.091, azar 0.002, política aprendida −0.265">
-      <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
-        <line class="grid" x1="240" y1="14" x2="240" y2="190"/>
-        <line class="grid" x1="320" y1="14" x2="320" y2="190"/>
-        <line class="grid" x1="400" y1="14" x2="400" y2="190"/>
-        <line class="grid" x1="480" y1="14" x2="480" y2="190"/>
-        <line class="grid" x1="560" y1="14" x2="560" y2="190"/>
-        <line class="grid" x1="640" y1="14" x2="640" y2="190"/>
-        <text class="ax" x="240" y="208" text-anchor="middle">−0.2</text>
-        <text class="ax" x="320" y="208" text-anchor="middle">−0.1</text>
-        <text class="ax" x="400" y="208" text-anchor="middle">0</text>
-        <text class="ax" x="480" y="208" text-anchor="middle">0.1</text>
-        <text class="ax" x="560" y="208" text-anchor="middle">0.2</text>
-        <text class="ax" x="640" y="208" text-anchor="middle">0.3</text>
-        <text x="10" y="35">regla H3</text><rect class="bar" x="400" y="22" width="222.4" height="18"/><text class="val" x="628" y="36">0.278</text>
-        <text x="10" y="69">uniforme</text><rect class="bar" x="400" y="56" width="124.8" height="18"/><text class="val" x="531" y="70">0.156</text>
-        <text x="10" y="103">centro del video</text><rect class="bar ref" x="400" y="90" width="72.8" height="18"/><text class="val" x="479" y="104">0.091</text>
-        <text x="10" y="137">al azar</text><rect class="bar" x="400" y="124" width="1.6" height="18"/><text class="val" x="408" y="138">0.002</text>
-        <text x="10" y="171">política aprendida</text><rect class="bar cava" x="188" y="158" width="212" height="18"/><text class="val" x="182" y="172" text-anchor="end">−0.265</text>
-      </svg>
-      </div>
-      <p class="small">25 videos de SumMe; recompensa = z de la fracción de usuarios que eligieron cada segundo. La política fue entrenada con los 50 videos de TVSum, con los hiperparámetros pre-registrados.</p>
-    </div>
-    <div>
-      <h3>Los dos conjuntos premian posiciones distintas</h3>
-      <div class="chart" role="img" aria-label="Importancia media en z por decil de duración. TVSum premia los deciles centrales (hasta +0.31) y castiga los extremos (−0.32 y −0.38). SumMe premia el principio (hasta +0.21 en el tercer decil) y es levemente negativo después de la mitad">
-      <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
-        <line class="grid" x1="70" y1="20" x2="680" y2="20"/>
-        <line class="grid" x1="70" y1="67.5" x2="680" y2="67.5"/>
-        <line class="grid" x1="70" y1="115" x2="680" y2="115"/>
-        <line class="grid" x1="70" y1="162.5" x2="680" y2="162.5"/>
-        <line class="grid" x1="70" y1="210" x2="680" y2="210"/>
-        <text class="ax" x="60" y="24" text-anchor="end">+0.4</text>
-        <text class="ax" x="60" y="71" text-anchor="end">+0.2</text>
-        <text class="ax" x="60" y="119" text-anchor="end">0</text>
-        <text class="ax" x="60" y="166" text-anchor="end">−0.2</text>
-        <text class="ax" x="60" y="214" text-anchor="end">−0.4</text>
-        <rect class="bar" x="78" y="115" width="22" height="77"/><rect class="bar cava" x="101" y="85.1" width="22" height="29.9"/>
-        <rect class="bar" x="139" y="115" width="22" height="52.5"/><rect class="bar cava" x="162" y="93.9" width="22" height="21.1"/>
-        <rect class="bar" x="200" y="115" width="22" height="2.9"/><rect class="bar cava" x="223" y="66.3" width="22" height="48.7"/>
-        <rect class="bar" x="261" y="56.3" width="22" height="58.7"/><rect class="bar cava" x="284" y="104.5" width="22" height="10.5"/>
-        <rect class="bar" x="322" y="58.7" width="22" height="56.3"/><rect class="bar cava" x="345" y="115" width="22" height="22.8"/>
-        <rect class="bar" x="383" y="42.6" width="22" height="72.4"/><rect class="bar cava" x="406" y="115" width="22" height="14.7"/>
-        <rect class="bar" x="444" y="73.2" width="22" height="41.8"/><rect class="bar cava" x="467" y="115" width="22" height="24.2"/>
-        <rect class="bar" x="505" y="115" width="22" height="2.9"/><rect class="bar cava" x="528" y="111.4" width="22" height="3.6"/>
-        <rect class="bar" x="566" y="115" width="22" height="4.5"/><rect class="bar cava" x="589" y="115" width="22" height="33"/>
-        <rect class="bar" x="627" y="115" width="22" height="89.5"/><rect class="bar cava" x="650" y="115" width="22" height="15"/>
-        <text class="ax" x="100.5" y="230" text-anchor="middle">1</text>
-        <text class="ax" x="161.5" y="230" text-anchor="middle">2</text>
-        <text class="ax" x="222.5" y="230" text-anchor="middle">3</text>
-        <text class="ax" x="283.5" y="230" text-anchor="middle">4</text>
-        <text class="ax" x="344.5" y="230" text-anchor="middle">5</text>
-        <text class="ax" x="405.5" y="230" text-anchor="middle">6</text>
-        <text class="ax" x="466.5" y="230" text-anchor="middle">7</text>
-        <text class="ax" x="527.5" y="230" text-anchor="middle">8</text>
-        <text class="ax" x="588.5" y="230" text-anchor="middle">9</text>
-        <text class="ax" x="649.5" y="230" text-anchor="middle">10</text>
-        <text class="ax" x="375" y="246" text-anchor="middle">decil de la duración del video</text>
-        <rect class="bar" x="520" y="28" width="12" height="10"/><text x="538" y="37">TVSum</text>
-        <rect class="bar cava" x="600" y="28" width="12" height="10"/><text x="618" y="37">SumMe</text>
-      </svg>
-      </div>
-      <p class="small">TVSum (50 videos) premia la mitad del video; SumMe (25 videos) premia el principio. Una política que aprende "dónde" en un conjunto falla en el otro.</p>
-    </div>
-  </div>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Criterio pre-registrado (SumMe)</th><th class="n">Diferencia</th><th class="n">z</th><th>Veredicto</th></tr></thead>
-    <tbody>
-      <tr><td>EXP-037 · H3 − uniforme</td><td class="n">+0.158 ± 0.225</td><td class="n">0.70</td><td class="v bad">no</td></tr>
-      <tr><td>EXP-037 · H3 − producto (24 videos)</td><td class="n">+0.139 ± 0.226</td><td class="n">0.61</td><td class="v bad">no</td></tr>
-      <tr><td>EXP-037 · H3 − al azar</td><td class="n">+0.269 ± 0.173</td><td class="n">1.55</td><td class="v bad">no</td></tr>
-      <tr><td>EXP-038 · política − uniforme</td><td class="n">−0.421 ± 0.153</td><td class="n">−2.75</td><td class="v bad">no</td></tr>
-      <tr><td>EXP-038 · política − centro</td><td class="n">−0.356 ± 0.152</td><td class="n">−2.34</td><td class="v bad">no</td></tr>
-      <tr><td>EXP-038 · política − H3</td><td class="n">−0.544 ± 0.209</td><td class="n">−2.60</td><td class="v bad">no</td></tr>
-    </tbody>
-  </table></div>
-  <div class="notice"><p><strong>Defecto encontrado:</strong> con videos de menos de 50 s, el 10 % de la duración no cabe en una unidad de 5 s y la versión de highlights sale vacía (Jumps, 38 s). El criterio de EXP-037 contra el producto se calculó sobre los 24 videos restantes; con Jumps en 0 la conclusión es la misma (z 0.58). Se propone corregirlo antes de congelar: al menos una unidad.</p></div>
-</section>
-
 <section id="ab">
-  <h2><span class="num">6</span>Evaluación A/B con personas <span class="small">· diseño propuesto, en construcción</span></h2>
+  <h2><span class="num">6</span>Evaluación A/B con personas <span class="small">· diseño propuesto</span></h2>
   <p>Cada persona ve dos versiones del mismo formato y del mismo video, una al lado de la otra, en orden aleatorio y sin saber cuál es cuál. Elige la que prefiere (o "iguales") y puntúa la utilidad de cada una de 1 a 5. Todas las versiones usan la misma maquinaria: unidades de 5 s, el mismo corte y codificación, el mismo presupuesto y el mismo modelo de etiquetas. Solo cambia qué se elige.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Formato</th><th>CAVA</th><th>Base U · sin estructura</th><th>Base S · mejor señal sola</th></tr></thead>
@@ -409,62 +407,43 @@ li > ul{margin-top:4px}
     <li><strong>Ranking:</strong> Bradley–Terry de CAVA, S y U por formato y por tipo de contenido.</li>
     <li><strong>Tamaño:</strong> ~200 juicios por formato para detectar una preferencia 60 / 40 (potencia 0.8, α 0.05); ~1 000 en total, por ejemplo 20 personas × 50 juicios de ~1 min.</li>
   </ul>
-  <h3>Plan de tres semanas</h3>
+  </section>
+
+<section id="plan">
+  <h2><span class="num">7</span>Plan de tres semanas</h2>
+
   <div class="table-wrap"><table>
     <thead><tr><th>Semana</th><th>Trabajo</th><th>Estado</th></tr></thead>
     <tbody>
-      <tr><td class="mono">23–29 oct</td><td>reunir contenido, implementar las bases U y S, pre-registrar EXP-040, correr CAVA en shards, páginas de etiquetado y de A/B</td><td class="v warn">en curso</td></tr>
+      <tr><td class="mono">23–29 oct</td><td>definir el contenido propio, implementar las bases U y S, pre-registrar EXP-040, correr CAVA en shards, páginas de etiquetado y de A/B</td><td class="v warn">en curso</td></tr>
       <tr><td class="mono">30 oct–5 nov</td><td>etiquetado propio (2 anotadores), piloto con 3 personas, A/B completo</td><td class="v">pendiente</td></tr>
       <tr><td class="mono">6–12 nov</td><td>análisis, ranking y redacción</td><td class="v">pendiente</td></tr>
     </tbody>
   </table></div>
+
 </section>
 
-<section id="contenido">
-  <h2><span class="num">7</span>Contenido propio</h2>
-  <p>El A/B se hace sobre contenido propio, no sobre los conjuntos públicos. La base es el conjunto de prueba que armamos en la primera versión de SegLoop (Fase 0, 16 de julio de 2026): <code>SegLoop/data/vidchapters/videos_test/</code>, con 5 videos descargados para validar la ingesta y 2 añadidos a mano el 28 de agosto. Se suman los 3 videos de <code>CAVA/test-video/</code>. Son 10 videos y ninguno está en los conjuntos congelados (held-out de SegLoop, blind40).</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Video</th><th>Tipo</th><th class="n">Duración</th><th>Origen</th><th>Etiquetas existentes</th><th>Corrido en CAVA</th></tr></thead>
-    <tbody>
-      <tr><td>The Wild Project #384 (cLDm1TQOoGQ)</td><td>podcast, español</td><td class="n">2 h 59 min</td><td>CAVA <code>test-video/</code></td><td>ninguna</td><td>versión previa (demo TF-IDF)</td></tr>
-      <tr><td>The Last Winter</td><td>película, inglés</td><td class="n">1 h 37 min</td><td>CAVA <code>test-video/</code></td><td>subtítulos</td><td>sí, contrato v1</td></tr>
-      <tr><td>Xdxp3lbQKyQ</td><td>YouTube (título no registrado)</td><td class="n">43 min</td><td>SegLoop <code>videos_test/</code></td><td>ninguna</td><td>no (solo SegLoop, <code>clips_eval/</code>)</td></tr>
-      <tr><td>Avengers: Endgame, resumen (Zifr_c0dTlc)</td><td>resumen de película, español</td><td class="n">35 min</td><td>CAVA <code>test-video/</code></td><td>ninguna</td><td>sí, anterior al contrato v1</td></tr>
-      <tr><td>Islamic Will, Mufti Abrar Mirza (0h6b3CtcwXg)</td><td>charla</td><td class="n">22 min</td><td>SegLoop <code>videos_test/</code></td><td>capítulos del autor (2)</td><td>no</td></tr>
-      <tr><td>My Oracle Deck Collection (0SFSNGmAeb8)</td><td>vlog / colección</td><td class="n">18 min</td><td>SegLoop <code>videos_test/</code></td><td>capítulos del autor (5)</td><td>no</td></tr>
-      <tr><td>25 Awesome DIY Soap Ideas (0bePOL5E92E)</td><td>tutorial</td><td class="n">13 min</td><td>SegLoop <code>videos_test/</code></td><td>capítulos del autor (5)</td><td>no</td></tr>
-      <tr><td>Life@Fox: A Day in the Life of an Honors Student (0FEw2nG7R-g)</td><td>vlog</td><td class="n">11 min</td><td>SegLoop <code>videos_test/</code></td><td>capítulos del autor (8)</td><td>no</td></tr>
-      <tr><td>0tChvDMRLDE</td><td>YouTube (título no registrado)</td><td class="n">10 min</td><td>SegLoop <code>videos_test/</code></td><td>ninguna</td><td>no (solo SegLoop, <code>clips_eval/</code>)</td></tr>
-      <tr><td>Ryan Adams, Shiver and Shake: tutorial (-sA2zDorx7U)</td><td>tutorial de música</td><td class="n">7 min</td><td>SegLoop <code>videos_test/</code></td><td>capítulos del autor (5)</td><td>no</td></tr>
-    </tbody>
-  </table></div>
-  <ul>
-    <li><strong>Cobertura por tipo:</strong> podcast, película, resumen de película, charla, tutoriales (2), vlogs (2) y 2 videos de YouTube por identificar. Faltan <strong>documental</strong> y <strong>reunión</strong>, los dos perfiles donde CAVA tiene validación más fuerte.</li>
-    <li><strong>Capítulos del autor:</strong> 5 de los videos los traen de VidChapters. Se pueden usar como segunda referencia, pero las etiquetas del A/B son las nuestras.</li>
-    <li><strong>Etiquetado propio, antes de ver la salida de CAVA:</strong> capítulos con título (2 anotadores, con acuerdo medido), los 3–5 momentos más importantes y quién habla en cada tramo.</li>
-    <li><strong>Corridas:</strong> los 10 se corren de nuevo con el stack congelado en un directorio nuevo, en shards de A6000.</li>
-  </ul>
-</section>
+
 
 <section id="decisiones">
   <h2><span class="num">8</span>Decisiones pendientes</h2>
   <ul>
-    <li><strong>Videos:</strong> confirmar los 10 del conjunto propio y decidir si se añade un documental y una reunión (subidos por el equipo, o un episodio BBC y una reunión AMI re-etiquetados por nosotros).</li>
+    <li><strong>Contenido propio:</strong> qué videos se evalúan y quién los etiqueta. Ningún conjunto existente del proyecto se usa para el A/B.</li>
     <li><strong>Participantes:</strong> idioma, cuántas personas para el A/B y cuántas del equipo para etiquetar.</li>
     <li><strong>Base S:</strong> mantenerla (tres sistemas, tesis más fuerte) o solo CAVA frente a U (la mitad de juicios).</li>
-    <li><strong>Defecto de highlights cortos:</strong> corregir antes de congelar, declarándolo en el pre-registro.</li>
+    <li><strong>Highlights en videos cortos:</strong> con menos de 50 s la versión sale vacía (el 10 % no cabe en una unidad de 5 s). Corregirlo antes de congelar y declararlo en el pre-registro.</li>
   </ul>
 </section>
 
 <section id="evidencia">
   <h2><span class="num">9</span>Fuentes y evidencia</h2>
   <ul>
-    <li>Registro experimental: <code>docs/EXPERIMENT_LOG.md</code> (corrida de SumMe, EXP-037 y EXP-038)</li>
-    <li>Estado por módulo e inventario: <code>docs/progress.md</code></li>
-    <li>Resultados: <code>results/exp037_conf.json</code>, <code>exp038_summe.json</code></li>
-    <li>Corridas: <code>data/cava_runs_v1_summe/</code> (jobs 56181 y 58144; <code>scripts/v1_summe*.sbatch</code>)</li>
+    <li>Estado por módulo: <code>docs/progress.md</code></li>
+    <li>Resultados de la semana: <code>results/exp037_conf.json</code>, <code>exp038_summe.json</code>; corridas en <code>data/cava_runs_v1_summe/</code> (jobs 56181 y 58144)</li>
+    <li>Registro experimental con pre-registros y resultados: <code>docs/EXPERIMENT_LOG.md</code></li>
+    <li>Arquitectura: <code>docs/architecture.md</code></li>
   </ul>
 </section>
 
-<footer>Documento en curso, actualizado el 23 de octubre de 2026 a partir del repositorio CAVA (HEAD 62c8ea0). Se amplía a medida que avanza la evaluación A/B.</footer>
+<footer>Documento en curso, generado el 23 de octubre de 2026 a partir del repositorio CAVA (HEAD d51d201). Se completa a medida que avanza la semana.</footer>
 </div>
