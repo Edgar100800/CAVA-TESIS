@@ -1,0 +1,452 @@
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights:  40%|███▉      | 286/723 [00:00<00:00, 1408.47it/s]Loading weights:  59%|█████▉    | 427/723 [00:00<00:00, 808.52it/s] Loading weights:  89%|████████▉ | 645/723 [00:00<00:00, 1155.13it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 1187.20it/s]
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights: 100%|██████████| 266/266 [00:00<00:00, 2749.60it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/audio_utils.py:723: UserWarning: At least one mel filter has all zero values. The value for `num_mel_filters` (128) may be set too high. Or, the value for `num_frequency_bins` (257) may be set too low.
+  warnings.warn(
+Loading weights:   0%|          | 0/203 [00:00<?, ?it/s]Loading weights: 100%|██████████| 203/203 [00:00<00:00, 4486.71it/s]
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix conf_xkgos__music (307 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix conf_xkgos__noise (323 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix conf_xtdcl__music (112 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix conf_xtdcl__noise (121 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix conf_ylzez__music (345 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix conf_ylzez__noise (379 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix conf_zfzlc__music (306 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix conf_zfzlc__noise (330 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_akthc__music (42 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_akthc__noise (41 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ampme__music (48 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ampme__noise (44 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_bauzd__music (184 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_bauzd__noise (181 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_bkwns__music (15 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_bkwns__noise (13 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_bravd__music (110 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_bravd__noise (103 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_bwzyf__music (28 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_bwzyf__noise (20 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_bxpwa__music (105 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_bxpwa__noise (108 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_cobal__music (19 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_cobal__noise (22 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_cqaec__music (117 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_cqaec__noise (95 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_djngn__music (43 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_djngn__noise (44 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ehpau__music (55 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ehpau__noise (59 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_evtyi__music (421 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_evtyi__noise (438 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_gofnj__music (103 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_gofnj__noise (99 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_gqbvk__music (55 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_gqbvk__noise (47 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_hycgx__music (61 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_hycgx__noise (72 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_imtug__music (40 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_imtug__noise (50 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_iqbww__music (67 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_iqbww__noise (64 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_iwdjy__music (102 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_iwdjy__noise (107 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_jtagk__music (107 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_jtagk__noise (94 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_kdfqk__music (363 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_kdfqk__noise (389 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_kklpv__music (194 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_kklpv__noise (210 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_mesob__music (36 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_mesob__noise (36 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_mjgil__music (68 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_mjgil__noise (73 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ntchr__music (94 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ntchr__noise (107 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_oenox__music (20 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_oenox__noise (20 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_onpra__music (93 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_onpra__noise (66 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=570) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_oxxwk__music (145 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=510) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_oxxwk__noise (145 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_pnook__music (127 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_pnook__noise (122 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ppgjx__music (192 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ppgjx__noise (197 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_qhesr__music (38 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_qhesr__noise (43 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_qvtia__music (152 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_qvtia__noise (159 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_qzwxa__music (52 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_qzwxa__noise (58 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_tguxv__music (66 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=450) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_tguxv__noise (65 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_tiams__music (39 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_tiams__noise (40 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ufpel__music (128 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ufpel__noise (128 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_uvnmy__music (49 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_uvnmy__noise (55 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_xiglo__music (40 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_xiglo__noise (43 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ywcwr__music (43 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_ywcwr__noise (42 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_zajzs__music (50 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_zajzs__noise (45 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_zrlyl__music (206 unidades)
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/generation/utils.py:1638: UserWarning: Using the model-agnostic default `max_length` (=630) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  warnings.warn(
+/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+[cache] domix dev_zrlyl__noise (189 unidades)
+EXP034_CACHE_DONE

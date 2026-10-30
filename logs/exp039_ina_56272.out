@@ -1,0 +1,327 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791816986.570588 2011523 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/edgar.chambilla/.conda/envs/inaseg/lib/python3.10/site-packages/keras/src/layers/reshaping/reshape.py:38: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+E0000 00:00:1791816994.705015 2011523 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+656/656 - 4s - 6ms/step
+[ina] domix conf_aiqwk__music
+674/674 - 4s - 6ms/step
+[ina] domix conf_aiqwk__noise
+3420/3420 - 19s - 6ms/step
+[ina] domix conf_bgvvt__music
+3182/3182 - 18s - 6ms/step
+[ina] domix conf_bgvvt__noise
+2333/2333 - 13s - 6ms/step
+[ina] domix conf_bpzsc__music
+2210/2210 - 12s - 6ms/step
+[ina] domix conf_bpzsc__noise
+321/321 - 2s - 6ms/step
+[ina] domix conf_bxcfq__music
+324/324 - 2s - 6ms/step
+[ina] domix conf_bxcfq__noise
+315/315 - 2s - 6ms/step
+[ina] domix conf_cqfmj__music
+231/231 - 1s - 6ms/step
+[ina] domix conf_cqfmj__noise
+320/320 - 2s - 6ms/step
+[ina] domix conf_cwbvu__music
+342/342 - 2s - 6ms/step
+[ina] domix conf_cwbvu__noise
+397/397 - 2s - 6ms/step
+[ina] domix conf_dxokr__music
+447/447 - 3s - 6ms/step
+[ina] domix conf_dxokr__noise
+303/303 - 2s - 6ms/step
+[ina] domix conf_dzsef__music
+277/277 - 2s - 6ms/step
+[ina] domix conf_dzsef__noise
+475/475 - 3s - 6ms/step
+[ina] domix conf_dzxut__music
+465/465 - 3s - 6ms/step
+[ina] domix conf_dzxut__noise
+2212/2212 - 13s - 6ms/step
+[ina] domix conf_eauve__music
+2275/2275 - 13s - 6ms/step
+[ina] domix conf_eauve__noise
+206/206 - 1s - 6ms/step
+[ina] domix conf_eazeq__music
+200/200 - 1s - 6ms/step
+[ina] domix conf_eazeq__noise
+244/244 - 1s - 6ms/step
+[ina] domix conf_eucfa__music
+133/133 - 1s - 6ms/step
+[ina] domix conf_eucfa__noise
+2216/2216 - 12s - 6ms/step
+[ina] domix conf_fowhl__music
+2072/2072 - 12s - 6ms/step
+[ina] domix conf_fowhl__noise
+2605/2605 - 14s - 6ms/step
+[ina] domix conf_fvhrk__music
+2754/2754 - 15s - 6ms/step
+[ina] domix conf_fvhrk__noise
+1249/1249 - 7s - 6ms/step
+[ina] domix conf_gcfwp__music
+1327/1327 - 8s - 6ms/step
+[ina] domix conf_gcfwp__noise
+3026/3026 - 17s - 6ms/step
+[ina] domix conf_gcvrb__music
+2676/2676 - 15s - 6ms/step
+[ina] domix conf_gcvrb__noise
+822/822 - 5s - 6ms/step
+[ina] domix conf_gmmwm__music
+689/689 - 4s - 6ms/step
+[ina] domix conf_gmmwm__noise
+2449/2449 - 14s - 6ms/step
+[ina] domix conf_gzhwb__music
+2333/2333 - 13s - 6ms/step
+[ina] domix conf_gzhwb__noise
+1021/1021 - 6s - 5ms/step
+[ina] domix conf_ifwki__music
+921/921 - 5s - 6ms/step
+[ina] domix conf_ifwki__noise
+306/306 - 2s - 6ms/step
+[ina] domix conf_isxwc__music
+354/354 - 2s - 6ms/step
+[ina] domix conf_isxwc__noise
+809/809 - 4s - 5ms/step
+[ina] domix conf_laoyl__music
+837/837 - 5s - 6ms/step
+[ina] domix conf_laoyl__noise
+2331/2331 - 13s - 6ms/step
+[ina] domix conf_lkikz__music
+2140/2140 - 12s - 6ms/step
+[ina] domix conf_lkikz__noise
+2127/2127 - 12s - 6ms/step
+[ina] domix conf_lscfc__music
+1852/1852 - 10s - 6ms/step
+[ina] domix conf_lscfc__noise
+229/229 - 1s - 6ms/step
+[ina] domix conf_mqtep__music
+238/238 - 1s - 6ms/step
+[ina] domix conf_mqtep__noise
+458/458 - 3s - 6ms/step
+[ina] domix conf_olzkb__music
+378/378 - 2s - 6ms/step
+[ina] domix conf_olzkb__noise
+2470/2470 - 14s - 6ms/step
+[ina] domix conf_optsn__music
+2361/2361 - 13s - 6ms/step
+[ina] domix conf_optsn__noise
+1778/1778 - 10s - 6ms/step
+[ina] domix conf_ouvtt__music
+2034/2034 - 11s - 6ms/step
+[ina] domix conf_ouvtt__noise
+1902/1902 - 10s - 5ms/step
+[ina] domix conf_pwnsw__music
+1869/1869 - 11s - 6ms/step
+[ina] domix conf_pwnsw__noise
+226/226 - 1s - 6ms/step
+[ina] domix conf_rmvsh__music
+198/198 - 1s - 6ms/step
+[ina] domix conf_rmvsh__noise
+1602/1602 - 9s - 5ms/step
+[ina] domix conf_sexgc__music
+1546/1546 - 8s - 5ms/step
+[ina] domix conf_sexgc__noise
+1013/1013 - 6s - 5ms/step
+[ina] domix conf_sxqvt__music
+944/944 - 5s - 6ms/step
+[ina] domix conf_sxqvt__noise
+259/259 - 1s - 6ms/step
+[ina] domix conf_tnjoh__music
+180/180 - 1s - 6ms/step
+[ina] domix conf_tnjoh__noise
+1212/1212 - 7s - 6ms/step
+[ina] domix conf_tvtoe__music
+1110/1110 - 6s - 5ms/step
+[ina] domix conf_tvtoe__noise
+2340/2340 - 13s - 6ms/step
+[ina] domix conf_vtzqw__music
+1743/1743 - 10s - 6ms/step
+[ina] domix conf_vtzqw__noise
+3589/3589 - 20s - 5ms/step
+[ina] domix conf_wprog__music
+2924/2924 - 16s - 6ms/step
+[ina] domix conf_wprog__noise
+2047/2047 - 12s - 6ms/step
+[ina] domix conf_xffsa__music
+1851/1851 - 10s - 6ms/step
+[ina] domix conf_xffsa__noise
+2337/2337 - 14s - 6ms/step
+[ina] domix conf_xkgos__music
+2382/2382 - 13s - 6ms/step
+[ina] domix conf_xkgos__noise
+844/844 - 5s - 6ms/step
+[ina] domix conf_xtdcl__music
+915/915 - 5s - 5ms/step
+[ina] domix conf_xtdcl__noise
+2649/2649 - 15s - 6ms/step
+[ina] domix conf_ylzez__music
+2845/2845 - 16s - 6ms/step
+[ina] domix conf_ylzez__noise
+2363/2363 - 13s - 6ms/step
+[ina] domix conf_zfzlc__music
+2393/2393 - 14s - 6ms/step
+[ina] domix conf_zfzlc__noise
+327/327 - 2s - 6ms/step
+[ina] domix dev_akthc__music
+309/309 - 2s - 6ms/step
+[ina] domix dev_akthc__noise
+371/371 - 2s - 6ms/step
+[ina] domix dev_ampme__music
+299/299 - 2s - 6ms/step
+[ina] domix dev_ampme__noise
+1384/1384 - 8s - 6ms/step
+[ina] domix dev_bauzd__music
+1224/1224 - 7s - 6ms/step
+[ina] domix dev_bauzd__noise
+114/114 - 1s - 6ms/step
+[ina] domix dev_bkwns__music
+95/95 - 1s - 6ms/step
+[ina] domix dev_bkwns__noise
+853/853 - 5s - 6ms/step
+[ina] domix dev_bravd__music
+754/754 - 4s - 6ms/step
+[ina] domix dev_bravd__noise
+218/218 - 1s - 6ms/step
+[ina] domix dev_bwzyf__music
+140/140 - 1s - 6ms/step
+[ina] domix dev_bwzyf__noise
+814/814 - 5s - 6ms/step
+[ina] domix dev_bxpwa__music
+800/800 - 4s - 5ms/step
+[ina] domix dev_bxpwa__noise
+145/145 - 1s - 6ms/step
+[ina] domix dev_cobal__music
+157/157 - 1s - 6ms/step
+[ina] domix dev_cobal__noise
+884/884 - 5s - 6ms/step
+[ina] domix dev_cqaec__music
+658/658 - 4s - 5ms/step
+[ina] domix dev_cqaec__noise
+334/334 - 2s - 6ms/step
+[ina] domix dev_djngn__music
+319/319 - 2s - 6ms/step
+[ina] domix dev_djngn__noise
+425/425 - 2s - 6ms/step
+[ina] domix dev_ehpau__music
+420/420 - 2s - 6ms/step
+[ina] domix dev_ehpau__noise
+3235/3235 - 18s - 6ms/step
+[ina] domix dev_evtyi__music
+2974/2974 - 16s - 5ms/step
+[ina] domix dev_evtyi__noise
+806/806 - 4s - 5ms/step
+[ina] domix dev_gofnj__music
+736/736 - 4s - 6ms/step
+[ina] domix dev_gofnj__noise
+423/423 - 2s - 6ms/step
+[ina] domix dev_gqbvk__music
+353/353 - 2s - 6ms/step
+[ina] domix dev_gqbvk__noise
+465/465 - 3s - 6ms/step
+[ina] domix dev_hycgx__music
+529/529 - 3s - 6ms/step
+[ina] domix dev_hycgx__noise
+307/307 - 2s - 6ms/step
+[ina] domix dev_imtug__music
+369/369 - 2s - 6ms/step
+[ina] domix dev_imtug__noise
+524/524 - 3s - 6ms/step
+[ina] domix dev_iqbww__music
+457/457 - 3s - 6ms/step
+[ina] domix dev_iqbww__noise
+779/779 - 4s - 6ms/step
+[ina] domix dev_iwdjy__music
+710/710 - 4s - 6ms/step
+[ina] domix dev_iwdjy__noise
+806/806 - 5s - 6ms/step
+[ina] domix dev_jtagk__music
+665/665 - 4s - 6ms/step
+[ina] domix dev_jtagk__noise
+2732/2732 - 15s - 6ms/step
+[ina] domix dev_kdfqk__music
+2627/2627 - 14s - 5ms/step
+[ina] domix dev_kdfqk__noise
+1488/1488 - 8s - 6ms/step
+[ina] domix dev_kklpv__music
+1526/1526 - 8s - 5ms/step
+[ina] domix dev_kklpv__noise
+270/270 - 2s - 6ms/step
+[ina] domix dev_mesob__music
+279/279 - 2s - 6ms/step
+[ina] domix dev_mesob__noise
+525/525 - 3s - 6ms/step
+[ina] domix dev_mjgil__music
+501/501 - 3s - 6ms/step
+[ina] domix dev_mjgil__noise
+727/727 - 4s - 6ms/step
+[ina] domix dev_ntchr__music
+792/792 - 4s - 6ms/step
+[ina] domix dev_ntchr__noise
+158/158 - 1s - 6ms/step
+[ina] domix dev_oenox__music
+151/151 - 1s - 6ms/step
+[ina] domix dev_oenox__noise
+718/718 - 4s - 6ms/step
+[ina] domix dev_onpra__music
+486/486 - 3s - 6ms/step
+[ina] domix dev_onpra__noise
+1121/1121 - 6s - 6ms/step
+[ina] domix dev_oxxwk__music
+1093/1093 - 6s - 6ms/step
+[ina] domix dev_oxxwk__noise
+958/958 - 5s - 6ms/step
+[ina] domix dev_pnook__music
+902/902 - 5s - 6ms/step
+[ina] domix dev_pnook__noise
+1476/1476 - 8s - 6ms/step
+[ina] domix dev_ppgjx__music
+1370/1370 - 8s - 6ms/step
+[ina] domix dev_ppgjx__noise
+294/294 - 2s - 6ms/step
+[ina] domix dev_qhesr__music
+328/328 - 2s - 6ms/step
+[ina] domix dev_qhesr__noise
+1172/1172 - 6s - 6ms/step
+[ina] domix dev_qvtia__music
+1002/1002 - 6s - 6ms/step
+[ina] domix dev_qvtia__noise
+404/404 - 2s - 6ms/step
+[ina] domix dev_qzwxa__music
+441/441 - 2s - 6ms/step
+[ina] domix dev_qzwxa__noise
+496/496 - 3s - 5ms/step
+[ina] domix dev_tguxv__music
+498/498 - 3s - 6ms/step
+[ina] domix dev_tguxv__noise
+300/300 - 2s - 6ms/step
+[ina] domix dev_tiams__music
+255/255 - 1s - 6ms/step
+[ina] domix dev_tiams__noise
+973/973 - 5s - 6ms/step
+[ina] domix dev_ufpel__music
+911/911 - 5s - 5ms/step
+[ina] domix dev_ufpel__noise
+382/382 - 2s - 6ms/step
+[ina] domix dev_uvnmy__music
+359/359 - 2s - 6ms/step
+[ina] domix dev_uvnmy__noise
+305/305 - 2s - 6ms/step
+[ina] domix dev_xiglo__music
+305/305 - 2s - 5ms/step
+[ina] domix dev_xiglo__noise
+329/329 - 2s - 6ms/step
+[ina] domix dev_ywcwr__music
+310/310 - 2s - 6ms/step
+[ina] domix dev_ywcwr__noise
+387/387 - 2s - 6ms/step
+[ina] domix dev_zajzs__music
+338/338 - 2s - 6ms/step
+[ina] domix dev_zajzs__noise
+1561/1561 - 9s - 6ms/step
+[ina] domix dev_zrlyl__music
+1346/1346 - 8s - 6ms/step
+[ina] domix dev_zrlyl__noise
+EXP034_INA_DONE

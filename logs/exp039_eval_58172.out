@@ -1,0 +1,132 @@
+[dev] spread: τ 0.983 {'single_k1': 0.2, 'false_k2': 0.017361111111111112}
+[dev] q15: τ 0.975 {'single_k1': 0.075, 'false_k2': 0.0}
+[dev] minor: τ 0.965 {'single_k1': 0.15, 'false_k2': 0.003472222222222222}
+[dev] bic12: τ -3.0876778410613808 {'single_k1': 0.175, 'false_k2': 0.010416666666666666}
+[dev] nme: τ None {'single_k1': 0.3, 'false_k2': 0.1076388888888889}
+[dev] elegido: spread
+{
+ "dev": {
+  "n": {
+   "k1": 60,
+   "k2": 144
+  },
+  "candidates": {
+   "spread": {
+    "tau": 0.983,
+    "single_k1": 0.2,
+    "false_k2": 0.017361111111111112,
+    "objective": 0.1826388888888889,
+    "meets": true
+   },
+   "q15": {
+    "tau": 0.975,
+    "single_k1": 0.075,
+    "false_k2": 0.0,
+    "objective": 0.075,
+    "meets": true
+   },
+   "minor": {
+    "tau": 0.965,
+    "single_k1": 0.15,
+    "false_k2": 0.003472222222222222,
+    "objective": 0.14652777777777778,
+    "meets": true
+   },
+   "bic12": {
+    "tau": -3.0876778410613808,
+    "single_k1": 0.175,
+    "false_k2": 0.010416666666666666,
+    "objective": 0.16458333333333333,
+    "meets": true
+   },
+   "nme": {
+    "tau": null,
+    "single_k1": 0.3,
+    "false_k2": 0.1076388888888889,
+    "objective": 0.1923611111111111,
+    "meets": false
+   }
+  }
+ },
+ "chosen": "spread",
+ "W": {
+  "single_k1": 0.13043478260869565,
+  "false_docmix": 0.0,
+  "false_domix": 0.025,
+  "bbc_single": 0
+ },
+ "n_conf": {
+  "docmix_k1": 46,
+  "docmix_k2": 54,
+  "domix": 80,
+  "ami": 40,
+  "bbc": 11
+ },
+ "confirm": {
+  "S&W": {
+   "c1_single_minus_W": {
+    "mean": -0.021739130434782608,
+    "se": 0.05806152354785545,
+    "z": -0.37441543222448836,
+    "n": 46
+   },
+   "c1_pass": false,
+   "single_k1": 0.10869565217391304,
+   "single_k1_by_cond": {
+    "music": 0.13636363636363635,
+    "noise": 0.08333333333333333
+   },
+   "c2_false": 0.018518518518518517,
+   "c2_false_ids": [
+    "conf_mjmgr__music"
+   ],
+   "c3_false": 0.0,
+   "c3_false_ids": [],
+   "c4_ami_single": [],
+   "bbc_single": [
+    "bbc_07",
+    "bbc_09"
+   ],
+   "c2_pass": true,
+   "c3_pass": true,
+   "c4_pass": true,
+   "pass_039": false
+  },
+  "I&W": {
+   "c1_single_minus_W": {
+    "mean": 0.0,
+    "se": 0.062166987216020916,
+    "z": 0.0,
+    "n": 46
+   },
+   "c1_pass": false,
+   "single_k1": 0.13043478260869565,
+   "single_k1_by_cond": {
+    "music": 0.13636363636363635,
+    "noise": 0.125
+   },
+   "c2_false": 0.018518518518518517,
+   "c2_false_ids": [
+    "conf_mjmgr__music"
+   ],
+   "c3_false": 0.0,
+   "c3_false_ids": [],
+   "c4_ami_single": [],
+   "bbc_single": [],
+   "c2_pass": true,
+   "c3_pass": true,
+   "c4_pass": true,
+   "pass_039": false
+  }
+ }
+}
+spread  S&W  K1 0.109 (z -0.37441543222448836) falsos docmix 0.019 domix 0.000 ami 0 bbc 2/11 pass False
+spread  I&W  K1 0.130 (z 0.0) falsos docmix 0.019 domix 0.000 ami 0 bbc 0/11 pass False
+q15     S&W  K1 0.087 (z -1.0000000000000002) falsos docmix 0.000 domix 0.000 ami 0 bbc 0/11 pass False
+q15     I&W  K1 0.152 (z 0.3744154322244883) falsos docmix 0.000 domix 0.000 ami 0 bbc 0/11 pass False
+minor   S&W  K1 0.109 (z -0.44329059342415617) falsos docmix 0.000 domix 0.000 ami 0 bbc 2/11 pass False
+minor   I&W  K1 0.130 (z 0.0) falsos docmix 0.000 domix 0.000 ami 0 bbc 1/11 pass False
+bic12   S&W  K1 0.043 (z -2.070196678027062) falsos docmix 0.000 domix 0.000 ami 0 bbc 0/11 pass False
+bic12   I&W  K1 0.065 (z -1.3537278845914205) falsos docmix 0.000 domix 0.025 ami 0 bbc 0/11 pass False
+nme     S&W  K1 0.457 (z 3.486382357799832) falsos docmix 0.019 domix 0.050 ami 1 bbc 11/11 pass True
+nme     I&W  K1 0.522 (z 4.089032096503833) falsos docmix 0.056 domix 0.062 ami 1 bbc 2/11 pass False
