@@ -1,8 +1,8 @@
 \chapter{RESULTADOS}
 
-Este capítulo reporta el estado experimental de CAVA al congelar el sistema (commit
-\texttt{d51d201}, 25 pruebas automatizadas en verde). Los números provienen de corridas
-completas guardadas en \texttt{results/} y del registro de experimentos EXP-009 a EXP-039.
+Este capítulo reporta el estado experimental de CAVA al congelar el sistema. Los números
+provienen de corridas completas y del registro de experimentos EXP-009 a EXP-039. La
+Tabla~\ref{tab:glosario} del Anexo~C define los nombres de las variantes comparadas.
 
 \section{Experimentos y resultados}
 
@@ -37,23 +37,23 @@ evaluó en el split de test de 47 películas de MovieNet (Tabla~\ref{tab:exp018}
         \hline
         \textbf{Sistema} & \textbf{MCC} & \textbf{N.$^{\circ}$ tópicos} & \textbf{Tasa de enlace} \\
         \hline
-        \texttt{cava\_abst} (enlace promedio y abstención) & \textbf{0.0113} & 139.4 & 0.044 \\
-        \texttt{cava\_abst\_r95} (percentil de retorno 95) & 0.0115 & 216.7 & 0.020 \\
-        \texttt{cava} (componentes, sin abstención) & 0.0090 & 4.0 & 0.990 \\
-        \texttt{cava\_avg} (enlace promedio, sin abstención) & 0.0083 & 90.7 & 0.054 \\
+        CAVA (enlace promedio y abstención) & \textbf{0.0113} & 139.4 & 0.044 \\
+        CAVA, percentil de retorno 95 & 0.0115 & 216.7 & 0.020 \\
+        CAVA-comp (componentes, sin abstención) & 0.0090 & 4.0 & 0.990 \\
+        CAVA-prom (enlace promedio, sin abstención) & 0.0083 & 90.7 & 0.054 \\
         visual sola & \underline{0.0195} & 56.6 & 0.248 \\
         VLM sola & 0.0079 & 32.4 & 0.159 \\
-        \texttt{fused} (concatenación de señales) & 0.0053 & 39.7 & 0.197 \\
+        Fusión (concatenación de señales) & 0.0053 & 39.7 & 0.197 \\
         diálogo sola & 0.0053 & 81.4 & 0.331 \\
-        \texttt{contiguous} (gestor sin retornos) & 0.0045 & 86.0 & 0.001 \\
+        Contiguo (gestor sin retornos) & 0.0045 & 86.0 & 0.001 \\
         \hline
     \end{tabular}
 \end{table}
 
-El criterio pre-registrado se cumplió: MCC(\texttt{cava\_abst}) $-$ MCC(\texttt{fused})
+El criterio pre-registrado se cumplió: MCC(CAVA) $-$ MCC(Fusión)
 $= +0.0060 \pm 0.0024$ ($z = 2.46$), y frente al gestor contiguo la diferencia es $+0.0068
 \pm 0.0027$ ($z = 2.48$). La Tabla~\ref{tab:ablacion} y la Figura~\ref{fig:ablacion}
-separan las dos diferencias entre \texttt{cava\_abst} y \texttt{fused}. Sin abstención, no
+separan las dos diferencias entre CAVA y Fusión. Sin abstención, no
 fusionar las señales no basta para superar a la fusión: la diferencia es de $z = 0.80$ con
 componentes conexas y de $z = 1.11$ con enlace promedio. La abstención agrega $+0.0030$
 sobre el enlace promedio ($z = 1.78$), y solo la combinación de las dos cruza el umbral. Como
@@ -71,72 +71,62 @@ depende de no fusionar, aunque por una vía indirecta.
         \hline
         \textbf{Comparación} & \textbf{Diferencia de MCC} & $z$ \\
         \hline
-        \texttt{cava\_abst} $-$ \texttt{fused} (pre-registrada) & $+0.0060 \pm 0.0024$ & 2.46 \\
-        \texttt{cava\_abst} $-$ \texttt{contiguous} & $+0.0068 \pm 0.0027$ & 2.48 \\
-        \texttt{cava} $-$ \texttt{fused} & $+0.0037 \pm 0.0046$ & 0.80 \\
-        \texttt{cava\_avg} $-$ \texttt{fused} & $+0.0031 \pm 0.0028$ & 1.11 \\
-        \texttt{cava\_abst} $-$ \texttt{cava\_avg} & $+0.0030 \pm 0.0017$ & 1.78 \\
-        \texttt{cava\_abst} $-$ visual sola & $-0.0082 \pm 0.0030$ & $-2.74$ \\
+        CAVA $-$ Fusión (pre-registrada) & $+0.0060 \pm 0.0024$ & 2.46 \\
+        CAVA $-$ Contiguo & $+0.0068 \pm 0.0027$ & 2.48 \\
+        CAVA-comp $-$ Fusión & $+0.0037 \pm 0.0046$ & 0.80 \\
+        CAVA-prom $-$ Fusión & $+0.0031 \pm 0.0028$ & 1.11 \\
+        CAVA $-$ CAVA-prom & $+0.0030 \pm 0.0017$ & 1.78 \\
+        CAVA $-$ visual sola & $-0.0082 \pm 0.0030$ & $-2.74$ \\
         \hline
     \end{tabular}
 \end{table}
 
 \begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[
-  xbar, width=0.82\textwidth, height=6.2cm,
-  xlabel={Diferencia de MCC por película (barra: $\pm 1.96$ EE)},
-  symbolic y coords={absvis,abscava,avgfus,cavafus,abscont,absfus},
-  ytick=data,
-  yticklabels={\texttt{cava\_abst} $-$ visual, \texttt{cava\_abst} $-$ \texttt{cava\_avg},
-               \texttt{cava\_avg} $-$ \texttt{fused}, \texttt{cava} $-$ \texttt{fused},
-               \texttt{cava\_abst} $-$ \texttt{contiguous}, \texttt{cava\_abst} $-$ \texttt{fused}},
-  yticklabel style={font=\footnotesize},
-  xmin=-0.016, xmax=0.016,
-  xtick={-0.015,-0.01,-0.005,0,0.005,0.01,0.015},
-  xticklabel style={font=\footnotesize, /pgf/number format/fixed,
-                     /pgf/number format/precision=3},
-  scaled x ticks=false,
-  bar width=7pt, enlarge y limits=0.12,
-  extra x ticks={0}, extra x tick labels={},
-  extra x tick style={grid=major, major grid style={black!50}},
-]
-\addplot[fill=cyan!35, draw=black!60,
-  error bars/.cd, x dir=both, x explicit]
-  coordinates {
-    (-0.0082,absvis)  +- (0.0059,0)
-    (0.0030,abscava)  +- (0.0033,0)
-    (0.0031,avgfus)   +- (0.0055,0)
-    (0.0037,cavafus)  +- (0.0090,0)
-    (0.0068,abscont)  +- (0.0053,0)
-    (0.0060,absfus)   +- (0.0047,0)
-  };
-\end{axis}
-\end{tikzpicture}
-\caption{Diferencias pareadas de MCC en el test de MovieNet (47 películas). Solo las
-comparaciones de \texttt{cava\_abst} con \texttt{fused} y con \texttt{contiguous} quedan por
-encima de cero; la señal visual sola supera a \texttt{cava\_abst}.}
+\centering
+\includegraphics[width=0.9\textwidth]{generadas/r0_ablacion_exp018}
+\caption{Diferencias pareadas de MCC en el test de MovieNet (47 películas), con intervalos de $\pm 1.96$ errores estándar. Solo las comparaciones de CAVA con Fusión y con Contiguo quedan por encima de cero; la señal visual sola supera a CAVA.}
 \label{fig:ablacion}
-\end{center}
 \end{figure}
 
 Los valores absolutos de MCC son bajos (alrededor de 0.01) porque el proxy de reparto mide
 coaparición de personajes y no tópicos, y porque la tasa de pares positivos es alta. La señal
 visual sola obtiene un MCC mayor que el consenso ($z = -2.74$ para la diferencia), lo que
 indica que, en este proxy, las otras señales restan más de lo que aportan. En precisión de
-enlace frente a la tasa base de pares positivos, \texttt{cava\_abst} supera a la base por
-$+0.026$ ($z = 5.59$), la visual sola por $+0.016$ ($z = 4.31$) y \texttt{fused} por $+0.005$
+enlace frente a la tasa base de pares positivos, CAVA supera a la base por $+0.026$ ($z =
+5.59$), la visual sola por $+0.016$ ($z = 4.31$) y Fusión por $+0.005$
 ($z = 1.95$). Lo que el consenso agrega sobre la señal visual sola es estructural: la
 abstención elimina la percolación (de 4 a 139 tópicos y de 0.99 a 0.04 de tasa de enlace) y
 cada grupo declara qué señales lo sostienen.
+La Figura~\ref{fig:r1} muestra la comparación película por película, y la
+Figura~\ref{fig:r2} ubica cada variante según el número de tópicos y la tasa de enlace.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{generadas/r1_mcc_por_pelicula}
+\caption{MCC por película en el test de MovieNet. Cada punto es una película; sobre la diagonal, CAVA obtiene más que la base. Frente a Fusión, CAVA es mayor en 30 de 47 películas; frente a la señal visual sola, en 17.}
+\label{fig:r1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{generadas/r2_topicos_vs_enlace}
+\caption{Número de tópicos frente a tasa de enlace para todas las variantes de EXP-018 (escalas logarítmicas). CAVA-comp percola: casi todos los pares quedan unidos en unos 4 tópicos. CAVA, con abstención, produce muchos tópicos pequeños con una tasa de enlace de 0.04; el gestor contiguo casi no enlaza.}
+\label{fig:r2}
+\end{figure}
 
 La compuerta G-coherencia se cumplió en las 47 películas: el margen intra$-$inter de
-\texttt{cava\_abst} es positivo en todas para las tres señales, con medias de $+0.053$
+CAVA es positivo en todas para las tres señales, con medias de $+0.053$
 (visual), $+0.018$ (diálogo) y $+0.121$ (VLM), frente a $+0.027$, $+0.007$ y $+0.067$ de la
 fusión. El gestor contiguo tiene márgenes mayores ($+0.067$, $+0.049$ y $+0.155$), lo que es
 esperable porque sus grupos están formados solo por unidades vecinas, que se parecen más
 entre sí.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{generadas/r3_coherencia}
+\caption{Margen de coherencia intra$-$inter medio por señal en el test de MovieNet, para CAVA, CAVA-prom, Fusión y el gestor contiguo.}
+\label{fig:r3}
+\end{figure}
 
 \subsection{Perfiles de contenido y ajuste de fronteras}
 
@@ -149,18 +139,33 @@ sistemático. En reuniones (AMI), el perfil de reunión iguala a la partición c
 $+0.075$ ($z = 2.32$). En este dominio la estructura temática es casi contigua, y el sistema
 devuelve pocos enlaces no contiguos.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{generadas/r8_bbc_documental}
+\caption{Perfil de documental en BBC Planet Earth (confirmación) según el percentil de corte. Las líneas horizontales marcan el acuerdo entre los 5 anotadores; con el percentil 90, elegido en desarrollo, la estructura alcanza el 62\,\% de ese acuerdo.}
+\label{fig:r8}
+\end{figure}
+
 \subsection{Voz: votante, identidad y hablante único}
 
 Como votante de tópico, la voz distingue pares de unidades con el mismo hablante con un AUC
 de 0.72 a 0.74, frente a 0.55 de la señal visual (EXP-020a). La identidad de hablante
 (WavLM-sv, Ward y BIC) supera a la agrupación por apariencia: ARI 0.186 frente a 0.038 en
 desarrollo de AMI, con una especificidad de las identidades publicadas del 85\,\% (69 de 81,
-$p \approx 0$, binomial). Con los filtros de habla entrenados, la identidad de voz llega a ARI
-0.64 en VoxConverse y 0.73 en AMI (desde 0.25 y 0.29). El detector de hablante único no da
+$p \approx 0$, binomial). Al reemplazar los descriptores de log-mel y tono por embeddings de
+hablante WavLM-sv (EXP-028), el ARI sube de 0.25 a 0.63 en VoxConverse y de 0.29 a 0.73 en
+AMI. El detector de hablante único no da
 falsos positivos en 40 reuniones de AMI, pero tampoco detecta al narrador en ninguno de los
 11 episodios de BBC; por eso el perfil de documental publica grupos acústicos y no personas.
 La compuerta de AMI con el mapa completo resultó no inferior a la configuración base
 ($-0.007 \pm 0.009$, dentro del margen).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{generadas/r5_identidad_voz}
+\caption{Identidad de hablante con descriptores de log-mel y tono frente a embeddings WavLM-sv (EXP-028). A la izquierda, ARI por archivo en el test de VoxConverse; a la derecha, ARI medio en VoxConverse y en AMI.}
+\label{fig:r5}
+\end{figure}
 
 EXP-039 probó cinco detectores alternativos del hablante único sobre habla filtrada. En
 desarrollo se eligió el de dispersión (\emph{spread}) con $\tau = 0.983$. En confirmación,
@@ -178,6 +183,13 @@ películas de MovieNet, 80 de 80 reuniones de AMI, 90 de 90 corridas del contrat
 videos web de VidChapters blind40 y los 50 de TVSum), 25 de 25 videos de SumMe y los 9 videos
 del conjunto A/B. G-versión verifica existencia y presupuesto, no calidad percibida.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{generadas/r6_presupuestos_gversion}
+\caption{Duración de cada lista de reproducción dividida por su presupuesto en las 58 películas de MovieNet. Todas quedan en o por debajo de la línea de presupuesto.}
+\label{fig:r6}
+\end{figure}
+
 \subsection{Enlaces no contiguos (G-enlace)}
 
 El primer lote de revisión con juez modelo dio 83\,\% frente a 63\,\% (Fisher $p = 0.072$),
@@ -187,6 +199,13 @@ frente a 65\,\% ($p = 0.72$), de modo que G-enlace-2 no se cumple. La revisión 
 indica que los enlaces de CAVA capturan continuidad de personajes y situaciones, que el juez
 reconoce, pero no la continuidad narrativa que exige un juez de trama. Por eso los retornos se
 presentan como reagrupación temática con procedencia y no como tramas.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{generadas/r7_genlace}
+\caption{Fracción de casos juzgados como el mismo hilo para los enlaces de CAVA y para controles al azar, con intervalos de Wilson al 95\,\%. La diferencia del primer lote desaparece en el segundo, pre-registrado y con el protocolo corregido.}
+\label{fig:r7}
+\end{figure}
 
 \subsection{Calidad automática de clips (EXP-031, EXP-037 y EXP-038)}
 
@@ -206,6 +225,13 @@ Con estas referencias, la importancia humana de TVSum y SumMe y los capítulos d
 distingue a CAVA de las bases simples, porque cada referencia tiene su propio sesgo de
 posición.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{generadas/r4_clips_posicion}
+\caption{Izquierda: importancia media por decil de la duración del video en TVSum y en SumMe; cada conjunto premia una zona distinta. Derecha: recompensa media en SumMe de la regla H3, las bases y la política aprendida en TVSum.}
+\label{fig:r4}
+\end{figure}
+
 \subsection{Video web (EXP-032) y nivel de capítulo (EXP-033)}
 
 Contra los capítulos de autor de VidChapters blind40, CAVA no supera a los cortes uniformes
@@ -224,6 +250,13 @@ hablantes ($-0.039$) y es no inferior en MCC de AMI ($+0.015$, $z = 0.45$), pero
 veces más habla (6.0\,\% frente a 1.5\,\%, fuera del margen de $+0.02$). Whisper large-v3 se
 mantiene como transcriptor del producto.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{generadas/r10_asr}
+\caption{Whisper large-v3 frente a Parakeet TDT 0.6B v3 (EXP-030): fracción de habla omitida, tasa de habla falsa y MCC del mapa en AMI.}
+\label{fig:r10}
+\end{figure}
+
 \subsection{Evaluación con personas (EXP-040): estado}
 
 El diseño compara, formato por formato, las versiones de CAVA con dos bases propias que
@@ -239,15 +272,21 @@ sobre videos y participantes, y el ranking se estima con un modelo de Bradley--T
 0.05$ se necesitan unos 200 juicios por formato, cerca de 1000 en total.
 
 Al cierre de este documento, el conjunto de 9 videos está descargado y verificado, CAVA se
-ejecutó sobre los 9 con el sistema congelado (G-versión 9/9, sin cambios locales en el
-repositorio), la base T está generada para los 9 videos y la página de etiquetado ciego está
+ejecutó sobre los 9 con el sistema congelado (G-versión 9/9), la base T está generada para los 9 videos y la página de etiquetado ciego está
 lista. Quedan pendientes el pre-registro, el etiquetado propio, el piloto y la evaluación
 completa.
 
 \subsection{Inventario del sistema}
 
-La Tabla~\ref{tab:inventario} resume el estado de los 26 módulos del pipeline al congelarlo.
-El detalle de cada fila, con la evidencia que la respalda, está en \texttt{docs/progress.md}.
+La Tabla~\ref{tab:inventario} y la Figura~\ref{fig:r9} resumen el estado de los 26 módulos del
+pipeline al congelarlo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{generadas/r9_inventario}
+\caption{Estado de validación de los 26 módulos de CAVA.}
+\label{fig:r9}
+\end{figure}
 
 \begin{table}[H]
     \centering
@@ -297,7 +336,7 @@ formato, frente a bases propias con el mismo presupuesto. Ese es el diseño de E
 conjunto de videos ya está procesado.
 
 Hay cuatro amenazas a la validez. El proxy de reparto de MovieNet mide coaparición de
-personajes y no trama, como también mostró G-enlace-2. La base \texttt{fused} es una
+personajes y no trama, como también mostró G-enlace-2. La base Fusión es una
 concatenación sin aprendizaje, más simple que la fusión con compuertas de A2Summ-X que motivó
 el trabajo, de modo que la comparación no cubre las fusiones aprendidas. La evaluación en AMI
 depende de que el corpus tenga disponible el video de cada reunión, y un trabajo de

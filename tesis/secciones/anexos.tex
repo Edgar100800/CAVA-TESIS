@@ -4,21 +4,19 @@
 
 \section*{Anexo A. Reproducibilidad experimental}
 
-El repositorio del proyecto contiene el paquete \texttt{topicagg} con sus dependencias
-declaradas en \texttt{pyproject.toml} y una suite de 25 pruebas automatizadas; el contrato de
-corrida \texttt{cava-run-v1}, con un manifiesto por video (commit de git, indicador de
-cambios sin confirmar, perfil, hiperparámetros y \texttt{gt\_used: false}) y 115 corridas
-registradas; el registro cronológico de experimentos con sus pre-registros y veredictos
-(\texttt{docs/EXPERIMENT\_LOG.md}); la decisión de arquitectura ADR-0001 (sin fusión de
-representaciones, votantes activos y abstención); los reportes semanales en
-\texttt{reports/}; y los JSON de resultados por experimento en \texttt{results/}.
+El código del sistema, con sus dependencias declaradas y una suite de 25 pruebas
+automatizadas, está disponible junto con los resultados de cada experimento. Cada una de las
+115 corridas registradas guarda un manifiesto con la versión del código, el perfil, los
+hiperparámetros y la indicación de que no se usó anotación. El registro cronológico de
+experimentos conserva los pre-registros con su fecha y los veredictos, y las decisiones de
+arquitectura (entre ellas, no fusionar representaciones y usar votantes activos con
+abstención) están documentadas por escrito.
 
 \section*{Anexo B. Inventario de módulos}
 
-El inventario de los 26 módulos del pipeline (implementación, evidencia y estado), la tabla de
-lo que puede afirmarse por tipo de contenido y la lista de conjuntos con anotación disponible
-están en \texttt{docs/progress.md}. La Tabla~\ref{tab:inventario} del Capítulo~IV resume ese
-inventario.
+La Tabla~\ref{tab:inventario} del Capítulo~IV resume el estado de los 26 módulos del
+pipeline. Para cada módulo se registró su implementación, la evidencia experimental que lo
+respalda y su estado, junto con lo que puede afirmarse por tipo de contenido.
 
 \section*{Anexo C. Glosario y experimentos citados}
 
@@ -31,14 +29,13 @@ inventario.
         \hline
         \textbf{Término} & \textbf{Significado} \\
         \hline
-        \texttt{cava\_abst} & Configuración final del gestor: retornos con percentil 90,
-                              enlace promedio y abstención. \\
-        \texttt{cava}, \texttt{cava\_avg} & Variantes sin abstención, con componentes
-                              conexas o con enlace promedio. \\
-        \texttt{\_r80}, \texttt{\_r95} & Sufijos que cambian el percentil de retorno a 80 o 95. \\
-        \texttt{fused} & Base que concatena los embeddings normalizados de las señales y los
-                         trata como una sola señal en el mismo gestor. \\
-        \texttt{contiguous} & Gestor sin retornos: solo produce tópicos contiguos. \\
+        CAVA & Configuración final del gestor: retornos con percentil 90, enlace promedio y
+               abstención. \\
+        CAVA-comp, CAVA-prom & Variantes sin abstención, con componentes conexas o con enlace
+                               promedio. \\
+        Fusión & Base que concatena los embeddings normalizados de las señales y los trata
+                 como una sola señal en el mismo gestor. \\
+        Contiguo & Gestor sin retornos: solo produce tópicos contiguos. \\
         Proxy de reparto & Referencia de MovieNet: dos tomas son del mismo tópico si
                            comparten personajes. \\
         Procedencia & Aporte de cada señal a un grupo (acuerdo, soporte y coherencia). \\
@@ -73,8 +70,8 @@ inventario.
         EXP-025 & ¿El perfil de documental se acerca al acuerdo humano en BBC? & Sí ($z =
                   6.1$ y $7.4$) \\
         EXP-027 & ¿El ajuste a cortes visuales es preciso? & Sí ($z = 26.6$ y $23.0$) \\
-        EXP-028 & ¿Los filtros de habla mejoran la identidad de voz? & Sí (ARI 0.64 y
-                  0.73) \\
+        EXP-028 & ¿Los embeddings de hablante superan a log-mel y tono en identidad? & Sí
+                  (ARI 0.63 y 0.73) \\
         EXP-029 & ¿El detector de hablante único evita falsos en reuniones? & Sí (0/40), sin
                   narrador (0/11) \\
         EXP-030 & ¿Parakeet reemplaza a Whisper? & No \\

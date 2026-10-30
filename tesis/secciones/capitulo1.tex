@@ -159,9 +159,8 @@ texto no superó a R2) reproduce en segmentación lo observado en A2Summ-X para 
 fusionar, la señal adicional no aporta. Además, su infraestructura está verificada de punta a
 punta (detección de cortes con TransNetV2 \cite{soucekl2020transnetv2}, reconocimiento de voz
 \cite{radford2023whisper}, descriptores SigLIP \cite{zhai2023siglip} y bloqueo del split de
-test). CAVA la usa como motor de extracción de señales a través del contrato
-\texttt{frame\_awareness} (puntos de cambio, scores, cortes certificados y tramos con huella)
-sin duplicar código.
+test). CAVA la usa como motor de extracción de señales: de SegLoop recibe los puntos de cambio, los
+scores y los cortes visuales certificados.
 
 \section{Modelos visión--lenguaje como jueces}
 

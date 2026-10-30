@@ -5,7 +5,7 @@ sistema que no se entrena de punta a punta. Cada capacidad de CAVA se valida con
 compuerta pre-registrada: el criterio, los datos y el umbral se fijan antes de ejecutar, y el
 split de test de cada dominio se consulta una sola vez por hipótesis. El pipeline es
 reproducible: cada corrida guarda un manifiesto, los experimentos se registran en orden
-cronológico (EXP-009 a EXP-040), las decisiones de arquitectura se documentan como ADR y una
+cronológico (EXP-009 a EXP-040), las decisiones de arquitectura se documentan por escrito y una
 suite de pruebas automatizadas cubre los módulos centrales. El Anexo~C resume los
 experimentos citados.
 
@@ -34,9 +34,8 @@ experimentos citados.
         anotación previa, reunidos para la evaluación con personas.
 \end{itemize}
 
-Ninguna corrida del producto usa anotaciones en la inferencia: el contrato de corrida
-\texttt{cava-run-v1} registra \texttt{gt\_used: false} en el manifiesto de cada una (115
-corridas).
+Ninguna corrida del producto usa anotaciones en la inferencia, y el manifiesto de cada una
+(115 corridas) lo registra.
 
 \section{Pipeline experimental}
 
@@ -44,19 +43,19 @@ corridas).
   \item Unidades y señales: ffprobe y ffmpeg preparan el audio y las unidades fijas;
         faster-whisper large-v3 transcribe; SigLIP codifica un frame por unidad; se extraen
         log-mel y tono; el VLM (Qwen2.5-VL-7B) describe bloques de $\sim$40\,s.
-  \item Gestor: la función \texttt{manage()} se ejecuta con los hiperparámetros del perfil
+  \item Gestor: el gestor se ejecuta con los hiperparámetros del perfil
         (percentil de corte, quórum, tolerancia, modo de enlace, percentil de retorno y
         abstención) y las fronteras se ajustan a los cortes visuales certificados por
         SegLoop.
-  \item Mapa y etiquetas: \texttt{topic\_map.py} produce los dos niveles, los retornos y la
+  \item Mapa y etiquetas: se construyen los dos niveles, los retornos y la
         procedencia; Qwen2.5-14B etiqueta los tópicos; los nombres de personajes se propagan
         por los enlaces.
-  \item Versiones: \texttt{versions.py} genera los cinco formatos con clips mp4, listas de
+  \item Versiones: se generan los cinco formatos con clips mp4, listas de
         reproducción e índice, y G-versión verifica los presupuestos por video.
-  \item Evaluación: un script por experimento lee los JSON de \texttt{results/}, calcula
-        los criterios pre-registrados y el veredicto se anota en el registro de
-        experimentos. Las recompensas de clips se calculan en un archivo aparte
-        (\texttt{rewards.jsonl}) para que la evaluación no modifique la corrida.
+  \item Evaluación: para cada experimento se calculan los criterios pre-registrados sobre
+        las salidas guardadas y el veredicto se anota en el registro de experimentos. Las
+        recompensas de clips se calculan aparte, de modo que la evaluación no modifica la
+        corrida.
 \end{enumerate}
 
 \section{Protocolo estadístico}
@@ -81,14 +80,13 @@ corridas).
 
 \section{Atribución de la ganancia del gestor}
 
-El gestor de CAVA difiere de la base \texttt{fused} en dos aspectos a la vez: no combina las
+El gestor de CAVA difiere de la base Fusión en dos aspectos a la vez: no combina las
 señales y, en su configuración final, usa enlace promedio con abstención. La comparación
-pre-registrada en EXP-018 (\texttt{cava\_abst} frente a \texttt{fused}) mide el efecto
-conjunto. Para separar los dos aspectos se reportan también, sobre las mismas 47 películas,
-las comparaciones de las variantes sin abstención (\texttt{cava}, con componentes conexas, y
-\texttt{cava\_avg}, con enlace promedio) frente a \texttt{fused}, y de \texttt{cava\_abst}
-frente a \texttt{cava\_avg}. Estas comparaciones se calcularon con el mismo script que la
-principal y se presentan como análisis secundario. La abstención no tiene equivalente en la
+pre-registrada en EXP-018 (CAVA frente a Fusión) mide el efecto conjunto. Para separar los
+dos aspectos se reportan también, sobre las mismas 47 películas, las comparaciones de las
+variantes sin abstención (CAVA-comp, con componentes conexas, y CAVA-prom, con enlace
+promedio) frente a Fusión, y de CAVA frente a CAVA-prom. Estas comparaciones se calcularon
+con el mismo procedimiento que la principal y se presentan como análisis secundario. La abstención no tiene equivalente en la
 base fusionada, porque al concatenar los embeddings deja de existir una señal individual que
 pueda abstenerse.
 
@@ -102,7 +100,7 @@ pueda abstenerse.
         \hline
         \textbf{Compuerta} & \textbf{Criterio} & \textbf{Estado} \\
         \hline
-        Test del gestor & MCC(\texttt{cava\_abst}) $-$ MCC(\texttt{fused}) $> 0$ con
+        Test del gestor & MCC(CAVA) $-$ MCC(Fusión) $> 0$ con
                       $z > 2$ en las 47 películas de test & Cumplida ($z = 2.46$) \\
         G-coherencia & Margen intra$-$inter positivo en cada señal y en cada película
                       & Cumplida (47/47 películas en las tres señales) \\
@@ -125,14 +123,13 @@ pueda abstenerse.
 \section{Infraestructura y reproducibilidad}
 
 Los experimentos se ejecutan en el clúster institucional (GPU NVIDIA RTX A6000 de 48\,GB y
-A100 vía SLURM) con caché local de HuggingFace. El VLM y los modelos de voz corren en GPU y el
-gestor en CPU. Cada corrida del producto escribe un manifiesto (commit de git, indicador de
-cambios sin confirmar, perfil e hiperparámetros) y el archivo \texttt{clips.jsonl}. La suite
-de 25 pruebas automatizadas cubre el gestor, el agregador adaptativo, el ajuste a cortes, el
-mapa y la compuerta de versiones, y se ejecuta antes de cada envío a la cola. El paquete
-\texttt{topicagg} declara sus dependencias en \texttt{pyproject.toml}. La decisión de no
-fusionar representaciones y el uso de votantes activos con abstención están documentados en
-la ADR-0001.
+A100). El VLM y los modelos de voz corren en GPU y el gestor en CPU. Cada corrida del
+producto guarda un manifiesto con la versión exacta del código, el perfil y los
+hiperparámetros, junto con la lista de clips generados. Una suite de 25 pruebas
+automatizadas cubre el gestor, el agregador adaptativo, el ajuste a cortes, el mapa y la
+compuerta de versiones, y se ejecuta antes de cada corrida. Las decisiones de arquitectura,
+entre ellas la de no fusionar representaciones y usar votantes activos con abstención, se
+registran por escrito.
 
 \section{Métricas}
 

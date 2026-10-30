@@ -23,6 +23,8 @@ models = [
     "pillow",
 ]
 dev = ["pytest"]
+# figuras de la tesis (tesis/figuras/; requiere pdflatex)
+figs = ["matplotlib"]
 
 [tool.setuptools.packages.find]
 include = ["topicagg*"]

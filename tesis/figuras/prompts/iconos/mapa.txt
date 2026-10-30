@@ -1,0 +1,1 @@
+A minimal flat vector icon, single solid color #1f4e79 on a pure white background, thick uniform strokes, rounded corners, no text, no letters, no shadows, no gradients, centered with generous margin, square 1:1. Subject: a network of five circular nodes connected by lines, two of the nodes far apart linked by a curved arc.
