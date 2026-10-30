@@ -1,0 +1,157 @@
+\chapter{MARCO METODOLÓGICO}
+
+La metodología adapta el esquema de compuertas incrementales de los trabajos previos a un
+sistema que no se entrena de punta a punta. Cada capacidad de CAVA se valida con una
+compuerta pre-registrada: el criterio, los datos y el umbral se fijan antes de ejecutar, y el
+split de test de cada dominio se consulta una sola vez por hipótesis. El pipeline es
+reproducible: cada corrida guarda un manifiesto, los experimentos se registran en orden
+cronológico (EXP-009 a EXP-040), las decisiones de arquitectura se documentan como ADR y una
+suite de pruebas automatizadas cubre los módulos centrales. El Anexo~C resume los
+experimentos citados.
+
+\section{Datos y splits}
+
+\begin{itemize}
+  \item MovieNet \cite{huang2020movienet}, dominio película. Las anotaciones de escena con
+        la convención de BaSSL \cite{mun2022bassl} se usan para construir una referencia
+        aproximada del mapa de tópicos: dos tomas pertenecen al mismo tópico si comparten
+        reparto (proxy de reparto). Los splits de desarrollo (10 películas), confirmación y
+        test (47 películas) son disjuntos y el de test no se usa para ajustar nada.
+  \item BBC Planet Earth: 11 episodios documentales de $\sim$49 minutos con anotaciones de
+        escena de 5 anotadores. Valida el perfil de documental contra el acuerdo humano.
+  \item AMI \cite{carletta2007ami}: 120 reuniones de $\sim$35 minutos con anotación de
+        tópicos y de hablantes. Valida el perfil de reunión y la identidad de hablante.
+  \item VidChapters \cite{ventura2024vidchapters}, dominio video web: blind40 (40 videos de
+        10 a 40 minutos) para la evaluación ciega contra capítulos de autor, y raw\_ext (50
+        videos) para desarrollo.
+  \item TVSum \cite{song2015tvsum} y SumMe \cite{gygli2014summe}: video de usuario de 1 a 11
+        minutos con importancia anotada por personas, usada como referencia automática de
+        la calidad de los destacados.
+  \item VoxConverse \cite{chung2020voxconverse} y AVA-Speech: conjuntos de audio para la
+        identidad de hablante y los filtros de habla.
+  \item Conjunto A/B de EXP-040: 9 videos educativos de YouTube (divulgación, comentario,
+        conversación y tutorial; 5 en español y 4 en inglés; de 21 a 57 minutos) sin
+        anotación previa, reunidos para la evaluación con personas.
+\end{itemize}
+
+Ninguna corrida del producto usa anotaciones en la inferencia: el contrato de corrida
+\texttt{cava-run-v1} registra \texttt{gt\_used: false} en el manifiesto de cada una (115
+corridas).
+
+\section{Pipeline experimental}
+
+\begin{enumerate}
+  \item Unidades y señales: ffprobe y ffmpeg preparan el audio y las unidades fijas;
+        faster-whisper large-v3 transcribe; SigLIP codifica un frame por unidad; se extraen
+        log-mel y tono; el VLM (Qwen2.5-VL-7B) describe bloques de $\sim$40\,s.
+  \item Gestor: la función \texttt{manage()} se ejecuta con los hiperparámetros del perfil
+        (percentil de corte, quórum, tolerancia, modo de enlace, percentil de retorno y
+        abstención) y las fronteras se ajustan a los cortes visuales certificados por
+        SegLoop.
+  \item Mapa y etiquetas: \texttt{topic\_map.py} produce los dos niveles, los retornos y la
+        procedencia; Qwen2.5-14B etiqueta los tópicos; los nombres de personajes se propagan
+        por los enlaces.
+  \item Versiones: \texttt{versions.py} genera los cinco formatos con clips mp4, listas de
+        reproducción e índice, y G-versión verifica los presupuestos por video.
+  \item Evaluación: un script por experimento lee los JSON de \texttt{results/}, calcula
+        los criterios pre-registrados y el veredicto se anota en el registro de
+        experimentos. Las recompensas de clips se calculan en un archivo aparte
+        (\texttt{rewards.jsonl}) para que la evaluación no modifique la corrida.
+\end{enumerate}
+
+\section{Protocolo estadístico}
+
+\begin{itemize}
+  \item Pre-registro: cada compuerta declara criterio, dirección, conjuntos y umbral antes
+        de abrir los datos de evaluación, con fecha en el registro de experimentos. El
+        umbral típico es $z > 2$, donde $z$ es la diferencia media pareada por video
+        dividida por su error estándar.
+  \item Splits: el de desarrollo se usa para diagnosticar y calibrar, el de confirmación
+        para decidir y el de test solo para la hipótesis final. EXP-018 confirmó en test (47
+        películas) lo diagnosticado en desarrollo y decidido en confirmación.
+  \item Comparaciones fuera del pre-registro: se reportan como análisis exploratorio y no
+        como validación. Una confirmación previa sobre el split de entrenamiento quedó
+        marcada como post hoc.
+  \item Revisiones con juez: los revisores no saben de qué brazo viene cada caso, los
+        controles se emparejan por película y desfase, y la significación se calcula con la
+        prueba exacta de Fisher. El primer lote de G-enlace tuvo revisores distintos por
+        brazo; se identificó el problema y se lanzó un segundo lote con el protocolo
+        corregido.
+\end{itemize}
+
+\section{Atribución de la ganancia del gestor}
+
+El gestor de CAVA difiere de la base \texttt{fused} en dos aspectos a la vez: no combina las
+señales y, en su configuración final, usa enlace promedio con abstención. La comparación
+pre-registrada en EXP-018 (\texttt{cava\_abst} frente a \texttt{fused}) mide el efecto
+conjunto. Para separar los dos aspectos se reportan también, sobre las mismas 47 películas,
+las comparaciones de las variantes sin abstención (\texttt{cava}, con componentes conexas, y
+\texttt{cava\_avg}, con enlace promedio) frente a \texttt{fused}, y de \texttt{cava\_abst}
+frente a \texttt{cava\_avg}. Estas comparaciones se calcularon con el mismo script que la
+principal y se presentan como análisis secundario. La abstención no tiene equivalente en la
+base fusionada, porque al concatenar los embeddings deja de existir una señal individual que
+pueda abstenerse.
+
+\section{Sistema de compuertas}
+
+\begin{table}[H]
+    \centering
+    \caption{Compuertas de validación de CAVA y su estado al congelar el sistema.}
+    \label{tab:gates}
+    \begin{tabular}{p{2.6cm}p{6.6cm}p{3.6cm}}
+        \hline
+        \textbf{Compuerta} & \textbf{Criterio} & \textbf{Estado} \\
+        \hline
+        Test del gestor & MCC(\texttt{cava\_abst}) $-$ MCC(\texttt{fused}) $> 0$ con
+                      $z > 2$ en las 47 películas de test & Cumplida ($z = 2.46$) \\
+        G-coherencia & Margen intra$-$inter positivo en cada señal y en cada película
+                      & Cumplida (47/47 películas en las tres señales) \\
+        G-versión & Toda lista existe, cumple su presupuesto y hay al menos una versión
+                      por perfil & Cumplida (58/58, 80/80, 90/90, 25/25, 9/9) \\
+        G-enlace-2 & Enlaces no contiguos juzgados como el mismo hilo más que momentos
+                      lejanos al azar (revisión ciega, Fisher $p < 0.05$) & No cumplida
+                      ($p = 0.72$) \\
+        Calidad de clips & Destacados y recapitulación superan a bases simples en
+                      referencias automáticas & No cumplida (EXP-031/037/038) \\
+        Narrador (EXP-039) & Un detector con habla filtrada detecta al hablante único
+                      mejor que el actual ($z > 2$) sin más falsos & No cumplida
+                      ($z = -0.37$ y $0.00$) \\
+        EXP-040 (A/B) & Preferencia humana de las versiones frente a bases propias &
+                      Diseñada; pre-registro pendiente \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Infraestructura y reproducibilidad}
+
+Los experimentos se ejecutan en el clúster institucional (GPU NVIDIA RTX A6000 de 48\,GB y
+A100 vía SLURM) con caché local de HuggingFace. El VLM y los modelos de voz corren en GPU y el
+gestor en CPU. Cada corrida del producto escribe un manifiesto (commit de git, indicador de
+cambios sin confirmar, perfil e hiperparámetros) y el archivo \texttt{clips.jsonl}. La suite
+de 25 pruebas automatizadas cubre el gestor, el agregador adaptativo, el ajuste a cortes, el
+mapa y la compuerta de versiones, y se ejecuta antes de cada envío a la cola. El paquete
+\texttt{topicagg} declara sus dependencias en \texttt{pyproject.toml}. La decisión de no
+fusionar representaciones y el uso de votantes activos con abstención están documentados en
+la ADR-0001.
+
+\section{Métricas}
+
+\begin{itemize}
+  \item Mapa de tópicos: MCC sobre la clasificación de pares de unidades (mismo tópico o
+        no) contra la referencia (proxy de reparto en MovieNet; anotación de tópicos en
+        AMI). El número de tópicos y la tasa de enlace (fracción de pares enlazados) se usan
+        para diagnosticar sobresegmentación y percolación. La precisión de enlace se compara
+        con la tasa base de pares positivos.
+  \item Coherencia: margen entre la similitud coseno dentro de cada grupo (dejando una unidad
+        fuera) y la similitud entre grupos, por señal, con la fracción de películas en que es
+        positivo.
+  \item Identidad de hablante: ARI contra la anotación (AMI, VoxConverse) y especificidad de
+        las identidades publicadas.
+  \item Fronteras: F1 contra cortes de referencia (VidChapters, BBC) y distancia del ajuste a
+        los cortes visuales certificados.
+  \item Calidad de clips: recompensa igual al $z$ de la fracción de anotadores que eligió cada
+        segundo (TVSum, SumMe), comparada con bases de clips equiespaciados, clip central y
+        azar.
+  \item Versiones: existencia y cumplimiento del presupuesto de cada lista (G-versión), por
+        video y formato.
+\end{itemize}

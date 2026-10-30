@@ -1,0 +1,198 @@
+\chapter{REVISIÓN CRÍTICA DE LA LITERATURA}
+
+Este capítulo revisa las fuentes que definen el estado del arte relevante para CAVA. Empieza
+por la línea de resumen de video multimodal de la que proviene este trabajo (A2Summ y
+A2Summ-X), donde se originó el diagnóstico contra la fusión. Sigue con la segmentación de
+escenas y capítulos (BaSSL, Scene-VLM, VidChapters), la segmentación temática de texto, la
+discusión entre fusión temprana y tardía y los ensambles de agrupamientos, que son el
+antecedente formal más cercano del consenso de votos. Cierra con el sistema previo SegLoop y
+con el uso de VLM como jueces. Cada sección analiza los resultados reportados por sus autores
+y la última resume el aporte de la tesis.
+
+\section{Resumen de video multimodal: A2Summ}
+
+He et al.\ \cite{he2023a2summ} proponen A2Summ, un transformer que alinea las secuencias de
+video y texto y las fusiona con dos pérdidas contrastivas, evaluado en SumMe
+\cite{gygli2014summe}, TVSum \cite{song2015tvsum} y conjuntos de resumen multimodal con
+salida textual.
+
+\subsection{Análisis de resultados}
+El artículo reporta F1 $\approx 55.0$ en SumMe y $\approx 63.0$ en TVSum, por encima de
+métodos previos basados en dispersión o grafos \cite{chu2018spell}. El grupo replicó el
+pipeline completo y obtuvo los mismos números que el checkpoint oficial (F1 0.625 en TVSum;
+0.6383 en el split 0, idéntico al publicado), lo que valida el código y el protocolo de
+evaluación. El modelo trata el video como una secuencia plana de frames y sus números
+provienen de corridas individuales, sin varianza entre semillas, que en conjuntos de pocas
+decenas de videos cambia la lectura de los resultados.
+
+\section{Extensión A2Summ-X y el diagnóstico contra la fusión}
+
+A2Summ-X, trabajo previo directo de esta tesis, extiende el modelo base hacia una
+representación por tomas y jerárquica: adaptadores por modalidad, fusión jerárquica de frames
+a tomas y de tomas a video, alineación entre modalidades, compuertas aprendidas por modalidad
+y un agregador temporal de clips. Cada componente se activa por separado.
+
+\subsection{Análisis de resultados}
+Con 25 corridas por configuración, pruebas t pareadas sobre F1 y métricas de ranking de
+Otani \cite{otani2016deep}, se obtuvo que: (i) el texto aporta $\Delta$F1 $= +0.033 \pm
+0.062$ ($p = 0.014$) en TVSum, con tendencia positiva no significativa en SumMe; (ii)
+reemplazar GoogleNet por DINOv3 o V-JEPA-2 no cambia el resultado ($|\Delta \text{F1}| <
+0.001$, $p > 0.8$); y (iii) las mejoras de arquitectura no superan la varianza entre
+corridas. El análisis posterior del modelo mostró por qué la señal visual pesaba tan poco: la
+alineación inyecta la transcripción en la consulta visual, la compuerta softmax reparte un
+peso total fijo entre modalidades (con pesos de texto medidos entre 0.75 y 0.89) y la cabeza
+de decisión solo lee la mezcla resultante. Cuatro mediciones independientes coincidieron con
+ese diagnóstico: los pesos de la compuerta, el colapso visual de GraphVSum en BLiSS, la
+correlación de importancia humana $\rho \approx 0$ fuera de dominio y las secuencias sin
+cortes detectables. La conclusión fue que el problema está en el diseño de la fusión y que
+cualquier arquitectura que mezcle las representaciones antes de decidir puede reproducirlo.
+
+\section{Segmentación auto-supervisada de escenas: BaSSL}
+
+Mun et al.\ \cite{mun2022bassl} entrenan con tareas contrastivas sensibles a las fronteras
+sobre MovieNet \cite{huang2020movienet} y reportan el punto de comparación habitual del área
+(F1 47.0 y AP 57.4 en la convención de 318 películas). TranS4mer \cite{islam2023trans4mer} y
+MEGA \cite{sadoughi2023mega} refinan la arquitectura temporal y la agregación multimodal;
+SCRL \cite{wu2022scrl} y UBoCo \cite{kang2022uboco} exploran la consistencia de escena sin
+etiquetas.
+
+\subsection{Análisis de resultados}
+Estos sistemas predicen fronteras entre escenas contiguas. No agrupan segmentos del mismo
+tema separados en el tiempo ni producen una estructura navegable por tópico. MEGA, el más
+cercano a CAVA en el uso de varias modalidades, agrega y destila las modalidades hacia una
+representación compartida, que es el diseño cuyo problema se documentó en A2Summ-X. Ninguno
+de estos trabajos reporta qué modalidades sostienen cada escena detectada.
+
+\section{Modelos visión--lenguaje para segmentación: Scene-VLM}
+
+Berman et al.\ \cite{berman2025scenevlm} presentan Scene-VLM, un VLM ajustado para segmentar
+video en escenas. El modelo recibe frames, la transcripción del diálogo y metadatos
+opcionales de tomas consecutivas, y predice las fronteras de forma secuencial con un puntaje
+de confianza y una justificación en lenguaje natural. Reportan el mejor resultado publicado
+en MovieNet-318 (F1 62.1 y AP 66.8).
+
+\subsection{Análisis de resultados}
+El trabajo muestra que un VLM puede emitir juicios semánticos sobre unidades temporales, a
+cambio del costo de entrenar y ejecutar un modelo grande sobre cada toma, y su salida sigue
+siendo una única secuencia de fronteras. CAVA toma dos decisiones a partir de esto. Primero,
+usa el VLM (Qwen2.5-VL \cite{bai2025qwen25vl}) congelado y fuera del camino crítico: sus
+descripciones por bloque son una señal más que vota. Segundo, no deja la frontera fina en
+manos del VLM, porque el trabajo previo midió que su sensibilidad temporal es baja (invertir o
+barajar los frames cambia el score solo entre 0.020 y 0.024).
+
+\section{Capítulos de video y tópicos no contiguos: VidChapters}
+
+Ventura et al.\ \cite{ventura2024vidchapters} construyen VidChapters-7M, un corpus de videos
+con capítulos anotados por sus propios autores, y entrenan modelos que generan capítulos a
+partir de la transcripción. El problema se formula como predicción de fronteras con títulos.
+
+\subsection{Análisis de resultados}
+El corpus muestra que los autores de video declaran estructura temática a gran escala. La
+formulación es secuencial (una lista de capítulos contiguos) y solo usa texto: no modela
+retornos de tema, no usa imagen ni voz y supone un único nivel de granularidad. Para CAVA,
+VidChapters es la referencia externa en el dominio de video web, con los capítulos de autor
+como verdad de terreno, y sirve de contraste con un mapa que enlaza segmentos no adyacentes,
+usa varias señales y produce dos niveles.
+
+\section{Segmentación temática de texto}
+
+La segmentación temática se estudió primero en texto. TextTiling \cite{hearst1997texttiling}
+compara bloques adyacentes por similitud léxica y coloca fronteras en los valles de esa
+curva; C99 \cite{choi2000advances} ordena una matriz de similitud entre oraciones y la divide
+de forma recursiva.
+
+\subsection{Análisis de resultados}
+El score de frontera de CAVA por señal sigue la misma idea que TextTiling: un desplazamiento
+entre ventanas vecinas de embeddings, con fronteras en los picos. La diferencia está en que
+CAVA aplica ese cálculo por separado a cada señal y no solo a la transcripción, y en que
+permite que un segmento vuelva a un tópico anterior. Ambos métodos producen una partición
+contigua, lo que deja fuera los retornos de tema que interesan aquí.
+
+\section{Fusión temprana y fusión tardía}
+
+Snoek et al.\ \cite{snoek2005early} comparan, en análisis semántico de video, la fusión
+temprana (concatenar los descriptores antes de aprender) con la tardía (aprender por
+modalidad y combinar las decisiones). La revisión de Baltrušaitis et al.\
+\cite{baltrusaitis2019multimodal} clasifica la fusión en métodos independientes del modelo
+(temprana, tardía e híbrida) y métodos basados en el modelo.
+
+\subsection{Análisis de resultados}
+En Snoek et al.\ la fusión tardía gana en la mayoría de los conceptos, aunque con
+diferencias por concepto, y la revisión de Baltrušaitis et al.\ no establece un ganador
+general. CAVA pertenece a la familia de fusión tardía: las señales se combinan solo en el
+nivel de las decisiones (cortes y etiquetas), nunca en el de las representaciones. Lo que
+agrega frente a la fusión tardía clásica es que la decisión combinada es una partición con
+retornos y no una etiqueta por muestra, y que una señal puede abstenerse en los tramos donde
+no tiene evidencia.
+
+\section{Ensambles de agrupamientos y matriz de co-asociación}
+
+Strehl y Ghosh \cite{strehl2002cluster} formulan el problema de combinar varias particiones
+de los mismos datos en una partición de consenso sin acceder a los descriptores originales.
+Fred y Jain \cite{fred2005evidence} proponen la acumulación de evidencia: cada partición vota
+por los pares de elementos que pone juntos, los votos se acumulan en una matriz de
+co-asociación y la partición final se obtiene agrupando esa matriz con enlace simple o
+promedio.
+
+\subsection{Análisis de resultados}
+La matriz de votos de CAVA, $V_{ij}$, es una matriz de co-asociación ponderada en la que cada
+señal aporta una partición, y su modo de enlace promedio corresponde a la variante de Fred y
+Jain que evita el encadenamiento del enlace simple. CAVA adapta este marco de tres maneras:
+(i) las particiones de cada señal son temporales y se calculan con su propio percentil; (ii)
+una señal sin evidencia en una unidad no vota sobre los pares que la incluyen, de modo que el
+consenso se calcula solo sobre los votantes activos; y (iii) cada grupo final conserva la
+contribución de cada señal. En la literatura revisada, los ensambles de agrupamientos no se
+han aplicado a la segmentación temática de video con señales heterogéneas.
+
+\section{SegLoop: del bucle de destilación al motor de señales}
+
+SegLoop, el sistema previo del grupo, validó un bucle de dos redes para segmentar escenas: un
+juez VLM congelado genera pseudoetiquetas con las que se reentrena un segmentador ligero (un
+transformer temporal sobre tokens de tomas). En MovieNet-318 obtuvo una base de F1 $45.22 \pm
+0.63$ y AP $43.10 \pm 0.62$ y, con preentrenamiento sensible a fronteras y una cabeza
+contextual, F1 $51.97 \pm 0.47$ y AP $52.69 \pm 0.43$ en test. La fusión de imagen y texto
+se descartó porque no superó a la rama visual.
+
+\subsection{Análisis de resultados}
+SegLoop cumple dos papeles en esta tesis. Su resultado negativo de fusión (la familia R2 con
+texto no superó a R2) reproduce en segmentación lo observado en A2Summ-X para resumen: al
+fusionar, la señal adicional no aporta. Además, su infraestructura está verificada de punta a
+punta (detección de cortes con TransNetV2 \cite{soucekl2020transnetv2}, reconocimiento de voz
+\cite{radford2023whisper}, descriptores SigLIP \cite{zhai2023siglip} y bloqueo del split de
+test). CAVA la usa como motor de extracción de señales a través del contrato
+\texttt{frame\_awareness} (puntos de cambio, scores, cortes certificados y tramos con huella)
+sin duplicar código.
+
+\section{Modelos visión--lenguaje como jueces}
+
+El uso de modelos grandes como evaluadores automáticos se ha extendido en la evaluación de
+texto generado. En video, VideoJudge \cite{videojudge2025} entrena jueces multimodales de 3B y
+7B parámetros para puntuar respuestas de comprensión de video.
+
+\subsection{Análisis de resultados}
+La experiencia del grupo con VLM como jueces matiza estos resultados: el VLM ordena bien
+pares de alternativas (ranking contrafactual casi perfecto) pero da scores absolutos poco
+fiables, su sensibilidad temporal es baja y sus veredictos heredan sesgos del entrenamiento.
+De ahí salen tres reglas de diseño para CAVA: (i) el VLM genera descripciones por bloque, que
+votan como cualquier otra señal, y no veredictos finales; (ii) cuando se usa un juez para
+validar (G-enlace), el protocolo es ciego, con controles emparejados y pruebas exactas; y
+(iii) ninguna compuerta depende de un único juez no validado.
+
+\section{Aporte de la tesis}
+
+A partir de esta revisión, CAVA reúne cuatro elementos que los trabajos anteriores no
+combinan:
+\begin{enumerate}
+  \item Segmentación temática de video sin fusión de representaciones. Cada señal decide sus
+        propias fronteras y etiquetas, y el tópico surge de una matriz de co-asociación con
+        quórum \cite{fred2005evidence}, adaptada a particiones temporales y con abstención de
+        las señales sin evidencia.
+  \item Tópicos no contiguos con procedencia. Los segmentos separados en el tiempo se enlazan
+        cuando un quórum de señales los agrupa, y cada grupo declara qué señales lo sostienen
+        (acuerdo, soporte y coherencia dejando una unidad fuera), información que una
+        representación fusionada no conserva.
+  \item Versiones para el consumidor. Del mapa se derivan cinco formatos con presupuestos
+        verificables, evaluados en cuatro tipos de contenido.
+  \item Un inventario del estado de cada módulo (validado, acotado, parcial, no validado) por
+        tipo de contenido, basado en compuertas pre-registradas.
+\end{enumerate}

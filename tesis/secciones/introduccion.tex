@@ -1,0 +1,118 @@
+\customchapter{INTRODUCCIÓN}
+
+El contenido audiovisual crece más rápido de lo que una persona puede ver, y para indexarlo,
+previsualizarlo o navegarlo hay que saber dónde termina cada unidad de sentido y qué
+segmentos, aunque estén separados en el tiempo, tratan el mismo tema. La \emph{segmentación
+temática} agrupa el contenido en tópicos coherentes. A diferencia de la segmentación en
+escenas, admite que un tema se abandone y se retome más adelante, y permite que el mismo
+video se consuma de formas distintas según el interés y el tiempo de quien lo ve.
+
+Esta tesis continúa dos trabajos previos del mismo grupo. El primero, A2Summ-X, extendió el
+modelo de resumen multimodal A2Summ \cite{he2023a2summ} y se evaluó con 5 splits y 5 semillas
+por configuración y pruebas t pareadas sobre SumMe y TVSum \cite{gygli2014summe,
+song2015tvsum}. La rama de texto aportó una mejora pequeña ($\Delta$F1 $= +0.033$,
+$p = 0.014$ en TVSum), los backbones visuales modernos no mejoraron el resultado y en
+conjuntos de pocos videos la varianza entre corridas dominó sobre los efectos. El segundo, SegLoop,
+usó un modelo visión--lenguaje (VLM) congelado \cite{bai2025qwen25vl} como juez para generar
+pseudoetiquetas con las que se entrena un segmentador de escenas ligero \cite{mun2022bassl,
+huang2020movienet}. De SegLoop queda una infraestructura verificada de extracción de señales
+(reconocimiento de voz, descriptores visuales y detección de cortes) que CAVA reutiliza.
+
+El análisis que cerró A2Summ-X encontró el problema que esta tesis aborda: al fusionar las
+señales en un embedding o un score único, unas reescriben a otras antes de la decisión. En
+A2Summ-X, la alineación inyecta la transcripción en la consulta visual, la compuerta softmax
+reparte un peso total fijo entre modalidades y la cabeza de decisión solo ve la mezcla.
+Cuatro mediciones independientes coincidieron: pesos de la compuerta de texto entre 0.75 y
+0.89, colapso de la señal visual en BLiSS, correlación de importancia $\rho \approx 0$ fuera
+de dominio y secuencias sin cortes detectables. De ahí sale la regla de diseño de CAVA:
+mantener separada la identidad de cada señal hasta el momento de decidir.
+
+En CAVA, cada señal (transcripción, imagen, voz y las descripciones que un VLM produce por
+bloques del video) calcula sus propias fronteras con su propio percentil y asigna sus propias
+etiquetas de tópico. El tópico final surge de un consenso de votos con quórum. Una señal sin
+evidencia en un tramo se abstiene, y cada grupo resultante registra qué señales lo sostienen
+(su \emph{procedencia}). Sobre este gestor se construye el mapa de tópicos del video, con
+enlaces entre segmentos no adyacentes, dos niveles de granularidad y contexto por tramo. Del
+mapa se derivan cinco formatos de versión: capítulos, recapitulación de 60 segundos,
+destacados del 10\,\%, hilos de tópico e hilos por hablante. El documento reporta el estado
+del sistema al congelarlo: el gestor está validado en el split de test de MovieNet, las
+compuertas de coherencia y de versiones están medidas, tres compuertas no se cumplen y la
+evaluación con personas (EXP-040) está diseñada.
+
+\introsection{Formulación del problema}
+
+¿Es posible segmentar temáticamente video largo de contenido heterogéneo (película,
+documental, reunión, video web) y producir versiones adaptadas al consumidor, sin anotación
+humana de tópicos y sin fusionar representaciones entre señales, de modo que:
+(i) el mapa de tópicos por consenso supere a la fusión de señales y a la segmentación
+contigua en una métrica pre-registrada sobre datos no vistos;
+(ii) los tópicos sean coherentes dentro de cada señal (margen intra$-$inter positivo);
+(iii) cada versión respete su presupuesto de duración; y
+(iv) un juez independiente reconozca los enlaces no contiguos como retornos del mismo tema?
+
+\introsection{Objetivos de investigación}
+
+\paragraph{Objetivo general}
+Construir y validar experimentalmente CAVA, un sistema que segmenta temáticamente video largo
+mediante agregación multimodal por consenso, sin fusión de representaciones, con abstención y
+procedencia por señal, y que produce varias versiones del contenido adaptadas al consumidor,
+validadas con compuertas pre-registradas sobre datos no vistos.
+
+\paragraph{Objetivos específicos}
+\begin{enumerate}
+  \item Implementar las señales del sistema sobre la infraestructura de SegLoop:
+        transcripción \cite{radford2023whisper} proyectada a embeddings, señal visual
+        SigLIP \cite{zhai2023siglip} por unidad, voz (log-mel y tono) y descripciones de un
+        VLM congelado \cite{bai2025qwen25vl}, con perfiles por tipo de contenido (película,
+        documental, reunión) y ajuste de fronteras a cortes visuales.
+  \item Implementar el gestor multimodal sin fusión: fronteras y etiquetas propias por
+        señal, consenso de cortes por votos ponderados con tolerancia, enlace de tópicos por
+        quórum (componentes conexas o enlace promedio), abstención de señales sin evidencia y
+        procedencia por señal en cada grupo.
+  \item Producir el mapa de tópicos con retornos, dos niveles de granularidad, etiquetas
+        generadas por un modelo de lenguaje, nombres de personajes propagados por los
+        enlaces y contexto por tramo, junto con la identidad de hablante (embeddings
+        WavLM-sv \cite{chen2022wavlm} agrupados con Ward y BIC).
+  \item Generar los cinco formatos de versión con verificación automática de presupuestos
+        (compuerta G-versión).
+  \item Validar el sistema con compuertas pre-registradas: el gestor frente a la fusión y al
+        gestor contiguo en el split de test de MovieNet (47 películas); la coherencia
+        intra$-$inter por señal; la precisión de los enlaces no contiguos con un juez ciego;
+        la identidad de hablante en AMI \cite{carletta2007ami} y VoxConverse
+        \cite{chung2020voxconverse}; y la calidad de los clips frente a referencias
+        automáticas y bases simples.
+\end{enumerate}
+
+\introsection{Justificación}
+
+La segmentación temática con enlaces no contiguos es necesaria para aplicaciones que la
+segmentación en escenas no cubre: navegar un video por tema, generar recapitulaciones con un
+tiempo fijo y reunir en un hilo todas las apariciones de un tema o de un hablante. Los
+sistemas actuales dependen de VLM costosos en inferencia \cite{berman2025scenevlm} o
+fusionan las modalidades antes de decidir, y en ese segundo caso el trabajo previo del grupo
+mostró que una señal termina dominando a las demás. Si el consenso tardío produce mapas de
+tópicos iguales o mejores que la fusión, se gana además la posibilidad de saber qué señales
+sostienen cada grupo, algo que una representación fusionada no permite recuperar.
+
+En lo metodológico, el trabajo aplica a un problema nuevo el esquema de compuertas
+pre-registradas del grupo: separación de desarrollo, confirmación y test, y selección de
+hiperparámetros sin consultar test. Como producto queda un pipeline reproducible (115
+corridas con manifiesto que registra \texttt{gt\_used: false}, 25 pruebas automatizadas y
+un registro de decisiones de arquitectura) y un inventario del estado de validación de cada
+módulo por tipo de contenido.
+
+\introsection{Alcance y limitaciones}
+
+La investigación cubre el ciclo completo, desde la extracción de señales hasta las versiones
+por consumidor, con estos límites:
+(i) los dominios evaluados son película (MovieNet), documental (BBC Planet Earth), reunión
+(AMI) y video web y de usuario (VidChapters \cite{ventura2024vidchapters}, TVSum y SumMe),
+sin anotación nueva de tópicos salvo la del conjunto de la evaluación con personas;
+(ii) la calidad percibida de las versiones se mide con presupuestos y referencias
+automáticas, y la preferencia humana (EXP-040) queda diseñada pero no ejecutada;
+(iii) las identidades por apariencia (P\#) no se publican como identidad, y solo la identidad
+por voz está validada, y únicamente en habla conversacional;
+(iv) el texto en pantalla (OCR) y el espectro de audio están definidos como contratos de
+señal pero no se extraen; y
+(v) el cómputo se limita al clúster institucional (GPU RTX A6000 de 48\,GB y A100 vía SLURM),
+con límites de tiempo por trabajo.

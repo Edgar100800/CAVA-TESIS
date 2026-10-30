@@ -1,0 +1,39 @@
+\customchapter{CONCLUSIONES}
+
+\textit{Problema de partida.} La tesis parte del problema identificado en A2Summ-X: al
+fusionar señales multimodales en una representación única, unas reescriben a otras antes de
+la decisión. En ese modelo el texto llegó a pesos de 0.75 a 0.89 en la compuerta y anuló la
+contribución visual, y la familia de fusión de SegLoop mostró el mismo comportamiento en
+segmentación de escenas. De ahí sale la regla de diseño de este trabajo: mantener separada la
+identidad de cada señal hasta la decisión.
+
+\textit{Aporte y validación.} Se construyó un sistema de segmentación temática de video largo
+en el que cada señal (transcripción, imagen, voz y descripciones de un VLM) emite sus propias
+fronteras y etiquetas, y el tópico surge de una matriz de co-asociación con quórum,
+abstención y procedencia por grupo. En el test pre-registrado de 47 películas, el gestor
+superó a la fusión por concatenación ($z = 2.46$) y al gestor contiguo ($z = 2.48$), y su
+margen de coherencia fue positivo en las tres señales y en todas las películas. El análisis
+secundario muestra que la ganancia sobre la fusión aparece solo cuando se combinan el enlace
+promedio y la abstención, y que la señal visual sola obtiene un MCC más alto. El ajuste a
+cortes visuales se validó en 91 películas, el perfil de documental se validó en BBC frente
+al acuerdo humano, la identidad de hablante alcanzó un ARI de 0.73 en AMI y las cinco
+versiones cumplieron su presupuesto en 262 corridas: 58 películas, 80 reuniones, 50 videos
+de usuario de TVSum, 40 videos web de VidChapters, 25 videos de SumMe y los 9 videos del
+conjunto A/B.
+
+\textit{Estado de la evaluación.} De los 26 módulos del sistema congelado, 10 están
+validados, 2 acotados, 3 parciales y 6 no validados; 4 forman parte del producto sin
+compuerta propia y 1 no tiene evaluación. Tres compuertas no se cumplieron. Los enlaces no
+contiguos no pasan el juez de trama (G-enlace-2, $p = 0.72$) y se publican como continuidad
+de personajes y situaciones. Ninguna regla de selección de clips supera a las bases simples
+con referencias automáticas (EXP-031 y EXP-037), y la política aprendida empeora al cambiar
+de conjunto (EXP-038). Ningún detector probado resuelve al narrador de los documentales
+(EXP-039). Además, Parakeet no reemplaza a Whisper como transcriptor (EXP-030).
+
+\textit{Implicancias.} En los dos trabajos previos, agregar componentes sobre
+representaciones fusionadas no mejoró los resultados; en este, la mejora apareció al mover
+el punto en que se toma la decisión. El consenso tardío produce una estructura que se puede auditar (procedencia
+por señal, abstención que evita la percolación y perfiles comunes a varios dominios), a
+costa de no maximizar el proxy de una sola señal. Lo que las referencias automáticas no
+pueden medir es si las personas prefieren las versiones de CAVA. Esa medición corresponde a
+EXP-040, cuyo conjunto de 9 videos ya está procesado y cuyo pre-registro está pendiente.

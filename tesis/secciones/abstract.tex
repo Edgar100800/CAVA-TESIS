@@ -1,0 +1,36 @@
+\customchapter{ABSTRACT}
+
+\begin{center}
+\large \vspace{-1.5cm} \textbf{CAVA: TOPIC SEGMENTATION OF LONG VIDEO BY CONSENSUS-BASED MULTIMODAL AGGREGATION WITHOUT REPRESENTATION FUSION}
+\end{center}
+
+Automatic analysis of long video requires splitting it into meaningful units, and no
+modality should hide the others while doing so. This thesis builds on a diagnosis from
+previous work: in A2Summ-X, an extension of the A2Summ summarization model
+\cite{he2023a2summ}, fusing modalities into a single representation lets text dominate the
+weighting between modalities (weights of 0.75 to 0.89) and cancels the visual contribution
+before any decision is made. We propose CAVA (Consumer-Adaptive Video Architecture), a topic
+segmentation system for long video that does not fuse representations. Each signal
+(transcript, image, voice and the descriptions of a vision--language model) emits its own
+boundaries and topic labels. Topics emerge from a quorum vote, signals without evidence in a
+stretch abstain, and every group records which signals support it.
+
+The system produces a topic map at two granularity levels that links non-adjacent segments
+when a topic returns. Five version formats are derived from the map: chapters, a 60-second
+recap, 10\,\% highlights, topic threads and speaker threads. Validation uses pre-registered
+gates on unseen data. On the 47 films of the MovieNet test split \cite{huang2020movienet},
+the map with abstention beats concatenation fusion ($z = 2.46$) and the contiguous manager
+($z = 2.48$) in pairwise MCC. The gain depends on abstention: without it, consensus is
+indistinguishable from fusion ($z = 0.80$), and the visual signal alone scores a higher MCC
+than any combination. Versions meet their budget on 58 films, 80 meetings, 90 web and user
+videos and 25 SumMe videos, and speaker identity reaches an ARI of 0.73 on AMI
+\cite{carletta2007ami}. Three gates are not met: highlight quality against simple baselines
+(EXP-031/037/038), non-adjacent links judged as the same plot (G-enlace-2), and narrator
+detection in documentaries (EXP-039). Of the 26 modules of the frozen system, 10 are
+validated. The human evaluation (EXP-040) is designed, with its set of 9 videos already
+processed, and is pending pre-registration and execution.
+
+\vspace{0.5em}
+\noindent \textbf{Keywords:}\\
+\noindent Video topic segmentation; multimodal aggregation; consensus voting;
+vision--language models; consumer-adaptive versions.

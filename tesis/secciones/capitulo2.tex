@@ -1,0 +1,271 @@
+\chapter{MARCO TEÓRICO}
+
+Este capítulo tiene dos partes. La primera presenta los fundamentos sobre los que se
+construye CAVA: la segmentación por desplazamiento de embeddings, el consenso de particiones
+mediante una matriz de co-asociación, el agrupamiento jerárquico y las métricas de
+evaluación. La segunda describe el diseño del sistema, cuyos módulos corresponden a archivos
+del repositorio: la extracción de señales (\texttt{pipeline.py}), el gestor multimodal sin
+fusión (\texttt{multimodal\_manager.py}), el mapa de tópicos (\texttt{topic\_map.py}), la voz
+y los hablantes (\texttt{voice.py}, \texttt{speaker.py}) y las versiones por consumidor
+(\texttt{versions.py}). La Figura~\ref{fig:mapa-mental} muestra el flujo completo: las
+señales se calculan en paralelo, cada una vota y ninguna representación se combina con otra;
+el mapa de tópicos sale del consenso y alimenta los formatos de consumidor.
+
+\begin{figure}[H]
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  font=\footnotesize,
+  node distance=4mm and 5mm,
+  stage/.style={draw=black!70, rounded corners=2pt, align=center,
+                minimum height=10mm, inner sep=3pt, fill=cyan!8},
+  sig/.style={stage, fill=cyan!16},
+  vlm/.style={stage, fill=orange!18},
+  data/.style={stage, fill=green!14},
+  salida/.style={stage, fill=violet!14},
+  arr/.style={-{Stealth[length=2.2mm]}, semithick},
+  nof/.style={arr, densely dashed, red!60!black},
+  lab/.style={font=\scriptsize\itshape, text=black!65}
+]
+\node[data]                       (video) {Video largo\\\scriptsize película / documental / reunión};
+\node[stage, right=of video]      (units) {Unidades\\\scriptsize 5 s (10 s en reunión)};
+\node[sig,   above right=3mm and 6mm of units] (tr)  {Transcripción\\\scriptsize Whisper $\to$ bge};
+\node[sig,   right=of units]                  (vis) {Visual\\\scriptsize SigLIP por unidad};
+\node[sig,   below right=3mm and 6mm of units] (voz) {Voz\\\scriptsize log-mel $+$ tono};
+\node[vlm,   below=11mm of voz]               (rzn) {Descripciones del VLM\\\scriptsize Qwen2.5-VL, bloques de $\sim$40 s};
+\node[stage, right=28mm of vis]   (votes){\textbf{Gestor sin fusión}\\\scriptsize fronteras y etiquetas propias por señal\\\scriptsize votos con quórum $\cdot$ abstención};
+\node[salida, right=of votes]      (mapa) {\textbf{Mapa de tópicos}\\\scriptsize retornos $\cdot$ niveles fino y por defecto\\\scriptsize procedencia por señal};
+\node[stage, below=10mm of mapa]  (ver)  {Versiones por consumidor\\\scriptsize capítulos $\cdot$ recapitulación 60 s $\cdot$ destacados 10\,\%\\\scriptsize hilos de tópico $\cdot$ hilos por hablante};
+
+\draw[arr] (video) -- (units);
+\draw[arr] (units) -- (tr);
+\draw[arr] (units) -- (vis);
+\draw[arr] (units) -- (voz);
+\draw[arr] (voz)   -- (rzn) node[lab, right=0.6mm] {habla $\to$ bloques};
+\draw[arr] (tr)  -- (votes);
+\draw[arr] (vis) -- (votes);
+\draw[arr] (voz) -- (votes);
+\draw[arr] (rzn) -- (votes);
+\draw[arr] (votes) -- (mapa) node[lab, above=0.4mm, midway] {consenso};
+\draw[arr] (mapa) -- (ver);
+\coordinate (nfA) at ($(tr.south west)+(0,-3mm)$);
+\coordinate (nfB) at ($(vis.north west)+(0,3mm)$);
+\draw[nof] (tr.south west) -- (nfA) -- node[lab, below=0.4mm] {sin fusión de embeddings ni scores} (nfB) -- (vis.north west);
+\end{tikzpicture}}%
+\caption{Flujo de CAVA. Las señales (azul) se calculan en paralelo y cada una vota con
+fronteras y etiquetas propias; el gestor decide por consenso con quórum y abstención; del
+mapa de tópicos (violeta) salen las versiones por consumidor. La línea roja discontinua
+marca la operación que el diseño excluye: combinar representaciones de señales distintas.}
+\label{fig:mapa-mental}
+\end{center}
+\end{figure}
+
+\section{Fundamentos}
+
+\subsection{Segmentación por desplazamiento de embeddings}
+Sea $x_1, \dots, x_n$ la secuencia de embeddings de una señal, uno por unidad temporal. El
+score de frontera entre las unidades $t$ y $t+1$ compara la media de una ventana de $w$
+unidades a cada lado:
+\begin{equation}
+  b_t = 1 - \cos\!\Big(\tfrac{1}{w}\textstyle\sum_{k=0}^{w-1} x_{t-k},\;
+        \tfrac{1}{w}\textstyle\sum_{k=1}^{w} x_{t+k}\Big),
+\end{equation}
+con los $x_t$ normalizados a norma unitaria y $w = 2$ en el gestor. El score se divide por su
+máximo en el video. Los picos de $b_t$ son candidatos a frontera, como en TextTiling
+\cite{hearst1997texttiling}.
+CAVA corta donde $b_t$ supera un percentil propio de cada señal y exige una separación mínima
+entre cortes. Usar un percentil y no un umbral absoluto hace que la cantidad de cortes no
+dependa de la escala de cada embedding.
+
+\subsection{Consenso de particiones y matriz de co-asociación}
+Dadas $S$ particiones de las mismas $n$ unidades, cada una con etiquetas $\ell^{s}_i$, la
+matriz de co-asociación cuenta en cuántas particiones aparece cada par en el mismo grupo
+\cite{fred2005evidence}:
+\begin{equation}
+  V_{ij} = \sum_{s=1}^{S} w_s\, \mathbf{1}\big[\ell^{s}_i = \ell^{s}_j\big].
+\end{equation}
+Con $w_s = 1$, $V_{ij}/S$ es la fracción de particiones que ponen juntos a $i$ y $j$. La
+partición de consenso se obtiene agrupando la matriz de distancias $D = 1 - V/S$. Este
+esquema combina decisiones y no representaciones: solo necesita las etiquetas de cada
+partición, nunca los embeddings que las produjeron \cite{strehl2002cluster}.
+
+Cuando una partición no tiene información sobre una unidad (por ejemplo, la transcripción en
+un tramo sin diálogo), contarla como ``separa a $i$ de $j$'' introduce un desacuerdo falso.
+CAVA define el conjunto de votantes activos en un par, $A_{ij} = \sum_s w_s\,
+\mathbf{1}[\ell^s_i \neq -1 \wedge \ell^s_j \neq -1]$, donde $-1$ indica abstención, y usa
+la fracción $V_{ij}/A_{ij}$ en lugar de $V_{ij}/S$ (Figura~\ref{fig:abstencion}).
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[font=\footnotesize, cell/.style={draw=black!60, minimum size=6mm,
+  inner sep=0pt}]
+  \foreach \lab/\y in {visual/0, diálogo/-0.75, VLM/-1.5} {
+    \node[anchor=east] at (-0.2,\y) {\lab};
+  }
+  % unidades 1..6; columnas
+  \foreach \x in {1,...,6} { \node at (\x*0.75-0.375,0.6) {$u_{\x}$}; }
+  % visual: A A B B A A
+  \foreach \x/\l/\c in {1/A/cyan!25,2/A/cyan!25,3/B/orange!25,4/B/orange!25,5/A/cyan!25,6/A/cyan!25}
+    { \node[cell, fill=\c] at (\x*0.75-0.375,0) {\l}; }
+  % diálogo: A A -1 -1 A A (sin diálogo en u3 y u4)
+  \foreach \x/\l/\c in {1/A/cyan!25,2/A/cyan!25,3/$-1$/black!8,4/$-1$/black!8,5/A/cyan!25,6/A/cyan!25}
+    { \node[cell, fill=\c] at (\x*0.75-0.375,-0.75) {\l}; }
+  % VLM: A A B B A A
+  \foreach \x/\l/\c in {1/A/cyan!25,2/A/cyan!25,3/B/orange!25,4/B/orange!25,5/A/cyan!25,6/A/cyan!25}
+    { \node[cell, fill=\c] at (\x*0.75-0.375,-1.5) {\l}; }
+  \node[align=left, anchor=west, text width=6.4cm] at (5.0,-0.75) {
+    Par $(u_3,u_4)$: votan visual y VLM; el diálogo se abstiene.\\
+    Sin abstención: $V/S = 2/3$.\quad Con abstención: $V/A = 2/2$.\\[2pt]
+    Par $(u_1,u_5)$, retorno del tópico A: las tres señales coinciden, $V/A = 3/3$.};
+\end{tikzpicture}
+\caption{Ejemplo de votación con abstención. Cada fila es la partición propia de una señal
+sobre seis unidades; $-1$ marca las unidades sin evidencia para esa señal. La abstención
+evita que el silencio del diálogo cuente como desacuerdo, y el retorno del tópico A
+($u_1,u_2$ y $u_5,u_6$) se enlaza porque todas las señales activas lo agrupan.}
+\label{fig:abstencion}
+\end{center}
+\end{figure}
+
+\subsection{Agrupamiento jerárquico y percolación}
+El agrupamiento jerárquico aglomerativo une en cada paso los dos grupos más cercanos. Con
+enlace simple, la distancia entre grupos es la del par más cercano; con enlace promedio, la
+media de todos los pares. Si se umbraliza $V$ y se toman las componentes conexas del grafo
+resultante, el resultado equivale al enlace simple: basta una cadena $i \sim j \sim k$ de
+pares que superan el quórum para que $i$ y $k$ queden en el mismo grupo aunque casi ninguna
+señal los agrupe. En una secuencia larga con retornos, estas cadenas se propagan hasta formar
+un tópico gigante, fenómeno que aquí se llama \emph{percolación}. El enlace promedio exige
+que el consenso se mantenga en promedio sobre todos los pares de los dos grupos, lo que corta
+las cadenas \cite{fred2005evidence}.
+
+\subsection{Métricas}
+El coeficiente de correlación de Matthews \cite{matthews1975comparison} resume una matriz de
+confusión binaria en un valor entre $-1$ y $1$:
+\begin{equation}
+  \mathrm{MCC} = \frac{TP\cdot TN - FP\cdot FN}
+  {\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}.
+\end{equation}
+CAVA lo aplica a la clasificación de pares de unidades (mismo tópico o no). A diferencia de la
+exactitud o el F1, el MCC vale cero para un predictor que une todo o que separa todo, de modo
+que no premia ni la sobresegmentación ni la percolación. El índice de Rand ajustado (ARI)
+\cite{hubert1985comparing} compara dos particiones corrigiendo el acuerdo esperado por azar, y
+se usa para la identidad de hablante. Para elegir el número de hablantes se usa el criterio de
+información bayesiano (BIC) \cite{schwarz1978estimating} sobre un agrupamiento de Ward
+\cite{ward1963hierarchical}, que en cada paso une los grupos cuya fusión menos aumenta la
+varianza interna.
+
+\section{Diseño del sistema: definiciones}
+
+\begin{itemize}
+  \item Unidad: tramo temporal fijo (5\,s en los perfiles de película y documental, 10\,s en
+        reunión) sobre el que cada señal produce un embedding o un score. Es el elemento que
+        se vota. Las fronteras finales se ajustan al corte visual certificado por SegLoop más
+        cercano, dentro de una ventana de hasta 30\,s.
+  \item Señal: fuente de evidencia que se procesa por separado hasta la decisión. El producto
+        usa cuatro señales de embeddings (transcripción proyectada con bge, visual SigLIP
+        \cite{zhai2023siglip} por unidad, voz con log-mel y tono, y descripciones de un VLM
+        \cite{bai2025qwen25vl} por bloques de $\sim$40\,s) y, en el perfil de reunión, los
+        turnos de hablante como votante de fronteras.
+  \item Fusión: combinar embeddings o scores de señales distintas en una representación única
+        antes de decidir. CAVA no la usa en ningún punto. La base de comparación
+        \texttt{fused} de los experimentos concatena los embeddings normalizados de las
+        señales y los pasa por el mismo gestor como si fueran una sola señal.
+  \item Consenso de votos: cada señal emite sus propios cortes (percentil propio de su score
+        de frontera) y sus propias etiquetas de tópico. Una frontera queda confirmada si
+        alcanza la mayoría ponderada de las señales, o un número mínimo de señales
+        (\texttt{cut\_quorum}); un par de unidades se enlaza si un quórum de señales lo
+        agrupa.
+  \item Tópico: grupo de unidades, posiblemente no contiguas, que un quórum de señales
+        agrupa. Un retorno es la reaparición de un tópico después de una ausencia.
+  \item Abstención: una señal sin evidencia en una unidad no vota sobre ella (etiqueta $-1$).
+  \item Procedencia: por cada grupo, el aporte de cada señal medido como acuerdo (fracción de
+        pares del grupo que la señal pone en su mismo tópico propio), soporte (fracción de
+        unidades que comparten etiqueta con otra del grupo) y coherencia de sus embeddings
+        dejando una unidad fuera.
+  \item Versión por consumidor: producto derivado del mapa con un presupuesto declarado:
+        capítulos, recapitulación de 60\,s, destacados del 10\,\%, hilos de tópico e hilos
+        por hablante.
+\end{itemize}
+
+\section{Extracción de señales}
+
+Las señales se calculan en \texttt{pipeline.py}. La transcripción usa faster-whisper large-v3
+\cite{radford2023whisper} y se proyecta a embeddings con bge \cite{xiao2023bge}. La señal
+visual codifica un frame por unidad con SigLIP. La voz extrae descriptores de log-mel y tono.
+El VLM (Qwen2.5-VL-7B, congelado, sin ajuste) describe bloques de $\sim$40\,s a partir de
+tres frames y del habla del bloque, y esas descripciones, proyectadas con bge, forman una
+cuarta señal de embeddings. El módulo \texttt{signals/core.py} define además contratos de
+señal tipados, de los cuales el de transcripción se usa en los pilotos y los de texto en
+pantalla (OCR) y espectro de audio quedan sin implementación. Los perfiles de contenido fijan
+el percentil de corte por dominio: p80 para película, p90 para documental y p95 para reunión.
+
+\section{Gestor multimodal sin fusión}
+
+El núcleo del sistema (\texttt{multimodal\_manager.py}) ejecuta cuatro pasos:
+
+\begin{enumerate}
+  \item Por señal: score de frontera propio (ecuación del desplazamiento con ventana $w$),
+        cortes propios por percentil con separación mínima y etiquetas de tópico propias
+        sobre esos cortes.
+  \item Consenso de fronteras: cada señal marca presencia en $\pm 1$ unidad alrededor de
+        cada corte propio, los votos se suman con el peso de cada señal y cada racha de
+        posiciones contiguas que alcanza la mayoría se reduce a un único corte en el máximo
+        de votos. En el producto todas las señales de embeddings pesan 1.0; el votante de
+        densidad de habla, usado en los pilotos, pesa 0.5.
+  \item Consenso de enlace: la matriz de votos $V_{ij}$ se compara con el quórum $q$ y los
+        grupos se forman como componentes conexas (modo \texttt{components}) o por enlace
+        promedio (modo \texttt{average}). Con abstención, un par solo se enlaza si tiene al
+        menos $q$ votantes activos.
+  \item Procedencia y banderas: cada grupo reporta el aporte de cada señal; un grupo de una
+        unidad sin soporte de varias señales se marca \texttt{no\_topic}, y uno mayor que
+        \texttt{max\_group\_segments} se marca \texttt{needs\_review}.
+\end{enumerate}
+
+\section{Retornos de tópico}
+
+Las etiquetas de cada señal admiten retornos (función \texttt{\_return\_labels}). En orden
+temporal, cada segmento puede unirse al tópico anterior con el que tenga mayor similitud
+coseno, si esa similitud supera un percentil de las similitudes entre segmentos no adyacentes
+de la misma señal. Un segmento nunca vuelve al tópico del que acaba de separarse y solo puede
+unirse a un tópico existente. De este modo, que un tema se retome es una decisión de cada
+señal, que el quórum después confirma o descarta.
+
+\section{Mapa de tópicos}
+
+El mapa (\texttt{topic\_map.py}) es la salida que usan los formatos. Por video tiene dos
+niveles de granularidad (\texttt{fine}, con quórum de todas las señales, y \texttt{default},
+con quórum 2) y, por tópico, las unidades que lo forman, sus tramos en segundos, la duración
+acumulada, el número de retornos, una etiqueta generada por un modelo de lenguaje
+(Qwen2.5-14B) a partir de los tramos, la procedencia por señal, las banderas y el contexto de
+cada tramo (la descripción del VLM y el diálogo, ambos producidos por el propio sistema). Los
+nombres de personajes se propagan por los enlaces del mapa. Las identidades por apariencia
+(P\#) se calculan pero no se publican como identidad.
+
+\section{Agregador adaptativo}
+
+Como alternativa al percentil fijo, el agregador adaptativo deja que la longitud de los
+tópicos dependa de dónde las señales siguen viendo continuidad. Cada votante juzga cada par
+de unidades vecinas comparando la similitud cruzada con su coherencia interna y un umbral
+propio, la unión del par requiere mayoría estricta de votantes activos y cada ronda se
+registra como un nivel de una jerarquía. Esta variante trata la granularidad como un
+resultado y no como un hiperparámetro; no forma parte del producto congelado.
+
+\section{Voz e identidad de hablante}
+
+La voz entra al sistema de tres maneras. Como votante de tópico, sus embeddings de log-mel y
+tono agrupan unidades acústicamente parecidas. Como votante de fronteras, la caída de la
+densidad de habla marca pausas. Como identidad, los embeddings de hablante WavLM-sv
+\cite{chen2022wavlm} se agrupan con Ward, el número de grupos se elige con BIC y el resultado
+son las identidades V\#. Un detector de hablante único compara la dispersión de los
+embeddings con un umbral $\tau$ calibrado y decide si el video tiene un solo hablante, como un
+narrador. En el perfil de documental las identidades de voz se publican como grupos acústicos
+y no como personas, porque el detector no reconoce al narrador único.
+
+\section{Versiones por consumidor}
+
+Del mapa se derivan cinco formatos con presupuestos verificables: capítulos (fronteras del
+nivel superior), recapitulación de 60\,s (una unidad por tópico hasta llenar el presupuesto),
+destacados del 10\,\% (tramos representativos de los tópicos más largos), hilos de tópico
+(una lista de reproducción por tópico con sus retornos) e hilos por hablante (una lista por
+identidad de voz). La compuerta G-versión verifica, por video y por formato, que cada lista
+exista, cumpla su presupuesto y que cada perfil tenga al menos una versión. No mide la
+calidad percibida, que corresponde a la evaluación con personas (EXP-040).

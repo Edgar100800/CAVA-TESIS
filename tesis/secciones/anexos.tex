@@ -1,0 +1,103 @@
+\chapter*{\center \Large ANEXOS}
+\addcontentsline{toc}{section}{\bfseries ANEXOS}
+\markboth{ANEXOS}{ANEXOS}
+
+\section*{Anexo A. Reproducibilidad experimental}
+
+El repositorio del proyecto contiene el paquete \texttt{topicagg} con sus dependencias
+declaradas en \texttt{pyproject.toml} y una suite de 25 pruebas automatizadas; el contrato de
+corrida \texttt{cava-run-v1}, con un manifiesto por video (commit de git, indicador de
+cambios sin confirmar, perfil, hiperparámetros y \texttt{gt\_used: false}) y 115 corridas
+registradas; el registro cronológico de experimentos con sus pre-registros y veredictos
+(\texttt{docs/EXPERIMENT\_LOG.md}); la decisión de arquitectura ADR-0001 (sin fusión de
+representaciones, votantes activos y abstención); los reportes semanales en
+\texttt{reports/}; y los JSON de resultados por experimento en \texttt{results/}.
+
+\section*{Anexo B. Inventario de módulos}
+
+El inventario de los 26 módulos del pipeline (implementación, evidencia y estado), la tabla de
+lo que puede afirmarse por tipo de contenido y la lista de conjuntos con anotación disponible
+están en \texttt{docs/progress.md}. La Tabla~\ref{tab:inventario} del Capítulo~IV resume ese
+inventario.
+
+\section*{Anexo C. Glosario y experimentos citados}
+
+\begin{table}[H]
+    \centering
+    \caption{Términos y nombres internos usados en el documento.}
+    \label{tab:glosario}
+    \small
+    \begin{tabular}{p{3.2cm}p{10.2cm}}
+        \hline
+        \textbf{Término} & \textbf{Significado} \\
+        \hline
+        \texttt{cava\_abst} & Configuración final del gestor: retornos con percentil 90,
+                              enlace promedio y abstención. \\
+        \texttt{cava}, \texttt{cava\_avg} & Variantes sin abstención, con componentes
+                              conexas o con enlace promedio. \\
+        \texttt{\_r80}, \texttt{\_r95} & Sufijos que cambian el percentil de retorno a 80 o 95. \\
+        \texttt{fused} & Base que concatena los embeddings normalizados de las señales y los
+                         trata como una sola señal en el mismo gestor. \\
+        \texttt{contiguous} & Gestor sin retornos: solo produce tópicos contiguos. \\
+        Proxy de reparto & Referencia de MovieNet: dos tomas son del mismo tópico si
+                           comparten personajes. \\
+        Procedencia & Aporte de cada señal a un grupo (acuerdo, soporte y coherencia). \\
+        Percolación & Colapso del mapa en pocos tópicos gigantes por encadenamiento de
+                      enlaces. \\
+        P\#, V\# & Identidades por apariencia (no publicadas) y por voz. \\
+        blind40, raw\_ext & Subconjuntos de VidChapters para evaluación ciega (40 videos) y
+                            desarrollo (50 videos). \\
+        S\&W, I\&W & Filtros de habla de EXP-034: intersección de Silero VAD (S) o de ina (I)
+                        con la detección de habla de Whisper (W). \\
+        Bases U, S, T & Bases de EXP-040: clips equiespaciados, mejor señal sola y
+                        segmentación de un modelo de lenguaje sobre los subtítulos. \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Experimentos citados en el documento.}
+    \label{tab:experimentos}
+    \small
+    \begin{tabular}{p{2.3cm}p{7.4cm}p{3.6cm}}
+        \hline
+        \textbf{Experimento} & \textbf{Pregunta} & \textbf{Resultado} \\
+        \hline
+        EXP-017/018 & ¿El mapa por consenso supera a la fusión y al contiguo en MCC? &
+                      Sí con abstención ($z = 2.46$) \\
+        EXP-020a & ¿La voz identifica al hablante mejor que la imagen? & Sí (AUC 0.74 frente
+                   a 0.55) \\
+        EXP-023 & ¿Los turnos de hablante mejoran las fronteras en reuniones? & Parcial ($z =
+                  2.32$; empata con contiguo) \\
+        EXP-025 & ¿El perfil de documental se acerca al acuerdo humano en BBC? & Sí ($z =
+                  6.1$ y $7.4$) \\
+        EXP-027 & ¿El ajuste a cortes visuales es preciso? & Sí ($z = 26.6$ y $23.0$) \\
+        EXP-028 & ¿Los filtros de habla mejoran la identidad de voz? & Sí (ARI 0.64 y
+                  0.73) \\
+        EXP-029 & ¿El detector de hablante único evita falsos en reuniones? & Sí (0/40), sin
+                  narrador (0/11) \\
+        EXP-030 & ¿Parakeet reemplaza a Whisper? & No \\
+        EXP-031 & ¿Los destacados siguen la importancia humana en TVSum? & No \\
+        EXP-032 & ¿CAVA reproduce los capítulos de autor? & Solo supera a la fusión \\
+        EXP-033 & ¿Un nivel de capítulo por fronteras funciona? & Parcial \\
+        EXP-037 & ¿Una regla fija de destacados supera a las bases? & No ($z = 0.70$) \\
+        EXP-038 & ¿Una política aprendida transfiere entre conjuntos? & No ($z = -2.62$) \\
+        EXP-039 & ¿Otro detector resuelve al narrador con habla filtrada? & No ($z = -0.37$) \\
+        G-enlace-2 & ¿Un juez reconoce los retornos como el mismo hilo? & No ($p = 0.72$) \\
+        EXP-040 & ¿Las personas prefieren las versiones de CAVA? & Diseñado, pendiente \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section*{Anexo D. Definiciones operativas de métricas}
+
+El MCC del mapa se calcula sobre la clasificación de pares de unidades (mismo tópico o no)
+contra la referencia: proxy de reparto en MovieNet y anotación de tópicos en AMI. El margen
+de coherencia intra$-$inter compara, por señal, la similitud coseno de cada unidad con su
+grupo (dejándola fuera) y la similitud entre grupos. El ARI evalúa la identidad de hablante
+contra la anotación de AMI y VoxConverse. La recompensa de clips es el $z$ de la fracción de
+anotadores que eligió cada segundo en TVSum y SumMe. G-versión verifica la existencia y el
+presupuesto de cada lista por video y formato. Las diferencias se reportan con el error
+estándar por video (o por reunión), y el umbral de validación es $z > 2$ salvo que el
+pre-registro indique otro.

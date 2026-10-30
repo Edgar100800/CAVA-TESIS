@@ -1,0 +1,33 @@
+\chapter*{\center \Large TRABAJOS FUTUROS}
+\addcontentsline{toc}{section}{\bfseries TRABAJOS FUTUROS}
+\markboth{TRABAJOS FUTUROS}{TRABAJOS FUTUROS}
+
+A partir de los resultados actuales quedan definidas las siguientes líneas de trabajo:
+
+\begin{itemize}
+  \item Evaluación A/B con personas (EXP-040). Pre-registrar y ejecutar el diseño de
+        $\sim$1000 juicios (200 por formato) de los cinco formatos frente a las bases U
+        (clips equiespaciados con igual presupuesto) y S (mejor señal sola), y decidir si se
+        incluye la base T (segmentación de un modelo de lenguaje sobre los subtítulos). Antes
+        de medir hay que corregir y declarar el defecto de los destacados en videos de menos
+        de 50\,s.
+  \item Fusión aprendida como base de comparación. Comparar el gestor con una fusión con
+        compuertas aprendidas, como la de A2Summ-X, y no solo con la concatenación, para
+        saber si la ventaja se mantiene frente a fusiones más fuertes.
+  \item Señales pendientes de extracción. Implementar el texto en pantalla (OCR) y el
+        espectro de audio como votantes, cuyos contratos ya están definidos en
+        \texttt{signals/}.
+  \item Enlaces de trama (G-enlace). Probar descriptores narrativos que capturen continuidad
+        de trama y no solo de personajes y situaciones, o reformular la compuerta con jueces
+        humanos especializados.
+  \item Narrador en documentales. Después de EXP-039, el siguiente candidato es un modelo de
+        segmentación con conteo local de hablantes, como pyannote, o una estimación del
+        número de hablantes por \emph{eigengap} \cite{park2020nme} sobre ventanas más
+        cortas; la anotación propia de los 176 clips de BBC (EXP-035b) sigue pendiente.
+  \item Recompensa para políticas de clips. Normalizar la recompensa por posición o
+        entrenar con un conjunto grande, dado que la importancia anotada en un conjunto
+        pequeño induce preferencias de posición que no transfieren (EXP-038).
+  \item AMI y otros dominios. Completar la evaluación de AMI que quedó pendiente por archivos
+        de video ausentes y extender el A/B a otros tipos de contenido sin anotación
+        pública.
+\end{itemize}
