@@ -248,6 +248,12 @@
 \newcommand*{\president}[1]{\def\presname{#1}}
 \newcommand*{\major}[1]{\def\majorname{#1}}
 \newcommand*{\degree}[1]{\def\degreename{#1}}
+\def\doctypename{TRABAJO DE INVESTIGACIÓN}
+\newcommand*{\doctype}[1]{\def\doctypename{#1}}
+\def\authorlabel{AUTORES}
+\newcommand*{\authorlabelname}[1]{\def\authorlabel{#1}}
+\def\suplabel{ASESOR}
+\newcommand*{\suplabelname}[1]{\def\suplabel{#1}}
 \renewcommand*{\author}[1]{\def\authornames{#1}}
 \newcommand*{\authorid}[1]{\def\studentid{#1}}
 \newcommand*{\department}[1]{\def\deptname{#1}}
@@ -274,6 +280,7 @@
 %% ============================================================================
 \renewcommand\maketitle{
   \btypeout{Title Page}
+  \pdfstringdefDisableCommands{\let\orcid\@gobble\let\\\space}%
   \hypersetup{pdftitle={\@title}}
   \hypersetup{pdfsubject=\subjectname}
   \hypersetup{pdfauthor=\authornames}
@@ -284,38 +291,32 @@
     \let\footnoterule\relax
     \let \footnote \thanks
     \setcounter{footnote}{0}
-    \null\vfil
-    %\vskip 60\p@
     \begin{center}
       \setlength{\parskip}{0pt}
-      \vspace{-1.5cm}
+      \setstretch{1.15}
+      \vspace*{-1cm}
+      \href{https://www.utec.edu.pe}{\includegraphics[height=3.5cm]{images/logo_utec.png}}\par
+      \vspace{0.8cm}
       {\large \textbf{UNIVERSIDAD DE INGENIERÍA Y TECNOLOGÍA}\par}
-      \vspace{0.5cm}
-      {\large {CARRERA DE \deptname }\par}
+      \vspace{0.2cm}
+      {\large CARRERA DE \deptname\par}
       \vfill
-     
-      \href{https://www.utec.edu.pe}{\includegraphics[height=2.5cm]{images/logo_utec.png}}\\
+      {\large \bfseries \@title \par}
       \vfill
-      \vspace{0.5cm}
-      {\Large \bf \@title \par}
-      \vspace{1.5cm}
-      {\large \textbf{TRABAJO DE INVESTIGACIÓN}\par}
-      {\large Para optar el grado de \degreename  en \majorname \par}
+      {\large \textbf{\doctypename}\par}
+      \vspace{0.2cm}
+      {Para optar el grado de \degreename\ en \majorname\par}
       \vfill
-      \smallskip
-      \vspace{0.5cm}
-      {\large \textbf{AUTOR(ES)}\par}
-      {\large \authornames \par}
-      \vspace{0.5cm}
-%      {\large \textbf{Código \studentid} \par}
-      \vspace{0.5cm}
-      {\large \bf ASESOR(ES) \par}
-      \smallskip
-      {\large \supname \par}
+      {\large \textbf{\authorlabel}\par}
+      \vspace{0.2cm}
+      {\authornames\par}
+      \vspace{0.8cm}
+      {\large \textbf{\suplabel}\par}
+      \vspace{0.2cm}
+      {\supname\par}
       \vfill
-      \vspace{1.5cm}
-      {\large Lima - Perú \par}
-      {\large \dateMY \par}
+      {Lima -- Perú\par}
+      {\dateMY\par}
     \end{center}
     \par
     \@thanks
