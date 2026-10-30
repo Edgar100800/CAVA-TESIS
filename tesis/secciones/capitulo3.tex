@@ -3,10 +3,8 @@
 La metodología adapta el esquema de compuertas incrementales de los trabajos previos a un
 sistema que no se entrena de punta a punta. Cada capacidad de CAVA se valida con una
 compuerta pre-registrada: el criterio, los datos y el umbral se fijan antes de ejecutar, y el
-split de test de cada dominio se consulta una sola vez por hipótesis. El pipeline es
-reproducible: cada corrida guarda un manifiesto, los experimentos se registran en orden
-cronológico (EXP-009 a EXP-040), las decisiones de arquitectura se documentan por escrito y una
-suite de pruebas automatizadas cubre los módulos centrales. El Anexo~C resume los
+split de test de cada dominio se consulta una sola vez por hipótesis. Los experimentos
+se registran en orden cronológico (EXP-009 a EXP-040). El Anexo~C resume los
 experimentos citados.
 
 \section{Datos y splits}
@@ -34,8 +32,8 @@ experimentos citados.
         anotación previa, reunidos para la evaluación con personas.
 \end{itemize}
 
-Ninguna corrida del producto usa anotaciones en la inferencia, y el manifiesto de cada una
-(115 corridas) lo registra.
+El sistema no usa anotaciones en la inferencia: las anotaciones de cada conjunto solo se
+usan para evaluar.
 
 \section{Pipeline experimental}
 
@@ -105,7 +103,7 @@ pueda abstenerse.
         G-coherencia & Margen intra$-$inter positivo en cada señal y en cada película
                       & Cumplida (47/47 películas en las tres señales) \\
         G-versión & Toda lista existe, cumple su presupuesto y hay al menos una versión
-                      por perfil & Cumplida (58/58, 80/80, 90/90, 25/25, 9/9) \\
+                      por perfil & Cumplida en todos los conjuntos \\
         G-enlace-2 & Enlaces no contiguos juzgados como el mismo hilo más que momentos
                       lejanos al azar (revisión ciega, Fisher $p < 0.05$) & No cumplida
                       ($p = 0.72$) \\
@@ -123,13 +121,9 @@ pueda abstenerse.
 \section{Infraestructura y reproducibilidad}
 
 Los experimentos se ejecutan en el clúster institucional (GPU NVIDIA RTX A6000 de 48\,GB y
-A100). El VLM y los modelos de voz corren en GPU y el gestor en CPU. Cada corrida del
-producto guarda un manifiesto con la versión exacta del código, el perfil y los
-hiperparámetros, junto con la lista de clips generados. Una suite de 25 pruebas
-automatizadas cubre el gestor, el agregador adaptativo, el ajuste a cortes, el mapa y la
-compuerta de versiones, y se ejecuta antes de cada corrida. Las decisiones de arquitectura,
-entre ellas la de no fusionar representaciones y usar votantes activos con abstención, se
-registran por escrito.
+A100). El VLM y los modelos de voz corren en GPU y el gestor en CPU. Cada ejecución queda
+asociada a la versión del código, el perfil y los hiperparámetros usados, de modo que los
+resultados se pueden reproducir.
 
 \section{Métricas}
 
