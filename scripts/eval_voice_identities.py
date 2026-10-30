@@ -10,6 +10,7 @@ como comparación, con `visual`. Contra el hablante dominante GT:
 import argparse
 import json
 import random
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -21,33 +22,8 @@ from sklearn.metrics import adjusted_rand_score, silhouette_score
 D = Path("data/ami")
 
 
-def bic_k(xn, kmax=8):
-    """EXP-022d: nº de identidades por BIC de una mezcla gaussiana (PCA 16, diag)."""
-    from sklearn.decomposition import PCA
-    from sklearn.mixture import GaussianMixture
-    xp = PCA(n_components=min(16, len(xn) - 1), random_state=0).fit_transform(xn)
-    bic = {k: GaussianMixture(k, covariance_type="diag", random_state=0).fit(xp).bic(xp)
-           for k in range(2, kmax + 1)}
-    return min(bic, key=bic.get)
-
-
-def identities(x, method="average", fixed_k=None, k_rule="silhouette"):
-    ok = np.where(np.linalg.norm(x, axis=1) > 0)[0]
-    xn = x[ok] / np.linalg.norm(x[ok], axis=1, keepdims=True)
-    if k_rule == "bic" and not fixed_k:
-        fixed_k = bic_k(xn)
-    Z = linkage(xn, method="ward") if method == "ward" else linkage(pdist(xn, "cosine"), method="average")
-    best, lab_best = -2, None
-    for k in ([fixed_k] if fixed_k else range(2, 9)):
-        lab = fcluster(Z, t=k, criterion="maxclust")
-        if len(set(lab)) < 2:
-            continue
-        s = silhouette_score(xn, lab, metric="cosine")
-        if s > best or fixed_k:
-            best, lab_best = s, lab
-    out = np.full(len(x), -1)
-    out[ok] = lab_best
-    return out
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from topicagg.identities import bic_k, identities  # noqa: E402,F401  (movido a topicagg/identities.py)
 
 
 def dominant(units, speech):

@@ -32,7 +32,7 @@
 | 15 | Identidad de hablante (WavLM-sv + ward + BIC) | `topicagg/speaker.py` | sí | EXP-022d, EXP-028 (VoxConverse ARI 0.25 → 0.64, AMI 0.29 → 0.73) | **validado** en habla conversacional |
 | 16 | Detector de un solo hablante (spread, τ 0.976) | `speaker.py` | sí | EXP-029 (0 / 40 falsos en AMI) | **acotado**: no ve al narrador de BBC (0 / 11) |
 | 17 | Filtro de habla S&W / I&W para identidades | `scripts/exp034_*` | sí (fuera del producto) | EXP-034 (habla falsa 0.73 → 0.13–0.16), EXP-035a (+0.41, z 5.6) | **parcial**: bloqueado por falsos narradores (EXP-035a / 036) |
-| 18 | Detectores de segunda voz (q15, minor, bic12, NME) | `scripts/exp039_*` | sí | EXP-039 pre-registrado; caché GPU falló por memoria | **sin probar** |
+| 18 | Detectores de segunda voz (q15, minor, bic12, NME) | `scripts/exp039_*` | sí | EXP-039 (criterio 1 no: z −0.37 S&W, 0.00 I&W; `results/exp039.json`) | **no validado** |
 | 19 | Versiones por consumidor y gate G-versión | `topicagg/versions.py` | sí | G-versión 58 / 58 películas, 80 / 80 reuniones, 90 / 90 v1, 25 / 25 SumMe | **validado** (presupuesto, no calidad) |
 | 20 | Calidad de highlights (regla "tópicos más largos") | `versions.py` | sí | EXP-031 (≈ azar en TVSum) | **no validado** |
 | 21 | Regla de highlights H3 (ventana saliente por tópico) | `scripts/exp037_highlights.py` | sí (fuera del producto) | EXP-037 (SumMe z 0.70 frente a uniforme) | **no validado** |

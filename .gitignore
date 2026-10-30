@@ -5,3 +5,25 @@ data/
 test-video/videos/*
 test-video/results/*
 test-video/Zifr_c0dTlc/*
+
+# LaTeX (informe tesis/)
+tesis/build/
+tesis/*.aux
+tesis/*.bbl
+tesis/*.blg
+tesis/*.fdb_latexmk
+tesis/*.fls
+tesis/*.log
+tesis/*.out
+tesis/*.toc
+tesis/*.lof
+tesis/*.lot
+tesis/*.synctex.gz
+
+# índice local de codegraph
+.codegraph/
+
+# salidas de compilación de la tesis
+tesis/main.pdf
+tesis/main.bbl
+*.egg-info/

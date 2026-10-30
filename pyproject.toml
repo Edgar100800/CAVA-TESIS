@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cava-topicagg"
+version = "2.1.0"
+description = "CAVA: segmentación temática de video largo por consenso de votos, sin fusión de representaciones"
+requires-python = ">=3.10"
+# núcleo CPU: gestor sin fusión, mapa de tópicos, versiones, identidades de voz
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+# extracción de señales y etiquetas (pipeline completo; GPU para VJudge y Qwen2.5-14B)
+models = [
+    "torch",
+    "transformers",
+    "faster-whisper",
+    "pillow",
+]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["topicagg*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

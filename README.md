@@ -8,18 +8,46 @@ clip adaptadas al consumidor.
 ## Estructura
 
 ```
-CAVA/
-├── topicagg/            # gestor multimodal sin fusión (v2.1, núcleo)
-│   ├── multimodal_manager.py   # consenso de votos por señal (sin embeddings fusionados)
-│   ├── topic_segmenter.py      # fronteras temáticas por desplazamiento
-│   ├── topic_aggregator.py     # enlaza segmentos no adyacentes del mismo tema
-│   └── signals/                # contratos: transcript ✓ · OCR · audio · video
-├── demos/               # demo_bliss (transcripts) · demo_multimodal (video real)
-├── docs/                # jornada + integración + plan de granularidad
-├── scripts/
+CAVA-TESIS/
+├── topicagg/                 # paquete del producto (v2.1, núcleo)
+│   ├── pipeline.py               # corrida completa: unidades → señales → mapa → versiones (cava-run-v1)
+│   ├── multimodal_manager.py     # gestor sin fusión: votos por señal, retornos, abstención, enlace por quórum
+│   ├── topic_map.py              # mapa de tópicos (niveles fine/default, provenance, snap a cortes)
+│   ├── versions.py               # 5 formatos por consumidor + compuerta G-versión
+│   ├── voice.py                  # rasgos de voz (log-mel + tono), señal `voice`
+│   ├── speaker.py                # embedding de hablante WavLM-sv, detector de hablante único
+│   ├── identities.py             # identidades V# (ward + BIC), votante de turnos, hablantes por tramo
+│   ├── embed.py                  # embeddings bge para transcript y vjudge
+│   ├── labels.py                 # prompt y limpieza de la etiqueta de tópico
+│   ├── chapters.py               # nivel de capítulo (parcial, fuera del producto)
+│   ├── adaptive_aggregator.py    # agregador adaptativo (granularidad emergente)
+│   ├── asr_parakeet.py           # ASR alternativo (EXP-030: no reemplaza a Whisper)
+│   ├── topic_segmenter.py · topic_aggregator.py   # v2.0 (TopicGroup sigue en uso)
+│   └── signals/                  # contratos de señal: TranscriptSignal (solo lo usan los demos);
+│                                 #   OcrSignal y AudioSignal sin implementación ni llamadores
+├── tests/               # 25 pruebas: gestor, abstención, mapa, versiones, snap, agregador adaptativo
+├── scripts/             # un script por experimento o evaluación (exp0NN_*, eval_*, build_*)
+├── demos/               # demo_bliss (transcripts) · demo_multimodal (video real, requiere SegLoop)
+├── test-video/          # corridas sobre videos de prueba propios
+├── results/             # JSON de resultados por experimento
+├── logs/                # salidas de los jobs SLURM
+├── reports/             # reportes semanales por fecha (AAAA-MM-DD/)
+├── docs/                # EXPERIMENT_LOG, progress (estado por módulo), architecture, adr/, wayfinding/
+├── tesis/               # documento de tesis en LaTeX (plantilla UTEC)
 ├── data/                # outputs (gitignored)
 └── VERSIONS.md          # registro v1 → v2 → v2.1
 ```
+
+## Instalación y pruebas
+
+```bash
+pip install -e ".[dev]"          # núcleo CPU (numpy, scipy, scikit-learn) + pytest
+pip install -e ".[models,dev]"   # pipeline completo: torch, transformers, faster-whisper, pillow
+python -m pytest -q
+```
+
+Los scripts de `scripts/` se ejecutan desde la raíz del repo (`python scripts/<x>.py`);
+añaden la raíz a `sys.path` por su cuenta. `topicagg/` no importa nada de `scripts/`.
 
 ## Dependencias
 
@@ -31,6 +59,8 @@ CAVA/
 ## Decision records y wayfinding
 
 - **ADRs:** `docs/adr/NNNN-slug.md` (formato heredado de SegLoop; convención obligatoria).
+  En este repo solo existe `0001-sin-fusion-de-representaciones.md`; ADR-0007/0008
+  (citadas abajo) son de SegLoop.
 - **Wayfinding:** `docs/wayfinding/map.md` — mapa de decisiones del esfuerzo activo
   (afinado de granularidad) con tickets en `docs/wayfinding/tickets/`.
   Reglas: planear antes que ejecutar · referir tickets por nombre · una decisión
@@ -60,6 +90,6 @@ CAVA/
 ## Reglas del proyecto
 
 1. Nada fusiona embeddings ni scores entre señales: el tópico emerge por
-   **consenso de votos** (lección v1, ADR-0007/0008).
+   **consenso de votos** (lección v1; ADR-0001 aquí, ADR-0007/0008 en SegLoop).
 2. Toda evaluación con compuerta pre-registrada; cuantitativa Y cualitativa.
 3. Todo resultado se valida por sus datos efectivos.

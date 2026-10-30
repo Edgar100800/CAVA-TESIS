@@ -3693,3 +3693,32 @@ TVSum es significativamente peor que elegir al azar.
   entrenar una política de clips que generalice. Ver la propuesta de
   recompensa en el reporte del 16 oct (normalizar por posición o un
   conjunto grande).
+
+### Resultado EXP-039 (caché jobs 58171 + 58174, eval 58172; `results/exp039.json`)
+
+Desarrollo (docmix dev K = 1: 60, K ≥ 2 + domix dev: 144):
+
+| candidato | umbral | objetivo | falsos ≤ 0.02 |
+|---|---|---|---|
+| D0 spread | 0.983 | **0.183** | sí |
+| D1 q15 | 0.975 | 0.075 | sí |
+| D2 minor | 0.965 | 0.147 | sí |
+| D3 bic12 | −3.088 | 0.165 | sí |
+| D4 nme | — | 0.192 | **no** |
+
+Elegido: **spread, τ 0.983** (el mayor objetivo entre los que cumplen).
+
+Confirmación frente a W (spread τ 0.976): un hablante en docmix K = 1 0.130,
+falsos 0.000 en docmix y 0.025 en domix.
+
+| criterio | S&W | I&W |
+|---|---|---|
+| 1. un hablante K = 1, G − W (n = 46) | −0.022 ± 0.058, z −0.37 · **no** | 0.000 ± 0.062, z 0.00 · **no** |
+| 2. falsos docmix K ≥ 2 ≤ W + 0.05 | 0.019 · sí | 0.019 · sí |
+| 3. falsos domix ≤ W + 0.05 | 0.000 · sí | 0.000 · sí |
+| 4. AMI: ≤ 1 de 40 de un hablante | 0 / 40 · sí | 0 / 40 · sí |
+
+**No validado.** Lectura pre-declarada "1 no": ningún detector conserva la
+detección del narrador. BBC declarados de un hablante: S&W 2 / 11 (bbc_07,
+bbc_09), I&W 0 / 11. Siguiente candidato según el pre-registro: segmentación
+con conteo local (pyannote).

@@ -175,9 +175,7 @@ class Pipeline:
 
     # 8-9
     def topic_map(self):
-        import sys
-        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-        from narrative_eval import BgeEmbedder
+        from .embed import BgeEmbedder
         from .topic_map import build_topic_map
         bge = BgeEmbedder()
         n = len(self.state["units"])
@@ -189,8 +187,7 @@ class Pipeline:
                "transcript": bge(self.state["asr"]), "vjudge": vj}
         bnd = None
         if self.cfg.get("speaker_turns_w"):
-            from eval_voice_identities import identities
-            from speaker_turns import speaker_turn_scores
+            from .identities import identities, speaker_turn_scores
             vid = identities(np.asarray(sig["voice"], np.float32), "ward", k_rule="bic")
             bnd = {"turns": speaker_turn_scores(vid, self.cfg["speaker_turns_w"])}
         self.doc = build_topic_map(self.video.stem, sig, self.state["units"], unit_summaries=self.summaries,
@@ -204,9 +201,7 @@ class Pipeline:
 
     # 10
     def labels(self, min_dur=30.0):
-        import sys
-        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-        from vjudge_topic_labels import PROMPT, clean_label, stretches_text
+        from .labels import PROMPT, clean_label, stretches_text
         topics = [t for t in self.doc["levels"]["default"]["topics"] if t["duration_s"] >= min_dur]
         f = self.work / "topic_labels.json"
         done = json.loads(f.read_text()) if f.exists() else {}
@@ -233,10 +228,7 @@ class Pipeline:
 
     # 11
     def speakers(self):
-        import sys
-        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-        from build_ami_topic_maps import speakers_of
-        from eval_voice_identities import identities
+        from .identities import identities, speakers_of
         units = self.state["units"]
         x = np.asarray(self.arrays["voice"][:len(units)], np.float32)
         # EXP-026: solo unidades con habla ASR (≥ 50 % cubierta); no inferior en AMI, menos grupos espurios en BBC

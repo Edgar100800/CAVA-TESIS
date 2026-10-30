@@ -19,20 +19,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from eval_voice_identities import identities  # noqa: E402
 from narrative_eval import BgeEmbedder  # noqa: E402
 from speaker_turns import speaker_turn_scores  # noqa: E402
+from topicagg.identities import speakers_of  # noqa: E402,F401  (movido a topicagg/identities.py)
 from topicagg.speaker import single_speaker  # noqa: E402
 from topicagg.topic_map import build_topic_map  # noqa: E402
 from topicagg.versions import build_versions, check_versions  # noqa: E402
 
 D = Path("data/ami")
-
-
-def speakers_of(units, vid):
-    ids = [vid[u] for u in units if vid[u] >= 0]
-    if not ids:
-        return []
-    vals, cnt = np.unique(ids, return_counts=True)
-    order = np.argsort(-cnt)
-    return [{"id": f"V{int(vals[k])}", "share": round(float(cnt[k] / len(ids)), 3)} for k in order]
 
 
 def main():
