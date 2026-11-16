@@ -1,2 +1,19 @@
 [e041] película 8700s · presupuesto H 240s · frac 0.027586
-[e041] CAVA: 107 clips, 237.7s
+[e041] CAVA: 107 clips, 6.2s
+[e041] U: etiquetas 0.0s
+[e041] U: 107 clips
+{
+ "video": "Spider_Man",
+ "duration_s": 8700.0,
+ "budget_h_s": 240.0,
+ "cava": {
+  "chapters": 103,
+  "h_clips": 4,
+  "h_file": "cava/version_highlights240_0.mp4"
+ },
+ "u": {
+  "chapters": 103,
+  "h_clips": 4,
+  "h_file": "u/version_highlights240_0.mp4"
+ }
+}
