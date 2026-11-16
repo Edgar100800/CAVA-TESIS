@@ -52,13 +52,19 @@ def thumb(video: Path, t: float, dst: Path) -> bool:
 
 def viewer(doc: dict, versions: dict, video: Path, out: Path, system: str) -> dict:
     topics = [t for t in doc["levels"]["default"]["topics"] if not t["flags"]["no_topic"]]
+    if system == "u":
+        topics = [t for t in topics if (t.get("provenance") or {}).get("kind") == "uniform_chapters"]
     topics.sort(key=lambda t: t["spans"][0][0])
     clips = [c for pl in versions["full_chapters"]["playlists"] for c in pl]
     by_span = {(round(c["t0"], 2), round(c["t1"], 2)): c for c in clips}
     chapters, td = [], out / "thumbs"
     for i, t in enumerate(topics):
+        c = None
+        for (a, b) in t["spans"]:
+            c = by_span.get((round(a, 2), round(b, 2)))
+            if c:
+                break
         t0, t1 = t["spans"][0]
-        c = by_span.get((round(t0, 2), round(t1, 2)))
         clip = c.get("file") if c else None
         name = f"{system}_{i:03d}.jpg"
         ok = thumb(video, (t0 + t1) / 2, td / name)
@@ -110,7 +116,9 @@ def main():
     doc_u, v_u = base_u(state, u, cfg, tmp, summaries, asr, unit_times, n, D, args.budget)
     doc_u["video_id"] = "Spider_Man_U"
     t0 = time.time()
+    (u / "work").mkdir(parents=True, exist_ok=True)
     topics = doc_u["levels"]["default"]["topics"]
+    (u / "topic_map_pre.json").write_text(json.dumps(doc_u, ensure_ascii=False, indent=1))
     label_topics(topics, u / "work/topic_labels.json", args.device)
     print(f"[e041] U: etiquetas {time.time()-t0:.1f}s", flush=True)
     made = render(video, u, {"full_chapters": v_u["full_chapters"], "highlights240": v_u["highlights10pct"]})
