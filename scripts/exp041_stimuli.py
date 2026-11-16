@@ -14,6 +14,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+os.environ.setdefault("HF_HOME", "/home/edgar.chambilla/Tesis/SegLoop/data/hf_cache")
 import subprocess
 import sys
 import time
