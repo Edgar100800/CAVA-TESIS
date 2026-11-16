@@ -1,0 +1,412 @@
+{
+ "n_manifest": 501,
+ "n_ok": 477,
+ "n_missing": 0,
+ "n_invalid": 24,
+ "covers_all": false,
+ "shards_disjoint": true,
+ "violations": [],
+ "per_movie_ok": {
+  "Avengers_Endgame": 268,
+  "Spider_Man": 209
+ },
+ "n_repaired_units": 0,
+ "per_source": {
+  "shard0": {
+   "ok": 106,
+   "invalid": 6
+  },
+  "shard1": {
+   "ok": 105,
+   "invalid": 6
+  },
+  "shard2": {
+   "ok": 105,
+   "invalid": 6
+  },
+  "shard3": {
+   "ok": 105,
+   "invalid": 6
+  },
+  "pilot": {
+   "ok": 56
+  }
+ },
+ "merged_from": {
+  "s0_56_a1": 106,
+  "s1_54_a1": 105,
+  "s2_55_a1": 105,
+  "s3_44_a1": 105,
+  "pilot": 56
+ },
+ "problems": [
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S3_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s1_54_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch",
+      "revalidate_hard:unknown_evidence_id"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S8_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s1_54_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch",
+      "revalidate_hard:unknown_evidence_id"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S9_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s2_55_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch",
+      "revalidate_hard:unknown_evidence_id"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S18_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s3_44_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S23_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s0_56_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch",
+      "revalidate_hard:unknown_evidence_id"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S29_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s3_44_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S33_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s3_44_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S34_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s0_56_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S44_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s2_55_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S49_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s0_56_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S50_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s1_54_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "worker_evidence_sha_mismatch"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Avengers_Endgame",
+   "uid": "S50_T01",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s2_55_a1",
+     "errors": [
+      "movie_field_mismatch",
+      "attempts_not_increasing",
+      "interval_mismatch",
+      "evidence_mismatch",
+      "worker_evidence_sha_mismatch"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S3_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s1_54_a1",
+     "errors": [
+      "attempts_not_increasing"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S8_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s1_54_a1",
+     "errors": [
+      "attempts_not_increasing"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S9_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s2_55_a1",
+     "errors": [
+      "attempts_not_increasing"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S18_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s3_44_a1",
+     "errors": [
+      "attempts_not_increasing",
+      "revalidate_hard:unknown_evidence_id"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S23_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s0_56_a1",
+     "errors": [
+      "attempts_not_increasing"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S29_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s3_44_a1",
+     "errors": [
+      "attempts_not_increasing",
+      "revalidate_hard:unknown_evidence_id"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S33_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s3_44_a1",
+     "errors": [
+      "attempts_not_increasing"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S34_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s0_56_a1",
+     "errors": [
+      "attempts_not_increasing"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S44_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s2_55_a1",
+     "errors": [
+      "attempts_not_increasing",
+      "revalidate_hard:unknown_evidence_id"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S49_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s0_56_a1",
+     "errors": [
+      "attempts_not_increasing",
+      "revalidate_hard:unknown_evidence_id"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S50_T00",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s1_54_a1",
+     "errors": [
+      "attempts_not_increasing"
+     ]
+    }
+   ]
+  },
+  {
+   "movie": "Spider_Man",
+   "uid": "S50_T01",
+   "status": "invalid",
+   "detail": [
+    {
+     "source": "s2_55_a1",
+     "errors": [
+      "attempts_not_increasing",
+      "revalidate_hard:unknown_evidence_id"
+     ]
+    }
+   ]
+  }
+ ]
+}

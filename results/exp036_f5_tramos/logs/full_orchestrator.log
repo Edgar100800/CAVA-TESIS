@@ -1,0 +1,119 @@
+2026-11-15 16:07:23 === orquestador PREFLIGHT pid=1898264
+2026-11-15 16:07:23 manifiesto: 501 tramos, 56 del piloto, particiones {0: 112, 1: 111, 2: 111, 3: 111}
+2026-11-15 16:07:23 preflight .56 (shard 0): OK ok (12 ficheros idénticos)
+2026-11-15 16:07:25 preflight .54 (shard 1): OK ok (12 ficheros idénticos)
+2026-11-15 16:07:27 preflight .55 (shard 2): OK ok (12 ficheros idénticos)
+2026-11-15 16:07:29 preflight .44 (shard 3): OK ok (12 ficheros idénticos)
+2026-11-15 16:07:34 === orquestador SIMULACIÓN pid=1898970
+2026-11-15 16:07:34 manifiesto: 501 tramos, 56 del piloto, particiones {0: 112, 1: 111, 2: 111, 3: 111}
+2026-11-15 16:07:34 preflight .56 (shard 0): OK ok (12 ficheros idénticos)
+2026-11-15 16:07:36 preflight .54 (shard 1): OK ok (12 ficheros idénticos)
+2026-11-15 16:07:38 preflight .55 (shard 2): OK ok (12 ficheros idénticos)
+2026-11-15 16:07:40 preflight .44 (shard 3): OK ok (12 ficheros idénticos)
+2026-11-15 16:07:48 lanzado sim_s0_56_a1 en .56: ok
+2026-11-15 16:08:00 lanzado sim_s1_54_a1 en .54: ok
+2026-11-15 16:08:17 lanzado sim_s2_55_a1 en .55: ok
+2026-11-15 16:08:37 lanzado sim_s3_44_a1 en .44: ok
+2026-11-15 16:08:42 sim_s0_56_a1 terminó: status=done rc=0 ok=0/112 (0.9 min)
+2026-11-15 16:08:43 sim_s1_54_a1 terminó: status=done rc=0 ok=0/111 (0.7 min)
+2026-11-15 16:08:43 sim_s2_55_a1 terminó: status=done rc=1 ok=0/111 (0.4 min)
+2026-11-15 16:08:44 sim_s3_44_a1 terminó: status=done rc=1 ok=0/111 (0.1 min)
+2026-11-15 16:08:44 partición 0 RESUELTA (último job sim_s0_56_a1)
+2026-11-15 16:08:44 partición 1 RESUELTA (último job sim_s1_54_a1)
+2026-11-15 16:08:44 EVENTO partición 2: 111 tramos pendientes; reintento en el mismo host .55
+2026-11-15 16:09:00 lanzado sim_s2_55_a2 en .55: ok
+2026-11-15 16:09:01 EVENTO partición 3: 111 tramos pendientes; reintento en el mismo host .44
+2026-11-15 16:09:21 lanzado sim_s3_44_a2 en .44: ok
+2026-11-15 16:09:21 progreso: sim_s2_55_a2:0/111, sim_s3_44_a2:0/111; resueltas 2/4
+2026-11-15 16:09:26 sim_s2_55_a2 terminó: status=done rc=1 ok=0/111 (0.4 min)
+2026-11-15 16:09:27 sim_s3_44_a2 terminó: status=done rc=0 ok=0/111 (0.1 min)
+2026-11-15 16:09:27 EVENTO partición 2: 111 tramos pendientes; se encola para reasignar
+2026-11-15 16:09:27 partición 3 RESUELTA (último job sim_s3_44_a2)
+2026-11-15 16:09:28 EVENTO partición 2 reasignada a .56
+2026-11-15 16:09:44 lanzado sim_s2_56_a3 en .56: ok
+2026-11-15 16:09:49 sim_s2_56_a3 terminó: status=done rc=0 ok=0/111 (0.1 min)
+2026-11-15 16:09:49 partición 2 RESUELTA (último job sim_s2_56_a3)
+2026-11-15 16:09:49 SIMULACIÓN terminada en 2.2 min: [["sim_s0_56_a1", "done", 0], ["sim_s1_54_a1", "done", 0], ["sim_s2_55_a1", "done", 1], ["sim_s3_44_a1", "done", 1], ["sim_s2_55_a2", "done", 1], ["sim_s3_44_a2", "done", 0], ["sim_s2_56_a3", "done", 0]]
+2026-11-15 16:11:18 === orquestador REAL pid=1906587
+2026-11-15 16:11:18 manifiesto: 501 tramos, 56 del piloto, particiones {0: 112, 1: 111, 2: 111, 3: 111}
+2026-11-15 16:11:18 preflight .56 (shard 0): OK ok (12 ficheros idénticos)
+2026-11-15 16:11:20 preflight .54 (shard 1): OK ok (12 ficheros idénticos)
+2026-11-15 16:11:22 preflight .55 (shard 2): OK ok (12 ficheros idénticos)
+2026-11-15 16:11:24 preflight .44 (shard 3): OK ok (12 ficheros idénticos)
+2026-11-15 16:11:54 lanzado s0_56_a1 en .56: FALLO timeout
+2026-11-15 16:12:24 lanzado s1_54_a1 en .54: FALLO timeout
+2026-11-15 16:12:54 lanzado s2_55_a1 en .55: FALLO timeout
+2026-11-15 16:14:24 === orquestador REAL pid=1912305
+2026-11-15 16:14:24 manifiesto: 501 tramos, 56 del piloto, particiones {0: 112, 1: 111, 2: 111, 3: 111}
+2026-11-15 16:14:24 adoptado s0_56_a1 en .56: vivo=True done=False ok=0 (inicio 16:11:24)
+2026-11-15 16:14:25 adoptado s1_54_a1 en .54: vivo=True done=False ok=0 (inicio 16:11:55)
+2026-11-15 16:14:25 adoptado s2_55_a1 en .55: vivo=True done=False ok=0 (inicio 16:12:25)
+2026-11-15 16:14:26 adoptado s3_44_a1 en .44: vivo=True done=False ok=0 (inicio 16:12:55)
+2026-11-15 16:14:26 preflight .56 (shard 0): OK adoptado (job propio en marcha)
+2026-11-15 16:14:26 preflight .54 (shard 1): OK adoptado (job propio en marcha)
+2026-11-15 16:14:26 preflight .55 (shard 2): OK adoptado (job propio en marcha)
+2026-11-15 16:14:26 preflight .44 (shard 3): OK adoptado (job propio en marcha)
+2026-11-15 16:16:27 progreso: s0_56_a1:0/112, s1_54_a1:0/111, s2_55_a1:0/111, s3_44_a1:0/111; resueltas 0/4
+2026-11-15 16:26:30 progreso: s0_56_a1:16/112, s1_54_a1:16/111, s2_55_a1:16/111, s3_44_a1:8/111; resueltas 0/4
+2026-11-15 16:36:34 progreso: s0_56_a1:24/112, s1_54_a1:24/111, s2_55_a1:16/111, s3_44_a1:24/111; resueltas 0/4
+2026-11-15 16:46:38 progreso: s0_56_a1:32/112, s1_54_a1:32/111, s2_55_a1:32/111, s3_44_a1:32/111; resueltas 0/4
+2026-11-15 16:56:42 progreso: s0_56_a1:48/112, s1_54_a1:40/111, s2_55_a1:40/111, s3_44_a1:40/111; resueltas 0/4
+2026-11-15 17:06:45 progreso: s0_56_a1:56/112, s1_54_a1:56/111, s2_55_a1:48/111, s3_44_a1:48/111; resueltas 0/4
+2026-11-15 17:16:49 progreso: s0_56_a1:64/112, s1_54_a1:64/111, s2_55_a1:56/111, s3_44_a1:56/111; resueltas 0/4
+2026-11-15 17:26:53 progreso: s0_56_a1:72/112, s1_54_a1:72/111, s2_55_a1:72/111, s3_44_a1:64/111; resueltas 0/4
+2026-11-15 17:36:57 progreso: s0_56_a1:80/112, s1_54_a1:80/111, s2_55_a1:80/111, s3_44_a1:72/111; resueltas 0/4
+2026-11-15 17:47:01 progreso: s0_56_a1:88/112, s1_54_a1:88/111, s2_55_a1:80/111, s3_44_a1:80/111; resueltas 0/4
+2026-11-15 17:57:04 progreso: s0_56_a1:96/112, s1_54_a1:96/111, s2_55_a1:88/111, s3_44_a1:88/111; resueltas 0/4
+2026-11-15 18:07:08 progreso: s0_56_a1:104/112, s1_54_a1:104/111, s2_55_a1:96/111, s3_44_a1:96/111; resueltas 0/4
+2026-11-15 18:17:11 s0_56_a1 terminó: status=done rc=0 ok=112/112 (125.8 min)
+2026-11-15 18:17:12 partición 0 RESUELTA (último job s0_56_a1)
+2026-11-15 18:17:12 progreso: s1_54_a1:110/111, s2_55_a1:104/111, s3_44_a1:104/111; resueltas 1/4
+2026-11-15 18:25:15 s2_55_a1 terminó: status=done rc=0 ok=111/111 (132.8 min)
+2026-11-15 18:25:15 partición 2 RESUELTA (último job s2_55_a1)
+2026-11-15 18:27:16 progreso: s1_54_a1:110/111, s3_44_a1:104/111; resueltas 2/4
+2026-11-15 18:31:17 s1_54_a1 terminó: status=done rc=0 ok=111/111 (139.4 min)
+2026-11-15 18:31:17 partición 1 RESUELTA (último job s1_54_a1)
+2026-11-15 18:37:18 progreso: s3_44_a1:110/111; resueltas 3/4
+2026-11-15 18:45:19 s3_44_a1 terminó: status=done rc=0 ok=111/111 (152.4 min)
+2026-11-15 18:45:19 partición 3 RESUELTA (último job s3_44_a1)
+2026-11-15 18:45:19 GPU .56 tras la generación: libre
+2026-11-15 18:45:20 GPU .54 tras la generación: libre
+2026-11-15 18:45:20 GPU .55 tras la generación: libre
+2026-11-15 18:45:20 GPU .44 tras la generación: libre
+2026-11-15 18:45:20 --- merge: /data/tesis-cava/CAVA_minimo/.venv/bin/python -I exp036/f5/tramos/full_merge.py
+2026-11-15 18:45:20 --- merge rc=0 (log logs/full_merge.log)
+2026-11-15 18:45:20 --- index: /data/tesis-cava/CAVA_minimo/.venv/bin/python -I exp036/f5/tramos/tramo_index.py --briefs-dir exp036/f5/tramos/full --out-root exp036/f5/tramos/full --variants index_add
+2026-11-15 18:46:39 --- index rc=0 (log logs/full_index.log)
+2026-11-15 18:46:39 --- eval: /data/tesis-cava/CAVA_minimo/.venv/bin/python -I exp036/f5/tramos/tramo_eval.py --tag eval_tramo_full --conds B=exp036/f5/index:scene,topic P=exp036/f5/tramos/index_add:scene,topic,tramo F=exp036/f5/tramos/full/index_add:scene,topic,tramo
+2026-11-15 18:46:48 --- eval rc=0 (log logs/full_eval.log)
+2026-11-15 18:46:48 --- report: /data/tesis-cava/CAVA_minimo/.venv/bin/python -I exp036/f5/tramos/full_report.py
+2026-11-15 18:46:48 --- report rc=0 (log logs/full_report.log)
+2026-11-15 18:46:48 === FIN {"finished": "2026-11-15 18:46:48", "wall_min": 152.4, "n_ok": 484, "covers_all": false, "rc": {"merge": 0, "index": 0, "eval": 0, "report": 0}, "adopted": false, "report": "exp036/f5/TRAMO_FULL.md"}
+2026-11-15 18:50:40 === REPARACIÓN v2 (colisión de uid entre películas)
+2026-11-15 18:50:40 manifiesto de reparación: 24 unidades, particiones {0: 8, 1: 8, 2: 8}
+2026-11-15 18:50:51 === REPARACIÓN v2 (colisión de uid entre películas)
+2026-11-15 18:50:51 manifiesto de reparación: 24 unidades, particiones {0: 8, 1: 8, 2: 8}
+2026-11-15 18:50:51 lanzado repair_s0_56 en .56 (hashes idénticos, GPU libre)
+2026-11-15 18:50:53 lanzado repair_s1_54 en .54 (hashes idénticos, GPU libre)
+2026-11-15 18:50:55 lanzado repair_s2_55 en .55 (hashes idénticos, GPU libre)
+2026-11-15 18:51:25 repair_s0_56 terminó: done rc=1 ok=0/8 (0.6 min)
+2026-11-15 18:51:26 repair_s1_54 terminó: done rc=1 ok=0/8 (0.5 min)
+2026-11-15 18:51:26 repair_s2_55 terminó: done rc=1 ok=0/8 (0.5 min)
+2026-11-15 18:51:26 GPU .56 tras la reparación: libre
+2026-11-15 18:51:27 GPU .54 tras la reparación: libre
+2026-11-15 18:51:27 GPU .55 tras la reparación: libre
+2026-11-15 18:51:27 GPU .44 tras la reparación: libre
+2026-11-15 18:51:27 === REPARACIÓN terminada: [["repair_s0_56", "done", 1, 0], ["repair_s1_54", "done", 1, 0], ["repair_s2_55", "done", 1, 0]]
+2026-11-15 18:51:55 === REPARACIÓN v2 (colisión de uid entre películas)
+2026-11-15 18:51:55 manifiesto de reparación: 24 unidades, particiones {0: 8, 1: 8, 2: 8}
+2026-11-15 18:51:55 lanzado repair_s0_56 en .56 (hashes idénticos, GPU libre)
+2026-11-15 18:51:57 lanzado repair_s1_54 en .54 (hashes idénticos, GPU libre)
+2026-11-15 18:51:59 lanzado repair_s2_55 en .55 (hashes idénticos, GPU libre)
+2026-11-15 19:03:48 repair_s1_54 terminó: done rc=0 ok=8/8 (11.8 min)
+2026-11-15 19:05:50 repair_s2_55 terminó: done rc=0 ok=8/8 (13.8 min)
+2026-11-15 19:18:50 repair_s0_56 terminó: done rc=0 ok=8/8 (26.9 min)
+2026-11-15 19:18:50 GPU .56 tras la reparación: libre
+2026-11-15 19:18:51 GPU .54 tras la reparación: libre
+2026-11-15 19:18:51 GPU .55 tras la reparación: libre
+2026-11-15 19:18:51 GPU .44 tras la reparación: libre
+2026-11-15 19:18:51 === REPARACIÓN terminada: [["repair_s0_56", "done", 0, 8], ["repair_s1_54", "done", 0, 8], ["repair_s2_55", "done", 0, 8]]

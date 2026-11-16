@@ -1,0 +1,17 @@
+[F5 eval] provisional_v0: 60 queries (PROVISIONAL - NOT GOLD - NOT THE PRE-REGISTERED SET) load=2.0s threads=8
+first query after load: 196 ms
+| method | R@1 | R@3 (95% CI) | R@5 | R@3[IoU>=.1] | IoU@1 | IoU@3 | MRR@10 | dur@3 s | lat mean/p95 ms |
+|---|---|---|---|---|---|---|---|---|---|
+| bm25 | 0.400 | 0.583 [0.467, 0.7] | 0.650 | 0.467 | 0.099 | 0.145 | 0.499 | 175 | 0/0 |
+| bge | 0.333 | 0.600 [0.483, 0.717] | 0.683 | 0.467 | 0.076 | 0.139 | 0.469 | 246 | 30/32 |
+| hybrid | 0.400 | 0.600 [0.483, 0.733] | 0.683 | 0.483 | 0.084 | 0.150 | 0.517 | 213 | 30/30 |
+| hybrid_rerank | 0.433 | 0.650 [0.533, 0.767] | 0.683 | 0.500 | 0.100 | 0.147 | 0.549 | 241 | 30/30 |
+| hybrid_rerank_loc | 0.417 | 0.583 [0.45, 0.717] | 0.600 | 0.500 | 0.196 | 0.265 | 0.506 | 44 | 30/30 |
+| exp035b | 0.517 | 0.767 [0.65, 0.867] | 0.867 | 0.517 | 0.221 | 0.300 | 0.648 | 1114 | 30/30 |
+| exp035b_scene | 0.700 | 0.967 [0.917, 1.0] | 1.000 | 0.033 | 0.011 | 0.022 | 0.831 | 4334 | 30/30 |
+| exp035b_noblock | 0.567 | 0.867 [0.783, 0.95] | 1.000 | 0.033 | 0.009 | 0.021 | 0.741 | 3619 | 30/30 |
+| hybrid_rerank_loc[scene+topic] | 0.467 | 0.617 [0.483, 0.75] | 0.683 | 0.567 | 0.196 | 0.301 | 0.556 | 33 | 30/31 |
+| hybrid_rerank_loc[scene+topic+fine] | 0.483 | 0.617 [0.5, 0.733] | 0.683 | 0.567 | 0.176 | 0.297 | 0.572 | 34 | 32/34 |
+| hybrid_rerank_loc[1 evidence line] (post-hoc) | 0.333 | 0.483 [0.35, 0.617] | 0.500 | 0.400 | 0.167 | 0.229 | 0.415 | 20 | 66/135 |
+baselines: {'random_scene_R@3': 0.055, 'oracle_scene_IoU': 0.194, 'n_scenes_overlapping_ref': 1.133, 'correct_scene_dur_median_s': 270.0, 'exp035b_hits_in_top3_by_level': {'exp035_topic': 22, 'exp035_block': 34, 'exp035_scene': 13}}
+paired: {"hybrid_rerank_loc vs exp035b (R@3)": {"x_only": 6, "y_only": 17, "p_exact": 0.0347}, "hybrid_rerank_loc vs exp035b_scene (R@3)": {"x_only": 0, "y_only": 23, "p_exact": 0.0}, "hybrid_rerank_loc[scene+topic] vs exp035b_noblock (R@3)": {"x_only": 5, "y_only": 20, "p_exact": 0.0041}, "hybrid_rerank vs exp035b_noblock (R@3)": {"x_only": 4, "y_only": 17, "p_exact": 0.0072}, "hybrid_rerank vs exp035b (R@3)": {"x_only": 7, "y_only": 14, "p_exact": 0.1892}, "hybrid vs bge (R@3)": {"x_only": 4, "y_only": 4, "p_exact": 1.0}, "hybrid vs bm25 (R@3)": {"x_only": 4, "y_only": 3, "p_exact": 1.0}, "hybrid_rerank vs hybrid (R@3)": {"x_only": 6, "y_only": 3, "p_exact": 0.5078}}

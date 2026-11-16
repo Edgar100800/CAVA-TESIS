@@ -1,0 +1,71 @@
+{
+ "events": [
+  "2026-11-15 18:47 v1 adjudicada inválida: colisión de uid entre películas en tramo_briefs.py (registros indexados por uid, no por (película, uid)); 12 pares / 24 unidades afectadas (17 detectadas por la fusión v1, 7 más con las guardas nuevas)",
+  "2026-11-15 18:50 reparación intento 1: los 3 workers abortan (assert N=4 vs manifiesto de reparación N=3); sin generación; GPUs libres",
+  "2026-11-15 18:51 reparación intento 2: 3 jobs (.56/.54/.55), 24/24 ok; Av:S49_T00 truncado a 900 y cerrado a 1600"
+ ],
+ "wall_min": 178.4,
+ "wall_detail": "v1 152.4 min + reparación (0.6 fallida + 26.9) min",
+ "jobs_v1": [
+  {
+   "job": "s0_56_a1",
+   "shard": 0,
+   "host": ".56",
+   "outdir": "/data/tesis-cava/exp036/f5/tramos/full/s0_56_a1",
+   "assigned": 112,
+   "start": "2026-11-15 16:11:24",
+   "start_ts": 1794777084.0,
+   "status": "done",
+   "ok_units": 112,
+   "adopted": true,
+   "rc": 0,
+   "end": "2026-11-15 18:17:11",
+   "end_ts": 1794784631.785811
+  },
+  {
+   "job": "s1_54_a1",
+   "shard": 1,
+   "host": ".54",
+   "outdir": "/data/tesis-cava/cava-exp036/exp036/f5/tramos/full/s1_54_a1",
+   "assigned": 111,
+   "start": "2026-11-15 16:11:55",
+   "start_ts": 1794777115.0,
+   "status": "done",
+   "ok_units": 111,
+   "adopted": true,
+   "rc": 0,
+   "end": "2026-11-15 18:31:17",
+   "end_ts": 1794785477.147708
+  },
+  {
+   "job": "s2_55_a1",
+   "shard": 2,
+   "host": ".55",
+   "outdir": "/data/tesis-cava/cava-exp036/exp036/f5/tramos/full/s2_55_a1",
+   "assigned": 111,
+   "start": "2026-11-15 16:12:25",
+   "start_ts": 1794777145.0,
+   "status": "done",
+   "ok_units": 111,
+   "adopted": true,
+   "rc": 0,
+   "end": "2026-11-15 18:25:15",
+   "end_ts": 1794785115.3238685
+  },
+  {
+   "job": "s3_44_a1",
+   "shard": 3,
+   "host": ".44",
+   "outdir": "/data/tesis-cava/cava-exp036/exp036/f5/tramos/full/s3_44_a1",
+   "assigned": 111,
+   "start": "2026-11-15 16:12:55",
+   "start_ts": 1794777175.0,
+   "status": "done",
+   "ok_units": 111,
+   "adopted": true,
+   "rc": 0,
+   "end": "2026-11-15 18:45:19",
+   "end_ts": 1794786319.4964175
+  }
+ ]
+}

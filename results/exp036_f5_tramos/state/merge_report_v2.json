@@ -1,0 +1,42 @@
+{
+ "n_manifest": 501,
+ "n_ok": 501,
+ "n_missing": 0,
+ "n_invalid": 0,
+ "covers_all": true,
+ "shards_disjoint": true,
+ "violations": [],
+ "per_movie_ok": {
+  "Avengers_Endgame": 280,
+  "Spider_Man": 221
+ },
+ "n_repaired_units": 24,
+ "per_source": {
+  "shard0": {
+   "ok": 112
+  },
+  "shard1": {
+   "ok": 111
+  },
+  "shard2": {
+   "ok": 111
+  },
+  "shard3": {
+   "ok": 111
+  },
+  "pilot": {
+   "ok": 56
+  }
+ },
+ "merged_from": {
+  "s0_56_a1": 106,
+  "s1_54_a1": 105,
+  "s2_55_a1": 105,
+  "s3_44_a1": 105,
+  "repair_s0_56": 8,
+  "repair_s1_54": 8,
+  "repair_s2_55": 8,
+  "pilot": 56
+ },
+ "problems": []
+}

@@ -1,0 +1,48 @@
+{
+ "decided": "2026-11-15 19:22:27",
+ "adopted": false,
+ "candidate_for_gold": "B = hybrid_rerank_loc[scene,topic] @ exp036/f5/index (tramos exploratorios)",
+ "conditions": {
+  "A1_coverage": {
+   "n_manifest": 501,
+   "n_ok": 501,
+   "covers_all": true,
+   "disjoint": true,
+   "tramo_docs_in_index": 501,
+   "ok": true
+  },
+  "A2_confirms_pilot": {
+   "L_net_hits": 7,
+   "IoU_L_F": 0.321,
+   "IoU_L_B": 0.2,
+   "ok": true
+  },
+  "A3_no_global_regression": {
+   "hits_F": 43,
+   "hits_B": 37,
+   "IoU_F": 0.377,
+   "IoU_B": 0.301,
+   "ok": true
+  },
+  "A4_C_no_worse_than_B": {
+   "hits_F": 23,
+   "hits_B": 24,
+   "IoU_F": 0.429,
+   "IoU_B": 0.395,
+   "ok": false
+  },
+  "A5_latency": {
+   "p95_ms": 32.1,
+   "ok": true
+  }
+ },
+ "index_hashes": [
+  "75663198a4c1d4cc f5/tramos/full_v2/index_add/Avengers_Endgame.meta.json",
+  "468979fbe93f6abe f5/tramos/full_v2/index_add/Avengers_Endgame.npz",
+  "372ef9aa0d574fa8 f5/tramos/full_v2/index_add/Spider_Man.meta.json",
+  "dd97a111310d7525 f5/tramos/full_v2/index_add/Spider_Man.npz",
+  "fe2ed00d4ab30718 f5/tramos/full_v2/index_add/bm25.sqlite"
+ ],
+ "gold_seen": false,
+ "index_dir": "f5/tramos/full_v2/index_add"
+}
