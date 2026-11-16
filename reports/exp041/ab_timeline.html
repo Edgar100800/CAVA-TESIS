@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>EXP-041-L · comparación a ciegas</title>
+<style>
+  :root{--bg:#0f1117;--panel:#171a23;--line:#2a2f3d;--txt:#e8eaf0;--dim:#9aa3b5;--acc:#7c9cff;--ok:#3ddc97}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.45 system-ui,Segoe UI,Roboto,sans-serif}
+  header{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+  h1{font-size:16px;margin:0;font-weight:600}
+  .dim{color:var(--dim)}
+  main{padding:16px 18px;display:grid;gap:16px}
+  .pair{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .tag{display:inline-block;font-weight:700;color:var(--acc);margin-bottom:8px}
+  .bar{position:relative;height:46px;background:#0b0d12;border:1px solid var(--line);border-radius:6px;overflow:hidden;cursor:crosshair}
+  .ch{position:absolute;top:0;bottom:0;border-right:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(124,156,255,.20),rgba(124,156,255,.06))}
+  .ch:hover{background:rgba(124,156,255,.38)}
+  .axis{display:flex;justify-content:space-between;color:var(--dim);font-size:11px;margin-top:4px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:900px){.row{grid-template-columns:1fr}}
+  .meta{display:flex;justify-content:space-between;gap:10px;color:var(--dim);font-size:12px;margin-bottom:6px}
+  video{width:100%;background:#000;border-radius:8px;border:1px solid var(--line)}
+  .tip{position:fixed;pointer-events:none;background:#000d;border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:12px;max-width:340px;display:none;z-index:9}
+  .note{color:var(--dim);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>EXP-041-L · comparación a ciegas</h1>
+  <span class="dim" id="sub"></span>
+</header>
+<main id="main"></main>
+<div class="tip" id="tip"></div>
+<script>
+const q = new URLSearchParams(location.search);
+const pair = (q.get("pair") || "T").toUpperCase();      // T | H
+const left = q.get("left") || "cava";                   // cava | u
+const right = left === "cava" ? "u" : "cava";
+const BASE = "../../data/cava_runs_e041/";
+const tip = document.getElementById("tip");
+
+const hms = t => { t = Math.floor(t); const h = Math.floor(t/3600), m = Math.floor(t%3600/60), s = t%60;
+  return (h? h+":" : "") + String(m).padStart(h?2:1,"0") + ":" + String(s).padStart(2,"0"); };
+
+function axis(d){
+  const marks = 6, out = [];
+  for (let i=0;i<=marks;i++) out.push(`<span>${hms(i*d/marks)}</span>`);
+  return `<div class="axis">${out.join("")}</div>`;
+}
+
+async function load(system){
+  const r = await fetch(BASE + system + "/viewer.json");
+  if(!r.ok) throw new Error("falta viewer.json de " + system);
+  return r.json();
+}
+
+function bar(v, side){
+  const d = v.duration_s;
+  return v.chapters.map(c => {
+    const l = 100*c.t0/d, w = Math.max(0.12, 100*(c.t1-c.t0)/d);
+    return `<div class="ch" style="left:${l}%;width:${w}%"
+      data-t="${c.t0}" data-e="${c.t1}" data-l="${(c.label||"").replace(/"/g,'&quot;')}"
+      data-clip="${c.clip||""}" data-side="${side}" data-i="${c.i}"></div>`;
+  }).join("");
+}
+
+function panel(v, side, label){
+  return `<section class="pair">
+    <div class="tag">${label}</div>
+    <div class="meta"><span>${v.chapters.length} capítulos · ${hms(v.duration_s)}</span><span class="dim">clic en un bloque para reproducir</span></div>
+    <div class="bar" data-side="${side}">${bar(v, side)}</div>${axis(v.duration_s)}
+    <video id="vid-${side}" controls preload="metadata"></video>
+    <div class="note" id="now-${side}"></div>
+  </section>`;
+}
+
+function hview(v, side, label){
+  return `<section class="pair">
+    <div class="tag">${label}</div>
+    <div class="meta"><span>Highlights · 240 s</span></div>
+    <video controls preload="metadata" src="${BASE}${side}/version_highlights240_0.mp4"></video>
+  </section>`;
+}
+
+(async () => {
+  document.getElementById("sub").textContent =
+    pair === "H" ? "Highlights de 4 min · elige A, B o Iguales" : "Línea de tiempo por capítulos · elige A, B o Iguales";
+  try {
+    const a = await load(left), b = await load(right);
+    const main = document.getElementById("main");
+    main.innerHTML = pair === "H"
+      ? `<div class="row">${hview(a,left,"A")}${hview(b,right,"B")}</div>`
+      : `<div class="row">${panel(a,left,"A")}${panel(b,right,"B")}</div>`;
+  } catch (e) {
+    document.getElementById("main").innerHTML = `<p class="note">${e.message}</p>`;
+  }
+})();
+
+document.addEventListener("mouseover", e => {
+  const ch = e.target.closest(".ch"); if(!ch) return;
+  tip.style.display = "block";
+  tip.textContent = `${hms(+ch.dataset.t)}–${hms(+ch.dataset.e)} · ${ch.dataset.l}`;
+});
+document.addEventListener("mousemove", e => {
+  if(tip.style.display === "none") return;
+  tip.style.left = Math.min(e.clientX+12, innerWidth-tip.offsetWidth-8)+"px";
+  tip.style.top = (e.clientY+14)+"px";
+});
+document.addEventListener("mouseout", e => { if(e.target.closest(".ch")) tip.style.display="none"; });
+
+document.addEventListener("click", e => {
+  const ch = e.target.closest(".ch"); if(!ch) return;
+  const side = ch.dataset.side, clip = ch.dataset.clip;
+  const v = document.getElementById("vid-"+side);
+  if(!clip){ document.getElementById("now-"+side).textContent = "Clip no disponible."; return; }
+  v.src = BASE + side + "/" + clip;
+  v.play().catch(()=>{});
+  document.getElementById("now-"+side).textContent = `${hms(+ch.dataset.t)}–${hms(+ch.dataset.e)} · ${ch.dataset.l}`;
+});
+</script>
+</body>
+</html>

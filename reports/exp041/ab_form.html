@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>EXP-041-L · formulario</title>
+<style>
+  :root{--bg:#0f1117;--panel:#171a23;--line:#2a2f3d;--txt:#e8eaf0;--dim:#9aa3b5;--acc:#7c9cff;--ok:#3ddc97}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.5 system-ui,Segoe UI,Roboto,sans-serif}
+  header{padding:14px 18px;border-bottom:1px solid var(--line)}
+  h1{font-size:16px;margin:0}
+  main{max-width:1100px;margin:0 auto;padding:18px;display:grid;gap:16px}
+  section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+  h2{font-size:14px;margin:0 0 8px;color:var(--acc)}
+  label{display:block;margin:8px 0}
+  input[type=text],textarea,select{width:100%;background:#0b0d12;border:1px solid var(--line);color:var(--txt);border-radius:6px;padding:8px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  iframe{width:100%;height:520px;border:1px solid var(--line);border-radius:8px;background:#000}
+  .opts{display:flex;gap:18px;margin:8px 0}
+  .opts label{display:flex;gap:6px;align-items:center;margin:0}
+  button{background:var(--acc);color:#08101f;border:0;border-radius:8px;padding:10px 16px;font-weight:700;cursor:pointer}
+  button.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  .note{color:var(--dim);font-size:12px}
+  .ok{color:var(--ok)}
+</style>
+</head>
+<body>
+<header><h1>EXP-041-L · evaluación de versiones automáticas</h1></header>
+<main>
+  <section>
+    <h2>0 · Registro</h2>
+    <label>Código de participante (te lo asigna el equipo)
+      <input id="code" type="text" placeholder="P001" autocomplete="off">
+    </label>
+    <label><input id="consent" type="checkbox"> Acepto participar de forma voluntaria y entiendo que puedo retirarme en cualquier momento. Mis respuestas se guardan con un código, sin mi nombre.</label>
+    <label>¿Viste <i>Spider-Man: Brand New Day</i> (2026)?
+      <select id="seen"><option value="">—</option><option value="si_una">Sí, una vez</option><option value="si_mas">Sí, más de una vez</option><option value="no">No</option></select>
+    </label>
+    <p class="note" id="seqnote"></p>
+  </section>
+
+  <section>
+    <h2>1 · Par T — línea de tiempo por capítulos</h2>
+    <p class="note">Mira las dos versiones (A y B), explora los capítulos y después elige cuál representa mejor la película.</p>
+    <iframe id="frameT" title="Par T"></iframe>
+    <div class="opts">
+      <label><input type="radio" name="t" value="A"> A</label>
+      <label><input type="radio" name="t" value="B"> B</label>
+      <label><input type="radio" name="t" value="Iguales"> Iguales</label>
+    </div>
+  </section>
+
+  <section>
+    <h2>2 · Par H — highlights de 4 minutos</h2>
+    <p class="note">Mira los dos videos completos (240 s cada uno) y elige cuál representa mejor la película.</p>
+    <iframe id="frameH" title="Par H"></iframe>
+    <div class="opts">
+      <label><input type="radio" name="h" value="A"> A</label>
+      <label><input type="radio" name="h" value="B"> B</label>
+      <label><input type="radio" name="h" value="Iguales"> Iguales</label>
+    </div>
+  </section>
+
+  <section>
+    <h2>3 · Control — dos líneas de tiempo</h2>
+    <p class="note">Este par compara dos versiones del mismo sistema. La respuesta esperada es «Iguales»; si ves diferencias, elige la que prefieras.</p>
+    <iframe id="frameC" title="Control"></iframe>
+    <div class="opts">
+      <label><input type="radio" name="control" value="A"> A</label>
+      <label><input type="radio" name="control" value="B"> B</label>
+      <label><input type="radio" name="control" value="Iguales"> Iguales</label>
+    </div>
+  </section>
+
+  <section>
+    <h2>4 · Cierre</h2>
+    <label>¿Qué le falta a estas versiones para que te sean útiles?
+      <textarea id="open" rows="3"></textarea>
+    </label>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+      <button id="save">Guardar respuesta</button>
+      <button id="download" class="ghost">Descargar CSV acumulado</button>
+      <span class="note" id="status"></span>
+    </div>
+  </section>
+</main>
+<script>
+const q = s => document.querySelector(s);
+const SEQ = {
+  1: {t:{left:"cava",right:"u"}, h:{left:"u",right:"cava"}, c:{left:"cava",right:"cava"}},
+  2: {t:{left:"u",right:"cava"}, h:{left:"cava",right:"u"}, c:{left:"cava",right:"cava"}},
+  3: {t:{left:"cava",right:"u"}, h:{left:"u",right:"cava"}, c:{left:"cava",right:"cava"}},
+  4: {t:{left:"u",right:"cava"}, h:{left:"cava",right:"u"}, c:{left:"cava",right:"cava"}}
+};
+function seqOf(code){
+  const m = (code||"").match(/(\d+)/);
+  const n = m ? parseInt(m[1],10) : 0;
+  return ((n % 4) + 4) % 4 + 1;
+}
+function refresh(){
+  const code = q("#code").value.trim();
+  const s = seqOf(code);
+  q("#seqnote").textContent = code ? `Secuencia asignada: ${s} (el lado de cada versión cambia entre secuencias).` : "";
+  const f = SEQ[s];
+  q("#frameT").src = `ab_timeline.html?pair=T&left=${f.t.left}&right=${f.t.right}`;
+  q("#frameH").src = `ab_timeline.html?pair=H&left=${f.h.left}&right=${f.h.right}`;
+  q("#frameC").src = `ab_timeline.html?pair=T&left=${f.c.left}&right=${f.c.right}`;
+}
+q("#code").addEventListener("change", refresh);
+refresh();
+
+function row(){
+  const code = q("#code").value.trim();
+  const s = seqOf(code);
+  const val = n => (document.querySelector(`input[name=${n}]:checked`)||{}).value || "";
+  return {code, seq:s, consent:q("#consent").checked?"Y":"N", seen:q("#seen").value,
+          t:val("t"), h:val("h"), control:val("control"), open:q("#open").value.replace(/[\n\r]+/g," ")};
+}
+q("#save").onclick = () => {
+  const r = row();
+  if(!r.code || !r.consent || r.seen !== "si_una" && r.seen !== "si_mas") { q("#status").textContent = "Falta código, consentimiento o filtro."; return; }
+  if(!r.t || !r.h || !r.control){ q("#status").textContent = "Faltan las tres elecciones."; return; }
+  const all = JSON.parse(localStorage.getItem("exp041l")||"[]");
+  all.push(r);
+  localStorage.setItem("exp041l", JSON.stringify(all));
+  q("#status").textContent = `Guardado (${all.length} en este navegador).`;
+  q("#status").className = "ok";
+};
+q("#download").onclick = () => {
+  const all = JSON.parse(localStorage.getItem("exp041l")||"[]");
+  const head = ["code","seq","consent","seen","t","h","control","open"];
+  const esc = v => `"${String(v??"").replace(/"/g,'""')}"`;
+  const csv = [head.join(",")].concat(all.map(r => head.map(k => esc(r[k])).join(","))).join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], {type:"text/csv"}));
+  a.download = "exp041l_juicios.csv"; a.click();
+};
+</script>
+</body>
+</html>
