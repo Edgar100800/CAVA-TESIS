@@ -72,7 +72,7 @@ def main():
                   "c3_ami_single": ami_single, "c3_pass": len(ami_single) <= 1}
         rep[k]["pass_036"] = bool(rep[k]["c1_pass"] and rep[k]["c2_pass"] and rep[k]["c3_pass"])
     rep["n_conf"] = {"k1": sum(r["k_true"] == 1 for r in conf), "k2": sum(r["k_true"] >= 2 for r in conf), "ami": len(ami)}
-    Path("results/exp036.json").write_text(json.dumps(rep, indent=1))
+    Path("results/exp036v_segunda_voz.json").write_text(json.dumps(rep, indent=1))
     print(json.dumps({k: v for k, v in rep.items() if k != "dev"} | {"tau": tau}, indent=1))
 
 
