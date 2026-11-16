@@ -73,6 +73,7 @@ añaden la raíz a `sys.path` por su cuenta. `topicagg/` no importa nada de `scr
 | [`docs/journey.md`](docs/journey.md) | La jornada de implementación: de v1 al gestor sin fusión, con evidencia |
 | [`docs/integration-cava.md`](docs/integration-cava.md) | Contrato y fases de integración SegLoop+VJudge ▸ analizador |
 | [`docs/granularity-plan.md`](docs/granularity-plan.md) | Plan activo: afinado de granularidad (quant + qual) |
+| [`docs/narrative-pipeline.md`](docs/narrative-pipeline.md) | Capa narrativa experimental: contexto global, diez imágenes por candidato, decisiones y continuidad |
 | [`topicagg/video-signal-analysis.md`](topicagg/video-signal-analysis.md) | Diagnóstico v1: por qué la señal visual muere en una fusión |
 
 (No hay índice de documentos menores: los históricos viven en los repos de origen.)

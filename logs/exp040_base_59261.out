@@ -1,0 +1,407 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[e040] FALLÓ div_es_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[e040] FALLÓ div_en_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[e040] FALLÓ com_es_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[e040] FALLÓ com_en_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[e040] FALLÓ pod_es_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[e040] FALLÓ pod_en_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[e040] FALLÓ tut_es_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[e040] FALLÓ tut_en_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[e040] FALLÓ com_es_02: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[e040] FALLÓ div_es_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[e040] FALLÓ div_en_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[e040] FALLÓ com_es_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[e040] FALLÓ com_en_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[e040] FALLÓ pod_es_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[e040] FALLÓ pod_en_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[e040] FALLÓ tut_es_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[e040] FALLÓ tut_en_01: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+[e040] FALLÓ com_es_02: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 423, in main
+    run_video(row, args)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 385, in run_video
+    label_topics(topics, out / "work/topic_labels.json", args.device)
+  File "/home/edgar.chambilla/Tesis/CAVA/scripts/exp040_baselines.py", line 125, in label_topics
+    model = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4456, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4536, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/home/edgar.chambilla/.conda/envs/segloop/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5198, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 27.51 GiB. GPU 0 has a total capacity of 47.40 GiB of which 18.21 GiB is free. Process 3332563 has 1.63 GiB memory in use. Process 3332564 has 1.63 GiB memory in use. Process 3332560 has 13.75 GiB memory in use. Process 3335038 has 1.63 GiB memory in use. Process 3335036 has 2.48 GiB memory in use. Process 3335037 has 1.63 GiB memory in use. Process 3472128 has 6.12 GiB memory in use. Including non-PyTorch memory, this process has 262.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+E040_DONE

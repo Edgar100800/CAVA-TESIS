@@ -3722,3 +3722,93 @@ falsos 0.000 en docmix y 0.025 en domix.
 detección del narrador. BBC declarados de un hablante: S&W 2 / 11 (bbc_07,
 bbc_09), I&W 0 / 11. Siguiente candidato según el pre-registro: segmentación
 con conteo local (pyannote).
+
+## EXP-040 · Evaluación A/B con personas: versiones de CAVA frente a base U sin estructura y base S solo visual (pre-registro)
+- **Fecha:** 2026-10-30 (registrado antes de que ninguna persona juzgue
+  cualquier par de versiones del conjunto y antes de calcular cualquier tasa
+  de preferencia sobre esos juicios)
+- **Motivación (EXP-031 / 032 / 037 / 038):** las referencias automáticas de
+  calidad de clips (importancia humana de TVSum y SumMe, capítulos de autor)
+  no distinguen a CAVA de bases simples y tienen sesgos propios (posición en
+  el video); la recompensa de importancia de un solo conjunto pequeño
+  transfiere en negativo (EXP-038). La medición que falta es la preferencia
+  directa de personas, formato por formato, sobre contenido propio.
+- **Lo único que cambia:** nada del stack. CAVA es el producto congelado con
+  sus 5 versiones de consumidor (capítulos, recap 60 s, highlights 10 %,
+  hilos de tópico, hilos por hablante). Lo nuevo son las dos baselines, con
+  la misma maquinaria: unidades de la rejilla del perfil (5 s documentary,
+  10 s meeting), mismo corte y codificación, mismo presupuesto por formato,
+  mismo modelo de etiquetas (Qwen2.5-14B). Solo cambia qué se elige
+  (`scripts/exp040_baselines.py`; entradas/salidas en `data/cava_runs_e040/`,
+  contrato cava-run-v1, `git_dirty: false`, `gt_used: false`).
+- **Candidatos (por formato y por video):**
+  - **CAVA** — tramos de tópicos del mapa multimodal (ADR-0001) del run
+    congelado (`data/cava_runs_abset/<id>/`).
+  - **U (sin estructura)** — capítulos: cortes equiespaciados, mismo número
+    de capítulos que el mapa CAVA, etiquetados por el mismo modelo; recap y
+    highlights: las mismas duraciones de los clips de CAVA, repartidas
+    equiespaciadas; hilos de tópico: no aplica (sin retornos); hilos por
+    hablante: los 3 bloques contiguos más largos de unidades con habla,
+    sin modelo de identidad.
+  - **S (mejor señal sola, visual)** — mapa con solo la señal visual
+    (quorum 1, mismos percentiles del perfil, sin snap), mismo código de
+    versiones; hilos por hablante con rasgos de voz (log-mel + Ward + BIC,
+    EXP-022d).
+- **Bases que quedan fuera (decisión de hoy):** la base T (segmentación de
+  Opus 5.5 sobre la transcripción, borradores en `data/abset/baseline_opus55/`)
+  queda fuera de este pre-registro; si entra, será con su propio pre-registro
+  antes de recolectar juicios con ella.
+- **Protocolo:** cada persona ve, por formato y por video, un par de versiones
+  lado a lado, en orden aleatorio y cegado (sin saber cuál es cuál). Por par:
+  1. elección: izquierda / derecha / "iguales";
+  2. utilidad de cada versión: 1–5.
+- **Conjunto:** los 9 videos del abset propio (`data/abset/manifest.csv`:
+  7 documental/comentario/tutorial/charla y 2 conversación; 20–57 min).
+  Ningún otro conjunto del proyecto entra en el A/B.
+- **Participantes (decisión de hoy):** ~20 personas, 50 juicios de ~1 min
+  cada una (~1 000 juicios en total, ~200 por formato: potencia ~0.8, α 0.05
+  para una preferencia 60/40 sin empates). Piloto con 3 personas antes del
+  A/B completo; cualquier cambio de protocolo que el piloto obligue se firma
+  AQUÍ antes de recolectar juicios de las demás.
+- **Criterios (cada uno por formato, sobre los sin empates):**
+  1. (principal) tasa de victoria de CAVA frente a U, con IC 95 % por
+     bootstrap (1 000 remuestreos, clusterizado por video y por persona);
+     cumple si el IC no incluye 0.50 y la tasa es > 0.50;
+  2. (secundaria con criterio) CAVA frente a S, mismo criterio;
+  3. (informativa) U frente a S, mismo criterio.
+- **Adopción:** ningún resultado cambia el producto en esta tanda: el A/B es
+  la medición de cierre del sistema congelado. Si CAVA no supera a U en
+  ningún formato, se declara y alimenta la discusión final de la tesis; el
+  producto queda tal como está.
+- **Expectativa declarada:** CAVA > U en capítulos (la estructura aporta
+  percepción de organización) y en hilos por hablante en conversación;
+  inseguridad en recap/highlights, que son los formatos donde la base U ya
+  empató o ganó sobre datos públicos (EXP-031, 032, 037).
+- **Lectura pre-declarada:**
+  - CAVA > U en la mayoría de los 5 formatos (criterio 1 cumple en ≥3): la
+    estructura multimodal aporta valor percibido.
+  - CAVA ≈ U (IC incluye 0.50 en casi todos): los formatos estructurales
+    compiten a la par con un uniforme: la ventaja declarada en datos públicos
+    no se traduce en preferencia humana directa.
+  - CAVA < U: la estructura no aporta o daña en los formatos que fallan; se
+    desglosa por formato (¿falla solo recap/highlights o también capítulos?).
+  - CAVA > S y > U: la señal visual sola no alcanza; el consenso aporta más
+    que la mejor señal sola (la tesis se sostiene por preferencia humana).
+  - CAVA ≤ S: la señal visual sola alcanza lo multimodal en preferencia.
+- **Secundarias (sin criterio):** utilidad 1–5 por versión; desglose por
+  tipo de contenido (manifest) y por video; tasa de "iguales"; ranking
+  Bradley–Terry de CAVA, S y U por formato.
+- **Límite conocido:** una preferencia < 60/40 con ~200 juicios puede no
+  detectarse (riesgo de falso negativo por potencia); los juicios de una
+  misma persona no son independientes (por eso el bootstrap es clusterizado);
+  9 videos limitan el desglose por tipo. Alcance: el A/B mide
+  preferencia declarada de una vista de ~1 min, no utilidad real de uso.
+- **Jobs (2026-10-30):** generación de las versiones U/S para el A/B:
+  job 59261, `scripts/exp040_baselines.sbatch` (shard:rtxa6000:14, g002 o
+  ds001, como abset_run 58338; pin de nodo retirado tras medir 46/48 y 48/48
+  shards ocupados en las dos A6000). Reanudable por variante (salta el par
+  cuyo run_manifest.json exista) y con segunda pasada al final del job.
+  Smoke local antes de mandar (sin corte mp4, sin etiquetas, com_en_01): U
+  produce 25 capítulos equiespaciados (mismo nº que el mapa CAVA) y recap de
+  60 s en 1 clip equiespaciado; S produce mapa visual de 14 tópicos con 3
+  hilos del mapa visual y 2 hilos por voz (G-versión True en ambos).

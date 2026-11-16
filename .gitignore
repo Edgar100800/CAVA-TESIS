@@ -27,3 +27,7 @@ tesis/*.synctex.gz
 tesis/main.pdf
 tesis/main.bbl
 *.egg-info/
+exports/
+films/
+*.zip
+*.zip.sha256
