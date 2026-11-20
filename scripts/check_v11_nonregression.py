@@ -316,12 +316,14 @@ def check_r6(work):
         out = work / f"r6/{stack}"
         if not (out / "topic_map.json").exists():
             copy_work(frozen, out)
-            Pipeline(video, out, profile="meeting", stack=stack, audio=audio).run(cut=False)
+            # R6 prueba el votante de turnos y V#, no el 14B; --no-labels evita
+            # cargar un segundo modelo grande en la GPU usada por R4/R7.
+            Pipeline(video, out, profile="meeting", stack=stack, audio=audio, labels=False).run(cut=False)
         outs.append(out)
     maps = [json.loads((out / "topic_map.json").read_text()) for out in outs]
     diff = semantic_diff(without_speakers(maps[0]), without_speakers(maps[1]))
     speakers_changed = semantic_diff(maps[0], maps[1]) > diff
-    detail = {"map_non_speaker_diff": diff, "speakers_changed": speakers_changed,
+    detail = {"labels": False, "map_non_speaker_diff": diff, "speakers_changed": speakers_changed,
               "backend_v10": maps[0].get("voice_identity_signal"), "backend_v11": maps[1].get("voice_identity_signal"),
               "voice_identities_v10": maps[0].get("voice_identities"), "voice_identities_v11": maps[1].get("voice_identities"),
               "speaker_turns_v11": len(maps[1].get("speaker_turns", []))}
