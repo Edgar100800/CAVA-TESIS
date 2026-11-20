@@ -397,7 +397,13 @@ def brief(detail):
     if "reason" in detail:
         return detail["reason"]
     if "comparisons" in detail:
-        return f"diffs={[v['semantic_diff'] for v in detail['comparisons'].values()]}"
+        values = []
+        for value in detail["comparisons"].values():
+            if "semantic_diff" in value:
+                values.append(value["semantic_diff"])
+            else:
+                values.extend(v["semantic_diff"] for v in value.values())
+        return f"diffs={values}"
     if "vox" in detail:
         v, a = detail.get("vox", {}), detail.get("ami", {})
         vs = v.get("summary", {}) if isinstance(v, dict) else {}
@@ -459,6 +465,8 @@ def main():
                 status, detail = check_r4(args.work, shard, args.r4_part)
             elif name == "R7":
                 status, detail = check_r7(args.work, args.r7_run_id)
+            elif name == "R2":
+                status, detail = check_r2()
             else:
                 status, detail = CHECKS[name](args.work)
         except (FileNotFoundError, NotADirectoryError) as exc:
