@@ -3891,3 +3891,26 @@ cada una alineada con un rostro distinto en pantalla y en labios (`spider_compar
 
 **Adopción:** no aplicada todavía. `tfm-v1.0` y los estímulos de EXP-041-L quedan congelados con C;
 la integración de P en `topicagg` queda pendiente de decisión.
+
+---
+
+## EXP-045-Q · Validación de tolerancia de variantes de ejecución (pre-registro)
+- **Fecha:** 2026-11-20 (umbrales registrados antes de medir calidad de cualquier variante)
+- **Motivación:** cuantización y cambio de motor pueden acelerar las pistas sin alterar de forma aceptable sus salidas. La puerta de calidad se mantiene separada de las mediciones de velocidad y memoria.
+- **Lo único que cambia:** la variante de ejecución de una pista; la referencia es `ref` (precisión actual). No se cambian pesos/modelo, prompts, datos, perfiles ni umbrales de producto, salvo la precisión o el motor especificados por variante.
+- **Conjunto de referencia `refset_v1` (fijo):** Spider-Man (`film`); AMI fresh3 `ES2002c` (primer nombre en orden lexicográfico de `data/ami/meetings_fresh3.txt`); BBC Planet Earth `bbc_01` (primer episodio por ID; 49,3 min, según `logs/bbc_doc_a_54332.out`); abset `com_en_01` y `com_es_01` (primeros dos IDs en orden lexicográfico de `data/abset/manifest.csv`, excluidos los estímulos de EXP-041-L, que corresponden a Spider-Man); y los primeros 20 archivos VoxConverse **dev** en orden lexicográfico: `abjxc`, `afjiv`, `ahnss`, `aisvi`, `akthc`, `ampme`, `asxwr`, `atgpi`, `aufkn`, `azisu`, `bauzd`, `bdopb`, `bkwns`, `blwmj`, `bravd`, `bspxd`, `bwzyf`, `bxpwa`, `bydui`, `ccokr`.
+- **Protocolo:** comparar cada variante con `ref` sobre los mismos archivos y parámetros. Una variante se adopta por pista solo si cumple todas las de su fila **y** las de extremo a extremo. La validación de calidad queda pendiente; esta entrada no registra resultados de calidad.
+
+| Pista | Métrica (variante vs ref) | Tolerancia |
+|---|---|---|
+| ASR | WER(variante, transcripción ref) | ≤ 3 % ; y en AMI con GT: ΔWER ≤ +0,5 pp ; filtro de habla por unidad idéntico en ≥ 99 % de unidades |
+| Diarización (si se toca) | DER(variante, RTTM ref) ; ARI V# por unidad | DER ≤ 1 pp ; ARI ≥ 0,98 ; ARI VoxConverse test vs GT Δ ≥ −0,005 |
+| Embeddings (SigLIP, bge, WavLM) | coseno por unidad | mediana ≥ 0,995 ; p1 ≥ 0,98 |
+| Rostros | recall de detecciones vs ref ; ARI de clúster | ≥ 0,99 ; ≥ 0,98 |
+| VJudge / etiquetas (LLM) | coseno bge entre textos ; exactitud literal | mediana ≥ 0,90 ; reportar % idénticos ; 20 pares revisados a ciegas por una persona: ≥ 18 "equivalentes" |
+| **Extremo a extremo** (mapa) | ARI unidad→tópico ; F1 de fronteras ±1 unidad ; Δ nº tópicos ; Δ retornos ; G-versión | ≥ 0,95 ; ≥ 0,95 ; ≤ 2 % ; ≤ 2 % ; igual |
+| **Extremo a extremo** (versiones) | IoU de segundos en highlights/recap ; capítulos | ≥ 0,90 ; mismos tópicos ≥ 95 % |
+| Tiempo | s/h por etapa y total, misma GPU | se reporta (sin umbral) |
+
+- **Adopción:** si una variante pasa la pista pero falla extremo a extremo, **no se adopta**. Decode-once (fotograma 1 fps más cercano en vez del instante exacto) se valida con la misma tabla como "variante" de SigLIP/vjudge. Los estímulos de EXP-041-L y `tfm-v1.0` permanecen congelados con `ref`.
+- **Invalidación:** se invalida la adopción de la variante si incumple cualquier umbral aplicable de su pista o del extremo a extremo; en ese caso se conserva `ref` para esa pista.
