@@ -3943,3 +3943,126 @@ la integración de P en `topicagg` queda pendiente de decisión.
 
 - **Adopción:** si una variante pasa la pista pero falla extremo a extremo, **no se adopta**. Decode-once (fotograma 1 fps más cercano en vez del instante exacto) se valida con la misma tabla como "variante" de SigLIP/vjudge. Los estímulos de EXP-041-L y `tfm-v1.0` permanecen congelados con `ref`.
 - **Invalidación:** se invalida la adopción de la variante si incumple cualquier umbral aplicable de su pista o del extremo a extremo; en ese caso se conserva `ref` para esa pista.
+
+---
+
+## EXP-044-TURN · Votante de turnos del perfil meeting con diarización pyannote (pre-registro)
+
+- **Fecha:** 2026-11-20 (registrado antes de descargar audio, construir GT o calcular
+  señales o pyannote sobre las 15 reuniones nuevas).
+- **Motivación:**
+  - El votante de fronteras por cambio de quién tiene la palabra (EXP-023, `w = 6`) es la
+    mejora más estable del perfil meeting (+0,074 dev / +0,075 confirmación en MCC), pero hoy
+    se calcula con identidades ward+BIC sobre rasgos de voz (log-mel + f0), cuya identidad es
+    pobre (ARI ≈ 0,29 en AMI, EXP-022d/028).
+  - EXP-043-DIA validó pyannote community-1 como identidad (ARI AMI fresh3 0,728 → 0,975).
+    PLAN_MODELO_INFRA §3.1 deja explícitamente fuera de esa adopción al votante de turnos:
+    cambiarlo modifica el mapa, no solo V#, y exige pre-registro propio contra GT de tópicos.
+  - Pregunta: ¿mejores identidades → mejores fronteras de tópico en AMI, sin degradar el mapa?
+- **Lo único que cambia:** la fuente de identidades de unidad del votante de turnos existente.
+  - **C (referencia):** el camino exacto de EXP-023/ producto: `identities(voice, ward, BIC)`
+    → `speaker_turn_scores(vid, w=6)` (`topicagg/identities.py`, `pipeline.py:189-192`).
+  - **P (candidato):** etiqueta de unidad = hablante de pyannote con más tiempo de habla en la
+    unidad (regla `unit_major` de EXP-043, copiada, no reescrita); −1 si pyannote no detecta
+    habla en la unidad. Mismo `speaker_turn_scores`, misma `w = 6`.
+  - **Congelado:** `w = 6` (no se recalibra: la ventana es semántica —1 min a cada lado— y
+    pertenece a la configuración validada de EXP-023); pesos de voto iguales y quorum 2
+    (decisión EXP-024); perfil meeting p95/r90, average, abstain; señales voice/visual/
+    transcript/vjudge y su caché; perfiles film y documentary; `tfm-v1.0` y EXP-041-L.
+  - Modelos P: `pyannote/speaker-diarization-community-1` @3533c8cf (segmentation-3.0
+    @e66f3d3b), pyannote.audio 4.1.1, `dia-venv`, parámetros por defecto, sin K dado, sin ajuste.
+- **Datos (AMI, audio Mix-Headset, unidades de 10 s):**
+  - **Desarrollo:** `dev_20.txt` (20 reuniones). Solo comprobaciones descriptivas de sanidad
+    (distribución de scores JSD de P vs C, fracción de unidades etiquetadas). Sin ajuste de
+    ningún parámetro. Regla de parada: si la mediana del score de P en dev es 0 (votante
+    inactivo), se detiene y enmienda antes de tocar confirmación.
+  - **Confirmación:** las **15 reuniones** de `all_topic_meetings.txt` (135) que no están en
+    `meetings_all120.txt`: ES2002a/b, ES2003d, ES2004d, ES2006a, ES2009d, ES2010b/c, ES2012b,
+    IS1000a, IS1002c, IS1003b, IS1007a, IS1008d, TS3009c. Nunca descargadas, sin señales ni GT
+    construido, nunca usadas en ningún experimento (verificado: sin medios, sin `gt/`, sin
+    `signals/`; las 15 tienen `topics/*.topic.xml` en las anotaciones 1.6.2). GT con
+    `ami_gt.py`, señales con `ami_signals.py` (mismos modelos y pasos que los lotes previos).
+  - **Reutilización declarada (listas ya miradas):** `meetings_40` = `dev_20`+`conf_20`
+    (EXP-020, exploración EXP-021, dev EXP-022b/c/d, calibración de w en EXP-023, entrenamiento
+    EXP-024); `meetings_fresh40` (confirmación EXP-021c/022d, entrenamiento EXP-024);
+    `meetings_fresh3` (confirmación EXP-023/024; no inferioridad EXP-026/028; **pyannote ya
+    corrido encima en EXP-043**, ARI 0,975 conocido). Por eso fresh3 NO sirve como confirmación
+    de EXP-044: ya fue vista por el votante de turnos y por pyannote.
+  - **Contaminación declarada:** AMI está en el entrenamiento de pyannote (EXP-043). Aplica
+    también a las 15 nuevas: la ganancia puede estar inflada y no se generaliza a reuniones
+    fuera de su entrenamiento. Este experimento mide mejora de producto en AMI, no
+    generalización; evidencia limpia exigiría un corpus de reuniones con GT de tópicos fuera
+    del entrenamiento de pyannote (no existe hoy en el proyecto; trabajo futuro).
+- **Protocolo:** `eval_ami.py` con una bandera nueva `--turns-source {voice,pyannote}`; el
+  camino C queda idéntico byte a byte al de EXP-023. Sistemas por reunión: cava_voice, fused,
+  contiguous v2.1 (p80, en su propia configuración, enmienda EXP-021c), cava_turnos-C y
+  cava_turnos-P. Métrica primaria: MCC de pares de unidades a ≥ 18 unidades (≥ 3 min) con
+  tópico GT en ambas (etiqueta del punto medio), por reunión. Evaluabilidad: la misma de
+  EXP-020/023 (se omiten reuniones sin archivos o sin ≥ 20 pares válidos mixtos, antes de ver
+  resultados). Elegibilidad de unidad: cada método etiqueta las unidades donde detecta voz
+  (C: vector de voz no nulo, como hoy; P: habla pyannote > 0); las −1 no cuentan en los
+  histogramas (regla existente de `speaker_turn_scores`). La diferencia de detector de habla
+  es inherente al cambio de fuente y se mide como secundaria.
+- **Criterios (confirmación, SE pareado por reunión, regla 2 SE):**
+  1. MCC(P) − MCC(C) > 2 SE (el votante mejora con pyannote).
+  2. No inferioridad del mapa (ambas deben cumplirse):
+     a. MCC(P) − MCC(contiguous v2.1 p80) > −2 SE;
+     b. MCC(P) − MCC(cava_voice sin turnos) > −2 SE.
+  - Si quedan < 12 reuniones evaluables, la confirmación se declara sin potencia y no hay
+    adopción (umbral propuesto, ver Notas).
+- **Lectura pre-declarada:**
+  - 1 y 2 sí → P reemplaza a C como fuente del votante de turnos en meeting (v1.1), sujeto a
+    las comprobaciones de ingeniería R1–R8 (PLAN §3.3); la magnitud se reporta con la reserva
+    de contaminación. La identidad V# (EXP-043) es decisión aparte y no se toca aquí.
+  - 1 no, 2 sí → se mantiene C. Queda registrado que mejor identidad no implica mejores
+    fronteras; pyannote queda solo como V# (adopción EXP-043).
+  - 2 no (cualquiera) → se rechaza P para turnos aunque 1 se cumpla; se mantiene C; diagnóstico
+    descriptivo de por qué el mapa degrada.
+  - Sin potencia → todo descriptivo; no se adopta nada ni se hace pooling post hoc con fresh3.
+- **Secundarias (sin criterio):** ARI de las etiquetas de unidad de P vs hablante dominante GT
+  (protocolo `exp028_secondary.py`) y |K_eff − K_true|; DER de pyannote (collar 0,25 s);
+  F1 de fronteras de tópico ±1 unidad vs GT; nº de tópicos por reunión y retornos; márgenes de
+  G-coherencia; fracción de unidades etiquetadas por C vs P; MCC de cava_voice/fused/contiguous
+  en el lote nuevo (contexto); tiempo de cómputo.
+- **Riesgos:** (1) contaminación (arriba); (2) n = 15 es pequeño: con el SE de EXP-023
+  (±0,032 con 39), 2 SE aquí ≈ 0,10 → un efecto como el de EXP-023 podría no alcanzar
+  significancia; se declara antes de medir; (3) descarga: el espejo de AMI tiene reuniones sin
+  audio/video (precedente ES2008a, EXP-020); se omiten antes de evaluar; (4) el cambio de
+  fuente altera la distribución del score JSD (identidades más limpias → histogramas menos
+  ruidosos); por eso la sanidad en dev y la regla de parada, sin recalibrar w.
+- **Cómputo:** pyannote sobre ~7–8 h de audio en `dia-venv` (RTF ≈ 0,017, una GPU del lab);
+  señales ASR/SigLIP/vjudge con `ami_signals.py` (mismo código y modelos que los lotes
+  previos), ejecutado en las GPUs del laboratorio en lugar de SLURM; solo cambia el recurso.
+
+### Decisiones de la revisión (2026-11-20, antes de registrar)
+- Nota 1: `w = 6` queda congelado; sin enmienda de recalibración.
+- Nota 2: se acepta n = 15 con el umbral de 12 evaluables; el riesgo de potencia queda declarado.
+- Nota 3: cada brazo con su detector de habla (sin gate ASR común): es inherente al cambio de fuente.
+- Nota 5: verificado: `eval_voice_identities.identities` es `topicagg.identities.identities` (reexportación).
+- Nota 6: sin puerta de identidad; el ARI de P en las 15 es secundaria.
+
+### Notas del borrador (supuestos y ambigüedades encontradas)
+
+1. **`speaker_turns_w` es una ventana, no un peso de voto** (`pipeline.py:39,189-192`): el peso
+   de voto del votante es igual al de los demás (EXP-024 decidió pesos iguales). El borrador
+   congela ambos; si el revisor considera que la nueva distribución de scores exige recalibrar
+   w, la vía es una enmienda con barrido solo en dev, declarada antes de confirmación.
+2. **Confirmación de n = 15:** es lo único que queda de AMI con GT de tópicos sin usar
+   (`all_topic_meetings.txt` 135 − `meetings_all120.txt`). No verifiqué que las 15 tengan audio
+   en el espejo (hoy no hay medios locales); el umbral de 12 evaluables es una propuesta mía,
+   no está en ninguna fuente.
+3. **Elegibilidad de unidad:** el camino C de `eval_ami.py`/`pipeline.py` no aplica el filtro
+   ASR ≥ 50 % de EXP-026 al votante de turnos (solo excluye vectores nulos; `voice.py` tiene su
+   propio heurístico de energía). PLAN §3.2 prescribe el filtro ASR para la identidad V#, no
+   para turnos. Opté por la regla natural de cada método para no introducir un segundo cambio
+   en C; alternativa: gate ASR común a ambos brazos (cambiaría el camino validado de EXP-023).
+4. **Solapamientos:** P asigna la unidad al hablante con más tiempo (exclusiva), como EXP-043;
+   el habla solapada no vota doble. No hay precedente en EXP-023 (C no modela solapamiento).
+5. **`eval_ami.py` importa `identities` desde `eval_voice_identities`** y `speaker_turns.py`
+   solo reexporta `topicagg/identities.py`; asumí que el comportamiento es el mismo (el
+   docstring dice que se movió). Verificar antes de registrar.
+6. **ARI de P en las 15 como sanidad:** no le puse criterio (sería un cuarto criterio y una
+   comparación entre splits); queda secundaria. Si el revisor quiere una puerta de identidad
+   (p. ej. ARI ≥ 0,955 = 0,975 − 0,02 de fresh3), debe declararse antes de medir.
+7. **Orden V# de P:** ordenar por tiempo de habla (PLAN §3.2) es irrelevante para la JSD
+   (invariante a permutación de etiquetas); se menciona solo por consistencia de producto.
