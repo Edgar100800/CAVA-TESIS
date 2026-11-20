@@ -1,0 +1,568 @@
+{
+ "SPEAKER_10": {
+  "dur_s": 769,
+  "auto": "Peter Parker",
+  "evidence": "labios 0.26 (2.º 0.11)",
+  "lips": [
+   [
+    "Peter Parker",
+    0.26
+   ],
+   [
+    "Punisher",
+    0.11
+   ],
+   [
+    "Mary Jane Watson",
+    0.06
+   ]
+  ],
+  "onscreen": [
+   [
+    "Detective Jean Wolff",
+    0.03,
+    3.6
+   ],
+   [
+    "Bruce Banner",
+    0.03,
+    2.7
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    0.05,
+    2.1
+   ]
+  ]
+ },
+ "SPEAKER_16": {
+  "dur_s": 529,
+  "auto": null,
+  "evidence": "sin evidencia",
+  "lips": [
+   [
+    "Punisher",
+    0.16
+   ],
+   [
+    "Ned",
+    0.06
+   ],
+   [
+    "Mary Jane Watson",
+    0.05
+   ]
+  ],
+  "onscreen": [
+   [
+    "Damage Control (miembro)",
+    0.05,
+    6.8
+   ],
+   [
+    "Scorpion",
+    0.01,
+    2.6
+   ],
+   [
+    "Hulk",
+    0.01,
+    2.4
+   ]
+  ]
+ },
+ "SPEAKER_09": {
+  "dur_s": 305,
+  "auto": "Mary Jane Watson",
+  "evidence": "labios 0.61 (2.º 0.10)",
+  "lips": [
+   [
+    "Mary Jane Watson",
+    0.61
+   ],
+   [
+    "Ned",
+    0.1
+   ],
+   [
+    "Peter Parker",
+    0.04
+   ]
+  ],
+  "onscreen": [
+   [
+    "Mary Jane Watson",
+    0.44,
+    9.1
+   ],
+   [
+    "Ned",
+    0.05,
+    2.4
+   ],
+   [
+    "Peter Parker",
+    0.12,
+    1.2
+   ]
+  ]
+ },
+ "SPEAKER_19": {
+  "dur_s": 261,
+  "auto": "Ned",
+  "evidence": "labios 0.54 (2.º 0.18)",
+  "lips": [
+   [
+    "Ned",
+    0.54
+   ],
+   [
+    "Peter Parker",
+    0.18
+   ],
+   [
+    "Mary Jane Watson",
+    0.11
+   ]
+  ],
+  "onscreen": [
+   [
+    "Ned",
+    0.36,
+    17.8
+   ],
+   [
+    "Peter Parker",
+    0.12,
+    1.2
+   ],
+   [
+    "Mary Jane Watson",
+    0.05,
+    1.0
+   ]
+  ]
+ },
+ "SPEAKER_06": {
+  "dur_s": 235,
+  "auto": "Punisher",
+  "evidence": "labios 0.47 (2.º 0.14)",
+  "lips": [
+   [
+    "Punisher",
+    0.47
+   ],
+   [
+    "Mary Jane Watson",
+    0.14
+   ],
+   [
+    "Peter Parker",
+    0.13
+   ]
+  ],
+  "onscreen": [
+   [
+    "Punisher",
+    0.4,
+    12.5
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    0.02,
+    0.9
+   ],
+   [
+    "Peter Parker",
+    0.07,
+    0.7
+   ]
+  ]
+ },
+ "SPEAKER_18": {
+  "dur_s": 203,
+  "auto": "Bill Metzger",
+  "evidence": "labios 0.57 (2.º 0.09)",
+  "lips": [
+   [
+    "Bill Metzger",
+    0.57
+   ],
+   [
+    "Jean Grey",
+    0.09
+   ],
+   [
+    "Punisher",
+    0.02
+   ]
+  ],
+  "onscreen": [
+   [
+    "Bill Metzger",
+    0.5,
+    17.1
+   ],
+   [
+    "The Hand (miembro)",
+    0.09,
+    16.7
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    0.06,
+    2.6
+   ]
+  ]
+ },
+ "SPEAKER_11": {
+  "dur_s": 150,
+  "auto": "Yelena",
+  "evidence": "labios 0.78 (2.º 0.02)",
+  "lips": [
+   [
+    "Yelena",
+    0.78
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    0.02
+   ],
+   [
+    "Mary Jane Watson",
+    0.02
+   ]
+  ],
+  "onscreen": [
+   [
+    "Yelena",
+    0.54,
+    38.9
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    0.06,
+    2.6
+   ]
+  ]
+ },
+ "SPEAKER_07": {
+  "dur_s": 140,
+  "auto": "Jean Grey",
+  "evidence": "labios 0.65 (2.º 0.14)",
+  "lips": [
+   [
+    "Jean Grey",
+    0.65
+   ],
+   [
+    "Peter Parker",
+    0.14
+   ],
+   [
+    "Punisher",
+    0.05
+   ]
+  ],
+  "onscreen": [
+   [
+    "Jean Grey",
+    0.39,
+    8.6
+   ],
+   [
+    "Sara Grey",
+    0.04,
+    6.4
+   ],
+   [
+    "Bill Metzger",
+    0.03,
+    1.0
+   ]
+  ]
+ },
+ "SPEAKER_05": {
+  "dur_s": 124,
+  "auto": null,
+  "evidence": "sin evidencia",
+  "lips": [
+   [
+    "Detective Jean Wolff",
+    0.39
+   ],
+   [
+    "Peter Parker",
+    0.28
+   ],
+   [
+    "Ned",
+    0.11
+   ]
+  ],
+  "onscreen": [
+   [
+    "Detective Jean Wolff",
+    0.23,
+    28.9
+   ],
+   [
+    "Bruce Banner",
+    0.02,
+    2.0
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    0.03,
+    1.4
+   ]
+  ]
+ },
+ "SPEAKER_17": {
+  "dur_s": 120,
+  "auto": "Peter Parker",
+  "evidence": "labios 0.30 (2.º 0.03)",
+  "lips": [
+   [
+    "Peter Parker",
+    0.3
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    0.03
+   ]
+  ],
+  "onscreen": [
+   [
+    "Spider-Man (enmascarado)",
+    0.03,
+    1.1
+   ],
+   [
+    "Peter Parker",
+    0.1,
+    1.0
+   ]
+  ]
+ },
+ "SPEAKER_03": {
+  "dur_s": 88,
+  "auto": "Bruce Banner",
+  "evidence": "labios 0.58 (2.º 0.13)",
+  "lips": [
+   [
+    "Bruce Banner",
+    0.58
+   ],
+   [
+    "Punisher",
+    0.13
+   ],
+   [
+    "Hulk",
+    0.07
+   ]
+  ],
+  "onscreen": [
+   [
+    "Bruce Banner",
+    0.4,
+    33.9
+   ],
+   [
+    "Hulk",
+    0.09,
+    18.6
+   ],
+   [
+    "Damage Control (miembro)",
+    0.03,
+    4.8
+   ]
+  ]
+ },
+ "SPEAKER_04": {
+  "dur_s": 78,
+  "auto": "Sin nombre J",
+  "evidence": "labios 0.46 (2.º 0.09)",
+  "lips": [
+   [
+    "Sin nombre J",
+    0.46
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    0.09
+   ],
+   [
+    "Punisher",
+    0.02
+   ]
+  ],
+  "onscreen": [
+   [
+    "Sin nombre J",
+    0.38,
+    64.0
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    0.16,
+    6.9
+   ]
+  ]
+ },
+ "SPEAKER_02": {
+  "dur_s": 69,
+  "auto": "Aunt May",
+  "evidence": "labios 0.58 (2.º 0.16)",
+  "lips": [
+   [
+    "Aunt May",
+    0.58
+   ],
+   [
+    "Peter Parker",
+    0.16
+   ]
+  ],
+  "onscreen": [
+   [
+    "Aunt May",
+    0.41,
+    53.6
+   ],
+   [
+    "Jean Grey",
+    0.3,
+    6.6
+   ],
+   [
+    "Peter Parker",
+    0.23,
+    2.2
+   ]
+  ]
+ },
+ "SPEAKER_08": {
+  "dur_s": 36,
+  "auto": "Sara Grey",
+  "evidence": "labios 0.63 (2.º 0.11)",
+  "lips": [
+   [
+    "Sara Grey",
+    0.63
+   ],
+   [
+    "Bill Metzger",
+    0.11
+   ],
+   [
+    "Punisher",
+    0.09
+   ]
+  ],
+  "onscreen": [
+   [
+    "Sara Grey",
+    0.4,
+    59.7
+   ],
+   [
+    "Jean Grey",
+    0.42,
+    9.3
+   ],
+   [
+    "Bill Metzger",
+    0.07,
+    2.6
+   ]
+  ]
+ },
+ "SPEAKER_15": {
+  "dur_s": 35,
+  "auto": null,
+  "evidence": "sin evidencia",
+  "lips": [
+   [
+    "Peter Parker",
+    0.17
+   ],
+   [
+    "Bill Metzger",
+    0.11
+   ]
+  ],
+  "onscreen": []
+ },
+ "SPEAKER_12": {
+  "dur_s": 24,
+  "auto": "Peter Parker",
+  "evidence": "labios 0.26 (2.º 0.00)",
+  "lips": [
+   [
+    "Peter Parker",
+    0.26
+   ]
+  ],
+  "onscreen": []
+ },
+ "SPEAKER_13": {
+  "dur_s": 23,
+  "auto": "Peter Parker",
+  "evidence": "labios 0.41 (2.º 0.00)",
+  "lips": [
+   [
+    "Peter Parker",
+    0.41
+   ]
+  ],
+  "onscreen": []
+ },
+ "SPEAKER_01": {
+  "dur_s": 17,
+  "auto": "Peter Parker",
+  "evidence": "labios 0.47 (2.º 0.17)",
+  "lips": [
+   [
+    "Peter Parker",
+    0.47
+   ],
+   [
+    "Sin nombre J",
+    0.17
+   ],
+   [
+    "Mary Jane Watson",
+    0.16
+   ]
+  ],
+  "onscreen": []
+ },
+ "SPEAKER_14": {
+  "dur_s": 16,
+  "auto": "Spider-Man (enmascarado)",
+  "evidence": "labios 0.56 (2.º 0.00)",
+  "lips": [
+   [
+    "Spider-Man (enmascarado)",
+    0.56
+   ]
+  ],
+  "onscreen": [
+   [
+    "Spider-Man (enmascarado)",
+    0.35,
+    15.5
+   ]
+  ]
+ },
+ "SPEAKER_00": {
+  "dur_s": 9,
+  "auto": null,
+  "evidence": "sin evidencia",
+  "lips": [],
+  "onscreen": []
+ }
+}
