@@ -1,0 +1,250 @@
+{
+ "V1": {
+  "units": 233,
+  "active": [
+   {
+    "face": "Mary Jane Watson",
+    "share": 0.283,
+    "units": 66
+   },
+   {
+    "face": "(nadie)",
+    "share": 0.197,
+    "units": 46
+   },
+   {
+    "face": "Jean Grey",
+    "share": 0.142,
+    "units": 33
+   },
+   {
+    "face": "Peter Parker",
+    "share": 0.124,
+    "units": 29
+   },
+   {
+    "face": "Spider-Man (enmascarado)",
+    "share": 0.06,
+    "units": 14
+   }
+  ],
+  "assign": "Mary Jane Watson"
+ },
+ "V2": {
+  "units": 145,
+  "active": [
+   {
+    "face": "(nadie)",
+    "share": 0.221,
+    "units": 32
+   },
+   {
+    "face": "Yelena",
+    "share": 0.2,
+    "units": 29
+   },
+   {
+    "face": "Peter Parker",
+    "share": 0.179,
+    "units": 26
+   },
+   {
+    "face": "Detective Jean Wolff",
+    "share": 0.117,
+    "units": 17
+   },
+   {
+    "face": "Mary Jane Watson",
+    "share": 0.11,
+    "units": 16
+   }
+  ],
+  "assign": "ambiguo"
+ },
+ "V3": {
+  "units": 159,
+  "active": [
+   {
+    "face": "(nadie)",
+    "share": 0.314,
+    "units": 50
+   },
+   {
+    "face": "Peter Parker",
+    "share": 0.264,
+    "units": 42
+   },
+   {
+    "face": "Punisher",
+    "share": 0.082,
+    "units": 13
+   },
+   {
+    "face": "Mary Jane Watson",
+    "share": 0.082,
+    "units": 13
+   },
+   {
+    "face": "Ned",
+    "share": 0.05,
+    "units": 8
+   }
+  ],
+  "assign": "Peter Parker"
+ },
+ "V4": {
+  "units": 187,
+  "active": [
+   {
+    "face": "(nadie)",
+    "share": 0.246,
+    "units": 46
+   },
+   {
+    "face": "Peter Parker",
+    "share": 0.193,
+    "units": 36
+   },
+   {
+    "face": "Punisher",
+    "share": 0.118,
+    "units": 22
+   },
+   {
+    "face": "Spider-Man (enmascarado)",
+    "share": 0.08,
+    "units": 15
+   },
+   {
+    "face": "Sin nombre J",
+    "share": 0.075,
+    "units": 14
+   }
+  ],
+  "assign": "ambiguo"
+ },
+ "V5": {
+  "units": 96,
+  "active": [
+   {
+    "face": "(nadie)",
+    "share": 0.438,
+    "units": 42
+   },
+   {
+    "face": "Ned",
+    "share": 0.26,
+    "units": 25
+   },
+   {
+    "face": "Peter Parker",
+    "share": 0.115,
+    "units": 11
+   },
+   {
+    "face": "Punisher",
+    "share": 0.062,
+    "units": 6
+   },
+   {
+    "face": "Mary Jane Watson",
+    "share": 0.052,
+    "units": 5
+   }
+  ],
+  "assign": "Ned"
+ },
+ "V6": {
+  "units": 188,
+  "active": [
+   {
+    "face": "Punisher",
+    "share": 0.239,
+    "units": 45
+   },
+   {
+    "face": "Bill Metzger",
+    "share": 0.191,
+    "units": 36
+   },
+   {
+    "face": "(nadie)",
+    "share": 0.17,
+    "units": 32
+   },
+   {
+    "face": "Peter Parker",
+    "share": 0.138,
+    "units": 26
+   },
+   {
+    "face": "Jean Grey",
+    "share": 0.059,
+    "units": 11
+   }
+  ],
+  "assign": "ambiguo"
+ },
+ "V7": {
+  "units": 108,
+  "active": [
+   {
+    "face": "(nadie)",
+    "share": 0.426,
+    "units": 46
+   },
+   {
+    "face": "Peter Parker",
+    "share": 0.231,
+    "units": 25
+   },
+   {
+    "face": "Mary Jane Watson",
+    "share": 0.102,
+    "units": 11
+   },
+   {
+    "face": "Jean Grey",
+    "share": 0.083,
+    "units": 9
+   },
+   {
+    "face": "Punisher",
+    "share": 0.074,
+    "units": 8
+   }
+  ],
+  "assign": "Peter Parker"
+ },
+ "V8": {
+  "units": 239,
+  "active": [
+   {
+    "face": "(nadie)",
+    "share": 0.686,
+    "units": 164
+   },
+   {
+    "face": "Peter Parker",
+    "share": 0.1,
+    "units": 24
+   },
+   {
+    "face": "Punisher",
+    "share": 0.067,
+    "units": 16
+   },
+   {
+    "face": "Jean Grey",
+    "share": 0.054,
+    "units": 13
+   },
+   {
+    "face": "Spider-Man (enmascarado)",
+    "share": 0.017,
+    "units": 4
+   }
+  ],
+  "assign": "ambiguo"
+ }
+}

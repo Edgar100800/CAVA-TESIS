@@ -1,0 +1,366 @@
+{
+ "validation": {
+  "agree": 74,
+  "topics": 88
+ },
+ "voices": {
+  "V1": {
+   "units": 240,
+   "speech_s": 1200.0,
+   "faces_on_screen_rate": 0.729,
+   "top": [
+    {
+     "face": "Mary Jane Watson",
+     "p": 0.279,
+     "lift": 2.57,
+     "units": 67
+    },
+    {
+     "face": "Peter Parker",
+     "p": 0.242,
+     "lift": 1.26,
+     "units": 58
+    },
+    {
+     "face": "Jean Grey",
+     "p": 0.192,
+     "lift": 2.36,
+     "units": 46
+    },
+    {
+     "face": "Spider-Man (enmascarado)",
+     "p": 0.079,
+     "lift": 1.07,
+     "units": 19
+    },
+    {
+     "face": "Sara Grey",
+     "p": 0.075,
+     "lift": 5.94,
+     "units": 18
+    }
+   ]
+  },
+  "V2": {
+   "units": 148,
+   "speech_s": 740.0,
+   "faces_on_screen_rate": 0.736,
+   "top": [
+    {
+     "face": "Peter Parker",
+     "p": 0.236,
+     "lift": 1.24,
+     "units": 35
+    },
+    {
+     "face": "Yelena",
+     "p": 0.203,
+     "lift": 6.72,
+     "units": 30
+    },
+    {
+     "face": "Mary Jane Watson",
+     "p": 0.155,
+     "lift": 1.43,
+     "units": 23
+    },
+    {
+     "face": "Detective Jean Wolff",
+     "p": 0.108,
+     "lift": 4.67,
+     "units": 16
+    },
+    {
+     "face": "Spider-Man (enmascarado)",
+     "p": 0.108,
+     "lift": 1.45,
+     "units": 16
+    }
+   ]
+  },
+  "V3": {
+   "units": 167,
+   "speech_s": 835.0,
+   "faces_on_screen_rate": 0.671,
+   "top": [
+    {
+     "face": "Peter Parker",
+     "p": 0.257,
+     "lift": 1.34,
+     "units": 43
+    },
+    {
+     "face": "Mary Jane Watson",
+     "p": 0.132,
+     "lift": 1.21,
+     "units": 22
+    },
+    {
+     "face": "Spider-Man (enmascarado)",
+     "p": 0.126,
+     "lift": 1.69,
+     "units": 21
+    },
+    {
+     "face": "Ned",
+     "p": 0.066,
+     "lift": 1.49,
+     "units": 11
+    },
+    {
+     "face": "Bruce Banner",
+     "p": 0.066,
+     "lift": 3.91,
+     "units": 11
+    }
+   ]
+  },
+  "V4": {
+   "units": 196,
+   "speech_s": 980.0,
+   "faces_on_screen_rate": 0.622,
+   "top": [
+    {
+     "face": "Peter Parker",
+     "p": 0.184,
+     "lift": 0.96,
+     "units": 36
+    },
+    {
+     "face": "Spider-Man (enmascarado)",
+     "p": 0.168,
+     "lift": 2.27,
+     "units": 33
+    },
+    {
+     "face": "Punisher",
+     "p": 0.077,
+     "lift": 1.17,
+     "units": 15
+    },
+    {
+     "face": "Sin nombre J",
+     "p": 0.071,
+     "lift": 5.36,
+     "units": 14
+    },
+    {
+     "face": "Bill Metzger",
+     "p": 0.066,
+     "lift": 1.11,
+     "units": 13
+    }
+   ]
+  },
+  "V5": {
+   "units": 100,
+   "speech_s": 500.0,
+   "faces_on_screen_rate": 0.51,
+   "top": [
+    {
+     "face": "Ned",
+     "p": 0.28,
+     "lift": 6.34,
+     "units": 28
+    },
+    {
+     "face": "Peter Parker",
+     "p": 0.23,
+     "lift": 1.2,
+     "units": 23
+    },
+    {
+     "face": "Mary Jane Watson",
+     "p": 0.08,
+     "lift": 0.74,
+     "units": 8
+    },
+    {
+     "face": "Jean Grey",
+     "p": 0.03,
+     "lift": 0.37,
+     "units": 3
+    },
+    {
+     "face": "Hulk",
+     "p": 0.02,
+     "lift": 1.78,
+     "units": 2
+    }
+   ]
+  },
+  "V6": {
+   "units": 193,
+   "speech_s": 965.0,
+   "faces_on_screen_rate": 0.762,
+   "top": [
+    {
+     "face": "Punisher",
+     "p": 0.254,
+     "lift": 3.89,
+     "units": 49
+    },
+    {
+     "face": "Bill Metzger",
+     "p": 0.249,
+     "lift": 4.17,
+     "units": 48
+    },
+    {
+     "face": "Peter Parker",
+     "p": 0.155,
+     "lift": 0.81,
+     "units": 30
+    },
+    {
+     "face": "Jean Grey",
+     "p": 0.088,
+     "lift": 1.08,
+     "units": 17
+    },
+    {
+     "face": "Spider-Man (enmascarado)",
+     "p": 0.062,
+     "lift": 0.84,
+     "units": 12
+    }
+   ]
+  },
+  "V7": {
+   "units": 113,
+   "speech_s": 565.0,
+   "faces_on_screen_rate": 0.558,
+   "top": [
+    {
+     "face": "Peter Parker",
+     "p": 0.221,
+     "lift": 1.16,
+     "units": 25
+    },
+    {
+     "face": "Mary Jane Watson",
+     "p": 0.142,
+     "lift": 1.3,
+     "units": 16
+    },
+    {
+     "face": "Jean Grey",
+     "p": 0.133,
+     "lift": 1.63,
+     "units": 15
+    },
+    {
+     "face": "Punisher",
+     "p": 0.071,
+     "lift": 1.09,
+     "units": 8
+    },
+    {
+     "face": "Bill Metzger",
+     "p": 0.027,
+     "lift": 0.45,
+     "units": 3
+    }
+   ]
+  },
+  "V8": {
+   "units": 269,
+   "speech_s": 1345.0,
+   "faces_on_screen_rate": 0.219,
+   "top": [
+    {
+     "face": "Peter Parker",
+     "p": 0.086,
+     "lift": 0.45,
+     "units": 23
+    },
+    {
+     "face": "Jean Grey",
+     "p": 0.071,
+     "lift": 0.87,
+     "units": 19
+    },
+    {
+     "face": "Punisher",
+     "p": 0.026,
+     "lift": 0.4,
+     "units": 7
+    },
+    {
+     "face": "Sin nombre K",
+     "p": 0.015,
+     "lift": 2.36,
+     "units": 4
+    },
+    {
+     "face": "Sin nombre M",
+     "p": 0.011,
+     "lift": 1.77,
+     "units": 3
+    }
+   ]
+  }
+ },
+ "assignment": {
+  "V1": {
+   "face": "Mary Jane Watson",
+   "ambiguous_with": [
+    "Jean Grey"
+   ],
+   "lift": 2.57,
+   "p": 0.279,
+   "units": 67
+  },
+  "V2": {
+   "face": "Yelena",
+   "ambiguous_with": [],
+   "lift": 6.72,
+   "p": 0.203,
+   "units": 30
+  },
+  "V3": {
+   "face": null,
+   "ambiguous_with": [],
+   "lift": 1.34,
+   "p": 0.257,
+   "units": 43
+  },
+  "V4": {
+   "face": "Spider-Man (enmascarado)",
+   "ambiguous_with": [],
+   "lift": 2.27,
+   "p": 0.168,
+   "units": 33
+  },
+  "V5": {
+   "face": "Ned",
+   "ambiguous_with": [],
+   "lift": 6.34,
+   "p": 0.28,
+   "units": 28
+  },
+  "V6": {
+   "face": "Bill Metzger",
+   "ambiguous_with": [
+    "Punisher"
+   ],
+   "lift": 4.17,
+   "p": 0.249,
+   "units": 48
+  },
+  "V7": {
+   "face": null,
+   "ambiguous_with": [],
+   "lift": 1.16,
+   "p": 0.221,
+   "units": 25
+  },
+  "V8": {
+   "face": null,
+   "ambiguous_with": [],
+   "lift": 0.45,
+   "p": 0.086,
+   "units": 23
+  }
+ }
+}
