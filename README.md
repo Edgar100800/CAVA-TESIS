@@ -16,6 +16,8 @@ CAVA-TESIS/
 │   ├── versions.py               # 5 formatos por consumidor + compuerta G-versión
 │   ├── voice.py                  # rasgos de voz (log-mel + tono), señal `voice`
 │   ├── speaker.py                # embedding de hablante WavLM-sv, detector de hablante único
+│   ├── diarization.py            # pyannote community-1 en subproceso, turnos y V# por unidad (v1.1)
+│   ├── profiles/                 # perfiles congelados v1_0 y perfiles v1_1
 │   ├── identities.py             # identidades V# (ward + BIC), votante de turnos, hablantes por tramo
 │   ├── embed.py                  # embeddings bge para transcript y vjudge
 │   ├── labels.py                 # prompt y limpieza de la etiqueta de tópico
@@ -48,6 +50,25 @@ python -m pytest -q
 
 Los scripts de `scripts/` se ejecutan desde la raíz del repo (`python scripts/<x>.py`);
 añaden la raíz a `sys.path` por su cuenta. `topicagg/` no importa nada de `scripts/`.
+
+## Ejecutar el pipeline y elegir el stack
+
+**El valor por defecto es `--stack v1.0`**: reproduce el comportamiento congelado de `tfm-v1.0`.
+La diarización pyannote solo se activa si se pide expresamente `--stack v1.1`; cambia V# en `film` y
+`meeting`, mientras `documentary` y el votante de turnos de `meeting` no cambian.
+
+```bash
+# Una sola vez: registrar el worker en el venv separado, sin instalar dependencias del producto.
+/data/tesis-cava/dia-venv/bin/pip install --no-deps -e .
+
+# v1.1 sobre un video nuevo (salida en un directorio nuevo).
+python scripts/cava_run.py /ruta/video.mp4:film --stack v1.1 --out data/cava_runs_v11
+```
+
+El worker usa `HF_HUB_OFFLINE=1` y `/data/tesis-cava/hf_dia`. En otra máquina se configuran
+`CAVA_DIA_PYTHON=/ruta/dia-venv/bin/python` y `CAVA_DIA_HF_CACHE=/ruta/hf_dia`. Los turnos con
+solapamiento y exclusivos quedan en `work/diar.pyannote_c1.3533c8cf.{json,rttm,exclusive.rttm}`;
+no reutilizan `speaker_xvec.npy` ni ninguna identidad V# de v1.0.
 
 ## Dependencias
 

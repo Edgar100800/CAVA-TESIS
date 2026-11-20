@@ -27,7 +27,7 @@ dev = ["pytest"]
 figs = ["matplotlib"]
 
 [tool.setuptools.packages.find]
-include = ["topicagg*"]
+include = ["topicagg*", "cava_dia*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

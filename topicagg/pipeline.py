@@ -13,7 +13,7 @@ Etapas (cada una cacheada en <out>/work, resumible):
   9 map       manage(): retornos + enlace promedio + abstención, perfil
               (film p80/r90, meeting p95/r90), sin fusión -> topic_map.json
  10 labels    etiqueta de nivel tópico, Qwen2.5-14B frozen (EXP-019b)
- 11 speakers  identidades de voz, ward + K por BIC (EXP-022d) por tópico y clip
+ 11 speakers  v1.0: WavLM + ward/BIC; v1.1 film/meeting: pyannote; V# por tópico y clip
  12 versions  perfiles de consumo (versions.py) + G-versión
  13 clips     mp4 por clip (ffmpeg) + un mp4 por playlist + index.json/index.md
 Ningún GT entra en el pipeline. Configuración validada en EXPERIMENT_LOG.
@@ -28,15 +28,8 @@ from pathlib import Path
 
 import numpy as np
 
-PROFILES = {"film": {"unit_s": 5.0, "percentile": 80, "return_percentile": 90, "snap_visual_s": 30.0,  # EXP-027
-                     "speaker_embed": True},  # EXP-028
-            "documentary": {"unit_s": 5.0, "percentile": 90, "return_percentile": 90,  # EXP-025
-                            "snap_visual_s": 30.0, "speaker_embed": True,
-                            # narrador único: K por BIC nunca da 1 y sobre-divide (EXP-028, BBC 4.1 grupos)
-                            "speaker_kind": "acoustic_group"},
-            "meeting": {"unit_s": 10.0, "speaker_embed": True,  # EXP-028 (AMI ARI 0.29 → 0.73)
-                        "percentile": 95, "return_percentile": 90,
-                        "speaker_turns_w": 6}}  # EXP-023
+from .profiles import get_profile
+from .profiles.v1_0 import PROFILES  # compatibilidad: siempre los perfiles congelados
 HF = "/home/edgar.chambilla/Tesis/SegLoop/data/hf_cache"
 VL = ("Qwen/Qwen2.5-VL-7B-Instruct", "cc594898137f460bfe9f0759e9844b3ce807cfb5")
 TXT = ("Qwen/Qwen2.5-14B-Instruct", "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8")
@@ -56,10 +49,12 @@ def _frame(video, t, out):
 
 
 class Pipeline:
-    def __init__(self, video, out, profile="film", summary_s=40.0, device="cuda", labels=True, audio=None):
+    def __init__(self, video, out, profile="film", summary_s=40.0, device="cuda", labels=True, audio=None,
+                 stack="v1.0"):
         self.video, self.out = Path(video), Path(out)
         self.audio_src = Path(audio) if audio else None   # p. ej. AMI: video sin pista de audio
-        self.cfg = PROFILES[profile] | {"profile": profile}
+        self.stack = stack
+        self.cfg = get_profile(stack, profile) | {"profile": profile}
         self.summary_s, self.device, self.do_labels = summary_s, device, labels
         self.work = self.out / "work"
         self.work.mkdir(parents=True, exist_ok=True)
@@ -230,29 +225,38 @@ class Pipeline:
     def speakers(self):
         from .identities import identities, speakers_of
         units = self.state["units"]
-        x = np.asarray(self.arrays["voice"][:len(units)], np.float32)
         # EXP-026: solo unidades con habla ASR (≥ 50 % cubierta); no inferior en AMI, menos grupos espurios en BBC
         speech = np.array([sum(max(0.0, min(u1, b) - max(u0, a)) for a, b, *_ in self.state["asr_segments"])
                            >= 0.5 * (u1 - u0) for u0, u1 in units])
-        if self.cfg.get("speaker_embed"):
-            # EXP-028: identidad por embedding de hablante (WavLM-sv), no por rasgos de voz
-            f = self.work / "speaker_xvec.npy"
-            if f.exists():
-                x = np.load(f)
-            else:
-                from .speaker import XVec
-                from .voice import load_audio
-                x = XVec(self.device)(load_audio(str(self.work / "audio.wav")), units, speech)
-                np.save(f, x)
-        vid = np.full(len(units), -1)
-        single = False
-        if self.cfg.get("speaker_embed"):
-            from .speaker import single_speaker
-            single = single_speaker(x, speech)  # EXP-029
-        if single:
-            vid[speech] = 1
-        elif speech.sum() >= 10:
-            vid[speech] = identities(x[speech], "ward", k_rule="bic")
+        backend = self.cfg.get("speaker_backend") or ("wavlm_sv" if self.cfg.get("speaker_embed") else "voice_features")
+        if backend == "pyannote_c1":
+            from .diarization import public_turns, rttm, run_diarization, unit_labels
+            f = self.work / "diar.pyannote_c1.3533c8cf.json"
+            run_diarization(self.work / "audio.wav", f)
+            turns = rttm(f.with_suffix(".rttm"))
+            vid = unit_labels(units, turns, speech)
+            self.doc["speaker_turns"] = public_turns(turns)
+        else:
+            x = np.asarray(self.arrays["voice"][:len(units)], np.float32)
+            if self.cfg.get("speaker_embed"):
+                # EXP-028: identidad por embedding de hablante (WavLM-sv), no por rasgos de voz
+                f = self.work / "speaker_xvec.npy"
+                if f.exists():
+                    x = np.load(f)
+                else:
+                    from .speaker import XVec
+                    from .voice import load_audio
+                    x = XVec(self.device)(load_audio(str(self.work / "audio.wav")), units, speech)
+                    np.save(f, x)
+            vid = np.full(len(units), -1)
+            single = False
+            if self.cfg.get("speaker_embed"):
+                from .speaker import single_speaker
+                single = single_speaker(x, speech)  # EXP-029
+            if single:
+                vid[speech] = 1
+            elif speech.sum() >= 10:
+                vid[speech] = identities(x[speech], "ward", k_rule="bic")
         for level in self.doc["levels"].values():
             for t in level["topics"]:
                 t["speakers"] = speakers_of(t["shots"], vid)
@@ -265,7 +269,7 @@ class Pipeline:
         # en material de difusión (VoxConverse), así que con él V# vuelve a ser "hablante".
         self.doc["voice_identity_kind"] = self.cfg.get("speaker_kind") or (
             "speaker" if self.cfg["profile"] == "meeting" or self.cfg.get("speaker_embed") else "acoustic_group")
-        self.doc["voice_identity_signal"] = "wavlm_sv" if self.cfg.get("speaker_embed") else "voice_features"
+        self.doc["voice_identity_signal"] = backend
         (self.out / "topic_map.json").write_text(json.dumps(self.doc, ensure_ascii=False, indent=1))
 
     # 12-13
@@ -372,8 +376,12 @@ class Pipeline:
                   "visual": ("google/siglip-base-patch16-224", snap("google/siglip-base-patch16-224")),
                   "text_embed": ("BAAI/bge-base-en-v1.5", snap("BAAI/bge-base-en-v1.5")),
                   "vjudge": VL, "labels": TXT if self.do_labels else None}
-        if self.cfg.get("speaker_embed"):
+        backend = self.cfg.get("speaker_backend") or ("wavlm_sv" if self.cfg.get("speaker_embed") else "voice_features")
+        if self.cfg.get("speaker_embed") and backend != "pyannote_c1":
             models["speaker"] = WAVLM
+        if backend == "pyannote_c1":
+            from .diarization import DIARIZATION, PYANNOTE_AUDIO
+            models["diarization"] = DIARIZATION
         d = self.doc["levels"]["default"]
         man = {"schema": "cava-run-v1",
                "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
@@ -389,6 +397,10 @@ class Pipeline:
                            "G_version": gate["G_version"], "files": ["topic_map.json", "versions.json",
                                                                      "clips.jsonl", "index.json", "index.md"]},
                "gt_used": False, "timings_s": timings}
+        if self.stack != "v1.0":
+            man["stack"] = self.stack
+            if backend == "pyannote_c1":
+                man["pyannote_audio"] = PYANNOTE_AUDIO
         (self.out / "run_manifest.json").write_text(json.dumps(man, ensure_ascii=False, indent=1))
 
     def _index(self, v, gate):
