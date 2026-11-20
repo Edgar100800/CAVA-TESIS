@@ -1,0 +1,400 @@
+{
+ "SPEAKER_10": {
+  "time_s": 753,
+  "units": 268,
+  "voices": {
+   "V3 Peter": 0.49,
+   "V4 Peter (máscara)": 0.23,
+   "V2 Yelena": 0.15
+  },
+  "onscreen_lift": [
+   [
+    "Detective Jean Wolff",
+    2.6
+   ],
+   [
+    "Bruce Banner",
+    2.4
+   ]
+  ],
+  "lips": {
+   "Peter Parker": 0.26,
+   "Punisher": 0.09
+  }
+ },
+ "SPEAKER_16": {
+  "time_s": 493,
+  "units": 240,
+  "voices": {
+   "V4 Peter (máscara)": 0.31,
+   "V8 fuera de cuadro": 0.16,
+   "V3 Peter": 0.11
+  },
+  "onscreen_lift": [
+   [
+    "Damage Control (miembro)",
+    4.4
+   ],
+   [
+    "Scorpion",
+    3.3
+   ]
+  ],
+  "lips": {
+   "Peter Parker": 0.11,
+   "Punisher": 0.1
+  }
+ },
+ "SPEAKER_09": {
+  "time_s": 299,
+  "units": 125,
+  "voices": {
+   "V1 Mary Jane": 0.74,
+   "V2 Yelena": 0.15,
+   "V4 Peter (máscara)": 0.04
+  },
+  "onscreen_lift": [
+   [
+    "Mary Jane Watson",
+    6.8
+   ],
+   [
+    "Peter Parker",
+    1.8
+   ]
+  ],
+  "lips": {
+   "Mary Jane Watson": 0.56,
+   "Peter Parker": 0.08
+  }
+ },
+ "SPEAKER_19": {
+  "time_s": 250,
+  "units": 83,
+  "voices": {
+   "V5 Ned": 0.54,
+   "V4 Peter (máscara)": 0.24,
+   "V3 Peter": 0.11
+  },
+  "onscreen_lift": [
+   [
+    "Ned",
+    14.0
+   ],
+   [
+    "Mary Jane Watson",
+    2.1
+   ]
+  ],
+  "lips": {
+   "Ned": 0.46,
+   "Mary Jane Watson": 0.13
+  }
+ },
+ "SPEAKER_06": {
+  "time_s": 227,
+  "units": 86,
+  "voices": {
+   "V6a Punisher": 0.54,
+   "V6b Bill Metzger": 0.34,
+   "V4 Peter (máscara)": 0.11
+  },
+  "onscreen_lift": [
+   [
+    "Punisher",
+    8.8
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    1.0
+   ]
+  ],
+  "lips": {
+   "Punisher": 0.42,
+   "Peter Parker": 0.13
+  }
+ },
+ "SPEAKER_18": {
+  "time_s": 198,
+  "units": 82,
+  "voices": {
+   "V6b Bill Metzger": 0.72,
+   "V4 Peter (máscara)": 0.13,
+   "V3 Peter": 0.07
+  },
+  "onscreen_lift": [
+   [
+    "Bill Metzger",
+    13.1
+   ],
+   [
+    "The Hand (miembro)",
+    8.8
+   ]
+  ],
+  "lips": {
+   "Bill Metzger": 0.5,
+   "Jean Grey": 0.1
+  }
+ },
+ "SPEAKER_11": {
+  "time_s": 145,
+  "units": 40,
+  "voices": {
+   "V2 Yelena": 0.79,
+   "V4 Peter (máscara)": 0.13,
+   "V1 Mary Jane": 0.08
+  },
+  "onscreen_lift": [
+   [
+    "Yelena",
+    31.6
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    2.9
+   ]
+  ],
+  "lips": {
+   "Yelena": 0.72,
+   "Spider-Man (enmascarado)": 0.03
+  }
+ },
+ "SPEAKER_07": {
+  "time_s": 136,
+  "units": 72,
+  "voices": {
+   "V1 Mary Jane": 0.73,
+   "V2 Yelena": 0.16,
+   "V7 sin asignar": 0.04
+  },
+  "onscreen_lift": [
+   [
+    "The Hand (miembro)",
+    6.0
+   ],
+   [
+    "Jean Grey",
+    5.6
+   ]
+  ],
+  "lips": {
+   "Jean Grey": 0.42,
+   "Peter Parker": 0.11
+  }
+ },
+ "SPEAKER_05": {
+  "time_s": 121,
+  "units": 32,
+  "voices": {
+   "V2 Yelena": 0.74,
+   "V4 Peter (máscara)": 0.13,
+   "V1 Mary Jane": 0.1
+  },
+  "onscreen_lift": [
+   [
+    "Detective Jean Wolff",
+    28.0
+   ],
+   [
+    "Peter Parker",
+    1.2
+   ]
+  ],
+  "lips": {
+   "Detective Jean Wolff": 0.5,
+   "Peter Parker": 0.19
+  }
+ },
+ "SPEAKER_17": {
+  "time_s": 118,
+  "units": 44,
+  "voices": {
+   "V1 Mary Jane": 0.82,
+   "V2 Yelena": 0.1,
+   "V4 Peter (máscara)": 0.05
+  },
+  "onscreen_lift": [
+   [
+    "Spider-Man (enmascarado)",
+    1.7
+   ],
+   [
+    "Peter Parker",
+    1.3
+   ]
+  ],
+  "lips": {
+   "Peter Parker": 0.16,
+   "Spider-Man (enmascarado)": 0.11
+  }
+ },
+ "SPEAKER_03": {
+  "time_s": 85,
+  "units": 31,
+  "voices": {
+   "V6b Bill Metzger": 0.62,
+   "V5 Ned": 0.1,
+   "V4 Peter (máscara)": 0.1
+  },
+  "onscreen_lift": [
+   [
+    "Bruce Banner",
+    28.9
+   ],
+   [
+    "Peter Parker",
+    2.4
+   ]
+  ],
+  "lips": {
+   "Bruce Banner": 0.29,
+   "Peter Parker": 0.13
+  }
+ },
+ "SPEAKER_04": {
+  "time_s": 77,
+  "units": 28,
+  "voices": {
+   "V4 Peter (máscara)": 0.62,
+   "V3 Peter": 0.27,
+   "V6b Bill Metzger": 0.04
+  },
+  "onscreen_lift": [
+   [
+    "Sin nombre J",
+    59.0
+   ],
+   [
+    "Spider-Man (enmascarado)",
+    5.8
+   ]
+  ],
+  "lips": {
+   "Sin nombre J": 0.61,
+   "Peter Parker": 0.04
+  }
+ },
+ "SPEAKER_02": {
+  "time_s": 67,
+  "units": 30,
+  "voices": {
+   "V1 Mary Jane": 0.7,
+   "V2 Yelena": 0.3
+  },
+  "onscreen_lift": [
+   [
+    "Aunt May",
+    49.3
+   ],
+   [
+    "Jean Grey",
+    6.0
+   ]
+  ],
+  "lips": {
+   "Aunt May": 0.33,
+   "Peter Parker": 0.13
+  }
+ },
+ "SPEAKER_08": {
+  "time_s": 36,
+  "units": 19,
+  "voices": {
+   "V1 Mary Jane": 0.88,
+   "V2 Yelena": 0.06,
+   "V7 sin asignar": 0.06
+  },
+  "onscreen_lift": [
+   [
+    "Sara Grey",
+    54.9
+   ],
+   [
+    "Jean Grey",
+    8.2
+   ]
+  ],
+  "lips": {
+   "Sara Grey": 0.53,
+   "Jean Grey": 0.16
+  }
+ },
+ "SPEAKER_15": {
+  "time_s": 33,
+  "units": 10,
+  "voices": {
+   "V6a Punisher": 0.67,
+   "V1 Mary Jane": 0.11,
+   "V5 Ned": 0.11
+  },
+  "onscreen_lift": [],
+  "lips": {
+   "Peter Parker": 0.3,
+   "Bill Metzger": 0.1
+  }
+ },
+ "SPEAKER_12": {
+  "time_s": 24,
+  "units": 7,
+  "voices": {
+   "V5 Ned": 0.83,
+   "V4 Peter (máscara)": 0.17
+  },
+  "onscreen_lift": [],
+  "lips": {
+   "Peter Parker": 0.29,
+   "Punisher": 0.14
+  }
+ },
+ "SPEAKER_13": {
+  "time_s": 22,
+  "units": 8,
+  "voices": {
+   "V5 Ned": 1.0
+  },
+  "onscreen_lift": [],
+  "lips": {
+   "Punisher": 0.12
+  }
+ },
+ "SPEAKER_01": {
+  "time_s": 17,
+  "units": 4,
+  "voices": {
+   "V4 Peter (máscara)": 0.67,
+   "V6b Bill Metzger": 0.33
+  },
+  "onscreen_lift": [],
+  "lips": {
+   "Punisher": 0.25,
+   "Sin nombre J": 0.25
+  }
+ },
+ "SPEAKER_14": {
+  "time_s": 15,
+  "units": 7,
+  "voices": {
+   "V8 fuera de cuadro": 0.6,
+   "V2 Yelena": 0.2,
+   "V1 Mary Jane": 0.2
+  },
+  "onscreen_lift": [],
+  "lips": {
+   "Spider-Man (enmascarado)": 0.14,
+   "Peter Parker": 0.14
+  }
+ },
+ "SPEAKER_00": {
+  "time_s": 9,
+  "units": 3,
+  "voices": {
+   "V1 Mary Jane": 1.0
+  },
+  "onscreen_lift": [],
+  "lips": {
+   "Peter Parker": 0.33,
+   "Jean Grey": 0.33
+  }
+ }
+}
