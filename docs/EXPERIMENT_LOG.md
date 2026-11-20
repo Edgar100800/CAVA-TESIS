@@ -3894,6 +3894,35 @@ la integración de P en `topicagg` queda pendiente de decisión.
 
 ---
 
+## Adopción de EXP-043-DIA en el producto (stack v1.1)
+- **Fecha:** 2026-11-20 (registrado antes de ejecutar las comprobaciones R1–R8).
+- **Alcance:** pyannote community-1 reemplaza únicamente la identidad de hablante V# en los perfiles
+  `film` y `meeting` del stack v1.1. El perfil `documentary` conserva WavLM-sv + EXP-029 + ward/BIC y
+  `acoustic_group`. El votante de fronteras por turnos de `meeting` sigue usando rasgos de voz, sin
+  cambios. Los estímulos de EXP-041-L y la salida `tfm-v1.0` quedan congelados; `--stack v1.0` sigue
+  siendo el comportamiento por defecto.
+- **Trazabilidad previa:** `docs/hashes_exp041L_stimuli.sha256` registra los 446 archivos de estímulos
+  (cava/, u/ y reports/exp041/) calculados en Khipu y las salidas congeladas de Spider-Man y Avengers
+  usadas como referencia. `inventory.json` fija community-1 @3533c8cf, segmentation-3.0 @e66f3d3b y
+  pyannote.audio 4.1.1.
+- **Criterios de aceptación (comprobaciones de ingeniería, no un experimento nuevo):**
+
+| # | Comprobación | Criterio |
+|---|---|---|
+| R1 | `--stack v1.0` sobre los `work/` congelados de Spider-Man y Avengers | `topic_map.json`, `versions.json`, `clips.jsonl` idénticos (diff semántico JSON = 0) |
+| R2 | Estímulos EXP-041-L | sha256 de todos los archivos de estímulos sin cambios (lista de hashes registrada hoy) |
+| R3 | v1.1 vs v1.0 en Spider-Man | tópicos, tramos, etiquetas, G-versión idénticos; solo cambian `speakers`, `voice_identities`, `speaker_threads` |
+| R4 | Camino de producto = camino evaluado | VoxConverse test por `topicagg.diarization` (no por el script): ARI 0,938 ± 0,005; AMI fresh3 0,975 ± 0,005 |
+| R5 | documentary (1 BBC) | salida idéntica a v1.0 |
+| R6 | meeting (1 AMI) | mapa idéntico a v1.0 (turnos sin cambiar), V# nuevo |
+| R7 | Determinismo | pyannote dos veces sobre Spider-Man → RTTM idéntico (si no, fijar semillas/`cudnn.deterministic` y reportar) |
+| R8 | Contrato | `clips.jsonl`/manifest validan contra el esquema; `gt_used: false` |
+
+- **Invalidación de la integración:** cualquier R1–R8 que falle impide declarar la adopción validada;
+  una comprobación sin datos se marca `SKIPPED` con su causa y nunca cuenta como aprobada.
+
+---
+
 ## EXP-045-Q · Validación de tolerancia de variantes de ejecución (pre-registro)
 - **Fecha:** 2026-11-20 (umbrales registrados antes de medir calidad de cualquier variante)
 - **Motivación:** cuantización y cambio de motor pueden acelerar las pistas sin alterar de forma aceptable sus salidas. La puerta de calidad se mantiene separada de las mediciones de velocidad y memoria.
