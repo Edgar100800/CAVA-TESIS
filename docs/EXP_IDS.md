@@ -9,6 +9,7 @@
 | EXP-036-F5 | EXP-036 (escenas verificables), F0–F5 | `results/exp036_f5_tramos/` | Protocolo F0–F5: briefs verificables, índice y búsqueda, piloto y cobertura completa de tramos | OE2 (agregación y continuidad de tópicos) |
 | EXP-035 | — | `docs/` y `results/` del repo; paquete `EXP035_036_texto_*` | Catálogo de escenas y panel de personajes (texto libre) | OE2 / antecedente |
 | EXP-042-FID | — | `results/exp042_fid/` | Identidades por rostro (InsightFace) + voces V1–V8 nombradas por co-presencia y labios; exploratorio, sin gold | OE1/OE3 (demo, nota de método; no resultado) |
+| EXP-043-DIA | — | `docs/EXPERIMENT_LOG.md`, `results/exp043_dia/` | Diarización pyannote community-1 frente a identidad CAVA (WavLM 5 s + ward/BIC) en VoxConverse test; Spider-Man exploratorio | OE1 / H1 (identidad del hablante) |
 
 ## Notas
 
