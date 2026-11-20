@@ -33,11 +33,13 @@ def main():
         p = Pipeline(path, Path(args.out) / name, profile=profile or "film", labels=not args.no_labels,
                      audio=audio or None, device=args.device, stack=args.stack)
         gate = p.run(cut=not args.no_cut)
-        report[name] = {"profile": profile or "film", "stack": args.stack, "G_version": gate["G_version"],
+        report[name] = {"profile": profile or "film", "G_version": gate["G_version"],
                         "duration_min": round(p.state["duration"] / 60, 1),
                         "n_topics": p.doc["levels"]["default"]["n_topics"],
                         "n_returning": p.doc["levels"]["default"]["n_returning"],
                         "voices": len(p.doc.get("voice_identities", []))}
+        if args.stack != "v1.0":
+            report[name]["stack"] = args.stack
     tag = os.environ.get("SLURM_JOB_ID")
     Path(args.out, f"run_report_{tag}.json" if tag else "run_report.json").write_text(json.dumps(report, indent=1))
     print(json.dumps(report, indent=1))

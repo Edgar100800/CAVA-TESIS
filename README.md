@@ -59,7 +59,7 @@ La diarización pyannote solo se activa si se pide expresamente `--stack v1.1`; 
 
 ```bash
 # Una sola vez: registrar el worker en el venv separado, sin instalar dependencias del producto.
-/data/tesis-cava/dia-venv/bin/pip install --no-deps -e .
+python -m pip --python /data/tesis-cava/dia-venv/bin/python install --no-deps -e .
 
 # v1.1 sobre un video nuevo (salida en un directorio nuevo).
 python scripts/cava_run.py /ruta/video.mp4:film --stack v1.1 --out data/cava_runs_v11
