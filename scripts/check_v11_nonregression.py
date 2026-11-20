@@ -153,7 +153,9 @@ def check_r3(work):
                      diar_cache=diar if diar.exists() else None)
     maps = [json.loads(p.read_text()) for p in (v10 / "topic_map.json", v11 / "topic_map.json")]
     vers = [json.loads(p.read_text()) for p in (v10 / "versions.json", v11 / "versions.json")]
-    clips = [load_jsonl(p) for p in (v10 / "clips.jsonl", v11 / "clips.jsonl")]
+    # speaker_threads sí cambia con V#; sus filas no contaminan el contrato de las demás versiones.
+    clips = [[r for r in load_jsonl(p) if r.get("version") != "speaker_threads"]
+             for p in (v10 / "clips.jsonl", v11 / "clips.jsonl")]
     detail = {
         "topic_map_non_speaker_diff": semantic_diff(without_speakers(maps[0]), without_speakers(maps[1])),
         "versions_non_speaker_diff": semantic_diff(without_speakers(vers[0], True), without_speakers(vers[1], True)),
