@@ -1,0 +1,47 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Revisión a ciegas · etiquetas (EXP-045-Q)</title>
+<style>
+body{margin:0;background:#fafaf7;color:#1d1f24;font:15px/1.5 system-ui,sans-serif}
+header{position:sticky;top:0;background:#fffdf6ee;border-bottom:1px solid #e3e1da;padding:10px 24px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;z-index:2}
+h1{font-size:16px;margin:0}main{max-width:920px;margin:0 auto;padding:12px 24px 80px}
+.intro{background:#fff;border:1px solid #e3e1da;border-radius:10px;padding:12px 16px;margin:14px 0}
+.c{background:#fff;border:1px solid #e3e1da;border-radius:10px;padding:10px 16px;margin:12px 0}
+.c.done{border-left:5px solid #1f7a4d}.t{margin:6px 0;padding:6px 10px;background:#f6f5f0;border-radius:6px}
+.t b{display:inline-block;width:22px;color:#5b6170}
+.opts label{margin-right:18px;cursor:pointer}.opts{margin:8px 0 4px}
+input[type=text]{width:100%;box-sizing:border-box;padding:5px 8px;border:1px solid #d6d3c8;border-radius:6px;font:13px system-ui}
+button{font:13px system-ui;border:1px solid #c9c6bb;background:#fff;border-radius:6px;padding:5px 10px;cursor:pointer}
+.d{background:#ffe08a;border-radius:3px}#prog{font-weight:600}.small{color:#5b6170;font-size:12px}
+</style></head><body>
+<header><h1>Revisión a ciegas · 20 pares de etiquetas</h1><span id="prog"></span>
+<label class="small"><input type="checkbox" id="diff"> resaltar diferencias</label>
+<button onclick="exp()">Descargar respuestas (CSV)</button>
+<button onclick="if(confirm('¿Borrar todas las respuestas?')){localStorage.removeItem(K);location.reload()}">Reiniciar</button></header>
+<main><div class="intro">
+<b>Pregunta para cada par:</b> ¿los dos textos <b>dicen lo mismo en lo esencial</b>? Mismas personas, mismo tema o hecho, sin contradicciones ni datos distintos inventados. Las diferencias de redacción no importan.<br>
+<span class="small">No sabrás qué texto viene de qué sistema, y A/B están en orden aleatorio. Las respuestas se guardan solas en este navegador. Al terminar, descarga el CSV. Criterio registrado: se adopta si ≥ 18 de 20 son «equivalentes».</span>
+</div><div id="w"></div></main>
+<script>
+const P=[{"id": 1, "a": "CHARACTERS: Peter Parker, Spider-Man, Professor | TOPIC: Safety concerns and scientific explanation of lattice chromodynamics", "b": "CHARACTERS: Peter Parker, Spider-Man, Professor | TOPIC: Safety concerns and theoretical physics explanation"}, {"id": 2, "a": "CHARACTERS: Crowd, Announcer | TOPIC: Announcement of a mysterious Spider-Man sighting", "b": "CHARACTERS: Crowd, Announcer | TOPIC: Announcement of a Spider-Man sighting location unknown"}, {"id": 3, "a": "CHARACTERS: Voice-over narrator | TOPIC: Imagining life without the sun", "b": "CHARACTERS: Voice-over narrator | TOPIC: Imagining life without the sun"}, {"id": 4, "a": "CHARACTERS: Peter Parker, MJ, various unnamed characters | TOPIC: Spider-Man's struggle with protecting MJ and dealing with romance", "b": "CHARACTERS: Peter Parker, Mary Jane Watson, others | TOPIC: Spider-Man's struggle with protecting loved ones and personal relationships"}, {"id": 5, "a": "CHARACTERS: Spider-Man, group of people, man discussing Foswell | TOPIC: Crime rates and Spider-Man's impact on criminal activities", "b": "CHARACTERS: Spider-Man, civilians, man discussing Foswell | TOPIC: Crime reduction and masked hero's impact"}, {"id": 6, "a": "CHARACTERS: Spider-Man, wedding guests | TOPIC: Spider-Man disrupts wedding for a race", "b": "CHARACTERS: Spider-Man, wedding guests | TOPIC: Spider-Man interrupts wedding for a race"}, {"id": 7, "a": "CHARACTERS: Peter Parker, Frank | TOPIC: Peter's confusion about a certain person's identity", "b": "CHARACTERS: Peter Parker, Frank | TOPIC: Uncertainty about a mysterious woman's identity"}, {"id": 8, "a": "CHARACTERS: Peter Parker, Mary Jane Watson | TOPIC: Discussing relationship challenges and honesty", "b": "CHARACTERS: Peter Parker, Mary Jane Watson | TOPIC: Discussing relationship and secrets"}, {"id": 9, "a": "CHARACTERS: Spider-Man, group of people, character in dark armored suit | TOPIC: Spider-Man's impact on crime rates and identity concerns", "b": "CHARACTERS: Spider-Man, group of people; armored suit character; off-screen person | TOPIC: Spider-Man's impact and identity concerns"}, {"id": 10, "a": "CHARACTERS: Narrator | TOPIC: Global population growth and vulnerable planet", "b": "CHARACTERS: Narrator | TOPIC: Earth's population growth and vulnerable state"}, {"id": 11, "a": "CHARACTERS: Peter Parker, Evie | TOPIC: Revealing a mysterious truth to a skeptic", "b": "CHARACTERS: Peter Parker, Evie | TOPIC: Revealing a mysterious truth to a skeptic"}, {"id": 12, "a": "CHARACTERS: Spider-Man, various allies and antagonists | TOPIC: Spider-Man's encounters and interactions with allies and foes", "b": "CHARACTERS: Spider-Man, Peter Parker, various others | TOPIC: Spider-Man's encounters and discussions related to his dual identity and missions"}, {"id": 13, "a": "CHARACTERS: Ned, a professor, a man in a suit, a distressed woman, Gene | TOPIC: Genetic modification and its ethical implications", "b": "CHARACTERS: Ned, a professor, a man in a suit, a distressed woman | TOPIC: Genetic modification and its ethical implications"}, {"id": 14, "a": "CHARACTERS: Person discussing email and engineering approaches | TOPIC: Evolution of communication and engineering methods", "b": "CHARACTERS: Person discussing email and telemedicine, Person talking about engineering focus | TOPIC: Evolution of communication and engineering approaches"}, {"id": 15, "a": "CHARACTERS: Spider-Man, various allies and antagonists | TOPIC: Spider-Man's encounters and conflicts in various scenarios", "b": "CHARACTERS: Spider-Man, various allies and antagonists | TOPIC: Spider-Man's encounters and conflicts during mission scenarios"}, {"id": 16, "a": "CHARACTERS: Man in pink shirt | TOPIC: AI in programming and technological self-improvement", "b": "CHARACTERS: Man in pink shirt | TOPIC: AI in programming and technological self-improvement"}, {"id": 17, "a": "CHARACTERS: Peter Parker, an unnamed woman, and a man in a Spider-Man costume | TOPIC: Peter's struggle with protecting loved ones and maintaining secrecy", "b": "CHARACTERS: Peter Parker, Woman; Man in Dark Room, Person in Spider-Man Costume | TOPIC: Consequences of Actions and Access Control Issues"}, {"id": 18, "a": "CHARACTERS: Man discussing AI, Person showcasing robots | TOPIC: Advancements and future of Artificial General Intelligence and Robotics", "b": "CHARACTERS: Man in pink shirt, speakers discussing AI | TOPIC: Advancements and future of Artificial General Intelligence"}, {"id": 19, "a": "CHARACTERS: Person discussing model usage | TOPIC: Context usage in T3 code and prompt tokens", "b": "CHARACTERS: Person discussing model usage | TOPIC: Context usage in T3 code and token management"}, {"id": 20, "a": "CHARACTERS: Baby elephant, group of wild dogs, oldest female elephant | TOPIC: Animals navigating challenges during seasonal changes", "b": "CHARACTERS: Baby elephant, wild dogs, elephants | TOPIC: Animals navigating challenges during seasonal changes"}], K="exp045q_labels_review_v1";
+const S=JSON.parse(localStorage.getItem(K)||"{}");
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function marked(x,y){const a=x.split(/(\s+)/),bs=new Set(y.toLowerCase().split(/\s+/));
+ return a.map(w=>/\S/.test(w)&&!bs.has(w.toLowerCase())?`<span class="d">${esc(w)}</span>`:esc(w)).join("")}
+function render(){const df=document.getElementById("diff").checked;
+ document.getElementById("w").innerHTML=P.map(p=>{const s=S[p.id]||{};
+ return `<div class="c ${s.v?"done":""}" id="c${p.id}"><b>#${p.id}</b>
+ <div class="t"><b>A</b>${df?marked(p.a,p.b):esc(p.a)}</div><div class="t"><b>B</b>${df?marked(p.b,p.a):esc(p.b)}</div>
+ <div class="opts"><label><input type="radio" name="q${p.id}" value="si" ${s.v==="si"?"checked":""}> equivalentes</label>
+ <label><input type="radio" name="q${p.id}" value="no" ${s.v==="no"?"checked":""}> no equivalentes</label></div>
+ <input type="text" data-n="${p.id}" placeholder="comentario (opcional)" value="${esc(s.n||"")}"></div>`}).join("");prog()}
+function prog(){const n=P.filter(p=>(S[p.id]||{}).v).length, si=P.filter(p=>(S[p.id]||{}).v==="si").length;
+ document.getElementById("prog").textContent=`${n}/20 respondidos · ${si} equivalentes`}
+document.addEventListener("change",e=>{if(e.target.id==="diff"){render();return}
+ const m=e.target.name&&e.target.name.match(/^q(\d+)$/);if(m){(S[m[1]]=S[m[1]]||{}).v=e.target.value;
+ localStorage.setItem(K,JSON.stringify(S));document.getElementById("c"+m[1]).classList.add("done");prog()}});
+document.addEventListener("input",e=>{const n=e.target.dataset&&e.target.dataset.n;if(n){(S[n]=S[n]||{}).n=e.target.value;localStorage.setItem(K,JSON.stringify(S))}});
+function exp(){const q=x=>'"'+String(x).replace(/"/g,"'")+'"';
+ const rows=[["id","equivalentes (si/no)","comentario"]].concat(P.map(p=>[p.id,(S[p.id]||{}).v||"",(S[p.id]||{}).n||""]));
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([rows.map(r=>r.map(q).join(",")).join("\n")],{type:"text/csv"}));
+ a.download="review_respondido.csv";a.click()}
+render();
+</script></body></html>

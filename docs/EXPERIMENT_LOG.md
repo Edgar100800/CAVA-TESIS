@@ -4141,3 +4141,63 @@ Aplicación literal de la adopción por pista (fila de la pista **y** extremo a 
 Cadena `fast` completa (no adoptada, falla e2e en 5/5): 974,5 → 414,2 s/h (2,35×); adoptadas ≈ 1,0–1,1×; con etiquetas FP8 aprobadas ≈ 1,6× (estimación por etapas). La mayor ganancia (etiquetas 362 → 3 s/h) depende de la revisión humana (`results/exp045_q/human_review/labels/`; clave en `human_review_answer_key/`; puntuar con `scripts/exp045_review.py score`).
 **Ruido de `ref`:** ASR ref vs ref (misma máquina) WER 2,89 % (8/20 archivos difieren); ref nuevo vs congelado: ARI de mapa 0,285 (Spider-Man) y 0,437 (BBC); los umbrales e2e de las variantes que cambian texto/fotogramas quedan sobre ese piso. No altera las decisiones.
 **Desviaciones:** (i) lecturas no precisadas: WER agrupado, coseno agrupado, e2e estricto por video, Jaccard ≥ 0,9; decode-once y vLLM separados en variantes; (ii) timings ref de Spider-Man reconstruidos por mtimes (falló pyannote por `LD_LIBRARY_PATH` de env_cuda; reanudación) y cronometraje con solapamiento de corridas auxiliares; (iii) NVENC falló en Spider-Man (H.264 10 bits) → `-pix_fmt yuv420p`, repetida solo la etapa de clips; (iv) ref con 14B por offload (GPU 24 GB); (v) `.54` sin ffmpeg: binario copiado; (vi) **R1 tras los cambios: FAIL** por ruido ≤ 1,2e-7 en `provenance.transcript.coherence` (Spider-Man, 5 diffs; el mismo resultado con el código original HEAD en esta máquina, también corriendo Spider-Man solo); R3 PASS; el PASS previo de R1 no se reproduce hoy aquí (bge CPU no determinista según hilos/entorno), sin relación con los cambios.
+
+---
+
+### Enmienda a R1 (no regresión del stack v1.1) · 2026-11-21
+
+- **Hecho que la motiva (observado antes de esta enmienda):** el 2026-11-21, R1 falla con el mismo código
+  que lo pasó el 2026-11-20 (commit `d0ecc4a`, también con `OMP_NUM_THREADS=1` y sin GPU). Las únicas
+  diferencias son 4 valores de `provenance.transcript.coherence` en Avengers (p. ej. 0,7294571995 frente a
+  0,7294571399; 1,0 frente a 1,0000001192): redondeo de float32. Ningún tópico, tramo, etiqueta, versión
+  ni clip cambia.
+- **Criterio nuevo:** igualdad exacta de la estructura (ids de tópico, `shots`, `spans`, flags, etiquetas,
+  `versions.json`, filas de `clips.jsonl` salvo campos numéricos) **y** |Δ| ≤ 1e-6 en todo campo de punto
+  flotante. Se reporta además si hubo igualdad byte a byte.
+- Se declara como cambio de criterio posterior a observar el fallo; el fallo y su causa quedan
+  registrados aquí.
+
+---
+
+## EXP-046-STAB · Estabilidad del mapa al regenerarlo desde el video: piso de ruido y ASR determinista (pre-registro)
+
+- **Fecha:** 2026-11-21 (registrado antes de cualquier corrida repetida de este experimento).
+- **Motivación (EXP-045-Q, piso de ruido):**
+  - la corrida `ref` de EXP-045-Q frente a las salidas congeladas (otra GPU y otras versiones de
+    biblioteca) da F1 de fronteras 0,905 pero ARI unidad→tópico 0,285 (Spider-Man) y 0,437 (bbc_01);
+    IoU del recap 0;
+  - el ASR `ref` frente a sí mismo en la misma máquina difiere (WER 2,89 %, 8/20 archivos de VoxConverse
+    dev);
+  - la tolerancia de extremo a extremo de EXP-045-Q (ARI ≥ 0,95) se fijó sin medir este piso.
+  - Los resultados de la tesis no dependen de esto (cada comparación usó las mismas señales en caché),
+    pero la reproducibilidad del producto desde el video sí.
+- **Preguntas:** (1) ¿cuánto varía el mapa entre corridas del mismo video, en la misma máquina y entre
+  máquinas?; (2) ¿qué pista lo causa?; (3) ¿un ASR determinista lo reduce?
+- **Modos (lo único que cambia es el ASR):**
+  - **R** = `ref` actual (faster-whisper large-v3 FP16 con los parámetros del producto).
+  - **D** = ASR determinista: los mismos pesos y precisión, `temperature=0` sin reintentos por
+    temperatura, mismo `beam_size`, mismo VAD; el resto de la cadena idéntico a R.
+- **Videos:** `refset_v1` de EXP-045-Q (Spider-Man, 1 AMI, 1 BBC, 2 abset), mismos archivos.
+- **Corridas por video y modo:** 3 en .56 (misma máquina) + 1 en cada una de .54, .55 y .61 (entre
+  máquinas). Mismo commit, mismo venv por máquina (versiones registradas en el manifiesto), hilos BLAS en 1.
+  Etiquetas del LLM fuera (no entran en el mapa).
+- **Métricas por par de corridas:** las de extremo a extremo de EXP-045-Q (ARI unidad→tópico, F1 de
+  fronteras ±1 unidad, Δ nº tópicos, Δ retornos, IoU de highlights y recap) y, por pista, WER entre
+  transcripciones, coseno de SigLIP/bge y similitud de texto del vjudge.
+- **Atribución (secundaria):** para un par de corridas en la misma máquina, se recalcula el mapa con
+  todas las pistas de la corrida 1 salvo una tomada de la corrida 2 (ASR, vjudge, visual, voz); la pista
+  cuya sustitución más baja el ARI es la fuente principal.
+- **Lectura pre-declarada:**
+  - **Piso de ruido** = para cada video y modo, el mínimo ARI entre pares de corridas en la misma máquina.
+  - Si en D el ARI de todos los pares en la misma máquina es ≥ 0,95 en los 5 videos → D se adopta como
+    modo determinista de v1.1 (tras R1–R8) y el producto se declara reproducible en una misma máquina.
+  - Si no → el producto se declara no reproducible desde el video; se reporta el piso y la pista
+    responsable; la tesis lo incluye como límite de validez.
+  - Las diferencias entre máquinas se reportan sin criterio.
+- **Enmienda declarada a EXP-045-Q (aplica una sola vez, después de medir el piso):** las pistas que
+  fallaron **solo** la fila de extremo a extremo se re-evalúan con esta regla: pasan si, en cada video, su
+  ARI frente a `ref` es ≥ el piso de ruido de R en ese video, y lo mismo para F1, Δ tópicos, Δ retornos e
+  IoU (cada una frente a su peor par ref-vs-ref). Las pistas que fallaron su propia fila (ASR int8: WER y
+  filtro de habla; SigLIP con decodificación única: coseno; vjudge con decodificación única) no se
+  re-evalúan. Las etiquetas FP8 siguen dependiendo de la revisión humana de 20 pares.
+- **Cómputo:** 4 GPUs del laboratorio; 5 videos × 2 modos × 6 corridas = 60 corridas sin etiquetas.
