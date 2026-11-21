@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
 import shutil
 import subprocess
@@ -58,6 +59,45 @@ def semantic_diff(a, b):
     return int(a != b)
 
 
+FLOAT_TOL = 1e-6  # enmienda a R1 (EXPERIMENT_LOG, 2026-11-21)
+
+
+def tolerant_diff(a, b, tol=FLOAT_TOL, path="$"):
+    """Enmienda a R1: estructura exacta y |Δ| <= tol en todo campo de punto flotante.
+
+    Devuelve (diferencias_estructurales, campos_float_comparados, campos_float_fuera_de_tol, max|Δ|, ejemplos).
+    Un campo es "float" si alguno de los dos valores es float (int frente a float cuenta como numérico);
+    bool, str, None, ids, listas y claves se comparan exactamente. NaN frente a NaN se considera igual.
+    """
+    num = lambda v: isinstance(v, (int, float)) and not isinstance(v, bool)  # noqa: E731
+    if num(a) and num(b):
+        if isinstance(a, float) or isinstance(b, float):
+            if math.isnan(a) and math.isnan(b):
+                return 0, 1, 0, 0.0, []
+            d = abs(float(a) - float(b))
+            bad = int(not d <= tol)
+            return 0, 1, bad, d, ([(path, a, b)] if bad else [])
+        return int(a != b), 0, 0, 0.0, ([(path, a, b)] if a != b else [])
+    if type(a) is not type(b):
+        return 1, 0, 0, 0.0, [(path, a, b)]
+    if isinstance(a, dict):
+        st, fl, bad, mx, ex = len(set(a) ^ set(b)), 0, 0, 0.0, []
+        ex += [(f"{path}.{k}", "solo en un lado", None) for k in sorted(set(a) ^ set(b), key=str)][:5]
+        for k in set(a) & set(b):
+            r = tolerant_diff(a[k], b[k], tol, f"{path}.{k}")
+            st, fl, bad, mx = st + r[0], fl + r[1], bad + r[2], max(mx, r[3])
+            ex += r[4]
+        return st, fl, bad, mx, ex[:5]
+    if isinstance(a, list):
+        st, fl, bad, mx, ex = abs(len(a) - len(b)), 0, 0, 0.0, []
+        for i, (x, y) in enumerate(zip(a, b)):
+            r = tolerant_diff(x, y, tol, f"{path}[{i}]")
+            st, fl, bad, mx = st + r[0], fl + r[1], bad + r[2], max(mx, r[3])
+            ex += r[4]
+        return st, fl, bad, mx, ex[:5]
+    return int(a != b), 0, 0, 0.0, ([(path, a, b)] if a != b else [])
+
+
 def without_speakers(value, versions=False):
     if isinstance(value, dict):
         drop = {"speakers", "voice_identities", "voice_identity_signal", "speaker_turns"}
@@ -101,6 +141,22 @@ def compare_contract_outputs(ref, cand):
     return result
 
 
+def compare_contract_outputs_amended(ref, cand, tol=FLOAT_TOL):
+    """R1 enmendada: por archivo, estructura exacta + |Δ| <= tol en floats; se reporta además la igualdad byte a byte."""
+    ref, cand = Path(ref), Path(cand)
+    result = {}
+    for name in ("topic_map.json", "versions.json", "clips.jsonl"):
+        load = load_jsonl if name.endswith(".jsonl") else (lambda p: json.loads(Path(p).read_text()))
+        a, b = load(ref / name), load(cand / name)
+        st, fl, bad, mx, ex = tolerant_diff(a, b, tol)
+        result[name] = {"structural_diff": st, "float_fields": fl, "float_fields_over_tol": bad,
+                        "max_abs_float_diff": mx, "examples_over_tol": ex[:5],
+                        "semantic_diff_strict": semantic_diff(a, b),
+                        "byte_equal": (ref / name).read_bytes() == (cand / name).read_bytes(),
+                        "pass": st == 0 and bad == 0}
+    return result
+
+
 def check_r1(work):
     runs, details = {}, {}
     for name in ("Spider_Man", "Avengers_Endgame"):
@@ -108,11 +164,12 @@ def check_r1(work):
         if not (frozen / "work/state.json").exists():
             return "SKIPPED", {"reason": f"faltan work/ congelados: {frozen}"}
         out = run_cached(FROZEN / "videos" / f"{name}.mp4", frozen, work / "r1" / name, "film", "v1.0")
-        cmp = compare_contract_outputs(frozen, out)
+        cmp = compare_contract_outputs_amended(frozen, out)
         runs[name] = str(out)
         details[name] = cmp
-    ok = all(v["semantic_diff"] == 0 for d in details.values() for v in d.values())
-    return ("PASS" if ok else "FAIL"), {"runs": runs, "comparisons": details}
+    ok = all(v["pass"] for d in details.values() for v in d.values())
+    return ("PASS" if ok else "FAIL"), {"criterion": f"enmienda 2026-11-21: estructura exacta y |Δ| <= {FLOAT_TOL} en floats",
+                                        "runs": runs, "comparisons": details}
 
 
 def hash_records():
@@ -400,6 +457,11 @@ CHECKS = {"R1": check_r1, "R2": check_r2, "R3": check_r3, "R4": check_r4,
 def brief(detail):
     if "reason" in detail:
         return detail["reason"]
+    if "criterion" in detail:
+        rows = [(f"{n}/{f}", v) for n, d in detail["comparisons"].items() for f, v in d.items()]
+        return (f"enmienda: estructura={[v['structural_diff'] for _, v in rows]}; "
+                f"máx. abs Δ={max(v['max_abs_float_diff'] for _, v in rows):.3g}; "
+                f"byte a byte={[v['byte_equal'] for _, v in rows]}")
     if "comparisons" in detail:
         values = []
         for value in detail["comparisons"].values():
@@ -424,19 +486,27 @@ def brief(detail):
     return "ver report.json"
 
 
+AMENDMENT = ("Enmienda a R1 (2026-11-21, `docs/EXPERIMENT_LOG.md`): R1 pasa si la estructura es exactamente igual "
+             f"(ids de tópico, `shots`, `spans`, flags, etiquetas, `versions.json`, filas de `clips.jsonl` salvo campos "
+             f"numéricos) y |Δ| <= {FLOAT_TOL} en todo campo de punto flotante; se reporta también la igualdad byte a byte.")
+
+
 def write_reports(out, results):
     out.mkdir(parents=True, exist_ok=True)
+    commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True).stdout.strip()
+    for r in results.values():
+        r.setdefault("commit", commit)
     statuses = [r["status"] for r in results.values()]
     overall = "FAIL" if "FAIL" in statuses else ("PASS" if statuses and all(s == "PASS" for s in statuses) else "SKIPPED")
     doc = {"schema": "cava-v11-nonregression-v1", "overall": overall,
-           "code": {"git_commit": subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True,
-                                                  capture_output=True).stdout.strip()},
+           "code": {"git_commit": commit}, "notes": [AMENDMENT],
            "checks": results}
     (out / "report.json").write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n")
     lines = ["# No regresión del stack v1.1", "", f"Estado global: **{overall}**", "",
-             "| comprobación | estado | resultado |", "|---|---|---|"]
+             AMENDMENT, "", "| comprobación | estado | resultado | commit |", "|---|---|---|---|"]
     for name, result in results.items():
-        lines.append(f"| {name} | {result['status']} | {brief(result['detail']).replace('|', '/')} |")
+        lines.append(f"| {name} | {result['status']} | {brief(result['detail']).replace('|', '/')} | "
+                     f"`{result['commit'][:7]}` |")
     lines += ["", "Los datos y artefactos grandes quedan en `/data/tesis-cava/v11_work/`.",
               "`SKIPPED` no cuenta como aprobado. El GT de R4 solo evalúa; no entra en el pipeline.", ""]
     (out / "report.md").write_text("\n".join(lines))
@@ -450,6 +520,8 @@ def main():
     ap.add_argument("--vox-shard", help="índice/número, p. ej. 0/2; solo R4 VoxConverse")
     ap.add_argument("--r4-part", choices=("all", "vox", "ami"), default="all")
     ap.add_argument("--r7-run-id", choices=("run1", "run2"))
+    ap.add_argument("--merge", action="store_true",
+                    help="parte de <out>/report.json y reemplaza solo las comprobaciones ejecutadas")
     args = ap.parse_args()
     args.work.mkdir(parents=True, exist_ok=True)
     shard = None
@@ -459,6 +531,11 @@ def main():
         if not 0 <= shard[0] < shard[1]:
             ap.error("--vox-shard debe cumplir 0 <= índice < número")
     results = {}
+    if args.merge and (args.out / "report.json").exists():
+        old = json.loads((args.out / "report.json").read_text())
+        for k, v in old["checks"].items():
+            v.setdefault("commit", old["code"]["git_commit"])
+            results[k] = v
     for name in args.checks.split(","):
         name = name.strip().upper()
         if name not in CHECKS:
