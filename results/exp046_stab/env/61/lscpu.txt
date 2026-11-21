@@ -1,0 +1,7 @@
+CPU(s):                                  24
+Model name:                              Intel(R) Core(TM) Ultra 9 285K
+Thread(s) per core:                      1
+CPU(s) scaling MHz:                      23%
+CPU max MHz:                             5700.0000
+CPU min MHz:                             800.0000
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush

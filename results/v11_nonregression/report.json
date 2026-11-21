@@ -2,7 +2,7 @@
  "schema": "cava-v11-nonregression-v1",
  "overall": "PASS",
  "code": {
-  "git_commit": "a46ecce418c69a3ec1e4c5cea7cfed610d5b1bee"
+  "git_commit": "dc4edac37e7dbacb116ad771283ade0cdae7f46c"
  },
  "notes": [
   "Enmienda a R1 (2026-11-21, `docs/EXPERIMENT_LOG.md`): R1 pasa si la estructura es exactamente igual (ids de tópico, `shots`, `spans`, flags, etiquetas, `versions.json`, filas de `clips.jsonl` salvo campos numéricos) y |Δ| <= 1e-06 en todo campo de punto flotante; se reporta también la igualdad byte a byte."
@@ -13,8 +13,8 @@
    "detail": {
     "criterion": "enmienda 2026-11-21: estructura exacta y |Δ| <= 1e-06 en floats",
     "runs": {
-     "Spider_Man": "/data/tesis-cava/exp046/nr_work_a/r1/Spider_Man",
-     "Avengers_Endgame": "/data/tesis-cava/exp046/nr_work_a/r1/Avengers_Endgame"
+     "Spider_Man": "/data/tesis-cava/exp046/nr_work_c/r1/Spider_Man",
+     "Avengers_Endgame": "/data/tesis-cava/exp046/nr_work_c/r1/Avengers_Endgame"
     },
     "comparisons": {
      "Spider_Man": {
@@ -83,7 +83,7 @@
      }
     }
    },
-   "commit": "a46ecce418c69a3ec1e4c5cea7cfed610d5b1bee"
+   "commit": "dc4edac37e7dbacb116ad771283ade0cdae7f46c"
   },
   "R2": {
    "status": "PASS",
@@ -139,9 +139,9 @@
      "V9"
     ],
     "speaker_turns_v11": 2502,
-    "v11": "/data/tesis-cava/exp046/nr_work_a/r3/Spider_Man"
+    "v11": "/data/tesis-cava/exp046/nr_work_c/r3/Spider_Man"
    },
-   "commit": "a46ecce418c69a3ec1e4c5cea7cfed610d5b1bee"
+   "commit": "dc4edac37e7dbacb116ad771283ade0cdae7f46c"
   },
   "R4": {
    "status": "PASS",

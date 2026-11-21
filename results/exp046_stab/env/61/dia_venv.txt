@@ -1,0 +1,1 @@
+dia-venv torch 2.15.0+cu132 pyannote.audio 4.1.1

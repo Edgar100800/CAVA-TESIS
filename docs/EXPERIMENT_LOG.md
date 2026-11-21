@@ -4201,3 +4201,81 @@ Cadena `fast` completa (no adoptada, falla e2e en 5/5): 974,5 → 414,2 s/h (2,3
   filtro de habla; SigLIP con decodificación única: coseno; vjudge con decodificación única) no se
   re-evalúan. Las etiquetas FP8 siguen dependiendo de la revisión humana de 20 pares.
 - **Cómputo:** 4 GPUs del laboratorio; 5 videos × 2 modos × 6 corridas = 60 corridas sin etiquetas.
+
+---
+
+### Resultado de la enmienda a R1 y del modo D (2026-11-21)
+- **R1 (criterio enmendado) y R3: PASS** (`results/v11_nonregression/report.{json,md}`, comprobaciones R2 y R4–R8 sin repetir, con el commit de su
+  corrida original en la columna «commit»). R1: estructura idéntica en los 6 archivos (0 diferencias estructurales); máx. |Δ| de punto flotante
+  1,19e-7 (Spider-Man, `topic_map.json` y `clips.jsonl`; coherencia de transcripción en float32); igualdad byte a byte: Spider-Man `versions.json`
+  sí, `topic_map.json` y `clips.jsonl` no; Avengers los tres sí. Un campo cuenta como float si alguno de los dos valores lo es (int frente a float se
+  compara numéricamente); `bool`, `str`, `None`, ids, listas y claves se comparan exactamente.
+- Se corrió en el commit `a46ecce` (script enmendado) y de nuevo tras el modo D (`dc4edac`): el resultado es el mismo, incluidos los indicadores de
+  igualdad byte a byte, de modo que el modo por defecto `ref` no cambió. `scripts/check_v11_nonregression.py --merge` conserva las otras comprobaciones.
+- **Modo D** (`Pipeline(asr_mode="det")`, `scripts/cava_run.py --asr-mode ref|det`; por defecto `ref`): mismos pesos y precisión
+  (large-v3 FP16), `temperature=0.0` sin reintentos por temperatura, `beam_size=5` (el valor por defecto de faster-whisper que ya usa `ref`) y el
+  mismo VAD. Caché propio `asr.det.json`; el manifiesto solo añade `asr_mode` si no es `ref`.
+
+### Resultado EXP-046-STAB (2026-11-21; `results/exp046_stab/{report.md,stab.json,env/,manifests/}`)
+**Ejecutado según el registro con una desviación mayor: 40 de las 60 corridas.** `.56` (3 corridas) y `.61` (1) completaron R y D en los 5 videos
+(40 corridas); `.54` y `.55` quedaron inalcanzables y **no hay sus 20 corridas** (ver desviaciones). La lectura pre-declarada usa solo pares de la
+misma máquina, que están completos (3 corridas × 5 videos × 2 modos en `.56`); entre máquinas hay solo pares `.56`×`.61`.
+Cada corrida parte del video sin cachés, pila v1.1, sin etiquetas, hilos BLAS = 1, código en `dc4edac`, mismas bibliotecas en `.56` y `.61`
+(`pip freeze` idéntico; difiere el controlador, 580.178.04 frente a 595.99.02). Métricas con `exp045_common.e2e_metrics`/`exp045_eval` (sin reimplementar).
+
+**Piso de ruido, misma máquina (peor de 3 pares; ARI/F1/IoU = mínimo; Δ = máximo):**
+
+| video | modo R: ARI | F1 | Δtóp | Δret | IoU hl | IoU recap | modo D: ARI/F1/Δ/IoU |
+|---|---|---|---|---|---|---|---|
+| Spider_Man | 0,240 | 0,903 | 1,0 % | 37,5 % | 0,370 | 0,000 | 1 / 1 / 0 / 1 |
+| ES2002c.Room | 1,000 | 1,000 | 0 | 0 | 1,000 | 1,000 | 1 / 1 / 0 / 1 |
+| bbc_01 | 0,422 | 0,768 | 11,8 % | 27,8 % | 0,000 | 0,000 | 1 / 1 / 0 / 1 |
+| com_en_01 | 0,609 | 0,708 | 11,5 % | 28,6 % | 0,000 | 0,000 | 1 / 1 / 0 / 1 |
+| com_es_01 | 0,478 | 0,724 | 10,5 % | 60,0 % | 0,018 | 0,000 | 1 / 1 / 0 / 1 |
+
+**Entre máquinas (solo `.56`×`.61`, 3 pares; sin criterio):** R: ARI mínimo 0,242 / 1,000 / 0,428 / 0,461 / 0,413 (mismo orden de videos); D: ARI,
+F1 e IoU = 1 en los 15 pares y `topic_map.json` **idéntico byte a byte** también entre `.56` y `.61`. En R, `topic_map.json` es idéntico en
+6 de 30 pares (solo ES2002c); en D, en 30 de 30.
+
+**Por pista (modo R, misma máquina):** WER entre transcripciones de 0,2 % a 16,6 % según el par (Spider-Man 8,6–10,9 %; bbc_01 0,2–8,5 %; com_en_01 0,7–8,2 %;
+com_es_01 8,9–16,6 %; ES2002c 0 %); SigLIP coseno mínimo 1,00000 y voz idéntica en todos los pares (visual y voz son deterministas);
+bge de la transcripción coseno mínimo 0,27–0,64 (sigue al texto del ASR); texto del vjudge idéntico en 9–23 % de los bloques (mediana de coseno 0,82–0,90).
+En D: transcripciones, SigLIP, bge, voz y vjudge **idénticos** en todos los pares (WER 0).
+
+**Atribución** (pista de la corrida 2 en la corrida 1, mapa recalculado; el recálculo con las pistas propias reproduce la partición original en los
+30 casos): en R, de los 12 pares con diferencias la sustitución que más baja el ARI es **vjudge en 6 y ASR en 6**; visual y voz nunca (ARI 1,000 al
+sustituirlas). Diagnóstico añadido, no registrado: dado el mismo texto de entrada el vjudge repite su salida (412/412 bloques) y con entrada distinta
+coincide en 30/899; el habla del bloque entra en su prompt, así que sus diferencias son consecuencia del ASR. Fuente: el ASR de `ref` (reintentos por
+temperatura con muestreo), propagado por el texto al vjudge y al embedding de transcripción.
+
+**Lectura pre-declarada aplicada literalmente:** en D el ARI de todos los pares de la misma máquina es 1,000 (≥ 0,95) en los 5 videos →
+**D se adopta como modo determinista de v1.1** (tras R1–R8; R1/R3 ya pasaron con el código del modo D) y el producto se declara reproducible en una misma
+máquina con D. Con `ref` el producto **no** es reproducible desde el video salvo en ES2002c (ARI 0,24–0,61 en los otros 4 videos); la pista responsable es el ASR.
+D no se activó por defecto en el código (`--asr-mode det` explícito); el cambio de modo por defecto es una decisión aparte. R frente a D (corrida 1 en `.56`,
+informativo): ARI 0,237 / 1,000 / 0,385 / 0,337 / 0,390, es decir, D es otra salida de ASR y no reproduce las salidas de R.
+
+**Desviaciones y notas:**
+- **`.54` y `.55` sin corridas.** `.54`: al primer contacto (uptime 3 min) no existía `/data/tesis-cava` (`/data` vacío, propiedad de root, sin sudo; 26 GB libres en `/`, insuficientes
+  para venv 8,2 GB + VL-7B 16 GB + Whisper + entradas salvo usar `/dev/shm`) y minutos después dejó de responder (`ssh: connect to host 10.100.41.54 port 22: No route to host`; `ping`: 100 % de pérdida);
+  no volvió. `.55`: se copiaron venv, modelos, entradas y código y arrancó la cola (5 procesos); unos 35 min después dejó de responder (`ssh: connect to host 10.100.41.55 port 22: Connection timed out`, luego `No route to host`);
+  no se pudo recuperar nada de sus corridas parciales y no volvió. Causa desconocida (no hay acceso físico ni sudo). El modelo VL-7B sí pudo colocarse en `.55` y `.61` (sha256 de los 5 shards verificado), no en `.54` (no se llegó a intentar).
+- 5 procesos concurrentes por máquina con libro de memoria de GPU (22 GB) por etapa; no se midió el efecto de la concurrencia. Sin mp4 (`cut=False`). Pilot de calibración (D, com_es_01, `.56`) no contado.
+- `.61` ejecuta pyannote con `~/dia-venv` (torch 2.15.0+cu132, pyannote.audio 4.1.1, idéntico a `.56`) mediante `infra/exp046/dia_py.sh`; Whisper de `.61` se enlaza al directorio bench (sha256 de `model.bin` y archivos de configuración idéntico).
+- Cuellos de red: ≈ 10 MB/s por enlace en todo el laboratorio (también `.55`→`.61`), no solo desde `.56`.
+- Reproducibilidad: `infra/exp046/launch.sh queue --jobs jobs.json --workers 5 --machine 56`; `scripts/exp046_run.py`; `scripts/exp046_analyze.py`.
+
+### Re-evaluación EXP-045-Q según enmienda (2026-11-21; aplicada una sola vez, tras medir el piso de R)
+Única pista que falló **solo** la fila de extremo a extremo: **VJudge vLLM BF16 con fotogramas exactos** (`vjudge=fast_exact`; automático cumple, e2e falla). Las demás
+no se re-evalúan (ASR int8, SigLIP decode-once y vjudge decode-once fallaron su fila; las pistas adoptadas ya pasaban e2e; etiquetas FP8 dependen de revisión humana; rostros no evaluada).
+Regla literal: por video, cada métrica de la variante frente a `ref` (EXP-045-Q) debe ser tan buena como el peor par ref-vs-ref del piso de R (misma máquina):
+
+| video | ARI (variante vs piso R) | F1 | Δtóp | Δret | IoU hl | IoU recap | pasa |
+|---|---|---|---|---|---|---|---|
+| Spider_Man | 0,348 vs 0,240 ✓ | 0,938 vs 0,903 ✓ | 3,1 % vs 1,0 % ✗ | 26,5 % vs 37,5 % ✓ | 0,506 vs 0,370 ✓ | 1,000 vs 0,000 ✓ | no |
+| ES2002c.Room | 0,953 vs 1,000 ✗ | 0,889 vs 1,000 ✗ | 0 vs 0 ✓ | inf vs 0 ✗ | 1,000 ✓ | 1,000 ✓ | no |
+| bbc_01 | 0,592 vs 0,422 ✓ | 0,902 vs 0,768 ✓ | 3,2 % vs 11,8 % ✓ | 0 vs 27,8 % ✓ | 0,326 vs 0,000 ✓ | 1,000 vs 0,000 ✓ | sí |
+| com_en_01 | 0,609 vs 0,609 ✗ (0,6088 < 0,6093) | 0,822 vs 0,708 ✓ | 4,2 % vs 11,5 % ✓ | 42,9 % vs 28,6 % ✗ | 0 vs 0 ✓ | 0 vs 0 ✓ | no |
+| com_es_01 | 0,953 vs 0,478 ✓ | 0,982 vs 0,724 ✓ | 0 vs 10,5 % ✓ | 20,0 % vs 60,0 % ✓ | 1,000 vs 0,018 ✓ | 1,000 vs 0,000 ✓ | sí |
+
+**Decisión: `vjudge=fast_exact` NO se adopta** (falla en 3 de 5 videos). Estado por pista de EXP-045-Q tras la enmienda: adoptadas igual que antes (SigLIP FP16 con fotogramas exactos, bge GPU FP16, WavLM FP16, NVENC sin fila);
+no adoptadas igual que antes (ASR int8, SigLIP decode-once, vjudge decode-once, vjudge vLLM exacto); etiquetas FP8 pendiente de revisión humana; rostros sin decisión. Nota: ES2002c tiene piso de ruido 1,0 (ASR ref idéntico en las 3 corridas), por lo que la regla exige igualdad exacta.

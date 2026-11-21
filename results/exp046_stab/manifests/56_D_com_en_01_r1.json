@@ -1,0 +1,80 @@
+{
+ "schema": "cava-run-v1",
+ "created_utc": "2026-11-21T14:22:04+00:00",
+ "video": {
+  "path": "/data/tesis-cava/exp045/inputs/abset/com_en_01.mp4",
+  "sha256": "5a3861689289aa2d0faff0f8471cadeab6b3ba46ca7ef2298201504ada54e71c",
+  "duration_s": 1907.449615
+ },
+ "audio": null,
+ "code": {
+  "git_commit": "dc4edac37e7dbacb116ad771283ade0cdae7f46c",
+  "git_dirty": false,
+  "python": "3.12.3"
+ },
+ "profile": {
+  "unit_s": 5.0,
+  "percentile": 90,
+  "return_percentile": 90,
+  "snap_visual_s": 30.0,
+  "speaker_embed": true,
+  "speaker_kind": "acoustic_group",
+  "speaker_backend": "wavlm_sv",
+  "profile": "documentary"
+ },
+ "summary_s": 40.0,
+ "labels": false,
+ "models": {
+  "asr": [
+   "Systran/faster-whisper-large-v3",
+   null
+  ],
+  "visual": [
+   "google/siglip-base-patch16-224",
+   null
+  ],
+  "text_embed": [
+   "BAAI/bge-base-en-v1.5",
+   null
+  ],
+  "vjudge": [
+   "Qwen/Qwen2.5-VL-7B-Instruct",
+   "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  ],
+  "labels": null,
+  "speaker": [
+   "microsoft/wavlm-base-plus-sv",
+   "939f573b5e1a33c20332a5fe9ac34f95a66c4f07"
+  ]
+ },
+ "outputs": {
+  "n_units": 382,
+  "n_topics": 22,
+  "n_returning": 6,
+  "voice_identities": [
+   "V1"
+  ],
+  "voice_identity_kind": "acoustic_group",
+  "G_version": true,
+  "files": [
+   "topic_map.json",
+   "versions.json",
+   "clips.jsonl",
+   "index.json",
+   "index.md"
+  ]
+ },
+ "gt_used": false,
+ "timings_s": {
+  "prepare": 2.2,
+  "asr": 517.5,
+  "signals": 306.8,
+  "vjudge": 258.7,
+  "topic_map": 33.0,
+  "labels": 0.0,
+  "speakers": 18.2,
+  "versions_and_clips": 0.0
+ },
+ "asr_mode": "det",
+ "stack": "v1.1"
+}
