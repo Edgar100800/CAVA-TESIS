@@ -49,12 +49,19 @@ def _frame(video, t, out):
     return out if Path(out).exists() and Path(out).stat().st_size > 0 else None
 
 
-def transcribe(wav, device, compute_type=None):
-    """faster-whisper large-v3 con VAD interno; ref = float16 (cuda) / int8 (cpu), fast = int8_float16."""
+def transcribe(wav, device, compute_type=None, deterministic=False):
+    """faster-whisper large-v3 con VAD interno; ref = float16 (cuda) / int8 (cpu), fast = int8_float16.
+
+    `deterministic` (EXP-046-STAB, modo D): mismos pesos y precisión, temperature=0 sin reintentos por temperatura,
+    mismo beam_size (5, el valor por defecto de faster-whisper que usa ref) y mismo VAD. Por defecto no cambia nada.
+    """
     from faster_whisper import WhisperModel
     wm = WhisperModel("large-v3", device=device,
                       compute_type=compute_type or ("float16" if device == "cuda" else "int8"))
-    segs, _ = wm.transcribe(str(wav), vad_filter=True)
+    if deterministic:
+        segs, _ = wm.transcribe(str(wav), vad_filter=True, beam_size=5, temperature=0.0)
+    else:
+        segs, _ = wm.transcribe(str(wav), vad_filter=True)
     return [(s.start, s.end, s.text.strip()) for s in segs]
 
 
@@ -64,9 +71,12 @@ def units_text(segs, units):
 
 class Pipeline:
     def __init__(self, video, out, profile="film", summary_s=40.0, device="cuda", labels=True, audio=None,
-                 stack="v1.0", variant="ref"):
+                 stack="v1.0", variant="ref", asr_mode="ref"):
         self.video, self.out = Path(video), Path(out)
         self.var = V.parse_variant(variant)  # EXP-045-Q: variante por pista; ref (por defecto) = comportamiento congelado
+        if asr_mode not in ("ref", "det"):
+            raise ValueError(f"asr_mode inválido {asr_mode}; ref|det")
+        self.asr_mode = asr_mode  # EXP-046-STAB: det = ASR determinista (temperature=0 sin reintentos); ref por defecto
         self.sub_timings = {}
         self.audio_src = Path(audio) if audio else None   # p. ej. AMI: video sin pista de audio
         self.stack = stack
@@ -103,6 +113,18 @@ class Pipeline:
 
     # 4
     def asr(self):
+        if self.asr_mode == "det":
+            ct = "int8_float16" if self.var["asr"] != "ref" else None
+            f = self.work / f"asr.det{V.suffix(self.var['asr'])}.json"
+            if f.exists():
+                self.asr_segments = json.loads(f.read_text())["segments"]
+            else:
+                self.asr_segments = transcribe(self.work / "audio.wav", self.device, ct, deterministic=True)
+                f.write_text(json.dumps({"compute_type": ct or "float16", "deterministic": True,
+                                         "segments": self.asr_segments}, ensure_ascii=False))
+            self.asr_text = units_text(self.asr_segments, self.state["units"])
+            self.log(f"ASR[det] {len(self.asr_segments)} segmentos")
+            return
         if self.var["asr"] != "ref":
             f = self.work / f"asr{V.suffix(self.var['asr'])}.json"
             if f.exists():
@@ -520,6 +542,8 @@ class Pipeline:
                            "G_version": gate["G_version"], "files": ["topic_map.json", "versions.json",
                                                                      "clips.jsonl", "index.json", "index.md"]},
                "gt_used": False, "timings_s": timings}
+        if self.asr_mode != "ref":
+            man["asr_mode"] = self.asr_mode  # solo si no es ref: el manifiesto ref no cambia
         if any(v != "ref" for v in self.var.values()):
             man["variant"] = self.var  # solo si no es ref: el manifiesto ref no cambia
             man["timings_detail_s"] = self.sub_timings
