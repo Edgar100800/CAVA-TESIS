@@ -1,0 +1,760 @@
+{
+ "per_video": {
+  "Spider_Man": {
+   "ref": {
+    "timings_s": {
+     "prepare": 0.0,
+     "asr": 287,
+     "signals": 275,
+     "vjudge": 309,
+     "topic_map": 14.2,
+     "labels": 837.8,
+     "speakers": 322.7,
+     "versions_and_clips": 429.9
+    },
+    "duration_s": 8700.64,
+    "detail": null,
+    "note": "asr/signals/vjudge/labels reconstruidos por mtimes (1.ª pasada)"
+   },
+   "fast": {
+    "timings_s": {
+     "prepare": 23.1,
+     "asr": 253.8,
+     "signals": 154.3,
+     "vjudge": 47.9,
+     "topic_map": 1.1,
+     "labels": 6.0,
+     "speakers": 160.7,
+     "versions_and_clips": 373.0
+    },
+    "duration_s": 8700.64,
+    "detail": {
+     "embed_bge_s": 2.5
+    },
+    "note": "etapas de la 1.ª pasada; versions_and_clips de la repetición con -pix_fmt yuv420p"
+   }
+  },
+  "ES2002c.Room": {
+   "ref": {
+    "timings_s": {
+     "prepare": 0.3,
+     "asr": 92.4,
+     "signals": 19.5,
+     "vjudge": 55.9,
+     "topic_map": 2.5,
+     "labels": 72.3,
+     "speakers": 46.8,
+     "versions_and_clips": 46.2
+    },
+    "duration_s": 2388.36,
+    "detail": null,
+    "note": null
+   },
+   "fast": {
+    "timings_s": {
+     "prepare": 0.3,
+     "asr": 157.5,
+     "signals": 15.3,
+     "vjudge": 15.5,
+     "topic_map": 0.4,
+     "labels": 1.0,
+     "speakers": 45.9,
+     "versions_and_clips": 39.8
+    },
+    "duration_s": 2388.36,
+    "detail": {
+     "embed_bge_s": 0.2
+    },
+    "note": null
+   }
+  },
+  "bbc_01": {
+   "ref": {
+    "timings_s": {
+     "prepare": 2.9,
+     "asr": 73.8,
+     "signals": 83.7,
+     "vjudge": 92.1,
+     "topic_map": 4.3,
+     "labels": 319.6,
+     "speakers": 4.7,
+     "versions_and_clips": 88.5
+    },
+    "duration_s": 2955.041333,
+    "detail": null,
+    "note": null
+   },
+   "fast": {
+    "timings_s": {
+     "prepare": 2.4,
+     "asr": 79.9,
+     "signals": 15.8,
+     "vjudge": 18.5,
+     "topic_map": 0.5,
+     "labels": 2.8,
+     "speakers": 2.0,
+     "versions_and_clips": 98.0
+    },
+    "duration_s": 2955.041333,
+    "detail": {
+     "embed_bge_s": 0.4
+    },
+    "note": null
+   }
+  },
+  "com_en_01": {
+   "ref": {
+    "timings_s": {
+     "prepare": 2.2,
+     "asr": 126.5,
+     "signals": 88.1,
+     "vjudge": 60.8,
+     "topic_map": 3.4,
+     "labels": 283.9,
+     "speakers": 3.0,
+     "versions_and_clips": 97.6
+    },
+    "duration_s": 1907.449615,
+    "detail": null,
+    "note": null
+   },
+   "fast": {
+    "timings_s": {
+     "prepare": 2.2,
+     "asr": 139.1,
+     "signals": 10.5,
+     "vjudge": 9.7,
+     "topic_map": 0.4,
+     "labels": 1.7,
+     "speakers": 1.2,
+     "versions_and_clips": 111.3
+    },
+    "duration_s": 1907.449615,
+    "detail": {
+     "embed_bge_s": 0.3
+    },
+    "note": null
+   }
+  },
+  "com_es_01": {
+   "ref": {
+    "timings_s": {
+     "prepare": 1.3,
+     "asr": 96.0,
+     "signals": 98.7,
+     "vjudge": 56.1,
+     "topic_map": 4.9,
+     "labels": 240.4,
+     "speakers": 2.3,
+     "versions_and_clips": 69.4
+    },
+    "duration_s": 1468.383492,
+    "detail": null,
+    "note": null
+   },
+   "fast": {
+    "timings_s": {
+     "prepare": 1.6,
+     "asr": 117.5,
+     "signals": 9.3,
+     "vjudge": 8.7,
+     "topic_map": 0.4,
+     "labels": 1.6,
+     "speakers": 1.0,
+     "versions_and_clips": 72.7
+    },
+    "duration_s": 1468.383492,
+    "detail": {
+     "embed_bge_s": 0.3
+    },
+    "note": null
+   }
+  }
+ },
+ "stages": {
+  "prepare": {
+   "ref_s_per_h": 1.3846253647279447,
+   "fast_s_per_h": 6.117150865066741,
+   "speedup": 0.22635135135135134
+  },
+  "asr": {
+   "ref_s_per_h": 139.64050133532422,
+   "fast_s_per_h": 154.5407235438145,
+   "speedup": 0.9035838459481145
+  },
+  "signals": {
+   "ref_s_per_h": 116.7631837419834,
+   "fast_s_per_h": 42.4067350510708,
+   "speedup": 2.753411306042884
+  },
+  "vjudge": {
+   "ref_s_per_h": 118.60246221154738,
+   "fast_s_per_h": 20.728048370479534,
+   "speedup": 5.721834496510467
+  },
+  "topic_map": {
+   "ref_s_per_h": 6.0551527144072805,
+   "fast_s_per_h": 0.578649406154962,
+   "speedup": 10.464285714285714
+  },
+  "labels": {
+   "ref_s_per_h": 362.48252085564405,
+   "fast_s_per_h": 2.707252578796429,
+   "speedup": 133.89312977099237
+  },
+  "speakers": {
+   "ref_s_per_h": 78.42766058421716,
+   "fast_s_per_h": 43.56403386338071,
+   "speedup": 1.8002846299810247
+  },
+  "versions_and_clips": {
+   "ref_s_per_h": 151.19282340820362,
+   "fast_s_per_h": 143.58771692730986,
+   "speedup": 1.0529648819804258
+  }
+ },
+ "total": {
+  "ref_s_per_h": 974.548930216055,
+  "fast_s_per_h": 414.23031060607354,
+  "hours_ref": 4.838854011111111,
+  "hours_fast": 4.838854011111111,
+  "speedup": 2.3526741169427257
+ },
+ "isolated_runs": {
+  "visual-fast": {
+   "Spider_Man": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.02,
+    "vjudge": 0.0,
+    "topic_map": 13.92,
+    "G_version": true,
+    "duration_s": 8700.64,
+    "sub": {
+     "embed_bge_s": 13.3
+    }
+   },
+   "ES2002c.Room": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.0,
+    "vjudge": 0.0,
+    "topic_map": 30.83,
+    "G_version": true,
+    "duration_s": 2388.36,
+    "sub": {
+     "embed_bge_s": 29.8
+    }
+   },
+   "bbc_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.01,
+    "vjudge": 0.0,
+    "topic_map": 60.76,
+    "G_version": true,
+    "duration_s": 2955.041333,
+    "sub": {
+     "embed_bge_s": 60.6
+    }
+   },
+   "com_en_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.01,
+    "vjudge": 0.0,
+    "topic_map": 33.59,
+    "G_version": true,
+    "duration_s": 1907.449615,
+    "sub": {
+     "embed_bge_s": 33.5
+    }
+   },
+   "com_es_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.0,
+    "vjudge": 0.0,
+    "topic_map": 54.75,
+    "G_version": true,
+    "duration_s": 1468.383492,
+    "sub": {
+     "embed_bge_s": 54.6
+    }
+   }
+  },
+  "embed-fast": {
+   "Spider_Man": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.16,
+    "vjudge": 0.0,
+    "topic_map": 3.58,
+    "G_version": true,
+    "duration_s": 8700.64,
+    "sub": {
+     "embed_bge_s": 2.9
+    }
+   },
+   "ES2002c.Room": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.02,
+    "vjudge": 0.0,
+    "topic_map": 2.63,
+    "G_version": true,
+    "duration_s": 2388.36,
+    "sub": {
+     "embed_bge_s": 2.2
+    }
+   },
+   "bbc_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.05,
+    "vjudge": 0.0,
+    "topic_map": 2.48,
+    "G_version": true,
+    "duration_s": 2955.041333,
+    "sub": {
+     "embed_bge_s": 2.3
+    }
+   },
+   "com_en_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.03,
+    "vjudge": 0.0,
+    "topic_map": 2.5,
+    "G_version": true,
+    "duration_s": 1907.449615,
+    "sub": {
+     "embed_bge_s": 2.4
+    }
+   },
+   "com_es_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.06,
+    "vjudge": 0.0,
+    "topic_map": 2.88,
+    "G_version": true,
+    "duration_s": 1468.383492,
+    "sub": {
+     "embed_bge_s": 2.8
+    }
+   }
+  },
+  "labels-fast+LBL": {
+   "Spider_Man": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.15,
+    "vjudge": 0.0,
+    "topic_map": 97.97,
+    "labels": 5.15,
+    "G_version": true,
+    "duration_s": 8700.64,
+    "sub": {
+     "embed_bge_s": 97.3
+    }
+   },
+   "ES2002c.Room": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.02,
+    "vjudge": 0.0,
+    "topic_map": 17.92,
+    "labels": 0.99,
+    "G_version": true,
+    "duration_s": 2388.36,
+    "sub": {
+     "embed_bge_s": 17.6
+    }
+   },
+   "bbc_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.05,
+    "vjudge": 0.0,
+    "topic_map": 36.75,
+    "labels": 2.65,
+    "G_version": true,
+    "duration_s": 2955.041333,
+    "sub": {
+     "embed_bge_s": 36.6
+    }
+   },
+   "com_en_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.03,
+    "vjudge": 0.0,
+    "topic_map": 52.97,
+    "labels": 1.84,
+    "G_version": true,
+    "duration_s": 1907.449615,
+    "sub": {
+     "embed_bge_s": 52.8
+    }
+   },
+   "com_es_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.03,
+    "vjudge": 0.0,
+    "topic_map": 40.5,
+    "labels": 1.53,
+    "G_version": true,
+    "duration_s": 1468.383492,
+    "sub": {
+     "embed_bge_s": 40.4
+    }
+   }
+  },
+  "asr-fast": {
+   "Spider_Man": {
+    "prepare": 0.0,
+    "asr": 0.05,
+    "signals": 0.16,
+    "vjudge": 0.0,
+    "topic_map": 86.93,
+    "G_version": true,
+    "duration_s": 8700.64,
+    "sub": {
+     "embed_bge_s": 86.3
+    }
+   },
+   "ES2002c.Room": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.02,
+    "vjudge": 0.0,
+    "topic_map": 5.4,
+    "G_version": true,
+    "duration_s": 2388.36,
+    "sub": {
+     "embed_bge_s": 5.2
+    }
+   },
+   "bbc_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.05,
+    "vjudge": 0.0,
+    "topic_map": 40.66,
+    "G_version": true,
+    "duration_s": 2955.041333,
+    "sub": {
+     "embed_bge_s": 40.4
+    }
+   },
+   "com_en_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.04,
+    "vjudge": 0.0,
+    "topic_map": 33.21,
+    "G_version": true,
+    "duration_s": 1907.449615,
+    "sub": {
+     "embed_bge_s": 33.0
+    }
+   },
+   "com_es_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.03,
+    "vjudge": 0.0,
+    "topic_map": 42.29,
+    "G_version": true,
+    "duration_s": 1468.383492,
+    "sub": {
+     "embed_bge_s": 41.9
+    }
+   }
+  },
+  "vjudge-fast": {
+   "Spider_Man": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.15,
+    "vjudge": 107.4,
+    "topic_map": 142.71,
+    "G_version": true,
+    "duration_s": 8700.64,
+    "sub": {
+     "embed_bge_s": 141.6
+    }
+   },
+   "ES2002c.Room": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.02,
+    "vjudge": 27.62,
+    "topic_map": 16.94,
+    "G_version": true,
+    "duration_s": 2388.36,
+    "sub": {
+     "embed_bge_s": 16.6
+    }
+   },
+   "bbc_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.05,
+    "vjudge": 36.78,
+    "topic_map": 62.51,
+    "G_version": true,
+    "duration_s": 2955.041333,
+    "sub": {
+     "embed_bge_s": 62.1
+    }
+   },
+   "com_en_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.03,
+    "vjudge": 16.47,
+    "topic_map": 42.02,
+    "G_version": true,
+    "duration_s": 1907.449615,
+    "sub": {
+     "embed_bge_s": 41.8
+    }
+   },
+   "com_es_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.03,
+    "vjudge": 28.31,
+    "topic_map": 56.64,
+    "G_version": true,
+    "duration_s": 1468.383492,
+    "sub": {
+     "embed_bge_s": 56.5
+    }
+   }
+  },
+  "vjudge-fast_exact": {
+   "Spider_Man": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.15,
+    "vjudge": 48.46,
+    "topic_map": 102.13,
+    "G_version": true,
+    "duration_s": 8700.64,
+    "sub": {
+     "embed_bge_s": 101.4
+    }
+   },
+   "ES2002c.Room": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.02,
+    "vjudge": 15.17,
+    "topic_map": 21.82,
+    "G_version": true,
+    "duration_s": 2388.36,
+    "sub": {
+     "embed_bge_s": 21.4
+    }
+   },
+   "bbc_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.05,
+    "vjudge": 17.55,
+    "topic_map": 40.22,
+    "G_version": true,
+    "duration_s": 2955.041333,
+    "sub": {
+     "embed_bge_s": 40.1
+    }
+   },
+   "com_en_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.05,
+    "vjudge": 10.02,
+    "topic_map": 25.6,
+    "G_version": true,
+    "duration_s": 1907.449615,
+    "sub": {
+     "embed_bge_s": 25.5
+    }
+   },
+   "com_es_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 0.03,
+    "vjudge": 9.06,
+    "topic_map": 39.12,
+    "G_version": true,
+    "duration_s": 1468.383492,
+    "sub": {
+     "embed_bge_s": 39.0
+    }
+   }
+  },
+  "visual-fast_exact": {
+   "Spider_Man": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 60.88,
+    "vjudge": 0.0,
+    "topic_map": 132.87,
+    "G_version": true,
+    "duration_s": 8700.64,
+    "sub": {
+     "embed_bge_s": 130.7
+    }
+   },
+   "ES2002c.Room": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 18.11,
+    "vjudge": 0.0,
+    "topic_map": 28.61,
+    "G_version": true,
+    "duration_s": 2388.36,
+    "sub": {
+     "embed_bge_s": 27.2
+    }
+   },
+   "bbc_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 28.6,
+    "vjudge": 0.0,
+    "topic_map": 50.85,
+    "G_version": true,
+    "duration_s": 2955.041333,
+    "sub": {
+     "embed_bge_s": 50.7
+    }
+   },
+   "com_en_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 7.49,
+    "vjudge": 0.0,
+    "topic_map": 19.93,
+    "G_version": true,
+    "duration_s": 1907.449615,
+    "sub": {
+     "embed_bge_s": 19.8
+    }
+   },
+   "com_es_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 13.36,
+    "vjudge": 0.0,
+    "topic_map": 50.45,
+    "G_version": true,
+    "duration_s": 1468.383492,
+    "sub": {
+     "embed_bge_s": 50.2
+    }
+   }
+  },
+  "visual-fast_exact+embed-fast": {
+   "Spider_Man": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 73.48,
+    "vjudge": 0.0,
+    "topic_map": 3.01,
+    "G_version": true,
+    "duration_s": 8700.64,
+    "sub": {
+     "embed_bge_s": 1.7
+    }
+   },
+   "ES2002c.Room": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 9.57,
+    "vjudge": 0.0,
+    "topic_map": 1.26,
+    "G_version": true,
+    "duration_s": 2388.36,
+    "sub": {
+     "embed_bge_s": 0.2
+    }
+   },
+   "bbc_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 23.15,
+    "vjudge": 0.0,
+    "topic_map": 0.53,
+    "G_version": true,
+    "duration_s": 2955.041333,
+    "sub": {
+     "embed_bge_s": 0.4
+    }
+   },
+   "com_en_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 15.02,
+    "vjudge": 0.0,
+    "topic_map": 0.37,
+    "G_version": true,
+    "duration_s": 1907.449615,
+    "sub": {
+     "embed_bge_s": 0.3
+    }
+   },
+   "com_es_01": {
+    "prepare": 0.0,
+    "asr": 0.0,
+    "signals": 6.68,
+    "vjudge": 0.03,
+    "topic_map": 0.42,
+    "G_version": true,
+    "duration_s": 1468.383492,
+    "sub": {
+     "embed_bge_s": 0.4
+    }
+   }
+  }
+ },
+ "vox": {
+  "ref": {
+   "hours": 1.6257091493055555,
+   "asr_s_per_h": 232.8829853493316,
+   "xvec_s_per_h": 5.905115317891133
+  },
+  "fast": {
+   "hours": 1.6257091493055555,
+   "asr_s_per_h": 241.86368156195766,
+   "xvec_s_per_h": 2.768022805261469
+  }
+ },
+ "voice_only_s": {
+  "Spider_Man": {
+   "voice_s": 7.6,
+   "duration_s": 8700.64
+  },
+  "ES2002c.Room": {
+   "voice_s": 2.3,
+   "duration_s": 2388.36
+  },
+  "bbc_01": {
+   "voice_s": 2.6,
+   "duration_s": 2955.041333
+  },
+  "com_en_01": {
+   "voice_s": 1.7,
+   "duration_s": 1907.449615
+  },
+  "com_es_01": {
+   "voice_s": 1.5,
+   "duration_s": 1468.383492
+  }
+ }
+}

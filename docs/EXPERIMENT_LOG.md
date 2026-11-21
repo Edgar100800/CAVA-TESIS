@@ -4119,3 +4119,25 @@ R5/R6 con un solo episodio/reunión. La adopción conserva la reserva de contami
 - **Reproducibilidad:** `scripts/eval_ami.py --meetings data/ami/meetings_exp044.txt --percentile 95
   --return-percentile 90 --turns-w 6 --turns-source pyannote`; `scripts/exp044_dev_sanity.py`;
   `scripts/exp044_secondary.py`; descarga `data/ami/download_exp044.sh`; RTTM en `results/exp044_turn/rttm/`.
+
+### Resultado EXP-045-Q (2026-11-20/21; `results/exp045_q/`)
+**Ejecución según el registro (refset_v1 completo: Spider-Man, ES2002c, bbc_01, com_en_01, com_es_01, 20 VoxConverse dev); umbrales, refset y reglas sin cambios.**
+Variantes tras `--variant ref|fast|pista=fast` (`topicagg/variants.py`); `ref` por defecto. Cachés por variante en el nombre de archivo. Servidores: vLLM FP8 (14B) en `.61`, vLLM BF16 (VL-7B) en `.55`; ref y encoders en `.56`/`.54`.
+Aplicación literal de la adopción por pista (fila de la pista **y** extremo a extremo por sustitución de esa pista sobre el mapa ref; además la combinación de las adoptadas pasa e2e):
+
+| Pista | Resultado | Decisión |
+|---|---|---|
+| ASR int8_float16 | WER agrupado 10,27 % (> 3 %); filtro de habla idéntico 94,3 % (< 99 %); ΔWER AMI vs GT −3,0 pp (cumple); e2e falla en 5/5 videos | **no adoptada** |
+| SigLIP decode-once+FP16+lotes | coseno mediana 0,9796 (< 0,995), p1 0,881 (< 0,98); e2e falla | **no adoptada** (decode-once) |
+| SigLIP FP16+lotes, fotogramas exactos | mediana 1,0000, p1 0,99998; e2e pasa 5/5 | **adoptada** |
+| bge GPU FP16 | mediana 1,0000, p1 1,0000; e2e pasa 5/5 (ARI ≥ 0,997) | **adoptada** |
+| WavLM FP16 | mediana 1,0000, p1 1,0000; sin efecto en mapa/versiones | **adoptada** |
+| VJudge vLLM BF16 + decode-once | mediana coseno 0,892 (< 0,90); 14,2 % idénticos; e2e falla | **no adoptada** |
+| VJudge vLLM BF16, fotogramas exactos | automático cumple (mediana 1,000; 56,1 % idénticos); e2e falla (Spider ARI 0,348, Δretornos 26 %) | **no adoptada** (e2e) |
+| Etiquetas 14B FP8 vLLM | automático cumple (mediana 0,980; 37,3 % idénticos); 20 pares a ciegas sin hacer | **pendiente de revisión humana** |
+| NVENC | sin fila registrada; duraciones de clips = ref (≤ 0,08 s) | adoptada (sin fila; con `-pix_fmt yuv420p`) |
+| Rostros | variante no definida (research_only) | no evaluada |
+
+Cadena `fast` completa (no adoptada, falla e2e en 5/5): 974,5 → 414,2 s/h (2,35×); adoptadas ≈ 1,0–1,1×; con etiquetas FP8 aprobadas ≈ 1,6× (estimación por etapas). La mayor ganancia (etiquetas 362 → 3 s/h) depende de la revisión humana (`results/exp045_q/human_review/labels/`; clave en `human_review_answer_key/`; puntuar con `scripts/exp045_review.py score`).
+**Ruido de `ref`:** ASR ref vs ref (misma máquina) WER 2,89 % (8/20 archivos difieren); ref nuevo vs congelado: ARI de mapa 0,285 (Spider-Man) y 0,437 (BBC); los umbrales e2e de las variantes que cambian texto/fotogramas quedan sobre ese piso. No altera las decisiones.
+**Desviaciones:** (i) lecturas no precisadas: WER agrupado, coseno agrupado, e2e estricto por video, Jaccard ≥ 0,9; decode-once y vLLM separados en variantes; (ii) timings ref de Spider-Man reconstruidos por mtimes (falló pyannote por `LD_LIBRARY_PATH` de env_cuda; reanudación) y cronometraje con solapamiento de corridas auxiliares; (iii) NVENC falló en Spider-Man (H.264 10 bits) → `-pix_fmt yuv420p`, repetida solo la etapa de clips; (iv) ref con 14B por offload (GPU 24 GB); (v) `.54` sin ffmpeg: binario copiado; (vi) **R1 tras los cambios: FAIL** por ruido ≤ 1,2e-7 en `provenance.transcript.coherence` (Spider-Man, 5 diffs; el mismo resultado con el código original HEAD en esta máquina, también corriendo Spider-Man solo); R3 PASS; el PASS previo de R1 no se reproduce hoy aquí (bge CPU no determinista según hilos/entorno), sin relación con los cambios.

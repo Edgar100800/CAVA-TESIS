@@ -8,12 +8,14 @@ BGE = "BAAI/bge-base-en-v1.5"
 
 
 class BgeEmbedder:
-    def __init__(self, device="cpu"):
+    def __init__(self, device="cpu", half=False):
         import torch
         from transformers import AutoModel, AutoTokenizer
         self.torch = torch
         self.tok = AutoTokenizer.from_pretrained(BGE)
         self.model = AutoModel.from_pretrained(BGE).to(device).eval()
+        if half:  # variante fast (EXP-045-Q): GPU FP16
+            self.model = self.model.half()
         self.device = device
 
     def __call__(self, texts, bs=32):

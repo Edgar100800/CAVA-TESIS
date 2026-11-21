@@ -1,0 +1,263 @@
+{
+ "per_file": {
+  "Spider_Man": {
+   "kind": "pipeline",
+   "n_words_ref": 10382,
+   "n_words_fast": 10080,
+   "edits": 986,
+   "wer_vs_ref": 0.09497206703910614,
+   "n_units": 1740,
+   "gate_equal_units": 1573,
+   "gate_equal_frac": 0.9040229885057471,
+   "duration_s": 8700.64
+  },
+  "ES2002c.Room": {
+   "kind": "pipeline",
+   "n_words_ref": 6141,
+   "n_words_fast": 6899,
+   "edits": 1221,
+   "wer_vs_ref": 0.1988275525158769,
+   "n_units": 239,
+   "gate_equal_units": 231,
+   "gate_equal_frac": 0.9665271966527197,
+   "duration_s": 2388.36
+  },
+  "bbc_01": {
+   "kind": "pipeline",
+   "n_words_ref": 2963,
+   "n_words_fast": 3057,
+   "edits": 186,
+   "wer_vs_ref": 0.06277421532230847,
+   "n_units": 591,
+   "gate_equal_units": 527,
+   "gate_equal_frac": 0.8917089678510999,
+   "duration_s": 2955.041333
+  },
+  "com_en_01": {
+   "kind": "pipeline",
+   "n_words_ref": 6900,
+   "n_words_fast": 6879,
+   "edits": 413,
+   "wer_vs_ref": 0.059855072463768116,
+   "n_units": 382,
+   "gate_equal_units": 382,
+   "gate_equal_frac": 1.0,
+   "duration_s": 1907.449615
+  },
+  "com_es_01": {
+   "kind": "pipeline",
+   "n_words_ref": 4036,
+   "n_words_fast": 4169,
+   "edits": 655,
+   "wer_vs_ref": 0.16228939544103071,
+   "n_units": 294,
+   "gate_equal_units": 289,
+   "gate_equal_frac": 0.9829931972789115,
+   "duration_s": 1468.383492
+  },
+  "vox:abjxc": {
+   "kind": "vox",
+   "n_words_ref": 165,
+   "edits": 0,
+   "wer_vs_ref": 0.0,
+   "n_units": 14,
+   "gate_equal_frac": 1.0
+  },
+  "vox:afjiv": {
+   "kind": "vox",
+   "n_words_ref": 386,
+   "edits": 33,
+   "wer_vs_ref": 0.08549222797927461,
+   "n_units": 31,
+   "gate_equal_frac": 1.0
+  },
+  "vox:ahnss": {
+   "kind": "vox",
+   "n_words_ref": 2584,
+   "edits": 219,
+   "wer_vs_ref": 0.08475232198142414,
+   "n_units": 133,
+   "gate_equal_frac": 0.9924812030075187
+  },
+  "vox:aisvi": {
+   "kind": "vox",
+   "n_words_ref": 1399,
+   "edits": 401,
+   "wer_vs_ref": 0.28663330950679056,
+   "n_units": 94,
+   "gate_equal_frac": 0.9468085106382979
+  },
+  "vox:akthc": {
+   "kind": "vox",
+   "n_words_ref": 328,
+   "edits": 13,
+   "wer_vs_ref": 0.039634146341463415,
+   "n_units": 23,
+   "gate_equal_frac": 1.0
+  },
+  "vox:ampme": {
+   "kind": "vox",
+   "n_words_ref": 423,
+   "edits": 24,
+   "wer_vs_ref": 0.05673758865248227,
+   "n_units": 30,
+   "gate_equal_frac": 1.0
+  },
+  "vox:asxwr": {
+   "kind": "vox",
+   "n_words_ref": 809,
+   "edits": 52,
+   "wer_vs_ref": 0.06427688504326329,
+   "n_units": 48,
+   "gate_equal_frac": 1.0
+  },
+  "vox:atgpi": {
+   "kind": "vox",
+   "n_words_ref": 408,
+   "edits": 19,
+   "wer_vs_ref": 0.04656862745098039,
+   "n_units": 25,
+   "gate_equal_frac": 1.0
+  },
+  "vox:aufkn": {
+   "kind": "vox",
+   "n_words_ref": 620,
+   "edits": 104,
+   "wer_vs_ref": 0.16774193548387098,
+   "n_units": 37,
+   "gate_equal_frac": 0.972972972972973
+  },
+  "vox:azisu": {
+   "kind": "vox",
+   "n_words_ref": 651,
+   "edits": 113,
+   "wer_vs_ref": 0.17357910906298002,
+   "n_units": 39,
+   "gate_equal_frac": 1.0
+  },
+  "vox:bauzd": {
+   "kind": "vox",
+   "n_words_ref": 1730,
+   "edits": 94,
+   "wer_vs_ref": 0.05433526011560694,
+   "n_units": 100,
+   "gate_equal_frac": 1.0
+  },
+  "vox:bdopb": {
+   "kind": "vox",
+   "n_words_ref": 2914,
+   "edits": 62,
+   "wer_vs_ref": 0.02127659574468085,
+   "n_units": 191,
+   "gate_equal_frac": 1.0
+  },
+  "vox:bkwns": {
+   "kind": "vox",
+   "n_words_ref": 173,
+   "edits": 0,
+   "wer_vs_ref": 0.0,
+   "n_units": 14,
+   "gate_equal_frac": 1.0
+  },
+  "vox:blwmj": {
+   "kind": "vox",
+   "n_words_ref": 955,
+   "edits": 150,
+   "wer_vs_ref": 0.15706806282722513,
+   "n_units": 52,
+   "gate_equal_frac": 1.0
+  },
+  "vox:bravd": {
+   "kind": "vox",
+   "n_words_ref": 1319,
+   "edits": 98,
+   "wer_vs_ref": 0.07429871114480667,
+   "n_units": 79,
+   "gate_equal_frac": 1.0
+  },
+  "vox:bspxd": {
+   "kind": "vox",
+   "n_words_ref": 1337,
+   "edits": 77,
+   "wer_vs_ref": 0.05759162303664921,
+   "n_units": 68,
+   "gate_equal_frac": 1.0
+  },
+  "vox:bwzyf": {
+   "kind": "vox",
+   "n_words_ref": 213,
+   "edits": 0,
+   "wer_vs_ref": 0.0,
+   "n_units": 16,
+   "gate_equal_frac": 1.0
+  },
+  "vox:bxpwa": {
+   "kind": "vox",
+   "n_words_ref": 1196,
+   "edits": 75,
+   "wer_vs_ref": 0.06270903010033445,
+   "n_units": 86,
+   "gate_equal_frac": 1.0
+  },
+  "vox:bydui": {
+   "kind": "vox",
+   "n_words_ref": 958,
+   "edits": 89,
+   "wer_vs_ref": 0.09290187891440502,
+   "n_units": 56,
+   "gate_equal_frac": 1.0
+  },
+  "vox:ccokr": {
+   "kind": "vox",
+   "n_words_ref": 684,
+   "edits": 20,
+   "wer_vs_ref": 0.029239766081871343,
+   "n_units": 41,
+   "gate_equal_frac": 1.0
+  }
+ },
+ "wer_pooled_all": 0.10274992954060475,
+ "wer_pooled_pipeline": 0.11376635329695615,
+ "wer_pooled_vox": 0.08534178267193018,
+ "n_files": 25,
+ "files_above_3pct": [
+  "Spider_Man",
+  "ES2002c.Room",
+  "bbc_01",
+  "com_en_01",
+  "com_es_01",
+  "vox:afjiv",
+  "vox:ahnss",
+  "vox:aisvi",
+  "vox:akthc",
+  "vox:ampme",
+  "vox:asxwr",
+  "vox:atgpi",
+  "vox:aufkn",
+  "vox:azisu",
+  "vox:bauzd",
+  "vox:blwmj",
+  "vox:bravd",
+  "vox:bspxd",
+  "vox:bxpwa",
+  "vox:bydui"
+ ],
+ "worst_file": {
+  "vox:aisvi": 0.28663330950679056
+ },
+ "gate_equal_frac_pipeline": 0.9248305606900801,
+ "gate_equal_frac_vox": 0.994052676295667,
+ "gate_equal_frac_all": 0.9432511869771648,
+ "ami_gt": {
+  "n_gt_words": 7849,
+  "wer_ref_vs_gt": 0.2815645305134412,
+  "wer_fast_vs_gt": 0.25149700598802394,
+  "delta_pp": -3.006752452541725
+ },
+ "pass": {
+  "wer_le_3pct": false,
+  "ami_delta_wer_le_0.5pp": true,
+  "gate_equal_ge_99pct": false
+ },
+ "pass_all": false
+}

@@ -11,13 +11,15 @@ WAVLM = ("microsoft/wavlm-base-plus-sv", "939f573b5e1a33c20332a5fe9ac34f95a66c4f
 
 
 class XVec:
-    def __init__(self, device=None):
+    def __init__(self, device=None, half=False):
         device = device or ("cuda" if __import__("torch").cuda.is_available() else "cpu")
         import torch
         from transformers import AutoFeatureExtractor, WavLMForXVector
-        self.torch, self.device = torch, device
+        self.torch, self.device, self.half = torch, device, half
         self.fe = AutoFeatureExtractor.from_pretrained(WAVLM[0], revision=WAVLM[1])
         self.m = WavLMForXVector.from_pretrained(WAVLM[0], revision=WAVLM[1], use_safetensors=True).to(device).eval()
+        if half:  # variante fast (EXP-045-Q): FP16
+            self.m = self.m.half()
 
     def __call__(self, audio, units, gate, sr=16000, bs=32):
         out = np.zeros((len(units), 512), np.float32)
@@ -26,6 +28,8 @@ class XVec:
             chunk = idx[k:k + bs]
             x = [audio[int(units[i][0] * sr):int(units[i][1] * sr)] for i in chunk]
             inp = self.fe(x, sampling_rate=sr, return_tensors="pt", padding=True).to(self.device)
+            if self.half:
+                inp = {k: (v.half() if v.is_floating_point() else v) for k, v in inp.items()}
             with self.torch.no_grad():
                 out[chunk] = self.m(**inp).embeddings.float().cpu().numpy()
         return out

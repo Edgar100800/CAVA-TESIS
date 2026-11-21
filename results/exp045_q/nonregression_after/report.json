@@ -1,0 +1,94 @@
+{
+ "schema": "cava-v11-nonregression-v1",
+ "overall": "FAIL",
+ "code": {
+  "git_commit": "f9479395df35e494c837d8e3f402b1989df720ef"
+ },
+ "checks": {
+  "R1": {
+   "status": "FAIL",
+   "detail": {
+    "runs": {
+     "Spider_Man": "/data/tesis-cava/exp045/nr_work_final/r1/Spider_Man",
+     "Avengers_Endgame": "/data/tesis-cava/exp045/nr_work_final/r1/Avengers_Endgame"
+    },
+    "comparisons": {
+     "Spider_Man": {
+      "topic_map.json": {
+       "semantic_diff": 5,
+       "byte_equal": false
+      },
+      "versions.json": {
+       "semantic_diff": 0,
+       "byte_equal": true
+      },
+      "clips.jsonl": {
+       "semantic_diff": 2,
+       "byte_equal": false
+      }
+     },
+     "Avengers_Endgame": {
+      "topic_map.json": {
+       "semantic_diff": 0,
+       "byte_equal": true
+      },
+      "versions.json": {
+       "semantic_diff": 0,
+       "byte_equal": true
+      },
+      "clips.jsonl": {
+       "semantic_diff": 0,
+       "byte_equal": true
+      }
+     }
+    }
+   }
+  },
+  "R3": {
+   "status": "PASS",
+   "detail": {
+    "topic_map_non_speaker_diff": 0,
+    "versions_non_speaker_diff": 0,
+    "clips_non_speaker_diff": 0,
+    "G_version_v10": true,
+    "G_version_v11": true,
+    "voice_identity_signal_v10": "wavlm_sv",
+    "voice_identity_signal_v11": "pyannote_c1",
+    "voice_identities_v10": [
+     "V1",
+     "V2",
+     "V3",
+     "V4",
+     "V5",
+     "V6",
+     "V7",
+     "V8"
+    ],
+    "voice_identities_v11": [
+     "V1",
+     "V10",
+     "V11",
+     "V12",
+     "V13",
+     "V14",
+     "V15",
+     "V16",
+     "V17",
+     "V18",
+     "V19",
+     "V2",
+     "V20",
+     "V3",
+     "V4",
+     "V5",
+     "V6",
+     "V7",
+     "V8",
+     "V9"
+    ],
+    "speaker_turns_v11": 2502,
+    "v11": "/data/tesis-cava/exp045/nr_work_final/r3/Spider_Man"
+   }
+  }
+ }
+}

@@ -1,0 +1,7 @@
+{"schema":"exp045q-summary-v1","registro":"a4a30ec",
+ "adoptadas":["siglip_fp16_lotes_fotogramas_exactos (visual=fast_exact)","bge_gpu_fp16 (embed=fast)","wavlm_fp16 (speaker=fast)","nvenc_h264 (clips=fast, sin fila registrada)"],
+ "no_adoptadas":{"asr_int8_float16":"WER 10,27 % > 3 %; filtro habla 94,3 % < 99 %; e2e falla","siglip_decode_once":"coseno mediana 0,9796 < 0,995; p1 0,881 < 0,98; e2e falla","vjudge_vllm_decode_once":"coseno mediana 0,892 < 0,90; e2e falla","vjudge_vllm_fotogramas_exactos":"e2e falla (ARI Spider 0,348; Δretornos 26 %)"},
+ "pendiente_revision_humana":["labels_fp8_vllm (automatico cumple: mediana 0,980)"],
+ "no_evaluada":["rostros"],
+ "r1_r3_tras_cambios":{"R1":"FAIL (ruido 1e-7 en coherence; idéntico con el código original HEAD)","R3":"PASS"},
+ "speedup_cadena_fast_completa_no_adoptada":2.35}

@@ -148,3 +148,17 @@ El CUDA EP de ORT 1.22 enlaza `libcublasLt.so.12`, `libcublas.so.12`, `libcurand
   ruido de detección (el motor corre en sm_120).
 - `.56`: ssh con la clave del laboratorio devuelve `Permission denied`; es la máquina local, no hace falta ssh.
 - No ejecutar trabajos GPU en `.54`/`.56`; no modificar `thesis-venv`/`dia-venv`.
+
+## Lecciones operativas de EXP-045-Q (2026-11-20)
+
+- `.54/.55/.61` **no tienen `ffmpeg`/`ffprobe`** (ni sudo). Se copió el binario de `.56` con sus bibliotecas (`ldd`, 236 MB) a
+  `/data/tesis-cava/exp045/ffbin/{ffmpeg,ffprobe,lib}` y se usa con `PATH` y `LD_LIBRARY_PATH` (NVENC funciona con el controlador).
+- La red `.56 → .54` rinde ≈ 10 MB/s: no copiar los Qwen (44 GB). Las corridas ref con HF (VL-7B, 14B) se hacen donde están los pesos
+  (`.56`); `.54` solo recibió el venv de producto (8,2 GB), los modelos de codificadores y las entradas.
+- Con `source infra/env_cuda.sh` el subproceso de pyannote falla (`CUDNN_STATUS_SUBLIBRARY_LOADING_FAILED`) porque hereda el
+  `LD_LIBRARY_PATH` con el cuDNN del venv de producto: quitar `LD_LIBRARY_PATH` solo para `run_diarization` (ver `exp045/chain.sh`).
+- El 14B BF16 (29,5 GB) no cabe en 24 GB: la etapa de etiquetas ref usa `device_map="auto"` con `max_memory={0:"21GiB","cpu":"55GiB"}`
+  cuando la GPU tiene < 40 GB (misma numérica; solo cambia la colocación de capas).
+- Clientes de vLLM: túneles `ssh -N -L 8100:127.0.0.1:8000 .55` (VL) y `-L 8200:127.0.0.1:8000 .61` (14B) desde `.56`, y
+  `-R 8100:… -R 8200:…` hacia `.54`; nada se expone en la LAN. `topicagg/variants.py` lee `CAVA_VLLM_{VL,TXT}_URL`.
+- `repetition_penalty=1.05` (de `generation_config.json`) se envía explícito a vLLM; `HF generate(do_sample=False)` lo conserva.

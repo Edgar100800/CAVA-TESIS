@@ -3,6 +3,7 @@
 Uso:  python scripts/cava_run.py VIDEO[:perfil[:AUDIO]] ... --out data/cava_runs [--stack v1.1]
       perfil = film (por defecto) | documentary | meeting; AUDIO opcional si el video no trae pista de audio
       stack = v1.0 (por defecto, congelado) | v1.1 (pyannote V# en film y meeting)
+      --variant ref (por defecto, byte a byte igual) | fast | pista=fast,... (EXP-045-Q; ver topicagg/variants.py)
 Salida por video en <out>/<nombre>/: topic_map.json, versions.json, index.md/json,
 clips/*.mp4, version_<perfil>_<k>.mp4 y work/ (caché resumible de cada etapa).
 """
@@ -25,13 +26,15 @@ def main():
     ap.add_argument("--device", default="cuda")
     ap.add_argument("--stack", choices=("v1.0", "v1.1"), default="v1.0",
                     help="v1.0 reproduce tfm-v1.0; v1.1 activa pyannote V# en film/meeting")
+    ap.add_argument("--variant", default="ref",
+                    help="ref (por defecto) | fast | lista pista=ref|fast (asr,visual,vjudge,embed,labels,clips,speaker)")
     args = ap.parse_args()
     report = {}
     for spec in args.videos:
         path, profile, audio = (spec.split(":") + ["", ""])[:3]
         name = Path(path).stem
         p = Pipeline(path, Path(args.out) / name, profile=profile or "film", labels=not args.no_labels,
-                     audio=audio or None, device=args.device, stack=args.stack)
+                     audio=audio or None, device=args.device, stack=args.stack, variant=args.variant)
         gate = p.run(cut=not args.no_cut)
         report[name] = {"profile": profile or "film", "G_version": gate["G_version"],
                         "duration_min": round(p.state["duration"] / 60, 1),

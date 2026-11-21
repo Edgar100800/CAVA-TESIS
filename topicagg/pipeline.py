@@ -28,6 +28,7 @@ from pathlib import Path
 
 import numpy as np
 
+from . import variants as V
 from .profiles import get_profile
 from .profiles.v1_0 import PROFILES  # compatibilidad: siempre los perfiles congelados
 HF = "/home/edgar.chambilla/Tesis/SegLoop/data/hf_cache"
@@ -48,10 +49,25 @@ def _frame(video, t, out):
     return out if Path(out).exists() and Path(out).stat().st_size > 0 else None
 
 
+def transcribe(wav, device, compute_type=None):
+    """faster-whisper large-v3 con VAD interno; ref = float16 (cuda) / int8 (cpu), fast = int8_float16."""
+    from faster_whisper import WhisperModel
+    wm = WhisperModel("large-v3", device=device,
+                      compute_type=compute_type or ("float16" if device == "cuda" else "int8"))
+    segs, _ = wm.transcribe(str(wav), vad_filter=True)
+    return [(s.start, s.end, s.text.strip()) for s in segs]
+
+
+def units_text(segs, units):
+    return [" ".join(t for a, b, t in segs if a < u1 and b > u0) for u0, u1 in units]
+
+
 class Pipeline:
     def __init__(self, video, out, profile="film", summary_s=40.0, device="cuda", labels=True, audio=None,
-                 stack="v1.0"):
+                 stack="v1.0", variant="ref"):
         self.video, self.out = Path(video), Path(out)
+        self.var = V.parse_variant(variant)  # EXP-045-Q: variante por pista; ref (por defecto) = comportamiento congelado
+        self.sub_timings = {}
         self.audio_src = Path(audio) if audio else None   # p. ej. AMI: video sin pista de audio
         self.stack = stack
         self.cfg = get_profile(stack, profile) | {"profile": profile}
@@ -87,15 +103,24 @@ class Pipeline:
 
     # 4
     def asr(self):
-        if "asr" in self.state:
+        if self.var["asr"] != "ref":
+            f = self.work / f"asr{V.suffix(self.var['asr'])}.json"
+            if f.exists():
+                self.asr_segments = json.loads(f.read_text())["segments"]
+            else:
+                self.asr_segments = transcribe(self.work / "audio.wav", self.device, "int8_float16")
+                f.write_text(json.dumps({"compute_type": "int8_float16", "segments": self.asr_segments},
+                                        ensure_ascii=False))
+            self.asr_text = units_text(self.asr_segments, self.state["units"])
+            self.log(f"ASR[{self.var['asr']}] {len(self.asr_segments)} segmentos")
             return
-        from faster_whisper import WhisperModel
-        wm = WhisperModel("large-v3", device=self.device,
-                          compute_type="float16" if self.device == "cuda" else "int8")
-        segs, _ = wm.transcribe(str(self.work / "audio.wav"), vad_filter=True)
-        segs = [(s.start, s.end, s.text.strip()) for s in segs]
+        if "asr" in self.state:
+            self.asr_segments, self.asr_text = self.state["asr_segments"], self.state["asr"]
+            return
+        segs = transcribe(self.work / "audio.wav", self.device)
         self.state["asr_segments"] = segs
-        self.state["asr"] = [" ".join(t for a, b, t in segs if a < u1 and b > u0) for u0, u1 in self.state["units"]]
+        self.state["asr"] = units_text(segs, self.state["units"])
+        self.asr_segments, self.asr_text = segs, self.state["asr"]
         self._save()
         self.log(f"ASR {len(segs)} segmentos")
 
@@ -106,6 +131,11 @@ class Pipeline:
         if "voice" not in arr:
             from .voice import load_audio, voice_features
             arr["voice"] = voice_features(load_audio(str(self.work / "audio.wav")), self.state["units"])
+        if self.var["visual"] != "ref":
+            self.arrays = dict(arr) | {"visual": self._visual_fast()}
+            if not f.exists():
+                np.savez_compressed(f, **arr)
+            return
         if "visual" not in arr:
             import torch
             from PIL import Image
@@ -129,12 +159,84 @@ class Pipeline:
         np.savez_compressed(f, **arr)
         self.arrays = arr
 
+    def _visual_fast(self):
+        """SigLIP fast: decode-once 1 fps + lotes de 64 + FP16; caché propio por variante."""
+        fv = self.work / f"signals.visual{V.suffix(self.var['visual'])}.npy"
+        if fv.exists():
+            return np.load(fv)
+        import torch
+        from PIL import Image
+        from transformers import AutoModel, AutoProcessor
+        proc = AutoProcessor.from_pretrained("google/siglip-base-patch16-224")
+        sm = AutoModel.from_pretrained("google/siglip-base-patch16-224").to(self.device).eval().half()
+        units = self.state["units"]
+        if self.var["visual"] == "fast_exact":  # diagnóstico: FP16 + lotes sobre los fotogramas exactos de la corrida ref
+            paths = [self.work / "frames" / f"u{k:05d}.jpg" for k in range(len(units))]
+            paths = [p if p.exists() and p.stat().st_size > 0 else None for p in paths]
+        else:
+            idx = V.FrameIndex(V.decode_once(self.video, self.work / "frames1fps"))
+            paths = [idx.path((u0 + u1) / 2) for u0, u1 in units]
+        out = np.zeros((len(units), 768), np.float32)
+        ok = [k for k, p in enumerate(paths) if p is not None]
+        for i in range(0, len(ok), 64):
+            ks = ok[i:i + 64]
+            ims = [Image.open(paths[k]).convert("RGB") for k in ks]
+            with torch.inference_mode():
+                px = proc(images=ims, return_tensors="pt").to(self.device)
+                px = {a: (b.half() if b.is_floating_point() else b) for a, b in px.items()}
+                o = sm.get_image_features(**px)
+                o = (o.pooler_output if hasattr(o, "pooler_output") else o[0]).float().cpu().numpy()
+            out[ks] = o
+        del sm
+        np.save(fv, out)
+        return out
+
+    def _frame_for(self, kind, b, q, t):
+        """Fotograma de vjudge: exacto (ref), 1 fps más cercano (fast) o exacto reutilizado (fast_exact)."""
+        fr = self.work / "frames"
+        if kind == "fast":
+            if not hasattr(self, "_fidx"):
+                self._fidx = V.FrameIndex(self.work / "frames1fps")
+            return self._fidx.path(t)
+        p = fr / f"b{b:05d}_{int(q * 100)}.jpg"
+        if kind == "fast_exact" and p.exists() and p.stat().st_size > 0:
+            return p
+        fr.mkdir(exist_ok=True)
+        return _frame(self.video, t, p)
+
+    def _vjudge_fast(self, blocks, units):
+        kind = self.var["vjudge"]
+        f = self.work / f"summaries{V.suffix(kind)}.json"
+        sums = json.loads(f.read_text()) if f.exists() else []
+        if len(sums) >= len(blocks):
+            return sums
+        from PIL import Image
+        if kind == "fast":
+            V.decode_once(self.video, self.work / "frames1fps")
+        convs = []
+        for b, (lo, hi) in enumerate(blocks):
+            t0, t1 = units[lo][0], units[hi - 1][1]
+            ps = [self._frame_for(kind, b, q, t0 + (t1 - t0) * q) for q in (0.15, 0.5, 0.85)]
+            imgs = [Image.open(p).convert("RGB").resize((448, 252)) for p in ps if p]
+            speech = " ".join(self.asr_text[lo:hi])[:500] or "(no speech)"
+            content = [{"type": "image_url", "image_url": {"url": V.png_data_url(im)}} for im in imgs]
+            content.append({"type": "text", "text": SUMMARY_PROMPT.format(n=len(imgs), speech=speech)})
+            convs.append([{"role": "user", "content": content}])
+        texts = V.chat_many(V.VL_URL, V.VL_MODEL, convs, 60)
+        sums = [{"unit": b, "lo": lo, "hi": hi, "summary": t.strip()} for b, ((lo, hi), t) in enumerate(zip(blocks, texts))]
+        f.write_text(json.dumps(sums, ensure_ascii=False))
+        return sums
+
     # 7
     def vjudge(self):
         f = self.work / "summaries.json"
         units = self.state["units"]
         per = max(1, int(round(self.summary_s / self.cfg["unit_s"])))
         blocks = [(lo, min(lo + per, len(units))) for lo in range(0, len(units), per)]
+        if self.var["vjudge"] != "ref":
+            self.summaries = self._vjudge_fast(blocks, units)
+            self.log(f"VJudge[{self.var['vjudge']}] {len(self.summaries)} resúmenes")
+            return
         sums = json.loads(f.read_text()) if f.exists() else []
         if len(sums) >= len(blocks):
             self.summaries = sums
@@ -151,7 +253,7 @@ class Pipeline:
             t0, t1 = units[lo][0], units[hi - 1][1]
             ps = [_frame(self.video, t0 + (t1 - t0) * q, fr / f"b{b:05d}_{int(q * 100)}.jpg") for q in (0.15, 0.5, 0.85)]
             imgs = [Image.open(p).convert("RGB").resize((448, 252)) for p in ps if p]
-            speech = " ".join(self.state["asr"][lo:hi])[:500] or "(no speech)"
+            speech = " ".join(self.asr_text[lo:hi])[:500] or "(no speech)"
             content = [{"type": "image", "image": im} for im in imgs]
             content.append({"type": "text", "text": SUMMARY_PROMPT.format(n=len(imgs), speech=speech)})
             chat = vp.apply_chat_template([{"role": "user", "content": content}], tokenize=False,
@@ -165,6 +267,9 @@ class Pipeline:
                 f.write_text(json.dumps(sums, ensure_ascii=False))
         f.write_text(json.dumps(sums, ensure_ascii=False))
         del vm
+        import gc
+        gc.collect()
+        torch.cuda.empty_cache()
         self.summaries = sums
         self.log(f"VJudge {len(sums)} resúmenes")
 
@@ -172,14 +277,18 @@ class Pipeline:
     def topic_map(self):
         from .embed import BgeEmbedder
         from .topic_map import build_topic_map
-        bge = BgeEmbedder()
+        import time
+        t_e = time.time()
+        bge = BgeEmbedder(self.device, half=True) if self.var["embed"] != "ref" else BgeEmbedder()
         n = len(self.state["units"])
         e = bge([s["summary"] for s in self.summaries])
         vj = np.zeros((n, e.shape[1]), np.float32)
         for s, v in zip(self.summaries, e):
             vj[s["lo"]:s["hi"]] = v
         sig = {"voice": self.arrays["voice"][:n], "visual": self.arrays["visual"][:n],
-               "transcript": bge(self.state["asr"]), "vjudge": vj}
+               "transcript": bge(self.asr_text), "vjudge": vj}
+        self.sig = sig
+        self.sub_timings["embed_bge_s"] = round(time.time() - t_e, 1)
         bnd = None
         if self.cfg.get("speaker_turns_w"):
             from .identities import identities, speaker_turn_scores
@@ -189,7 +298,7 @@ class Pipeline:
                                    boundary_signals=bnd, snap_visual_s=self.cfg.get("snap_visual_s"),
                                    percentile=self.cfg["percentile"],
                                    return_percentile=self.cfg["return_percentile"], abstain=True,
-                                   unit_texts=self.state["asr"])
+                                   unit_texts=self.asr_text)
         self.doc["params"]["profile"] = self.cfg["profile"]
         d = self.doc["levels"]["default"]
         self.log(f"mapa: {d['n_topics']} tópicos ({d['n_returning']} con retornos)")
@@ -198,17 +307,26 @@ class Pipeline:
     def labels(self, min_dur=30.0):
         from .labels import PROMPT, clean_label, stretches_text
         topics = [t for t in self.doc["levels"]["default"]["topics"] if t["duration_s"] >= min_dur]
-        f = self.work / "topic_labels.json"
+        f = self.work / f"topic_labels{V.suffix(self.var['labels'])}.json"
         done = json.loads(f.read_text()) if f.exists() else {}
         # clave = id + tramos: un mapa nuevo (otro perfil u otros votantes) no hereda etiquetas de otro tópico
         key = lambda t: f'{t["topic_id"]}@' + ",".join(f"{a:.1f}-{b:.1f}" for a, b in t["spans"])  # noqa: E731
         todo = [t for t in topics if key(t) not in done]
-        if todo and self.do_labels:
+        if todo and self.do_labels and self.var["labels"] != "ref":
+            convs = [[{"role": "user", "content": PROMPT.format(stretches=stretches_text(t, 8))}] for t in todo]
+            for t, text in zip(todo, V.chat_many(V.TXT_URL, V.TXT_MODEL, convs, 70)):
+                done[key(t)] = text.strip().splitlines()[0]
+            f.write_text(json.dumps(done, ensure_ascii=False))
+        elif todo and self.do_labels:
             import torch
             from transformers import AutoModelForCausalLM, AutoTokenizer
             tok = AutoTokenizer.from_pretrained(TXT[0], revision=TXT[1])
+            kw = {"device_map": self.device}
+            if self.device == "cuda" and torch.cuda.get_device_properties(0).total_memory < 40 * 2 ** 30:
+                # GPU de 24 GB: el 14B BF16 no cabe; offload de las últimas capas a CPU (misma numérica)
+                kw = {"device_map": "auto", "max_memory": {0: "21GiB", "cpu": "55GiB"}}
             m = AutoModelForCausalLM.from_pretrained(TXT[0], revision=TXT[1], torch_dtype=torch.bfloat16,
-                                                     device_map=self.device).eval()
+                                                     **kw).eval()
             for t in todo:
                 chat = tok.apply_chat_template([{"role": "user", "content": PROMPT.format(
                     stretches=stretches_text(t, 8))}], tokenize=False, add_generation_prompt=True)
@@ -218,6 +336,9 @@ class Pipeline:
                 done[key(t)] = tok.decode(g[0, inp.input_ids.shape[1]:], skip_special_tokens=True).strip().splitlines()[0]
                 f.write_text(json.dumps(done, ensure_ascii=False))
             del m
+            import gc
+            gc.collect()
+            torch.cuda.empty_cache()
         for t in self.doc["levels"]["default"]["topics"]:
             t["topic_label"] = clean_label(done.get(key(t), t["label"]))
 
@@ -226,7 +347,7 @@ class Pipeline:
         from .identities import identities, speakers_of
         units = self.state["units"]
         # EXP-026: solo unidades con habla ASR (≥ 50 % cubierta); no inferior en AMI, menos grupos espurios en BBC
-        speech = np.array([sum(max(0.0, min(u1, b) - max(u0, a)) for a, b, *_ in self.state["asr_segments"])
+        speech = np.array([sum(max(0.0, min(u1, b) - max(u0, a)) for a, b, *_ in self.asr_segments)
                            >= 0.5 * (u1 - u0) for u0, u1 in units])
         backend = self.cfg.get("speaker_backend") or ("wavlm_sv" if self.cfg.get("speaker_embed") else "voice_features")
         if backend == "pyannote_c1":
@@ -240,13 +361,13 @@ class Pipeline:
             x = np.asarray(self.arrays["voice"][:len(units)], np.float32)
             if self.cfg.get("speaker_embed"):
                 # EXP-028: identidad por embedding de hablante (WavLM-sv), no por rasgos de voz
-                f = self.work / "speaker_xvec.npy"
+                f = self.work / f"speaker_xvec{V.suffix(self.var['speaker'])}.npy"
                 if f.exists():
                     x = np.load(f)
                 else:
                     from .speaker import XVec
                     from .voice import load_audio
-                    x = XVec(self.device)(load_audio(str(self.work / "audio.wav")), units, speech)
+                    x = XVec(self.device, half=self.var["speaker"] != "ref")(load_audio(str(self.work / "audio.wav")), units, speech)
                     np.save(f, x)
             vid = np.full(len(units), -1)
             single = False
@@ -278,8 +399,11 @@ class Pipeline:
         v = build_versions(self.doc)
         gate = check_versions(v)
         (self.out / "versions.json").write_text(json.dumps(v, ensure_ascii=False, indent=1))
-        clips_dir = self.out / "clips"
+        csuf = V.suffix(self.var["clips"])
+        clips_dir = self.out / f"clips{csuf}"
         clips_dir.mkdir(exist_ok=True)
+        venc = (["-c:v", "h264_nvenc", "-preset", "p4", "-cq", "23", "-pix_fmt", "yuv420p"] if self.var["clips"] != "ref"
+                else ["-c:v", "libx264", "-preset", "veryfast", "-crf", "23"])
         made = 0
         for prof, spec in v.items():
             for k, pl in enumerate(spec.get("playlists", [])):
@@ -297,8 +421,7 @@ class Pipeline:
                         if self.audio_src:            # video sin audio: se muxea la pista externa
                             inputs += span + ["-i", str(self.audio_src)]
                             maps = ["-map", "0:v:0", "-map", "1:a:0"]
-                        subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, *maps, "-c:v", "libx264",
-                                        "-preset", "veryfast", "-crf", "23", "-c:a", "aac", str(dst)],
+                        subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, *maps, *venc, "-c:a", "aac", str(dst)],
                                        capture_output=True)
                     c["file"] = str(dst.relative_to(self.out))
                     if dst.exists():
@@ -308,7 +431,7 @@ class Pipeline:
                     lst = clips_dir / f"{prof}_{k}.txt"
                     lst.write_text("".join(f"file '{p.name}'\n" for p in parts))
                     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst),
-                                    "-c", "copy", str(self.out / f"version_{prof}_{k}.mp4")], capture_output=True)
+                                    "-c", "copy", str(self.out / f"version_{prof}_{k}{csuf}.mp4")], capture_output=True)
         (self.out / "versions.json").write_text(json.dumps(v, ensure_ascii=False, indent=1))
         self._clips_jsonl(v)
         self._index(v, gate)
@@ -397,6 +520,9 @@ class Pipeline:
                            "G_version": gate["G_version"], "files": ["topic_map.json", "versions.json",
                                                                      "clips.jsonl", "index.json", "index.md"]},
                "gt_used": False, "timings_s": timings}
+        if any(v != "ref" for v in self.var.values()):
+            man["variant"] = self.var  # solo si no es ref: el manifiesto ref no cambia
+            man["timings_detail_s"] = self.sub_timings
         if self.stack != "v1.0":
             man["stack"] = self.stack
             if backend == "pyannote_c1":
