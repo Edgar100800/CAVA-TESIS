@@ -2,47 +2,88 @@
  "schema": "cava-v11-nonregression-v1",
  "overall": "PASS",
  "code": {
-  "git_commit": "519e37bcc052e897b55aaaf426e7ce7a90a38280"
+  "git_commit": "a46ecce418c69a3ec1e4c5cea7cfed610d5b1bee"
  },
+ "notes": [
+  "Enmienda a R1 (2026-11-21, `docs/EXPERIMENT_LOG.md`): R1 pasa si la estructura es exactamente igual (ids de tópico, `shots`, `spans`, flags, etiquetas, `versions.json`, filas de `clips.jsonl` salvo campos numéricos) y |Δ| <= 1e-06 en todo campo de punto flotante; se reporta también la igualdad byte a byte."
+ ],
  "checks": {
   "R1": {
    "status": "PASS",
    "detail": {
+    "criterion": "enmienda 2026-11-21: estructura exacta y |Δ| <= 1e-06 en floats",
     "runs": {
-     "Spider_Man": "/data/tesis-cava/v11_work/r1/Spider_Man",
-     "Avengers_Endgame": "/data/tesis-cava/v11_work/r1/Avengers_Endgame"
+     "Spider_Man": "/data/tesis-cava/exp046/nr_work_a/r1/Spider_Man",
+     "Avengers_Endgame": "/data/tesis-cava/exp046/nr_work_a/r1/Avengers_Endgame"
     },
     "comparisons": {
      "Spider_Man": {
       "topic_map.json": {
-       "semantic_diff": 0,
-       "byte_equal": true
+       "structural_diff": 0,
+       "float_fields": 12513,
+       "float_fields_over_tol": 0,
+       "max_abs_float_diff": 1.1920928955078125e-07,
+       "examples_over_tol": [],
+       "semantic_diff_strict": 5,
+       "byte_equal": false,
+       "pass": true
       },
       "versions.json": {
-       "semantic_diff": 0,
-       "byte_equal": true
+       "structural_diff": 0,
+       "float_fields": 1122,
+       "float_fields_over_tol": 0,
+       "max_abs_float_diff": 0.0,
+       "examples_over_tol": [],
+       "semantic_diff_strict": 0,
+       "byte_equal": true,
+       "pass": true
       },
       "clips.jsonl": {
-       "semantic_diff": 0,
-       "byte_equal": true
+       "structural_diff": 0,
+       "float_fields": 5221,
+       "float_fields_over_tol": 0,
+       "max_abs_float_diff": 1.1920928955078125e-07,
+       "examples_over_tol": [],
+       "semantic_diff_strict": 2,
+       "byte_equal": false,
+       "pass": true
       }
      },
      "Avengers_Endgame": {
       "topic_map.json": {
-       "semantic_diff": 0,
-       "byte_equal": true
+       "structural_diff": 0,
+       "float_fields": 15345,
+       "float_fields_over_tol": 0,
+       "max_abs_float_diff": 0.0,
+       "examples_over_tol": [],
+       "semantic_diff_strict": 0,
+       "byte_equal": true,
+       "pass": true
       },
       "versions.json": {
-       "semantic_diff": 0,
-       "byte_equal": true
+       "structural_diff": 0,
+       "float_fields": 1331,
+       "float_fields_over_tol": 0,
+       "max_abs_float_diff": 0.0,
+       "examples_over_tol": [],
+       "semantic_diff_strict": 0,
+       "byte_equal": true,
+       "pass": true
       },
       "clips.jsonl": {
-       "semantic_diff": 0,
-       "byte_equal": true
+       "structural_diff": 0,
+       "float_fields": 5935,
+       "float_fields_over_tol": 0,
+       "max_abs_float_diff": 0.0,
+       "examples_over_tol": [],
+       "semantic_diff_strict": 0,
+       "byte_equal": true,
+       "pass": true
       }
      }
     }
-   }
+   },
+   "commit": "a46ecce418c69a3ec1e4c5cea7cfed610d5b1bee"
   },
   "R2": {
    "status": "PASS",
@@ -52,7 +93,8 @@
     "frozen_reference_files": 22,
     "frozen_reference_mismatches": [],
     "ssh_returncode": 0
-   }
+   },
+   "commit": "519e37bcc052e897b55aaaf426e7ce7a90a38280"
   },
   "R3": {
    "status": "PASS",
@@ -97,8 +139,9 @@
      "V9"
     ],
     "speaker_turns_v11": 2502,
-    "v11": "/data/tesis-cava/v11_work/r3/Spider_Man"
-   }
+    "v11": "/data/tesis-cava/exp046/nr_work_a/r3/Spider_Man"
+   },
+   "commit": "a46ecce418c69a3ec1e4c5cea7cfed610d5b1bee"
   },
   "R4": {
    "status": "PASS",
@@ -943,7 +986,8 @@
       }
      }
     }
-   }
+   },
+   "commit": "519e37bcc052e897b55aaaf426e7ce7a90a38280"
   },
   "R5": {
    "status": "PASS",
@@ -963,7 +1007,8 @@
      }
     },
     "backend_v11": "wavlm_sv"
-   }
+   },
+   "commit": "519e37bcc052e897b55aaaf426e7ce7a90a38280"
   },
   "R6": {
    "status": "PASS",
@@ -986,7 +1031,8 @@
      "V4"
     ],
     "speaker_turns_v11": 505
-   }
+   },
+   "commit": "519e37bcc052e897b55aaaf426e7ce7a90a38280"
   },
   "R7": {
    "status": "PASS",
@@ -997,7 +1043,8 @@
     "exclusive_rttm_identical": true,
     "run1_exclusive_sha256": "d247a83e4b4c014e2b1e7ac854e219d1304b67b8380b71da0604b4a98f624984",
     "run2_exclusive_sha256": "d247a83e4b4c014e2b1e7ac854e219d1304b67b8380b71da0604b4a98f624984"
-   }
+   },
+   "commit": "519e37bcc052e897b55aaaf426e7ce7a90a38280"
   },
   "R8": {
    "status": "PASS",
@@ -1025,7 +1072,8 @@
      }
     },
     "not_run": []
-   }
+   },
+   "commit": "519e37bcc052e897b55aaaf426e7ce7a90a38280"
   }
  }
 }
