@@ -4066,3 +4066,9 @@ la integración de P en `topicagg` queda pendiente de decisión.
    (p. ej. ARI ≥ 0,955 = 0,975 − 0,02 de fresh3), debe declararse antes de medir.
 7. **Orden V# de P:** ordenar por tiempo de habla (PLAN §3.2) es irrelevante para la JSD
    (invariante a permutación de etiquetas); se menciona solo por consistencia de producto.
+### Resultado de las comprobaciones R1–R8 (2026-11-20; `results/v11_nonregression/report.{json,md}`)
+R1–R8 **PASS**. R4: VoxConverse test por `topicagg.diarization` ARI 0,9383 (231 archivos con ARI; objetivo 0,938 ± 0,005),
+AMI fresh3 ARI 0,9746 (40 reuniones; objetivo 0,975 ± 0,005). R1/R5: diff semántico 0 (byte a byte). R3/R6: diff fuera de
+hablantes = 0. R7: RTTM y RTTM exclusivo idénticos en dos ejecuciones sobre Spider-Man (y idéntico al RTTM de EXP-043).
+Límites: R3/R6 y R1 se corrieron con los `work/` congelados y sin cortar mp4 (`cut=False`); R6 sin etiquetas 14B;
+R5/R6 con un solo episodio/reunión. La adopción conserva la reserva de contaminación de EXP-043.

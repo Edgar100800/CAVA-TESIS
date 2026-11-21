@@ -1,0 +1,1031 @@
+{
+ "schema": "cava-v11-nonregression-v1",
+ "overall": "PASS",
+ "code": {
+  "git_commit": "519e37bcc052e897b55aaaf426e7ce7a90a38280"
+ },
+ "checks": {
+  "R1": {
+   "status": "PASS",
+   "detail": {
+    "runs": {
+     "Spider_Man": "/data/tesis-cava/v11_work/r1/Spider_Man",
+     "Avengers_Endgame": "/data/tesis-cava/v11_work/r1/Avengers_Endgame"
+    },
+    "comparisons": {
+     "Spider_Man": {
+      "topic_map.json": {
+       "semantic_diff": 0,
+       "byte_equal": true
+      },
+      "versions.json": {
+       "semantic_diff": 0,
+       "byte_equal": true
+      },
+      "clips.jsonl": {
+       "semantic_diff": 0,
+       "byte_equal": true
+      }
+     },
+     "Avengers_Endgame": {
+      "topic_map.json": {
+       "semantic_diff": 0,
+       "byte_equal": true
+      },
+      "versions.json": {
+       "semantic_diff": 0,
+       "byte_equal": true
+      },
+      "clips.jsonl": {
+       "semantic_diff": 0,
+       "byte_equal": true
+      }
+     }
+    }
+   }
+  },
+  "R2": {
+   "status": "PASS",
+   "detail": {
+    "stimuli_files": 446,
+    "stimuli_mismatches": [],
+    "frozen_reference_files": 22,
+    "frozen_reference_mismatches": [],
+    "ssh_returncode": 0
+   }
+  },
+  "R3": {
+   "status": "PASS",
+   "detail": {
+    "topic_map_non_speaker_diff": 0,
+    "versions_non_speaker_diff": 0,
+    "clips_non_speaker_diff": 0,
+    "G_version_v10": true,
+    "G_version_v11": true,
+    "voice_identity_signal_v10": "wavlm_sv",
+    "voice_identity_signal_v11": "pyannote_c1",
+    "voice_identities_v10": [
+     "V1",
+     "V2",
+     "V3",
+     "V4",
+     "V5",
+     "V6",
+     "V7",
+     "V8"
+    ],
+    "voice_identities_v11": [
+     "V1",
+     "V10",
+     "V11",
+     "V12",
+     "V13",
+     "V14",
+     "V15",
+     "V16",
+     "V17",
+     "V18",
+     "V19",
+     "V2",
+     "V20",
+     "V3",
+     "V4",
+     "V5",
+     "V6",
+     "V7",
+     "V8",
+     "V9"
+    ],
+    "speaker_turns_v11": 2502,
+    "v11": "/data/tesis-cava/v11_work/r3/Spider_Man"
+   }
+  },
+  "R4": {
+   "status": "PASS",
+   "detail": {
+    "vox": {
+     "summary": {
+      "n_files": 232,
+      "n_ari": 231,
+      "ari_P_mean": 0.9383188026875701,
+      "per_file": {
+       "aepyx": {
+        "ari_P": 0.697603651578547
+       },
+       "aggyz": {
+        "ari_P": 0.8722175021240441
+       },
+       "aiqwk": {
+        "ari_P": 0.9225761450825389
+       },
+       "aorju": {
+        "ari_P": 0.9664325419015042
+       },
+       "auzru": {
+        "ari_P": 0.9895715010255195
+       },
+       "bgvvt": {
+        "ari_P": 1.0
+       },
+       "bidnq": {
+        "ari_P": 0.9839839604195729
+       },
+       "bjruf": {
+        "ari_P": 1.0
+       },
+       "bmsyn": {
+        "ari_P": 0.8049677805469928
+       },
+       "bpzsc": {
+        "ari_P": 0.9479619971921966
+       },
+       "bvqnu": {
+        "ari_P": 0.9539834235046485
+       },
+       "bvyvm": {
+        "ari_P": 1.0
+       },
+       "bxcfq": {
+        "ari_P": 1.0
+       },
+       "byapz": {
+        "ari_P": 0.9575490607159478
+       },
+       "cadba": {
+        "ari_P": 0.6569593769274493
+       },
+       "cawnd": {
+        "ari_P": 0.9733497922952287
+       },
+       "clfcg": {
+        "ari_P": 0.8569644681575661
+       },
+       "cpebh": {
+        "ari_P": 1.0
+       },
+       "cqfmj": {
+        "ari_P": 1.0
+       },
+       "crorm": {
+        "ari_P": 1.0
+       },
+       "crylr": {
+        "ari_P": 0.7183098591549296
+       },
+       "cvofp": {
+        "ari_P": 1.0
+       },
+       "cwbvu": {
+        "ari_P": 0.8014828544949026
+       },
+       "dgvwu": {
+        "ari_P": 1.0
+       },
+       "diysk": {
+        "ari_P": 0.9093873132747111
+       },
+       "dkabn": {
+        "ari_P": 0.9846590388683216
+       },
+       "dlast": {
+        "ari_P": 1.0
+       },
+       "dohag": {
+        "ari_P": 1.0
+       },
+       "duvox": {
+        "ari_P": 0.9769654952784237
+       },
+       "dxbbt": {
+        "ari_P": 0.9627516136810219
+       },
+       "dxokr": {
+        "ari_P": 0.987682944500797
+       },
+       "dzsef": {
+        "ari_P": 1.0
+       },
+       "dzxut": {
+        "ari_P": 0.9852821575674896
+       },
+       "eauve": {
+        "ari_P": 0.9626630051762377
+       },
+       "eazeq": {
+        "ari_P": 1.0
+       },
+       "eddje": {
+        "ari_P": 0.9287729523828023
+       },
+       "eguui": {
+        "ari_P": 1.0
+       },
+       "eoyaz": {
+        "ari_P": 0.9488553336580614
+       },
+       "epygx": {
+        "ari_P": 0.9848761101525715
+       },
+       "eqsta": {
+        "ari_P": 0.7119460352577893
+       },
+       "erslt": {
+        "ari_P": 0.8537377151242941
+       },
+       "eucfa": {
+        "ari_P": 0.9780140130466296
+       },
+       "euqef": {
+        "ari_P": 1.0
+       },
+       "ezxso": {
+        "ari_P": 1.0
+       },
+       "fijfi": {
+        "ari_P": 0.9536064193305591
+       },
+       "fowhl": {
+        "ari_P": 0.9552950403341397
+       },
+       "fpfvy": {
+        "ari_P": 0.943324185658036
+       },
+       "fqrnu": {
+        "ari_P": 1.0
+       },
+       "fuzfh": {
+        "ari_P": null
+       },
+       "fvhrk": {
+        "ari_P": 1.0
+       },
+       "fxnwf": {
+        "ari_P": 0.7557578753706216
+       },
+       "fyqoe": {
+        "ari_P": 1.0
+       },
+       "fzwtp": {
+        "ari_P": 0.8694924123495552
+       },
+       "gcfwp": {
+        "ari_P": 0.9436870003127431
+       },
+       "gcvrb": {
+        "ari_P": 0.9753531742300351
+       },
+       "gfneh": {
+        "ari_P": 0.9083962576336452
+       },
+       "gkiki": {
+        "ari_P": 1.0
+       },
+       "gmmwm": {
+        "ari_P": 1.0
+       },
+       "gtjow": {
+        "ari_P": 0.9884662324524884
+       },
+       "gtnjb": {
+        "ari_P": 0.9806366718637493
+       },
+       "gukoa": {
+        "ari_P": 0.6898273351362596
+       },
+       "guvqf": {
+        "ari_P": 0.9559040672960759
+       },
+       "gwloo": {
+        "ari_P": 1.0
+       },
+       "gylzn": {
+        "ari_P": 1.0
+       },
+       "gyomp": {
+        "ari_P": 1.0
+       },
+       "gzhwb": {
+        "ari_P": 0.7039350339648296
+       },
+       "hcyak": {
+        "ari_P": 0.9383801368770742
+       },
+       "heolf": {
+        "ari_P": 0.9624347024257424
+       },
+       "hhepf": {
+        "ari_P": 0.9741762556503939
+       },
+       "hqhrb": {
+        "ari_P": 0.9554589413321515
+       },
+       "iabca": {
+        "ari_P": 0.903627579658745
+       },
+       "iacod": {
+        "ari_P": 0.9695334850625478
+       },
+       "ibrnm": {
+        "ari_P": 0.9841422803982203
+       },
+       "ifwki": {
+        "ari_P": 0.938808110823879
+       },
+       "iiprr": {
+        "ari_P": 0.9921266683546147
+       },
+       "ikhje": {
+        "ari_P": 0.999659903330098
+       },
+       "iowob": {
+        "ari_P": 1.0
+       },
+       "isrps": {
+        "ari_P": 1.0
+       },
+       "isxwc": {
+        "ari_P": 1.0
+       },
+       "jbowg": {
+        "ari_P": 0.9412845964061601
+       },
+       "jdrwl": {
+        "ari_P": 1.0
+       },
+       "jeymh": {
+        "ari_P": 0.8765087793668147
+       },
+       "jgiyq": {
+        "ari_P": 0.9805584206251439
+       },
+       "jjkrt": {
+        "ari_P": 0.9933793823444275
+       },
+       "jjvkx": {
+        "ari_P": 1.0
+       },
+       "jrfaz": {
+        "ari_P": 0.9675828657468643
+       },
+       "jsbdo": {
+        "ari_P": 0.8710605219861349
+       },
+       "jsymf": {
+        "ari_P": 0.995267655089923
+       },
+       "jttar": {
+        "ari_P": 1.0
+       },
+       "jwggf": {
+        "ari_P": 0.9886630640334734
+       },
+       "jxpom": {
+        "ari_P": 0.7486324978972079
+       },
+       "jxydp": {
+        "ari_P": 1.0
+       },
+       "jzkzt": {
+        "ari_P": 0.9479180588662139
+       },
+       "kajfh": {
+        "ari_P": 0.9780977601163544
+       },
+       "kgjaa": {
+        "ari_P": 0.9899452430972162
+       },
+       "kmjvh": {
+        "ari_P": 0.9590093122739703
+       },
+       "kmunk": {
+        "ari_P": 1.0
+       },
+       "kpjud": {
+        "ari_P": 0.9762150982419855
+       },
+       "ktvto": {
+        "ari_P": 0.9631258969169765
+       },
+       "kvkje": {
+        "ari_P": 0.9886378144116154
+       },
+       "kzmyi": {
+        "ari_P": 0.9804222899277854
+       },
+       "laoyl": {
+        "ari_P": 0.6738324632614071
+       },
+       "lbfnx": {
+        "ari_P": 0.9709532901316429
+       },
+       "ledhe": {
+        "ari_P": 1.0
+       },
+       "leneg": {
+        "ari_P": 0.9411641348939015
+       },
+       "lhuly": {
+        "ari_P": 0.9525194476540443
+       },
+       "lilfy": {
+        "ari_P": 1.0
+       },
+       "ljpes": {
+        "ari_P": 1.0
+       },
+       "lkikz": {
+        "ari_P": 0.9785893029715989
+       },
+       "lpola": {
+        "ari_P": 0.7544062972488956
+       },
+       "lscfc": {
+        "ari_P": 0.9764026690805504
+       },
+       "ltgmz": {
+        "ari_P": 0.7422222222222222
+       },
+       "lubpm": {
+        "ari_P": 1.0
+       },
+       "luobn": {
+        "ari_P": 1.0
+       },
+       "mbzht": {
+        "ari_P": 1.0
+       },
+       "mclsr": {
+        "ari_P": 0.9430479091015579
+       },
+       "mhwyr": {
+        "ari_P": 0.8956894849796002
+       },
+       "mjmgr": {
+        "ari_P": 1.0
+       },
+       "mkhie": {
+        "ari_P": 0.9779428545414284
+       },
+       "mqtep": {
+        "ari_P": 1.0
+       },
+       "msbyq": {
+        "ari_P": 0.4444444444444444
+       },
+       "mupzb": {
+        "ari_P": 1.0
+       },
+       "mxdpo": {
+        "ari_P": 1.0
+       },
+       "mxduo": {
+        "ari_P": 0.9503084621170308
+       },
+       "myjoe": {
+        "ari_P": 0.9534828181768499
+       },
+       "neiye": {
+        "ari_P": 1.0
+       },
+       "nitgx": {
+        "ari_P": 0.9873228058526277
+       },
+       "nkqzr": {
+        "ari_P": 0.8314284555718399
+       },
+       "nlvdr": {
+        "ari_P": 0.9642898498952335
+       },
+       "nprxc": {
+        "ari_P": 1.0
+       },
+       "nqcpi": {
+        "ari_P": 0.9861077260541068
+       },
+       "nqyqm": {
+        "ari_P": 0.9685672564809824
+       },
+       "ocfop": {
+        "ari_P": 0.9803917269554843
+       },
+       "ofbxh": {
+        "ari_P": 1.0
+       },
+       "olzkb": {
+        "ari_P": 0.7291572372589843
+       },
+       "ooxlj": {
+        "ari_P": 1.0
+       },
+       "optsn": {
+        "ari_P": 0.9802264242798433
+       },
+       "oqwpd": {
+        "ari_P": 0.9301471368818871
+       },
+       "otmpf": {
+        "ari_P": 1.0
+       },
+       "oubab": {
+        "ari_P": 0.9629465607114694
+       },
+       "ouvtt": {
+        "ari_P": 0.7511370143887284
+       },
+       "pccww": {
+        "ari_P": 0.8495074790222547
+       },
+       "pgtkk": {
+        "ari_P": 1.0
+       },
+       "pkwrt": {
+        "ari_P": 1.0
+       },
+       "poucc": {
+        "ari_P": 0.9775829446328204
+       },
+       "ppexo": {
+        "ari_P": 1.0
+       },
+       "ptses": {
+        "ari_P": 0.7954695481825348
+       },
+       "pwnsw": {
+        "ari_P": 0.9586675498245607
+       },
+       "pxqme": {
+        "ari_P": 0.0
+       },
+       "pzxit": {
+        "ari_P": 1.0
+       },
+       "qadia": {
+        "ari_P": 0.9044272348807019
+       },
+       "qajyo": {
+        "ari_P": 0.9725571592483417
+       },
+       "qeejz": {
+        "ari_P": 0.9311625874125874
+       },
+       "qlrry": {
+        "ari_P": 0.25359091325258376
+       },
+       "qoarn": {
+        "ari_P": 0.9790279836253454
+       },
+       "qwepo": {
+        "ari_P": 1.0
+       },
+       "qxana": {
+        "ari_P": 0.9636645349986561
+       },
+       "ralnu": {
+        "ari_P": 1.0
+       },
+       "rarij": {
+        "ari_P": 0.9439130891689717
+       },
+       "rmvsh": {
+        "ari_P": 1.0
+       },
+       "rpkso": {
+        "ari_P": 1.0
+       },
+       "rsypp": {
+        "ari_P": 0.9261011984094922
+       },
+       "rxulz": {
+        "ari_P": 0.9993316564938388
+       },
+       "ryken": {
+        "ari_P": 0.9900377750628508
+       },
+       "sbrmv": {
+        "ari_P": 1.0
+       },
+       "sebyw": {
+        "ari_P": 0.9755796189478262
+       },
+       "sexgc": {
+        "ari_P": 0.9381140232733218
+       },
+       "sfdvy": {
+        "ari_P": 1.0
+       },
+       "svxzm": {
+        "ari_P": 1.0
+       },
+       "swbnm": {
+        "ari_P": 0.9979638939915458
+       },
+       "sxqvt": {
+        "ari_P": 1.0
+       },
+       "tbjqx": {
+        "ari_P": 0.9831348079278531
+       },
+       "thnuq": {
+        "ari_P": 0.9882369603361318
+       },
+       "tiido": {
+        "ari_P": 0.7145007505126741
+       },
+       "tkhgs": {
+        "ari_P": 1.0
+       },
+       "tkybe": {
+        "ari_P": 0.989950764798348
+       },
+       "tnjoh": {
+        "ari_P": 1.0
+       },
+       "tpnyf": {
+        "ari_P": 1.0
+       },
+       "tpslg": {
+        "ari_P": 1.0
+       },
+       "tvtoe": {
+        "ari_P": 1.0
+       },
+       "uedkc": {
+        "ari_P": 0.8299879089924823
+       },
+       "uevxo": {
+        "ari_P": 1.0
+       },
+       "uhfrw": {
+        "ari_P": 0.8201765022859914
+       },
+       "uicid": {
+        "ari_P": 1.0
+       },
+       "upshw": {
+        "ari_P": 1.0
+       },
+       "uqxlg": {
+        "ari_P": 0.9430780042164442
+       },
+       "usqam": {
+        "ari_P": 0.9835801210105792
+       },
+       "utial": {
+        "ari_P": 0.9631379090981896
+       },
+       "vdlvr": {
+        "ari_P": 1.0
+       },
+       "vgaez": {
+        "ari_P": 0.9464285714285714
+       },
+       "vgevv": {
+        "ari_P": 0.6231652518955441
+       },
+       "vncid": {
+        "ari_P": 1.0
+       },
+       "vtzqw": {
+        "ari_P": 0.9218697767334239
+       },
+       "vuewy": {
+        "ari_P": 1.0
+       },
+       "vylyk": {
+        "ari_P": 1.0
+       },
+       "vzuru": {
+        "ari_P": 0.9847167504415161
+       },
+       "wcxfk": {
+        "ari_P": 1.0
+       },
+       "wdvva": {
+        "ari_P": 1.0
+       },
+       "wemos": {
+        "ari_P": 0.9573509016651531
+       },
+       "wibky": {
+        "ari_P": 0.0
+       },
+       "wlfsf": {
+        "ari_P": 0.9970726334388526
+       },
+       "wprog": {
+        "ari_P": 0.9449502332844754
+       },
+       "wwvcs": {
+        "ari_P": 0.9865474197732242
+       },
+       "wwzsk": {
+        "ari_P": 0.9782473123283846
+       },
+       "xffsa": {
+        "ari_P": 0.9596091819801835
+       },
+       "xggbk": {
+        "ari_P": 0.9973192344925162
+       },
+       "xkgos": {
+        "ari_P": 0.9779410102378686
+       },
+       "xkmqx": {
+        "ari_P": 1.0
+       },
+       "xlsme": {
+        "ari_P": 0.962496211702406
+       },
+       "xlyov": {
+        "ari_P": 1.0
+       },
+       "xmyyy": {
+        "ari_P": 0.9375682686199129
+       },
+       "xqxkt": {
+        "ari_P": 0.9551816548379186
+       },
+       "xtdcl": {
+        "ari_P": 0.8110970007096702
+       },
+       "xtzoq": {
+        "ari_P": 0.6819639278557115
+       },
+       "xvxwv": {
+        "ari_P": 1.0
+       },
+       "ybhwz": {
+        "ari_P": 1.0
+       },
+       "ygrip": {
+        "ari_P": 1.0
+       },
+       "ylgug": {
+        "ari_P": 1.0
+       },
+       "ylzez": {
+        "ari_P": 1.0
+       },
+       "ytmef": {
+        "ari_P": 1.0
+       },
+       "ytula": {
+        "ari_P": 1.0
+       },
+       "yukhy": {
+        "ari_P": 0.9209071052867672
+       },
+       "yzvon": {
+        "ari_P": 0.9029818424600667
+       },
+       "zedtj": {
+        "ari_P": 0.983926346492389
+       },
+       "zehzu": {
+        "ari_P": 1.0
+       },
+       "zfzlc": {
+        "ari_P": 0.9766269044269571
+       },
+       "zowse": {
+        "ari_P": 0.9811668517843085
+       },
+       "zqidv": {
+        "ari_P": 0.9404707130067066
+       },
+       "zsgto": {
+        "ari_P": 0.9990250861409238
+       },
+       "zzsba": {
+        "ari_P": 0.9869013775842876
+       },
+       "zztbo": {
+        "ari_P": 1.0
+       },
+       "zzyyo": {
+        "ari_P": 0.9690542671724646
+       }
+      }
+     },
+     "target": [
+      0.9329999999999999,
+      0.943
+     ],
+     "reason": null
+    },
+    "ami": {
+     "n_files": 40,
+     "ari_P_mean": 0.974559941883068,
+     "target": [
+      0.97,
+      0.98
+     ],
+     "per_meeting": {
+      "ES2002c": {
+       "ari_P": 0.9869345426349989
+      },
+      "ES2003a": {
+       "ari_P": 0.9557514879125018
+      },
+      "ES2003b": {
+       "ari_P": 0.9675857125122347
+      },
+      "ES2004b": {
+       "ari_P": 0.9931143161921285
+      },
+      "ES2004c": {
+       "ari_P": 1.0
+      },
+      "ES2005a": {
+       "ari_P": 0.881812212738017
+      },
+      "ES2005b": {
+       "ari_P": 0.9474031900832907
+      },
+      "ES2005d": {
+       "ari_P": 0.9656308610523111
+      },
+      "ES2007a": {
+       "ari_P": 0.9223575761266425
+      },
+      "ES2008b": {
+       "ari_P": 0.9654051787271967
+      },
+      "ES2008d": {
+       "ari_P": 0.9622385733951044
+      },
+      "ES2009b": {
+       "ari_P": 1.0
+      },
+      "ES2010d": {
+       "ari_P": 1.0
+      },
+      "ES2012a": {
+       "ari_P": 1.0
+      },
+      "ES2015a": {
+       "ari_P": 0.9242361377775505
+      },
+      "IS1000b": {
+       "ari_P": 0.987602917653948
+      },
+      "IS1001d": {
+       "ari_P": 1.0
+      },
+      "IS1004b": {
+       "ari_P": 1.0
+      },
+      "IS1004c": {
+       "ari_P": 1.0
+      },
+      "IS1005a": {
+       "ari_P": 0.9456302859444221
+      },
+      "IS1006c": {
+       "ari_P": 1.0
+      },
+      "IS1007d": {
+       "ari_P": 1.0
+      },
+      "IS1008a": {
+       "ari_P": 1.0
+      },
+      "IS1008b": {
+       "ari_P": 0.9527704278017168
+      },
+      "IS1009c": {
+       "ari_P": 1.0
+      },
+      "IS1009d": {
+       "ari_P": 1.0
+      },
+      "TS3003c": {
+       "ari_P": 0.9826765750484051
+      },
+      "TS3004c": {
+       "ari_P": 1.0
+      },
+      "TS3005a": {
+       "ari_P": 1.0
+      },
+      "TS3005b": {
+       "ari_P": 0.9613579184578432
+      },
+      "TS3005c": {
+       "ari_P": 0.9602737693267721
+      },
+      "TS3007a": {
+       "ari_P": 0.9592005645253948
+      },
+      "TS3007b": {
+       "ari_P": 0.9872469380024412
+      },
+      "TS3007d": {
+       "ari_P": 1.0
+      },
+      "TS3008b": {
+       "ari_P": 1.0
+      },
+      "TS3010b": {
+       "ari_P": 0.8562729981989217
+      },
+      "TS3011d": {
+       "ari_P": 0.9806546185835476
+      },
+      "TS3012b": {
+       "ari_P": 1.0
+      },
+      "TS3012c": {
+       "ari_P": 0.9593742488602509
+      },
+      "TS3012d": {
+       "ari_P": 0.9768666237670858
+      }
+     }
+    }
+   }
+  },
+  "R5": {
+   "status": "PASS",
+   "detail": {
+    "comparisons": {
+     "topic_map.json": {
+      "semantic_diff": 0,
+      "byte_equal": true
+     },
+     "versions.json": {
+      "semantic_diff": 0,
+      "byte_equal": true
+     },
+     "clips.jsonl": {
+      "semantic_diff": 0,
+      "byte_equal": true
+     }
+    },
+    "backend_v11": "wavlm_sv"
+   }
+  },
+  "R6": {
+   "status": "PASS",
+   "detail": {
+    "labels": false,
+    "map_non_speaker_diff": 0,
+    "speakers_changed": true,
+    "backend_v10": "wavlm_sv",
+    "backend_v11": "pyannote_c1",
+    "voice_identities_v10": [
+     "V1",
+     "V2",
+     "V3",
+     "V4"
+    ],
+    "voice_identities_v11": [
+     "V1",
+     "V2",
+     "V3",
+     "V4"
+    ],
+    "speaker_turns_v11": 505
+   }
+  },
+  "R7": {
+   "status": "PASS",
+   "detail": {
+    "run1_sha256": "7fdd89d7aa3ab216744bb2b247d993d192f4c592fd66b263a0c8721a0c176046",
+    "run2_sha256": "7fdd89d7aa3ab216744bb2b247d993d192f4c592fd66b263a0c8721a0c176046",
+    "rttm_identical": true,
+    "exclusive_rttm_identical": true,
+    "run1_exclusive_sha256": "d247a83e4b4c014e2b1e7ac854e219d1304b67b8380b71da0604b4a98f624984",
+    "run2_exclusive_sha256": "d247a83e4b4c014e2b1e7ac854e219d1304b67b8380b71da0604b4a98f624984"
+   }
+  },
+  "R8": {
+   "status": "PASS",
+   "detail": {
+    "manifests": {
+     "/data/tesis-cava/v11_work/r3/Spider_Man": {
+      "n_clips": 244,
+      "errors": []
+     },
+     "/data/tesis-cava/v11_work/r1/Spider_Man": {
+      "n_clips": 247,
+      "errors": []
+     },
+     "/data/tesis-cava/v11_work/r1/Avengers_Endgame": {
+      "n_clips": 276,
+      "errors": []
+     },
+     "/data/tesis-cava/v11_work/r5/v1.1": {
+      "n_clips": 60,
+      "errors": []
+     },
+     "/data/tesis-cava/v11_work/r6/v1.1": {
+      "n_clips": 12,
+      "errors": []
+     }
+    },
+    "not_run": []
+   }
+  }
+ }
+}
