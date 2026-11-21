@@ -36,6 +36,27 @@ def auc(scores, y):
     return float((ranks[:len(pos)].sum() - len(pos) * (len(pos) + 1) / 2) / (len(pos) * len(neg)))
 
 
+def rttm(path):  # copia literal de exp036/dia/eval_exp043.py (EXP-043-DIA)
+    segs = []
+    for line in Path(path).read_text().splitlines():
+        p = line.split()
+        if p and p[0] == "SPEAKER":
+            segs.append((float(p[3]), float(p[3]) + float(p[4]), p[7]))
+    return segs
+
+
+def unit_major(units, segs):  # copia literal de exp036/dia/eval_exp043.py (EXP-043-DIA)
+    lab = []
+    for u0, u1 in units:
+        ov = {}
+        for a, b, s in segs:
+            o = max(0.0, min(u1, b) - max(u0, a))
+            if o > 0:
+                ov[s] = ov.get(s, 0.0) + o
+        lab.append(max(ov, key=ov.get) if ov else None)
+    return lab
+
+
 def paired(rows, a, b):
     d = np.array([r[a] - r[b] for r in rows.values() if r.get(a) is not None and r.get(b) is not None])
     se = d.std(ddof=1) / np.sqrt(len(d))
@@ -54,7 +75,14 @@ def main():
                     help="EXP-023: añade cava_turns (votante de cambio de hablante, ventana w)")
     ap.add_argument("--compare-film-profile", action="store_true",
                     help="EXP-021c: añade cava_voice con el perfil film (p80/r90)")
+    ap.add_argument("--turns-source", choices=("voice", "pyannote"), default="voice",
+                    help="EXP-044-TURN: fuente de identidades del votante de turnos. voice = camino EXP-023 "
+                         "(sin cambios); pyannote = añade cava_turns_P (hablante pyannote mayoritario por unidad)")
+    ap.add_argument("--pyannote-dir", default="data/ami/pyannote", help="RTTM de pyannote (<m>.Mix-Headset.rttm)")
     args = ap.parse_args()
+    if args.turns_source == "pyannote" and not args.turns_w:
+        ap.error("--turns-source pyannote requiere --turns-w")
+    aux = {}
     KW["percentile"] = args.percentile
     bge = BgeEmbedder()
     ra, rb = {}, {}
@@ -118,6 +146,15 @@ def main():
             vid = identities(np.asarray(sig["voice"], np.float32), "ward", k_rule="bic")
             plans["cava_turns"] = manage(sig, return_percentile=R,
                                          boundary_signals={"turns": speaker_turn_scores(vid, args.turns_w)}, **AB)
+        if args.turns_source == "pyannote":
+            from speaker_turns import speaker_turn_scores
+            pm = unit_major(units, rttm(Path(args.pyannote_dir) / f"{m}.Mix-Headset.rttm"))
+            names = {s: i + 1 for i, s in enumerate(sorted({s for s in pm if s}))}
+            pvid = np.array([names[s] if s else -1 for s in pm])
+            sc_c, sc_p = speaker_turn_scores(vid, args.turns_w), speaker_turn_scores(pvid, args.turns_w)
+            plans["cava_turns_P"] = manage(sig, return_percentile=R, boundary_signals={"turns": sc_p}, **AB)
+            aux[f"{m}/vid_C"], aux[f"{m}/vid_P"] = vid, pvid
+            aux[f"{m}/score_C"], aux[f"{m}/score_P"] = sc_c, sc_p
         if args.compare_film_profile:
             plans["cava_film"] = manage(sig, return_percentile=90, **(AB | {"percentile": 80}))
         rr = {"n_pairs_b": len(keep), "pos_rate_b": float(y.mean())}
@@ -125,6 +162,12 @@ def main():
             pred = np.array([p.labels[i] == p.labels[j] for i, j in keep])
             rr[f"mcc_{name}"] = mcc(pred, y)
             rr[f"n_topics_{name}"] = len(set(p.labels.tolist()))
+        if args.turns_source == "pyannote":
+            rr["frac_labeled_C"], rr["frac_labeled_P"] = float((vid >= 0).mean()), float((pvid >= 0).mean())
+            for k in ("cava_voice", "contiguous", "cava_turns", "cava_turns_P"):
+                aux[f"{m}/labels_{k}"] = np.asarray(plans[k].labels)
+            aux[f"{m}/top"] = np.array([-1 if t is None else sorted({x["label"] for x in gt["topics"]}).index(t)
+                                        for t in top])
         for k in sig:
             rr[f"coh_cava_voice_{k}"] = coherence_margin(plans["cava_voice"].labels, np.asarray(sig[k], np.float32))
         rb[m] = rr
@@ -137,6 +180,9 @@ def main():
     if any("mcc_cava_turns" in r for r in rb.values()):
         rep_turns = {f"cava_turns_vs_{b}": paired(rb, "mcc_cava_turns", f"mcc_{b}")
                      for b in ("cava_voice", "contiguous", "fused")}
+        if any("mcc_cava_turns_P" in r for r in rb.values()):
+            rep_turns |= {f"cava_turns_P_vs_{b}": paired(rb, "mcc_cava_turns_P", f"mcc_{b}")
+                          for b in ("cava_turns", "cava_voice", "contiguous", "fused")}
     else:
         rep_turns = {}
     crit_b = {f"cava_voice_vs_{b}": paired(rb, "mcc_cava_voice", f"mcc_{b}")
@@ -152,6 +198,9 @@ def main():
     rep = {"protocol": "exp020_ami_v1", "meetings": args.meetings, "n_a": len(ra), "n_b": len(rb),
            "a_means": means_a, "a_criteria": crit_a, "b_means": means_b, "b_criteria": crit_b,
            "b_coherence": coh, "turns_criteria": rep_turns, "per_meeting_a": ra, "per_meeting_b": rb}
+    if args.turns_source == "pyannote":
+        rep["turns_source"] = args.turns_source
+        np.savez_compressed(Path(args.out).with_suffix(".aux.npz"), **aux)
     Path(args.out).write_text(json.dumps(rep, indent=1))
     print(json.dumps({k: v for k, v in rep.items() if not k.startswith("per_")}, indent=1))
 

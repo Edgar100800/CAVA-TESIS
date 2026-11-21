@@ -4072,3 +4072,50 @@ AMI fresh3 ARI 0,9746 (40 reuniones; objetivo 0,975 ± 0,005). R1/R5: diff semá
 hablantes = 0. R7: RTTM y RTTM exclusivo idénticos en dos ejecuciones sobre Spider-Man (y idéntico al RTTM de EXP-043).
 Límites: R3/R6 y R1 se corrieron con los `work/` congelados y sin cortar mp4 (`cut=False`); R6 sin etiquetas 14B;
 R5/R6 con un solo episodio/reunión. La adopción conserva la reserva de contaminación de EXP-043.
+
+### Resultado EXP-044-TURN (2026-11-20; `results/exp044_turn/`)
+**Ejecución según el registro, sin cambios de criterios, splits, `w = 6` ni elementos congelados.**
+- **Reuniones:** las 15 de confirmación quedaron **evaluables** (15/15 ≥ 12; ≥ 20 pares válidos mixtos en todas, entre
+  2 485 y 24 777 pares; ninguna omitida). Audio Mix-Headset + cámara de sala descargados del espejo sin faltantes;
+  GT con `ami_gt.py`; señales con `ami_signals.py` (units/voice/asr/visual/vjudge) en la GPU local del laboratorio;
+  pyannote community-1 sobre 7,69 h de audio (1 269 s de cómputo con la GPU compartida). `eval_ami.py` recibió
+  `--turns-source {voice,pyannote}` (+ `--pyannote-dir`, ruta de los RTTM): con `voice` la salida es **idéntica byte a
+  byte** a la versión anterior (verificado en 4 reuniones de dev con `cmp`); con `pyannote` añade `cava_turns_P` y
+  mantiene `cava_turns` (C) tal cual.
+- **Sanidad en dev (dev_20, sin MCC ni ajuste):** fracción de unidades etiquetadas C 0,981 / P 0,961. Score JSD de
+  turnos (w = 6, agrupado, n = 20 reuniones): mediana C 0,191 / P **0,196**; media 0,215 / 0,263; p90 0,497 / 0,655;
+  fracción de ceros 0,122 / 0,159; ninguna reunión con mediana P = 0. **Regla de parada no activada** (mediana P ≠ 0);
+  se pasó a confirmación. (La regla se aplicó sobre la mediana agrupada de todas las fronteras de dev; se reportan
+  también las medianas por reunión en `exp044_dev_sanity.json`.)
+- **Criterios (confirmación, n = 15, SE pareado por reunión, regla 2 SE):**
+
+| Criterio | Diferencia media | SE | Umbral | Resultado |
+|---|---|---|---|---|
+| 1. MCC(P) − MCC(C) > 2 SE | −0,0440 | 0,0531 | > +0,1062 | **NO** (z = −0,83) |
+| 2a. MCC(P) − MCC(contiguous p80) > −2 SE | −0,0541 | 0,0838 | > −0,1676 | SÍ |
+| 2b. MCC(P) − MCC(cava_voice) > −2 SE | +0,0654 | 0,0291 | > −0,0582 | SÍ (z = +2,25) |
+
+  MCC medios (15 reuniones): cava_voice 0,171; fused 0,148; contiguous v2.1 p80 0,291; cava_turnos-C 0,281;
+  cava_turnos-P 0,237. Por reunión, P − C: 5 reuniones mejor, 2 empate exacto, 8 peor; pérdidas grandes en IS1000a
+  (−0,501) y ES2012b (−0,354), ganancia grande en IS1002c (+0,344). Contexto: C − cava_voice = +0,109 (SE 0,040,
+  z = 2,76), consistente con EXP-023 (+0,074/+0,075): el votante de turnos de C se replica en estas 15.
+- **Secundarias (sin criterio):** ARI de etiquetas de unidad vs hablante dominante GT: C 0,255, P 0,973 (P − C = +0,718,
+  SE 0,042; coherente con 0,975 de fresh3); |K_eff − K_true|: C 1,00, P 0,13; DER pyannote (collar 0,25 s) 0,178;
+  F1 de fronteras ±1 unidad: voice 0,183, contiguous 0,187, turnos-C 0,216, turnos-P 0,247 (P − C = +0,032, SE 0,043);
+  nº de tópicos: C 5,2, P 5,4, GT 6,87; retornos: C 0,67, P 0,73, GT 0,53; fracción de unidades etiquetadas C 0,994 /
+  P 0,967; mediana del score JSD C 0,133 / P 0,211; márgenes de G-coherencia de cava_voice positivos en las 15
+  (voice 0,175; visual 0,011; transcript 0,042; vjudge 0,045).
+- **Lectura pre-declarada aplicada literalmente: criterio 1 NO, criterio 2 SÍ (2a y 2b) → se mantiene C.** Queda
+  registrado que mejor identidad (ARI 0,255 → 0,973) no implica mejores fronteras de tópico por MCC en AMI; pyannote
+  queda solo como V# (adopción EXP-043). Sin pooling con fresh3. Con n = 15 el umbral de 2 SE de criterio 1 es ≈ 0,106,
+  mayor que el efecto de EXP-023; el resultado es una no mejora demostrada, no una degradación demostrada
+  (el IC no excluye diferencias de ±0,1). Reserva de contaminación de AMI (EXP-043) sin cambios.
+- **Desviaciones del registro:** ninguna en criterios, datos o protocolo. Notas operativas: (i) señales calculadas en
+  `CAVA_minimo/.venv` (transformers 5.14, faster-whisper 1.2.1; modelos fijados: Qwen2.5-VL-7B @cc594898, SigLIP-base,
+  Whisper large-v3 Systran @edaa852) en lugar del entorno conda `segloop` de SLURM: mismo código y modelos, distinta
+  versión de biblioteca; (ii) las señales de dev_20 se reutilizaron de Khipu (no se recalcularon); (iii) la primera
+  corrida de pyannote sobre las 15 falló por rutas relativas y se repitió sin efecto en los datos; (iv) 1–3 unidades por
+  reunión al final del video tienen vector visual nulo (ffmpeg sin fotograma), igual que en lotes previos.
+- **Reproducibilidad:** `scripts/eval_ami.py --meetings data/ami/meetings_exp044.txt --percentile 95
+  --return-percentile 90 --turns-w 6 --turns-source pyannote`; `scripts/exp044_dev_sanity.py`;
+  `scripts/exp044_secondary.py`; descarga `data/ami/download_exp044.sh`; RTTM en `results/exp044_turn/rttm/`.
